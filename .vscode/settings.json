@@ -1,0 +1,29 @@
+{
+  // exclude git ignored files from search
+  "search.useGlobalIgnoreFiles": true,
+
+  // run prettier on save
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "editor.codeActionsOnSave": {
+    // run eslint on save
+    "source.fixAll.eslint": true,
+    // run stylelint on save
+    "source.fixAll.stylelint": true
+  },
+
+  // hush warnings for tailwindcss
+  "css.validate": false,
+
+  // enable className autocompletion in JSX
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  // add tailwindcss classes to emmet
+  "tailwindCSS.emmetCompletions": true,
+
+  // validate tailwindcss directives
+  "tailwindCSS.validate": true
+}

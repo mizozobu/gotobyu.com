@@ -1,0 +1,14 @@
+{
+  "commitMessagePrefix": "chore:",
+  "labels": ["dependencies"],
+  "rangeStrategy": "bump",
+  "rebaseWhen": "behind-base-branch",
+  "timezone": "Asia/Tokyo",
+  "packageRules": [
+    {
+      "automerge": true,
+      "automergeType": "branch",
+      "matchLanguages": ["js"]
+    }
+  ]
+}
