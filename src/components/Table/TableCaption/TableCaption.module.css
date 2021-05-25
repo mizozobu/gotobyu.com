@@ -1,0 +1,8 @@
+.table-caption {
+  caption-side: bottom;
+  @apply mt-4 text-left md:text-right text-xs whitespace-nowrap;
+}
+
+.table-caption > span {
+  @apply mt-4 text-xs whitespace-nowrap;
+}

@@ -1,0 +1,3 @@
+.school-card > div:first-of-type {
+  z-index: -1;
+}

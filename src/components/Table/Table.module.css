@@ -1,0 +1,33 @@
+.table th,
+.table td {
+  min-width: 100px;
+  @apply px-4 py-3 text-center;
+}
+
+.table > tfoot th,
+.table > tfoot td {
+  @apply border-t-2 border-t-black;
+}
+
+.table > thead th {
+  @apply border-b-2 border-black;
+}
+
+.table > tbody td,
+.table > tbody th {
+  @apply border-b;
+}
+
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > th:first-of-type {
+  @apply border-r-2 border-r-black font-bold;
+}
+
+.table > tbody tr:hover {
+  @apply transition duration-500 ease-in-out hover:bg-gray-100;
+}
+
+.table > tfoot > tr > td {
+  @apply border-b-0;
+}
