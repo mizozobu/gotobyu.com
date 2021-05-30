@@ -8,6 +8,7 @@ module.exports = {
     'airbnb',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
@@ -16,10 +17,14 @@ module.exports = {
       jsx: true,
     },
     ecmaVersion: 12,
+    project: './tsconfig.json',
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    // allow voiding floating promise
+    'no-void': ['error', { allowAsStatement: true }],
+
     // hush no-use-before-define error in "import React from 'react';"
     // see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-use-before-define.md#how-to-use
     'no-use-before-define': 'off',
