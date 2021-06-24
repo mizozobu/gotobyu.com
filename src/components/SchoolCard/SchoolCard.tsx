@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import styles from './SchoolCard.module.css';
+import { BgRotate } from '@c/BgRotate';
 
 export interface Props {
   className?: string;
@@ -13,13 +13,10 @@ export const SchoolCard: FC<Props> = ({
   children,
 }: Props) => (
   <>
-    <div className={`relative group ${styles['school-card']} ${className}`}>
-      <div
-        className={`absolute w-full h-full rounded-xl shadow-xl bg-red-500 transform rotate-6 group-hover:rotate-12 transition duration-500 ease-in-out ${colorClass}`}
-      />
+    <BgRotate className={className} colorClass={colorClass}>
       <div className='w-full h-full p-4 rounded-xl shadow-xl bg-gray-50 group-hover:rotate-12'>
         {children}
       </div>
-    </div>
+    </BgRotate>
   </>
 );

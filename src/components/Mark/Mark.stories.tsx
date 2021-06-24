@@ -10,7 +10,12 @@ export default {
 
 const Template: Story<Props> = (args) => <Mark {...args} />;
 
-export const Example = Template.bind({});
-Example.args = {
+export const SingleLine = Template.bind({});
+SingleLine.args = {
   children: 'example',
+};
+
+export const MultiLine = Template.bind({});
+MultiLine.args = {
+  children: 'example '.repeat(50),
 };

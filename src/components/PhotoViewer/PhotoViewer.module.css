@@ -1,0 +1,18 @@
+.photo-viewer > div {
+  width: 100%;
+  padding-bottom: 66.66%;
+}
+
+.photo-viewer img {
+  @apply rounded-xl;
+}
+
+@screen md {
+  .photo-viewer {
+    @apply w-96 h-64 pb-0;
+  }
+
+  .photo-viewer img {
+    @apply w-96 h-64;
+  }
+}

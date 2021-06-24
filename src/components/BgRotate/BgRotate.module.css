@@ -1,0 +1,3 @@
+.bg-rotate > div:first-of-type {
+  z-index: -1;
+}
