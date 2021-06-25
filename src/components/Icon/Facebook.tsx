@@ -3,7 +3,7 @@ import { FC, SVGAttributes } from 'react';
 
 export interface Props extends SVGAttributes<SVGElement> {}
 
-export const Facebook: FC<Props> = ({ className, ...props }: Props) => (
+export const Facebook: FC<Props> = ({ className = '', ...props }: Props) => (
   <svg
     aria-hidden='true'
     focusable='false'

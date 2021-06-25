@@ -1,4 +1,4 @@
-/* This example requires Tailwind CSS v2.0+ */
+/* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
 import { FC, Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import {
@@ -97,9 +97,8 @@ const recentPosts = [
   { id: 3, name: 'Improve your customer experience', href: '/' },
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
-}
+const classNames = (...classes: (string | undefined)[]) =>
+  classes.filter(Boolean).join(' ');
 
 export const Header: FC<Props> = () => (
   <Popover className={`relative bg-white mb-1 ${styles.header}`}>

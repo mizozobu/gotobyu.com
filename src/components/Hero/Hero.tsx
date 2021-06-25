@@ -1,4 +1,4 @@
-/* This example requires Tailwind CSS v2.0+ */
+/* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
 import { useEffect, useState, FC } from 'react';
 import { Transition } from '@headlessui/react';
 

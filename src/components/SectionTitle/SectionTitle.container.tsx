@@ -33,4 +33,5 @@ const SectionTitleContainer: FC<Props> = ({ id, ...props }: Props) => {
 
   return <SectionTitle {...props} id={id} ref={ref} active={hash === id} />;
 };
+
 export default SectionTitleContainer;

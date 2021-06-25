@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires, import/no-extraneous-dependencies
+/* eslint-disable */
 const flattenColorPalette = require('tailwindcss/lib/util/flattenColorPalette')
   .default;
 

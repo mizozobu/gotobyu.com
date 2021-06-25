@@ -5,6 +5,8 @@ module.exports = {
     node: true,
   },
   extends: [
+    'next',
+    'next/core-web-vitals',
     'airbnb',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
@@ -45,6 +47,9 @@ module.exports = {
         tsx: 'never',
       },
     ],
+
+    // allow importing default exported XxxContainer as Xxx
+    'import/no-named-as-default': 'off',
 
     // allow named exports without default export
     'import/prefer-default-export': 'off',
