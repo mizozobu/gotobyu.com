@@ -1,9 +1,11 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import { Table, TableCaption } from '@c/Table';
-import { TuitionBarChart } from '@c/TuitionBarChart';
-import { SplitPane, Pane } from '@c/SplitPane';
-import { Mark } from '@c/Mark';
+import { Table } from '@c/atoms/Table';
+import { TableCaption } from '@c/atoms/TableCaption';
+import { TuitionBarChart } from '@c/organisms/TuitionBarChart';
+import { SplitPane } from '@c/atoms/SplitPane';
+import { Pane } from '@c/atoms/Pane';
+import { Mark } from '@c/atoms/Mark';
 
 export interface Props {}
 
@@ -31,7 +33,8 @@ const data = {
   },
 };
 
-const ComparePage: FC<Props> = () => (
+// eslint-disable-next-line no-underscore-dangle
+const _ComparePage: FC<Props> = () => (
   <main>
     <div className='container mx-auto px-8 md:px-16 lg:px-32 my-8 space-y-12 md:space-y-24'>
       <h1 className='text-5xl font-bold my-4'>BYU、BYUH、BYUI比較</h1>
@@ -164,4 +167,4 @@ const ComparePage: FC<Props> = () => (
   </main>
 );
 
-export default ComparePage;
+export default _ComparePage;

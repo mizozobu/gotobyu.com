@@ -1,9 +1,9 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { FC } from 'react';
-import { Footer } from '@c/Footer';
-import { Header } from '@c/Header';
-import { Title } from '@c/Title';
+import { Footer } from '@c/organisms/Footer';
+import { Header } from '@c/organisms/Header';
+import { Title } from '@c/atoms/Title';
 import '../styles/globals.css';
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => (

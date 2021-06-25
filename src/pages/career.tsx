@@ -1,10 +1,13 @@
 import { FC } from 'react';
-import { InternSalaryPieChart } from '@c/InternSalaryPieChart';
-import { SplitPane, Pane } from '@c/SplitPane';
+import { IncomeBarChart } from '@c/organisms/IncomeBarChart';
+import { InternSalaryPieChart } from '@c/organisms/InternSalaryPieChart';
+import { SplitPane } from '@c/atoms/SplitPane';
+import { Pane } from '@c/atoms/Pane';
 
 export interface Props {}
 
-const ComparePage: FC<Props> = () => (
+// eslint-disable-next-line no-underscore-dangle
+const _ComparePage: FC<Props> = () => (
   <main>
     <div className='container mx-auto px-8 md:px-16 lg:px-32 my-8 space-y-12 md:space-y-24'>
       <h1 className='text-5xl font-bold my-4'>就職</h1>
@@ -38,8 +41,20 @@ const ComparePage: FC<Props> = () => (
           </Pane>
         </SplitPane>
       </section>
+
+      <section>
+        <h2 className='text-4xl font-bold mb-8'>初任給</h2>
+        <SplitPane>
+          <Pane>
+            <IncomeBarChart className='w-full h-72 md:h-80 lg:h-96' />
+          </Pane>
+          <Pane className='flex flex-col justify-center py-8 md:py-0'>
+            asdf
+          </Pane>
+        </SplitPane>
+      </section>
     </div>
   </main>
 );
 
-export default ComparePage;
+export default _ComparePage;
