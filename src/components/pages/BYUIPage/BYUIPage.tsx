@@ -10,6 +10,7 @@ import { Number } from '@c/atoms/Number';
 import { Mark } from '@c/atoms/Mark';
 import { List } from '@c/atoms/List';
 import { Item } from '@c/atoms/Item';
+import { NextImage } from '@c/atoms/NextImage';
 
 export interface Props {}
 
@@ -24,14 +25,13 @@ export const BYUIPage: FC<Props> = () => (
         <SectionTitle id='概要'>概要</SectionTitle>
         <SplitPane>
           <Pane>
-            <div className='relative h-80'>
-              <Image
-                src='/byui.png'
-                alt='BYUI Logo'
-                layout='fill'
-                objectFit='scale-down'
-              />
-            </div>
+            <NextImage
+              className='h-80'
+              src='/byui.png'
+              alt='BYUI Logo'
+              layout='fill'
+              objectFit='scale-down'
+            />
           </Pane>
           <Pane className='flex flex-col justify-center py-8 md:py-0'>
             <ul>

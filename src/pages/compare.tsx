@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import Image from 'next/image';
 import { Table } from '@c/atoms/Table';
 import { TableCaption } from '@c/atoms/TableCaption';
 import { TuitionBarChart } from '@c/organisms/TuitionBarChart';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
 import { Mark } from '@c/atoms/Mark';
+import { NextImage } from '@c/atoms/NextImage';
 
 export interface Props {}
 
@@ -71,36 +71,33 @@ const _ComparePage: FC<Props> = () => (
               <tr>
                 <th scope='col'>{}</th>
                 <th scope='col'>
-                  <div className='relative h-full p-4'>
-                    <Image
-                      src='/byu.png'
-                      alt='BYU Logo'
-                      layout='fill'
-                      objectFit='scale-down'
-                    />
-                  </div>
+                  <NextImage
+                    className='h-full p-4'
+                    src='/byu.png'
+                    alt='BYU Logo'
+                    layout='fill'
+                    objectFit='scale-down'
+                  />
                   <span className='text-byu'>BYU</span>
                 </th>
                 <th scope='col'>
-                  <div className='relative h-full p-4'>
-                    <Image
-                      src='/byuh.png'
-                      alt='BYUH Logo'
-                      layout='fill'
-                      objectFit='scale-down'
-                    />
-                  </div>
+                  <NextImage
+                    className='h-full p-4'
+                    src='/byuh.png'
+                    alt='BYUH Logo'
+                    layout='fill'
+                    objectFit='scale-down'
+                  />
                   <span className='text-byuh'>BYUH</span>
                 </th>
                 <th scope='col'>
-                  <div className='relative h-full p-4'>
-                    <Image
-                      src='/byui.png'
-                      alt='BYUI Logo'
-                      layout='fill'
-                      objectFit='scale-down'
-                    />
-                  </div>
+                  <NextImage
+                    className='h-full p-4'
+                    src='/byui.png'
+                    alt='BYUI Logo'
+                    layout='fill'
+                    objectFit='scale-down'
+                  />
                   <span className='text-byui'>BYUI</span>
                 </th>
               </tr>

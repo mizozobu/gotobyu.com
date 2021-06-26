@@ -1,6 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
 import { Story, Meta } from '@storybook/react';
+import { NextImage } from '@c/atoms/NextImage';
 import { Pane } from '@c/atoms/Pane';
 import { SplitPane, Props } from './SplitPane';
 
@@ -16,8 +16,9 @@ export const Example = Template.bind({});
 Example.args = {
   children: (
     <>
-      <Pane className='relative h-80 bg-indigo-100'>
-        <Image
+      <Pane className=' bg-indigo-100'>
+        <NextImage
+          className='h-80'
           src='/byu.png'
           alt='byu logo'
           layout='fill'

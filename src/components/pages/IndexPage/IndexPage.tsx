@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { SchoolCard } from '@c/molecules/SchoolCard';
 import { Hero } from '@c/organisms/Hero';
+import { NextImage } from '@c/atoms/NextImage';
 
 export interface Props {}
 
@@ -19,42 +19,39 @@ export const IndexPage: FC<Props> = () => (
         <Link href='/byu'>
           <a>
             <SchoolCard className='w-64 h-80 mx-8' colorClass='bg-byu'>
-              <div className='relative h-full p-4'>
-                <Image
-                  src='/byu.png'
-                  alt='BYU Logo'
-                  layout='fill'
-                  objectFit='scale-down'
-                />
-              </div>
+              <NextImage
+                className='h-full p-4'
+                src='/byu.png'
+                alt='BYU Logo'
+                layout='fill'
+                objectFit='scale-down'
+              />
             </SchoolCard>
           </a>
         </Link>
         <Link href='/byuh'>
           <a>
             <SchoolCard className='w-64 h-80 mx-8' colorClass='bg-byuh'>
-              <div className='relative h-full p-4'>
-                <Image
-                  src='/byuh.png'
-                  alt='BYUH Logo'
-                  layout='fill'
-                  objectFit='scale-down'
-                />
-              </div>
+              <NextImage
+                className='h-full p-4'
+                src='/byuh.png'
+                alt='BYUH Logo'
+                layout='fill'
+                objectFit='scale-down'
+              />
             </SchoolCard>
           </a>
         </Link>
         <Link href='/byui'>
           <a>
             <SchoolCard className='w-64 h-80 mx-8' colorClass='bg-byui'>
-              <div className='relative h-full p-4'>
-                <Image
-                  src='/byui.png'
-                  alt='BYUI Logo'
-                  layout='fill'
-                  objectFit='scale-down'
-                />
-              </div>
+              <NextImage
+                className='h-full p-4'
+                src='/byui.png'
+                alt='BYUI Logo'
+                layout='fill'
+                objectFit='scale-down'
+              />
             </SchoolCard>
           </a>
         </Link>
