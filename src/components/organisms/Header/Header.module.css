@@ -6,7 +6,11 @@
   left: 0;
   z-index: -1;
   margin-bottom: -0.25rem;
-  background: linear-gradient(to right, #002e5d, #9e1b34, #0076b6);
+  background: linear-gradient(
+    to right,
+    theme('colors.indigo.100'),
+    theme('colors.indigo.800')
+  );
   border-radius: inherit;
   content: '';
 }
