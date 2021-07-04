@@ -5,7 +5,7 @@ export interface Props extends HTMLAttributes<HTMLUListElement> {
 }
 
 export const List: FC<Props> = ({ className = '', title, ...props }: Props) => (
-  <section className='clear-left'>
+  <section className='clear-both'>
     <span className='font-bold'>{title}</span>
     <ul {...props} className={`list-disc list-inside ml-4 ${className}`} />
   </section>

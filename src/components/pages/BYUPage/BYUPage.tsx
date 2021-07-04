@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import Image from 'next/image';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';

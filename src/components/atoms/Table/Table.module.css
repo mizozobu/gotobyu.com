@@ -6,11 +6,11 @@
 
 .table > tfoot th,
 .table > tfoot td {
-  @apply border-t-2 border-t-black;
+  border-top: theme('borderWidth.2') solid var(--thick-border-color, black);
 }
 
 .table > thead th {
-  @apply border-b-2 border-black;
+  border-bottom: theme('borderWidth.2') solid var(--thick-border-color, black);
 }
 
 .table > tbody td,
@@ -21,13 +21,15 @@
 .table > tbody > tr > th,
 .table > tfoot > tr > th,
 .table > thead > tr > th:first-of-type {
-  @apply border-r-2 border-r-black font-bold;
+  border-right: theme('borderWidth.2') solid var(--thick-border-color, black);
+  @apply px-8 font-bold;
 }
 
 .table > tbody tr:hover {
   @apply transition duration-500 ease-in-out hover:bg-gray-100;
 }
 
-.table > tfoot > tr > td {
+.table > tbody > tr:last-of-type > td,
+.table > tbody > tr:last-of-type > th {
   @apply border-b-0;
 }
