@@ -10,7 +10,7 @@
     "lint": "eslint . && tsc --noEmit --project tsconfig.json && stylelint . && prettier --check .",
     "format": "eslint --fix . && stylelint --fix . && prettier --write .",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
     "@headlessui/react": "^1.3.0",
