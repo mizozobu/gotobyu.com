@@ -27,6 +27,7 @@ module.exports = {
     return config;
   },
   core: {
+    // manually added webpack@5 util https://github.com/storybookjs/storybook/issues/15336 is solved
     builder: 'webpack5',
   },
 };
