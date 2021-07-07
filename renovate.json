@@ -9,6 +9,20 @@
       "automerge": true,
       "automergeType": "branch",
       "matchLanguages": ["js"]
+    },
+    {
+      "automerge": true,
+      "automergeType": "branch",
+      "groupName": "eslint",
+      "matchLanguages": ["js"],
+      "matchPackagePatterns": ["eslint"]
+    },
+    {
+      "automerge": true,
+      "automergeType": "branch",
+      "groupName": "storybook",
+      "matchLanguages": ["js"],
+      "matchPackagePatterns": ["storybook"]
     }
   ]
 }
