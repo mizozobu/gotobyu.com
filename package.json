@@ -32,7 +32,7 @@
     "@storybook/manager-webpack5": "^6.3.3",
     "@storybook/react": "^6.3.3",
     "@types/react": "^17.0.14",
-    "@types/react-truncate": "^2.3.3",
+    "@types/react-truncate": "^2.3.4",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "autoprefixer": "^10.2.6",
     "babel-loader": "^8.2.2",
