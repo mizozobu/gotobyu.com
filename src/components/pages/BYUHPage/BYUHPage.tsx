@@ -67,7 +67,7 @@ export const BYUHPage: FC<Props> = () => (
             約半数が留学生
           </ExternalLink>
           という国際色豊かな大学です。
-          日本人留学生も多く、常に100人は在学しています。
+          日本人留学生も多く、常に100人以上在学しています。
         </p>
       </Section>
 
@@ -189,6 +189,13 @@ export const BYUHPage: FC<Props> = () => (
               まで行けば、大抵のものは揃います。
             </p>
           </div>
+        </Pane>
+      </Section>
+
+      <Section id='ハワイライフ' className='clear-both'>
+        <SectionTitle id='ハワイライフ'>ハワイライフ</SectionTitle>
+        <Pane>
+          <div className='inline space-y-4'>TBD</div>
         </Pane>
       </Section>
 

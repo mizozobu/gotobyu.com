@@ -192,6 +192,13 @@ export const BYUIPage: FC<Props> = () => (
         </Pane>
       </Section>
 
+      <Section id='アイダホライフ' className='clear-both'>
+        <SectionTitle id='アイダホライフ'>アイダホライフ</SectionTitle>
+        <Pane>
+          <div className='inline space-y-4'>TBD</div>
+        </Pane>
+      </Section>
+
       <Section id='クラブ' className='clear-both'>
         <SectionTitle id='クラブ'>クラブ</SectionTitle>
         <Pane>

@@ -44,7 +44,7 @@ export const BYUPage: FC<Props> = () => (
               </li>
               <li className='py-2'>
                 <strong className='font-bold'>学生数</strong> :{' '}
-                <Number>{33500}</Number>
+                <Number>{36024}</Number>
               </li>
               <li className='py-2'>
                 <strong className='font-bold'>専攻数</strong> :{' '}
@@ -64,70 +64,62 @@ export const BYUPage: FC<Props> = () => (
           </Pane>
         </SplitPane>
 
-        <p>
-          ワイキキから車で1時間ほどのノースショアの小さな町Laieにある大学です。
-          世界中70カ国以上から留学生が集い、
-          <ExternalLink href='https://about.byuh.edu/00000177-1ce4-d89c-af77-7df626210000/20-11-09-quickfactsupdate-pdf'>
-            約半数が留学生
-          </ExternalLink>
-          という国際色豊かな大学です。
-          日本人留学生も多く、常に100人は在学しています。
-        </p>
-      </Section>
-
-      <Section id='専攻と授業' className='clear-both'>
-        <SectionTitle id='専攻と授業'>専攻と授業</SectionTitle>
         <Pane>
-          <div className='inline space-y-4'>
+          <p>
+            BYUはBYUH、BYUIに比べ生徒数や専攻数が多く、キャンパスの規模もとても大きいです。生徒数の95.5％をアメリカ人が占めており、アジア人生徒の割合が全体の3%程度です。その中でも日本人は韓国人や中国人に比べ少ないです。
+            BYUはアメリカ国内でもトップを誇る魅力を持っており、
+            <ExternalLink href=' https://www.byu.edu/facts-figures'>
+              数々のランキング
+            </ExternalLink>
+            で上位に入っています。
+          </p>
+
+          <p>
+            以上のランキングは数ある中のごく一部ですが、他にもクロスカントリー優勝(2021)、フットボール全米11位
+            (2020)などスポーツでも活躍しています。
+          </p>
+        </Pane>
+
+        <SplitPane>
+          <Pane>
             <PhotoViewer
               className='mx-0 my-8 md:mr-8 md:float-left'
               colorClass='bg-byu'
               images={[
                 {
-                  src: '/byuh/byuh_class.jpg',
-                  alt: 'BYUH 授業風景',
+                  src: '/byu/byu_football.jpg',
+                  alt: 'BYU フットボール',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
               ]}
             />
-            <p>
-              <ExternalLink href='https://holokai.byuh.edu/programs-of-study'>
-                65のMajor(専攻)と60のMinor(副専攻)と13のCertificate(検定)
-              </ExternalLink>
-              の中から、<Mark>1つのMajorと2つのMinor/Certificate</Mark>
-              を取る必要があります。
-              ハワイならではの観光学、海洋生物学などもあります。
-              途中で専攻を変えることは自由ですが、
-              <ExternalLink href='https://catalog.byuh.edu/enrollment-policy'>
-                入学から4年以内に卒業しなければならない
-              </ExternalLink>
-              という決まりがあるため、頻繁に専攻を変えると卒業が難しくなるので注意が必要です(インターシップや伝道は考慮されます)。
-            </p>
-            <p>
-              <Mark>
-                留学生は初めはEIL(English as an International
-                Language)という英語のクラスを取らされ
-              </Mark>
-              、論文の書き方やプレゼンの仕方などの大学生活に必要な英語力を身に着けます(TOEFL
-              iBT80点以上の英語力を証明できればEILをスキップできますが、初めからそんなに英語ができる日本人はいないでしょう)。
-              <Mark>余裕があれば自分の興味のある授業を取ることができる</Mark>
-              のが、他の英語学校よりもおすすめできるポイントです。
-            </p>
-            <p>
-              <Mark>授業は小規模で10人~20人</Mark>
-              のクラスがほとんどのため、クラスメートと仲良くなりやすいです。
-              課題の量は日本の大学よりは多いですが、しっかり取り組めば週末は遊びに行く時間は確保できるでしょう。
-            </p>
-
-            <List title='日本人に人気の専攻'>
-              <Item>Accounting(会計学)</Item>
-              <Item>Business Management(経営学)</Item>
-              <Item>TESOL(英語が母国語ではない人への英語教育)</Item>
-              <Item>Elementary Education(小学校教育)</Item>
-              <Item>Music(音楽)</Item>
+          </Pane>
+          <Pane className='flex items-center'>
+            <List title='ランキング'>
+              <Item>
+                No.1: お金を費やす価値がある大学 (Wall Street Journal)
+              </Item>
+              <Item>
+                No.1: 最高のトレーニングを受けたビジネス学卒業生 (Bloomberg
+                Businessweek)
+              </Item>
+              <Item>
+                No.2: 会計修士号プログラム (U.S. News &amp; World Report)
+              </Item>
+              <Item>No.2: 優れた大学図書館 (The Princeton Review)</Item>
+              <Item>
+                No.3: 起業学修士号プログラム(Entrepreneur/Princeton Review)
+              </Item>
             </List>
-          </div>
+          </Pane>
+        </SplitPane>
+      </Section>
+
+      <Section id='専攻と授業' className='clear-both'>
+        <SectionTitle id='専攻と授業'>専攻と授業</SectionTitle>
+        <Pane>
+          <div className='inline space-y-4'>TBD</div>
         </Pane>
       </Section>
 
@@ -135,62 +127,78 @@ export const BYUPage: FC<Props> = () => (
         <SectionTitle id='衣住食'>衣住食</SectionTitle>
         <Pane>
           <div className='inline space-y-4'>
+            <p>
+              日本と違い全てにおいて規模が大きいアメリカでの生活となると車は必須なのでは？と思う方もいらっしゃると思います。もちろん車があることに越したことはないのですが、BYU生徒は電車やバスが無料で使えるのでお買い物や通学などにとても便利です。また、プロボから北の方へ走っている電車も無料で利用できるので、ソルトレレイクにも気軽に遊びに行くことができます。
+            </p>
+            <p>
+              また、日本の運転免許を持っておられる方は<Mark>ユタの免許</Mark>
+              への書き換えも簡単にできます。テキストブックを見ながら受けられるペーパーテストと簡単な実技テストを受けます。コストも5000円以下で安く済むので生活に慣れた頃、車を購入することを検討してみても良いかもしれません。
+            </p>
+            <p>
+              また、日本食などを取り扱っているアジアンマーケットがプロボにもあり日本食やお菓子など恋しくなっても心配なし。美味しいお寿司やラーメンが食べられるレストランもあります。
+            </p>
+          </div>
+        </Pane>
+      </Section>
+
+      <Section id='ユタライフ' className='clear-both'>
+        <SectionTitle id='ユタライフ'>ユタライフ</SectionTitle>
+        <Pane>
+          <div className='inline space-y-4'>
             <PhotoViewer
               className='mx-0 my-8 md:mr-8 md:float-left'
               colorClass='bg-byu'
               images={[
                 {
-                  src: '/byuh/byuh_dress_and_grooming.jpg',
-                  alt: 'BYUH 服装',
+                  src: '/byu/utah_state_capital_building.jpg',
+                  alt: 'ユタ州会議事堂',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
                 {
-                  src: '/byuh/byuh_housing.jpg',
-                  alt: 'BYUH 学生寮',
+                  src: '/byu/arches_national_park.jpg',
+                  alt: 'アーチーズ国立公園',
+                  layout: 'fill',
+                  objectFit: 'cover',
+                },
+                {
+                  src: '/byu/canyonlands_national_park.jpg',
+                  alt: 'キャニオンランズ国立公園',
+                  layout: 'fill',
+                  objectFit: 'cover',
+                },
+                {
+                  src: '/byu/salt_flats.jpg',
+                  alt: 'ソルトフラッツ',
+                  layout: 'fill',
+                  objectFit: 'cover',
+                },
+                {
+                  src: '/byu/ski_resort.jpg',
+                  alt: 'スキー場',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
               ]}
             />
             <p>
-              年間を通じて最高気温が25℃~30℃と常夏のため、服装は
-              <Mark>Tシャツに短パンにサンダル</Mark>という軽装の人が多いです。
-              しかし、図書館で冷房が効きすぎていたときや、夜の冷え込みに備えて長袖を用意しておいたほうが良いでしょう。
-              キャンパス内の移動は徒歩かスケートボードを使う人が多いです。
+              ユタはとても自然に恵まれており様々な楽しみ方があります。
+              春にはユタの州都市ソルトレイクで桜を楽しめます。日本にいなくても日本の春の風物詩をユタでも堪能できるのはとても嬉しいです。
+              暖かくなると、ハイキングやキャンプなどを楽しめる山がたくさんあります。キャンパス付近にもたくさんありますが、やはり
+              <ExternalLink href='https://www.nps.gov/state/ut/index.htm'>
+                ユタの国立公園
+              </ExternalLink>
+              も訪れたいものです。ブライスキャニオン、ザイオン、アーチーズナショナルパークなど壮大な自然が楽しめるのもユタの魅力です。他にもソルトフラッツやキャニオンなど見どころいっぱいです。
             </p>
             <p>
-              <ExternalLink href='https://residentiallife.byuh.edu/single-on-campus-housing-information'>
-                BYUHの規則
+              ユタは
+              <ExternalLink href='https://www.skiutah.com/'>
+                全米屈指のスキー場
               </ExternalLink>
-              では、新入生は
-              <Mark>初めの3学期はHaleと呼ばれる学生寮に住む</Mark>
-              ことになっています。
-              Haleは2人部屋になっていて、さらに3部屋6人で共用するキッチン、トイレ、シャワーがついています。
-              4学期目からはBYUHキャンパスの外(オフキャンパス)に部屋を借りることができます。
-              Haleでもオフキャンパスでもすぐ近くに友達がいるので、楽しく生活できる環境になっています。
-              結婚した夫婦はTemple View Apartment(TVA)に住むことができます。
+              が多々あり、プロボから車で一時間程で行ける場所もあります。日本のスキー場では味わえない最高な雪質の壮大なゲレンデを滑ればあなたもユタ好きになること間違いなし。
             </p>
             <p>
-              レストランなどの一部のアルバイトではまかないがつくところがありますが、食事は基本的にはBYUHのカフェテリアで済ませるか、自炊をするかの二択です。
-              カフェテリアには
-              <ExternalLink href='https://foodservices.byuh.edu/meal-plan'>
-                Meal Plan
-              </ExternalLink>
-              と呼ばれる1学期間有効なサブスクリプションが用意されていて、
-              プランによってカフェテリアに入れる曜日が決まっていたり、食事ができる回数が決まっていたりします。
-              <Mark>Haleに住む場合はMeal Planはほぼ必須</Mark>となっています。
-              自炊をする場合は、BYUHから徒歩10分の
-              <ExternalLink href='https://www.google.com/maps/place/Foodland+Laie/@21.6455179,-157.9251959,17z/data=!3m1!5s0x7c004566a0800ef3:0x1ce5d36423696c70!4m9!1m2!2m1!1sfoodland!3m5!1s0x0:0xd784d0a736efbefd!8m2!3d21.6470891!4d-157.9225214!15sCghmb29kbGFuZCIDiAEBWgoiCGZvb2RsYW5kkgELc3VwZXJtYXJrZXSaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUlZPVGxRY2xGbkVBRQ'>
-                Foodland
-              </ExternalLink>
-              で食材を調達できます。 ハワイということもあり、
-              <Mark>物価が高い</Mark>です。
-              日本食が恋しくなったときは、車かバスで片道1~2時間かけて
-              <ExternalLink href='https://www.google.com/maps/search/don+quijote/@21.3443858,-158.0008819,12z/data=!3m1!4b1'>
-                ドン・キホーテ
-              </ExternalLink>
-              まで行けば、大抵のものは揃います。
+              また、ユタには多くの神殿がありプロボ神殿はキャンパスからとても近いです。学校後や休みの日に気軽に神殿に訪れられるのもユタに住む方にとって大きな祝福に一つです。
             </p>
           </div>
         </Pane>
@@ -198,133 +206,16 @@ export const BYUPage: FC<Props> = () => (
 
       <Section id='クラブ' className='clear-both'>
         <SectionTitle id='クラブ'>クラブ</SectionTitle>
-        <Pane>
-          <div className='inline space-y-4'>
-            <PhotoViewer
-              className='mx-0 my-8 md:mr-8 md:float-left'
-              colorClass='bg-byu'
-              images={[
-                {
-                  src: '/byuh/byuh_culturenight.jpg',
-                  alt: 'BYUH クラブ カルチャーナイト',
-                  layout: 'fill',
-                  objectFit: 'cover',
-                },
-                {
-                  src: '/byuh/byuh_food_festa.jpg',
-                  alt: 'BYUH クラブ フードフェスタ',
-                  layout: 'fill',
-                  objectFit: 'cover',
-                },
-                {
-                  src: '/byuh/byuh_bbq.jpg',
-                  alt: 'BYUH クラブ バーベキュー',
-                  layout: 'fill',
-                  objectFit: 'cover',
-                },
-                {
-                  src: '/byuh/byuh_resume_workshop.jpg',
-                  alt: 'BYUH クラブ 企業研究会',
-                  layout: 'fill',
-                  objectFit: 'cover',
-                },
-              ]}
-            />
-            <p>
-              BYUHの学生クラブは<Mark>国ごとのクラブ</Mark>
-              が主になっています。
-              各国の食べ物を販売するフードフェスタや、ダンスなどのパフォーマンスをするカルチャーナイトは毎年開催され、各国のクラブが積極的に盛り上げます。
-              他の国のクラブに入れば、異なる文化を学ぶ良い経験になるでしょう。
-            </p>
-            <p>
-              もちろん日本人クラブ(
-              <ExternalLink href='https://www.facebook.com/groups/465567126808469'>
-                Japan Student Chapter
-              </ExternalLink>
-              )も活発に活動しています。
-              BBQやハロウィーンパーティーなどの楽しいアクティビティから、ゴスペルフォーラムや企業研究会などの真面目な活動まで、様々な活動がが開催されます。
-            </p>
-            <p>
-              BYUHのクラブは
-              <ExternalLink href='https://byuh.campuslabs.com/engage/organizations'>
-                BYUHのウェブサイト
-              </ExternalLink>
-              から確認できます。
-            </p>
-          </div>
-        </Pane>
+        <Pane>TBD</Pane>
       </Section>
 
       <Section id='アルバイト' className='clear-both'>
         <SectionTitle id='アルバイト'>アルバイト</SectionTitle>
         <Pane>
           <div className='inline space-y-4'>
-            <PhotoViewer
-              className='mx-0 my-8 md:mr-8 md:float-left'
-              colorClass='bg-byu'
-              images={[
-                {
-                  src: '/byuh/byuh_tour_guide.jpg',
-                  alt: 'BYUH アルバイト ツアーガイド',
-                  layout: 'fill',
-                  objectFit: 'cover',
-                },
-                {
-                  src: '/byuh/byuh_luau.jpg',
-                  alt: 'BYUH アルバイト レストラン',
-                  layout: 'fill',
-                  objectFit: 'cover',
-                },
-              ]}
-            />
             <p>
-              <ExternalLink href='https://hr.byuh.edu/student-employment'>
-                BYUHの規則
-              </ExternalLink>
-              では、 学校期間中は<Mark>週19時間まで</Mark>{' '}
-              、夏休みなどの休業期間には週40時間までアルバイトをすることができます。
-              留学生はビザの関係でキャンパス内でしか働くことができませんが、
-              BYUHでは隣接する
-              <ExternalLink href='https://www.polynesia.com'>
-                ポリネシアカルチャーセンター
-              </ExternalLink>
-              でも働くことができます。
+              ほとんどの生徒がアルバイトと学業を両立しています。日本人生徒に人気なのは、MTCで宣教師をトレーニングする教師、BYUで日本語を学ぶ外国人を教える日本語クラスのティーチングアシスタント、掃除の仕事などです。たくさんの仕事の機会を通して様々なスキルや経験を身につけ将来の職業へ生かしましょう。
             </p>
-
-            <p>
-              <ExternalLink href='https://labor.hawaii.gov/wsd/minimum-wage/'>
-                ハワイ州の最低賃金
-              </ExternalLink>
-              は<Mark>$10.10</Mark>で近年上昇傾向にあります。
-              キャンパス内のアルバイトでも最低賃金は保証されているため、目一杯働くと
-            </p>
-            <p className='text-center'>$10.10 x 19時間 x 4週間 = $767.6</p>
-            <p>
-              となり、ここから税金が引かれるものの家賃と食費程度の金額は手元に残るでしょう。
-            </p>
-
-            <p>
-              アルバイトでは英語を使うことになりますが、中には日本語を教えたり、日本人観光客を相手にしたりと日本語を使うものもあります。
-              英語力に不安のある学生でも雇ってもらえるアルバイトもあるので、興味のある人は積極的に挑戦してみてください。
-              学年が上がりスキルも付いてくると、自分の専攻に関連するような仕事にも挑戦できます。
-              BYUHのアルバイトのポジションには以下のようなものがあります。
-            </p>
-
-            <List title='ポリネシアカルチャーセンター'>
-              <Item>ショーのダンサー</Item>
-              <Item>マーケティングスタッフ</Item>
-              <Item>ツアーガイド</Item>
-              <Item>レストランのウェイター</Item>
-              <Item>売店の店員</Item>
-            </List>
-
-            <List title='BYUHキャンパス'>
-              <Item>会計監査補佐</Item>
-              <Item>大学広報部スタッフ</Item>
-              <Item>日本語チューター</Item>
-              <Item>カフェテリアのスタッフ</Item>
-              <Item>清掃スタッフ</Item>
-            </List>
           </div>
         </Pane>
       </Section>
@@ -333,28 +224,7 @@ export const BYUPage: FC<Props> = () => (
         <SectionTitle id='奨学金'>奨学金</SectionTitle>
         <Pane>
           <div className='inline space-y-4'>
-            <p>
-              BYUHには累計のGPA(アメリカの大学の4段階評価制度)次第で貰うことができる
-              <ExternalLink href='https://financialaid.byuh.edu/current-returning-student-scholarships'>
-                Merit Scholarship
-              </ExternalLink>
-              があります。
-              <Mark>GPAに応じて授業料の1/4~全額の奨学金が貰えます</Mark>
-              。貰うためには最低でもGPAが3.65必要ですが、努力すれば届く範囲なので、積極的に狙っていきましょう。
-              他にも
-              <ExternalLink href='https://financialaid.byuh.edu/scholarships'>
-                様々な奨学金制度
-              </ExternalLink>
-              がありますが、日本人が対象になるものは少ないです。
-            </p>
-            <p>
-              貧しい家族の学生のために
-              <ExternalLink href='https://financialaid.byuh.edu/iwork'>
-                IWORK
-              </ExternalLink>
-              という授業料、住居費等を大学が負担してくれる特別な奨学金制度もあります。
-              家族の収入が十分でないことを証明する必要があるため、本当に必要としている学生のための制度です。
-            </p>
+            <p>TBD</p>
           </div>
         </Pane>
       </Section>
