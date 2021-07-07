@@ -46,6 +46,6 @@ yarn format
 
 ## CI/CD
 
-- [Github Actions](https://github.com/features/actions) automatically check lint and build
+- [Github Actions](https://github.com/features/actions) automatically checks lint and build
 - [Vercel](https://vercel.com) automatically deploys each branch
-- [Renovate Bot](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) automatically update dependencies
+- [Renovate Bot](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) automatically updates dependencies
