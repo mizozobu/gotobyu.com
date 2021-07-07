@@ -51,11 +51,36 @@ jobs:
             ${{ runner.os }}-node_modules-
       - name: Install dependencies
         run: yarn install --frozen-lockfile --prefer-offline
-        if: steps.yarn-cache.outputs.cache-hit != 'true' ||
-          steps.node_modules-cache.outputs.cache-hit != 'true'
+        if: >
+          ${{
+            steps.yarn-cache.outputs.cache-hit != 'true' ||
+            steps.node_modules-cache.outputs.cache-hit != 'true'
+          }}
       - name: Lint
         run: yarn lint
       - name: Build
         run: yarn build
       - name: Build Storybook
         run: yarn build-storybook
+
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: build
+    if: >
+      ${{
+        (github.event_name == 'push' && github.ref == 'refs/heads/master') ||
+        (github.event_name == 'pull_request' && github.base_ref == 'master')
+      }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
