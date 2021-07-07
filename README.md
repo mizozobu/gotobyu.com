@@ -1,34 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BYUMS-Tokyo
+
+![CI](https://github.com/mizozobu/byums-tokyo/workflows/CI/badge.svg)
+[![renovate](https://img.shields.io/badge/renovate-enabled-%231A1F6C?logo=renovatebot)](https://app.renovatebot.com/dashboard#github/mizozobu/byums-tokyo)
+
+This is a website for BYU Management Society Tokyo Chapter.
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org)
+- [Tailwind CSS](https://tailwindcss.com)
 
 ## Getting Started
 
-First, run the development server:
+```sh
+# clone repo
+git clone git@github.com:mizozobu/byums-tokyo.git
+cd byums-tokyo
 
-```bash
-npm run dev
-# or
+# install dependencies
+yarn
+
+# start dev server
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Storhbook
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```sh
+yarn storybook
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Open [http://localhost:6006](http://localhost:6006) with your browser to see the storybook.
 
-## Learn More
+### Lint
 
-To learn more about Next.js, take a look at the following resources:
+```sh
+# check
+yarn lint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# format
+yarn format
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## CI/CD
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Github Actions](https://github.com/features/actions) automatically check lint and build
+- [Vercel](https://vercel.com) automatically deploys each branch
+- [Renovate Bot](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) automatically update dependencies
