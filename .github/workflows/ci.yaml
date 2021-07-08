@@ -78,9 +78,16 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo ${{ github.event_name }}
+      - run: echo ${{ github.ref }}
+      - run: echo ${{ github.base_ref }}
+      - run: echo ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+      - run: echo ${{ github.event_name == 'pull_request' && github.base_ref == 'master' }}
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
+        if: "!startsWith(github.ref, 'refs/heads/renovate/')"
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
+          vercel-args: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/master') && '--prod' || '' }}
