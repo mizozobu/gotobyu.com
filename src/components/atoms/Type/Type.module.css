@@ -1,0 +1,30 @@
+.type {
+  padding-right: var(--caret-width);
+  @apply relative;
+}
+
+.type::after {
+  top: 10%;
+  bottom: 10%;
+  width: var(--caret-width);
+  content: '';
+  @apply absolute;
+}
+
+.type.stopped::after {
+  animation: blink-caret 1s step-end infinite;
+}
+
+.type.typing::after {
+  background-color: black;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: black;
+  }
+}

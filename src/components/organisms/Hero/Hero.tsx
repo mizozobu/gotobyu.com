@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-html-link-for-pages, @next/next/no-img-element */
-import { useEffect, useState, FC } from 'react';
-import { Transition } from '@headlessui/react';
+/* eslint-disable @next/next/no-img-element */
+import { useState, FC } from 'react';
+import { Type } from '@c/atoms/Type';
 
 export interface Props {}
 
@@ -14,15 +14,9 @@ const texts = [
 export const Hero: FC<Props> = () => {
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent(-1);
-      setTimeout(() => {
-        setCurrent(current < texts.length - 1 ? current + 1 : 0);
-      }, 500);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [current]);
+  const handleBack = () => {
+    setCurrent(current < texts.length - 1 ? current + 1 : 0);
+  };
 
   return (
     <div className='relative bg-white overflow-hidden'>
@@ -40,49 +34,27 @@ export const Hero: FC<Props> = () => {
 
           <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16'>
             <div>
-              <h1 className='text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl'>
+              <h1 className='text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl h-80'>
                 <span className='block text-byu'>BYU</span>
                 <span className='block text-byuh'>BYUH</span>
                 <span className='block text-byui'>BYUI</span>
-                {texts.map((t, i) => (
-                  <Transition
-                    key={t}
-                    show={i === current}
-                    enter='transition-opacity duration-500'
-                    enterFrom='opacity-0'
-                    enterTo='opacity-100'
-                    leave='transition-opacity duration-500'
-                    leaveFrom='opacity-100'
-                    leaveTo='opacity-0'
+                <div className='h-48 overflow-hidden'>
+                  <Type
+                    caretWidth='5px'
+                    waitBeforeType={1000}
+                    waitAfterType={3000}
+                    onBack={handleBack}
                   >
-                    <span className='block xl:inline'>{t}</span>
-                  </Transition>
-                ))}
+                    {texts[current]}
+                  </Type>
+                </div>
               </h1>
-              <p className='mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0'>
+              <p className='mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 h-'>
                 私はBYUに行けるのか？行くメリットあるのか？私にあっているのか？
                 BYUのプロボ、ハワイ、とアイダホのキャンパスに違いがあるのか？
                 上記みたいな質問のお持ちの方のためにBYU卒業生が情報をまとめてみました！
                 入学まで、在学中、と卒業後に関する質問を答えてみましたので、ぜひ拝見ください。
               </p>
-              <div className='mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start'>
-                <div className='rounded-md shadow'>
-                  <a
-                    href='/'
-                    className='w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10'
-                  >
-                    Get started
-                  </a>
-                </div>
-                <div className='mt-3 sm:mt-0 sm:ml-3'>
-                  <a
-                    href='/'
-                    className='w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10'
-                  >
-                    Live demo
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
