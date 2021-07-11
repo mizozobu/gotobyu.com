@@ -10,8 +10,8 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => (
   <>
     <Title />
     <Head>
-      <link rel='icon' href='/favicon.ico' />
       <meta name='robots' content='noindex' />
+      <link rel='icon' href='/favicon.ico' />
     </Head>
     <Header />
     <Component {...pageProps} />
