@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { ExternalLink, Props } from './ExternalLink';
+import { InternalLink, Props } from './InternalLink';
 
 export default {
-  title: 'atoms/ExternalLink',
-  component: ExternalLink,
+  title: 'atoms/InternalLink',
+  component: InternalLink,
   argTypes: {},
 } as Meta;
 
-const Template: Story<Props> = (args) => <ExternalLink {...args} />;
+const Template: Story<Props> = (args) => <InternalLink {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
