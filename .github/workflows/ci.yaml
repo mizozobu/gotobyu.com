@@ -16,20 +16,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    strategy:
-      matrix:
-        node-version:
-          - '14'
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Get Node.js version from package.json
+        run: echo ::set-output name=nodeVersion::$(node -p "require('./package.json').engines.node")
+        id: get-node-version
+      - name: Use Node.js ${{ steps.get-node-version.outputs.nodeVersion }}
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ steps.get-node-version.outputs.nodeVersion }}
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
