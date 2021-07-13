@@ -4,6 +4,7 @@ import { Popover, Transition } from '@headlessui/react';
 import {
   AcademicCapIcon,
   BookOpenIcon,
+  HomeIcon,
   LoginIcon,
   MailOpenIcon,
   MenuIcon,
@@ -140,14 +141,8 @@ export const Header: FC<Props> = () => {
               <div className='flex justify-start lg:w-0 lg:flex-1'>
                 <Link href='/'>
                   <a>
-                    <span className='sr-only'>Workflow</span>
-                    <NextImage
-                      className='w-8 h-8 sm:w-10 sm:h-10'
-                      src='/byu.png'
-                      alt='BYU logo'
-                      layout='fill'
-                      objectFit='scale-down'
-                    />
+                    <span className='sr-only'>Home</span>
+                    <HomeIcon className='w-8 h-8 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500' />
                   </a>
                 </Link>
               </div>
