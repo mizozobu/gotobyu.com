@@ -55,6 +55,7 @@ jobs:
         uses: amondnet/vercel-action@v20
         if: "!startsWith(github.ref, 'refs/heads/renovate/')"
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
