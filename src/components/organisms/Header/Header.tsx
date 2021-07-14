@@ -92,15 +92,15 @@ const applyLinks = [
 const otherLinks = [
   {
     name: 'よくある質問',
-    description: 'よく聞かれる質問とそれに対する回答を確認する',
-    href: '/',
+    description: 'よく聞かれる質問とそれに対する回答',
+    href: '/faq',
     icon: QuestionMarkCircleIcon,
   },
   {
     name: '運営者について',
     description:
       'このサイトを運営するBYU Management Society Tokyo Chapterについて',
-    href: '/byu-ms-tokyo-chapter',
+    href: '/about',
     icon: UserGroupIcon,
   },
 ];
@@ -430,7 +430,7 @@ export const Header: FC<Props> = () => {
                           <a>
                             <button
                               type='button'
-                              className='-m-3 p-3 flex items-center rounded-md hover:bg-gray-50'
+                              className='-m-3 p-3 flex items-center rounded-md hover:bg-gray-50 text-left'
                               onClick={closeMobilePopOver}
                             >
                               <Icon
@@ -450,7 +450,7 @@ export const Header: FC<Props> = () => {
                             <a>
                               <button
                                 type='button'
-                                className='-m-3 p-3 flex items-center rounded-md hover:bg-gray-50'
+                                className='-m-3 p-3 flex items-center rounded-md hover:bg-gray-50 text-left'
                                 onClick={closeMobilePopOver}
                               >
                                 <Icon
@@ -468,7 +468,7 @@ export const Header: FC<Props> = () => {
                     </nav>
                   </div>
                 </div>
-                <hr className='mx-5' />
+                <hr className='px-5' />
                 <div className='py-6 px-5 space-y-6'>
                   <div className='grid grid-cols-2 gap-y-4 gap-x-8'>
                     {applyLinks.map(({ name, href, icon: Icon }) => (
@@ -476,11 +476,11 @@ export const Header: FC<Props> = () => {
                         <a>
                           <button
                             type='button'
-                            className='text-base font-medium text-gray-900 hover:text-gray-700'
+                            className='flex items-start text-base font-medium text-gray-900 hover:text-gray-700 text-left'
                             onClick={closeMobilePopOver}
                           >
                             <Icon
-                              className='inline h-5 w-5 mr-2 text-indigo-700'
+                              className='flex-shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
                               aria-hidden='true'
                             />
                             {name}
@@ -490,12 +490,18 @@ export const Header: FC<Props> = () => {
                     ))}
 
                     <Link href='/career'>
-                      <a className='text-base font-medium text-gray-900 hover:text-gray-700'>
-                        <OfficeBuildingIcon
-                          className='inline h-5 w-5 mr-2 text-indigo-700'
-                          aria-hidden='true'
-                        />
-                        キャリア
+                      <a>
+                        <button
+                          type='button'
+                          className='flex items-start text-base font-medium text-gray-900 hover:text-gray-700 text-left'
+                          onClick={closeMobilePopOver}
+                        >
+                          <OfficeBuildingIcon
+                            className='flex-shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
+                            aria-hidden='true'
+                          />
+                          キャリア
+                        </button>
                       </a>
                     </Link>
                     {otherLinks.map(({ name, href, icon: Icon }) => (
@@ -503,11 +509,11 @@ export const Header: FC<Props> = () => {
                         <a>
                           <button
                             type='button'
-                            className='text-base font-medium text-gray-900 hover:text-gray-700'
+                            className='flex items-start text-base font-medium text-gray-900 hover:text-gray-700 text-left'
                             onClick={closeMobilePopOver}
                           >
                             <Icon
-                              className='inline h-5 w-5 mr-2 text-indigo-700'
+                              className='flex-shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
                               aria-hidden='true'
                             />
                             {name}
