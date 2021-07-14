@@ -11,9 +11,7 @@ export const IndexPage: FC<Props> = () => (
     <Hero />
     <div className='py-8 sm:py-12 lg:py-16'>
       <div className='px-8 sm:px-12 lg:px-16 '>
-        <h2 className='tracking-tight font-extrabold text-gray-900 text-2xl sm:text-4xl'>
-          各学校について
-        </h2>
+        <h2 className='font-bold text-2xl sm:text-4xl'>各学校について</h2>
       </div>
       <div className='flex lg:justify-around py-8 sm:py-12 lg:py-16 h-full overflow-scroll'>
         <Link href='/byu'>

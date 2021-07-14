@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { PageTitle } from '@c/atoms/PageTitle';
 import { IncomeBarChart } from '@c/organisms/IncomeBarChart';
 import { InternSalaryPieChart } from '@c/organisms/InternSalaryPieChart';
 import { SplitPane } from '@c/atoms/SplitPane';
@@ -10,7 +11,7 @@ export interface Props {}
 const _ComparePage: FC<Props> = () => (
   <main>
     <div className='container mx-auto px-8 md:px-16 lg:px-32 my-8 space-y-12 md:space-y-24'>
-      <h1 className='text-5xl font-bold my-4'>就職</h1>
+      <PageTitle>就職</PageTitle>
 
       <section>
         <h2 className='text-4xl font-bold mb-8'>インターンシップ</h2>

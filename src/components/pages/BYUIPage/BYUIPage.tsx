@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
+import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
 import SectionTitle from '@c/atoms/SectionTitle';
 import { PhotoViewer } from '@c/molecules/PhotoViewer';
@@ -16,9 +17,7 @@ export interface Props {}
 export const BYUIPage: FC<Props> = () => (
   <main>
     <div className='container mx-auto px-8 md:px-16 lg:px-32 my-8 space-y-12 md:space-y-24'>
-      <h1 className='text-5xl font-bold my-4'>
-        Brigham Young University - Idaho
-      </h1>
+      <PageTitle>Brigham Young University - Idaho</PageTitle>
 
       <Section id='概要' className='clear-both'>
         <SectionTitle id='概要'>概要</SectionTitle>
