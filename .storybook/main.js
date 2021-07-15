@@ -22,6 +22,7 @@ module.exports = {
     config.resolve.alias = {
       '~': resolve(__dirname, '..', 'src'),
       '@c': resolve(__dirname, '..', 'src', 'components'),
+      '@p': resolve(__dirname, '..', 'public'),
     };
 
     return config;

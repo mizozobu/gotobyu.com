@@ -11,6 +11,16 @@ import { Mark } from '@c/atoms/Mark';
 import { List } from '@c/atoms/List';
 import { Item } from '@c/atoms/Item';
 import { NextImage } from '@c/atoms/NextImage';
+import byuhLogoImage from '@p/byuh.png';
+import byuhBbqImage from '@p/byuh/byuh_bbq.jpg';
+import byuhClassImage from '@p/byuh/byuh_class.jpg';
+import byuhCultureNightImage from '@p/byuh/byuh_culturenight.jpg';
+import byuhDressAndGroomingImage from '@p/byuh/byuh_dress_and_grooming.jpg';
+import byuhFoodFestaImage from '@p/byuh/byuh_food_festa.jpg';
+import byuhHousing from '@p/byuh/byuh_housing.jpg';
+import byuhLuauImage from '@p/byuh/byuh_luau.jpg';
+import byuhResumeWorkshopImage from '@p/byuh/byuh_resume_workshop.jpg';
+import byuhTourGuideImage from '@p/byuh/byuh_tour_guide.jpg';
 
 export interface Props {}
 
@@ -25,8 +35,9 @@ export const BYUHPage: FC<Props> = () => (
           <Pane>
             <NextImage
               className='h-80'
-              src='/byuh.png'
+              src={byuhLogoImage}
               alt='BYUH Logo'
+              placeholder='blur'
               layout='fill'
               objectFit='scale-down'
             />
@@ -76,11 +87,12 @@ export const BYUHPage: FC<Props> = () => (
           <div className='inline space-y-4'>
             <PhotoViewer
               className='mx-0 my-8 md:mr-8 md:float-left'
-              colorClass='bg-byuh'
+              colorClass='bg-gradient-to-br from-byuh to-byuh-dark'
               images={[
                 {
-                  src: '/byuh/byuh_class.jpg',
+                  src: byuhClassImage,
                   alt: 'BYUH 授業風景',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
@@ -132,17 +144,19 @@ export const BYUHPage: FC<Props> = () => (
           <div className='inline space-y-4'>
             <PhotoViewer
               className='mx-0 my-8 md:mr-8 md:float-left'
-              colorClass='bg-byuh'
+              colorClass='bg-gradient-to-br from-byuh to-byuh-dark'
               images={[
                 {
-                  src: '/byuh/byuh_dress_and_grooming.jpg',
+                  src: byuhDressAndGroomingImage,
                   alt: 'BYUH 服装',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
                 {
-                  src: '/byuh/byuh_housing.jpg',
+                  src: byuhHousing,
                   alt: 'BYUH 学生寮',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
@@ -204,29 +218,33 @@ export const BYUHPage: FC<Props> = () => (
           <div className='inline space-y-4'>
             <PhotoViewer
               className='mx-0 my-8 md:mr-8 md:float-left'
-              colorClass='bg-byuh'
+              colorClass='bg-gradient-to-br from-byuh to-byuh-dark'
               images={[
                 {
-                  src: '/byuh/byuh_culturenight.jpg',
+                  src: byuhCultureNightImage,
                   alt: 'BYUH クラブ カルチャーナイト',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
                 {
-                  src: '/byuh/byuh_food_festa.jpg',
+                  src: byuhFoodFestaImage,
                   alt: 'BYUH クラブ フードフェスタ',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
                 {
-                  src: '/byuh/byuh_bbq.jpg',
+                  src: byuhBbqImage,
                   alt: 'BYUH クラブ バーベキュー',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
                 {
-                  src: '/byuh/byuh_resume_workshop.jpg',
+                  src: byuhResumeWorkshopImage,
                   alt: 'BYUH クラブ 企業研究会',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
@@ -263,17 +281,19 @@ export const BYUHPage: FC<Props> = () => (
           <div className='inline space-y-4'>
             <PhotoViewer
               className='mx-0 my-8 md:mr-8 md:float-left'
-              colorClass='bg-byuh'
+              colorClass='bg-gradient-to-br from-byuh to-byuh-dark'
               images={[
                 {
-                  src: '/byuh/byuh_tour_guide.jpg',
+                  src: byuhTourGuideImage,
                   alt: 'BYUH アルバイト ツアーガイド',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
                 {
-                  src: '/byuh/byuh_luau.jpg',
+                  src: byuhLuauImage,
                   alt: 'BYUH アルバイト レストラン',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },

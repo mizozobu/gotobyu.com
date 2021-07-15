@@ -1,6 +1,7 @@
 import { useState, FC } from 'react';
 import { Type } from '@c/atoms/Type';
 import { NextImage } from '@c/atoms/NextImage';
+import heroImage from '@p/hero.jpeg';
 
 export interface Props {}
 
@@ -68,8 +69,9 @@ export const Hero: FC<Props> = () => {
           </svg>
           <NextImage
             className='object-cover sm:h-72 md:h-96 lg:w-full lg:h-full'
-            src='/hero.jpeg'
-            alt=''
+            src={heroImage}
+            alt='hero image'
+            placeholder='blur'
             layout='fill'
             objectFit='cover'
           />

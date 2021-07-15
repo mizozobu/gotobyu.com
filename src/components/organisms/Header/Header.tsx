@@ -16,6 +16,9 @@ import {
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { NextImage } from '@c/atoms/NextImage';
+import byuLogoImage from '@p/byu.png';
+import byuhLogoImage from '@p/byuh.png';
+import byuiLogoImage from '@p/byui.png';
 import styles from './Header.module.css';
 
 export interface Props {}
@@ -28,8 +31,9 @@ const schoolLinks = [
     icon: ({ className }: { className: string }) => (
       <NextImage
         className={className}
-        src='/byu.png'
+        src={byuLogoImage}
         alt='BYU logo'
+        placeholder='blur'
         layout='fill'
         objectFit='cover'
       />
@@ -42,8 +46,9 @@ const schoolLinks = [
     icon: ({ className }: { className: string }) => (
       <NextImage
         className={className}
-        src='/byuh.png'
+        src={byuhLogoImage}
         alt='BYUH logo'
+        placeholder='blur'
         layout='fill'
         objectFit='cover'
       />
@@ -56,8 +61,9 @@ const schoolLinks = [
     icon: ({ className }: { className: string }) => (
       <NextImage
         className={className}
-        src='/byui.png'
+        src={byuiLogoImage}
         alt='BYUI logo'
+        placeholder='blur'
         layout='fill'
         objectFit='cover'
       />
@@ -408,14 +414,7 @@ export const Header: FC<Props> = () => {
             >
               <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white'>
                 <div className='pt-5 pb-6 px-5'>
-                  <div className='flex items-center justify-between'>
-                    <NextImage
-                      className='w-8 h-8'
-                      src='/byu.png'
-                      alt='BYU logo'
-                      layout='fill'
-                      objectFit='scale-down'
-                    />
+                  <div className='flex items-center justify-end'>
                     <div className='-mr-2'>
                       <Popover.Button className='bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'>
                         <span className='sr-only'>Close menu</span>
@@ -423,7 +422,7 @@ export const Header: FC<Props> = () => {
                       </Popover.Button>
                     </div>
                   </div>
-                  <div className='mt-6'>
+                  <div>
                     <nav className='grid gap-y-8'>
                       {schoolLinks.map(({ name, href, icon: Icon }) => (
                         <Link key={name} href={href}>

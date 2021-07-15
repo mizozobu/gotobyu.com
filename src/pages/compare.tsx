@@ -7,6 +7,9 @@ import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
 import { Mark } from '@c/atoms/Mark';
 import { NextImage } from '@c/atoms/NextImage';
+import byuLogoImage from '@p/byu.png';
+import byuhLogoImage from '@p/byuh.png';
+import byuiLogoImage from '@p/byui.png';
 
 export interface Props {}
 
@@ -74,8 +77,9 @@ const _ComparePage: FC<Props> = () => (
                 <th scope='col'>
                   <NextImage
                     className='h-full p-4'
-                    src='/byu.png'
+                    src={byuLogoImage}
                     alt='BYU Logo'
+                    placeholder='blur'
                     layout='fill'
                     objectFit='scale-down'
                   />
@@ -84,8 +88,9 @@ const _ComparePage: FC<Props> = () => (
                 <th scope='col'>
                   <NextImage
                     className='h-full p-4'
-                    src='/byuh.png'
+                    src={byuhLogoImage}
                     alt='BYUH Logo'
+                    placeholder='blur'
                     layout='fill'
                     objectFit='scale-down'
                   />
@@ -94,8 +99,9 @@ const _ComparePage: FC<Props> = () => (
                 <th scope='col'>
                   <NextImage
                     className='h-full p-4'
-                    src='/byui.png'
+                    src={byuiLogoImage}
                     alt='BYUI Logo'
+                    placeholder='blur'
                     layout='fill'
                     objectFit='scale-down'
                   />

@@ -1,6 +1,9 @@
 import { FC } from 'react';
 import { Table } from '@c/atoms/Table';
 import { NextImage } from '@c/atoms/NextImage';
+import byuLogoImage from '@p/byu.png';
+import byuhLogoImage from '@p/byuh.png';
+import byuiLogoImage from '@p/byui.png';
 import styels from './EnglishRequirementTable.module.css';
 
 export interface Props {
@@ -46,8 +49,9 @@ export const EnglishRequirementTable: FC<Props> = ({ data }: Props) => (
         <th scope='row'>
           <NextImage
             className='h-full p-4 inline mr-4'
-            src='/byu.png'
+            src={byuLogoImage}
             alt='BYU Logo'
+            placeholder='blur'
             layout='fill'
             objectFit='scale-down'
           />
@@ -63,8 +67,9 @@ export const EnglishRequirementTable: FC<Props> = ({ data }: Props) => (
         <th scope='row'>
           <NextImage
             className='h-full p-4 inline mr-4'
-            src='/byuh.png'
+            src={byuhLogoImage}
             alt='BYUH Logo'
+            placeholder='blur'
             layout='fill'
             objectFit='scale-down'
           />
@@ -80,8 +85,9 @@ export const EnglishRequirementTable: FC<Props> = ({ data }: Props) => (
         <th scope='row' className='px-24'>
           <NextImage
             className='h-full p-4 inline mr-4'
-            src='/byui.png'
+            src={byuiLogoImage}
             alt='BYUI Logo'
+            placeholder='blur'
             layout='fill'
             objectFit='scale-down'
           />

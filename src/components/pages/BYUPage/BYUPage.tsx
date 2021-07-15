@@ -11,6 +11,13 @@ import { Mark } from '@c/atoms/Mark';
 import { List } from '@c/atoms/List';
 import { Item } from '@c/atoms/Item';
 import { NextImage } from '@c/atoms/NextImage';
+import byuLogoImage from '@p/byu.png';
+import archesNationalParkImage from '@p/byu/arches_national_park.jpg';
+import byuFootballImage from '@p/byu/byu_football.jpg';
+import canyonLandsNationalParkImage from '@p/byu/canyonlands_national_park.jpg';
+import saltFlatsImage from '@p/byu/salt_flats.jpg';
+import skiResortImage from '@p/byu/ski_resort.jpg';
+import utahStateCapitalBuilding from '@p/byu/utah_state_capital_building.jpg';
 
 export interface Props {}
 
@@ -25,8 +32,9 @@ export const BYUPage: FC<Props> = () => (
           <Pane>
             <NextImage
               className='h-80'
-              src='/byu.png'
+              src={byuLogoImage}
               alt='BYU Logo'
+              placeholder='blur'
               layout='fill'
               objectFit='scale-down'
             />
@@ -85,11 +93,12 @@ export const BYUPage: FC<Props> = () => (
           <Pane>
             <PhotoViewer
               className='mx-0 my-8 md:mr-8 md:float-left'
-              colorClass='bg-byu'
+              colorClass='bg-gradient-to-br from-byu to-byu-dark'
               images={[
                 {
-                  src: '/byu/byu_football.jpg',
+                  src: byuFootballImage,
                   alt: 'BYU フットボール',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
@@ -148,35 +157,40 @@ export const BYUPage: FC<Props> = () => (
           <div className='inline space-y-4'>
             <PhotoViewer
               className='mx-0 my-8 md:mr-8 md:float-left'
-              colorClass='bg-byu'
+              colorClass='bg-gradient-to-br from-byu to-byu-dark'
               images={[
                 {
-                  src: '/byu/utah_state_capital_building.jpg',
+                  src: utahStateCapitalBuilding,
                   alt: 'ユタ州会議事堂',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
                 {
-                  src: '/byu/arches_national_park.jpg',
+                  src: archesNationalParkImage,
                   alt: 'アーチーズ国立公園',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
                 {
-                  src: '/byu/canyonlands_national_park.jpg',
+                  src: canyonLandsNationalParkImage,
                   alt: 'キャニオンランズ国立公園',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
                 {
-                  src: '/byu/salt_flats.jpg',
+                  src: saltFlatsImage,
                   alt: 'ソルトフラッツ',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },
                 {
-                  src: '/byu/ski_resort.jpg',
+                  src: skiResortImage,
                   alt: 'スキー場',
+                  placeholder: 'blur',
                   layout: 'fill',
                   objectFit: 'cover',
                 },

@@ -16,6 +16,9 @@ import { EikenTable } from '@c/organisms/EikenTable';
 import { BYUDeadlineTable } from '@c/organisms/BYUDeadlineTable';
 import { BYUHDeadlineTable } from '@c/organisms/BYUHDeadlineTable';
 import { BYUIDeadlineTable } from '@c/organisms/BYUIDeadlineTable';
+import byuLogoImage from '@p/byu.png';
+import byuhLogoImage from '@p/byuh.png';
+import byuiLogoImage from '@p/byui.png';
 
 export interface Props {}
 
@@ -50,8 +53,9 @@ export const ApplyPage: FC<Props> = () => (
               >
                 <NextImage
                   className='hidden md:block w-8 h-8 mr-8'
-                  src='/byu.png'
+                  src={byuLogoImage}
                   alt='BYU Logo'
+                  placeholder='blur'
                   layout='fill'
                   objectFit='scale-down'
                 />
@@ -63,8 +67,9 @@ export const ApplyPage: FC<Props> = () => (
               >
                 <NextImage
                   className='hidden md:block w-8 h-8 mr-8'
-                  src='/byuh.png'
+                  src={byuhLogoImage}
                   alt='BYUH Logo'
+                  placeholder='blur'
                   layout='fill'
                   objectFit='scale-down'
                 />
@@ -76,8 +81,9 @@ export const ApplyPage: FC<Props> = () => (
               >
                 <NextImage
                   className='hidden md:block w-8 h-8 mr-8'
-                  src='/byui.png'
+                  src={byuiLogoImage}
                   alt='BYUI Logo'
+                  placeholder='blur'
                   layout='fill'
                   objectFit='scale-down'
                 />
