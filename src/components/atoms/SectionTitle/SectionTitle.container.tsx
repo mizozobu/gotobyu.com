@@ -14,24 +14,21 @@ const SectionTitleContainer: FC<Props> = ({ id, ...props }: Props) => {
   const router = useRouter();
   const ref = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {
+  const handleClick = () => {
     const [, h] = router.asPath.split('#');
     setHash(decodeURIComponent(h));
     void navigator.clipboard.writeText(decodeHash(window.location.href));
-  }, [router.asPath]);
+  };
 
-  useEffect(() => {
-    const h = decodeURIComponent(router.asPath.split('#')[1]);
-
-    if (id === h) {
-      setTimeout(() => {
-        ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 300);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  return <SectionTitle {...props} id={id} ref={ref} active={hash === id} />;
+  return (
+    <SectionTitle
+      {...props}
+      id={id}
+      ref={ref}
+      active={hash === id}
+      onClick={handleClick}
+    />
+  );
 };
 
 export default SectionTitleContainer;
