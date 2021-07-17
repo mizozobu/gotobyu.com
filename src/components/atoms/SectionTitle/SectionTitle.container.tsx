@@ -1,33 +1,27 @@
-import { useEffect, useState, useRef, FC } from 'react';
+import { useEffect, useState, FC } from 'react';
 import { useRouter } from 'next/router';
 import { SectionTitle, Props as SectionTitleProps } from './SectionTitle';
 
 export interface Props extends Omit<SectionTitleProps, 'active'> {}
 
-const decodeHash = (url: string) => {
-  const [p, h] = url.split('#');
-  return `${p}${h ? `#${decodeURIComponent(h)}` : ''}`;
-};
-
 const SectionTitleContainer: FC<Props> = ({ id, ...props }: Props) => {
-  const [hash, setHash] = useState('');
+  const [active, setActive] = useState(false);
   const router = useRouter();
-  const ref = useRef<HTMLHeadingElement>(null);
+  const [, hash] = router.asPath.split('#');
+
+  useEffect(() => {
+    setActive(decodeURIComponent(hash) === id);
+  }, [hash, id]);
 
   const handleClick = () => {
-    const [, h] = router.asPath.split('#');
-    setHash(decodeURIComponent(h));
-    void navigator.clipboard.writeText(decodeHash(window.location.href));
+    if (navigator.clipboard && window.isSecureContext) {
+      const { origin, pathname } = window.location;
+      void navigator.clipboard.writeText(`${origin}${pathname}#${id}`);
+    }
   };
 
   return (
-    <SectionTitle
-      {...props}
-      id={id}
-      ref={ref}
-      active={hash === id}
-      onClick={handleClick}
-    />
+    <SectionTitle {...props} id={id} active={active} onClick={handleClick} />
   );
 };
 
