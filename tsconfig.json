@@ -17,7 +17,8 @@
     "paths": {
       "~/*": ["src/*"],
       "@c/*": ["src/components/*"],
-      "@p/*": ["public/*"]
+      "@p/*": ["public/*"],
+      "@l/*": ["src/lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
