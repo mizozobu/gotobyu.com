@@ -21,7 +21,9 @@ import byuhLogoImage from '@p/byuh.png';
 import byuiLogoImage from '@p/byui.png';
 import styles from './Header.module.css';
 
-export interface Props {}
+export interface Props {
+  loading: boolean;
+}
 
 const schoolLinks = [
   {
@@ -114,7 +116,7 @@ const otherLinks = [
 const classNames = (...classes: (string | undefined)[]) =>
   classes.filter(Boolean).join(' ');
 
-export const Header: FC<Props> = () => {
+export const Header: FC<Props> = ({ loading }: Props) => {
   // workaround to close popover
   // see https://github.com/tailwindlabs/headlessui/issues/427
   const mobilePopoverRef = useRef<HTMLButtonElement>(null);
@@ -139,7 +141,11 @@ export const Header: FC<Props> = () => {
   };
 
   return (
-    <Popover className={`relative bg-white mb-1 ${styles.header}`}>
+    <Popover
+      className={`relative bg-white mb-1 ${styles.header} ${
+        loading ? styles.loading : styles.loaded
+      }`}
+    >
       {({ open: openMobilePopover }) => (
         <>
           <div className='max-w-7xl mx-auto px-4 sm:px-6'>

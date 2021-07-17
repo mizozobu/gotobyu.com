@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Footer } from '@c/organisms/Footer';
-import { Header } from '@c/organisms/Header';
+import Header from '@c/organisms/Header';
 import { Title } from '@c/atoms/Title';
 import '../styles/globals.css';
 
