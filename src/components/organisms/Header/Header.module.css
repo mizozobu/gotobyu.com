@@ -1,9 +1,9 @@
 .header::before {
   position: absolute;
   top: 100%;
+  right: 0;
   bottom: -0.25rem;
   left: 0;
-  right: 0;
   content: '';
 }
 
@@ -15,7 +15,6 @@
     theme('colors.indigo.900') 50%,
     theme('colors.indigo.50') 60%
   );
-
   background-size: 300%;
   animation: loading 0.5s linear infinite;
 }

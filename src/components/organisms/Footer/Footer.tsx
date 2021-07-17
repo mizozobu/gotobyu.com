@@ -7,7 +7,7 @@ import styles from './Footer.module.css';
 export interface Props {}
 
 export const Footer: FC<Props> = () => (
-  <footer className='flex flex-col items-center p-8 sm:p-12 lg:p-16 bg-gray-800 text-white'>
+  <footer className='flex flex-col items-center p-8 sm:p-12 lg:p-16 bg-indigo-900 text-white'>
     <div>
       <p>BYU Management Society Tokyo Chapter</p>
       <div className='flex justify-around mt-8'>
