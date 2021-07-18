@@ -142,7 +142,7 @@ export const Header: FC<Props> = ({ loading }: Props) => {
 
   return (
     <Popover
-      className={`sticky top-0 bg-white mb-1 z-10	${styles.header} ${
+      className={`sticky top-0 bg-white mb-1 z-20	${styles.header} ${
         loading ? styles.loading : styles.loaded
       }`}
     >
