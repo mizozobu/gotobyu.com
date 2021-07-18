@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Container } from '@c/atoms/Container';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Table } from '@c/atoms/Table';
 import { TableCaption } from '@c/atoms/TableCaption';
@@ -40,7 +41,7 @@ const data = {
 // eslint-disable-next-line no-underscore-dangle
 const _ComparePage: FC<Props> = () => (
   <main>
-    <div className='container mx-auto px-8 md:px-16 lg:px-32 my-8 space-y-12 md:space-y-24'>
+    <Container>
       <PageTitle>BYU、BYUH、BYUI比較</PageTitle>
 
       <section>
@@ -167,7 +168,7 @@ const _ComparePage: FC<Props> = () => (
           </Table>
         </Pane>
       </section>
-    </div>
+    </Container>
   </main>
 );
 

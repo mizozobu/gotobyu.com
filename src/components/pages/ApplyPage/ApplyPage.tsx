@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Container } from '@c/atoms/Container';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
 import { PageTitle } from '@c/atoms/PageTitle';
@@ -24,7 +25,7 @@ export interface Props {}
 
 export const ApplyPage: FC<Props> = () => (
   <main>
-    <div className='container mx-auto px-8 md:px-16 lg:px-32 my-8 space-y-12 md:space-y-24'>
+    <Container>
       <PageTitle>入学手続き</PageTitle>
 
       <Section id='申込方法' className='clear-both'>
@@ -384,6 +385,6 @@ export const ApplyPage: FC<Props> = () => (
           <p>TBD</p>
         </Pane>
       </Section>
-    </div>
+    </Container>
   </main>
 );

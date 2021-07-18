@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Container } from '@c/atoms/Container';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
 import { InternalLink } from '@c/atoms/InternalLink';
@@ -13,7 +14,7 @@ export interface Props {}
 
 export const LearnEnglishPage: FC<Props> = () => (
   <main>
-    <div className='container mx-auto px-8 md:px-16 lg:px-32 my-8 space-y-12 md:space-y-24'>
+    <Container>
       <PageTitle>英語の勉強方法</PageTitle>
 
       <Section id='必要な英語力' className='clear-both'>
@@ -141,6 +142,6 @@ export const LearnEnglishPage: FC<Props> = () => (
           </div>
         </Pane>
       </Section>
-    </div>
+    </Container>
   </main>
 );
