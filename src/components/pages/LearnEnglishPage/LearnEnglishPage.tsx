@@ -72,53 +72,62 @@ export const LearnEnglishPage: FC<Props> = () => (
             英語に慣れるための選択肢の1つが英語学校に通うことです。BYU、BYUH、BYUIを目指す人が行くことが多い英語学校を紹介します。
           </p>
 
-          <div className='md:ml-8 space-y-16'>
+          <div className='md:ml-8 space-y-8'>
             <div>
-              <h3 className='mb-4 text-xl font-bold'>
-                <ExternalLink href='https://www.mikunijapan.org'>
-                  みくに国際学園
-                </ExternalLink>
-              </h3>
+              <h3 className='mb-4 text-xl font-bold'>みくに国際学園</h3>
               <p>
                 元BYU教授によって設立された英語学校です。
                 新潟県南魚沼郡湯沢町で英語だけで共同生活をしながら英語を学びます。
                 オンラインのコースも用意されています。
+                みくに国際学園について詳しくは
+                <ExternalLink href='https://www.mikunijapan.org'>
+                  こちら
+                </ExternalLink>
+                から。
               </p>
             </div>
 
             <div>
               <h3 className='mb-4 text-xl font-bold'>
-                <ExternalLink href='https://elc.byu.edu/home/program-description-japanese/'>
-                  English Language Center(ELC)
-                </ExternalLink>
+                English Language Center(ELC)
               </h3>
               <p>
                 BYUが運営する英語学校です。
                 BYUのTESOLの大学院生もしくは大学院卒業生が英語を教えます。
                 ELCの生徒はBYUの施設を一部使用できますが、BYUの生徒ではありません。
+                ELCについて詳しくは
+                <ExternalLink href='https://elc.byu.edu/home/program-description-japanese/'>
+                  こちら
+                </ExternalLink>
+                から。
               </p>
             </div>
 
             <div>
               <h3 className='mb-4 text-xl font-bold'>
-                <ExternalLink href='https://elc.byu.edu/home/program-description-japanese/'>
-                  Selnate International School
-                </ExternalLink>
+                Selnate International School
               </h3>
-              <p>BYUの近くにある英語学校です。 BYUとは提携していません。</p>
+              <p>
+                BYUの近くにある英語学校です。
+                BYUとは提携していません。セレネートについて詳しくは
+                <ExternalLink href='https://elc.byu.edu/home/program-description-japanese/'>
+                  こちら
+                </ExternalLink>
+                から。
+              </p>
             </div>
 
             <div>
               <h3 className='mb-4 text-xl font-bold'>
-                <ExternalLink href='https://www.byuh.edu'>
-                  Brigham Young University–Hawaii
-                </ExternalLink>
+                Brigham Young University–Hawaii
               </h3>
               <p>
                 BYUHは英語学校ではありませんが、英検で入学ができることと、English
                 as an International
                 Language(EIL)という留学生向けの英語のクラスがあることを考えると、英語学校を内包した大学と言えるでしょう。
                 初めのうちははEILクラスを多めに取り、徐々に普通科目を増やしていくという流れになっています。
+              </p>
+              <p>
                 BYUHについて詳しくは
                 <InternalLink
                   href='/byuh'
@@ -126,7 +135,7 @@ export const LearnEnglishPage: FC<Props> = () => (
                 >
                   こちら
                 </InternalLink>
-                。
+                から。
               </p>
             </div>
           </div>
