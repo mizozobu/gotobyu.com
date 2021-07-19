@@ -15,7 +15,7 @@ export const SectionTitle = forwardRef<HTMLHeadingElement, Props>(
         <h2
           {...props}
           ref={ref}
-          className={`inline-block text-2xl md:text-4xl font-bold  ${className}`}
+          className={`inline-block text-2xl md:text-4xl font-bold ${className}`}
         >
           <span
             className={`cursor-pointer ${
