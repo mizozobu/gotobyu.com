@@ -30,6 +30,6 @@ export const BarChart: FC<Props> = ({
 }: Props) => (
   <div {...props}>
     {/* prop types are any until https://github.com/reactchartjs/react-chartjs-2/issues/687 is merged */}
-    <Bar type='bar' data={data} options={options} />
+    <Bar data={data} options={options} />
   </div>
 );
