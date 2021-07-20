@@ -43,7 +43,7 @@ export const PieChart: FC<Props> = ({
 
   return (
     <div {...props}>
-      <Pie type='pie' data={data} options={options} />
+      <Pie data={data} options={options} />
     </div>
   );
 };
