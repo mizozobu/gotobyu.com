@@ -4,7 +4,6 @@ import { Popover, Transition } from '@headlessui/react';
 import {
   AcademicCapIcon,
   BookOpenIcon,
-  HomeIcon,
   LoginIcon,
   MailOpenIcon,
   MenuIcon,
@@ -15,6 +14,7 @@ import {
   XIcon,
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
+import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
 import { NextImage } from '@c/atoms/NextImage';
 import byuLogoImage from '@p/byu.png';
 import byuhLogoImage from '@p/byuh.png';
@@ -148,13 +148,13 @@ export const Header: FC<Props> = ({ loading }: Props) => {
     >
       {({ open: openMobilePopover }) => (
         <>
-          <div className='max-w-7xl mx-auto px-4 sm:px-6'>
+          <div className='px-4 sm:px-6 lg:mx-24'>
             <div className='relative flex items-center justify-between h-16'>
               <div className='flex justify-start lg:w-0 lg:flex-1'>
                 <Link href='/'>
                   <a>
                     <span className='sr-only'>Home</span>
-                    <HomeIcon className='w-8 h-8 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500' />
+                    <CirculatingCircles className='w-8 h-8' />
                   </a>
                 </Link>
               </div>

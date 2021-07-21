@@ -118,7 +118,7 @@ export const CareerPage: FC<Props> = () => (
           </Pane>
         </SplitPane>
 
-        <SplitPane className='space-y-4'>
+        <SplitPane className='space-y-4 md:space-y-0'>
           <Pane>
             <List title='日本'>
               <Item>Apple</Item>
