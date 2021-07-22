@@ -1,0 +1,32 @@
+.byui {
+  animation: circular-move 2400ms linear infinite normal forwards;
+}
+
+.byuh {
+  animation: circular-move 2400ms linear infinite normal forwards;
+}
+
+.byu {
+  animation: circular-move 2400ms linear infinite normal forwards;
+}
+
+@keyframes circular-move {
+  0% {
+    offset-distance: 0%;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  33.333333% {
+    offset-distance: 33.333333%;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  66.666667% {
+    offset-distance: 66.666667%;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  100% {
+    offset-distance: 100%;
+  }
+}

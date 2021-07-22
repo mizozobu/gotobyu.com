@@ -42,7 +42,7 @@ export const Hero: FC<Props> = () => {
         </p>
       </div>
       <div className='hidden lg:flex items-center justify-center max-w-4xl'>
-        <CirculatingCircles className='max-w-3xl' animated />
+        <CirculatingCircles className='max-w-md' animated />
       </div>
     </div>
   );
