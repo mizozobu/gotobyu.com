@@ -10,7 +10,7 @@ import byuiLogoImage from '@p/byui.png';
 export interface Props {}
 
 export const IndexPage: FC<Props> = () => (
-  <main>
+  <>
     <Hero />
     <div className='py-8 sm:py-12 lg:py-16'>
       <div className='px-8 sm:px-12 lg:px-16 '>
@@ -70,5 +70,5 @@ export const IndexPage: FC<Props> = () => (
         </Link>
       </div>
     </div>
-  </main>
+  </>
 );

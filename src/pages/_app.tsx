@@ -23,8 +23,13 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
         <meta name='robots' content='noindex' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      <a href='#maincontent' className='sr-only'>
+        Skip to main content
+      </a>
       <Header />
-      <Component {...pageProps} />
+      <main id='maincontent'>
+        <Component {...pageProps} />
+      </main>
       <Footer />
     </>
   );
