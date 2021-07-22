@@ -1,8 +1,8 @@
-import { useState, FC } from 'react';
+import { useState, FC, HTMLAttributes } from 'react';
 import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
 import { Type } from '@c/atoms/Type';
 
-export interface Props {}
+export interface Props extends HTMLAttributes<HTMLDivElement> {}
 
 const texts = [
   'にはどうやって入学するの?',
@@ -12,7 +12,7 @@ const texts = [
   'の卒業後の進路は?',
 ];
 
-export const Hero: FC<Props> = () => {
+export const Hero: FC<Props> = ({ className = '', ...props }: Props) => {
   const [current, setCurrent] = useState(0);
 
   const handleBack = () => {
@@ -20,8 +20,11 @@ export const Hero: FC<Props> = () => {
   };
 
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-2 grid-rows-1 mx-auto'>
-      <div className='px-6 lg:pl-28 py-8 sm:py-12 lg:py-16'>
+    <div
+      {...props}
+      className={`grid grid-cols-1 lg:grid-cols-5 grid-rows-1 ${className}`}
+    >
+      <div className='col-span-3'>
         <h1 className='text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl'>
           <span className='block text-byu'>BYU</span>
           <span className='block text-byuh'>BYUH</span>
@@ -41,7 +44,7 @@ export const Hero: FC<Props> = () => {
           在学生と卒業生がBYU、BYUH、BYUIについて入学前に知っておきたい情報をまとめました。
         </p>
       </div>
-      <div className='hidden lg:flex items-center justify-center max-w-4xl'>
+      <div className='hidden lg:flex items-center justify-center max-w-4xl col-span-2'>
         <CirculatingCircles className='max-w-md' animated />
       </div>
     </div>
