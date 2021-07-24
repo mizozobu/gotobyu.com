@@ -13,6 +13,7 @@ const Template: Story<Props> = (args) => <PieChart {...args} />;
 export const Example = Template.bind({});
 Example.args = {
   className: 'w-96 h-80',
+  title: 'Title',
   data: {
     labels: ['Red', 'Blue', 'Yellow'],
     datasets: [

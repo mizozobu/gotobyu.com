@@ -5,6 +5,7 @@ import { ChartData, ChartOptions } from 'chart.js';
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   options?: ChartOptions<'bar'>;
   data: ChartData<'bar'>;
+  title: string;
 }
 
 const defaultOptions = {
@@ -25,11 +26,27 @@ const defaultOptions = {
 
 export const BarChart: FC<Props> = ({
   data,
-  options = defaultOptions,
+  title,
+  options: _options = defaultOptions,
   ...props
-}: Props) => (
-  <div {...props}>
-    {/* prop types are any until https://github.com/reactchartjs/react-chartjs-2/issues/687 is merged */}
-    <Bar data={data} options={options} />
-  </div>
-);
+}: Props) => {
+  const options = {
+    ..._options,
+    plugins: {
+      ..._options.plugins,
+      title: title
+        ? {
+            display: true,
+            text: title,
+          }
+        : undefined,
+    },
+  };
+
+  return (
+    <div {...props}>
+      {/* prop types are any until https://github.com/reactchartjs/react-chartjs-2/issues/687 is merged */}
+      <Bar data={data} options={options} />
+    </div>
+  );
+};

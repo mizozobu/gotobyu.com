@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { BarChart, Props as BarChartProps } from '@c/molecules/BarChart';
 
-export interface Props extends Omit<BarChartProps, 'data'> {}
+export interface Props extends Omit<BarChartProps, 'data' | 'title'> {}
 
 const data = {
   labels: [
@@ -16,20 +16,20 @@ const data = {
     {
       data: [50, 100, 50, 100, 250, 350],
       backgroundColor: [
-        'rgba(30, 64, 175, 1)',
-        'rgba(30, 64, 175, 1)',
-        'rgba(30, 64, 175, 0.2)',
-        'rgba(30, 64, 175, 0.2)',
-        'rgba(30, 64, 175, 0.2)',
-        'rgba(30, 64, 175, 0.2)',
+        'rgba(55, 48, 163, 1)',
+        'rgba(55, 48, 163, 1)',
+        'rgba(55, 48, 163, 0.2)',
+        'rgba(55, 48, 163, 0.2)',
+        'rgba(55, 48, 163, 0.2)',
+        'rgba(55, 48, 163, 0.2)',
       ],
       borderColor: [
-        'rgba(30, 64, 175, 1)',
-        'rgba(30, 64, 175, 1)',
-        'rgba(30, 64, 175, 1)',
-        'rgba(30, 64, 175, 1)',
-        'rgba(30, 64, 175, 1)',
-        'rgba(30, 64, 175, 1)',
+        'rgba(55, 48, 163, 1)',
+        'rgba(55, 48, 163, 1)',
+        'rgba(55, 48, 163, 1)',
+        'rgba(55, 48, 163, 1)',
+        'rgba(55, 48, 163, 1)',
+        'rgba(55, 48, 163, 1)',
       ],
       borderWidth: 1,
     },
@@ -37,5 +37,5 @@ const data = {
 };
 
 export const TuitionBarChart: FC<Props> = (props: Props) => (
-  <BarChart {...props} data={data} />
+  <BarChart {...props} title='年間学費' data={data} />
 );

@@ -6,6 +6,7 @@ import { useScreenSize, gte, ScreenSize } from '@l/ScreenSize';
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   _options?: ChartOptions<'pie'>;
   data: ChartData<'pie'>;
+  title: string;
 }
 
 export const defaultOptions = {
@@ -19,10 +20,22 @@ export const defaultOptions = {
 
 export const PieChart: FC<Props> = ({
   data,
+  title,
   _options = defaultOptions,
   ...props
 }: Props) => {
-  const [options, setOptions] = useState<ChartOptions<'pie'>>(_options);
+  const [options, setOptions] = useState<ChartOptions<'pie'>>({
+    ..._options,
+    plugins: {
+      ..._options.plugins,
+      title: title
+        ? {
+            display: true,
+            text: title,
+          }
+        : undefined,
+    },
+  });
 
   const handler = useCallback((screenSize) => {
     setOptions((prev) => ({
