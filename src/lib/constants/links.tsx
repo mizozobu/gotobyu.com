@@ -108,7 +108,8 @@ export const otherLinks = [
   },
   {
     name: '運営者について',
-    description: 'このサイトを運営するBYU Management Society Tokyo Chapterとは',
+    description:
+      'このウェブサイトを運営するBYU Management Society Tokyo Chapterとは',
     href: '/about',
     icon: UserGroupIcon,
   },

@@ -18,50 +18,46 @@ export const LearnEnglishPage: FC<Props> = () => (
 
     <Section id='必要な英語力' className='clear-both'>
       <SectionTitle id='必要な英語力'>必要な英語力</SectionTitle>
-      <Pane>
-        <div className='space-y-4'>
-          <p>
-            日本の義務教育を受けただけで英語を話せるようになる人が皆無であることから分かるように、普通の高校レベルの英語ではアメリカの大学では全く通用しません。
-            センター試験の英語で9割取れるような
-            <Mark>
-              優等生でもTOEFLなどのテストで入学基準を満たすのは無理でしょう
-            </Mark>
-            。 実際の大学生活を送るのに必要なレベルが求められます。
-          </p>
+      <Pane className='space-y-4'>
+        <p>
+          日本の義務教育を受けただけで英語を話せるようになる人が皆無であることから分かるように、普通の高校レベルの英語ではアメリカの大学では全く通用しません。
+          センター試験の英語で9割取れるような
+          <Mark>
+            優等生でもTOEFLなどのテストで入学基準を満たすのは無理でしょう
+          </Mark>
+          。 実際の大学生活を送るのに必要なレベルが求められます。
+        </p>
 
-          <List>
-            <Item>英語で教科書が読めること</Item>
-            <Item>英語で論文を書けること</Item>
-            <Item>英語でプレゼンテーションができること</Item>
-            <Item>英語の授業を理解できること</Item>
-          </List>
-        </div>
+        <List>
+          <Item>英語で教科書が読めること</Item>
+          <Item>英語で論文を書けること</Item>
+          <Item>英語でプレゼンテーションができること</Item>
+          <Item>英語の授業を理解できること</Item>
+        </List>
       </Pane>
     </Section>
 
     <Section id='英語の勉強方法' className='clear-both'>
       <SectionTitle id='英語の勉強方法'>英語の勉強方法</SectionTitle>
-      <Pane>
-        <div className='space-y-4'>
-          <p>
-            入学基準を満たすためには、高校までの単語力は文法が理解できていることを前提により実用的な英語の勉強が必要です。
-            TOEFLなどのテストでは以下のの4つのカテゴリーで英語力が測られます。
-          </p>
+      <Pane className='space-y-4'>
+        <p>
+          入学基準を満たすためには、高校までの単語力は文法が理解できていることを前提により実用的な英語の勉強が必要です。
+          TOEFLなどのテストでは以下のの4つのカテゴリーで英語力が測られます。
+        </p>
 
-          <List>
-            <Item>Reading</Item>
-            <Item>Writing</Item>
-            <Item>Speaking</Item>
-            <Item>Listening</Item>
-          </List>
+        <List>
+          <Item>Reading</Item>
+          <Item>Writing</Item>
+          <Item>Speaking</Item>
+          <Item>Listening</Item>
+        </List>
 
-          <p>
-            どのカテゴリーについても<Mark>慣れる</Mark>ことが重要です。
-            SpeakingとListeningは、ホームステイや英語学校に通うことで3~6ヶ月も英語の環境に身を置けばある程度は慣れるでしょう。
-            しかし、日常生活で読み書きをする機会は多くはないので、ReadingとWritingは英語の環境で生活するだけでは伸びにくいことがあります。
-            ReadingとWritingを伸ばすには日記を書いたり、本を読んだりして意図的に読み書きの機会を増やす必要があります。
-          </p>
-        </div>
+        <p>
+          どのカテゴリーについても<Mark>慣れる</Mark>ことが重要です。
+          SpeakingとListeningは、ホームステイや英語学校に通うことで3~6ヶ月も英語の環境に身を置けばある程度は慣れるでしょう。
+          しかし、日常生活で読み書きをする機会は多くはないので、ReadingとWritingは英語の環境で生活するだけでは伸びにくいことがあります。
+          ReadingとWritingを伸ばすには日記を書いたり、本を読んだりして意図的に読み書きの機会を増やす必要があります。
+        </p>
       </Pane>
     </Section>
 
