@@ -3,6 +3,7 @@ import {
   MailOpenIcon,
   QuestionMarkCircleIcon,
   OfficeBuildingIcon,
+  PresentationChartBarIcon,
   ScaleIcon,
   UserGroupIcon,
 } from '@heroicons/react/outline';
@@ -61,8 +62,8 @@ export const schoolLinks = [
 
 export const additionalSchoolLinks = [
   {
-    name: 'BYU3校を比較する',
-    description: 'BYU、BYUH、BYUIを比較する',
+    name: 'BYU3校を比較',
+    description: 'BYU、BYUH、BYUIを必要な英語力や費用の面から数字で比較',
     href: '/compare',
     icon: ScaleIcon,
   },
@@ -85,10 +86,16 @@ export const applyLinks = [
 
 export const careerLinks = [
   {
-    name: 'キャリア',
-    description: 'BYU、BYUH、BYUI卒業生の就職先',
+    name: '就職',
+    description: 'BYU、BYUH、BYUI卒業生の就職先と年収',
     href: '/career',
     icon: OfficeBuildingIcon,
+  },
+  {
+    name: 'インターンシップ',
+    description: 'BYU、BYUH、BYUIの学生のインターンシップ先と給与',
+    href: '/internship',
+    icon: PresentationChartBarIcon,
   },
 ];
 
@@ -101,8 +108,7 @@ export const otherLinks = [
   },
   {
     name: '運営者について',
-    description:
-      'このサイトを運営するBYU Management Society Tokyo Chapterについて',
+    description: 'このサイトを運営するBYU Management Society Tokyo Chapterとは',
     href: '/about',
     icon: UserGroupIcon,
   },

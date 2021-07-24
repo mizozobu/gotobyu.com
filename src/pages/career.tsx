@@ -8,11 +8,11 @@ export interface Props {}
 // eslint-disable-next-line no-underscore-dangle
 const _CareerPage: FC<Props> = () => (
   <>
-    <Title>キャリア</Title>
+    <Title>就職</Title>
     <Head>
       <meta
         name='description'
-        content='BYU、BYUH、BYUIへの入学に必要な英語力を満たすための勉強法を紹介しています。'
+        content='BYU、BYUH、BYUIの学生の就職先の企業と1年目の年収についての調査結果を掲載しています。'
       />
     </Head>
 
