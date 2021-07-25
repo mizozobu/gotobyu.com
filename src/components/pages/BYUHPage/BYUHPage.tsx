@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import CopiedDialog from '@c/atoms/CopiedDialog';
 import { Container } from '@c/atoms/Container';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
@@ -380,5 +381,7 @@ export const BYUHPage: FC<Props> = () => (
         </div>
       </Pane>
     </Section>
+
+    <CopiedDialog />
   </Container>
 );

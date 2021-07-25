@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import CopiedDialog from '@c/atoms/CopiedDialog';
 import { Container } from '@c/atoms/Container';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
@@ -91,5 +92,7 @@ export const CareerPage: FC<Props> = () => (
         </Pane>
       </SplitPane>
     </Section>
+
+    <CopiedDialog />
   </Container>
 );

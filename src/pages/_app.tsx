@@ -2,6 +2,7 @@ import { useEffect, FC } from 'react';
 import { useRouter } from 'next/router';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { RecoilRoot } from 'recoil';
 import { Footer } from '@c/organisms/Footer';
 import Header from '@c/organisms/Header';
 import { Title } from '@c/atoms/Title';
@@ -17,7 +18,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   });
 
   return (
-    <>
+    <RecoilRoot>
       <Title />
       <Head>
         <meta name='robots' content='noindex' />
@@ -31,7 +32,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
         <Component {...pageProps} />
       </main>
       <Footer />
-    </>
+    </RecoilRoot>
   );
 };
 

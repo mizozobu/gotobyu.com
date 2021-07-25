@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Container } from '@c/atoms/Container';
+import CopiedDialog from '@c/atoms/CopiedDialog';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
@@ -241,5 +242,7 @@ export const BYUPage: FC<Props> = () => (
         </div>
       </Pane>
     </Section>
+
+    <CopiedDialog />
   </Container>
 );

@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import CopiedDialog from '@c/atoms/CopiedDialog';
 import { Container } from '@c/atoms/Container';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
@@ -134,5 +135,7 @@ export const LearnEnglishPage: FC<Props> = () => (
         </div>
       </Pane>
     </Section>
+
+    <CopiedDialog />
   </Container>
 );

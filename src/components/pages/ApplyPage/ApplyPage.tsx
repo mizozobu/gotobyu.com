@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import CopiedDialog from '@c/atoms/CopiedDialog';
 import { Container } from '@c/atoms/Container';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
@@ -383,5 +384,7 @@ export const ApplyPage: FC<Props> = () => (
         <p>TBD</p>
       </Pane>
     </Section>
+
+    <CopiedDialog />
   </Container>
 );

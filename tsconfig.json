@@ -18,7 +18,8 @@
       "~/*": ["src/*"],
       "@c/*": ["src/components/*"],
       "@p/*": ["public/*"],
-      "@l/*": ["src/lib/*"]
+      "@l/*": ["src/lib/*"],
+      "@s/*": ["src/states/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
