@@ -13,7 +13,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
 
   useEffect(() => {
     const hash = decodeURIComponent(router.asPath.split('#')[1]);
-    const elem = document.querySelector(`#${hash}`);
+    const elem = document.getElementById(hash);
     elem?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
