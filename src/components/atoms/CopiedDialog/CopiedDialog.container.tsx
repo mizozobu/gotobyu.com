@@ -6,18 +6,23 @@ import { CopiedDialog, Props as CopiedDialogProps } from './CopiedDialog';
 export interface Props extends Omit<CopiedDialogProps, 'isOpen' | 'onClose'> {}
 
 const CopiedDialogContainer: FC<Props> = (props: Props) => {
-  const [isOpen, setIsOpen] = useRecoilState(globalState);
+  const [{ showCopiedModal }, setIsOpen] = useRecoilState(globalState);
 
   const closeDialog = useCallback(() => {
-    setIsOpen(false);
+    setIsOpen((prevState) => ({
+      ...prevState,
+      showCopiedModal: false,
+    }));
   }, [setIsOpen]);
 
   useEffect(() => {
     const timeout = setTimeout(() => closeDialog(), 1500);
     return () => clearTimeout(timeout);
-  }, [isOpen, closeDialog]);
+  }, [showCopiedModal, closeDialog]);
 
-  return <CopiedDialog {...props} isOpen={isOpen} onClose={closeDialog} />;
+  return (
+    <CopiedDialog {...props} isOpen={showCopiedModal} onClose={closeDialog} />
+  );
 };
 
 export default CopiedDialogContainer;

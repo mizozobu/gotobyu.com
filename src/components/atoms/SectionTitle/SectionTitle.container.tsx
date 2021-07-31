@@ -8,7 +8,7 @@ export interface Props extends Omit<SectionTitleProps, 'active'> {}
 
 const SectionTitleContainer: FC<Props> = ({ id, ...props }: Props) => {
   const [active, setActive] = useState(false);
-  const setCopiedDialogIsOpen = useSetRecoilState(globalState);
+  const setGlobalState = useSetRecoilState(globalState);
   const router = useRouter();
   const [, hash] = router.asPath.split('#');
 
@@ -17,7 +17,10 @@ const SectionTitleContainer: FC<Props> = ({ id, ...props }: Props) => {
       const { origin, pathname } = window.location;
       void navigator.clipboard.writeText(`${origin}${pathname}#${id}`);
 
-      setCopiedDialogIsOpen(true);
+      setGlobalState((prevState) => ({
+        ...prevState,
+        showCopiedModal: true,
+      }));
     }
   };
 

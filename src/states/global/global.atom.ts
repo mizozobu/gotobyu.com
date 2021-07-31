@@ -4,5 +4,8 @@ import { GlobalState } from './global.interface';
 
 export const globalState = atom<GlobalState>({
   key: GlobalStateKey,
-  default: false,
+  default: {
+    hash: '',
+    showCopiedModal: false,
+  },
 });

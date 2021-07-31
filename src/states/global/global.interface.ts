@@ -1,1 +1,4 @@
-export type GlobalState = boolean;
+export interface GlobalState {
+  hash: string;
+  showCopiedModal: boolean;
+}
