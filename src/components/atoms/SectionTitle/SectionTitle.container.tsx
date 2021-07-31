@@ -1,4 +1,4 @@
-import { useEffect, useState, FC } from 'react';
+import { useCallback, useEffect, useState, FC } from 'react';
 import { useRouter } from 'next/router';
 import { useSetRecoilState } from 'recoil';
 import { globalState } from '@s/global';
@@ -12,7 +12,7 @@ const SectionTitleContainer: FC<Props> = ({ id, ...props }: Props) => {
   const router = useRouter();
   const [, hash] = router.asPath.split('#');
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     if (navigator.clipboard && window.isSecureContext) {
       const { origin, pathname } = window.location;
       void navigator.clipboard.writeText(`${origin}${pathname}#${id}`);
@@ -22,7 +22,7 @@ const SectionTitleContainer: FC<Props> = ({ id, ...props }: Props) => {
         showCopiedModal: true,
       }));
     }
-  };
+  }, [id, setGlobalState]);
 
   useEffect(() => {
     setActive(decodeURIComponent(hash) === id);
