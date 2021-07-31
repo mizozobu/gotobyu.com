@@ -5,5 +5,5 @@ export interface Props extends HTMLAttributes<HTMLElement> {
 }
 
 export const Section: FC<Props> = ({ className = '', ...props }: Props) => (
-  <section {...props} className={`space-y-8 ${className}`} />
+  <section {...props} className={`space-y-8 leading-relaxed ${className}`} />
 );
