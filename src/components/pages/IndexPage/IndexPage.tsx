@@ -19,13 +19,13 @@ export interface Props {}
 export const IndexPage: FC<Props> = () => (
   <div className='space-y-12 lg:space-y-16 px-6 py-12 lg:py-16 lg:mx-24'>
     <Hero className='pb-10' />
-    <div>
+    <div className='px-6 lg:px-0 -mx-6 lg:mx-0'>
       <h2 className='text-2xl md:text-4xl font-bold'>各大学について</h2>
-      <div className='flex lg:justify-between py-10 overflow-scroll'>
+      <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:gap-y-10 lg:justify-items-center px-6 lg:px-0 py-10 -mx-6 lg:mx-0 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
         <Link href='/byu'>
           <a>
             <SchoolCard
-              className='w-64 h-80 mx-8'
+              className='mx-8'
               colorClass='bg-gradient-to-br from-byu to-byu-dark'
             >
               <NextImage
@@ -42,7 +42,7 @@ export const IndexPage: FC<Props> = () => (
         <Link href='/byuh'>
           <a>
             <SchoolCard
-              className='w-64 h-80 mx-8'
+              className='mx-8'
               colorClass='bg-gradient-to-br from-byuh to-byuh-dark'
             >
               <NextImage
@@ -59,7 +59,7 @@ export const IndexPage: FC<Props> = () => (
         <Link href='/byui'>
           <a>
             <SchoolCard
-              className='w-64 h-80 mx-8'
+              className='mx-8'
               colorClass='bg-gradient-to-br from-byui to-byui-dark'
             >
               <NextImage
@@ -75,9 +75,9 @@ export const IndexPage: FC<Props> = () => (
         </Link>
       </div>
     </div>
-    <div>
+    <div className='px-6 lg:px-0 -mx-6 lg:mx-0'>
       <h2 className='text-2xl md:text-4xl font-bold'>知っておきたい情報</h2>
-      <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:gap-y-10 lg:justify-items-center space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible py-10'>
+      <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:gap-y-10 lg:justify-items-center px-6 lg:px-0 py-10 -mx-6 lg:mx-0 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
         {[
           ...additionalSchoolLinks,
           ...applyLinks,

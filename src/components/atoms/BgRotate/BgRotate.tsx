@@ -12,12 +12,10 @@ export const BgRotate: FC<Props> = ({
   colorClass,
   children,
 }: Props) => (
-  <>
-    <div className={`relative group ${styles['bg-rotate']} ${className}`}>
-      <div
-        className={`absolute w-full h-full rounded-xl shadow-xl transform rotate-6 group-hover:rotate-12 transition duration-500 ease-in-out ${colorClass}`}
-      />
-      {children}
-    </div>
-  </>
+  <div className={`relative group ${styles['bg-rotate']} ${className}`}>
+    <div
+      className={`absolute w-full h-full rounded-xl shadow-xl transform rotate-6 group-hover:rotate-12 transition duration-500 ease-in-out ${colorClass}`}
+    />
+    {children}
+  </div>
 );
