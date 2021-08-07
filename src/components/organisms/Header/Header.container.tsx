@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useScrollDirection, ScrollDirection } from '@l/ScrollDirection';
 import { Header, Props as HeaderProps } from './Header';
 
-export interface Props extends Omit<HeaderProps, 'loading'> {}
+export interface Props extends Omit<HeaderProps, 'show' | 'loading'> {}
 
 const HeaderContainer: FC<Props> = () => {
   const [loading, setLoading] = useState(false);
