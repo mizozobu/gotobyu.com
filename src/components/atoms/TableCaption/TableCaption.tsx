@@ -8,10 +8,13 @@ export const TableCaption: FC<Props> = ({
   children,
   ...props
 }: Props) => (
-  <caption className={`py-1 ${styles['table-caption']}`}>
+  <caption className={classNames('py-1', styles['table-caption'])}>
     <span
       {...props}
-      className={`px-2 py-1 rounded-full text-gray-500 bg-gray-100 ${className}`}
+      className={classNames(
+        'px-2 py-1 rounded-full text-gray-500 bg-gray-100',
+        className,
+      )}
     >
       {children}
     </span>

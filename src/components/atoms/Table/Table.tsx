@@ -11,9 +11,15 @@ export const Table: FC<Props> = ({
   ...props
 }: Props) => (
   <div
-    className={`rounded-md overflow-x-auto overflow-y-hidden whitespace-nowrap ${className}`}
+    className={classNames(
+      'rounded-md overflow-x-auto overflow-y-hidden whitespace-nowrap',
+      className,
+    )}
   >
-    <table {...props} className={`min-w-full table-auto ${styles.table}`} />
+    <table
+      {...props}
+      className={classNames('min-w-full table-auto', styles.table)}
+    />
     <style jsx>{`
       .${styles.table} {
         ${thickBorderColor ? `--thick-border-color: ${thickBorderColor}` : ''};

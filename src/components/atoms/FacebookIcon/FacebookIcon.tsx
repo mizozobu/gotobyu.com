@@ -15,7 +15,7 @@ export const FacebookIcon: FC<Props> = ({
     role='img'
     xmlns='http://www.w3.org/2000/svg'
     viewBox='0 0 320 512'
-    className={`svg-inline--fa fa-facebook-f p-1 ${className}`}
+    className={classNames('svg-inline--fa fa-facebook-f p-1', className)}
     {...props}
   >
     <path

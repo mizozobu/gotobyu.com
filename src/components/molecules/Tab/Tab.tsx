@@ -29,7 +29,7 @@ export const Tab: FC<Props> = ({
     <div {...props}>
       <div
         {...tabBar.props}
-        className={`flex pt-2 ${tabBar.props.className ?? ''}`}
+        className={classNames('flex pt-2', tabBar.props.className)}
       >
         {tabBar.props.children.map((child) =>
           cloneElement(child, {

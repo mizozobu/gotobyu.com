@@ -10,5 +10,8 @@ export const TabPane: FC<Props> = ({
   className = '',
   ...props
 }: Props) => (
-  <div {...props} className={`${active ? 'block' : 'hidden'} ${className}`} />
+  <div
+    {...props}
+    className={classNames(active ? 'block' : 'hidden', className)}
+  />
 );

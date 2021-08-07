@@ -14,8 +14,10 @@ export const TabNav: FC<Props> = ({
     {...props}
     role='button'
     tabIndex={0}
-    className={`border rounded-t-xl ${className} ${
-      active ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
-    }`}
+    className={classNames(
+      'border rounded-t-xl',
+      className,
+      active ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50',
+    )}
   />
 );

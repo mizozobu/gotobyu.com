@@ -7,7 +7,10 @@ export const PageTitle: FC<Props> = ({
   children,
   ...props
 }: Props) => (
-  <h1 {...props} className={`text-3xl md:text-5xl font-bold my-4 ${className}`}>
+  <h1
+    {...props}
+    className={classNames('text-3xl md:text-5xl font-bold my-4', className)}
+  >
     {children}
   </h1>
 );

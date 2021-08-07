@@ -25,7 +25,10 @@ export const ExternalLink: FC<Props> = ({
       ref={ref}
       target='_blank'
       rel='noreferrer'
-      className={`px-1 rounded-md text-indigo-500 bg-indigo-50 font-medium cursor-pointer ${className}`}
+      className={classNames(
+        'px-1 rounded-md text-indigo-500 bg-indigo-50 font-medium cursor-pointer',
+        className,
+      )}
     >
       {children}
       <ExternalLinkIcon

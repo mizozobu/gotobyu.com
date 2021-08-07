@@ -17,7 +17,12 @@ export const Footer: FC<Props> = () => (
           <a target='_blank'>
             <button
               type='button'
-              className={`relative flex items-center justify-center w-10 h-10 px-2 py-1 rounded-full ${styles.button} ${styles.spin} ${styles.circle}`}
+              className={classNames(
+                'relative flex items-center justify-center w-10 h-10 px-2 py-1 rounded-full',
+                styles.button,
+                styles.spin,
+                styles.circle,
+              )}
             >
               <MailIcon className='w-8 h-8' />
             </button>
@@ -27,7 +32,12 @@ export const Footer: FC<Props> = () => (
           <a target='_blank'>
             <button
               type='button'
-              className={`relative flex items-center justify-center w-10 h-10 px-2 py-1 rounded-full ${styles.button} ${styles.spin} ${styles.circle}`}
+              className={classNames(
+                'relative flex items-center justify-center w-10 h-10 px-2 py-1 rounded-full',
+                styles.button,
+                styles.spin,
+                styles.circle,
+              )}
             >
               <FacebookIcon className='w-8 h-8' />
             </button>
@@ -37,7 +47,12 @@ export const Footer: FC<Props> = () => (
           <a target='_blank'>
             <button
               type='button'
-              className={`relative flex items-center justify-center w-10 h-10 px-2 py-1 rounded-full ${styles.button} ${styles.spin} ${styles.circle}`}
+              className={classNames(
+                'relative flex items-center justify-center w-10 h-10 px-2 py-1 rounded-full',
+                styles.button,
+                styles.spin,
+                styles.circle,
+              )}
             >
               <LinkIcon className='w-8 h-8' />
             </button>

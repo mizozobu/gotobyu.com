@@ -22,7 +22,10 @@ export const Hero: FC<Props> = ({ className = '', ...props }: Props) => {
   return (
     <div
       {...props}
-      className={`grid grid-cols-1 lg:grid-cols-5 grid-rows-1 ${className}`}
+      className={classNames(
+        'grid grid-cols-1 lg:grid-cols-5 grid-rows-1',
+        className,
+      )}
     >
       <div className='col-span-3'>
         <h1 className='text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl'>

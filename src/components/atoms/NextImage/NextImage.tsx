@@ -13,7 +13,7 @@ export const NextImage: FC<Props> = ({
   style = {},
   ...props
 }: Props) => (
-  <div id={id} className={`relative ${className}`} style={style}>
+  <div id={id} className={classNames('relative', className)} style={style}>
     <Image {...props} />
   </div>
 );

@@ -59,20 +59,18 @@ export const PhotoViewer: FC<Props> = ({
 
   return (
     <BgRotate
-      className={`${styles['photo-viewer']} ${className}`}
+      className={classNames(styles['photo-viewer'], className)}
       colorClass={colorClass}
     >
       <div className='relative overflow-hidden rounded-xl'>
         {images.map((imageProps, i) => (
           <div
             key={imageProps.alt}
-            className={`absolute inset-0 ${
-              _images.length > 1
-                ? `transform transition-transform ease-in-out duration-1000 ${getTranslateClassName(
-                    i,
-                  )}`
-                : ''
-            }`}
+            className={classNames('absolute inset-0', {
+              [`transform transition-transform ease-in-out duration-1000 ${getTranslateClassName(
+                i,
+              )}`]: _images.length > 1,
+            })}
           >
             <Image {...imageProps} />
           </div>

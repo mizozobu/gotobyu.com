@@ -12,7 +12,10 @@ export const InternalLink: FC<Props> = ({
   ...props
 }: Props) => (
   <Link href={href}>
-    <a {...props} className={`text-indigo-500 font-medium ${className}`}>
+    <a
+      {...props}
+      className={classNames('text-indigo-500 font-medium', className)}
+    >
       {children}
     </a>
   </Link>

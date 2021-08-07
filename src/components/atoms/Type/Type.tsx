@@ -61,9 +61,10 @@ export const Type: FC<Props> = ({
       <span {...props}>
         {typed.substring(0, typed.length - 1)}
         <span
-          className={`${styles.type} ${
-            status === Status.waiting ? styles.stopped : styles.typing
-          }`}
+          className={classNames(
+            styles.type,
+            status === Status.waiting ? styles.stopped : styles.typing,
+          )}
         >
           {typed[typed.length - 1]}
         </span>

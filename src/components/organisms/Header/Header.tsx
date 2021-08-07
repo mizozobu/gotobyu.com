@@ -55,9 +55,12 @@ export const Header: FC<Props> = ({ show, loading }: Props) => {
 
   return (
     <Popover
-      className={`sticky bg-white mb-1 z-20	${styles.header} ${
-        loading ? styles.loading : styles.loaded
-      } ${show ? styles.show : styles.hide}`}
+      className={classNames(
+        'sticky bg-white mb-1 z-20',
+        styles.header,
+        loading ? styles.loading : styles.loaded,
+        show ? styles.show : styles.hide,
+      )}
     >
       {({ open: openMobilePopover }) => (
         <>

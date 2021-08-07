@@ -18,7 +18,11 @@ export const PageCard: FC<Props> = ({
 }: Props) => (
   <div
     {...props}
-    className={`w-48 h-64 md:w-64 md:h-80 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-500 bg-gray-50 ${styles['page-card']} ${className}`}
+    className={classNames(
+      'w-48 h-64 md:w-64 md:h-80 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-500 bg-gray-50',
+      styles['page-card'],
+      className,
+    )}
   >
     <div className='flex items-center justify-center h-1/3 rounded-t-xl bg-indigo-50 text-indigo-900'>
       <Icon className='w-16 h-16' />
@@ -30,7 +34,7 @@ export const PageCard: FC<Props> = ({
         </div>
         <div className='text-sm'>{description}</div>
       </div>
-      <div className={`self-end ${styles.arrow}`}>
+      <div className={classNames('self-end', styles.arrow)}>
         <ArrowNarrowRightIcon className='w-6 h-6' />
       </div>
     </div>

@@ -21,12 +21,14 @@ export const SectionTitle: FC<Props> = memo(
   }: Props) => (
     <Link href={`#${id}`}>
       <a>
-        <h2 {...props} className={`inline-block ${className}`}>
+        <h2 {...props} className={classNames('inline-block', className)}>
           <button type='button' onClick={onClick}>
             <span
-              className={`text-2xl md:text-4xl font-bold ${
-                styles['section-title']
-              } ${active ? styles.active : ''}`}
+              className={classNames(
+                'text-2xl md:text-4xl font-bold',
+                styles['section-title'],
+                { [styles.active]: active },
+              )}
             >
               {children} <LinkIcon className='inline h-6 text-indigo-200' />
             </span>
