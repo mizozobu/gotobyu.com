@@ -22,9 +22,9 @@
 }
 
 .spin:hover::before {
-  border-top-color: white;
-  border-right-color: white;
-  border-bottom-color: white;
+  border-top-color: var(--border-color);
+  border-right-color: var(--border-color);
+  border-bottom-color: var(--border-color);
   transition: border-top-color 0.15s linear,
     border-right-color 0.15s linear 0.1s, border-bottom-color 0.15s linear 0.2s;
 }
@@ -34,7 +34,7 @@
 }
 
 .spin:hover::after {
-  border-top: 2px solid white;
+  border-top: 2px solid var(--border-color);
   border-right-width: 2px;
   border-left-width: 2px;
   transform: rotate(270deg);

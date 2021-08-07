@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { MailIcon, LinkIcon } from '@heroicons/react/outline';
+import { DrawBorderButton } from '@c/atoms/DrawBorderButton';
 import { FacebookIcon } from '@c/atoms/FacebookIcon';
-import styles from './Footer.module.css';
 
 export interface Props {}
 
@@ -15,47 +15,23 @@ export const Footer: FC<Props> = () => (
       <div className='flex justify-around mt-8'>
         <Link href='mailto:byums.japan@gmail.com'>
           <a target='_blank'>
-            <button
-              type='button'
-              className={classNames(
-                'relative flex items-center justify-center w-10 h-10 px-2 py-1 rounded-full',
-                styles.button,
-                styles.spin,
-                styles.circle,
-              )}
-            >
+            <DrawBorderButton className='w-10 h-10 p-2' borderColor='white'>
               <MailIcon className='w-8 h-8' />
-            </button>
+            </DrawBorderButton>
           </a>
         </Link>
         <Link href='https://www.facebook.com/BYUMSJP'>
           <a target='_blank'>
-            <button
-              type='button'
-              className={classNames(
-                'relative flex items-center justify-center w-10 h-10 px-2 py-1 rounded-full',
-                styles.button,
-                styles.spin,
-                styles.circle,
-              )}
-            >
+            <DrawBorderButton className='w-10 h-10 p-2' borderColor='white'>
               <FacebookIcon className='w-8 h-8' />
-            </button>
+            </DrawBorderButton>
           </a>
         </Link>
         <Link href='https://byums.byu.edu/tokyo/'>
           <a target='_blank'>
-            <button
-              type='button'
-              className={classNames(
-                'relative flex items-center justify-center w-10 h-10 px-2 py-1 rounded-full',
-                styles.button,
-                styles.spin,
-                styles.circle,
-              )}
-            >
+            <DrawBorderButton className='w-10 h-10 p-2' borderColor='white'>
               <LinkIcon className='w-8 h-8' />
-            </button>
+            </DrawBorderButton>
           </a>
         </Link>
       </div>
