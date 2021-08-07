@@ -15,7 +15,11 @@ export const GradientText: FC<Props> = ({
   <>
     <span
       {...props}
-      className={classNames(styles['gradient-text'], className)}
+      className={classNames(
+        'inline-block py-1',
+        styles['gradient-text'],
+        className,
+      )}
     />
     <style jsx>{`
       .${styles['gradient-text']} {
