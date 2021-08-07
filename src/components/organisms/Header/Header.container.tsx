@@ -7,7 +7,7 @@ export interface Props extends Omit<HeaderProps, 'show' | 'loading'> {}
 
 const HeaderContainer: FC<Props> = () => {
   const [loading, setLoading] = useState(false);
-  const scrollDirectionY = useScrollDirection({ threshold: 0 });
+  const scrollDirectionY = useScrollDirection({ threshold: 50 });
   const router = useRouter();
 
   useEffect(() => {
