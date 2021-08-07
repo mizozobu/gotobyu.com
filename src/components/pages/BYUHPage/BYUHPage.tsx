@@ -4,6 +4,7 @@ import { Container } from '@c/atoms/Container';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
+import { GradientText } from '@c/atoms/GradientText';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
 import SectionTitle from '@c/atoms/SectionTitle';
@@ -28,7 +29,11 @@ export interface Props {}
 
 export const BYUHPage: FC<Props> = () => (
   <Container>
-    <PageTitle>Brigham Young University–Hawaii</PageTitle>
+    <PageTitle>
+      <GradientText start='#3f0a14' stop='#9e1b34'>
+        Brigham Young University–Hawaii
+      </GradientText>
+    </PageTitle>
 
     <Section id='概要' className='clear-both'>
       <SectionTitle id='概要'>概要</SectionTitle>
