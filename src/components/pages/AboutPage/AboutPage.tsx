@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import CopiedDialog from '@c/atoms/CopiedDialog';
+import CopiedDialog from '@c/organisms/CopiedDialog';
 import { Container } from '@c/atoms/Container';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';

@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 import { CopiedDialog, Props } from './CopiedDialog';
 
 export default {
-  title: 'atoms/CopiedDialog',
+  title: 'organisms/CopiedDialog',
   component: CopiedDialog,
   argTypes: {},
 } as Meta;

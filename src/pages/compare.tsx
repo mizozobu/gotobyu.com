@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import CopiedDialog from '@c/atoms/CopiedDialog';
+import CopiedDialog from '@c/organisms/CopiedDialog';
 import { Container } from '@c/atoms/Container';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Table } from '@c/atoms/Table';
