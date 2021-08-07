@@ -10,5 +10,19 @@ export default {
 
 const Template: Story<Props> = (args) => <Header {...args} />;
 
-export const Example = Template.bind({});
-Example.args = {};
+export const Show = Template.bind({});
+Show.args = {
+  show: true,
+  loading: false,
+};
+
+export const Hide = Template.bind({});
+Hide.args = {
+  show: false,
+  loading: false,
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  loading: true,
+};

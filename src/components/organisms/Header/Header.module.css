@@ -1,3 +1,21 @@
+.header {
+  transition: top 250ms ease-out;
+}
+
+.header.show {
+  @apply top-0;
+}
+
+.header.hide {
+  @apply -top-16;
+}
+
+@screen md {
+  .header.hide {
+    @apply top-0;
+  }
+}
+
 .header::before {
   position: absolute;
   top: 100%;

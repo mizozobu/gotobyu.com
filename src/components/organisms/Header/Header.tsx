@@ -20,13 +20,14 @@ import {
 import styles from './Header.module.css';
 
 export interface Props {
+  show: boolean;
   loading: boolean;
 }
 
 const classNames = (...classes: (string | undefined)[]) =>
   classes.filter(Boolean).join(' ');
 
-export const Header: FC<Props> = ({ loading }: Props) => {
+export const Header: FC<Props> = ({ show, loading }: Props) => {
   // workaround to close popover
   // see https://github.com/tailwindlabs/headlessui/issues/427
   const mobilePopoverRef = useRef<HTMLButtonElement>(null);
@@ -57,9 +58,9 @@ export const Header: FC<Props> = ({ loading }: Props) => {
 
   return (
     <Popover
-      className={`sticky top-0 bg-white mb-1 z-20	${styles.header} ${
+      className={`sticky bg-white mb-1 z-20	${styles.header} ${
         loading ? styles.loading : styles.loaded
-      }`}
+      } ${show ? styles.show : styles.hide}`}
     >
       {({ open: openMobilePopover }) => (
         <>
@@ -390,7 +391,7 @@ export const Header: FC<Props> = ({ loading }: Props) => {
             >
               <Popover.Panel
                 static
-                className='absolute z-20 inset-0 p-2 transition transform origin-top-right md:hidden'
+                className='fixed z-20 inset-0 p-2 transition transform origin-top-right md:hidden'
               >
                 <div
                   className='overflow-y-scroll overscroll-contain rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white'
