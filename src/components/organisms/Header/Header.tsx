@@ -24,9 +24,6 @@ export interface Props {
   loading: boolean;
 }
 
-const classNames = (...classes: (string | undefined)[]) =>
-  classes.filter(Boolean).join(' ');
-
 export const Header: FC<Props> = ({ show, loading }: Props) => {
   // workaround to close popover
   // see https://github.com/tailwindlabs/headlessui/issues/427
