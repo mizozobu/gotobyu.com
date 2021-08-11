@@ -7,5 +7,6 @@ export const globalState = atom<GlobalState>({
   default: {
     hash: '',
     showCopiedModal: false,
+    forex: 110,
   },
 });

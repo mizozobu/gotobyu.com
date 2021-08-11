@@ -17,6 +17,8 @@
     "paths": {
       "~/*": ["src/*"],
       "@c/*": ["src/components/*"],
+      "@d": ["src/data"],
+      "@d/*": ["src/data/*"],
       "@p/*": ["public/*"],
       "@l/*": ["src/lib/*"],
       "@s/*": ["src/states/*"]

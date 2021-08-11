@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { Number, Props } from './Number';
+import { Digit, Props } from './Digit';
 
 export default {
-  title: 'atoms/Number',
-  component: Number,
+  title: 'atoms/Digit',
+  component: Digit,
   argTypes: {},
 } as Meta;
 
-const Template: Story<Props> = (args) => <Number {...args} />;
+const Template: Story<Props> = (args) => <Digit {...args} />;
 
 export const NoComma = Template.bind({});
 NoComma.args = {

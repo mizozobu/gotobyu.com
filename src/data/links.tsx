@@ -12,7 +12,7 @@ import byuLogoImage from '@p/byu.png';
 import byuhLogoImage from '@p/byuh.png';
 import byuiLogoImage from '@p/byui.png';
 
-export const schoolLinks = [
+export const SchoolLinks = [
   {
     name: 'Brigham Young University',
     description: '専攻、衣住食、クラブ、アルバイト、奨学金などのBYUの情報',
@@ -60,7 +60,7 @@ export const schoolLinks = [
   },
 ];
 
-export const additionalSchoolLinks = [
+export const AdditionalSchoolLinks = [
   {
     name: 'BYU3校を比較',
     description: 'BYU、BYUH、BYUIを必要な英語力や費用の面から数字で比較',
@@ -69,7 +69,7 @@ export const additionalSchoolLinks = [
   },
 ];
 
-export const applyLinks = [
+export const ApplyLinks = [
   {
     name: '入学手続き',
     description: 'BYU、BYUH、BYUIへの入学手続き',
@@ -84,7 +84,7 @@ export const applyLinks = [
   },
 ];
 
-export const careerLinks = [
+export const CareerLinks = [
   {
     name: '就職',
     description: 'BYU、BYUH、BYUI卒業生の就職先と年収',
@@ -99,7 +99,7 @@ export const careerLinks = [
   },
 ];
 
-export const otherLinks = [
+export const OtherLinks = [
   {
     name: 'よくある質問',
     description: 'よく聞かれる質問とそれに対する回答',

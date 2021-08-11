@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import CopiedDialog from '@c/organisms/CopiedDialog';
 import { Container } from '@c/atoms/Container';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
@@ -9,11 +8,13 @@ import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
 import SectionTitle from '@c/atoms/SectionTitle';
 import { PhotoViewer } from '@c/molecules/PhotoViewer';
-import { Number } from '@c/atoms/Number';
+import { Digit } from '@c/atoms/Digit';
 import { Mark } from '@c/atoms/Mark';
 import { List } from '@c/atoms/List';
 import { Item } from '@c/atoms/Item';
 import { NextImage } from '@c/atoms/NextImage';
+import CopiedDialog from '@c/organisms/CopiedDialog';
+import { SchoolData } from '@d';
 import byuhLogoImage from '@p/byuh.png';
 import byuhBbqImage from '@p/byuh/byuh_bbq.jpg';
 import byuhClassImage from '@p/byuh/byuh_class.jpg';
@@ -58,19 +59,19 @@ export const BYUHPage: FC<Props> = () => (
             </li>
             <li className='py-2'>
               <strong className='font-bold'>合格率</strong> :{' '}
-              <Number>{50}</Number>%
+              <Digit>{SchoolData.byuh.acceptanceRate * 100}</Digit>%
             </li>
             <li className='py-2'>
               <strong className='font-bold'>学生数</strong> :{' '}
-              <Number>{3200}</Number>
+              <Digit>{SchoolData.byuh.numberOfStudents}</Digit>
             </li>
             <li className='py-2'>
               <strong className='font-bold'>専攻数</strong> :{' '}
-              <Number>{65}</Number>
+              <Digit>{SchoolData.byuh.numberOfMajors}</Digit>
             </li>
             <li className='py-2'>
               <strong className='font-bold'>授業数</strong> :{' '}
-              <Number>{938}</Number>
+              <Digit>{SchoolData.byuh.numberOfCourses}</Digit>
             </li>
           </ul>
         </Pane>

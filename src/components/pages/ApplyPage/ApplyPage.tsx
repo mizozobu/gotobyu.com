@@ -31,7 +31,7 @@ export const ApplyPage: FC<Props> = () => (
     <Section id='申込方法' className='clear-both'>
       <SectionTitle id='申込方法'>申込方法</SectionTitle>
       <Pane>
-        <div className='inline space-y-4'>
+        <div className='space-y-4'>
           <p>
             BYU、BYUH、BYUIも全て
             <ExternalLink href='https://www.churchofjesuschrist.org/church-education/apply-to-church-schools?lang=eng'>
@@ -173,10 +173,10 @@ export const ApplyPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='必須の英語力' className='clear-both'>
-      <SectionTitle id='必須の英語力'>必須の英語力</SectionTitle>
+    <Section id='入学に必要な英語力' className='clear-both'>
+      <SectionTitle id='入学に必要な英語力'>入学に必要な英語力</SectionTitle>
       <Pane>
-        <div className='inline space-y-8'>
+        <div className='space-y-8'>
           <p>
             必須の英語力は各大学でそれぞれ違い、
             <Mark>BYUH、BYUI、BYUの順に高くなります</Mark>。

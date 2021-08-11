@@ -24,18 +24,20 @@ export const CareerPage: FC<Props> = () => (
       <SplitPane className='space-y-8'>
         <Pane>
           <IncomeBarChart className='w-full h-72 md:h-80 lg:h-96' />
-          <p className='mt-4 text-xs'>
-            ※ 大卒年収は令和2年賃金構造基本統計調査より
-            <ExternalLink href='https://www.e-stat.go.jp/stat-search/files?page=1&layout=datalist&toukei=00450091&tstat=000001011429&cycle=0&tclass1=000001152186&tclass2=000001152187&tclass3=000001152195&stat_infid=000032069485&tclass4val=0'>
-              新規学卒者の学歴別所定内給与額
-            </ExternalLink>
-            の大学卒の給与額の12倍に
-            <ExternalLink href='https://www.e-stat.go.jp/stat-search/files?page=1&layout=datalist&toukei=00450091&tstat=000001011429&cycle=0&tclass1=000001152186&tclass2=000001152187&tclass3=000001152188&stat_infid=000032069351&cycle_facet=cycle&tclass4val=0'>
-              学歴、年齢階級、勤続年数階級別所定内給与額及び年間賞与その他特別給与額
-            </ExternalLink>
-            の20-24歳の平均賞与額を加算
-          </p>
-          <p className='text-xs'>※ BYU年収は独自調査に基づく</p>
+          <ul className='mt-4 list-asterisk text-xs'>
+            <li>
+              大卒年収は令和2年賃金構造基本統計調査より
+              <ExternalLink href='https://www.e-stat.go.jp/stat-search/files?page=1&layout=datalist&toukei=00450091&tstat=000001011429&cycle=0&tclass1=000001152186&tclass2=000001152187&tclass3=000001152195&stat_infid=000032069485&tclass4val=0'>
+                新規学卒者の学歴別所定内給与額
+              </ExternalLink>
+              の大学卒の給与額の12倍に
+              <ExternalLink href='https://www.e-stat.go.jp/stat-search/files?page=1&layout=datalist&toukei=00450091&tstat=000001011429&cycle=0&tclass1=000001152186&tclass2=000001152187&tclass3=000001152188&stat_infid=000032069351&cycle_facet=cycle&tclass4val=0'>
+                学歴、年齢階級、勤続年数階級別所定内給与額及び年間賞与その他特別給与額
+              </ExternalLink>
+              の20-24歳の平均賞与額を加算
+            </li>
+            <li>BYU年収は独自調査に基づく</li>
+          </ul>
         </Pane>
         <Pane className='flex items-center'>
           <p>

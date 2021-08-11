@@ -16,7 +16,7 @@ export const AboutPage: FC<Props> = () => (
     <PageTitle>運営者について</PageTitle>
 
     <Section id='運営者' className='clear-both'>
-      <SectionTitle id='運営者'>運営者 </SectionTitle>
+      <SectionTitle id='運営者'>運営者</SectionTitle>
       <Pane className='space-y-4'>
         <p>
           このウェブサイトは

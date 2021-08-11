@@ -4,12 +4,7 @@ import { NextImage } from '@c/atoms/NextImage';
 import { PageCard } from '@c/molecules/PageCard';
 import { SchoolCard } from '@c/molecules/SchoolCard';
 import { Hero } from '@c/organisms/Hero';
-import {
-  additionalSchoolLinks,
-  applyLinks,
-  careerLinks,
-  otherLinks,
-} from '@l/constants/links';
+import { AdditionalSchoolLinks, ApplyLinks, CareerLinks, OtherLinks } from '@d';
 import byuLogoImage from '@p/byu.png';
 import byuhLogoImage from '@p/byuh.png';
 import byuiLogoImage from '@p/byui.png';
@@ -79,10 +74,10 @@ export const IndexPage: FC<Props> = () => (
       <h2 className='text-2xl md:text-4xl font-bold'>知っておきたい情報</h2>
       <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:gap-y-10 lg:justify-items-center px-6 lg:px-0 py-10 -mx-6 lg:mx-0 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
         {[
-          ...additionalSchoolLinks,
-          ...applyLinks,
-          ...careerLinks,
-          otherLinks[0],
+          ...AdditionalSchoolLinks,
+          ...ApplyLinks,
+          ...CareerLinks,
+          OtherLinks[0],
         ].map(({ name, href, description, icon: Icon }) => (
           <Link key={name} href={href}>
             <a>

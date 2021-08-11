@@ -8,7 +8,7 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
   title: string;
 }
 
-const defaultOptions = {
+export const defaultOptions = {
   maintainAspectRatio: false,
   plugins: {
     legend: {

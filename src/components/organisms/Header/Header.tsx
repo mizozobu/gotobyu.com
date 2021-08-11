@@ -11,12 +11,12 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
 import {
-  schoolLinks,
-  additionalSchoolLinks,
-  applyLinks,
-  careerLinks,
-  otherLinks,
-} from '@l/constants/links';
+  SchoolLinks,
+  AdditionalSchoolLinks,
+  ApplyLinks,
+  CareerLinks,
+  OtherLinks,
+} from '@d';
 import styles from './Header.module.css';
 
 export interface Props {
@@ -125,7 +125,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => {
                         >
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                              {schoolLinks.map(
+                              {SchoolLinks.map(
                                 ({ name, href, description, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
@@ -146,7 +146,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => {
                                 ),
                               )}
                               <hr />
-                              {additionalSchoolLinks.map(
+                              {AdditionalSchoolLinks.map(
                                 ({ name, href, description, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
@@ -214,7 +214,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => {
                         >
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                              {applyLinks.map(
+                              {ApplyLinks.map(
                                 ({ name, href, description, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
@@ -283,7 +283,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => {
                         >
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                              {careerLinks.map(
+                              {CareerLinks.map(
                                 ({ name, href, description, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
@@ -348,7 +348,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => {
                         >
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8'>
-                              {otherLinks.map(
+                              {OtherLinks.map(
                                 ({ name, href, description, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     <a className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50'>
@@ -408,7 +408,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => {
                     </div>
                     <div>
                       <nav className='grid gap-y-8'>
-                        {schoolLinks.map(({ name, href, icon: Icon }) => (
+                        {SchoolLinks.map(({ name, href, icon: Icon }) => (
                           <Link key={name} href={href}>
                             <a>
                               <button
@@ -427,7 +427,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => {
                             </a>
                           </Link>
                         ))}
-                        {additionalSchoolLinks.map(
+                        {AdditionalSchoolLinks.map(
                           ({ name, href, icon: Icon }) => (
                             <Link key={name} href={href}>
                               <a>
@@ -454,7 +454,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => {
                   <hr className='px-5' />
                   <div className='py-6 px-5 space-y-6'>
                     <div className='grid grid-cols-2 gap-y-4 gap-x-8'>
-                      {applyLinks.map(({ name, href, icon: Icon }) => (
+                      {ApplyLinks.map(({ name, href, icon: Icon }) => (
                         <Link key={name} href={href}>
                           <a>
                             <button
@@ -472,7 +472,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => {
                         </Link>
                       ))}
 
-                      {careerLinks.map(({ name, href, icon: Icon }) => (
+                      {CareerLinks.map(({ name, href, icon: Icon }) => (
                         <Link key={name} href={href}>
                           <a>
                             <button
@@ -490,7 +490,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => {
                         </Link>
                       ))}
 
-                      {otherLinks.map(({ name, href, icon: Icon }) => (
+                      {OtherLinks.map(({ name, href, icon: Icon }) => (
                         <Link key={name} href={href}>
                           <a>
                             <button

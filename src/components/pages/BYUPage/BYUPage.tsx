@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { Container } from '@c/atoms/Container';
-import CopiedDialog from '@c/organisms/CopiedDialog';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
@@ -9,11 +8,13 @@ import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
 import SectionTitle from '@c/atoms/SectionTitle';
 import { PhotoViewer } from '@c/molecules/PhotoViewer';
-import { Number } from '@c/atoms/Number';
+import { Digit } from '@c/atoms/Digit';
 import { Mark } from '@c/atoms/Mark';
 import { List } from '@c/atoms/List';
 import { Item } from '@c/atoms/Item';
 import { NextImage } from '@c/atoms/NextImage';
+import CopiedDialog from '@c/organisms/CopiedDialog';
+import { SchoolData } from '@d';
 import byuLogoImage from '@p/byu.png';
 import archesNationalParkImage from '@p/byu/arches_national_park.jpg';
 import byuFootballImage from '@p/byu/byu_football.jpg';
@@ -55,27 +56,21 @@ export const BYUPage: FC<Props> = () => (
             </li>
             <li className='py-2'>
               <strong className='font-bold'>合格率</strong> :{' '}
-              <Number>{68}</Number>%
+              <Digit>{SchoolData.byu.acceptanceRate * 100}</Digit>%
             </li>
             <li className='py-2'>
               <strong className='font-bold'>学生数</strong> :{' '}
-              <Number>{36024}</Number>
+              <Digit>{SchoolData.byu.numberOfStudents}</Digit>
             </li>
             <li className='py-2'>
               <strong className='font-bold'>専攻数</strong> :{' '}
-              <Number>{186}</Number>
+              <Digit>{SchoolData.byu.numberOfMajors}</Digit>
             </li>
             <li className='py-2'>
               <strong className='font-bold'>授業数</strong> :{' '}
-              <Number>{5763}</Number>
+              <Digit>{SchoolData.byu.numberOfCourses}</Digit>
             </li>
           </ul>
-          <br />
-          <p className='text-xs text-right'>
-            <ExternalLink href='https://www.usnews.com/best-colleges/byu-3670/overall-rankings'>
-              ※ U.S. Newsアメリカ大学ランキングより
-            </ExternalLink>
-          </p>
         </Pane>
       </SplitPane>
 

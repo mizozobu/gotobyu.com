@@ -1,5 +1,9 @@
 import { FC } from 'react';
-import { BarChart, Props as BarChartProps } from '@c/molecules/BarChart';
+import {
+  BarChart,
+  Props as BarChartProps,
+  defaultOptions,
+} from '@c/molecules/BarChart';
 
 export interface Props extends Omit<BarChartProps, 'data' | 'title'> {}
 
@@ -16,5 +20,21 @@ const data = {
 };
 
 export const IncomeBarChart: FC<Props> = (props: Props) => (
-  <BarChart {...props} title='新卒1年目の年収' data={data} />
+  <BarChart
+    {...props}
+    title='新卒1年目の年収'
+    data={data}
+    options={{
+      ...defaultOptions,
+      scales: {
+        ...defaultOptions.scales,
+        yAxes: {
+          ticks: {
+            callback: (value: number | string) =>
+              `${value.toLocaleString()}万円`,
+          },
+        },
+      },
+    }}
+  />
 );
