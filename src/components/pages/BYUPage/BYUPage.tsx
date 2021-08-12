@@ -27,11 +27,7 @@ export interface Props {}
 
 export const BYUPage: FC<Props> = () => (
   <Container>
-    <PageTitle>
-      <GradientText start='#001225' stop='#002e5d'>
-        Brigham Young University
-      </GradientText>
-    </PageTitle>
+    <PageTitle>Brigham Young University</PageTitle>
 
     <Section id='概要' className='clear-both'>
       <SectionTitle id='概要'>概要</SectionTitle>

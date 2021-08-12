@@ -14,7 +14,7 @@ export interface Props {
 }
 
 export const CostTable: FC<Props> = ({ rate }: Props) => {
-  const [isJPY, setIsJPY] = useState(false);
+  const [isJPY, setIsJPY] = useState(true);
   const [isLDS, setIsLDS] = useState(true);
   const unit = isJPY ? '¥' : '$';
   const forex = isJPY ? rate : 1;
