@@ -33,7 +33,7 @@ export const ComparePage: FC<Props> = () => (
     <Section id='入学に必要な英語力' className='clear-both'>
       <SectionTitle id='入学に必要な英語力'>入学に必要な英語力</SectionTitle>
       <Pane className='space-y-8'>
-        <InternalLink href='http://localhost:3000/apply#入学に必要な英語力'>
+        <InternalLink href='/apply#入学に必要な英語力'>
           こちらを参照。
         </InternalLink>
       </Pane>
