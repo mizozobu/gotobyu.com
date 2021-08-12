@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { usePrevious } from '@l/usePrevious';
 import { ScreenSize } from './ScreenSize.constants';
 import type { ScreenSizeType } from './ScreenSize.interface';
 
@@ -6,6 +7,7 @@ export type ResizeHandler = (screenSize: ScreenSizeType) => void;
 
 export const useScreenSize = (handler?: ResizeHandler): ScreenSizeType => {
   const [screenSize, setScreenSize] = useState<ScreenSizeType>(ScreenSize.sm);
+  const prevScreenSize = usePrevious(screenSize);
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,6 +26,8 @@ export const useScreenSize = (handler?: ResizeHandler): ScreenSizeType => {
         size = ScreenSize['2xl'];
       }
 
+      if (prevScreenSize === size) return;
+
       setScreenSize(size);
       handler?.(size);
     };
@@ -32,7 +36,7 @@ export const useScreenSize = (handler?: ResizeHandler): ScreenSizeType => {
     handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
-  }, [handler]);
+  }, [handler, prevScreenSize]);
 
   return screenSize;
 };

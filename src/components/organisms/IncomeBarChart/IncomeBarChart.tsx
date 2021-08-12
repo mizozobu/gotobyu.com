@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { memo, FC } from 'react';
 import {
   BarChart,
   Props as BarChartProps,
@@ -19,7 +19,7 @@ const data = {
   ],
 };
 
-export const IncomeBarChart: FC<Props> = (props: Props) => (
+export const IncomeBarChart: FC<Props> = memo((props: Props) => (
   <BarChart
     {...props}
     title='新卒1年目の年収'
@@ -37,4 +37,4 @@ export const IncomeBarChart: FC<Props> = (props: Props) => (
       },
     }}
   />
-);
+));

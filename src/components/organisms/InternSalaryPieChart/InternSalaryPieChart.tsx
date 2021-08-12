@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { memo, FC } from 'react';
 import { PieChart, Props as PieChartProps } from '@c/molecules/PieChart';
 
 export interface Props extends Omit<PieChartProps, 'data' | 'title'> {}
@@ -20,6 +20,6 @@ const data = {
   ],
 };
 
-export const InternSalaryPieChart: FC<Props> = (props: Props) => (
+export const InternSalaryPieChart: FC<Props> = memo((props: Props) => (
   <PieChart {...props} title='インターシップ給与(月)' data={data} />
-);
+));

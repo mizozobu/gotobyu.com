@@ -1,4 +1,4 @@
-import { useState, FC } from 'react';
+import { memo, useState, FC } from 'react';
 import {
   BarChart,
   Props as BarChartProps,
@@ -49,7 +49,7 @@ const data = {
   ],
 };
 
-export const TuitionBarChart: FC<Props> = ({ rate, ...props }: Props) => {
+export const TuitionBarChart: FC<Props> = memo(({ rate, ...props }: Props) => {
   const [isJPY, setIsJPY] = useState(true);
   const [isLDS, setIsLDS] = useState(true);
   const forex = isJPY ? rate : 1;
@@ -107,4 +107,4 @@ export const TuitionBarChart: FC<Props> = ({ rate, ...props }: Props) => {
       />
     </>
   );
-};
+});

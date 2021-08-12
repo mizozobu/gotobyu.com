@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, useCallback, useState } from 'react';
+import { useCallback, useState, FC, HTMLAttributes } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
 import { useScreenSize, gte, ScreenSize } from '@l/ScreenSize';
