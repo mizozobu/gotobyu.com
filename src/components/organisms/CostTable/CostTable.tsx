@@ -15,8 +15,10 @@ export interface Props {
 
 export const CostTable: FC<Props> = ({ rate }: Props) => {
   const [isJPY, setIsJPY] = useState(false);
+  const [isLDS, setIsLDS] = useState(true);
   const unit = isJPY ? '¥' : '$';
-  const r = isJPY ? rate : 1;
+  const forex = isJPY ? rate : 1;
+  const ldsRate = isLDS ? 1 : 2;
 
   return (
     <>
@@ -26,6 +28,12 @@ export const CostTable: FC<Props> = ({ rate }: Props) => {
           onChange={setIsJPY}
           label='日本円'
           sr='Switch Currency'
+        />
+        <SwitchControl
+          checked={isLDS}
+          onChange={setIsLDS}
+          label='教会員'
+          sr='Switch Membership Status'
         />
       </div>
 
@@ -74,90 +82,90 @@ export const CostTable: FC<Props> = ({ rate }: Props) => {
             <th scope='row'>学費</th>
             <td>
               {unit}
-              <Digit>{CostData.byu.tuition * r}</Digit>
+              <Digit>{CostData.byu.tuition * forex * ldsRate}</Digit>
             </td>
             <td>
               {unit}
-              <Digit>{CostData.byuh.tuition * r}</Digit>
+              <Digit>{CostData.byuh.tuition * forex * ldsRate}</Digit>
             </td>
             <td>
               {unit}
-              <Digit>{CostData.byui.tuition * r}</Digit>
+              <Digit>{CostData.byui.tuition * forex * ldsRate}</Digit>
             </td>
           </tr>
           <tr>
             <th scope='row'>家賃と食費</th>
             <td>
               {unit}
-              <Digit>{CostData.byu.housing * r}</Digit>
+              <Digit>{CostData.byu.housing * forex}</Digit>
             </td>
             <td>
               {unit}
-              <Digit>{CostData.byuh.housing * r}</Digit>
+              <Digit>{CostData.byuh.housing * forex}</Digit>
             </td>
             <td>
               {unit}
-              <Digit>{CostData.byui.housing * r}</Digit>
+              <Digit>{CostData.byui.housing * forex}</Digit>
             </td>
           </tr>
           <tr>
             <th scope='row'>教科書費</th>
             <td>
               {unit}
-              <Digit>{CostData.byu.books * r}</Digit>
+              <Digit>{CostData.byu.books * forex}</Digit>
             </td>
             <td>
               {unit}
-              <Digit>{CostData.byuh.books * r}</Digit>
+              <Digit>{CostData.byuh.books * forex}</Digit>
             </td>
             <td>
               {unit}
-              <Digit>{CostData.byui.books * r}</Digit>
+              <Digit>{CostData.byui.books * forex}</Digit>
             </td>
           </tr>
           <tr>
             <th scope='row'>生活費</th>
             <td>
               {unit}
-              <Digit>{CostData.byu.personal * r}</Digit>
+              <Digit>{CostData.byu.personal * forex}</Digit>
             </td>
             <td>
               {unit}
-              <Digit>{CostData.byuh.personal * r}</Digit>
+              <Digit>{CostData.byuh.personal * forex}</Digit>
             </td>
             <td>
               {unit}
-              <Digit>{CostData.byui.personal * r}</Digit>
+              <Digit>{CostData.byui.personal * forex}</Digit>
             </td>
           </tr>
           <tr>
             <th scope='row'>交通費</th>
             <td>
               {unit}
-              <Digit>{CostData.byu.transportation * r}</Digit>
+              <Digit>{CostData.byu.transportation * forex}</Digit>
             </td>
             <td>
               {unit}
-              <Digit>{CostData.byuh.transportation * r}</Digit>
+              <Digit>{CostData.byuh.transportation * forex}</Digit>
             </td>
             <td>
               {unit}
-              <Digit>{CostData.byui.transportation * r}</Digit>
+              <Digit>{CostData.byui.transportation * forex}</Digit>
             </td>
           </tr>
           <tr>
             <th scope='row'>ローン費用</th>
             <td>
               {unit}
-              <Digit>{CostData.byu.loan * r}</Digit>
+              <Digit>{CostData.byu.loan * forex}</Digit>
             </td>
             <td>
               {unit}
-              <Digit>{CostData.byuh.loan * r}</Digit>
+              <Digit>{CostData.byuh.loan * forex}</Digit>
             </td>
             <td>
               {unit}
-              <Digit>{CostData.byui.loan * r}</Digit>
+              <Digit>{CostData.byui.loan * forex}</Digit>
             </td>
           </tr>
         </tbody>
@@ -167,25 +175,31 @@ export const CostTable: FC<Props> = ({ rate }: Props) => {
             <td>
               {unit}
               <Digit>
-                {Object.values(CostData.byu).reduce(
-                  (accumulate, current) => accumulate + current,
-                ) * r}
+                {Object.values({
+                  ...CostData.byu,
+                  tuition: CostData.byu.tuition * ldsRate,
+                }).reduce((accumulate, current) => accumulate + current) *
+                  forex}
               </Digit>
             </td>
             <td>
               {unit}
               <Digit>
-                {Object.values(CostData.byuh).reduce(
-                  (accumulate, current) => accumulate + current,
-                ) * r}
+                {Object.values({
+                  ...CostData.byuh,
+                  tuition: CostData.byuh.tuition * ldsRate,
+                }).reduce((accumulate, current) => accumulate + current) *
+                  forex}
               </Digit>
             </td>
             <td>
               {unit}
               <Digit>
-                {Object.values(CostData.byui).reduce(
-                  (accumulate, current) => accumulate + current,
-                ) * r}
+                {Object.values({
+                  ...CostData.byui,
+                  tuition: CostData.byui.tuition * ldsRate,
+                }).reduce((accumulate, current) => accumulate + current) *
+                  forex}
               </Digit>
             </td>
           </tr>
