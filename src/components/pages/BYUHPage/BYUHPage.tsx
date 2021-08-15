@@ -3,7 +3,6 @@ import { Container } from '@c/atoms/Container';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
-import { GradientText } from '@c/atoms/GradientText';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
 import SectionTitle from '@c/atoms/SectionTitle';
@@ -211,7 +210,24 @@ export const BYUHPage: FC<Props> = () => (
     <Section id='ハワイライフ' className='clear-both'>
       <SectionTitle id='ハワイライフ'>ハワイライフ</SectionTitle>
       <Pane>
-        <div className='inline space-y-4'>TBD</div>
+        <div className='inline space-y-4'>
+          <p>
+            ノースショアは大自然に囲まれているため、多くのビーチやハイキングスポットがあります。
+            ビーチは、<Mark>サーフィン</Mark>、<Mark>シュノーケリング</Mark>、
+            <Mark>スピアフィッシング</Mark>
+            など多種多様な楽しみ方があります。
+            <Mark>ウミガメ</Mark>が来ることで有名なビーチや、有名な
+            <Mark>ガーリックシュリンプ</Mark>のお店もあります。
+          </p>
+          <p>
+            バスや車でノースショアを出ると<Mark>ダイヤモンドヘッド</Mark>、
+            <Mark>パールハーバー</Mark>、<Mark>ドールプランテーション</Mark>、
+            <Mark>ラニカイビーチ</Mark>
+            などの有名な観光スポットが数多くあるので、卒業までに一度は訪れておきたいものです。
+            <Mark>ワイキキ</Mark>、<Mark>ホノルル</Mark>
+            まで足を伸ばせば、ショッピングモールで買い物を楽しむこともできます。
+          </p>
+        </div>
       </Pane>
     </Section>
 

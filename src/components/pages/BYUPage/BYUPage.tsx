@@ -3,7 +3,6 @@ import { Container } from '@c/atoms/Container';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
-import { GradientText } from '@c/atoms/GradientText';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
 import SectionTitle from '@c/atoms/SectionTitle';
@@ -22,6 +21,7 @@ import canyonLandsNationalParkImage from '@p/byu/canyonlands_national_park.jpg';
 import saltFlatsImage from '@p/byu/salt_flats.jpg';
 import skiResortImage from '@p/byu/ski_resort.jpg';
 import utahStateCapitalBuilding from '@p/byu/utah_state_capital_building.jpg';
+import byuLargeClass from '@p/byu/large_class.jpg';
 
 export interface Props {}
 
@@ -124,7 +124,43 @@ export const BYUPage: FC<Props> = () => (
     <Section id='専攻と授業' className='clear-both'>
       <SectionTitle id='専攻と授業'>専攻と授業</SectionTitle>
       <Pane>
-        <div className='inline space-y-4'>TBD</div>
+        <PhotoViewer
+          className='mx-0 my-8 md:mr-8 md:float-left'
+          colorClass='bg-gradient-to-br from-byu to-byu-dark'
+          images={[
+            {
+              // https://universe.byu.edu/2014/09/23/entrepreneurship-week-kicks-off-sept-29/
+              src: byuLargeClass,
+              alt: 'BYUの大きなクラス',
+              placeholder: 'blur',
+              layout: 'fill',
+              objectFit: 'cover',
+            },
+          ]}
+        />
+
+        <div className='inline space-y-4'>
+          <p>
+            BYUには
+            <ExternalLink href='https://catalog.byu.edu/majors'>
+              186のMajor(専攻)と110のMinor(副専攻)
+            </ExternalLink>
+            があり、基本的には自由に選択することができます。
+            一部の人気のある専攻では、希望者全員がその専攻を選択できるわけではなく、
+            <Mark>選考プロセス</Mark>が用意されています。
+            各専攻で決められているPrerequisitesと呼ばれるクラスを修了し、GPAとエッセイで選考を受けなければなりません。
+            選考が<Mark>1年に1度</Mark>
+            しか行われない専攻もあるので、Prerequisitesが終わらずに選考を受けられなくならないように、計画的に授業を取る必要があります。
+          </p>
+          <p>
+            授業は20人程度の小規模のものから、800人を超えるような大規模なクラスもあります。
+            <ExternalLink href='https://catalog.byu.edu/policy/registration'>
+              留学生は各学期12単位以上(Spring/Summerは6単位)
+            </ExternalLink>
+            取る必要があり、一般的に平均的な成績を取るためには授業を含めて
+            <Mark>毎週3時間/単位</Mark>の勉強時間が必要とされています。
+          </p>
+        </div>
       </Pane>
     </Section>
 
@@ -136,8 +172,9 @@ export const BYUPage: FC<Props> = () => (
             日本と違い全てにおいて規模が大きいアメリカでの生活となると車は必須なのでは？と思う方もいらっしゃると思います。もちろん車があることに越したことはないのですが、BYU生徒は電車やバスが無料で使えるのでお買い物や通学などにとても便利です。また、プロボから北の方へ走っている電車も無料で利用できるので、ソルトレレイクにも気軽に遊びに行くことができます。
           </p>
           <p>
-            また、日本の運転免許を持っておられる方は<Mark>ユタの免許</Mark>
-            への書き換えも簡単にできます。テキストブックを見ながら受けられるペーパーテストと簡単な実技テストを受けます。コストも5000円以下で安く済むので生活に慣れた頃、車を購入することを検討してみても良いかもしれません。
+            また、日本の運転免許を持っておられる方は
+            <Mark>ユタの免許 への書き換え</Mark>
+            も簡単にできます。テキストブックを見ながら受けられるペーパーテストと簡単な実技テストを受けます。コストも5000円以下で安く済むので生活に慣れた頃、車を購入することを検討してみても良いかもしれません。
           </p>
           <p>
             また、日本食などを取り扱っているアジアンマーケットがプロボにもあり日本食やお菓子など恋しくなっても心配なし。美味しいお寿司やラーメンが食べられるレストランもあります。
@@ -216,7 +253,26 @@ export const BYUPage: FC<Props> = () => (
 
     <Section id='クラブ' className='clear-both'>
       <SectionTitle id='クラブ'>クラブ</SectionTitle>
-      <Pane>TBD</Pane>
+      <Pane>
+        <div className='inline space-y-4'>
+          <p>
+            BYUには、<Mark>楽しむことが目的のBYUSAクラブ</Mark>と、
+            <Mark>就活、進学、研究が目的のAcademicクラブ</Mark>があり、 合計で
+            <ExternalLink href='https://clubs.byu.edu/'>312クラブ</ExternalLink>
+            が存在します。
+          </p>
+          <p>
+            BYUSAクラブでは、サイクリングをしたり、映画を見たりと同じ趣味を持つ人が集まって楽しい活動をします。
+          </p>
+          <p>
+            Academicクラブでは、就活関連のワークショップを開催したり、企業を招いて会社説明会を開催したりします。
+            クラブでの活動を通じて<Mark>インターンシップや内定を獲得</Mark>
+            する人も少なくないです。
+            <Mark>有名企業からスポンサー</Mark>
+            されているクラブもあるので、クラブ活動を通してコネクションを広げる機会にもなります。
+          </p>
+        </div>
+      </Pane>
     </Section>
 
     <Section id='アルバイト' className='clear-both'>
@@ -234,7 +290,33 @@ export const BYUPage: FC<Props> = () => (
       <SectionTitle id='奨学金'>奨学金</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
-          <p>TBD</p>
+          <p>
+            <ExternalLink href='https://enrollment.byu.edu/financial-aid/applying-for-scholarships'>
+              BYUの奨学金
+            </ExternalLink>
+            はGPAやその他の貢献度によって、<Mark>授業料の半額か全額</Mark>
+            が給付される可能性があります。
+            毎年奨学金が給付されるGPAのボーダーが変わるため、申し込むまで貰えるかどうかは分かりません。
+            以前は選考後に奨学金が給付された生徒の平均GPAが公開されていましたが、非公開になりました。
+            <ExternalLink href='https://universe.byu.edu/2017/06/20/scholarship-gpa-cutoffs-raise-students-disappointed1/'>
+              過去のデータ
+            </ExternalLink>
+            を見ても<Mark>かなり選考基準が高い</Mark>
+            ことが分かるので、運がよければ貰える程度に捉えておきましょう。
+            奨学金の選考に参加するには、年度ごとに申し込む必要があります(エッセイは任意)。
+            場合によっては締切が学期の始まる9ヶ月前に設定されているので、予め確認しておいたほうが良いです。
+          </p>
+          <p>
+            他にも
+            <ExternalLink href='https://enrollment.byu.edu/financial-aid/international-student-scholarships'>
+              留学生対象の奨学金
+            </ExternalLink>
+            や
+            <ExternalLink href='https://enrollment.byu.edu/financial-aid/byu-college-departmental-scholarships'>
+              学部ごとの奨学金
+            </ExternalLink>
+            もあるのでアンテナを張っておきましょう。
+          </p>
         </div>
       </Pane>
     </Section>

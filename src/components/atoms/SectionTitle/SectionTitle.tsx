@@ -19,20 +19,22 @@ export const SectionTitle: FC<Props> = memo(
     onClick,
     ...props
   }: Props) => (
-    <Link href={`#${id}`}>
-      <a
-        className={classNames(styles['section-title'], {
-          [styles.active]: active,
-        })}
-      >
-        <h2 {...props} className={classNames('inline-block', className)}>
-          <button type='button' onClick={onClick}>
-            <span className={styles['section-title-text']}>
-              {children} <LinkIcon className='inline h-6 text-indigo-200' />
-            </span>
-          </button>
-        </h2>
-      </a>
-    </Link>
+    <div>
+      <Link href={`#${id}`}>
+        <a
+          className={classNames(styles['section-title'], {
+            [styles.active]: active,
+          })}
+        >
+          <h2 {...props} className={classNames(className)}>
+            <button type='button' onClick={onClick}>
+              <span className={styles['section-title-text']}>
+                {children} <LinkIcon className='inline h-6 text-indigo-200' />
+              </span>
+            </button>
+          </h2>
+        </a>
+      </Link>
+    </div>
   ),
 );

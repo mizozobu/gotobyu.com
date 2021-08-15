@@ -381,7 +381,7 @@ export const ApplyPage: FC<Props> = () => (
     <Section id='成績表と卒業証明書' className='clear-both'>
       <SectionTitle id='成績表と卒業証明書'>成績表と卒業証明書</SectionTitle>
       <Pane>
-        <p>TBD</p>
+        <p>Coming Soon...</p>
       </Pane>
     </Section>
 

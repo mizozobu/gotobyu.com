@@ -3,7 +3,6 @@ import { Container } from '@c/atoms/Container';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
-import { GradientText } from '@c/atoms/GradientText';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
 import SectionTitle from '@c/atoms/SectionTitle';
@@ -211,7 +210,7 @@ export const BYUIPage: FC<Props> = () => (
     <Section id='アイダホライフ' className='clear-both'>
       <SectionTitle id='アイダホライフ'>アイダホライフ</SectionTitle>
       <Pane>
-        <div className='inline space-y-4'>TBD</div>
+        <div className='inline space-y-4'>Coming Soon...</div>
       </Pane>
     </Section>
 
