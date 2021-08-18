@@ -66,14 +66,10 @@ export class CmsClient {
   }: EntryCollection<T>): CmsClientListRes<T> {
     return {
       meta: {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         total,
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         skip,
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         limit,
       },
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
       items: items.map(({ fields }) => fields),
     };
   }
@@ -87,16 +83,15 @@ export class CmsClient {
       content_type: contentType,
     });
 
-    const res = await this.deliveryClient.get<Entry<T>>(
+    const { data } = await this.deliveryClient.get<Entry<T>>(
       `/entries/${id}?${params.toString()}`,
     );
 
-    return this.normalizeGetRes(res.data);
+    return this.normalizeGetRes(data);
   }
 
   // eslint-disable-next-line class-methods-use-this
   normalizeGetRes<T>({ fields }: Entry<T>): CmsClientGetRes<T> {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return fields;
   }
 }
