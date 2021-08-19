@@ -166,9 +166,7 @@ export const ApplyPage: FC<Props> = () => (
       <SectionTitle id='申込費用'>申込費用</SectionTitle>
       <Pane>
         <p>
-          申込費用は1回は<Mark>$35</Mark>です。1回で
-          <Mark>複数の大学に申し込むこともできます</Mark>。
-          複数の大学に申し込んだとしても費用は$35なので、第1希望、第2希望、...にまとめて申し込むことをおすすめします。
+          申込費用は1回は1校につき<Mark>$35</Mark>です。
         </p>
       </Pane>
     </Section>

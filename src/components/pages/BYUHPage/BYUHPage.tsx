@@ -106,13 +106,15 @@ export const BYUHPage: FC<Props> = () => (
             </ExternalLink>
             の中から、<Mark>1つのMajorと2つのMinor/Certificate</Mark>
             を取る必要があります。
-            ハワイならではの観光学、海洋生物学などもあります。
+            ハワイならではの観光学、海洋生物学などもを学べるのもBYUHの魅力です。
+            音楽、グラッフィックデザインなどの一部の専攻では実技や成績での選考を通った生徒だけがその専攻を選択できます。
             途中で専攻を変えることは自由ですが、
             <ExternalLink href='https://catalog.byuh.edu/enrollment-policy'>
               入学から4年以内に卒業しなければならない
             </ExternalLink>
             という決まりがあるため、頻繁に専攻を変えると卒業が難しくなるので注意が必要です(インターシップや伝道は考慮されます)。
           </p>
+
           <p>
             <Mark>
               留学生は初めはEIL(English as an International
@@ -128,7 +130,6 @@ export const BYUHPage: FC<Props> = () => (
             のクラスがほとんどのため、クラスメートと仲良くなりやすいです。
             課題の量は日本の大学よりは多いですが、しっかり取り組めば週末は遊びに行く時間は確保できるでしょう。
           </p>
-
           <List title='日本人に人気の専攻'>
             <Item>Accounting(会計学)</Item>
             <Item>Business Management(経営学)</Item>
