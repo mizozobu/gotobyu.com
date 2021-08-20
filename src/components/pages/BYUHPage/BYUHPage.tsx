@@ -23,7 +23,6 @@ import byuhFoodFestaImage from '@p/byuh/byuh_food_festa.jpg';
 import byuhHousing from '@p/byuh/byuh_housing.jpg';
 import byuhLuauImage from '@p/byuh/byuh_luau.jpg';
 import byuhResumeWorkshopImage from '@p/byuh/byuh_resume_workshop.jpg';
-import byuhTourGuideImage from '@p/byuh/byuh_tour_guide.jpg';
 
 export interface Props {}
 
@@ -92,6 +91,7 @@ export const BYUHPage: FC<Props> = () => (
             colorClass='bg-gradient-to-br from-byuh to-byuh-dark'
             images={[
               {
+                // https://www.flickr.com/photos/byuhawaii/48707555467/in/photostream/
                 src: byuhClassImage,
                 alt: 'BYUH 授業風景',
                 placeholder: 'blur',
@@ -150,6 +150,7 @@ export const BYUHPage: FC<Props> = () => (
             colorClass='bg-gradient-to-br from-byuh to-byuh-dark'
             images={[
               {
+                // https://honorcode.byuh.edu/dress-and-grooming
                 src: byuhDressAndGroomingImage,
                 alt: 'BYUH 服装',
                 placeholder: 'blur',
@@ -157,6 +158,7 @@ export const BYUHPage: FC<Props> = () => (
                 objectFit: 'cover',
               },
               {
+                // https://residentiallife.byuh.edu/hale-3
                 src: byuhHousing,
                 alt: 'BYUH 学生寮',
                 placeholder: 'blur',
@@ -241,6 +243,7 @@ export const BYUHPage: FC<Props> = () => (
             colorClass='bg-gradient-to-br from-byuh to-byuh-dark'
             images={[
               {
+                // https://www.flickr.com/photos/byuhawaii/48174189107/in/album-72157709389866832/
                 src: byuhCultureNightImage,
                 alt: 'BYUH クラブ カルチャーナイト',
                 placeholder: 'blur',
@@ -248,6 +251,7 @@ export const BYUHPage: FC<Props> = () => (
                 objectFit: 'cover',
               },
               {
+                // https://www.flickr.com/photos/byuhawaii/44544915910/in/album-72157704747317565/
                 src: byuhFoodFestaImage,
                 alt: 'BYUH クラブ フードフェスタ',
                 placeholder: 'blur',
@@ -255,6 +259,7 @@ export const BYUHPage: FC<Props> = () => (
                 objectFit: 'cover',
               },
               {
+                // https://drive.google.com/drive/folders/1S9VAPXsPBcjqhJtPosW7gvPslGPQ6Qpm
                 src: byuhBbqImage,
                 alt: 'BYUH クラブ バーベキュー',
                 placeholder: 'blur',
@@ -262,6 +267,7 @@ export const BYUHPage: FC<Props> = () => (
                 objectFit: 'cover',
               },
               {
+                // https://www.facebook.com/photo?fbid=10207794524360360&set=g.465567126808469
                 src: byuhResumeWorkshopImage,
                 alt: 'BYUH クラブ 企業研究会',
                 placeholder: 'blur',
@@ -304,13 +310,7 @@ export const BYUHPage: FC<Props> = () => (
             colorClass='bg-gradient-to-br from-byuh to-byuh-dark'
             images={[
               {
-                src: byuhTourGuideImage,
-                alt: 'BYUH アルバイト ツアーガイド',
-                placeholder: 'blur',
-                layout: 'fill',
-                objectFit: 'cover',
-              },
-              {
+                // https://www.flickr.com/photos/rinux/391701544
                 src: byuhLuauImage,
                 alt: 'BYUH アルバイト レストラン',
                 placeholder: 'blur',
