@@ -100,12 +100,12 @@ export const CareerLinks = [
 ];
 
 export const OtherLinks = [
-  {
-    name: 'よくある質問',
-    description: 'よく聞かれる質問とそれに対する回答',
-    href: '/faq',
-    icon: QuestionMarkCircleIcon,
-  },
+  // {
+  //   name: 'よくある質問',
+  //   description: 'よく聞かれる質問とそれに対する回答',
+  //   href: '/faq',
+  //   icon: QuestionMarkCircleIcon,
+  // },
   {
     name: '運営者について',
     description:

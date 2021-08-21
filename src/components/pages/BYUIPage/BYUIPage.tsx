@@ -6,24 +6,15 @@ import { ExternalLink } from '@c/atoms/ExternalLink';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
 import SectionTitle from '@c/atoms/SectionTitle';
-import { PhotoViewer } from '@c/molecules/PhotoViewer';
+// import { PhotoViewer } from '@c/molecules/PhotoViewer';
 import { Digit } from '@c/atoms/Digit';
-import { Mark } from '@c/atoms/Mark';
-import { List } from '@c/atoms/List';
-import { Item } from '@c/atoms/Item';
+// import { Mark } from '@c/atoms/Mark';
+// import { List } from '@c/atoms/List';
+// import { Item } from '@c/atoms/Item';
 import { NextImage } from '@c/atoms/NextImage';
 import CopiedDialog from '@c/organisms/CopiedDialog';
 import { SchoolData } from '@d';
 import byuiLogoImage from '@p/byui.png';
-import byuhBbqImage from '@p/byuh/byuh_bbq.jpg';
-import byuhClassImage from '@p/byuh/byuh_class.jpg';
-import byuhCultureNightImage from '@p/byuh/byuh_culturenight.jpg';
-import byuhDressAndGroomingImage from '@p/byuh/byuh_dress_and_grooming.jpg';
-import byuhFoodFestaImage from '@p/byuh/byuh_food_festa.jpg';
-import byuhHousing from '@p/byuh/byuh_housing.jpg';
-import byuhLuauImage from '@p/byuh/byuh_luau.jpg';
-import byuhResumeWorkshopImage from '@p/byuh/byuh_resume_workshop.jpg';
-import byuhTourGuideImage from '@p/byuh/byuh_tour_guide.jpg';
 
 export interface Props {}
 
@@ -73,13 +64,8 @@ export const BYUIPage: FC<Props> = () => (
       </SplitPane>
 
       <p>
-        ワイキキから車で1時間ほどのノースショアの小さな町Laieにある大学です。
-        世界中70カ国以上から留学生が集い、
-        <ExternalLink href='https://about.byuh.edu/00000177-1ce4-d89c-af77-7df626210000/20-11-09-quickfactsupdate-pdf'>
-          約半数が留学生
-        </ExternalLink>
-        という国際色豊かな大学です。
-        日本人留学生も多く、常に100人は在学しています。
+        BYUプロボから運転して約5時間ほどのところにあるBYUアイダホはレックスバーグという小さな市にあります。
+        学生街に囲まれているため、レストランやゲームセンターなどちょっとした娯楽も近場で楽しめます。
       </p>
     </Section>
 
@@ -87,55 +73,31 @@ export const BYUIPage: FC<Props> = () => (
       <SectionTitle id='専攻と授業'>専攻と授業</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
-          <PhotoViewer
-            className='mx-0 my-8 md:mr-8 md:float-left'
-            colorClass='bg-gradient-to-br from-byui to-byui-dark'
-            images={[
-              {
-                src: byuhClassImage,
-                alt: 'BYUH 授業風景',
-                placeholder: 'blur',
-                layout: 'fill',
-                objectFit: 'cover',
-              },
-            ]}
-          />
           <p>
-            <ExternalLink href='https://holokai.byuh.edu/programs-of-study'>
-              65のMajor(専攻)と60のMinor(副専攻)と13のCertificate(検定)
+            <ExternalLink href='https://www.byui.edu/catalog#/programs'>
+              69のMajor(専攻)と95のMinor(副専攻)に加え多種類のCertificate
+              (資格)やCluster(ある分野に関してまとまった授業)
             </ExternalLink>
-            の中から、<Mark>1つのMajorと2つのMinor/Certificate</Mark>
-            を取る必要があります。
-            ハワイならではの観光学、海洋生物学などもあります。
-            途中で専攻を変えることは自由ですが、
-            <ExternalLink href='https://catalog.byuh.edu/enrollment-policy'>
-              入学から4年以内に卒業しなければならない
-            </ExternalLink>
-            という決まりがあるため、頻繁に専攻を変えると卒業が難しくなるので注意が必要です(インターシップや伝道は考慮されます)。
+            があります。
+            必ず1つの専攻を決めなければいけません。学部によっては2年で卒業しassociate’s
+            degree(准学士号)だけをとることもできます。大体の生徒はbachelor’s
+            degree(学士号)をとるために通っています。
+            学士号取得のためには120単位を取らなければなりませんが、大体の専攻は90単位以上から成り立つので、残りの30単位以下はelectivesという好きな授業を取れます。
+            その中にはダンスや水泳、運動、料理の授業なども含まれています。（electivesの単位数は専攻によって異なります。）
           </p>
           <p>
-            <Mark>
-              留学生は初めはEIL(English as an International
-              Language)という英語のクラスを取らされ
-            </Mark>
-            、論文の書き方やプレゼンの仕方などの大学生活に必要な英語力を身に着けます(TOEFL
-            iBT80点以上の英語力を証明できればEILをスキップできますが、初めからそんなに英語ができる日本人はいないでしょう)。
-            <Mark>余裕があれば自分の興味のある授業を取ることができる</Mark>
-            のが、他の英語学校よりもおすすめできるポイントです。
+            専攻は途中で変えることも可能です。しかし遅くになって変えてしまうと卒業も遅れてしまいます。また、専攻の中では看護学部のように選考が必要な選考もあります。
           </p>
           <p>
-            <Mark>授業は小規模で10人~20人</Mark>
-            のクラスがほとんどのため、クラスメートと仲良くなりやすいです。
-            課題の量は日本の大学よりは多いですが、しっかり取り組めば週末は遊びに行く時間は確保できるでしょう。
+            留学生はACT／SATにより免除がない場合は留学生用の英語と数学の授業を取らなければなりません。
+            英語に自信のある方でもし初級の数学や英語を取りたくない、という場合であればACT／SATの受験をおすすめします。この試験はいわゆるアメリカの高校生が受ける、日本でいうセンター試験なので全て英語で行われます。
           </p>
-
-          <List title='日本人に人気の専攻'>
-            <Item>Accounting(会計学)</Item>
-            <Item>Business Management(経営学)</Item>
-            <Item>TESOL(英語が母国語ではない人への英語教育)</Item>
-            <Item>Elementary Education(小学校教育)</Item>
-            <Item>Music(音楽)</Item>
-          </List>
+          <p>
+            大体の授業は比較的小規模で10人〜40人程度で行われます。
+            授業や先生によって異なりますが、授業でのグループワークは多い印象です。
+            授業では英語力だけでなく、コミュニケーション力やチームワーク力を鍛えられます。
+            また、先生たちは多くの大学教授のように研究と並行して教師を勤めるのではなく、これまでの経験を糧にして教師だけを本業としているので、生徒たちに全力を注いでくれます。
+          </p>
         </div>
       </Pane>
     </Section>
@@ -144,64 +106,10 @@ export const BYUIPage: FC<Props> = () => (
       <SectionTitle id='衣住食'>衣住食</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
-          <PhotoViewer
-            className='mx-0 my-8 md:mr-8 md:float-left'
-            colorClass='bg-gradient-to-br from-byui to-byui-dark'
-            images={[
-              {
-                src: byuhDressAndGroomingImage,
-                alt: 'BYUH 服装',
-                placeholder: 'blur',
-                layout: 'fill',
-                objectFit: 'cover',
-              },
-              {
-                src: byuhHousing,
-                alt: 'BYUH 学生寮',
-                placeholder: 'blur',
-                layout: 'fill',
-                objectFit: 'cover',
-              },
-            ]}
-          />
           <p>
-            年間を通じて最高気温が25℃~30℃と常夏のため、服装は
-            <Mark>Tシャツに短パンにサンダル</Mark>という軽装の人が多いです。
-            しかし、図書館で冷房が効きすぎていたときや、夜の冷え込みに備えて長袖を用意しておいたほうが良いでしょう。
-            キャンパス内の移動は徒歩かスケートボードを使う人が多いです。
-          </p>
-          <p>
-            <ExternalLink href='https://residentiallife.byuh.edu/single-on-campus-housing-information'>
-              BYUHの規則
-            </ExternalLink>
-            では、新入生は
-            <Mark>初めの3学期はHaleと呼ばれる学生寮に住む</Mark>
-            ことになっています。
-            Haleは2人部屋になっていて、さらに3部屋6人で共用するキッチン、トイレ、シャワーがついています。
-            4学期目からはBYUHキャンパスの外(オフキャンパス)に部屋を借りることができます。
-            Haleでもオフキャンパスでもすぐ近くに友達がいるので、楽しく生活できる環境になっています。
-            結婚した夫婦はTemple View Apartment(TVA)に住むことができます。
-          </p>
-          <p>
-            レストランなどの一部のアルバイトではまかないがつくところがありますが、食事は基本的にはBYUHのカフェテリアで済ませるか、自炊をするかの二択です。
-            カフェテリアには
-            <ExternalLink href='https://foodservices.byuh.edu/meal-plan'>
-              Meal Plan
-            </ExternalLink>
-            と呼ばれる1学期間有効なサブスクリプションが用意されていて、
-            プランによってカフェテリアに入れる曜日が決まっていたり、食事ができる回数が決まっていたりします。
-            <Mark>Haleに住む場合はMeal Planはほぼ必須</Mark>となっています。
-            自炊をする場合は、BYUHから徒歩10分の
-            <ExternalLink href='https://www.google.com/maps/place/Foodland+Laie/@21.6455179,-157.9251959,17z/data=!3m1!5s0x7c004566a0800ef3:0x1ce5d36423696c70!4m9!1m2!2m1!1sfoodland!3m5!1s0x0:0xd784d0a736efbefd!8m2!3d21.6470891!4d-157.9225214!15sCghmb29kbGFuZCIDiAEBWgoiCGZvb2RsYW5kkgELc3VwZXJtYXJrZXSaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUlZPVGxRY2xGbkVBRQ'>
-              Foodland
-            </ExternalLink>
-            で食材を調達できます。 ハワイということもあり、
-            <Mark>物価が高い</Mark>です。
-            日本食が恋しくなったときは、車かバスで片道1~2時間かけて
-            <ExternalLink href='https://www.google.com/maps/search/don+quijote/@21.3443858,-158.0008819,12z/data=!3m1!4b1'>
-              ドン・キホーテ
-            </ExternalLink>
-            まで行けば、大抵のものは揃います。
+            アイダホは自然が多いので登山やキャンプを楽しむことが多いです。冬場は室内で友達と映画をみたりゲームをしたり色々楽しんでいます。
+            また５時間運転してユタへ遊びに行くことこともできます。車のあてがなければバスや電車でも行くことができます。
+            キャンパスのすぐ近くに神殿があるので気軽に行くことができます。
           </p>
         </div>
       </Pane>
@@ -210,7 +118,20 @@ export const BYUIPage: FC<Props> = () => (
     <Section id='アイダホライフ' className='clear-both'>
       <SectionTitle id='アイダホライフ'>アイダホライフ</SectionTitle>
       <Pane>
-        <div className='inline space-y-4'>Coming Soon...</div>
+        <div className='inline space-y-4'>
+          <p>
+            アイダホ州では四季があり、冬は寒く、夏は暑いです。一番寒くて−10度、暑くて30度前半です。10月の後半から雪が降り始め、5月に雪が降ることも。防寒具は必須です。アメリカ人は半袖ででも外出しますが、極暖ヒートテックを必ず持って来ましょう。
+          </p>
+          <p>
+            運転して10分ほどのところにウォールマート（スーパー）があります。車がなくても毎時間無料の送迎バスがあるので一般的な食料の調達は問題ありません。パン粉やカレーのルー、ラーメン、味噌汁、豆腐など日本食の材料はあります。その他スーパーで手に入らないものはネットでの購入するなど、ユタに行った際にアジアンマーケットに寄るなどの方法があります。日本食が恋しくなることもありますが、大体はアクセスのある食べ物で満足できます。それでもよく日本人がアメリカに持ってくるのはマヨネーズ、鶏ガラ、味覇など。味覇は入手困難です。
+          </p>
+          <p>
+            学生街なのでアイスクリーム屋さん、クッキー屋さん、ピザ屋さんなどもあります。またお昼時間は学校の食堂でお昼ご飯を４ドル以上から買えます。
+          </p>
+          <p>
+            家賃に関してはアイダホが３校の中で一番安いです。最安値で１セメスター（３ヶ月半）700ドルからのアパートがあります。しかし大体の平均は1100ドルから1400ドルです。セメスターによっても価格は異なります。
+          </p>
+        </div>
       </Pane>
     </Section>
 
@@ -218,60 +139,9 @@ export const BYUIPage: FC<Props> = () => (
       <SectionTitle id='クラブ'>クラブ</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
-          <PhotoViewer
-            className='mx-0 my-8 md:mr-8 md:float-left'
-            colorClass='bg-gradient-to-br from-byui to-byui-dark'
-            images={[
-              {
-                src: byuhCultureNightImage,
-                alt: 'BYUH クラブ カルチャーナイト',
-                placeholder: 'blur',
-                layout: 'fill',
-                objectFit: 'cover',
-              },
-              {
-                src: byuhFoodFestaImage,
-                alt: 'BYUH クラブ フードフェスタ',
-                placeholder: 'blur',
-                layout: 'fill',
-                objectFit: 'cover',
-              },
-              {
-                src: byuhBbqImage,
-                alt: 'BYUH クラブ バーベキュー',
-                placeholder: 'blur',
-                layout: 'fill',
-                objectFit: 'cover',
-              },
-              {
-                src: byuhResumeWorkshopImage,
-                alt: 'BYUH クラブ 企業研究会',
-                placeholder: 'blur',
-                layout: 'fill',
-                objectFit: 'cover',
-              },
-            ]}
-          />
           <p>
-            BYUHの学生クラブは<Mark>国ごとのクラブ</Mark>
-            が主になっています。
-            各国の食べ物を販売するフードフェスタや、ダンスなどのパフォーマンスをするカルチャーナイトは毎年開催され、各国のクラブが積極的に盛り上げます。
-            他の国のクラブに入れば、異なる文化を学ぶ良い経験になるでしょう。
-          </p>
-          <p>
-            もちろん日本人クラブ(
-            <ExternalLink href='https://www.facebook.com/groups/465567126808469'>
-              Japan Student Chapter
-            </ExternalLink>
-            )も活発に活動しています。
-            BBQやハロウィーンパーティーなどの楽しいアクティビティから、ゴスペルフォーラムや企業研究会などの真面目な活動まで、様々な活動がが開催されます。
-          </p>
-          <p>
-            BYUHのクラブは
-            <ExternalLink href='https://byuh.campuslabs.com/engage/organizations'>
-              BYUHのウェブサイト
-            </ExternalLink>
-            から確認できます。
+            クラブなどはないですが、短期間スポーツチームに所属を申し込むことでサッカー、バレーボール、フットボールなどいろんなスポーツが楽しめます。
+            また、放課後にヨガクラス、ローラースケート、ダンス、レーザータッグなどの活動もあります。
           </p>
         </div>
       </Pane>
@@ -281,74 +151,11 @@ export const BYUIPage: FC<Props> = () => (
       <SectionTitle id='アルバイト'>アルバイト</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
-          <PhotoViewer
-            className='mx-0 my-8 md:mr-8 md:float-left'
-            colorClass='bg-gradient-to-br from-byui to-byui-dark'
-            images={[
-              {
-                src: byuhTourGuideImage,
-                alt: 'BYUH アルバイト ツアーガイド',
-                placeholder: 'blur',
-                layout: 'fill',
-                objectFit: 'cover',
-              },
-              {
-                src: byuhLuauImage,
-                alt: 'BYUH アルバイト レストラン',
-                placeholder: 'blur',
-                layout: 'fill',
-                objectFit: 'cover',
-              },
-            ]}
-          />
           <p>
-            <ExternalLink href='https://hr.byuh.edu/student-employment'>
-              BYUHの規則
-            </ExternalLink>
-            では、 学校期間中は<Mark>週19時間まで</Mark>{' '}
-            、夏休みなどの休業期間には週40時間までアルバイトをすることができます。
-            留学生はビザの関係でキャンパス内でしか働くことができませんが、
-            BYUHでは隣接する
-            <ExternalLink href='https://www.polynesia.com'>
-              ポリネシアカルチャーセンター
-            </ExternalLink>
-            でも働くことができます。
+            留学生はインターンシップ以外ではキャンパス内でしか働けません。
+            その他ではオンラインで教師をしたりなどの方法もあります。
+            キャンパス内ではキッチン、売店スタッフ、お掃除、イベントスタッフ、先生の助手としての仕事などがあります。
           </p>
-
-          <p>
-            <ExternalLink href='https://labor.hawaii.gov/wsd/minimum-wage/'>
-              ハワイ州の最低賃金
-            </ExternalLink>
-            は<Mark>$10.10</Mark>で近年上昇傾向にあります。
-            キャンパス内のアルバイトでも最低賃金は保証されているため、目一杯働くと
-          </p>
-          <p className='text-center'>$10.10 x 19時間 x 4週間 = $767.6</p>
-          <p>
-            となり、ここから税金が引かれるものの家賃と食費程度の金額は手元に残るでしょう。
-          </p>
-
-          <p>
-            アルバイトでは英語を使うことになりますが、中には日本語を教えたり、日本人観光客を相手にしたりと日本語を使うものもあります。
-            英語力に不安のある学生でも雇ってもらえるアルバイトもあるので、興味のある人は積極的に挑戦してみてください。
-            学年が上がりスキルも付いてくると、自分の専攻に関連するような仕事にも挑戦できます。
-            BYUHのアルバイトのポジションには以下のようなものがあります。
-          </p>
-
-          <List title='ポリネシアカルチャーセンター'>
-            <Item>ショーのダンサー</Item>
-            <Item>マーケティングスタッフ</Item>
-            <Item>ツアーガイド</Item>
-            <Item>レストランのウェイター</Item>
-            <Item>売店の店員</Item>
-          </List>
-
-          <List title='BYUHキャンパス'>
-            <Item>会計監査補佐</Item>
-            <Item>大学広報部スタッフ</Item>
-            <Item>日本語チューター</Item>
-            <Item>カフェテリアのスタッフ</Item>
-            <Item>清掃スタッフ</Item>
-          </List>
         </div>
       </Pane>
     </Section>
@@ -358,26 +165,8 @@ export const BYUIPage: FC<Props> = () => (
       <Pane>
         <div className='inline space-y-4'>
           <p>
-            BYUHには累計のGPA(アメリカの大学の4段階評価制度)次第で貰うことができる
-            <ExternalLink href='https://financialaid.byuh.edu/current-returning-student-scholarships'>
-              Merit Scholarship
-            </ExternalLink>
-            があります。
-            <Mark>GPAに応じて授業料の1/4~全額の奨学金が貰えます</Mark>
-            。貰うためには最低でもGPAが3.65必要ですが、努力すれば届く範囲なので、積極的に狙っていきましょう。
-            他にも
-            <ExternalLink href='https://financialaid.byuh.edu/scholarships'>
-              様々な奨学金制度
-            </ExternalLink>
-            がありますが、日本人が対象になるものは少ないです。
-          </p>
-          <p>
-            貧しい家族の学生のために
-            <ExternalLink href='https://financialaid.byuh.edu/iwork'>
-              IWORK
-            </ExternalLink>
-            という授業料、住居費等を大学が負担してくれる特別な奨学金制度もあります。
-            家族の収入が十分でないことを証明する必要があるため、本当に必要としている学生のための制度です。
+            Thomas E. Ricks
+            Grantという奨学金があります。こちらは経済状況と成績を検討された上で奨学金受領が定められます。
           </p>
         </div>
       </Pane>
