@@ -8,51 +8,54 @@ export interface Props extends HTMLAttributes<SVGElement> {
 export const CirculatingCircles: FC<Props> = ({
   animated = false,
   ...props
-}: Props) => (
-  <svg
-    {...props}
-    id={animated ? 'animated-circulating-circles' : 'circulating-circles'}
-    xmlns='http://www.w3.org/2000/svg'
-    xmlnsXlink='http://www.w3.org/1999/xlink'
-    viewBox='0 0 700 700'
-    shapeRendering='geometricPrecision'
-    textRendering='geometricPrecision'
-    width='100%'
-    height='100%'
-  >
-    <ellipse
-      id='byui'
-      rx='50'
-      ry='50'
-      transform='matrix(1 0 0 1 550 250.00000000000006)'
-      fill='rgb(0,118,182)'
-      stroke='none'
-      strokeWidth='0'
-      strokeMiterlimit='1'
-    />
-    <ellipse
-      id='byuh'
-      rx='50'
-      ry='50'
-      transform='matrix(1 0 0 1 149.99999999999983 250)'
-      fill='rgb(158,27,52)'
-      stroke='none'
-      strokeWidth='0'
-      strokeMiterlimit='1'
-    />
-    <ellipse
-      id='byu'
-      rx='50'
-      ry='50'
-      transform='matrix(1 0 0 1 349.99999999999994 550)'
-      fill='rgb(0,46,93)'
-      stroke='none'
-      strokeWidth='0'
-      strokeLinecap='round'
-      strokeMiterlimit='1'
-      strokeDashoffset='100'
-    />
-    <Script strategy='lazyOnload'>{`
+}: Props) => {
+  const id = animated ? 'animated-circulating-circles' : 'circulating-circles';
+
+  return (
+    <svg
+      {...props}
+      id={id}
+      xmlns='http://www.w3.org/2000/svg'
+      xmlnsXlink='http://www.w3.org/1999/xlink'
+      viewBox='0 0 700 700'
+      shapeRendering='geometricPrecision'
+      textRendering='geometricPrecision'
+      width='100%'
+      height='100%'
+    >
+      <ellipse
+        id='byui'
+        rx='50'
+        ry='50'
+        transform='matrix(1 0 0 1 550 250.00000000000006)'
+        fill='rgb(0,118,182)'
+        stroke='none'
+        strokeWidth='0'
+        strokeMiterlimit='1'
+      />
+      <ellipse
+        id='byuh'
+        rx='50'
+        ry='50'
+        transform='matrix(1 0 0 1 149.99999999999983 250)'
+        fill='rgb(158,27,52)'
+        stroke='none'
+        strokeWidth='0'
+        strokeMiterlimit='1'
+      />
+      <ellipse
+        id='byu'
+        rx='50'
+        ry='50'
+        transform='matrix(1 0 0 1 349.99999999999994 550)'
+        fill='rgb(0,46,93)'
+        stroke='none'
+        strokeWidth='0'
+        strokeLinecap='round'
+        strokeMiterlimit='1'
+        strokeDashoffset='100'
+      />
+      <Script id={id} strategy='lazyOnload'>{`
       ! function (t, n) {
         "object" == typeof exports && "undefined" != typeof module ? module.exports = n() : "function" == typeof define &&
           define.amd ? define(n) : (t = "undefined" != typeof globalThis ? globalThis : t || self).__SVGATOR_PLAYER__ =
@@ -1387,5 +1390,6 @@ export const CirculatingCircles: FC<Props> = ({
         }
       })
     `}</Script>
-  </svg>
-);
+    </svg>
+  );
+};

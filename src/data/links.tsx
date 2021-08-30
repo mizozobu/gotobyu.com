@@ -1,7 +1,7 @@
 import {
   BookOpenIcon,
   MailOpenIcon,
-  QuestionMarkCircleIcon,
+  // QuestionMarkCircleIcon,
   OfficeBuildingIcon,
   PresentationChartBarIcon,
   ScaleIcon,
