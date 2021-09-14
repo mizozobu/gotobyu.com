@@ -166,7 +166,7 @@ export const ApplyPage: FC<Props> = () => (
       <SectionTitle id='申込費用'>申込費用</SectionTitle>
       <Pane>
         <p>
-          申込費用は1回は1校につき<Mark>$35</Mark>です。
+          申込費用は1校につき<Mark>$35</Mark>です。
         </p>
       </Pane>
     </Section>
