@@ -1,6 +1,6 @@
 # gotobyu
 
-![CI](https://github.com/mizozobu/bgotobyu/workflows/CI/badge.svg)
+![CI](https://github.com/mizozobu/gotobyu/workflows/CI/badge.svg)
 [![renovate](https://img.shields.io/badge/renovate-enabled-%231A1F6C?logo=renovatebot)](https://app.renovatebot.com/dashboard#github/mizozobu/gotobyu)
 
 This is a website for BYU Management Society Tokyo Chapter.
