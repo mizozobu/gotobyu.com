@@ -10,7 +10,16 @@ export default {
 
 const Template: Story<Props> = (args) => <SectionTitle {...args} />;
 
-export const Example = Template.bind({});
-Example.args = {
-  children: 'example',
+export const Active = Template.bind({});
+Active.args = {
+  anchorFor: '',
+  active: true,
+  children: 'active',
+};
+
+export const Inactive = Template.bind({});
+Inactive.args = {
+  anchorFor: '',
+  active: false,
+  children: 'inactive',
 };

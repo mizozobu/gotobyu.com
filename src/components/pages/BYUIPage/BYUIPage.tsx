@@ -23,7 +23,7 @@ export const BYUIPage: FC<Props> = () => (
     <PageTitle>Brigham Young University - Idaho</PageTitle>
 
     <Section id='概要' className='clear-both'>
-      <SectionTitle id='概要'>概要</SectionTitle>
+      <SectionTitle>概要</SectionTitle>
       <SplitPane>
         <Pane>
           <NextImage
@@ -70,7 +70,7 @@ export const BYUIPage: FC<Props> = () => (
     </Section>
 
     <Section id='専攻と授業' className='clear-both'>
-      <SectionTitle id='専攻と授業'>専攻と授業</SectionTitle>
+      <SectionTitle>専攻と授業</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
           <p>
@@ -103,7 +103,7 @@ export const BYUIPage: FC<Props> = () => (
     </Section>
 
     <Section id='衣住食' className='clear-both'>
-      <SectionTitle id='衣住食'>衣住食</SectionTitle>
+      <SectionTitle>衣住食</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
           <p>
@@ -116,7 +116,7 @@ export const BYUIPage: FC<Props> = () => (
     </Section>
 
     <Section id='アイダホライフ' className='clear-both'>
-      <SectionTitle id='アイダホライフ'>アイダホライフ</SectionTitle>
+      <SectionTitle>アイダホライフ</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
           <p>
@@ -136,7 +136,7 @@ export const BYUIPage: FC<Props> = () => (
     </Section>
 
     <Section id='クラブ' className='clear-both'>
-      <SectionTitle id='クラブ'>クラブ</SectionTitle>
+      <SectionTitle>クラブ</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
           <p>
@@ -148,7 +148,7 @@ export const BYUIPage: FC<Props> = () => (
     </Section>
 
     <Section id='アルバイト' className='clear-both'>
-      <SectionTitle id='アルバイト'>アルバイト</SectionTitle>
+      <SectionTitle>アルバイト</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
           <p>
@@ -161,7 +161,7 @@ export const BYUIPage: FC<Props> = () => (
     </Section>
 
     <Section id='奨学金' className='clear-both'>
-      <SectionTitle id='奨学金'>奨学金</SectionTitle>
+      <SectionTitle>奨学金</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
           <p>

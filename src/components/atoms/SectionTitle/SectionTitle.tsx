@@ -5,7 +5,7 @@ import styles from './SectionTitle.module.css';
 
 export interface Props
   extends Omit<HTMLAttributes<HTMLHeadingElement>, 'onClick'> {
-  id: string;
+  anchorFor: string;
   active: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
@@ -14,13 +14,13 @@ export const SectionTitle: FC<Props> = memo(
   ({
     active = false,
     className = '',
-    id,
+    anchorFor,
     children,
     onClick,
     ...props
   }: Props) => (
     <div>
-      <Link href={`#${id}`}>
+      <Link href={`#${anchorFor}`}>
         <a
           className={classNames(styles['section-title'], {
             [styles.active]: active,

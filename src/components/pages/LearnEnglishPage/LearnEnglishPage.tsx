@@ -18,7 +18,7 @@ export const LearnEnglishPage: FC<Props> = () => (
     <PageTitle>英語の勉強方法</PageTitle>
 
     <Section id='必要な英語力' className='clear-both'>
-      <SectionTitle id='必要な英語力'>必要な英語力</SectionTitle>
+      <SectionTitle>必要な英語力</SectionTitle>
       <Pane className='space-y-4'>
         <p>
           日本の義務教育を受けただけで英語を話せるようになる人が皆無であることから分かるように、普通の高校レベルの英語ではアメリカの大学では全く通用しません。
@@ -39,7 +39,7 @@ export const LearnEnglishPage: FC<Props> = () => (
     </Section>
 
     <Section id='英語の勉強方法' className='clear-both'>
-      <SectionTitle id='英語の勉強方法'>英語の勉強方法</SectionTitle>
+      <SectionTitle>英語の勉強方法</SectionTitle>
       <Pane className='space-y-4'>
         <p>
           入学基準を満たすためには、高校までの単語力は文法が理解できていることを前提により実用的な英語の勉強が必要です。
@@ -63,7 +63,7 @@ export const LearnEnglishPage: FC<Props> = () => (
     </Section>
 
     <Section id='英語学校' className='clear-both'>
-      <SectionTitle id='英語学校'>英語学校</SectionTitle>
+      <SectionTitle>英語学校</SectionTitle>
       <Pane className='space-y-8'>
         <p>
           英語に慣れるための選択肢の1つが英語学校に通うことです。BYU、BYUH、BYUIを目指す人が行くことが多い英語学校を紹介します。
