@@ -15,10 +15,13 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
 
   useEffect(() => {
-    router.events.on('routeChangeComplete', pageview);
-    return () => {
-      router.events.off('routeChangeComplete', pageview);
-    };
+    if (GTM_ID) {
+      router.events.on('routeChangeComplete', pageview);
+      return () => {
+        router.events.off('routeChangeComplete', pageview);
+      };
+    }
+    return undefined;
   }, [router.events]);
 
   return (
