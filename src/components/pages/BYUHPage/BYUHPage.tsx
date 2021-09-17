@@ -13,7 +13,6 @@ import { List } from '@c/atoms/List';
 import { Item } from '@c/atoms/Item';
 import { NextImage } from '@c/atoms/NextImage';
 import CopiedDialog from '@c/organisms/CopiedDialog';
-import { SchoolData } from '@d';
 import byuhLogoImage from '@p/byuh.png';
 import byuhBbqImage from '@p/byuh/byuh_bbq.jpg';
 import byuhClassImage from '@p/byuh/byuh_class.jpg';
@@ -23,6 +22,7 @@ import byuhFoodFestaImage from '@p/byuh/byuh_food_festa.jpg';
 import byuhHousing from '@p/byuh/byuh_housing.jpg';
 import byuhLuauImage from '@p/byuh/byuh_luau.jpg';
 import byuhResumeWorkshopImage from '@p/byuh/byuh_resume_workshop.jpg';
+import { SchoolData } from '@d';
 
 export interface Props {}
 

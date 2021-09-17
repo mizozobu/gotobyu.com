@@ -13,7 +13,6 @@ import { List } from '@c/atoms/List';
 import { Item } from '@c/atoms/Item';
 import { NextImage } from '@c/atoms/NextImage';
 import CopiedDialog from '@c/organisms/CopiedDialog';
-import { SchoolData } from '@d';
 import byuLogoImage from '@p/byu.png';
 import archesNationalParkImage from '@p/byu/arches_national_park.jpg';
 import byuFootballImage from '@p/byu/byu_football.jpg';
@@ -22,6 +21,7 @@ import saltFlatsImage from '@p/byu/salt_flats.jpg';
 import skiResortImage from '@p/byu/ski_resort.jpg';
 import utahStateCapitalBuilding from '@p/byu/utah_state_capital_building.jpg';
 import byuLargeClass from '@p/byu/large_class.jpg';
+import { SchoolData } from '@d';
 
 export interface Props {}
 

@@ -4,10 +4,10 @@ import { TableCaption } from '@c/atoms/TableCaption';
 import { Digit } from '@c/atoms/Digit';
 import { NextImage } from '@c/atoms/NextImage';
 import { SwitchControl } from '@c/molecules/SwitchControl';
-import { CostData } from '@d';
 import byuLogoImage from '@p/byu.png';
 import byuhLogoImage from '@p/byuh.png';
 import byuiLogoImage from '@p/byui.png';
+import { CostData } from '@d';
 
 export interface Props {
   rate: number;

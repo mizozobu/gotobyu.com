@@ -3,10 +3,10 @@ import { Table } from '@c/atoms/Table';
 import { TableCaption } from '@c/atoms/TableCaption';
 import { Digit } from '@c/atoms/Digit';
 import { NextImage } from '@c/atoms/NextImage';
-import { SchoolData } from '@d';
 import byuLogoImage from '@p/byu.png';
 import byuhLogoImage from '@p/byuh.png';
 import byuiLogoImage from '@p/byui.png';
+import { SchoolData } from '@d';
 
 export interface Props {}
 

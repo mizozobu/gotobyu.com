@@ -4,10 +4,10 @@ import { NextImage } from '@c/atoms/NextImage';
 import { PageCard } from '@c/molecules/PageCard';
 import { SchoolCard } from '@c/molecules/SchoolCard';
 import { Hero } from '@c/organisms/Hero';
-import { AdditionalSchoolLinks, ApplyLinks, CareerLinks, OtherLinks } from '@d';
 import byuLogoImage from '@p/byu.png';
 import byuhLogoImage from '@p/byuh.png';
 import byuiLogoImage from '@p/byui.png';
+import { AdditionalSchoolLinks, ApplyLinks, CareerLinks, OtherLinks } from '@d';
 
 export interface Props {}
 

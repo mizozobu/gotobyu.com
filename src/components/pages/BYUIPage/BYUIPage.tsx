@@ -13,8 +13,8 @@ import { Digit } from '@c/atoms/Digit';
 // import { Item } from '@c/atoms/Item';
 import { NextImage } from '@c/atoms/NextImage';
 import CopiedDialog from '@c/organisms/CopiedDialog';
-import { SchoolData } from '@d';
 import byuiLogoImage from '@p/byui.png';
+import { SchoolData } from '@d';
 
 export interface Props {}
 

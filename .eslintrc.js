@@ -5,12 +5,11 @@ module.exports = {
     node: true,
   },
   extends: [
-    'next',
-    'next/core-web-vitals',
     'airbnb',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:@next/next/core-web-vitals',
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
