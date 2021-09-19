@@ -3,12 +3,15 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
+import { MDXProvider } from '@mdx-js/react';
 import { RecoilRoot } from 'recoil';
-import { Footer } from '@c/organisms/Footer';
-import Header from '@c/organisms/Header';
 import { Title } from '@c/atoms/Title';
+import Header from '@c/organisms/Header';
+import { Footer } from '@c/organisms/Footer';
 import ScrollIntoView from '@c/atoms/ScrollIntoView';
-import { GTM_ID, pageview } from '@l/Gtm';
+import CopiedDialog from '@c/organisms/CopiedDialog';
+import { GTM_ID, pageview } from '@l/gtm';
+import { mdxComponents } from '@l/mdx';
 import '../styles/globals.css';
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
@@ -51,6 +54,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
         <meta name='theme-color' content='#ffffff' />
         <meta name='robots' content='noindex' />
       </Head>
+
       {/* Google Tag Manager */}
       {GTM_ID && (
         <Script
@@ -68,14 +72,22 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
         />
       )}
       {/* End Google Tag Manager */}
+
       <a href='#maincontent' className='sr-only'>
         Skip to main content
       </a>
+
       <Header />
+
       <main id='maincontent'>
-        <Component {...pageProps} />
+        <MDXProvider components={mdxComponents}>
+          <Component {...pageProps} />
+        </MDXProvider>
       </main>
+
+      <CopiedDialog />
       <ScrollIntoView />
+
       <Footer />
     </RecoilRoot>
   );

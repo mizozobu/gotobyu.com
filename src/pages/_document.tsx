@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { GTM_ID } from '@l/Gtm';
+import { GTM_ID } from '@l/gtm';
 
 class MyDocument extends Document {
   render(): JSX.Element {

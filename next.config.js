@@ -1,11 +1,21 @@
-/* eslint-disable */
 const { ProvidePlugin } = require('webpack');
+const mdxFactory = require('@next/mdx');
+const { sectionize } = require('./plugins/remark');
+
+const withMDX = mdxFactory({
+  extension: /\.mdx$/,
+  options: {
+    remarkPlugins: [sectionize],
+    rehypePlugins: [],
+  },
+});
 
 /**
- * @type {import('next/dist/next-server/server/config').NextConfig}
+ * @type {import('next').NextConfig}
  */
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   webpack: (config) => ({
     ...config,
     plugins: [
@@ -16,3 +26,5 @@ module.exports = {
     ],
   }),
 };
+
+module.exports = withMDX(nextConfig);

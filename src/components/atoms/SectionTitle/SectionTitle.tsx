@@ -19,7 +19,7 @@ export const SectionTitle: FC<Props> = memo(
     onClick,
     ...props
   }: Props) => (
-    <div>
+    <div className='mb-8'>
       <Link href={`#${anchorFor}`}>
         <a
           className={classNames(styles['section-title'], {
@@ -28,7 +28,12 @@ export const SectionTitle: FC<Props> = memo(
         >
           <h2 {...props} className={classNames(className)}>
             <button type='button' onClick={onClick}>
-              <span className={styles['section-title-text']}>
+              <span
+                className={classNames(
+                  'text-2xl md:text-4xl font-bold',
+                  styles['section-title-text'],
+                )}
+              >
                 {children} <LinkIcon className='inline h-6 text-indigo-200' />
               </span>
             </button>
