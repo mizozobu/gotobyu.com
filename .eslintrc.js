@@ -120,6 +120,20 @@ module.exports = {
         'jest/globals': true,
       },
       plugins: ['jest'],
+      rules: {
+        // allow importing devDependencies in tests
+        'import/no-extraneous-dependencies': [
+          'error',
+          {
+            devDependencies: [
+              '**/*.spec.js',
+              '**/*.spec.ts',
+              '**/*.spec.jsx',
+              '**/*.spec.tsx',
+            ],
+          },
+        ],
+      },
     },
 
     /**
