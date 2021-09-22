@@ -72,6 +72,11 @@ const sectionize = () => (tree) => {
       return [node];
     }),
   });
+
+  tree.children.unshift({
+    type: 'import',
+    value: "import { Section } from '@c/atoms/Section';",
+  });
 };
 
 module.exports = sectionize;
