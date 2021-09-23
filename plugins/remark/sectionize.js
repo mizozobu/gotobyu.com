@@ -30,7 +30,7 @@ const sectionize = () => (tree) => {
         // close and open in the middle
         if (isOpening) {
           return [
-            { type: 'jsx', value: `</div>` },
+            { type: 'jsx', value: '</div>' },
             { type: 'jsx', value: '</Section>' },
             { type: 'jsx', value: `<Section id='${id}'>` },
             node,
@@ -64,7 +64,7 @@ const sectionize = () => (tree) => {
         isOpening = false;
         return [
           node,
-          { type: 'jsx', value: `</div>` },
+          { type: 'jsx', value: '</div>' },
           { type: 'jsx', value: '</Section>' },
         ];
       }

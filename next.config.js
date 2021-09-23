@@ -1,11 +1,11 @@
 const { ProvidePlugin } = require('webpack');
 const mdxFactory = require('@next/mdx');
-const { sectionize } = require('./plugins/remark');
+const { sectionize, transformInternalLink } = require('./plugins/remark');
 
 const withMDX = mdxFactory({
   extension: /\.mdx$/,
   options: {
-    remarkPlugins: [sectionize],
+    remarkPlugins: [sectionize, transformInternalLink],
     rehypePlugins: [],
   },
 });
