@@ -1,26 +1,21 @@
-import { ReactNode } from 'react';
-import { NextPageContext } from 'next';
-import Head from 'next/head';
-import { Title } from '@c/atoms/Title';
+import { NextPage } from 'next';
 import { ErrorPage } from '@c/pages/ErrorPage';
+import { Seo } from '@c/organisms/Seo';
 
 export interface Props {
-  statusCode: number;
+  statusCode?: number;
 }
 
 // eslint-disable-next-line no-underscore-dangle
-const _ErrorPage = ({ statusCode }: Props): ReactNode => (
+const _ErrorPage: NextPage<Props> = ({ statusCode = 500 }: Props) => (
   <>
-    <Title>エラー</Title>
-    <Head>
-      <meta name='robots' content='noindex' />
-    </Head>
-
+    <Seo title='エラー' noindex nofollow />
     <ErrorPage statusCode={statusCode} />
   </>
 );
 
-_ErrorPage.getInitialProps = ({ res, err }: NextPageContext) => {
+// see https://nextjs.org/docs/advanced-features/custom-error-page#more-advanced-error-page-customizing
+_ErrorPage.getInitialProps = ({ res, err }) => {
   // eslint-disable-next-line no-nested-ternary
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
   return { statusCode };
