@@ -1,20 +1,21 @@
 import { FC } from 'react';
-import Head from 'next/head';
-import { Title } from '@c/atoms/Title';
 import { IndexPage } from '@c/pages/IndexPage';
+import { Seo } from '@c/organisms/Seo';
 
 export interface Props {}
 
 // eslint-disable-next-line no-underscore-dangle
 const _IndexPage: FC<Props> = () => (
   <>
-    <Title />
-    <Head>
-      <meta
-        name='description'
-        content='BYU、BYUH、BYUIへの入学を考えている方に向けて、各大学の専攻、費用、奨学金について紹介しています。さらに、BYU3校の比較、入学手続き、英語の勉強方法、卒業後のキャリアなどについても紹介しています。'
-      />
-    </Head>
+    <Seo
+      description='BYU、BYUH、BYUIへの入学を考えている方に向けて、在学生と卒業生が入学前に知っておきたかった情報をまとめました。専攻、費用、アルバイト、奨学金、入学手続き、BYU3校の比較、英語の勉強方法、卒業後のキャリアなどについて紹介しています。'
+      openGraph={{
+        type: 'website',
+        title: 'BYU Management Society Tokyo Chapter',
+        description:
+          'BYU、BYUH、BYUIへの入学を考えている方に向けて、在学生と卒業生が入学前に知っておきたかった情報をまとめました。専攻、費用、アルバイト、奨学金、入学手続き、BYU3校の比較、英語の勉強方法、卒業後のキャリアなどについて紹介しています。',
+      }}
+    />
 
     <IndexPage />
   </>
