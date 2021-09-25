@@ -1,20 +1,22 @@
 import { FC } from 'react';
-import Head from 'next/head';
-import { Title } from '@c/atoms/Title';
 import { BYUPage } from '@c/pages/BYUPage';
+import { Seo } from '@c/organisms/Seo';
 
 export interface Props {}
 
 // eslint-disable-next-line no-underscore-dangle
 const _BYUPage: FC<Props> = () => (
   <>
-    <Title>BYUの紹介</Title>
-    <Head>
-      <meta
-        name='description'
-        content='Brigham Young University(BYU)についての紹介です。在学生と卒業生の経験を元に、専攻、衣住食、クラブ、アルバイト、奨学金について深堀りします。'
-      />
-    </Head>
+    <Seo
+      title='BYUの紹介'
+      description='Brigham Young University(BYU)の紹介です。在学生と卒業生の経験を元に、専攻、衣住食、クラブ、アルバイト、奨学金についてまとめています。'
+      openGraph={{
+        type: 'article',
+        title: 'BYUの紹介',
+        description:
+          'Brigham Young University(BYU)の紹介です。在学生と卒業生の経験を元に、専攻、衣住食、クラブ、アルバイト、奨学金についてまとめています。',
+      }}
+    />
 
     <BYUPage />
   </>

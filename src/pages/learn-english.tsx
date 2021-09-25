@@ -1,20 +1,22 @@
 import { FC } from 'react';
-import Head from 'next/head';
-import { Title } from '@c/atoms/Title';
 import { LearnEnglishPage } from '@c/pages/LearnEnglishPage';
+import { Seo } from '@c/organisms/Seo';
 
 export interface Props {}
 
 // eslint-disable-next-line no-underscore-dangle
 const _LearnEnglishPage: FC<Props> = () => (
   <>
-    <Title>英語の勉強方法</Title>
-    <Head>
-      <meta
-        name='description'
-        content='BYU、BYUH、BYUIへの入学に必要な英語力を満たすための勉強法を紹介しています。'
-      />
-    </Head>
+    <Seo
+      title='英語の勉強方法'
+      description='BYU、BYUH、BYUIへの入学に必要な英語力を満たすための勉強法を紹介しています。'
+      openGraph={{
+        type: 'article',
+        title: '英語の勉強方法',
+        description:
+          'BYU、BYUH、BYUIへの入学に必要な英語力を満たすための勉強法を紹介しています。',
+      }}
+    />
 
     <LearnEnglishPage />
   </>

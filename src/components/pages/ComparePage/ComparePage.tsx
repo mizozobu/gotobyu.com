@@ -20,7 +20,7 @@ export const ComparePage: FC<Props> = () => (
       <span className='text-byu'>BYU</span>、
       <span className='text-byuh'>BYUH</span>、
       <span className='text-byui'>BYUI</span>
-      を比較
+      の比較
     </PageTitle>
 
     <Section id='学校データ' className='clear-both'>

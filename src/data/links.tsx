@@ -62,7 +62,7 @@ export const SchoolLinks = [
 
 export const AdditionalSchoolLinks = [
   {
-    name: 'BYU3校を比較',
+    name: 'BYU3校の比較',
     description: 'BYU、BYUH、BYUIを必要な英語力や費用の面から数字で比較',
     href: '/compare',
     icon: ScaleIcon,
