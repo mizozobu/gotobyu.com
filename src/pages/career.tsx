@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { CareerPage } from '@c/pages/CareerPage';
 import { Seo } from '@c/organisms/Seo';
+import { CareerPageMeta } from '@d';
 
 export interface Props {}
 
@@ -8,13 +9,12 @@ export interface Props {}
 const _CareerPage: FC<Props> = () => (
   <>
     <Seo
-      title='就職'
-      description='BYU、BYUH、BYUIの学生の就職先の企業と1年目の年収についての調査結果です。'
+      title={CareerPageMeta.title}
+      description={CareerPageMeta.description}
       openGraph={{
         type: 'article',
-        title: '就職',
-        description:
-          'BYU、BYUH、BYUIの学生の就職先の企業と1年目の年収についての調査結果です。',
+        title: CareerPageMeta.title,
+        description: CareerPageMeta.description,
       }}
     />
 

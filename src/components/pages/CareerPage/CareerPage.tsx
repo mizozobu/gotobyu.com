@@ -16,7 +16,7 @@ export interface Props {}
 // eslint-disable-next-line no-underscore-dangle
 export const CareerPage: FC<Props> = () => (
   <Container>
-    <PageTitle>キャリア</PageTitle>
+    <PageTitle>就職</PageTitle>
 
     <Section id='年収' className='clear-both'>
       <SectionTitle>年収</SectionTitle>

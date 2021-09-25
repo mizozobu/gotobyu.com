@@ -1,16 +1,18 @@
 import { Seo } from '@c/organisms/Seo';
 import { DeadlineTabs } from '@c/organisms/DeadlineTabs';
 import { EnglishTestTabs } from '@c/organisms/EnglishTestTabs';
+import { ApplyPageMeta } from '@d';
 
 <Seo
-  title='入学手続き'
-  description='BYU、BYUH、BYUIの入学手続きについて。締め切り、申込費用、必要な英語力、試験、必要書類についてまとめています。'
+  title={ApplyPageMeta.title}
+  description={ApplyPageMeta.description}
   openGraph={{
     type: 'article',
-    title: '入学手続き',
-    description: 'BYU、BYUH、BYUIの入学手続きについて。締め切り、申込費用、必要な英語力、試験、必要書類についてまとめています。'
+    title: ApplyPageMeta.title,
+    description: ApplyPageMeta.description,
   }}
 />
+
 
 # 入学手続き
 

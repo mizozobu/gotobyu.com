@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { ComparePage } from '@c/pages/ComparePage';
 import { Seo } from '@c/organisms/Seo';
+import { ComparePageMeta } from '@d';
 
 export interface Props {}
 
@@ -8,13 +9,12 @@ export interface Props {}
 const _ComparePage: FC<Props> = () => (
   <>
     <Seo
-      title='BYU、BYUH、BYUIの比較'
-      description='BYU、BYUH、BYUIを費用、生徒数、専攻数、英語力などの面で比較します。'
+      title={ComparePageMeta.title}
+      description={ComparePageMeta.description}
       openGraph={{
         type: 'article',
-        title: 'BYU、BYUH、BYUIの比較',
-        description:
-          'BYU、BYUH、BYUIを費用、生徒数、専攻数、英語力などの面で比較します。',
+        title: ComparePageMeta.title,
+        description: ComparePageMeta.description,
       }}
     />
 

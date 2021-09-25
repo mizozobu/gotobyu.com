@@ -93,7 +93,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='grid gap-2 p-5 bg-white'>
                               {SchoolLinks.map(
-                                ({ name, href, description, icon: Icon }) => (
+                                ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     <a>
                                       <button
@@ -110,7 +110,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                                             {name}
                                           </p>
                                           <p className='mt-1 text-sm text-gray-500'>
-                                            {description}
+                                            {detail}
                                           </p>
                                         </div>
                                       </button>
@@ -120,7 +120,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                               )}
                               <hr />
                               {AdditionalSchoolLinks.map(
-                                ({ name, href, description, icon: Icon }) => (
+                                ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     <a>
                                       <button
@@ -137,7 +137,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                                             {name}
                                           </p>
                                           <p className='mt-1 text-sm text-gray-500'>
-                                            {description}
+                                            {detail}
                                           </p>
                                         </div>
                                       </button>
@@ -194,7 +194,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='grid gap-2 p-5 bg-white'>
                               {ApplyLinks.map(
-                                ({ name, href, description, icon: Icon }) => (
+                                ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     <a>
                                       <button
@@ -211,7 +211,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                                             {name}
                                           </p>
                                           <p className='mt-1 text-sm text-gray-500'>
-                                            {description}
+                                            {detail}
                                           </p>
                                         </div>
                                       </button>
@@ -269,7 +269,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='grid gap-2 p-5 bg-white'>
                               {CareerLinks.map(
-                                ({ name, href, description, icon: Icon }) => (
+                                ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     <a>
                                       <button
@@ -286,7 +286,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                                             {name}
                                           </p>
                                           <p className='mt-1 text-sm text-gray-500'>
-                                            {description}
+                                            {detail}
                                           </p>
                                         </div>
                                       </button>
@@ -340,7 +340,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='grid gap-2 p-5 bg-white'>
                               {OtherLinks.map(
-                                ({ name, href, description, icon: Icon }) => (
+                                ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     <a>
                                       <button
@@ -357,7 +357,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                                             {name}
                                           </p>
                                           <p className='mt-1 text-sm text-gray-500'>
-                                            {description}
+                                            {detail}
                                           </p>
                                         </div>
                                       </button>

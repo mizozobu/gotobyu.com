@@ -29,6 +29,8 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
     <RecoilRoot>
       <Head>
+        {/* define defult title here until https://github.com/garmeeh/next-seo/pull/832 is merged */}
+        <title>BYU Management Society Tokyo Chapter</title>
         {/* favicon https://realfavicongenerator.net */}
         <link
           rel='apple-touch-icon'

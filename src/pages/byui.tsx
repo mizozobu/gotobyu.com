@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { BYUIPage } from '@c/pages/BYUIPage';
 import { Seo } from '@c/organisms/Seo';
+import { BYUIPageMeta } from '@d';
 
 export interface Props {}
 
@@ -8,13 +9,12 @@ export interface Props {}
 const _BYUIPage: FC<Props> = () => (
   <>
     <Seo
-      title='BYUIの紹介'
-      description='Brigham Young University - Idaho(BYUI)の紹介です。在学生と卒業生の経験を元に、専攻、衣住食、クラブ、アルバイト、奨学金についてまとめています。'
+      title={BYUIPageMeta.title}
+      description={BYUIPageMeta.description}
       openGraph={{
         type: 'article',
-        title: 'BYUIの紹介',
-        description:
-          'Brigham Young University - Idaho(BYUI)の紹介です。在学生と卒業生の経験を元に、専攻、衣住食、クラブ、アルバイト、奨学金についてまとめています。',
+        title: BYUIPageMeta.title,
+        description: BYUIPageMeta.description,
       }}
     />
 

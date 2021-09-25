@@ -78,10 +78,10 @@ export const IndexPage: FC<Props> = () => (
           ...ApplyLinks,
           ...CareerLinks,
           OtherLinks[0],
-        ].map(({ name, href, description, icon: Icon }) => (
+        ].map(({ name, href, detail, icon: Icon }) => (
           <Link key={name} href={href}>
             <a>
-              <PageCard icon={Icon} name={name} description={description} />
+              <PageCard icon={Icon} name={name} detail={detail} />
             </a>
           </Link>
         ))}

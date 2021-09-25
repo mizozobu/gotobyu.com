@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { LearnEnglishPage } from '@c/pages/LearnEnglishPage';
 import { Seo } from '@c/organisms/Seo';
+import { LearnEnglishPageMeta } from '@d';
 
 export interface Props {}
 
@@ -8,13 +9,12 @@ export interface Props {}
 const _LearnEnglishPage: FC<Props> = () => (
   <>
     <Seo
-      title='英語の勉強方法'
-      description='BYU、BYUH、BYUIへの入学に必要な英語力を満たすための勉強法を紹介しています。'
+      title={LearnEnglishPageMeta.title}
+      description={LearnEnglishPageMeta.description}
       openGraph={{
         type: 'article',
-        title: '英語の勉強方法',
-        description:
-          'BYU、BYUH、BYUIへの入学に必要な英語力を満たすための勉強法を紹介しています。',
+        title: LearnEnglishPageMeta.title,
+        description: LearnEnglishPageMeta.description,
       }}
     />
 
