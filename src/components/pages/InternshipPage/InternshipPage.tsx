@@ -18,8 +18,10 @@ export const InternshipPage: FC<Props> = () => (
   <Container>
     <PageTitle>インターンシップ</PageTitle>
 
-    <Section id='インターンシップの給与' className='clear-both'>
-      <SectionTitle>インターンシップの給与</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='インターンシップの給与'>
+        インターンシップの給与
+      </SectionTitle>
 
       <SplitPane className='space-y-8'>
         <Pane>
@@ -42,8 +44,8 @@ export const InternshipPage: FC<Props> = () => (
       </SplitPane>
     </Section>
 
-    <Section id='インターンシップ先' className='clear-both'>
-      <SectionTitle>インターンシップ先</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='インターンシップ先'>インターンシップ先</SectionTitle>
 
       <Pane>
         <p>インターンシップ先の例は以下の通りです。</p>

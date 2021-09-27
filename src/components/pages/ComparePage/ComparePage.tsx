@@ -23,15 +23,15 @@ export const ComparePage: FC<Props> = () => (
       の比較
     </PageTitle>
 
-    <Section id='学校データ' className='clear-both'>
-      <SectionTitle>学校データ</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='学校データ'>学校データ</SectionTitle>
       <Pane>
         <SchoolTable />
       </Pane>
     </Section>
 
-    <Section id='入学に必要な英語力' className='clear-both'>
-      <SectionTitle>入学に必要な英語力</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='入学に必要な英語力'>入学に必要な英語力</SectionTitle>
       <Pane className='space-y-8'>
         <InternalLink href='/apply#入学に必要な英語力'>
           こちらを参照。
@@ -39,8 +39,8 @@ export const ComparePage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='学費' className='clear-both'>
-      <SectionTitle>学費</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='学費'>学費</SectionTitle>
       <Pane>
         <TuitionBarChart className='w-full h-72 md:h-80 lg:h-96' />
         <ul className='mt-4 list-asterisk text-xs'>
@@ -63,8 +63,8 @@ export const ComparePage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='1学期の費用' className='clear-both'>
-      <SectionTitle>1学期の費用</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='1学期の費用'>1学期の費用</SectionTitle>
       <Pane>
         <CostTable />
       </Pane>

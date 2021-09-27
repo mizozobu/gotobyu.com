@@ -1,5 +1,6 @@
 import { FC, AnchorHTMLAttributes } from 'react';
 import Link from 'next/link';
+import styles from './InternalLink.module.css';
 
 export interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
@@ -12,10 +13,7 @@ export const InternalLink: FC<Props> = ({
   ...props
 }: Props) => (
   <Link href={href}>
-    <a
-      {...props}
-      className={classNames('text-indigo-500 font-medium', className)}
-    >
+    <a {...props} className={classNames(styles['internal-link'], className)}>
       {children}
     </a>
   </Link>

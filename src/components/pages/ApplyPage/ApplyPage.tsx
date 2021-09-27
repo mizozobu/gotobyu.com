@@ -28,8 +28,8 @@ export const ApplyPage: FC<Props> = () => (
   <Container>
     <PageTitle>入学手続き</PageTitle>
 
-    <Section id='申込方法' className='clear-both'>
-      <SectionTitle>申込方法</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='申込方法'>申込方法</SectionTitle>
       <Pane>
         <div className='space-y-4'>
           <p>
@@ -43,8 +43,8 @@ export const ApplyPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='申込締切' className='clear-both'>
-      <SectionTitle>申込締切</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='申込締切'>申込締切</SectionTitle>
       <Pane>
         <Tab>
           <TabNavBar>
@@ -162,8 +162,8 @@ export const ApplyPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='申込費用' className='clear-both'>
-      <SectionTitle>申込費用</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='申込費用'>申込費用</SectionTitle>
       <Pane>
         <p>
           申込費用は1校につき<Mark>$35</Mark>です。
@@ -171,8 +171,8 @@ export const ApplyPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='入学に必要な英語力' className='clear-both'>
-      <SectionTitle>入学に必要な英語力</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='入学に必要な英語力'>入学に必要な英語力</SectionTitle>
       <Pane>
         <div className='space-y-8'>
           <p>
@@ -287,8 +287,8 @@ export const ApplyPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='エッセイ' className='clear-both'>
-      <SectionTitle>エッセイ</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='エッセイ'>エッセイ</SectionTitle>
       <Pane>
         <p>
           「人生で一番大変だったこと」や「入学したらどのようなことをしたいか」などについて
@@ -298,8 +298,8 @@ export const ApplyPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='SAT/ACT' className='clear-both'>
-      <SectionTitle>SAT/ACT</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='SAT/ACT'>SAT/ACT</SectionTitle>
       <Pane className='space-y-4'>
         <p>
           アメリカの大学は共通の入学試験のみで、大学ごとの入学試験がありません。
@@ -340,8 +340,8 @@ export const ApplyPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='教会の推薦' className='clear-both'>
-      <SectionTitle>教会の推薦</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='教会の推薦'>教会の推薦</SectionTitle>
       <Pane className='space-y-8'>
         <p>
           <Mark>
@@ -376,8 +376,8 @@ export const ApplyPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='成績表と卒業証明書' className='clear-both'>
-      <SectionTitle>成績表と卒業証明書</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='成績表と卒業証明書'>成績表と卒業証明書</SectionTitle>
       <Pane>
         <p>Coming Soon...</p>
       </Pane>

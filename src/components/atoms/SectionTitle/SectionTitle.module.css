@@ -1,4 +1,26 @@
-.section-title.active .section-title-text {
+.active {
   box-shadow: inset 0 -0.125em 0 0 #fff,
     inset 0 -0.5em 0 0 theme('colors.indigo.300');
+}
+
+.icon {
+  @apply h-4 inline text-indigo-200;
+}
+
+@screen sm {
+  .icon {
+    @apply h-4;
+  }
+}
+
+@screen md {
+  .icon {
+    @apply h-5;
+  }
+}
+
+@screen lg {
+  .icon {
+    @apply h-6;
+  }
 }

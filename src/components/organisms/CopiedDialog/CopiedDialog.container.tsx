@@ -16,7 +16,7 @@ const CopiedDialogContainer: FC<Props> = (props: Props) => {
   }, [setIsOpen]);
 
   useEffect(() => {
-    const timeout = setTimeout(() => closeDialog(), 1500);
+    const timeout = setTimeout(() => closeDialog(), 1200);
     return () => clearTimeout(timeout);
   }, [showCopiedModal, closeDialog]);
 

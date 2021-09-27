@@ -29,8 +29,8 @@ export const BYUPage: FC<Props> = () => (
   <Container>
     <PageTitle>Brigham Young University</PageTitle>
 
-    <Section id='概要' className='clear-both'>
-      <SectionTitle>概要</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='概要'>概要</SectionTitle>
       <SplitPane>
         <Pane>
           <NextImage
@@ -121,8 +121,8 @@ export const BYUPage: FC<Props> = () => (
       </SplitPane>
     </Section>
 
-    <Section id='専攻と授業' className='clear-both'>
-      <SectionTitle>専攻と授業</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='専攻と授業'>専攻と授業</SectionTitle>
       <Pane>
         <PhotoViewer
           className='mx-0 my-8 md:mr-8 md:float-left'
@@ -164,8 +164,8 @@ export const BYUPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='衣住食' className='clear-both'>
-      <SectionTitle>衣住食</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='衣住食'>衣住食</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
           <p>
@@ -183,8 +183,8 @@ export const BYUPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='ユタライフ' className='clear-both'>
-      <SectionTitle>ユタライフ</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='ユタライフ'>ユタライフ</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
           <PhotoViewer
@@ -251,8 +251,8 @@ export const BYUPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='クラブ' className='clear-both'>
-      <SectionTitle>クラブ</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='クラブ'>クラブ</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
           <p>
@@ -275,8 +275,8 @@ export const BYUPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='アルバイト' className='clear-both'>
-      <SectionTitle>アルバイト</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='アルバイト'>アルバイト</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
           <p>
@@ -286,8 +286,8 @@ export const BYUPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section id='奨学金' className='clear-both'>
-      <SectionTitle>奨学金</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='奨学金'>奨学金</SectionTitle>
       <Pane>
         <div className='inline space-y-4'>
           <p>

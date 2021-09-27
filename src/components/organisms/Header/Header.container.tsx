@@ -25,7 +25,7 @@ const HeaderContainer: FC<Props> = () => {
       router.events.off('routeChangeStart', startLoading);
       router.events.off('routeChangeComplete', endLoading);
     };
-  }, [router]);
+  }, [router.events]);
 
   return (
     <Header show={scrollDirectionY === ScrollDirection.up} loading={loading} />

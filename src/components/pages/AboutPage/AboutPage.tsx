@@ -15,8 +15,8 @@ export const AboutPage: FC<Props> = () => (
   <Container>
     <PageTitle>運営者について</PageTitle>
 
-    <Section id='運営者' className='clear-both'>
-      <SectionTitle>運営者</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='運営者'>運営者</SectionTitle>
       <Pane className='space-y-4'>
         <p>
           このウェブサイトは
@@ -30,11 +30,10 @@ export const AboutPage: FC<Props> = () => (
       </Pane>
     </Section>
 
-    <Section
-      id='BYU Management Society Tokyo Chapterについて'
-      className='clear-both'
-    >
-      <SectionTitle>BYU Management Society Tokyo Chapterについて</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='BYU Management Society Tokyo Chapterについて'>
+        BYU Management Society Tokyo Chapterについて
+      </SectionTitle>
       <Pane className='space-y-4'>
         <p>
           <ExternalLink href='https://byums.byu.edu/tokyo/'>

@@ -11,7 +11,8 @@ import ScrollIntoView from '@c/atoms/ScrollIntoView';
 import CopiedDialog from '@c/organisms/CopiedDialog';
 import { GTM_ID, pageview } from '@l/gtm';
 import { mdxComponents } from '@l/mdx';
-import '../styles/globals.css';
+import '~/styles/globals.css';
+import '~/styles/prose.css';
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();

@@ -1,9 +1,7 @@
 import { FC, HTMLAttributes } from 'react';
 import styles from './Section.module.css';
 
-export interface Props extends HTMLAttributes<HTMLElement> {
-  id: string;
-}
+export interface Props extends HTMLAttributes<HTMLElement> {}
 
 export const Section: FC<Props> = ({ className = '', ...props }: Props) => (
   <section

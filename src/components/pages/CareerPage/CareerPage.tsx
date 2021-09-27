@@ -18,8 +18,8 @@ export const CareerPage: FC<Props> = () => (
   <Container>
     <PageTitle>就職</PageTitle>
 
-    <Section id='年収' className='clear-both'>
-      <SectionTitle>年収</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='年収'>年収</SectionTitle>
 
       <SplitPane className='space-y-8'>
         <Pane>
@@ -52,8 +52,8 @@ export const CareerPage: FC<Props> = () => (
       </SplitPane>
     </Section>
 
-    <Section id='就職先' className='clear-both'>
-      <SectionTitle>就職先</SectionTitle>
+    <Section className='clear-both'>
+      <SectionTitle id='就職先'>就職先</SectionTitle>
 
       <Pane>
         <p>卒業生の就職先の例は以下の通りです。</p>

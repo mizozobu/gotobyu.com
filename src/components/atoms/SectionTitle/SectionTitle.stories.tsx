@@ -12,14 +12,14 @@ const Template: Story<Props> = (args) => <SectionTitle {...args} />;
 
 export const Active = Template.bind({});
 Active.args = {
-  anchorFor: '',
+  id: '',
   active: true,
   children: 'active',
 };
 
 export const Inactive = Template.bind({});
 Inactive.args = {
-  anchorFor: '',
+  id: '',
   active: false,
   children: 'inactive',
 };

@@ -3,32 +3,32 @@ import { useRecoilState } from 'recoil';
 import { globalState } from '@s/global';
 import { SectionTitle, Props as SectionTitleProps } from './SectionTitle';
 
-export interface Props extends Omit<SectionTitleProps, 'active' | 'anchorFor'> {
+export interface Props extends Omit<SectionTitleProps, 'active'> {
+  id: string;
   children: string;
 }
 
-const SectionTitleContainer: FC<Props> = ({ children, ...props }: Props) => {
+const SectionTitleContainer: FC<Props> = ({
+  id,
+  children,
+  ...props
+}: Props) => {
   const [{ hash }, setGlobalState] = useRecoilState(globalState);
 
   const handleClick = useCallback(() => {
     if (navigator.clipboard && window.isSecureContext) {
       const { origin, pathname } = window.location;
-      void navigator.clipboard.writeText(`${origin}${pathname}#${children}`);
+      void navigator.clipboard.writeText(`${origin}${pathname}#${id}`);
 
       setGlobalState((prevState) => ({
         ...prevState,
         showCopiedModal: true,
       }));
     }
-  }, [children, setGlobalState]);
+  }, [id, setGlobalState]);
 
   return (
-    <SectionTitle
-      {...props}
-      anchorFor={children}
-      active={hash === children}
-      onClick={handleClick}
-    >
+    <SectionTitle {...props} id={id} active={hash === id} onClick={handleClick}>
       {children}
     </SectionTitle>
   );
