@@ -8,7 +8,11 @@ export default {
   argTypes: {},
 } as Meta;
 
-const Template: Story<Props> = (args) => <PhotoViewer {...args} />;
+const Template: Story<Props> = (args) => (
+  <div className='py-8 md:float-left'>
+    <PhotoViewer {...args} />
+  </div>
+);
 
 export const Single = Template.bind({});
 Single.args = {

@@ -1,4 +1,5 @@
 const tailwindcssTypography = require('@tailwindcss/typography');
+const tailwindcssAspectRatio = require('@tailwindcss/aspect-ratio');
 
 module.exports = {
   purge: [
@@ -33,5 +34,5 @@ module.exports = {
       rotate: ['group-hover'],
     },
   },
-  plugins: [tailwindcssTypography],
+  plugins: [tailwindcssTypography, tailwindcssAspectRatio],
 };

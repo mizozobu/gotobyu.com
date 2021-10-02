@@ -19,6 +19,7 @@
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^2.0.0-next.9",
     "@next/mdx": "^11.1.2",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
     "chart.js": "^3.5.1",
     "classnames": "^2.3.1",
@@ -27,9 +28,11 @@
     "react": "^17.0.2",
     "react-chartjs-2": "^3.0.5",
     "react-dom": "^17.0.2",
+    "react-slick": "^0.28.1",
     "recoil": "^0.4.1",
     "rehype-slug": "4.x",
     "remark-sectionize": "^1.1.1",
+    "slick-carousel": "^1.8.1",
     "webpack": "^5.53.0"
   },
   "devDependencies": {
@@ -46,6 +49,7 @@
     "@types/jest": "^27.0.1",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "@types/react-slick": "^0.23.5",
     "@types/react-truncate": "^2.3.4",
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
