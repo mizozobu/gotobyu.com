@@ -73,6 +73,7 @@
     "prettier": "^2.4.1",
     "storybook": "^6.3.8",
     "stylelint": "^13.13.1",
+    "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^22.0.0",
