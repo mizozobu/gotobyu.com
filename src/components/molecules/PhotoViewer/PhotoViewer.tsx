@@ -65,17 +65,21 @@ export const PhotoViewer: FC<Props> = ({
           },
         )}
       >
-        引用元:{' '}
-        <cite>
-          <a
-            href={images[i].citation}
-            target='_blank'
-            rel='noreferrer'
-            className='text-indigo-600'
-          >
-            {images[i].citation}
-          </a>
-        </cite>
+        {images[i].citation && (
+          <>
+            引用元:{' '}
+            <cite>
+              <a
+                href={images[i].citation}
+                target='_blank'
+                rel='noreferrer'
+                className='text-indigo-600'
+              >
+                {images[i].citation}
+              </a>
+            </cite>
+          </>
+        )}
       </div>
     </div>
   );
