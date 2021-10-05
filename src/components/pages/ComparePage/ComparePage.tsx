@@ -5,7 +5,7 @@ import { PageTitle } from '@c/atoms/PageTitle';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
 import { Section } from '@c/atoms/Section';
-import SectionTitle from '@c/atoms/SectionTitle';
+import SectionTitle from '@c/molecules/SectionTitle';
 import { InternalLink } from '@c/atoms/InternalLink';
 import CostTable from '@c/organisms/CostTable';
 import { SchoolTable } from '@c/organisms/SchoolTable';

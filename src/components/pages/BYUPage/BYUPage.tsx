@@ -5,10 +5,10 @@ import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
-import SectionTitle from '@c/atoms/SectionTitle';
+import SectionTitle from '@c/molecules/SectionTitle';
 import { PhotoViewer } from '@c/molecules/PhotoViewer';
 import { Digit } from '@c/atoms/Digit';
-import { Mark } from '@c/atoms/Mark';
+import { Strong } from '@c/atoms/Strong';
 import { List } from '@c/atoms/List';
 import { Item } from '@c/atoms/Item';
 import { NextImage } from '@c/atoms/NextImage';
@@ -147,9 +147,9 @@ export const BYUPage: FC<Props> = () => (
             </ExternalLink>
             があり、基本的には自由に選択することができます。
             一部の人気のある専攻では、希望者全員がその専攻を選択できるわけではなく、
-            <Mark>選考プロセス</Mark>が用意されています。
+            <Strong>選考プロセス</Strong>が用意されています。
             各専攻で決められているPrerequisitesと呼ばれるクラスを修了し、GPAとエッセイで選考を受けなければなりません。
-            選考が<Mark>1年に1度</Mark>
+            選考が<Strong>1年に1度</Strong>
             しか行われない専攻もあるので、Prerequisitesが終わらずに選考を受けられなくならないように、計画的に授業を取る必要があります。
           </p>
           <p>
@@ -158,7 +158,7 @@ export const BYUPage: FC<Props> = () => (
               留学生は各学期12単位以上(Spring/Summerは6単位)
             </ExternalLink>
             取る必要があり、一般的に平均的な成績を取るためには授業を含めて
-            <Mark>毎週3時間/単位</Mark>の勉強時間が必要とされています。
+            <Strong>毎週3時間/単位</Strong>の勉強時間が必要とされています。
           </p>
         </div>
       </Pane>
@@ -173,7 +173,7 @@ export const BYUPage: FC<Props> = () => (
           </p>
           <p>
             また、日本の運転免許を持っておられる方は
-            <Mark>ユタの免許 への書き換え</Mark>
+            <Strong>ユタの免許 への書き換え</Strong>
             も簡単にできます。テキストブックを見ながら受けられるペーパーテストと簡単な実技テストを受けます。コストも5000円以下で安く済むので生活に慣れた頃、車を購入することを検討してみても良いかもしれません。
           </p>
           <p>
@@ -256,8 +256,9 @@ export const BYUPage: FC<Props> = () => (
       <Pane>
         <div className='inline space-y-4'>
           <p>
-            BYUには、<Mark>楽しむことが目的のBYUSAクラブ</Mark>と、
-            <Mark>就活、進学、研究が目的のAcademicクラブ</Mark>があり、 合計で
+            BYUには、<Strong>楽しむことが目的のBYUSAクラブ</Strong>と、
+            <Strong>就活、進学、研究が目的のAcademicクラブ</Strong>があり、
+            合計で
             <ExternalLink href='https://clubs.byu.edu/'>312クラブ</ExternalLink>
             が存在します。
           </p>
@@ -266,9 +267,9 @@ export const BYUPage: FC<Props> = () => (
           </p>
           <p>
             Academicクラブでは、就活関連のワークショップを開催したり、企業を招いて会社説明会を開催したりします。
-            クラブでの活動を通じて<Mark>インターンシップや内定を獲得</Mark>
+            クラブでの活動を通じて<Strong>インターンシップや内定を獲得</Strong>
             する人も少なくないです。
-            <Mark>有名企業からスポンサー</Mark>
+            <Strong>有名企業からスポンサー</Strong>
             されているクラブもあるので、クラブ活動を通してコネクションを広げる機会にもなります。
           </p>
         </div>
@@ -294,14 +295,14 @@ export const BYUPage: FC<Props> = () => (
             <ExternalLink href='https://enrollment.byu.edu/financial-aid/applying-for-scholarships'>
               BYUの奨学金
             </ExternalLink>
-            はGPAやその他の貢献度によって、<Mark>授業料の半額か全額</Mark>
+            はGPAやその他の貢献度によって、<Strong>授業料の半額か全額</Strong>
             が給付される可能性があります。
             毎年奨学金が給付されるGPAのボーダーが変わるため、申し込むまで貰えるかどうかは分かりません。
             以前は選考後に奨学金が給付された生徒の平均GPAが公開されていましたが、非公開になりました。
             <ExternalLink href='https://universe.byu.edu/2017/06/20/scholarship-gpa-cutoffs-raise-students-disappointed1/'>
               過去のデータ
             </ExternalLink>
-            を見ても<Mark>かなり選考基準が高い</Mark>
+            を見ても<Strong>かなり選考基準が高い</Strong>
             ことが分かるので、運がよければ貰える程度に捉えておきましょう。
             奨学金の選考に参加するには、年度ごとに申し込む必要があります(エッセイは任意)。
             場合によっては締切が学期の始まる9ヶ月前に設定されているので、予め確認しておいたほうが良いです。

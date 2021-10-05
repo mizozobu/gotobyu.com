@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 import { SectionTitle, Props } from './SectionTitle';
 
 export default {
-  title: 'atoms/SectionTitle',
+  title: 'molecules/SectionTitle',
   component: SectionTitle,
   argTypes: {},
 } as Meta;

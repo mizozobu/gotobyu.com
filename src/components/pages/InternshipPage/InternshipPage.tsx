@@ -3,10 +3,10 @@ import CopiedDialog from '@c/organisms/CopiedDialog';
 import { Container } from '@c/atoms/Container';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
-import SectionTitle from '@c/atoms/SectionTitle';
+import SectionTitle from '@c/molecules/SectionTitle';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
-import { Mark } from '@c/atoms/Mark';
+import { Strong } from '@c/atoms/Strong';
 import { List } from '@c/atoms/List';
 import { Item } from '@c/atoms/Item';
 import { InternSalaryPieChart } from '@c/organisms/InternSalaryPieChart';
@@ -32,9 +32,9 @@ export const InternshipPage: FC<Props> = () => (
           <p>
             アメリカでは大学在学中に企業で実務を経験するインターンシップを行うのが一般的です。
             1～3ヶ月間実際に勤務し、
-            <Mark>新入社員同等の給料を支払われます</Mark>。
+            <Strong>新入社員同等の給料を支払われます</Strong>。
             大学で単位として認定される場合もあったり、インターンシップ後に
-            <Mark>内定に直結</Mark>したりと得られることは多いです。
+            <Strong>内定に直結</Strong>したりと得られることは多いです。
             留学生は基本的にキャンパス外で働くことはできませんが、OPTやCPTという制度が適用されるためインターンシップ期間中はキャンパス外で働くことができます。
             日本では数日間の無休の会社説明会をインターンシップと履き違えている企業が多いので注意が必要です。
             BYU、BYUH、BYUIの学生は大学のキャリアイベントや知人の紹介からインターンシップを獲得することが多いです。

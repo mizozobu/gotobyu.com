@@ -6,8 +6,8 @@ import { ExternalLink } from '@c/atoms/ExternalLink';
 import { InternalLink } from '@c/atoms/InternalLink';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
-import SectionTitle from '@c/atoms/SectionTitle';
-import { Mark } from '@c/atoms/Mark';
+import SectionTitle from '@c/molecules/SectionTitle';
+import { Strong } from '@c/atoms/Strong';
 
 export interface Props {}
 
@@ -45,7 +45,8 @@ export const AboutPage: FC<Props> = () => (
           </ExternalLink>
           はBYUが母体の道徳的なリーダーを目指す社会人のためのネットワークです。
           世界中に80以上の支部があり、それどれの地域で活動しています。
-          <Mark>BYU卒業生に限らず</Mark>、全ての人が会員になることができます。
+          <Strong>BYU卒業生に限らず</Strong>
+          、全ての人が会員になることができます。
         </p>
       </Pane>
     </Section>

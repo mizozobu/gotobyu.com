@@ -25,7 +25,7 @@ export const PhotoViewer: FC<Props> = ({
   const settings = {
     dots: true,
     autoplay: true,
-    autoplaySpeed: 500000,
+    autoplaySpeed: 5000,
     pauseOnDotsHover: true,
     ..._settings,
     beforeChange: (current: number, next: number) => {

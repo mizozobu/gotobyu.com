@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ExternalLink } from '@c/atoms/ExternalLink';
-import { Mark } from '@c/atoms/Mark';
+import { Strong } from '@c/atoms/Strong';
 import { Tab, TabContent, TabNav, TabNavBar, TabPane } from '@c/molecules/Tab';
 import { TOEFLTable } from '@c/organisms/TOEFLTable';
 import { IELTSTable } from '@c/organisms/IELTSTable';
@@ -89,7 +89,7 @@ export const EnglishTestTabs: FC<Props> = () => (
             実用英語技能検定(英検)
           </ExternalLink>
           は公益財団法人日本英語検定協会が主催するテストです。英検は
-          <Mark>BYUHでのみ</Mark>認められています。
+          <Strong>BYUHでのみ</Strong>認められています。
         </p>
       </TabPane>
     </TabContent>

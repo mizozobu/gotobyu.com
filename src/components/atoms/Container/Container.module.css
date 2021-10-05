@@ -1,0 +1,53 @@
+.prose {
+  max-width: 65ch;
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* add horizontal padding to elements below h2 */
+.prose > section > section > *:not(h2) {
+  @apply px-0 md:px-6 lg:px-12;
+}
+
+/* reset float
+see https://stackoverflow.com/questions/2062258/floating-elements-within-a-div-floats-outside-of-div-why */
+.prose section::after {
+  content: '';
+  @apply block clear-both;
+}
+
+@screen sm {
+  .prose {
+    font-size: 0.875rem;
+    line-height: 1.7142857;
+  }
+}
+
+@screen md {
+  .prose {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+@screen lg {
+  .prose {
+    font-size: 1.125rem;
+    line-height: 1.7777778;
+  }
+}
+
+@screen xl {
+  .prose {
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+}
+
+@screen 2xl {
+  .prose {
+    font-size: 1.5rem;
+    line-height: 1.6666667;
+  }
+}

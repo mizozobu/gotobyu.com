@@ -5,8 +5,8 @@ import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
-import SectionTitle from '@c/atoms/SectionTitle';
-import { Mark } from '@c/atoms/Mark';
+import SectionTitle from '@c/molecules/SectionTitle';
+import { Strong } from '@c/atoms/Strong';
 import { Tab, TabContent, TabNav, TabNavBar, TabPane } from '@c/molecules/Tab';
 import { NextImage } from '@c/atoms/NextImage';
 import { List } from '@c/atoms/List';
@@ -166,7 +166,7 @@ export const ApplyPage: FC<Props> = () => (
       <SectionTitle id='申込費用'>申込費用</SectionTitle>
       <Pane>
         <p>
-          申込費用は1校につき<Mark>$35</Mark>です。
+          申込費用は1校につき<Strong>$35</Strong>です。
         </p>
       </Pane>
     </Section>
@@ -177,7 +177,7 @@ export const ApplyPage: FC<Props> = () => (
         <div className='space-y-8'>
           <p>
             必須の英語力は各大学でそれぞれ違い、
-            <Mark>BYUH、BYUI、BYUの順に高くなります</Mark>。
+            <Strong>BYUH、BYUI、BYUの順に高くなります</Strong>。
             主なテストの点数は下の表に記載していますが、他のテストも受け入れられているので各学校のウェブサイトを確認してください。
             直近の受験日の予約が満席になっていたり、受験から結果が出るまでに時間がかかったりするので余裕を持って受験しておきましょう。
           </p>
@@ -260,7 +260,7 @@ export const ApplyPage: FC<Props> = () => (
                     実用英語技能検定(英検)
                   </ExternalLink>
                   は公益財団法人日本英語検定協会が主催するテストです。英検は
-                  <Mark>BYUHでのみ</Mark>認められています。
+                  <Strong>BYUHでのみ</Strong>認められています。
                 </p>
               </TabPane>
             </TabContent>
@@ -292,7 +292,7 @@ export const ApplyPage: FC<Props> = () => (
       <Pane>
         <p>
           「人生で一番大変だったこと」や「入学したらどのようなことをしたいか」などについて
-          <Mark>英語でエッセイ</Mark>を書く必要があります。
+          <Strong>英語でエッセイ</Strong>を書く必要があります。
           在学生、卒業生などの英語が分かる人に添削してもらうと良いでしょう。エッセイのお題は各学校で異なるので、実際のオンラインの申込書で確認してください。
         </p>
       </Pane>
@@ -309,9 +309,11 @@ export const ApplyPage: FC<Props> = () => (
             SAT
           </ExternalLink>
           のどちらかを選べます。日本のセンター試験のようなものですが、ACTとSATは
-          <Mark>何度も受験することができて自分の最高点を大学に提出する</Mark>
+          <Strong>
+            何度も受験することができて自分の最高点を大学に提出する
+          </Strong>
           形式になっています。
-          <Mark>BYUHとBYUIでは留学生は免除</Mark>
+          <Strong>BYUHとBYUIでは留学生は免除</Strong>
           されていますが、BYUに申し込むにはこのテストを受ける必要があります。
         </p>
 
@@ -324,9 +326,9 @@ export const ApplyPage: FC<Props> = () => (
           もかなりレベルが高いです。 一方で、
           他の大学で24単位以上取得した学生の編入にはSAT/ACTの条件が不要です。
           そのため
-          <Mark>
+          <Strong>
             BYUには直接の入学ではなくBYUHかBYUIで24単位以上取得してから編入
-          </Mark>
+          </Strong>
           をする人がほとんどです。
         </p>
 
@@ -344,9 +346,9 @@ export const ApplyPage: FC<Props> = () => (
       <SectionTitle id='教会の推薦'>教会の推薦</SectionTitle>
       <Pane className='space-y-8'>
         <p>
-          <Mark>
+          <Strong>
             末日聖徒イエス・キリスト教会の会員であるかどうかに関わらず
-          </Mark>
+          </Strong>
           、末日聖徒イエス・キリスト教会の指導者と面接をする必要があります 。
           会員は自分のワード、ステークの指導者と面接を行います。 会員でない人は
           <ExternalLink href='https://www.churchofjesuschrist.org/maps/meetinghouses/'>

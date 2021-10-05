@@ -1,4 +1,3 @@
-const tailwindcssTypography = require('@tailwindcss/typography');
 const tailwindcssAspectRatio = require('@tailwindcss/aspect-ratio');
 
 module.exports = {
@@ -20,13 +19,6 @@ module.exports = {
       listStyleType: {
         asterisk: "'* '",
       },
-      typography: {
-        DEFAULT: {
-          css: {
-            a: null,
-          },
-        },
-      },
     },
   },
   variants: {
@@ -34,5 +26,5 @@ module.exports = {
       rotate: ['group-hover'],
     },
   },
-  plugins: [tailwindcssTypography, tailwindcssAspectRatio],
+  plugins: [tailwindcssAspectRatio],
 };

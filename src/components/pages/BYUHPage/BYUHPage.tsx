@@ -5,10 +5,10 @@ import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
-import SectionTitle from '@c/atoms/SectionTitle';
+import SectionTitle from '@c/molecules/SectionTitle';
 import { PhotoViewer } from '@c/molecules/PhotoViewer';
 import { Digit } from '@c/atoms/Digit';
-import { Mark } from '@c/atoms/Mark';
+import { Strong } from '@c/atoms/Strong';
 import { List } from '@c/atoms/List';
 import { Item } from '@c/atoms/Item';
 import { NextImage } from '@c/atoms/NextImage';
@@ -104,7 +104,7 @@ export const BYUHPage: FC<Props> = () => (
             <ExternalLink href='https://holokai.byuh.edu/programs-of-study'>
               65のMajor(専攻)と60のMinor(副専攻)と13のCertificate(検定)
             </ExternalLink>
-            の中から、<Mark>1つのMajorと2つのMinor/Certificate</Mark>
+            の中から、<Strong>1つのMajorと2つのMinor/Certificate</Strong>
             を取る必要があります。
             ハワイならではの観光学、海洋生物学などもを学べるのもBYUHの魅力です。
             音楽、グラッフィックデザインなどの一部の専攻では実技や成績での選考を通った生徒だけがその専攻を選択できます。
@@ -116,17 +116,17 @@ export const BYUHPage: FC<Props> = () => (
           </p>
 
           <p>
-            <Mark>
+            <Strong>
               留学生は初めはEIL(English as an International
               Language)という英語のクラスを取らされ
-            </Mark>
+            </Strong>
             、論文の書き方やプレゼンの仕方などの大学生活に必要な英語力を身に着けます(TOEFL
             iBT80点以上の英語力を証明できればEILをスキップできますが、初めからそんなに英語ができる日本人はいないでしょう)。
-            <Mark>余裕があれば自分の興味のある授業を取ることができる</Mark>
+            <Strong>余裕があれば自分の興味のある授業を取ることができる</Strong>
             のが、他の英語学校よりもおすすめできるポイントです。
           </p>
           <p>
-            <Mark>授業は小規模で10人~20人</Mark>
+            <Strong>授業は小規模で10人~20人</Strong>
             のクラスがほとんどのため、クラスメートと仲良くなりやすいです。
             課題の量は日本の大学よりは多いですが、しっかり取り組めば週末は遊びに行く時間は確保できるでしょう。
           </p>
@@ -169,7 +169,7 @@ export const BYUHPage: FC<Props> = () => (
           />
           <p>
             年間を通じて最高気温が25℃~30℃と常夏のため、服装は
-            <Mark>Tシャツに短パンにサンダル</Mark>という軽装の人が多いです。
+            <Strong>Tシャツに短パンにサンダル</Strong>という軽装の人が多いです。
             しかし、図書館で冷房が効きすぎていたときや、夜の冷え込みに備えて長袖を用意しておいたほうが良いでしょう。
             キャンパス内の移動は徒歩かスケートボードを使う人が多いです。
           </p>
@@ -178,7 +178,7 @@ export const BYUHPage: FC<Props> = () => (
               BYUHの規則
             </ExternalLink>
             では、新入生は
-            <Mark>初めの3学期はHaleと呼ばれる学生寮に住む</Mark>
+            <Strong>初めの3学期はHaleと呼ばれる学生寮に住む</Strong>
             ことになっています。
             Haleは2人部屋になっていて、さらに3部屋6人で共用するキッチン、トイレ、シャワーがついています。
             4学期目からはBYUHキャンパスの外(オフキャンパス)に部屋を借りることができます。
@@ -193,13 +193,13 @@ export const BYUHPage: FC<Props> = () => (
             </ExternalLink>
             と呼ばれる1学期間有効なサブスクリプションが用意されていて、
             プランによってカフェテリアに入れる曜日が決まっていたり、食事ができる回数が決まっていたりします。
-            <Mark>Haleに住む場合はMeal Planはほぼ必須</Mark>となっています。
+            <Strong>Haleに住む場合はMeal Planはほぼ必須</Strong>となっています。
             自炊をする場合は、BYUHから徒歩10分の
             <ExternalLink href='https://www.google.com/maps/place/Foodland+Laie/@21.6455179,-157.9251959,17z/data=!3m1!5s0x7c004566a0800ef3:0x1ce5d36423696c70!4m9!1m2!2m1!1sfoodland!3m5!1s0x0:0xd784d0a736efbefd!8m2!3d21.6470891!4d-157.9225214!15sCghmb29kbGFuZCIDiAEBWgoiCGZvb2RsYW5kkgELc3VwZXJtYXJrZXSaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUlZPVGxRY2xGbkVBRQ'>
               Foodland
             </ExternalLink>
             で食材を調達できます。 ハワイということもあり、
-            <Mark>物価が高い</Mark>です。
+            <Strong>物価が高い</Strong>です。
             日本食が恋しくなったときは、車かバスで片道1~2時間かけて
             <ExternalLink href='https://www.google.com/maps/search/don+quijote/@21.3443858,-158.0008819,12z/data=!3m1!4b1'>
               ドン・キホーテ
@@ -216,18 +216,20 @@ export const BYUHPage: FC<Props> = () => (
         <div className='inline space-y-4'>
           <p>
             ノースショアは大自然に囲まれているため、多くのビーチやハイキングスポットがあります。
-            ビーチは、<Mark>サーフィン</Mark>、<Mark>シュノーケリング</Mark>、
-            <Mark>スピアフィッシング</Mark>
+            ビーチは、<Strong>サーフィン</Strong>、
+            <Strong>シュノーケリング</Strong>、
+            <Strong>スピアフィッシング</Strong>
             など多種多様な楽しみ方があります。
-            <Mark>ウミガメ</Mark>が来ることで有名なビーチや、有名な
-            <Mark>ガーリックシュリンプ</Mark>のお店もあります。
+            <Strong>ウミガメ</Strong>が来ることで有名なビーチや、有名な
+            <Strong>ガーリックシュリンプ</Strong>のお店もあります。
           </p>
           <p>
-            バスや車でノースショアを出ると<Mark>ダイヤモンドヘッド</Mark>、
-            <Mark>パールハーバー</Mark>、<Mark>ドールプランテーション</Mark>、
-            <Mark>ラニカイビーチ</Mark>
+            バスや車でノースショアを出ると<Strong>ダイヤモンドヘッド</Strong>、
+            <Strong>パールハーバー</Strong>、
+            <Strong>ドールプランテーション</Strong>、
+            <Strong>ラニカイビーチ</Strong>
             などの有名な観光スポットが数多くあるので、卒業までに一度は訪れておきたいものです。
-            <Mark>ワイキキ</Mark>、<Mark>ホノルル</Mark>
+            <Strong>ワイキキ</Strong>、<Strong>ホノルル</Strong>
             まで足を伸ばせば、ショッピングモールで買い物を楽しむこともできます。
           </p>
         </div>
@@ -277,7 +279,7 @@ export const BYUHPage: FC<Props> = () => (
             ]}
           />
           <p>
-            BYUHの学生クラブは<Mark>国ごとのクラブ</Mark>
+            BYUHの学生クラブは<Strong>国ごとのクラブ</Strong>
             が主になっています。
             各国の食べ物を販売するフードフェスタや、ダンスなどのパフォーマンスをするカルチャーナイトは毎年開催され、各国のクラブが積極的に盛り上げます。
             他の国のクラブに入れば、異なる文化を学ぶ良い経験になるでしょう。
@@ -323,7 +325,7 @@ export const BYUHPage: FC<Props> = () => (
             <ExternalLink href='https://hr.byuh.edu/student-employment'>
               BYUHの規則
             </ExternalLink>
-            では、 学校期間中は<Mark>週19時間まで</Mark>{' '}
+            では、 学校期間中は<Strong>週19時間まで</Strong>{' '}
             、夏休みなどの休業期間には週40時間までアルバイトをすることができます。
             留学生はビザの関係でキャンパス内でしか働くことができませんが、
             BYUHでは隣接する
@@ -337,7 +339,7 @@ export const BYUHPage: FC<Props> = () => (
             <ExternalLink href='https://labor.hawaii.gov/wsd/minimum-wage/'>
               ハワイ州の最低賃金
             </ExternalLink>
-            は<Mark>$10.10</Mark>で近年上昇傾向にあります。
+            は<Strong>$10.10</Strong>で近年上昇傾向にあります。
             キャンパス内のアルバイトでも最低賃金は保証されているため、目一杯働くと
           </p>
           <p className='text-center'>$10.10 x 19時間 x 4週間 = $767.6</p>
@@ -381,7 +383,7 @@ export const BYUHPage: FC<Props> = () => (
               Merit Scholarship
             </ExternalLink>
             があります。
-            <Mark>GPAに応じて授業料の1/4~全額の奨学金が貰えます</Mark>
+            <Strong>GPAに応じて授業料の1/4~全額の奨学金が貰えます</Strong>
             。貰うためには最低でもGPAが3.65必要ですが、努力すれば届く範囲なので、積極的に狙っていきましょう。
             他にも
             <ExternalLink href='https://financialaid.byuh.edu/scholarships'>

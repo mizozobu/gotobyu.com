@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { Mark, Props } from './Mark';
+import { Strong, Props } from './Strong';
 
 export default {
-  title: 'atoms/Mark',
-  component: Mark,
+  title: 'atoms/Strong',
+  component: Strong,
   argTypes: {},
 } as Meta;
 
-const Template: Story<Props> = (args) => <Mark {...args} />;
+const Template: Story<Props> = (args) => <Strong {...args} />;
 
 export const SingleLine = Template.bind({});
 SingleLine.args = {

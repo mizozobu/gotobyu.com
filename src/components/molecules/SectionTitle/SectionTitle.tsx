@@ -1,6 +1,7 @@
 import { memo, FC, HTMLAttributes, MouseEventHandler } from 'react';
 import Link from 'next/link';
 import { LinkIcon } from '@heroicons/react/outline';
+import { H2 } from '@c/atoms/H2';
 import styles from './SectionTitle.module.css';
 
 export interface Props
@@ -11,15 +12,8 @@ export interface Props
 }
 
 export const SectionTitle: FC<Props> = memo(
-  ({
-    id,
-    active = false,
-    className = '',
-    children,
-    onClick,
-    ...props
-  }: Props) => (
-    <h2 {...props} id={id} className={className}>
+  ({ id, active = false, children, onClick, ...props }: Props) => (
+    <H2 {...props} id={id}>
       <Link href={`#${id}`}>
         {/* eslint-disable-next-line */}
         <a
@@ -31,6 +25,6 @@ export const SectionTitle: FC<Props> = memo(
           {children} <LinkIcon className={styles.icon} />
         </a>
       </Link>
-    </h2>
+    </H2>
   ),
 );

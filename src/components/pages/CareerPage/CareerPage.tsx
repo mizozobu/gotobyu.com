@@ -3,7 +3,7 @@ import CopiedDialog from '@c/organisms/CopiedDialog';
 import { Container } from '@c/atoms/Container';
 import { PageTitle } from '@c/atoms/PageTitle';
 import { Section } from '@c/atoms/Section';
-import SectionTitle from '@c/atoms/SectionTitle';
+import SectionTitle from '@c/molecules/SectionTitle';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
 import { ExternalLink } from '@c/atoms/ExternalLink';

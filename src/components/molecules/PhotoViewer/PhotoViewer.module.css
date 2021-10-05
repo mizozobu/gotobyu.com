@@ -27,11 +27,6 @@ apply rounded-xl to .photo-viewer img instead. */
   margin: 0 !important;
 }
 
-/* remove styles from .prose */
-.photo-viewer :global(.slick-slider > .slick-dots > li::before) {
-  display: none;
-}
-
 .photo-viewer :global(.slick-slider > .slick-dots > li > button::before) {
   color: white !important;
 }
