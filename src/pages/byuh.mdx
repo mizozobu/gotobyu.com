@@ -1,9 +1,11 @@
 import { Seo } from '@c/organisms/Seo';
+import { Ul } from '@c/atoms/Ul';
+import { Li } from '@c/atoms/Li';
 import { SplitPane } from '@c/atoms/SplitPane';
 import { Pane } from '@c/atoms/Pane';
-import { PhotoViewer } from '@c/molecules/PhotoViewer';
 import { NextImage } from '@c/atoms/NextImage';
 import { Digit } from '@c/atoms/Digit';
+import { PhotoViewer } from '@c/molecules/PhotoViewer';
 import { BYUHPageMeta, SchoolData } from '@d';
 import byuhLogoImage from '@p/byuh.png';
 import byuhBbqImage from '@p/byuh/byuh_bbq.jpg';
@@ -43,13 +45,18 @@ import byuhResumeWorkshopImage from '@p/byuh/byuh_resume_workshop.jpg';
     />
   </Pane>
   <Pane>
-    <ul>
-      <li><span className='font-bold'>場所</span>: ハワイ州ライエ</li>
-      <li><span className='font-bold'>合格率</span>: <Digit>{SchoolData.byuh.acceptanceRate * 100}</Digit>%</li>
-      <li><span className='font-bold'>学生数</span>: <Digit>{SchoolData.byuh.numberOfStudents}</Digit></li>
-      <li><span className='font-bold'>専攻数</span>: <Digit>{SchoolData.byuh.numberOfMajors}</Digit></li>
-      <li><span className='font-bold'>授業数</span>: <Digit>{SchoolData.byuh.numberOfCourses}</Digit></li>
-     </ul>
+    <Ul>
+       <Li>
+        <span className='font-bold'>場所</span>:{' '}
+        <ExternalLink href='https://www.google.com/maps/place/Brigham+Young+University–Hawaii/@21.6422134,-157.9284008,17z/data=!3m1!4b1!4m5!3m4!1s0x7c004568593757b1:0x5b5ff11727fa5a83!8m2!3d21.6422084!4d-157.9262121'>
+          ハワイ州ライエ
+        </ExternalLink>
+      </Li>
+      <Li><span className='font-bold'>合格率</span>: <Digit>{SchoolData.byuh.acceptanceRate * 100}</Digit>%</Li>
+      <Li><span className='font-bold'>学生数</span>: <Digit>{SchoolData.byuh.numberOfStudents}</Digit></Li>
+      <Li><span className='font-bold'>専攻数</span>: <Digit>{SchoolData.byuh.numberOfMajors}</Digit></Li>
+      <Li><span className='font-bold'>授業数</span>: <Digit>{SchoolData.byuh.numberOfCourses}</Digit></Li>
+     </Ul>
   </Pane>
 </SplitPane>
 
