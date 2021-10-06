@@ -24,7 +24,7 @@
     "recoil": "^0.4.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
+    "@babel/core": "^7.15.8",
     "@commitlint/cli": "^13.2.0",
     "@commitlint/config-conventional": "^13.2.0",
     "@next/eslint-plugin-next": "^11.1.2",
