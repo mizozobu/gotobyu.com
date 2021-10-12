@@ -1,6 +1,7 @@
 .table th,
 .table td {
   min-width: 100px;
+
   @apply px-4 py-3 text-center;
 }
 
@@ -22,6 +23,7 @@
 .table > tfoot > tr > th,
 .table > thead > tr > th:first-of-type {
   border-right: theme('borderWidth.2') solid var(--thick-border-color, black);
+
   @apply px-8 font-bold;
 }
 
