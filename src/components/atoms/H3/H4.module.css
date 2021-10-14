@@ -1,0 +1,53 @@
+.h4 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: #111827;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+@screen sm {
+  .h4 {
+    margin-top: 1.4285714em;
+    margin-bottom: 0.5714286em;
+    line-height: 1.4285714;
+  }
+}
+
+@screen md {
+  .h4 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: #111827;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+}
+
+@screen lg {
+  .h4 {
+    margin-top: 1.7777778em;
+    margin-bottom: 0.4444444em;
+    line-height: 1.5555556;
+  }
+}
+
+@screen xl {
+  .h4 {
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+    line-height: 1.6;
+  }
+}
+
+@screen 2xl {
+  .h4 {
+    margin-top: 1.66666667em;
+    margin-bottom: 0.6666667em;
+    line-height: 1.5;
+  }
+}
+
+.h4 + * {
+  margin-top: 0;
+}

@@ -8,7 +8,9 @@ ul > .li::before {
   left: 0.25em;
   width: 0.375em;
   height: 0.375em;
-  background-color: #cbd5e0;
+
+  /* background-color: #cbd5e0; */
+  background-color: #374151;
   border-radius: 50%;
   content: '';
 }
