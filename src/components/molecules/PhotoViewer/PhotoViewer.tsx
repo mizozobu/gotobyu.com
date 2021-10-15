@@ -29,6 +29,7 @@ export const PhotoViewer: FC<Props> = ({
     pauseOnDotsHover: true,
     ..._settings,
     beforeChange: (current: number, next: number) => {
+      if (current === next) return;
       setShowCitation(false);
       _settings.beforeChange?.(current, next);
     },
