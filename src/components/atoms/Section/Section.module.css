@@ -1,6 +1,0 @@
-/* reset float
-see https://stackoverflow.com/questions/2062258/floating-elements-within-a-div-floats-outside-of-div-why */
-.section::after {
-  content: '';
-  @apply block clear-both;
-}

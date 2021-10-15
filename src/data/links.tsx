@@ -18,7 +18,7 @@ export interface PageMeta {
   title: string | undefined;
   description: string;
   href: string;
-  icon: FC<{ className: string }>;
+  icon: FC<{ className?: string }>;
 }
 
 export const IndexPageMeta: Omit<PageMeta, 'name' | 'detail' | 'icon'> = {
