@@ -12,7 +12,7 @@ import { Li } from '@c/atoms/Li';
 import { Container } from '@c/atoms/Container';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const mdxComponents: { [key: string]: FC<any> } = {
+export const MDX: { [key: string]: FC<any> } = {
   h1: H1,
   h2: SectionTitle,
   h3: H3,

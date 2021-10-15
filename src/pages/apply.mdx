@@ -1,10 +1,6 @@
 import { FC } from 'react';
-import { ExternalLink } from '@c/atoms/ExternalLink';
 import { Tab, TabContent, TabNav, TabNavBar, TabPane } from '@c/molecules/Tab';
 import { NextImage } from '@c/atoms/NextImage';
-import { Ul } from '@c/atoms/Ul';
-import { Li } from '@c/atoms/Li';
-import { Strong } from '@c/atoms/Strong';
 import { Seo } from '@c/organisms/Seo';
 import { BYUDeadlineTable } from '@c/organisms/BYUDeadlineTable';
 import { BYUHDeadlineTable } from '@c/organisms/BYUHDeadlineTable';
@@ -14,6 +10,7 @@ import { IELTSTable } from '@c/organisms/IELTSTable';
 import { PTETable } from '@c/organisms/PTETable';
 import { EikenTable } from '@c/organisms/EikenTable';
 import { ApplyPageMeta } from '@d';
+import { MDX } from '@l/mdx';
 import byuLogoImage from '@p/byu.png';
 import byuhLogoImage from '@p/byuh.png';
 import byuiLogoImage from '@p/byui.png';
@@ -84,36 +81,36 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
     >
       <BYUDeadlineTable />
       <p>優先申込締切までに申込を完了すると選考を有利に進められます。</p>
-      <Ul>
-        <Li>
-          <ExternalLink href='https://enrollment.byu.edu/admissions/deadlines'>
+      <MDX.ul>
+        <MDX.li>
+          <MDX.a href='https://enrollment.byu.edu/admissions/deadlines'>
             BYUの申込締切
-          </ExternalLink>
-        </Li>
-        <Li>
-          <ExternalLink href='https://enrollment2.byu.edu/academic-calendar'>
+          </MDX.a>
+        </MDX.li>
+        <MDX.li>
+          <MDX.a href='https://enrollment2.byu.edu/academic-calendar'>
             BYUの年間カレンダー
-          </ExternalLink>
-        </Li>
-      </Ul>
+          </MDX.a>
+        </MDX.li>
+      </MDX.ul>
     </TabPane>
     <TabPane
       id='byuh'
       className='px-4 md:px-8 py-8 border border-t-0 space-y-8'
     >
       <BYUHDeadlineTable />
-      <Ul>
-        <Li>
-          <ExternalLink href='https://hookele.byuh.edu/application-deadlines-decisions-schedule'>
+      <MDX.ul>
+        <MDX.li>
+          <MDX.a href='https://hookele.byuh.edu/application-deadlines-decisions-schedule'>
             BYUHの申込締切
-          </ExternalLink>
-        </Li>
-        <Li>
-          <ExternalLink href='https://registrar.byuh.edu/academic-dates'>
+          </MDX.a>
+        </MDX.li>
+        <MDX.li>
+          <MDX.a href='https://registrar.byuh.edu/academic-dates'>
             BYUHの年間カレンダー
-          </ExternalLink>
-        </Li>
-      </Ul>
+          </MDX.a>
+        </MDX.li>
+      </MDX.ul>
     </TabPane>
     <TabPane
       id='byui'
@@ -121,18 +118,18 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
     >
       <BYUIDeadlineTable />
       <p>優先申込締切までに申込を完了すると選考を有利に進められます。</p>
-      <Ul>
-        <Li>
-          <ExternalLink href='https://hookele.byuh.edu/application-deadlines-decisions-schedules'>
+      <MDX.ul>
+        <MDX.li>
+          <MDX.a href='https://hookele.byuh.edu/application-deadlines-decisions-schedules'>
             BYUIの申込締切
-          </ExternalLink>
-        </Li>
-        <Li>
-          <ExternalLink href='https://www.byui.edu/student-records/academic-deadlines'>
+          </MDX.a>
+        </MDX.li>
+        <MDX.li>
+          <MDX.a href='https://www.byui.edu/student-records/academic-deadlines'>
             BYUIの年間カレンダー
-          </ExternalLink>
-        </Li>
-      </Ul>
+          </MDX.a>
+        </MDX.li>
+      </MDX.ul>
     </TabPane>
   </TabContent>
 </Tab>
@@ -186,9 +183,9 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
     >
       <TOEFLTable />
       <p>
-        <ExternalLink href='https://www.toefl-ibt.jp'>
+        <MDX.a href='https://www.toefl-ibt.jp'>
           Test of English as a Foreign Language(TOEFL)
-        </ExternalLink>
+        </MDX.a>
         はEducational Testing Service(ETS)が主催するテストです。
       </p>
     </TabPane>
@@ -198,9 +195,9 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
     >
       <IELTSTable />
       <p>
-        <ExternalLink href='https://www.eiken.or.jp/ielts/'>
+        <MDX.a href='https://www.eiken.or.jp/ielts/'>
           International English Language Testing System(IELTS)
-        </ExternalLink>
+        </MDX.a>
         はBritish Council、IDP、Cambridge Assessment
         Englishが共同で主催するテストです。
       </p>
@@ -211,9 +208,9 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
     >
       <PTETable />
       <p>
-        <ExternalLink href='https://pearsonpte.com/japanese'>
+        <MDX.a href='https://pearsonpte.com/japanese'>
           Pearson Test of English(PTE)
-        </ExternalLink>
+        </MDX.a>
         はPearsonが主催するテストです。
       </p>
     </TabPane>
@@ -223,11 +220,11 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
     >
       <EikenTable />
       <p>
-        <ExternalLink href='https://www.eiken.or.jp/eiken/'>
+        <MDX.a href='https://www.eiken.or.jp/eiken/'>
           実用英語技能検定(英検)
-        </ExternalLink>
+        </MDX.a>
         は公益財団法人日本英語検定協会が主催するテストです。英検は
-        <Strong>BYUHでのみ</Strong>認められています。
+        <MDX.strong>BYUHでのみ</MDX.strong>認められています。
       </p>
     </TabPane>
   </TabContent>

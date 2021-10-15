@@ -10,7 +10,7 @@ import { Footer } from '@c/organisms/Footer';
 import ScrollIntoView from '@c/atoms/ScrollIntoView';
 import CopiedDialog from '@c/organisms/CopiedDialog';
 import { GTM_ID, pageview } from '@l/Gtm';
-import { mdxComponents } from '@l/mdx';
+import { MDX } from '@l/mdx';
 import '~/styles/globals.css';
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
@@ -83,7 +83,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
       <Header />
 
       <main id='maincontent'>
-        <MDXProvider components={mdxComponents}>
+        <MDXProvider components={MDX}>
           <Component {...pageProps} />
         </MDXProvider>
       </main>

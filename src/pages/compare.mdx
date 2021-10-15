@@ -1,14 +1,11 @@
 import { Seo } from '@c/organisms/Seo';
-import { H3 } from '@c/atoms/H3';
-import { Ul } from '@c/atoms/Ul';
-import { Li } from '@c/atoms/Li';
-import { ExternalLink } from '@c/atoms/ExternalLink';
 import { UlCol } from '@c/atoms/UlCol';
 import { Footnote } from '@c/atoms/Footnote';
 import { SchoolTable } from '@c/organisms/SchoolTable';
 import TuitionBarChart from '@c/organisms/TuitionBarChart';
 import CostTable from '@c/organisms/CostTable';
 import { ComparePageMeta } from '@d';
+import { MDX } from '@l/mdx';
 
 <Seo
   title={ComparePageMeta.title}
@@ -38,23 +35,23 @@ import { ComparePageMeta } from '@d';
 
 <TuitionBarChart className='w-full h-72 md:h-80 lg:h-96' />
 
-<Ul className='mt-4 text-xs'>
+<MDX.ul className='mt-4 text-xs'>
   <Footnote>BYU、BYUIは2学期分、BYUHは3学期分で換算</Footnote>
   <Footnote>
     日本国立、日本私立は
-    <ExternalLink href='https://www.mext.go.jp/a_menu/koutou/shinkou/07021403/__icsFiles/afieldfile/2017/12/26/1399613_03.pdf'>
+    <MDX.a href='https://www.mext.go.jp/a_menu/koutou/shinkou/07021403/__icsFiles/afieldfile/2017/12/26/1399613_03.pdf'>
       国公私立大学の授業料等の推移
-    </ExternalLink>
+    </MDX.a>
     より平成29年度の値
   </Footnote>
   <Footnote>
     US国立、US私立は
-    <ExternalLink href='https://www.usnews.com/education/best-colleges/paying-for-college/articles/paying-for-college-infographic'>
+    <MDX.a href='https://www.usnews.com/education/best-colleges/paying-for-college/articles/paying-for-college-infographic'>
       See the Average College Tuition in 2020-2021
-    </ExternalLink>
+    </MDX.a>
     より
   </Footnote>
-</Ul>
+</MDX.ul>
 
 
 ## 1学期の費用
