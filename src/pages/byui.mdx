@@ -7,6 +7,9 @@ import { PhotoViewer } from '@c/molecules/PhotoViewer';
 import { BYUIPageMeta, SchoolData } from '@d';
 import { MDX } from '@l/mdx';
 import byuiLogoImage from '@p/byui.png';
+import byuiClassImage from '@p/byui/byui_class.png';
+import byuiHousingImage from '@p/byui/byui_housing.png';
+import byuiFitnessImage from '@p/byui/byui_fitness.png';
 
 <Seo
   title={BYUIPageMeta.title}
@@ -57,6 +60,22 @@ BYUプロボから運転して約5時間ほどのところにあるBYUアイダ�
 
 ## 専攻と授業
 
+<div className='py-8 md:float-left'>
+  <PhotoViewer
+    colorClass='bg-gradient-to-br from-byui to-byui-dark'
+    images={[
+      {
+        src: byuiClassImage,
+        alt: 'BYUI 授業風景',
+        citation: 'https://www.byui.edu/foundations/for-students/course-requirements/fdwld101-world-foundations-i',
+        placeholder: 'blur',
+        layout: 'fill',
+        objectFit: 'cover',
+      },
+    ]}
+  />
+</div>
+
 [69のMajor(専攻)と95のMinor(副専攻)に加え多種類のCertificate(資格)やCluster(ある分野に関してまとまった授業)](https://www.byui.edu/catalog#/programs)があります。
 必ず1つの専攻を決めなければいけません。学部によっては2年で卒業しassociate’s degree(准学士号)だけをとることもできます。
 大体の生徒はbachelor’s degree(学士号)をとるために通っています。
@@ -76,6 +95,22 @@ BYUプロボから運転して約5時間ほどのところにあるBYUアイダ�
 
 ## 衣住食
 
+<div className='py-8 md:float-left'>
+  <PhotoViewer
+    colorClass='bg-gradient-to-br from-byui to-byui-dark'
+    images={[
+      {
+        src: byuiHousingImage,
+        alt: 'BYUI 学生寮',
+        citation: 'https://www.byui.edu/housing/centre-square/features-and-gallery',
+        placeholder: 'blur',
+        layout: 'fill',
+        objectFit: 'cover',
+      },
+    ]}
+  />
+</div>
+
 アイダホは自然が多いので登山やキャンプを楽しむことが多いです。冬場は室内で友達と映画をみたりゲームをしたり色々楽しんでいます。
 また５時間運転してユタへ遊びに行くことこともできます。車のあてがなければバスや電車でも行くことができます。
 キャンパスのすぐ近くに神殿があるので気軽に行くことができます。
@@ -93,6 +128,22 @@ BYUプロボから運転して約5時間ほどのところにあるBYUアイダ�
 
 
 ## クラブ
+
+<div className='py-8 md:float-left'>
+  <PhotoViewer
+    colorClass='bg-gradient-to-br from-byui to-byui-dark'
+    images={[
+      {
+        src: byuiFitnessImage,
+        alt: 'BYUI フィットネス',
+        citation: 'https://www.byui.edu/wellness-center',
+        placeholder: 'blur',
+        layout: 'fill',
+        objectFit: 'cover',
+      },
+    ]}
+  />
+</div>
 
 クラブなどはないですが、短期間スポーツチームに所属を申し込むことでサッカー、バレーボール、フットボールなどいろんなスポーツが楽しめます。
 また、放課後にヨガクラス、ローラースケート、ダンス、レーザータッグなどの活動もあります。
