@@ -9,7 +9,7 @@ export default {
 } as Meta;
 
 const Template: Story<Props> = (args) => (
-  <div className='py-8 md:float-left'>
+  <div className='pt-8 pb-4 md:float-left'>
     <PhotoViewer {...args} />
   </div>
 );
