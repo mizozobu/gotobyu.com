@@ -5,7 +5,12 @@ class MyDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang='ja'>
-        <Head />
+        <Head>
+          <link
+            href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=optional'
+            rel='stylesheet'
+          />
+        </Head>
         <body>
           {/* Google Tag Manager (noscript) */}
           {GTM_ID && (
