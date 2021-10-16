@@ -34,7 +34,7 @@ export const BYUPageMeta: PageMeta = {
   title: 'BYUの紹介',
   description:
     'Brigham Young University(BYU)の紹介です。在学生と卒業生の経験を元に、専攻、衣住食、クラブ、アルバイト、奨学金などについてまとめています。',
-  href: '/byu',
+  href: '/schools/byu',
   icon: ({ className }) => (
     <NextImage
       className={className}
@@ -53,7 +53,7 @@ export const BYUHPageMeta: PageMeta = {
   title: 'BYUHの紹介',
   description:
     'Brigham Young University–Hawaii(BYUH)の紹介です。在学生と卒業生の経験を元に、専攻、衣住食、クラブ、アルバイト、奨学金についてまとめています。',
-  href: '/byuh',
+  href: '/schools/byuh',
   icon: ({ className }) => (
     <NextImage
       className={className}
@@ -72,7 +72,7 @@ export const BYUIPageMeta: PageMeta = {
   title: 'BYUIの紹介',
   description:
     'Brigham Young University - Idaho(BYUI)の紹介です。在学生と卒業生の経験を元に、専攻、衣住食、クラブ、アルバイト、奨学金についてまとめています。',
-  href: '/byui',
+  href: '/schools/byui',
   icon: ({ className }) => (
     <NextImage
       className={className}
@@ -91,7 +91,7 @@ export const ComparePageMeta: PageMeta = {
   title: 'BYU、BYUH、BYUIの比較',
   description:
     'BYU、BYUH、BYUIを費用、生徒数、専攻数、英語力などの面で比較します。',
-  href: '/compare',
+  href: '/tips/compare',
   icon: ScaleIcon,
 };
 
@@ -101,7 +101,7 @@ export const ApplyPageMeta: PageMeta = {
   title: '入学手続き',
   description:
     'BYU、BYUH、BYUIの入学手続きについて。締め切り、申込費用、必要な英語力、試験、必要書類についてまとめています。',
-  href: '/apply',
+  href: '/tips/apply',
   icon: MailOpenIcon,
 };
 
@@ -111,7 +111,7 @@ export const LearnEnglishPageMeta: PageMeta = {
   title: '英語の勉強方法',
   description:
     'BYU、BYUH、BYUIへの入学に必要な英語力を満たすための勉強法を紹介しています。',
-  href: '/learn-english',
+  href: '/tips/learn-english',
   icon: BookOpenIcon,
 };
 
@@ -120,7 +120,7 @@ export const CareerPageMeta: PageMeta = {
   detail: 'BYU、BYUH、BYUI卒業生の就職先と年収',
   title: '就職',
   description: 'BYU、BYUH、BYUIの学生の就職先と1年目の年収について。',
-  href: '/career',
+  href: '/tips/career',
   icon: OfficeBuildingIcon,
 };
 
@@ -130,7 +130,7 @@ export const InternshipPageMeta: PageMeta = {
   title: 'インターンシップ',
   description:
     'BYU、BYUH、BYUIの学生のインターンシップ先の企業と給与について。誰もが知っている有名企業でインターンシップをする学生や、インターンシップにもかかわらず一般的な新入社員よりも給与を貰う学生もいます。',
-  href: '/internship',
+  href: '/tips/internship',
   icon: PresentationChartBarIcon,
 };
 

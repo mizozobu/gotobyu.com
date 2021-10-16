@@ -17,7 +17,7 @@ export const IndexPage: FC<Props> = () => (
     <div className='px-6 lg:px-0 -mx-6 lg:mx-0'>
       <h2 className='text-2xl md:text-4xl font-bold'>各大学について</h2>
       <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:gap-y-10 lg:justify-items-center px-6 lg:px-0 py-10 -mx-6 lg:mx-0 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
-        <Link href='/byu'>
+        <Link href='/schools/byu'>
           <a>
             <SchoolCard
               className='mx-8'
@@ -34,7 +34,7 @@ export const IndexPage: FC<Props> = () => (
             </SchoolCard>
           </a>
         </Link>
-        <Link href='/byuh'>
+        <Link href='/schools/byuh'>
           <a>
             <SchoolCard
               className='mx-8'
@@ -51,7 +51,7 @@ export const IndexPage: FC<Props> = () => (
             </SchoolCard>
           </a>
         </Link>
-        <Link href='/byui'>
+        <Link href='/schools/byui'>
           <a>
             <SchoolCard
               className='mx-8'
