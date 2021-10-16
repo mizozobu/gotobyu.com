@@ -30,32 +30,8 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
     <RecoilRoot>
       <Head>
         {/* define defult title here until https://github.com/garmeeh/next-seo/pull/832 is merged */}
+        {/* eslint-disable-next-line @next/next/no-title-in-document-head */}
         <title>BYU Management Society Tokyo Chapter</title>
-        {/* favicon https://realfavicongenerator.net */}
-        <link
-          rel='apple-touch-icon'
-          sizes='180x180'
-          href='/apple-touch-icon.png'
-        />
-        <link
-          rel='icon'
-          type='image/png'
-          sizes='32x32'
-          href='/favicon-32x32.png'
-        />
-        <link
-          rel='icon'
-          type='image/png'
-          sizes='16x16'
-          href='/favicon-16x16.png'
-        />
-        <link rel='manifest' href='/site.webmanifest' />
-        <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
-        <meta name='msapplication-TileColor' content='#da532c' />
-        <meta name='theme-color' content='#ffffff' />
-        {/* End favicon */}
-
-        <meta name='robots' content='noindex' />
       </Head>
 
       {/* Google Tag Manager */}
@@ -76,13 +52,13 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
       )}
       {/* End Google Tag Manager */}
 
-      <a href='#maincontent' className='sr-only'>
+      <MDX.a href='#content' className='sr-only focus:not-sr-only'>
         Skip to main content
-      </a>
+      </MDX.a>
 
       <Header />
 
-      <main id='maincontent'>
+      <main id='content'>
         <MDXProvider components={MDX}>
           <Component {...pageProps} />
         </MDXProvider>
