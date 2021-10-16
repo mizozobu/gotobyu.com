@@ -19,7 +19,7 @@ Single.args = {
   colorClass: 'bg-indigo-500',
   images: [
     {
-      src: '/byu.png',
+      src: '/byu/byu.png',
       alt: 'BYU',
       layout: 'fill',
       objectFit: 'scale-down',
@@ -32,19 +32,19 @@ Multi.args = {
   colorClass: 'bg-indigo-500',
   images: [
     {
-      src: '/byu.png',
+      src: '/byu/byu.png',
       alt: 'BYU',
       layout: 'fill',
       objectFit: 'scale-down',
     },
     {
-      src: '/byuh.png',
+      src: '/byuh/byuh.png',
       alt: 'BYUH',
       layout: 'fill',
       objectFit: 'scale-down',
     },
     {
-      src: '/byui.png',
+      src: '/byui/byui.png',
       alt: 'BYUI',
       layout: 'fill',
       objectFit: 'scale-down',
