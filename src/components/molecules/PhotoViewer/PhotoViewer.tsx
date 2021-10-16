@@ -41,9 +41,7 @@ export const PhotoViewer: FC<Props> = ({
   };
 
   return (
-    <div
-      className={classNames(styles['photo-viewer'], 'w-full md:w-80 lg:w-96')}
-    >
+    <div className={styles['photo-viewer']}>
       <BgRotate className={className} colorClass={colorClass}>
         <Slider {...settings}>
           {images.map((imageProps) => (
@@ -60,7 +58,7 @@ export const PhotoViewer: FC<Props> = ({
       <div
         className={classNames(
           styles.citation,
-          'mt-4 text-xs break-all transition-opacity',
+          'mt-4 lg:mt-8 text-xs break-all transition-opacity',
           {
             'opacity-0': !showCitation,
           },
