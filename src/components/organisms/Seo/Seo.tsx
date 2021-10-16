@@ -37,16 +37,3 @@ export const Seo: FC<Props> = ({ openGraph, ...prop }: Props) => {
     />
   );
 };
-
-/* <Seo
-  title='運営者について'
-  description='このウェブサイトを運営するBYU Management Society Tokyo Chapterについて。'
-  noindex
-  nofollow
-  openGraph={{
-    type: 'article', // "website" for top page
-    title: '運営者について',
-    description:
-      'このウェブサイトを運営するBYU Management Society Tokyo Chapterについて。',
-  }}
-/>; */
