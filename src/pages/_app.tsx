@@ -9,7 +9,7 @@ import Header from '@c/organisms/Header';
 import { Footer } from '@c/organisms/Footer';
 import ScrollIntoView from '@c/atoms/ScrollIntoView';
 import CopiedDialog from '@c/organisms/CopiedDialog';
-import { GTM_ID, pageview } from '@l/Gtm';
+import { GTM_ID, pageview } from '@l/gtm';
 import { MDX } from '@l/mdx';
 import '~/styles/globals.css';
 

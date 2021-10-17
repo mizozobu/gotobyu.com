@@ -2,6 +2,7 @@ ul > .li {
   position: relative;
   padding-left: 1.75em;
 }
+
 ul > .li::before {
   position: absolute;
   top: 0.6875em;
@@ -19,6 +20,7 @@ ul > .li::before {
   ul > .li {
     padding-left: 1.5714286em;
   }
+
   ul > .li::before {
     top: 0.67857em;
     left: 0.2142857em;
@@ -32,6 +34,7 @@ ul > .li::before {
     position: relative;
     padding-left: 1.75em;
   }
+
   ul > .li::before {
     top: 0.6875em;
     left: 0.25em;
@@ -44,6 +47,7 @@ ul > .li::before {
   ul > .li {
     padding-left: 1.6666667em;
   }
+
   ul > .li::before {
     top: 0.72222em;
     left: 0.2222222em;
@@ -56,6 +60,7 @@ ul > .li::before {
   ul > .li {
     padding-left: 1.6666667em;
   }
+
   ul > .li::before {
     top: 0.725em;
     left: 0.25em;
@@ -68,6 +73,7 @@ ul > .li::before {
   ul > .li {
     padding-left: 1.6666667em;
   }
+
   ul > .li::before {
     top: 0.66667em;
     left: 0.25em;
