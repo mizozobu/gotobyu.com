@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile --prefer-offline
       - name: Prepare environment variables
-        run: cp .env.test .env.local
+        run: cp -p .env.test .env.local
       - name: Lint
         run: yarn lint
       - name: Build
