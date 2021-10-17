@@ -93,54 +93,50 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='grid gap-2 p-5 bg-white'>
                               {SchoolLinks.map(
-                                ({ name, href, description, icon: Icon }) => (
+                                ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
-                                    <a>
-                                      <button
-                                        className='flex items-start w-full p-3 rounded-lg text-left hover:bg-gray-50'
-                                        type='button'
-                                        onClick={() => close()}
-                                      >
-                                        <Icon
-                                          className='flex-shrink-0 h-6 w-6 text-indigo-700'
-                                          aria-hidden='true'
-                                        />
-                                        <div className='ml-4'>
-                                          <p className='text-base font-medium text-gray-900'>
-                                            {name}
-                                          </p>
-                                          <p className='mt-1 text-sm text-gray-500'>
-                                            {description}
-                                          </p>
-                                        </div>
-                                      </button>
+                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                                    <a
+                                      className='flex items-start w-full p-3 rounded-lg text-left hover:bg-gray-50'
+                                      onClick={() => close()}
+                                    >
+                                      <Icon
+                                        className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                                        aria-hidden='true'
+                                      />
+                                      <div className='ml-4'>
+                                        <p className='text-base font-medium text-gray-900'>
+                                          {name}
+                                        </p>
+                                        <p className='mt-1 text-sm text-gray-500'>
+                                          {detail}
+                                        </p>
+                                      </div>
                                     </a>
                                   </Link>
                                 ),
                               )}
                               <hr />
                               {AdditionalSchoolLinks.map(
-                                ({ name, href, description, icon: Icon }) => (
+                                ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
-                                    <a>
-                                      <button
-                                        className='flex items-start w-full p-3 rounded-lg text-left hover:bg-gray-50'
-                                        type='button'
-                                        onClick={() => close()}
-                                      >
-                                        <Icon
-                                          className='flex-shrink-0 h-6 w-6 text-indigo-700'
-                                          aria-hidden='true'
-                                        />
-                                        <div className='ml-4'>
-                                          <p className='text-base font-medium text-gray-900'>
-                                            {name}
-                                          </p>
-                                          <p className='mt-1 text-sm text-gray-500'>
-                                            {description}
-                                          </p>
-                                        </div>
-                                      </button>
+                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                                    <a
+                                      className='flex items-start w-full p-3 rounded-lg text-left hover:bg-gray-50'
+                                      onClick={() => close()}
+                                    >
+                                      <Icon
+                                        className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                                        aria-hidden='true'
+                                      />
+                                      <div className='ml-4'>
+                                        <p className='text-base font-medium text-gray-900'>
+                                          {name}
+                                        </p>
+                                        <p className='mt-1 text-sm text-gray-500'>
+                                          {detail}
+                                        </p>
+                                      </div>
                                     </a>
                                   </Link>
                                 ),
@@ -194,27 +190,25 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='grid gap-2 p-5 bg-white'>
                               {ApplyLinks.map(
-                                ({ name, href, description, icon: Icon }) => (
+                                ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
-                                    <a>
-                                      <button
-                                        className='flex items-start w-full p-3 rounded-lg text-left hover:bg-gray-50'
-                                        type='button'
-                                        onClick={() => close()}
-                                      >
-                                        <Icon
-                                          className='flex-shrink-0 h-6 w-6 text-indigo-700'
-                                          aria-hidden='true'
-                                        />
-                                        <div className='ml-4'>
-                                          <p className='text-base font-medium text-gray-900'>
-                                            {name}
-                                          </p>
-                                          <p className='mt-1 text-sm text-gray-500'>
-                                            {description}
-                                          </p>
-                                        </div>
-                                      </button>
+                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                                    <a
+                                      className='flex items-start w-full p-3 rounded-lg text-left hover:bg-gray-50'
+                                      onClick={() => close()}
+                                    >
+                                      <Icon
+                                        className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                                        aria-hidden='true'
+                                      />
+                                      <div className='ml-4'>
+                                        <p className='text-base font-medium text-gray-900'>
+                                          {name}
+                                        </p>
+                                        <p className='mt-1 text-sm text-gray-500'>
+                                          {detail}
+                                        </p>
+                                      </div>
                                     </a>
                                   </Link>
                                 ),
@@ -269,27 +263,25 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='grid gap-2 p-5 bg-white'>
                               {CareerLinks.map(
-                                ({ name, href, description, icon: Icon }) => (
+                                ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
-                                    <a>
-                                      <button
-                                        className='flex items-start w-full p-3 rounded-lg text-left hover:bg-gray-50'
-                                        type='button'
-                                        onClick={() => close()}
-                                      >
-                                        <Icon
-                                          className='flex-shrink-0 h-6 w-6 text-indigo-700'
-                                          aria-hidden='true'
-                                        />
-                                        <div className='ml-4'>
-                                          <p className='text-base font-medium text-gray-900'>
-                                            {name}
-                                          </p>
-                                          <p className='mt-1 text-sm text-gray-500'>
-                                            {description}
-                                          </p>
-                                        </div>
-                                      </button>
+                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                                    <a
+                                      className='flex items-start w-full p-3 rounded-lg text-left hover:bg-gray-50'
+                                      onClick={() => close()}
+                                    >
+                                      <Icon
+                                        className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                                        aria-hidden='true'
+                                      />
+                                      <div className='ml-4'>
+                                        <p className='text-base font-medium text-gray-900'>
+                                          {name}
+                                        </p>
+                                        <p className='mt-1 text-sm text-gray-500'>
+                                          {detail}
+                                        </p>
+                                      </div>
                                     </a>
                                   </Link>
                                 ),
@@ -340,27 +332,25 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='grid gap-2 p-5 bg-white'>
                               {OtherLinks.map(
-                                ({ name, href, description, icon: Icon }) => (
+                                ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
-                                    <a>
-                                      <button
-                                        className='flex items-start w-full p-3 rounded-lg text-left hover:bg-gray-50'
-                                        type='button'
-                                        onClick={() => close()}
-                                      >
-                                        <Icon
-                                          className='flex-shrink-0 h-6 w-6 text-indigo-700'
-                                          aria-hidden='true'
-                                        />
-                                        <div className='ml-4'>
-                                          <p className='text-base font-medium text-gray-900'>
-                                            {name}
-                                          </p>
-                                          <p className='mt-1 text-sm text-gray-500'>
-                                            {description}
-                                          </p>
-                                        </div>
-                                      </button>
+                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                                    <a
+                                      className='flex items-start w-full p-3 rounded-lg text-left hover:bg-gray-50'
+                                      onClick={() => close()}
+                                    >
+                                      <Icon
+                                        className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                                        aria-hidden='true'
+                                      />
+                                      <div className='ml-4'>
+                                        <p className='text-base font-medium text-gray-900'>
+                                          {name}
+                                        </p>
+                                        <p className='mt-1 text-sm text-gray-500'>
+                                          {detail}
+                                        </p>
+                                      </div>
                                     </a>
                                   </Link>
                                 ),
@@ -404,10 +394,28 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                     <nav className='grid gap-y-2'>
                       {SchoolLinks.map(({ name, href, icon: Icon }) => (
                         <Link key={name} href={href}>
-                          <a>
-                            <button
+                          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                          <a
+                            className='flex items-center w-full px-3 py-2 rounded-md text-left hover:bg-gray-50'
+                            type='button'
+                            onClick={() => close()}
+                          >
+                            <Icon
+                              className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                              aria-hidden='true'
+                            />
+                            <span className='ml-3 text-base font-medium text-gray-900'>
+                              {name}
+                            </span>
+                          </a>
+                        </Link>
+                      ))}
+                      {AdditionalSchoolLinks.map(
+                        ({ name, href, icon: Icon }) => (
+                          <Link key={name} href={href}>
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                            <a
                               className='flex items-center w-full px-3 py-2 rounded-md text-left hover:bg-gray-50'
-                              type='button'
                               onClick={() => close()}
                             >
                               <Icon
@@ -417,27 +425,6 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                               <span className='ml-3 text-base font-medium text-gray-900'>
                                 {name}
                               </span>
-                            </button>
-                          </a>
-                        </Link>
-                      ))}
-                      {AdditionalSchoolLinks.map(
-                        ({ name, href, icon: Icon }) => (
-                          <Link key={name} href={href}>
-                            <a>
-                              <button
-                                className='flex items-center w-full px-3 py-2 rounded-md text-left hover:bg-gray-50'
-                                type='button'
-                                onClick={() => close()}
-                              >
-                                <Icon
-                                  className='flex-shrink-0 h-6 w-6 text-indigo-700'
-                                  aria-hidden='true'
-                                />
-                                <span className='ml-3 text-base font-medium text-gray-900'>
-                                  {name}
-                                </span>
-                              </button>
                             </a>
                           </Link>
                         ),
@@ -448,54 +435,48 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                   <div className='grid grid-cols-2 gap-x-1 gap-y-2 p-3'>
                     {ApplyLinks.map(({ name, href, icon: Icon }) => (
                       <Link key={name} href={href}>
-                        <a>
-                          <button
-                            className='flex items-center w-full h-full px-3 py-1 rounded-lg text-left font-medium text-base hover:bg-gray-50'
-                            type='button'
-                            onClick={() => close()}
-                          >
-                            <Icon
-                              className='flex-shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
-                              aria-hidden='true'
-                            />
-                            {name}
-                          </button>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                        <a
+                          className='flex items-center w-full h-full px-3 py-1 rounded-lg text-left font-medium text-base hover:bg-gray-50'
+                          onClick={() => close()}
+                        >
+                          <Icon
+                            className='flex-shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
+                            aria-hidden='true'
+                          />
+                          {name}
                         </a>
                       </Link>
                     ))}
 
                     {CareerLinks.map(({ name, href, icon: Icon }) => (
                       <Link key={name} href={href}>
-                        <a>
-                          <button
-                            className='flex items-center w-full h-full px-3 py-1 rounded-lg text-left font-medium text-base hover:bg-gray-50'
-                            type='button'
-                            onClick={() => close()}
-                          >
-                            <Icon
-                              className='flex-shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
-                              aria-hidden='true'
-                            />
-                            {name}
-                          </button>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                        <a
+                          className='flex items-center w-full h-full px-3 py-1 rounded-lg text-left font-medium text-base hover:bg-gray-50'
+                          onClick={() => close()}
+                        >
+                          <Icon
+                            className='flex-shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
+                            aria-hidden='true'
+                          />
+                          {name}
                         </a>
                       </Link>
                     ))}
 
                     {OtherLinks.map(({ name, href, icon: Icon }) => (
                       <Link key={name} href={href}>
-                        <a>
-                          <button
-                            className='flex items-center w-full h-full px-3 py-1 rounded-lg text-left font-medium text-base hover:bg-gray-50'
-                            type='button'
-                            onClick={() => close()}
-                          >
-                            <Icon
-                              className='flex-shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
-                              aria-hidden='true'
-                            />
-                            {name}
-                          </button>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+                        <a
+                          className='flex items-center w-full h-full px-3 py-1 rounded-lg text-left font-medium text-base hover:bg-gray-50'
+                          onClick={() => close()}
+                        >
+                          <Icon
+                            className='flex-shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
+                            aria-hidden='true'
+                          />
+                          {name}
                         </a>
                       </Link>
                     ))}

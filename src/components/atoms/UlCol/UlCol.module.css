@@ -1,0 +1,17 @@
+.ulcol {
+  column-count: 1;
+}
+
+@screen md {
+  .ulcol {
+    column-count: 2;
+  }
+}
+
+.ulcol > * {
+  break-inside: avoid-column;
+}
+
+.ulcol ul {
+  @apply mt-0;
+}

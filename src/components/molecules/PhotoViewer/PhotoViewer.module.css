@@ -1,18 +1,65 @@
-.photo-viewer > div {
-  width: 100%;
-  padding-bottom: 66.66%;
-}
-
-.photo-viewer img {
-  @apply rounded-xl;
+.photo-viewer {
+  @apply w-full;
 }
 
 @screen md {
   .photo-viewer {
-    @apply w-96 h-64 pb-0;
+    width: 24rem;
   }
+}
 
-  .photo-viewer img {
-    @apply w-96 h-64;
+@screen lg {
+  .photo-viewer {
+    width: 28rem;
   }
+}
+
+@screen xl {
+  .photo-viewer {
+    width: 30rem;
+  }
+}
+
+@screen 2xl {
+  .photo-viewer {
+    width: 32rem;
+  }
+}
+
+/* this is not working since .slick-slide > div has height greater than 3:2 ratio. not sure why.
+apply rounded-xl to .photo-viewer img instead. */
+
+/* .photo-viewer :global(.slick-list) {
+  @apply rounded-xl;
+} */
+.photo-viewer img {
+  @apply rounded-xl;
+}
+
+.photo-viewer :global(.slick-prev) {
+  left: 2% !important;
+  z-index: 1;
+}
+
+.photo-viewer :global(.slick-next) {
+  right: 2% !important;
+  z-index: 1;
+}
+
+.photo-viewer :global(.slick-dots) {
+  bottom: 5% !important;
+  z-index: 1;
+}
+
+.photo-viewer :global(.slick-slider > .slick-dots) {
+  margin: 0 !important;
+}
+
+.photo-viewer :global(.slick-slider > .slick-dots > li > button::before) {
+  color: white !important;
+}
+
+.citation {
+  /* same as leading-normal */
+  line-height: 1.5 !important;
 }

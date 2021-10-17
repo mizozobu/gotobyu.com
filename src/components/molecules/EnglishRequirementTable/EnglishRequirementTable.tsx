@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Table } from '@c/atoms/Table';
 import { NextImage } from '@c/atoms/NextImage';
-import byuLogoImage from '@p/byu.png';
-import byuhLogoImage from '@p/byuh.png';
-import byuiLogoImage from '@p/byui.png';
+import byuLogoImage from '@p/byu/byu-logo.png';
+import byuhLogoImage from '@p/byuh/byuh-logo.png';
+import byuiLogoImage from '@p/byui/byui-logo.png';
 import styels from './EnglishRequirementTable.module.css';
 
 export interface Props {

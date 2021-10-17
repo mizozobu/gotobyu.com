@@ -1,18 +1,13 @@
-import { ReactNode } from 'react';
-import Head from 'next/head';
-import { Title } from '@c/atoms/Title';
+import { NextPage } from 'next';
 import { ErrorPage } from '@c/pages/ErrorPage';
+import { Seo } from '@c/organisms/Seo';
 
 export interface Props {}
 
 // eslint-disable-next-line no-underscore-dangle
-const _404Page = (): ReactNode => (
+const _404Page: NextPage<Props> = () => (
   <>
-    <Title>エラー</Title>
-    <Head>
-      <meta name='robots' content='noindex' />
-    </Head>
-
+    <Seo title='エラー' noindex nofollow />
     <ErrorPage statusCode={404} />
   </>
 );

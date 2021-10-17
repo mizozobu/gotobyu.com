@@ -1,0 +1,39 @@
+.p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+@screen sm {
+  .p {
+    margin-top: 1.1428571em;
+    margin-bottom: 1.1428571em;
+  }
+}
+
+@screen md {
+  .p {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+}
+
+@screen lg {
+  .p {
+    margin-top: 1.3333333em;
+    margin-bottom: 1.3333333em;
+  }
+}
+
+@screen xl {
+  .p {
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+  }
+}
+
+@screen 2xl {
+  .p {
+    margin-top: 1.3333333em;
+    margin-bottom: 1.3333333em;
+  }
+}

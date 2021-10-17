@@ -6,13 +6,13 @@ export interface Props
   extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
   icon: FC<ComponentProps<'svg'>>;
   name: string;
-  description: string;
+  detail: string;
 }
 
 export const PageCard: FC<Props> = ({
   icon: Icon,
   name,
-  description,
+  detail,
   className = '',
   ...props
 }: Props) => (
@@ -32,7 +32,7 @@ export const PageCard: FC<Props> = ({
         <div className='text-indigo-900 text-lg md:text-2xl text-bold'>
           {name}
         </div>
-        <div className='text-sm'>{description}</div>
+        <div className='text-sm'>{detail}</div>
       </div>
       <div className={classNames('self-end', styles.arrow)}>
         <ArrowNarrowRightIcon className='w-6 h-6' />

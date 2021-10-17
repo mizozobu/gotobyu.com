@@ -19,7 +19,7 @@ Example.args = {
       <Pane className=' bg-indigo-100'>
         <NextImage
           className='h-80'
-          src='/byu.png'
+          src='/byu/byu.png'
           alt='byu logo'
           layout='fill'
           objectFit='scale-down'

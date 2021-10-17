@@ -15,6 +15,6 @@ export const Example = Template.bind({});
 Example.args = {
   icon: ScaleIcon,
   name: 'What is Lorem Ipsum?',
-  description:
+  detail:
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
 };

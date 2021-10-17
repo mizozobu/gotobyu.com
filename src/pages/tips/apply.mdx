@@ -1,0 +1,267 @@
+import { FC } from 'react';
+import { Tab } from '@headlessui/react';
+import { NextImage } from '@c/atoms/NextImage';
+import { Seo } from '@c/organisms/Seo';
+import { BYUDeadlineTable } from '@c/organisms/BYUDeadlineTable';
+import { BYUHDeadlineTable } from '@c/organisms/BYUHDeadlineTable';
+import { BYUIDeadlineTable } from '@c/organisms/BYUIDeadlineTable';
+import { TOEFLTable } from '@c/organisms/TOEFLTable';
+import { IELTSTable } from '@c/organisms/IELTSTable';
+import { PTETable } from '@c/organisms/PTETable';
+import { EikenTable } from '@c/organisms/EikenTable';
+import { ApplyPageMeta } from '@d';
+import { MDX } from '@l/mdx';
+import byuLogoImage from '@p/byu/byu-logo.png';
+import byuhLogoImage from '@p/byuh/byuh-logo.png';
+import byuiLogoImage from '@p/byui/byui-logo.png';
+
+<Seo
+  title={ApplyPageMeta.title}
+  description={ApplyPageMeta.description}
+  openGraph={{
+    type: 'article',
+    title: ApplyPageMeta.title,
+    description: ApplyPageMeta.description,
+  }}
+/>
+
+
+# 入学手続き
+
+
+## 申込方法
+
+BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.churchofjesuschrist.org/church-education/apply-to-church-schools?lang=eng)から申し込みをします。
+基本的にウェブサイト上での指示に従い手続きを進めます。
+
+
+## 申込締切
+
+<Tab.Group>
+  <Tab.List className='flex'>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
+    >
+      <NextImage
+        className='hidden md:block w-8 h-8 mr-8'
+        src={byuLogoImage}
+        alt='BYU Logo'
+        placeholder='blur'
+        layout='fill'
+        objectFit='scale-down'
+      />
+      <span className='text-byu font-bold'>BYU</span>
+    </Tab>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
+    >
+      <NextImage
+        className='hidden md:block w-8 h-8 mr-8'
+        src={byuhLogoImage}
+        alt='BYUH Logo'
+        placeholder='blur'
+        layout='fill'
+        objectFit='scale-down'
+      />
+      <span className='text-byuh font-bold'>BYUH</span>
+    </Tab>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
+    >
+      <NextImage
+        className='hidden md:block w-8 h-8 mr-8'
+        src={byuiLogoImage}
+        alt='BYUI Logo'
+        placeholder='blur'
+        layout='fill'
+        objectFit='scale-down'
+      />
+      <span className='text-byui font-bold'>BYUI</span>
+    </Tab>
+  </Tab.List>
+  <Tab.Panels>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
+      <BYUDeadlineTable />
+      <p>優先申込締切までに申込を完了すると選考を有利に進められます。</p>
+      <MDX.ul>
+        <MDX.li>
+          <MDX.a href='https://enrollment.byu.edu/admissions/deadlines'>
+            BYUの申込締切
+          </MDX.a>
+        </MDX.li>
+        <MDX.li>
+          <MDX.a href='https://enrollment2.byu.edu/academic-calendar'>
+            BYUの年間カレンダー
+          </MDX.a>
+        </MDX.li>
+      </MDX.ul>
+    </Tab.Panel>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
+      <BYUHDeadlineTable />
+      <MDX.ul>
+        <MDX.li>
+          <MDX.a href='https://hookele.byuh.edu/application-deadlines-decisions-schedule'>
+            BYUHの申込締切
+          </MDX.a>
+        </MDX.li>
+        <MDX.li>
+          <MDX.a href='https://registrar.byuh.edu/academic-dates'>
+            BYUHの年間カレンダー
+          </MDX.a>
+        </MDX.li>
+      </MDX.ul>
+    </Tab.Panel>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
+      <BYUIDeadlineTable />
+      <p>優先申込締切までに申込を完了すると選考を有利に進められます。</p>
+      <MDX.ul>
+        <MDX.li>
+          <MDX.a href='https://hookele.byuh.edu/application-deadlines-decisions-schedules'>
+            BYUIの申込締切
+          </MDX.a>
+        </MDX.li>
+        <MDX.li>
+          <MDX.a href='https://www.byui.edu/student-records/academic-deadlines'>
+            BYUIの年間カレンダー
+          </MDX.a>
+        </MDX.li>
+      </MDX.ul>
+    </Tab.Panel>
+  </Tab.Panels>
+</Tab.Group>
+
+
+## 申込費用
+
+申込費用は1校につき**$35**です。
+
+
+## 入学に必要な英語力
+
+入学に必要な英語力は各大学でそれぞれ違い、
+[BYUH](https://hookele.byuh.edu/admissions/english-test-requirements) <
+[BYUI](https://www.byui.edu/admissions/apply/international-students/english-requirements) <
+[BYU](https://enrollment.byu.edu/admissions/english-proficiency-requirement)の順に高くなります。
+主なテストの点数は下の表に記載していますが、他のテストも受け入れられているので各学校のウェブサイトを確認してください。
+直近の受験日の予約が満席になっていたり、受験から結果が出るまでに時間がかかったりするので余裕を持って受験しておきましょう。
+
+<Tab.Group>
+  <Tab.List className='flex'>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
+    >
+      <span className='font-bold'>TOEFL</span>
+    </Tab>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
+    >
+      <span className='font-bold'>IELTS</span>
+    </Tab>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
+    >
+      <span className='font-bold'>PTE</span>
+    </Tab>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
+    >
+      <span className='font-bold'>英検</span>
+    </Tab>
+  </Tab.List>
+  <Tab.Panels>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
+      <TOEFLTable />
+      <p>
+        <MDX.a href='https://www.toefl-ibt.jp'>
+          Test of English as a Foreign Language(TOEFL)
+        </MDX.a>
+        はEducational Testing Service(ETS)が主催するテストです。
+      </p>
+    </Tab.Panel>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
+      <IELTSTable />
+      <p>
+        <MDX.a href='https://www.eiken.or.jp/ielts/'>
+          International English Language Testing System(IELTS)
+        </MDX.a>
+        はBritish Council、IDP、Cambridge Assessment
+        Englishが共同で主催するテストです。
+      </p>
+    </Tab.Panel>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
+      <PTETable />
+      <p>
+        <MDX.a href='https://pearsonpte.com/japanese'>
+          Pearson Test of English(PTE)
+        </MDX.a>
+        はPearsonが主催するテストです。
+      </p>
+    </Tab.Panel>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
+      <EikenTable />
+      <p>
+        <MDX.a href='https://www.eiken.or.jp/eiken/'>
+          実用英語技能検定(英検)
+        </MDX.a>
+        は公益財団法人日本英語検定協会が主催するテストです。英検は
+        <MDX.strong>BYUHでのみ</MDX.strong>認められています。
+      </p>
+    </Tab.Panel>
+  </Tab.Panels>
+</Tab.Group>
+
+
+## SAT/ACT
+
+アメリカの大学は共通の入学試験のみで、大学ごとの入学試験がありません。
+共通の入学試験は2種類あり、[ACT](http://global.act.org)か[SAT](https://collegereadiness.collegeboard.org/sat)のどちらかを選べます。
+日本のセンター試験のようなものですが、ACTとSATは**何度も受験することができて自分の最高点を大学に提出する**形式になっています。
+**BYUHとBYUIでは留学生は免除**されていますが、BYUに申し込むにはこのテストを受ける必要があります。
+
+ACTとSATはアメリカの高校生に混ざってセンター試験を英語で受験するようなものなので、日本人がACT/SATで点数を取るには相当の準備が必要になります。
+BYUに入学してくるアメリカ人はGPAが4.0(日本のオール5)に近い人ばかりなので、
+[必要な点数](https://enrollment.byu.edu/admissions/entrance-averages)もかなりレベルが高いです。
+一方で、他の大学で24単位以上取得した学生の編入にはSAT/ACTの受験が不要になるため、**BYUには直接の入学ではなくBYUHかBYUIで24単位以上取得してから編入**する人がほとんどです。
+
+新型コロナウイルスの影響でBYUでは[2024年の冬学期まではACT/SATの点数を提出する必要がない](https://enrollment.byu.edu/admissions/educational-history)と発表されています。
+これは日本人が直接BYUに入学する絶好の機会なのかもしれません。
+
+
+## エッセイ
+
+「人生で一番大変だったこと」や「入学したらどのようなことをしたいか」などについて**英語でエッセイ**を書く必要があります。
+在学生、卒業生などの英語が分かる人に添削してもらうと良いでしょう。エッセイのお題は各学校で異なるので、実際のオンラインの申込書で確認してください。
+
+
+## 教会の推薦
+
+**末日聖徒イエス・キリスト教会の会員であるかどうかに関わらず**、末日聖徒イエス・キリスト教会の指導者と面接をする必要があります。
+会員は自分のワード、ステークの指導者と面接を行います。
+会員でない人は[このウェブサイト](https://www.churchofjesuschrist.org/maps/meetinghouses/)から近くの末日聖徒イエス・キリスト教会を探し、面接の予約をします。
+教会の推薦を受けるためにはHonor Code([BYU](https://policy.byu.edu/view/index.php?p=26)、[BYUH](https://honorcode.byuh.edu)、[BYUI](https://www.byui.edu/student-honor-office/ces-honor-code))に従う必要があります。
+
+
+## 成績表と卒業証明書
+
+Coming Soon...

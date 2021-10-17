@@ -1,7 +1,7 @@
-# gotobyu
+# gotobyu.com
 
-![CI](https://github.com/mizozobu/gotobyu/workflows/CI/badge.svg)
-[![renovate](https://img.shields.io/badge/renovate-enabled-%231A1F6C?logo=renovatebot)](https://app.renovatebot.com/dashboard#github/mizozobu/gotobyu)
+![CI](https://github.com/mizozobu/gotobyu.com/workflows/CI/badge.svg)
+[![renovate](https://img.shields.io/badge/renovate-enabled-%231A1F6C?logo=renovatebot)](https://app.renovatebot.com/dashboard#github/mizozobu/gotobyu.com)
 
 This is a website for BYU Management Society Tokyo Chapter.
 
@@ -14,8 +14,8 @@ This is a website for BYU Management Society Tokyo Chapter.
 
 ```sh
 # clone repo
-git clone git@github.com:mizozobu/gotobyu.git
-cd gotobyu
+git clone git@github.com:mizozobu/gotobyu.com.git
+cd gotobyu.com
 
 # install dependencies
 yarn

@@ -1,81 +1,85 @@
-import { useState, FC, useEffect } from 'react';
+import { useState, FC } from 'react';
 import Image, { ImageProps } from 'next/image';
+import Slider, { Settings } from 'react-slick';
 import { BgRotate } from '@c/atoms/BgRotate';
 import styles from './PhotoViewer.module.css';
+import '../../../../node_modules/slick-carousel/slick/slick.css';
+import '../../../../node_modules/slick-carousel/slick/slick-theme.css';
 
 export interface Props {
-  images: ImageProps[];
+  images: (ImageProps & { alt: string; citation?: string })[];
   className?: string;
   colorClass: string;
+  settings?: Settings;
 }
 
 export const PhotoViewer: FC<Props> = ({
-  images: _images,
+  images,
   className = '',
   colorClass,
+  settings: _settings = {},
 }: Props) => {
-  const getInitialImageArray = (items: ImageProps[]): ImageProps[] => {
-    let imagePropsWithId = items;
-    if (items.length === 1) {
-      imagePropsWithId = [
-        items[0],
-        { ...items[0], alt: `${items[0].alt ?? ''} 2` },
-        { ...items[0], alt: `${items[0].alt ?? ''} 3` },
-      ];
-    } else if (items.length === 2) {
-      imagePropsWithId = [
-        items[0],
-        items[1],
-        { ...items[0], alt: `${items[0].alt ?? ''} 2` },
-        { ...items[1], alt: `${items[1].alt ?? ''} 2` },
-      ];
-    }
+  const [i, setI] = useState(0);
+  const [showCitation, setShowCitation] = useState(true);
 
-    return imagePropsWithId;
-  };
-  const imageDeck = getInitialImageArray(_images);
-
-  const [images, setImages] = useState(imageDeck.slice(0, 3));
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const total = imageDeck.length;
-      const newCurrent = (total + current + 1) % total;
-
-      setCurrent(newCurrent);
-      const [, ...remainingImages] = images;
-      setImages([...remainingImages, imageDeck[current]]);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [current, images, imageDeck]);
-
-  const getTranslateClassName = (i: number): string => {
-    if (i === 0) return '-translate-x-full';
-    if (i === 1) return 'translate-x-0';
-    if (i === 2) return 'translate-x-full';
-    return '';
+  const settings = {
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnDotsHover: true,
+    ..._settings,
+    beforeChange: (current: number, next: number) => {
+      if (current === next) return;
+      setShowCitation(false);
+      _settings.beforeChange?.(current, next);
+    },
+    afterChange: (current: number) => {
+      setShowCitation(true);
+      setI(current);
+      _settings.afterChange?.(current);
+    },
   };
 
   return (
-    <BgRotate
-      className={classNames(styles['photo-viewer'], className)}
-      colorClass={colorClass}
-    >
-      <div className='relative overflow-hidden rounded-xl'>
-        {images.map((imageProps, i) => (
-          <div
-            key={imageProps.alt}
-            className={classNames('absolute inset-0', {
-              [`transform transition-transform ease-in-out duration-1000 ${getTranslateClassName(
-                i,
-              )}`]: _images.length > 1,
-            })}
-          >
-            <Image {...imageProps} />
-          </div>
-        ))}
+    <div className={styles['photo-viewer']}>
+      <BgRotate className={className} colorClass={colorClass}>
+        <Slider {...settings}>
+          {images.map((imageProps) => (
+            <div
+              key={imageProps.alt}
+              className={classNames('aspect-w-3 aspect-h-2')}
+            >
+              <Image {...imageProps} />
+            </div>
+          ))}
+        </Slider>
+      </BgRotate>
+
+      <div
+        className={classNames(
+          styles.citation,
+          'mt-4 lg:mt-8 text-xs break-all transition-opacity',
+          {
+            'opacity-0': !showCitation,
+          },
+        )}
+      >
+        {images[i].citation && (
+          <>
+            引用元:{' '}
+            <cite>
+              <a
+                href={images[i].citation}
+                target='_blank'
+                rel='noreferrer'
+                className='text-indigo-600'
+              >
+                {images[i].citation}
+              </a>
+            </cite>
+          </>
+        )}
       </div>
-    </BgRotate>
+    </div>
   );
 };

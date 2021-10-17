@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Mark } from '@c/atoms/Mark';
+import { Strong } from '@c/atoms/Strong';
 import { Table } from '@c/atoms/Table';
 
 export interface Props {
@@ -34,7 +34,7 @@ export const DeadlineTable: FC<Props> = ({ data }: Props) => (
             <td>{openAt ?? '-'}</td>
             <td>{priorityClosedAt ?? '-'}</td>
             <td>
-              <Mark>{closedAt ?? '-'}</Mark>
+              <Strong>{closedAt ?? '-'}</Strong>
             </td>
             <td>{announcedAt ?? '-'}</td>
           </tr>
