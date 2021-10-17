@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { DrawBorderButton, Props } from './DrawBorderButton';
+import { BorderDraw, Props } from './BorderDraw';
 
 export default {
-  title: 'atoms/DrawBorderButton',
-  component: DrawBorderButton,
+  title: 'atoms/BorderDraw',
+  component: BorderDraw,
   argTypes: {},
 } as Meta;
 
-const Template: Story<Props> = (args) => <DrawBorderButton {...args} />;
+const Template: Story<Props> = (args) => <BorderDraw {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {

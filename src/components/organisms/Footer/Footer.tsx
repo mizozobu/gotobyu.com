@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { MailIcon, LinkIcon } from '@heroicons/react/outline';
-import { DrawBorderButton } from '@c/atoms/DrawBorderButton';
+import { BorderDraw } from '@c/atoms/BorderDraw';
 import { FacebookIcon } from '@c/atoms/FacebookIcon';
 
 export interface Props {}
@@ -12,16 +12,19 @@ export const Footer: FC<Props> = () => (
       <Link href='/about'>
         <a>BYU Management Society Tokyo Chapter</a>
       </Link>
-      <div className='flex justify-around mt-8'>
+      <div className='flex justify-between mt-8'>
         <a
           href='mailto:byums.japan@gmail.com'
           target='_blank'
           rel='noreferrer'
           className='rounded-full'
         >
-          <DrawBorderButton className='w-10 h-10 p-2' borderColor='white'>
+          <BorderDraw
+            className='flex items-center justify-center w-14 h-14 p-4'
+            borderColor='white'
+          >
             <MailIcon className='w-8 h-8' />
-          </DrawBorderButton>
+          </BorderDraw>
         </a>
         <a
           href='https://www.facebook.com/BYUMSJP'
@@ -29,9 +32,12 @@ export const Footer: FC<Props> = () => (
           rel='noreferrer'
           className='rounded-full'
         >
-          <DrawBorderButton className='w-10 h-10 p-2' borderColor='white'>
+          <BorderDraw
+            className='flex items-center justify-center w-14 h-14 p-4'
+            borderColor='white'
+          >
             <FacebookIcon className='w-8 h-8' />
-          </DrawBorderButton>
+          </BorderDraw>
         </a>
         <a
           href='https://byums.byu.edu/tokyo/'
@@ -39,9 +45,12 @@ export const Footer: FC<Props> = () => (
           rel='noreferrer'
           className='rounded-full'
         >
-          <DrawBorderButton className='w-10 h-10 p-2' borderColor='white'>
+          <BorderDraw
+            className='flex items-center justify-center w-14 h-14 p-4'
+            borderColor='white'
+          >
             <LinkIcon className='w-8 h-8' />
-          </DrawBorderButton>
+          </BorderDraw>
         </a>
       </div>
     </div>
