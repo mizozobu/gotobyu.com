@@ -1,7 +1,7 @@
 import { useCallback, useState, FC, HTMLAttributes } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
-import { useScreenSize, gte, ScreenSize } from '@l/ScreenSize';
+import { useScreenSize, gte, ScreenSize, ScreenSizeType } from '@l/ScreenSize';
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   _options?: ChartOptions<'pie'>;
@@ -37,7 +37,7 @@ export const PieChart: FC<Props> = ({
     },
   });
 
-  const handler = useCallback((screenSize) => {
+  const handler = useCallback((screenSize: ScreenSizeType) => {
     setOptions((prev) => ({
       ...prev,
       plugins: {

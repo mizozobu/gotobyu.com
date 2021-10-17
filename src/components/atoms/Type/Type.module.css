@@ -1,5 +1,6 @@
 .type {
   padding-right: var(--caret-width);
+
   @apply relative;
 }
 
@@ -8,6 +9,7 @@
   bottom: 10%;
   width: var(--caret-width);
   content: '';
+
   @apply absolute;
 }
 
@@ -24,6 +26,7 @@
   to {
     background-color: transparent;
   }
+
   50% {
     background-color: black;
   }
