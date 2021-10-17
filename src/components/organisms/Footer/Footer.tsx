@@ -9,7 +9,7 @@ export interface Props {}
 export const Footer: FC<Props> = () => (
   <footer className='flex flex-col items-center p-8 sm:p-12 lg:p-16 bg-indigo-900 text-white'>
     <div>
-      <Link href='/faq'>
+      <Link href='/about'>
         <a>BYU Management Society Tokyo Chapter</a>
       </Link>
       <div className='flex justify-around mt-8'>
