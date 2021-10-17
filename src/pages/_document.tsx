@@ -27,7 +27,7 @@ class MyDocument extends Document {
           <link rel='manifest' href='/site.webmanifest' />
           <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
           <link
-            href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=optional'
+            href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap'
             rel='stylesheet'
           />
           <meta name='msapplication-TileColor' content='#da532c' />

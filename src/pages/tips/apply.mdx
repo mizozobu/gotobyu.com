@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Tab, TabContent, TabNav, TabNavBar, TabPane } from '@c/molecules/Tab';
+import { Tab } from '@headlessui/react';
 import { NextImage } from '@c/atoms/NextImage';
 import { Seo } from '@c/organisms/Seo';
 import { BYUDeadlineTable } from '@c/organisms/BYUDeadlineTable';
@@ -14,7 +14,6 @@ import { MDX } from '@l/mdx';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
-
 
 <Seo
   title={ApplyPageMeta.title}
@@ -38,9 +37,14 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
 
 ## 申込締切
 
-<Tab>
-  <TabNavBar>
-    <TabNav id='byu' className='flex items-center justify-center w-1/3 p-2'>
+<Tab.Group>
+  <Tab.List className='flex'>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
+    >
       <NextImage
         className='hidden md:block w-8 h-8 mr-8'
         src={byuLogoImage}
@@ -50,8 +54,13 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
         objectFit='scale-down'
       />
       <span className='text-byu font-bold'>BYU</span>
-    </TabNav>
-    <TabNav id='byuh' className='flex items-center justify-center w-1/3 p-2'>
+    </Tab>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
+    >
       <NextImage
         className='hidden md:block w-8 h-8 mr-8'
         src={byuhLogoImage}
@@ -61,8 +70,13 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
         objectFit='scale-down'
       />
       <span className='text-byuh font-bold'>BYUH</span>
-    </TabNav>
-    <TabNav id='byui' className='flex items-center justify-center w-1/3 p-2'>
+    </Tab>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
+    >
       <NextImage
         className='hidden md:block w-8 h-8 mr-8'
         src={byuiLogoImage}
@@ -72,13 +86,10 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
         objectFit='scale-down'
       />
       <span className='text-byui font-bold'>BYUI</span>
-    </TabNav>
-  </TabNavBar>
-  <TabContent>
-    <TabPane
-      id='byu'
-      className='px-4 md:px-8 py-8 border border-t-0 space-y-8'
-    >
+    </Tab>
+  </Tab.List>
+  <Tab.Panels>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <BYUDeadlineTable />
       <p>優先申込締切までに申込を完了すると選考を有利に進められます。</p>
       <MDX.ul>
@@ -93,11 +104,8 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
           </MDX.a>
         </MDX.li>
       </MDX.ul>
-    </TabPane>
-    <TabPane
-      id='byuh'
-      className='px-4 md:px-8 py-8 border border-t-0 space-y-8'
-    >
+    </Tab.Panel>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <BYUHDeadlineTable />
       <MDX.ul>
         <MDX.li>
@@ -111,11 +119,8 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
           </MDX.a>
         </MDX.li>
       </MDX.ul>
-    </TabPane>
-    <TabPane
-      id='byui'
-      className='px-4 md:px-8 py-8 border border-t-0 space-y-8'
-    >
+    </Tab.Panel>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <BYUIDeadlineTable />
       <p>優先申込締切までに申込を完了すると選考を有利に進められます。</p>
       <MDX.ul>
@@ -130,9 +135,9 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
           </MDX.a>
         </MDX.li>
       </MDX.ul>
-    </TabPane>
-  </TabContent>
-</Tab>
+    </Tab.Panel>
+  </Tab.Panels>
+</Tab.Group>
 
 
 ## 申込費用
@@ -149,38 +154,43 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
 主なテストの点数は下の表に記載していますが、他のテストも受け入れられているので各学校のウェブサイトを確認してください。
 直近の受験日の予約が満席になっていたり、受験から結果が出るまでに時間がかかったりするので余裕を持って受験しておきましょう。
 
-<Tab>
-  <TabNavBar>
-    <TabNav
-      id='toefl'
-      className='flex items-center justify-center w-1/4 p-2 text-center font-bold'
+<Tab.Group>
+  <Tab.List className='flex'>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
     >
-      TOEFL
-    </TabNav>
-    <TabNav
-      id='ielts'
-      className='flex items-center justify-center w-1/4 p-2 text-center font-bold'
+      <span className='font-bold'>TOEFL</span>
+    </Tab>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
     >
-      IELTS
-    </TabNav>
-    <TabNav
-      id='pte'
-      className='flex items-center justify-center w-1/4 p-2 text-center font-bold'
+      <span className='font-bold'>IELTS</span>
+    </Tab>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
     >
-      PTE
-    </TabNav>
-    <TabNav
-      id='英検'
-      className='flex items-center justify-center w-1/4 p-2 text-center font-bold'
+      <span className='font-bold'>PTE</span>
+    </Tab>
+    <Tab
+      className={({ selected }) => classNames(
+        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
+        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
+      )}
     >
-      英検
-    </TabNav>
-  </TabNavBar>
-  <TabContent>
-    <TabPane
-      id='toefl'
-      className='px-4 md:px-8 py-8 border border-t-0 space-y-8'
-    >
+      <span className='font-bold'>英検</span>
+    </Tab>
+  </Tab.List>
+  <Tab.Panels>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <TOEFLTable />
       <p>
         <MDX.a href='https://www.toefl-ibt.jp'>
@@ -188,11 +198,8 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
         </MDX.a>
         はEducational Testing Service(ETS)が主催するテストです。
       </p>
-    </TabPane>
-    <TabPane
-      id='ielts'
-      className='px-4 md:px-8 py-8 border border-t-0 space-y-8'
-    >
+    </Tab.Panel>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <IELTSTable />
       <p>
         <MDX.a href='https://www.eiken.or.jp/ielts/'>
@@ -201,11 +208,8 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
         はBritish Council、IDP、Cambridge Assessment
         Englishが共同で主催するテストです。
       </p>
-    </TabPane>
-    <TabPane
-      id='pte'
-      className='px-4 md:px-8 py-8 border border-t-0 space-y-8'
-    >
+    </Tab.Panel>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <PTETable />
       <p>
         <MDX.a href='https://pearsonpte.com/japanese'>
@@ -213,11 +217,8 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
         </MDX.a>
         はPearsonが主催するテストです。
       </p>
-    </TabPane>
-    <TabPane
-      id='英検'
-      className='px-4 md:px-8 py-8 border border-t-0 space-y-8'
-    >
+    </Tab.Panel>
+    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <EikenTable />
       <p>
         <MDX.a href='https://www.eiken.or.jp/eiken/'>
@@ -226,9 +227,9 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
         は公益財団法人日本英語検定協会が主催するテストです。英検は
         <MDX.strong>BYUHでのみ</MDX.strong>認められています。
       </p>
-    </TabPane>
-  </TabContent>
-</Tab>
+    </Tab.Panel>
+  </Tab.Panels>
+</Tab.Group>
 
 
 ## SAT/ACT
