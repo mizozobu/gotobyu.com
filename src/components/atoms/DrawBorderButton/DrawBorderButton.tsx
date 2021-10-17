@@ -13,8 +13,7 @@ export const DrawBorderButton: FC<Props> = ({
   children,
 }: Props) => (
   <>
-    <button
-      type='button'
+    <div
       className={classNames(
         'relative flex items-center justify-center rounded-full',
         styles.button,
@@ -24,7 +23,7 @@ export const DrawBorderButton: FC<Props> = ({
       )}
     >
       {children}
-    </button>
+    </div>
     <style jsx>{`
       .${styles.button} {
         --border-color: ${borderColor};

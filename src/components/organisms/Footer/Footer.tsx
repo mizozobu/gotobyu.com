@@ -13,27 +13,36 @@ export const Footer: FC<Props> = () => (
         <a>BYU Management Society Tokyo Chapter</a>
       </Link>
       <div className='flex justify-around mt-8'>
-        <Link href='mailto:byums.japan@gmail.com'>
-          <a target='_blank'>
-            <DrawBorderButton className='w-10 h-10 p-2' borderColor='white'>
-              <MailIcon className='w-8 h-8' />
-            </DrawBorderButton>
-          </a>
-        </Link>
-        <Link href='https://www.facebook.com/BYUMSJP'>
-          <a target='_blank'>
-            <DrawBorderButton className='w-10 h-10 p-2' borderColor='white'>
-              <FacebookIcon className='w-8 h-8' />
-            </DrawBorderButton>
-          </a>
-        </Link>
-        <Link href='https://byums.byu.edu/tokyo/'>
-          <a target='_blank'>
-            <DrawBorderButton className='w-10 h-10 p-2' borderColor='white'>
-              <LinkIcon className='w-8 h-8' />
-            </DrawBorderButton>
-          </a>
-        </Link>
+        <a
+          href='mailto:byums.japan@gmail.com'
+          target='_blank'
+          rel='noreferrer'
+          className='rounded-full'
+        >
+          <DrawBorderButton className='w-10 h-10 p-2' borderColor='white'>
+            <MailIcon className='w-8 h-8' />
+          </DrawBorderButton>
+        </a>
+        <a
+          href='https://www.facebook.com/BYUMSJP'
+          target='_blank'
+          rel='noreferrer'
+          className='rounded-full'
+        >
+          <DrawBorderButton className='w-10 h-10 p-2' borderColor='white'>
+            <FacebookIcon className='w-8 h-8' />
+          </DrawBorderButton>
+        </a>
+        <a
+          href='https://byums.byu.edu/tokyo/'
+          target='_blank'
+          rel='noreferrer'
+          className='rounded-full'
+        >
+          <DrawBorderButton className='w-10 h-10 p-2' borderColor='white'>
+            <LinkIcon className='w-8 h-8' />
+          </DrawBorderButton>
+        </a>
       </div>
     </div>
   </footer>
