@@ -1,9 +1,13 @@
+import dynamic from 'next/dynamic';
 import { Seo } from '@c/organisms/Seo';
 import { UlCol } from '@c/atoms/UlCol';
 import { Footnote } from '@c/atoms/Footnote';
-import { IncomeBarChart } from '@c/organisms/IncomeBarChart';
 import { CareerPageMeta } from '@d';
 import { MDX } from '@l/mdx';
+
+export const IncomeBarChart = dynamic(
+  () => import('@c/organisms/IncomeBarChart').then(({ IncomeBarChart }) => IncomeBarChart),
+);
 
 <Seo
   title={CareerPageMeta.title}

@@ -1,9 +1,13 @@
+import dynamic from 'next/dynamic';
 import { Seo } from '@c/organisms/Seo';
 import { UlCol } from '@c/atoms/UlCol';
 import { Footnote } from '@c/atoms/Footnote';
-import { InternSalaryPieChart } from '@c/organisms/InternSalaryPieChart';
 import { InternshipPageMeta } from '@d';
 import { MDX } from '@l/mdx';
+
+export const InternSalaryPieChart = dynamic(
+  () => import('@c/organisms/InternSalaryPieChart').then(({ InternSalaryPieChart }) => InternSalaryPieChart),
+);
 
 <Seo
   title={InternshipPageMeta.title}

@@ -1,11 +1,15 @@
+import dynamic from 'next/dynamic';
 import { Seo } from '@c/organisms/Seo';
 import { UlCol } from '@c/atoms/UlCol';
 import { Footnote } from '@c/atoms/Footnote';
 import { SchoolTable } from '@c/organisms/SchoolTable';
-import TuitionBarChart from '@c/organisms/TuitionBarChart';
 import CostTable from '@c/organisms/CostTable';
 import { ComparePageMeta } from '@d';
 import { MDX } from '@l/mdx';
+
+export const TuitionBarChart = dynamic(
+  () => import('@c/organisms/TuitionBarChart'),
+);
 
 <Seo
   title={ComparePageMeta.title}
