@@ -1378,7 +1378,7 @@ export const CirculatingCircles: FC<Props> = ({
           "font": "embed",
           "exportedIds": "unique",
           "svgFormat": "animated",
-          "title": "gotobyu"
+          "title": "gotobyu.com"
         },
         "animationSettings": {
           "duration": 2400,
