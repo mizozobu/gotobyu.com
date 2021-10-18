@@ -18,6 +18,7 @@ export const Footer: FC<Props> = () => (
           target='_blank'
           rel='noreferrer'
           className='rounded-full'
+          aria-label='email'
         >
           <BorderDraw
             className='flex items-center justify-center w-14 h-14 p-4'
@@ -31,6 +32,7 @@ export const Footer: FC<Props> = () => (
           target='_blank'
           rel='noreferrer'
           className='rounded-full'
+          aria-label='facebook'
         >
           <BorderDraw
             className='flex items-center justify-center w-14 h-14 p-4'
@@ -44,6 +46,7 @@ export const Footer: FC<Props> = () => (
           target='_blank'
           rel='noreferrer'
           className='rounded-full'
+          aria-label='website'
         >
           <BorderDraw
             className='flex items-center justify-center w-14 h-14 p-4'
