@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import { H2 } from '@c/atoms/H2';
 import { NextImage } from '@c/atoms/NextImage';
 import { PageCard } from '@c/molecules/PageCard';
 import { SchoolCard } from '@c/molecules/SchoolCard';
@@ -15,7 +16,7 @@ export const IndexPage: FC<Props> = () => (
   <div className='space-y-12 lg:space-y-16 px-6 py-12 lg:py-16 lg:mx-24'>
     <Hero className='pb-10' />
     <div className='px-6 lg:px-0 -mx-6 lg:mx-0'>
-      <h2 className='text-2xl md:text-4xl font-bold'>各大学について</h2>
+      <H2 className='text-2xl md:text-4xl font-bold'>各大学について</H2>
       <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:gap-y-10 lg:justify-items-center px-6 lg:px-0 py-10 -mx-6 lg:mx-0 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
         <Link href='/schools/byu'>
           <a>
@@ -71,7 +72,7 @@ export const IndexPage: FC<Props> = () => (
       </div>
     </div>
     <div className='px-6 lg:px-0 -mx-6 lg:mx-0'>
-      <h2 className='text-2xl md:text-4xl font-bold'>知っておきたい情報</h2>
+      <H2 className='text-2xl md:text-4xl font-bold'>知っておきたい情報</H2>
       <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:gap-y-10 lg:justify-items-center px-6 lg:px-0 py-10 -mx-6 lg:mx-0 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
         {[
           ...AdditionalSchoolLinks,
