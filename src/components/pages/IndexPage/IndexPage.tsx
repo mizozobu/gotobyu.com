@@ -2,9 +2,10 @@ import { FC } from 'react';
 import Link from 'next/link';
 import { H2 } from '@c/atoms/H2';
 import { NextImage } from '@c/atoms/NextImage';
+import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
 import { PageCard } from '@c/molecules/PageCard';
 import { SchoolCard } from '@c/molecules/SchoolCard';
-import { Hero } from '@c/organisms/Hero';
+import { TypingEffect } from '@c/molecules/TypingEffect';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
@@ -13,8 +14,42 @@ import { AdditionalSchoolLinks, ApplyLinks, CareerLinks, OtherLinks } from '@d';
 export interface Props {}
 
 export const IndexPage: FC<Props> = () => (
-  <div className='space-y-12 lg:space-y-16 px-6 py-12 lg:py-16 lg:mx-24'>
-    <Hero className='pb-10' />
+  <div className='max-w-screen-lg xl:max-w-screen-xl mx-auto py-12 lg:py-16 space-y-12 lg:space-y-16'>
+    <div
+      className={classNames(
+        'grid grid-cols-1 lg:grid-cols-5 grid-rows-1 pb-10',
+      )}
+    >
+      <div className='col-span-3'>
+        <h1 className='text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl'>
+          <span className='block text-byu'>BYU</span>
+          <span className='block text-byuh'>BYUH</span>
+          <span className='block text-byui'>BYUI</span>
+          <div className='h-32 md:h-48 overflow-hidden'>
+            <TypingEffect
+              caretWidth='5px'
+              waitBeforeType={1000}
+              waitAfterType={3000}
+            >
+              {[
+                'にはどうやって入学するの?',
+                'で必要な英語力は?',
+                'の費用はどのくらい？',
+                'で奨学金はもらえるの?',
+                'の卒業後の進路は?',
+              ]}
+            </TypingEffect>
+          </div>
+        </h1>
+        <p className='mt-3 md:mt-5 text-base sm:text-lg md:text-xl text-gray-500'>
+          在学生と卒業生がBYU、BYUH、BYUIについて入学前に知っておきたい情報をまとめました。
+        </p>
+      </div>
+      <div className='hidden lg:flex items-center justify-center max-w-4xl col-span-2'>
+        <CirculatingCircles className='max-w-md' animated />
+      </div>
+    </div>
+
     <div className='px-6 lg:px-0 -mx-6 lg:mx-0'>
       <H2 className='text-2xl md:text-4xl font-bold'>各大学について</H2>
       <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:gap-y-10 lg:justify-items-center px-6 lg:px-0 py-10 -mx-6 lg:mx-0 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
