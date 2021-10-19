@@ -33,8 +33,6 @@ class MyDocument extends Document {
           <meta name='msapplication-TileColor' content='#da532c' />
           <meta name='theme-color' content='#ffffff' />
           {/* End favicon */}
-
-          <meta name='robots' content='noindex' />
         </Head>
 
         <body>
