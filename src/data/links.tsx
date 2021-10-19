@@ -30,10 +30,11 @@ export const IndexPageMeta: Omit<PageMeta, 'name' | 'detail' | 'icon'> = {
 
 export const BYUPageMeta: PageMeta = {
   name: 'Brigham Young University',
-  detail: '専攻、衣住食、クラブ、アルバイト、奨学金などのBYUの情報',
-  title: 'BYUの紹介',
+  detail:
+    '専攻、衣住食、レクリエーション、クラブ、アルバイト、奨学金などのBYUの情報',
+  title: 'BYUの情報',
   description:
-    'Brigham Young University(BYU)の紹介です。在学生と卒業生の経験を元に、専攻、衣住食、クラブ、アルバイト、奨学金などについてまとめています。',
+    'Brigham Young University(BYU)について。在学生と卒業生の経験を元に、専攻、衣住食、レクリエーション、クラブ、アルバイト、奨学金などについてまとめています。',
   href: '/schools/byu',
   icon: ({ className }) => (
     <NextImage
@@ -49,10 +50,11 @@ export const BYUPageMeta: PageMeta = {
 
 export const BYUHPageMeta: PageMeta = {
   name: 'Brigham Young University–Hawaii',
-  detail: '専攻、衣住食、クラブ、アルバイト、奨学金などのBYUHの情報',
-  title: 'BYUHの紹介',
+  detail:
+    '専攻、衣住食、レクリエーション、クラブ、アルバイト、奨学金などのBYUHの情報',
+  title: 'BYUHの情報',
   description:
-    'Brigham Young University–Hawaii(BYUH)の紹介です。在学生と卒業生の経験を元に、専攻、衣住食、クラブ、アルバイト、奨学金についてまとめています。',
+    'Brigham Young University–Hawaii(BYUH)について。在学生と卒業生の経験を元に、専攻、衣住食、レクリエーション、クラブ、アルバイト、奨学金についてまとめています。',
   href: '/schools/byuh',
   icon: ({ className }) => (
     <NextImage
@@ -68,10 +70,11 @@ export const BYUHPageMeta: PageMeta = {
 
 export const BYUIPageMeta: PageMeta = {
   name: 'Brigham Young University - Idaho',
-  detail: '専攻、衣住食、クラブ、アルバイト、奨学金などのBYUIの情報',
-  title: 'BYUIの紹介',
+  detail:
+    '専攻、衣住食、レクリエーション、クラブ、アルバイト、奨学金などのBYUIの情報',
+  title: 'BYUIの情報',
   description:
-    'Brigham Young University - Idaho(BYUI)の紹介です。在学生と卒業生の経験を元に、専攻、衣住食、クラブ、アルバイト、奨学金についてまとめています。',
+    'Brigham Young University - Idaho(BYUI)について。在学生と卒業生の経験を元に、専攻、衣住食、レクリエーション、クラブ、アルバイト、奨学金についてまとめています。',
   href: '/schools/byui',
   icon: ({ className }) => (
     <NextImage
@@ -119,7 +122,8 @@ export const CareerPageMeta: PageMeta = {
   name: '就職',
   detail: 'BYU、BYUH、BYUI卒業生の就職先と年収',
   title: '就職',
-  description: 'BYU、BYUH、BYUIの学生の就職先と1年目の年収について。',
+  description:
+    'BYU、BYUH、BYUIの学生の就職先と1年目の年収について。新卒の平均を上回る年収を貰う人や、外資系企業で活躍する人がいます。',
   href: '/tips/career',
   icon: OfficeBuildingIcon,
 };

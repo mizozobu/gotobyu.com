@@ -31,7 +31,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
       <Head>
         {/* define defult title here until https://github.com/garmeeh/next-seo/pull/832 is merged */}
         {/* eslint-disable-next-line @next/next/no-title-in-document-head */}
-        <title>gotobyu.com</title>
+        <title>gotobyu</title>
       </Head>
 
       {/* Google Tag Manager */}
