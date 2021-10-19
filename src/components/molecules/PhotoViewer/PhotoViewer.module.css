@@ -30,11 +30,8 @@
 apply rounded-xl to .photo-viewer img instead. */
 
 /* .photo-viewer :global(.slick-list) {
-  @apply rounded-xl;
+  @apply rounded-xl overflow-hidden;
 } */
-.photo-viewer img {
-  @apply rounded-xl;
-}
 
 .photo-viewer :global(.slick-prev) {
   left: 2% !important;
