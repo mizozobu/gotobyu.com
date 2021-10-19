@@ -35,6 +35,10 @@
     scroll-margin-top: calc(64px * 1.5);
   }
 
+  *:focus {
+    @apply outline-none ring ring-indigo-500;
+  }
+
   main {
     min-height: calc(100vh - 64px);
 
