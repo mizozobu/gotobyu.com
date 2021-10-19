@@ -11,8 +11,8 @@ export const Seo: FC<Props> = ({ openGraph, ...prop }: Props) => {
   return (
     <NextSeo
       {...prop}
-      titleTemplate='%s | BYU Management Society Tokyo Chapter'
-      defaultTitle='BYU Management Society Tokyo Chapter'
+      titleTemplate='%s | gotobyu.com'
+      defaultTitle='gotobyu.com'
       /*
        * see specification at https://ogp.me
        * preview at https://www.opengraph.xyz
