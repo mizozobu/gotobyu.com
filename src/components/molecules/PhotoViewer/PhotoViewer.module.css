@@ -14,7 +14,7 @@
   }
 }
 
-@screen xl {
+/* @screen xl {
   .photo-viewer {
     width: 30rem;
   }
@@ -24,7 +24,7 @@
   .photo-viewer {
     width: 32rem;
   }
-}
+} */
 
 /* this is not working since .slick-slide > div has height greater than 3:2 ratio. not sure why.
 apply rounded-xl to .photo-viewer img instead. */

@@ -36,7 +36,7 @@
   }
 }
 
-@screen xl {
+/* @screen xl {
   .h2 {
     margin-top: 1.5555556em;
     margin-bottom: 0.8888889em;
@@ -52,7 +52,7 @@
     font-size: 2em;
     line-height: 1.0833333;
   }
-}
+} */
 
 .h2 + * {
   margin-top: 0;

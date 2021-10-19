@@ -44,7 +44,7 @@ see https://stackoverflow.com/questions/2062258/floating-elements-within-a-div-f
   }
 }
 
-@screen xl {
+/* @screen xl {
   .prose {
     font-size: 1.25rem;
     line-height: 1.8;
@@ -56,4 +56,4 @@ see https://stackoverflow.com/questions/2062258/floating-elements-within-a-div-f
     font-size: 1.5rem;
     line-height: 1.6666667;
   }
-}
+} */

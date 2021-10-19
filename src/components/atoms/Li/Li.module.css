@@ -56,7 +56,7 @@ ul > .li::before {
   }
 }
 
-@screen xl {
+/* @screen xl {
   ul > .li {
     padding-left: 1.6666667em;
   }
@@ -80,4 +80,4 @@ ul > .li::before {
     width: 0.3333333em;
     height: 0.3333333em;
   }
-}
+} */

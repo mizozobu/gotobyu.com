@@ -14,10 +14,10 @@ import { AdditionalSchoolLinks, ApplyLinks, CareerLinks, OtherLinks } from '@d';
 export interface Props {}
 
 export const IndexPage: FC<Props> = () => (
-  <div className='max-w-screen-lg xl:max-w-screen-xl mx-auto py-12 lg:py-16 space-y-12 lg:space-y-16'>
+  <div className='py-12 lg:py-16 space-y-12 lg:space-y-16'>
     <div
       className={classNames(
-        'grid grid-cols-1 lg:grid-cols-5 grid-rows-1 pb-10',
+        'grid grid-cols-1 lg:grid-cols-5 grid-rows-1 max-w-screen-lg xl:max-w-screen-xl mx-auto px-6 pb-10',
       )}
     >
       <div className='col-span-3'>
@@ -49,10 +49,9 @@ export const IndexPage: FC<Props> = () => (
         <CirculatingCircles className='max-w-md' animated />
       </div>
     </div>
-
-    <div className='px-6 lg:px-0 -mx-6 lg:mx-0'>
-      <H2 className='text-2xl md:text-4xl font-bold'>各大学について</H2>
-      <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:gap-y-10 lg:justify-items-center px-6 lg:px-0 py-10 -mx-6 lg:mx-0 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
+    <div className='max-w-screen-lg xl:max-w-screen-xl mx-auto'>
+      <H2 className='px-6 text-2xl md:text-4xl font-bold'>各大学について</H2>
+      <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:gap-y-10 lg:justify-items-center py-10 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
         <Link href='/schools/byu'>
           <a>
             <SchoolCard
@@ -106,9 +105,11 @@ export const IndexPage: FC<Props> = () => (
         </Link>
       </div>
     </div>
-    <div className='px-6 lg:px-0 -mx-6 lg:mx-0'>
-      <H2 className='text-2xl md:text-4xl font-bold'>知っておきたい情報</H2>
-      <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:gap-y-10 lg:justify-items-center px-6 lg:px-0 py-10 -mx-6 lg:mx-0 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
+    <div className='max-w-screen-lg xl:max-w-screen-xl mx-auto'>
+      <H2 className='px-6 text-2xl md:text-4xl font-bold'>
+        知っておきたい情報
+      </H2>
+      <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:gap-y-10 lg:justify-items-center px-6 lg:px-0 py-10 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
         {[
           ...AdditionalSchoolLinks,
           ...ApplyLinks,
