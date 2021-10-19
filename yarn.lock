@@ -12852,10 +12852,10 @@ rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-chartjs-2@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-3.1.0.tgz#3eefac6202ce2ee1034dc89c05601f346435afb2"
-  integrity sha512-j4PdePVu66M408Kpk/2UEfFJw3Hw7TxhOKW3RhV7/eU117OL8phFrWrRDWEipvt2V+5myqHSGMvXzKCm/RkfUw==
+react-chartjs-2@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-3.1.1.tgz#b8a2beff80639b8b5038081f01c1d9368da2c64b"
+  integrity sha512-6CTAXsQbxTuTS9rOjgNWsLygAir9+IXC2B9O3TlgO0qSeBqyMxd4qTMW0HBZ0Id18nYUR+nCou3JHUyyst6BFw==
   dependencies:
     lodash "^4.17.19"
 
