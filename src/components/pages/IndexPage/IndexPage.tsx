@@ -53,11 +53,8 @@ export const IndexPage: FC<Props> = () => (
       <H2 className='px-6 text-2xl md:text-4xl font-bold'>各大学について</H2>
       <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:gap-y-10 lg:justify-items-center py-10 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
         <Link href='/schools/byu'>
-          <a>
-            <SchoolCard
-              className='mx-8'
-              colorClass='bg-gradient-to-br from-byu to-byu-dark'
-            >
+          <a className='mt-4 mx-8 rounded-xl'>
+            <SchoolCard colorClass='bg-gradient-to-br from-byu to-byu-dark'>
               <NextImage
                 className='h-full p-4'
                 src={byuLogoImage}
@@ -70,11 +67,8 @@ export const IndexPage: FC<Props> = () => (
           </a>
         </Link>
         <Link href='/schools/byuh'>
-          <a>
-            <SchoolCard
-              className='mx-8'
-              colorClass='bg-gradient-to-br from-byuh to-byuh-dark'
-            >
+          <a className='mt-4 mx-8 rounded-xl'>
+            <SchoolCard colorClass='bg-gradient-to-br from-byuh to-byuh-dark'>
               <NextImage
                 className='h-full p-4'
                 src={byuhLogoImage}
@@ -87,11 +81,8 @@ export const IndexPage: FC<Props> = () => (
           </a>
         </Link>
         <Link href='/schools/byui'>
-          <a>
-            <SchoolCard
-              className='mx-8'
-              colorClass='bg-gradient-to-br from-byui to-byui-dark'
-            >
+          <a className='mt-4 mx-8 rounded-xl'>
+            <SchoolCard colorClass='bg-gradient-to-br from-byui to-byui-dark'>
               <NextImage
                 className='h-full p-4'
                 src={byuiLogoImage}
@@ -117,7 +108,7 @@ export const IndexPage: FC<Props> = () => (
           OtherLinks[0],
         ].map(({ name, href, detail, icon: Icon }) => (
           <Link key={name} href={href}>
-            <a>
+            <a className='rounded-xl'>
               <PageCard icon={Icon} name={name} detail={detail} />
             </a>
           </Link>
