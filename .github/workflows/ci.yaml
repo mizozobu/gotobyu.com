@@ -7,12 +7,35 @@ on:
   push:
     branches:
       - master
+      - ci/**
       - renovate/**
   pull_request:
     branches:
       - master
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Get Node.js version from package.json
+        run: echo ::set-output name=nodeVersion::$(node -p "require('./package.json').engines.node")
+        id: get-node-version
+      - name: Use Node.js ${{ steps.get-node-version.outputs.nodeVersion }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ steps.get-node-version.outputs.nodeVersion }}
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --prefer-offline
+      - name: Lint
+        run: yarn lint
+
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -34,10 +57,28 @@ jobs:
         run: yarn install --frozen-lockfile --prefer-offline
       - name: Prepare environment variables
         run: cp -p .env.test .env.local
-      - name: Lint
-        run: yarn lint
       - name: Build
         run: yarn build
+
+  storybook:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Get Node.js version from package.json
+        run: echo ::set-output name=nodeVersion::$(node -p "require('./package.json').engines.node")
+        id: get-node-version
+      - name: Use Node.js ${{ steps.get-node-version.outputs.nodeVersion }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ steps.get-node-version.outputs.nodeVersion }}
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --prefer-offline
       - name: Build Storybook
         run: yarn build-storybook -- --quiet
 
