@@ -41,9 +41,6 @@
 
   main {
     min-height: calc(100vh - 64px);
-
-    /* hide scrollbar on firefox */
-    scrollbar-width: none;
   }
 
   input[type='submit'] {

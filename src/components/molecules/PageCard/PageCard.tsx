@@ -29,9 +29,7 @@ export const PageCard: FC<Props> = ({
         <div className='flex items-center h-1/6 text-indigo-900 text-lg md:text-2xl text-bold truncate'>
           {name}
         </div>
-        <div className='h-5/6 text-sm md:text-base overflow-scroll'>
-          {detail}
-        </div>
+        <div className='h-5/6 text-sm md:text-base overflow-auto'>{detail}</div>
       </div>
     </div>
   </div>
