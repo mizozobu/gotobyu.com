@@ -14,9 +14,23 @@ on:
       - master
 
 jobs:
+  pre_job:
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - name: Check if skippable
+        uses: fkirc/skip-duplicate-actions@master
+        id: skip_check
+        with:
+          paths_ignore: '[".husky", ".vscode", ".commitlintrc.js", ".editorconfig", ".lintstagedrc", "README.md", "renovate.json"]'
+
   lint:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    needs:
+      - pre_job
+    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
 
     steps:
       - name: Checkout repository
@@ -39,6 +53,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    needs:
+      - pre_job
+    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
 
     steps:
       - name: Checkout repository
@@ -70,6 +87,9 @@ jobs:
   storybook:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    needs:
+      - pre_job
+    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
 
     steps:
       - name: Checkout repository
