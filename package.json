@@ -7,8 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . && tsc --noEmit --project tsconfig.json && stylelint . && prettier --check .",
-    "format": "eslint --fix . && stylelint --fix . && prettier --write .",
+    "lint": "eslint . && tsc --noEmit --project tsconfig.json && stylelint . && prettier --check --loglevel warn .",
+    "format": "eslint --fix . && stylelint --fix . && prettier --write --loglevel warn .",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s public",
     "test": "jest"
