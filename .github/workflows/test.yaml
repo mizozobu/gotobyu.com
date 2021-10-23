@@ -1,17 +1,9 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: CI
+name: test
 
 on:
   push:
     branches:
-      - master
-      - ci/**
-      - renovate/**
-  pull_request:
-    branches:
-      - master
+      - '**'
 
 jobs:
   pre_job:
@@ -82,44 +74,6 @@ jobs:
       - name: Build
         run: yarn build
 
-  lighthouse:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs:
-      - pre_job
-      - build
-    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Get Node.js version from package.json
-        run: echo ::set-output name=nodeVersion::$(node -p "require('./package.json').engines.node")
-        id: get-node-version
-      - name: Use Node.js ${{ steps.get-node-version.outputs.nodeVersion }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ steps.get-node-version.outputs.nodeVersion }}
-          cache: yarn
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile --prefer-offline
-      - name: Cache build
-        uses: actions/cache@v2
-        with:
-          path: ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]sx?') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
-      - name: Prepare environment variables
-        run: cp -p .env.test .env.local
-      - name: Build
-        run: yarn build
-      - name: Lighthouse
-        run: yarn global add @lhci/cli && lhci collect && lhci upload
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-
   storybook:
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -142,32 +96,4 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile --prefer-offline
       - name: Build Storybook
-        run: yarn build-storybook -- --quiet
-
-  deploy:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    concurrency: ci-${{ github.ref }}
-    needs:
-      - lint
-      - build
-    if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'pull_request' && github.base_ref == 'master') }}
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy to Vercel
-        id: deploy-to-vercel
-        uses: amondnet/vercel-action@v20
-        if: "!startsWith(github.ref, 'refs/heads/renovate/')"
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
-          vercel-args: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/master') && '--prod' || '' }}
-      - name: Print URL
-        if: ${{ steps.deploy-to-vercel.outputs.preview-url != '' }}"
-        run: echo "Deployed at ${{ steps.deploy-to-vercel.outputs.preview-url }}"
+        run: yarn build-storybook --quiet
