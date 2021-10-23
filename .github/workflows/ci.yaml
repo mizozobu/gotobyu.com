@@ -1,9 +1,16 @@
-name: test
+name: CI
 
+# CI on master push event can be safely omitted since all commits must go through a PR and have a linear commit history.
+# The only exception is "renovate/**" since it is auto-merged by renovatebot.
+# Continual delivery is delegated to Vercel.
 on:
   push:
     branches:
-      - '**'
+      - ci/**
+      - renovate/**
+  pull_request:
+    branches:
+      - master
 
 jobs:
   pre_job:
@@ -17,7 +24,7 @@ jobs:
         with:
           paths_ignore: '[".husky", ".vscode", ".commitlintrc.js", ".editorconfig", ".lintstagedrc", "README.md", "renovate.json"]'
 
-  lint:
+  ci:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     needs:
@@ -40,28 +47,6 @@ jobs:
         run: yarn install --frozen-lockfile --prefer-offline
       - name: Lint
         run: yarn lint
-
-  build:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs:
-      - pre_job
-    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Get Node.js version from package.json
-        run: echo ::set-output name=nodeVersion::$(node -p "require('./package.json').engines.node")
-        id: get-node-version
-      - name: Use Node.js ${{ steps.get-node-version.outputs.nodeVersion }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ steps.get-node-version.outputs.nodeVersion }}
-          cache: yarn
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile --prefer-offline
       - name: Cache build
         uses: actions/cache@v2
         with:
@@ -73,27 +58,10 @@ jobs:
         run: cp -p .env.test .env.local
       - name: Build
         run: yarn build
-
-  storybook:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs:
-      - pre_job
-    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Get Node.js version from package.json
-        run: echo ::set-output name=nodeVersion::$(node -p "require('./package.json').engines.node")
-        id: get-node-version
-      - name: Use Node.js ${{ steps.get-node-version.outputs.nodeVersion }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ steps.get-node-version.outputs.nodeVersion }}
-          cache: yarn
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile --prefer-offline
       - name: Build Storybook
         run: yarn build-storybook --quiet
+      - name: Lighthouse
+        if: ${{ github.event_name == 'pull_request' && github.base_ref == 'master' }}
+        run: yarn global add @lhci/cli && lhci collect && lhci upload
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
