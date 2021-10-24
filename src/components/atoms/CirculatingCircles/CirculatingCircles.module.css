@@ -17,12 +17,12 @@
   }
 
   33.333333% {
-    offset-distance: 33.333333%;
+    offset-distance: calc(100% / 3);
     animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
   }
 
   66.666667% {
-    offset-distance: 66.666667%;
+    offset-distance: calc(100% / 3 * 2);
     animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
   }
 

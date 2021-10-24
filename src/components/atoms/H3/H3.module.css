@@ -1,58 +1,38 @@
 .h3 {
-  margin-top: 1.6em;
-  margin-bottom: 0.6em;
+  margin-top: calc(32em / 20);
+  margin-bottom: calc(12em / 20);
   color: #111827;
   font-weight: 600;
-  font-size: 1.25em;
-  line-height: 1.6;
+  font-size: calc(20em / 16);
+  line-height: calc(32 / 20);
 }
 
 @screen sm {
   .h3 {
-    margin-top: 1.5555556em;
-    margin-bottom: 0.4444444em;
-    font-size: 1.2857143em;
-    line-height: 1.5555556;
+    margin-top: calc(28em / 18);
+    margin-bottom: calc(8em / 18);
+    font-size: calc(18em / 14);
+    line-height: calc(28 / 18);
   }
 }
 
 @screen md {
   .h3 {
-    margin-top: 1.6em;
-    margin-bottom: 0.6em;
-    color: #111827;
-    font-weight: 600;
-    font-size: 1.25em;
-    line-height: 1.6;
+    margin-top: calc(32em / 20);
+    margin-bottom: calc(12em / 20);
+    font-size: calc(20em / 16);
+    line-height: calc(32 / 20);
   }
 }
 
 @screen lg {
   .h3 {
-    margin-top: 1.6666667em;
-    margin-bottom: 0.6666667em;
-    font-size: 1.3333333em;
-    line-height: 1.5;
+    margin-top: calc(40em / 24);
+    margin-bottom: calc(16em / 24);
+    font-size: calc(24em / 18);
+    line-height: calc(36 / 24);
   }
 }
-
-/* @screen xl {
-  .h3 {
-    margin-top: 1.6em;
-    margin-bottom: 0.6666667em;
-    font-size: 1.5em;
-    line-height: 1.3333333;
-  }
-}
-
-@screen 2xl {
-  .h3 {
-    margin-top: 1.5555556em;
-    margin-bottom: 0.6666667em;
-    font-size: 1.5em;
-    line-height: 1.2222222;
-  }
-} */
 
 .h3 + * {
   margin-top: 0;
