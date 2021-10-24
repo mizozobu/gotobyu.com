@@ -23,9 +23,7 @@ export const SwitchControl: FC<Props> = ({
         className,
       )}
     >
-      <Switch.Label className='mr-2 text-sm text-gray-500'>
-        {label}
-      </Switch.Label>
+      <Switch.Label className='mr-2 text-sm'>{label}</Switch.Label>
       <Switch
         checked={checked}
         onChange={onChange}
