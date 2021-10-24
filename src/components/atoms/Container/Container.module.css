@@ -2,7 +2,7 @@
   /* max-width: 65ch; */
   color: #374151;
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: calc(28 / 16);
 }
 
 /* add horizontal padding to elements below h2 */
@@ -26,34 +26,20 @@ see https://stackoverflow.com/questions/2062258/floating-elements-within-a-div-f
 @screen sm {
   .prose {
     font-size: 0.875rem;
-    line-height: 1.7142857;
+    line-height: calc(24 / 14);
+  }
+
+  @screen md {
+    .prose {
+      font-size: 1rem;
+      line-height: calc(28 / 16);
+    }
+  }
+
+  @screen lg {
+    .prose {
+      font-size: 1.125rem;
+      line-height: calc(32 / 18);
+    }
   }
 }
-
-@screen md {
-  .prose {
-    font-size: 1rem;
-    line-height: 1.75;
-  }
-}
-
-@screen lg {
-  .prose {
-    font-size: 1.125rem;
-    line-height: 1.7777778;
-  }
-}
-
-/* @screen xl {
-  .prose {
-    font-size: 1.25rem;
-    line-height: 1.8;
-  }
-}
-
-@screen 2xl {
-  .prose {
-    font-size: 1.5rem;
-    line-height: 1.6666667;
-  }
-} */

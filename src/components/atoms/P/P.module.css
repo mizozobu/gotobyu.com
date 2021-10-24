@@ -1,39 +1,25 @@
 .p {
-  margin-top: 1.25em;
-  margin-bottom: 1.25em;
+  margin-top: calc(20em / 16);
+  margin-bottom: calc(20em / 16);
 }
 
 @screen sm {
   .p {
-    margin-top: 1.1428571em;
-    margin-bottom: 1.1428571em;
+    margin-top: calc(16em / 14);
+    margin-bottom: calc(16em / 14);
   }
 }
 
 @screen md {
   .p {
-    margin-top: 1.25em;
-    margin-bottom: 1.25em;
+    margin-top: calc(20em / 16);
+    margin-bottom: calc(20em / 16);
   }
 }
 
 @screen lg {
   .p {
-    margin-top: 1.3333333em;
-    margin-bottom: 1.3333333em;
+    margin-top: calc(24em / 18);
+    margin-bottom: calc(24em / 18);
   }
 }
-
-/* @screen xl {
-  .p {
-    margin-top: 1.2em;
-    margin-bottom: 1.2em;
-  }
-}
-
-@screen 2xl {
-  .p {
-    margin-top: 1.3333333em;
-    margin-bottom: 1.3333333em;
-  }
-} */
