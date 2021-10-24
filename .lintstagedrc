@@ -1,6 +1,10 @@
 {
   "**/*.{js,jsx,ts,tsx}": [
     "yarn eslint",
-    "yarn prettier --check"
+    "yarn prettier --check --loglevel warn ."
+  ],
+  "**/*.css": [
+    "yarn stylelint",
+    "yarn prettier --check --loglevel warn ."
   ]
 }
