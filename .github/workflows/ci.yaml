@@ -13,7 +13,7 @@ on:
       - master
 
 jobs:
-  pre_job:
+  onboard:
     runs-on: ubuntu-latest
     outputs:
       should_skip: ${{ steps.skip_check.outputs.should_skip }}
@@ -28,8 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     needs:
-      - pre_job
-    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
+      - onboard
+    if: ${{ needs.onboard.outputs.should_skip != 'true' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -63,8 +63,39 @@ jobs:
       - name: Lighthouse
         uses: treosh/lighthouse-ci-action@v8
         if: ${{ github.event_name == 'pull_request' && github.base_ref == 'master' }}
+        id: lighthouse
         with:
           configPath: './.lighthouserc.js'
           uploadArtifacts: true
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      - name: Generate lighthouse summary
+        if: ${{ github.event_name == 'pull_request' && github.base_ref == 'master' }}
+        id: generate_lighthouse_summary
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const manifest = ${{ steps.lighthouse.outputs.manifest }};
+            const f = d => {
+              const i = Math.round(d * 100);
+              if(i == null) return `-`;
+              if(i >= 90) return `:white_check_mark: ${i}`;
+              if(i >= 50) return `:warning: ${i}`;
+              return `:exclamation: ${i}`;
+            };
+            const comment = [
+              `:zap: Lighthouse Report :zap:`,
+              ``,
+              `|    | Performance | Accessibility | Best Practices | SEO | PWA |`,
+              `| :- | :---------: | :-----------: | :------------: | :-: | :-: |`,
+              ...manifest.map(({ url, summary }) => (
+                `| ${url.replace(/^https?:\/\/[^\/]+/, '')} | ${f(summary.performance)} | ${f(summary.accessibility)} | ${f(summary['best-practices'])} | ${f(summary.seo)} | ${f(summary.pwa)} |`
+              )),
+              ``,
+              `View full report by downloading artifacts at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`,
+            ].join(`\n`);
+            core.setOutput(`comment`, comment);
+      - name: Post lighthouse summary
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: ${{ github.event_name == 'pull_request' && github.base_ref == 'master' }}
+        with:
+          number: ${{ github.event.issue.number }}
+          message: ${{ steps.generate_lighthouse_summary.outputs.comment }}
