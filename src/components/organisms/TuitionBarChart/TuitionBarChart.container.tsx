@@ -9,9 +9,9 @@ import {
 export interface Props extends Omit<TuitionBarChartProps, 'rate'> {}
 
 const TuitionBarChartContainer: FC<Props> = (props: Props) => {
-  const { forex: rate } = useRecoilValue(globalState);
+  const { exrate } = useRecoilValue(globalState);
 
-  return <TuitionBarChart {...props} rate={rate} />;
+  return <TuitionBarChart {...props} exrate={exrate} />;
 };
 
 export default TuitionBarChartContainer;

@@ -8,7 +8,7 @@ import { SwitchControl } from '@c/molecules/SwitchControl';
 import { TuitionData } from '@d';
 
 export interface Props extends Omit<BarChartProps, 'data' | 'title'> {
-  rate: number;
+  exrate: number;
 }
 
 const data = {
@@ -49,62 +49,64 @@ const data = {
   ],
 };
 
-export const TuitionBarChart: FC<Props> = memo(({ rate, ...props }: Props) => {
-  const [isJPY, setIsJPY] = useState(true);
-  const [isLDS, setIsLDS] = useState(true);
-  const forex = isJPY ? rate : 1;
-  const ldsRate = isLDS ? 1 : 2;
+export const TuitionBarChart: FC<Props> = memo(
+  ({ exrate, ...props }: Props) => {
+    const [isJPY, setIsJPY] = useState(true);
+    const [isLDS, setIsLDS] = useState(true);
+    const multiplier = isJPY ? exrate : 1;
+    const ldsRate = isLDS ? 1 : 2;
 
-  return (
-    <>
-      <div className='flex flex-row space-x-4'>
-        <SwitchControl
-          checked={isJPY}
-          onChange={setIsJPY}
-          label='日本円'
-          sr='Switch Currency'
-        />
-        <SwitchControl
-          checked={isLDS}
-          onChange={setIsLDS}
-          label='教会員'
-          sr='Switch Membership Status'
-        />
-      </div>
+    return (
+      <>
+        <div className='flex flex-row space-x-4'>
+          <SwitchControl
+            checked={isJPY}
+            onChange={setIsJPY}
+            label='日本円'
+            sr='Switch Currency'
+          />
+          <SwitchControl
+            checked={isLDS}
+            onChange={setIsLDS}
+            label='教会員'
+            sr='Switch Membership Status'
+          />
+        </div>
 
-      <BarChart
-        {...props}
-        title={`年間学費(${isJPY ? '円' : 'ドル'})`}
-        data={{
-          ...data,
-          datasets: [
-            {
-              ...data.datasets[0],
-              data: [
-                TuitionData.byu * forex * ldsRate,
-                TuitionData.byuh * forex * ldsRate,
-                TuitionData.byui * forex * ldsRate,
-                TuitionData.jpKokuritsu * forex,
-                TuitionData.jpShiritsu * forex,
-                TuitionData.usPublic * forex,
-                TuitionData.usPrivate * forex,
-              ],
-            },
-          ],
-        }}
-        options={{
-          ...defaultOptions,
-          scales: {
-            ...defaultOptions.scales,
-            yAxes: {
-              ticks: {
-                callback: (value: number | string) =>
-                  `${isJPY ? '¥' : '$'}${value.toLocaleString()}`,
+        <BarChart
+          {...props}
+          title={`年間学費(${isJPY ? '円' : 'ドル'})`}
+          data={{
+            ...data,
+            datasets: [
+              {
+                ...data.datasets[0],
+                data: [
+                  TuitionData.byu * multiplier * ldsRate,
+                  TuitionData.byuh * multiplier * ldsRate,
+                  TuitionData.byui * multiplier * ldsRate,
+                  TuitionData.jpKokuritsu * multiplier,
+                  TuitionData.jpShiritsu * multiplier,
+                  TuitionData.usPublic * multiplier,
+                  TuitionData.usPrivate * multiplier,
+                ],
+              },
+            ],
+          }}
+          options={{
+            ...defaultOptions,
+            scales: {
+              ...defaultOptions.scales,
+              yAxes: {
+                ticks: {
+                  callback: (value: number | string) =>
+                    `${isJPY ? '¥' : '$'}${value.toLocaleString()}`,
+                },
               },
             },
-          },
-        }}
-      />
-    </>
-  );
-});
+          }}
+        />
+      </>
+    );
+  },
+);
