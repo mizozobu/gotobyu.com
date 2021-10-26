@@ -12,5 +12,5 @@ const Template: Story<Props> = (args) => <TuitionBarChart {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
-  rate: 110,
+  exrate: 110,
 };
