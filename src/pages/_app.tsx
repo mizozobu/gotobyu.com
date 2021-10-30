@@ -1,5 +1,5 @@
 import { useEffect, FC } from 'react';
-import { AppProps } from 'next/app';
+import { AppProps as NextAppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
@@ -10,8 +10,13 @@ import { Footer } from '@c/organisms/Footer';
 import ScrollIntoView from '@c/atoms/ScrollIntoView';
 import CopiedDialog from '@c/organisms/CopiedDialog';
 import { GTM_ID, pageview } from '@l/gtm';
+import { hydrateAtoms, RecoilProps } from '@l/recoil';
 import { MDX } from '@l/mdx';
 import '~/styles/globals.css';
+
+export interface AppProps extends NextAppProps {
+  pageProps: { [key: string]: unknown };
+}
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -27,7 +32,10 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   }, [router.events]);
 
   return (
-    <RecoilRoot>
+    <RecoilRoot
+      // eslint-disable-next-line no-underscore-dangle
+      initializeState={hydrateAtoms(pageProps._recoil as RecoilProps)}
+    >
       <Head>
         {/* define defult title here until https://github.com/garmeeh/next-seo/pull/832 is merged */}
         {/* eslint-disable-next-line @next/next/no-title-in-document-head */}
@@ -66,7 +74,6 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
 
       <CopiedDialog />
       <ScrollIntoView />
-
       <Footer />
     </RecoilRoot>
   );

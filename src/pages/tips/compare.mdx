@@ -6,10 +6,18 @@ import { SchoolTable } from '@c/organisms/SchoolTable';
 import CostTable from '@c/organisms/CostTable';
 import { ComparePageMeta } from '@d';
 import { MDX } from '@l/mdx';
+import { AtomStore, withRecoil } from '@l/recoil';
+import { globalState, GlobalStateKey } from '@s/global';
 
 export const TuitionBarChart = dynamic(
   () => import('@c/organisms/TuitionBarChart'),
 );
+
+export const getStaticProps = async(context) => {
+  const atomStore = new AtomStore();
+  atomStore.setAtom(GlobalStateKey, { exrate: await Promise.resolve(50) })
+  return atomStore.with({});
+}
 
 <Seo
   title={ComparePageMeta.title}
