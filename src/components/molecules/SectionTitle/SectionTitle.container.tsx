@@ -1,6 +1,6 @@
 import { useCallback, FC } from 'react';
 import { useRecoilState } from 'recoil';
-import { globalState } from '@s/global';
+import { urlState } from '@s/url';
 import { SectionTitle, Props as SectionTitleProps } from './SectionTitle';
 
 export interface Props extends Omit<SectionTitleProps, 'active'> {
@@ -13,19 +13,19 @@ const SectionTitleContainer: FC<Props> = ({
   children,
   ...props
 }: Props) => {
-  const [{ hash }, setGlobalState] = useRecoilState(globalState);
+  const [{ hash }, setUrlState] = useRecoilState(urlState);
 
   const handleClick = useCallback(() => {
     if (navigator.clipboard && window.isSecureContext) {
       const { origin, pathname } = window.location;
       void navigator.clipboard.writeText(`${origin}${pathname}#${id}`);
 
-      setGlobalState((prevState) => ({
+      setUrlState((prevState) => ({
         ...prevState,
         showCopiedModal: true,
       }));
     }
-  }, [id, setGlobalState]);
+  }, [id, setUrlState]);
 
   return (
     <SectionTitle {...props} id={id} active={hash === id} onClick={handleClick}>

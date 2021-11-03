@@ -1,8 +1,10 @@
-import { globalState, GlobalStateKey } from '@s/global';
+import { forexState, ForexStateKey } from '@s/forex';
+import { urlState, UrlStateKey } from '@s/url';
 
 /**
  * register atoms
  */
 export const AtomRegistry = {
-  [GlobalStateKey]: globalState,
+  [ForexStateKey]: forexState,
+  [UrlStateKey]: urlState,
 };

@@ -12,5 +12,8 @@ const Template: Story<Props> = (args) => <TuitionBarChart {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
-  exrate: 110,
+  forex: {
+    exrate: 110,
+    timestamp: new Date().toISOString(),
+  },
 };

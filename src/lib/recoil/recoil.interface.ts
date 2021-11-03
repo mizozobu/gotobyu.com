@@ -25,8 +25,11 @@ export type AtomKey = keyof typeof AtomRegistry;
 /**
  * type used to receive serialized recoil state from server in client
  */
-export type RecoilProps = typeof AtomRegistry extends {
-  [key in AtomKey]: RecoilState<infer T>;
-}
-  ? T
-  : never;
+export type RecoilProps = {
+  [K in AtomKey]: UnpackedRecoilState<typeof AtomRegistry[K]>;
+};
+
+/**
+ * return AtomRegistry value type from key
+ */
+export type AtomRegistryValue<K extends AtomKey> = typeof AtomRegistry[K];

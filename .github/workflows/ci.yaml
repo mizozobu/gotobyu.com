@@ -54,10 +54,8 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]sx?') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
-      - name: Prepare environment variables
-        run: cp -p .env.test .env.local
       - name: Build app
-        run: yarn build
+        run: NODE_ENV=test yarn build
       - name: Build storybook
         run: yarn build-storybook --quiet
       - name: Lighthouse

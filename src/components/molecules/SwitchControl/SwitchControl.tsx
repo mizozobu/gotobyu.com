@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { Switch } from '@headlessui/react';
 
 export interface Props {
-  label: string;
+  label: ReactNode;
   sr: string;
   checked: boolean;
   onChange: (checked: boolean) => void;
