@@ -2,22 +2,25 @@ import { useState, FC } from 'react';
 import { Table } from '@c/atoms/Table';
 import { TableCaption } from '@c/atoms/TableCaption';
 import { Digit } from '@c/atoms/Digit';
+import { Footnote } from '@c/atoms/Footnote';
 import { NextImage } from '@c/atoms/NextImage';
 import { SwitchControl } from '@c/molecules/SwitchControl';
+import { Forex } from '@l/forex';
+import { MDX } from '@l/mdx';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
 import { CostData } from '@d';
 
 export interface Props {
-  exrate: number;
+  forex: Forex;
 }
 
-export const CostTable: FC<Props> = ({ exrate }: Props) => {
+export const CostTable: FC<Props> = ({ forex }: Props) => {
   const [isJPY, setIsJPY] = useState(true);
   const [isLDS, setIsLDS] = useState(true);
   const unit = isJPY ? '¥' : '$';
-  const multiplier = isJPY ? exrate : 1;
+  const multiplier = isJPY ? forex.exrate : 1;
   const ldsRate = isLDS ? 1 : 2;
 
   return (
@@ -205,6 +208,35 @@ export const CostTable: FC<Props> = ({ exrate }: Props) => {
           </tr>
         </tfoot>
       </Table>
+
+      {/* eslint-disable-next-line react/jsx-pascal-case */}
+      <MDX.ul className='mt-4 text-xs'>
+        <Footnote>
+          {new Date(forex.timestamp).toLocaleString('ja-JP', {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            timeZone: 'Asia/Tokyo',
+          })}
+          時点での為替レート1ドル
+          {forex.exrate}円で換算
+        </Footnote>
+        <Footnote>BYU、BYUIは2学期分、BYUHは3学期分で換算</Footnote>
+        <Footnote>
+          日本国立、日本私立は
+          <MDX.a href='https://www.mext.go.jp/a_menu/koutou/shinkou/07021403/__icsFiles/afieldfile/2017/12/26/1399613_03.pdf'>
+            国公私立大学の授業料等の推移
+          </MDX.a>
+          より平成29年度の値
+        </Footnote>
+        <Footnote>
+          US国立、US私立は
+          <MDX.a href='https://www.usnews.com/education/best-colleges/paying-for-college/articles/paying-for-college-infographic'>
+            See the Average College Tuition in 2020-2021
+          </MDX.a>
+          より
+        </Footnote>
+      </MDX.ul>
     </>
   );
 };

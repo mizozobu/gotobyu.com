@@ -3,23 +3,7 @@
 }
 
 .icon {
-  @apply h-3 inline align-top mt-1;
-}
-
-@screen sm {
-  .icon {
-    @apply h-3;
-  }
-}
-
-@screen md {
-  .icon {
-    @apply h-3.5;
-  }
-}
-
-@screen lg {
-  .icon {
-    @apply h-4;
-  }
+  height: 1em;
+  transform: translateY(-0.4em);
+  @apply inline;
 }

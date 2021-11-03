@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useRecoilValue } from 'recoil';
-import { globalState } from '@s/global';
+import { forexState } from '@s/forex';
 import {
   TuitionBarChart,
   Props as TuitionBarChartProps,
@@ -9,9 +9,9 @@ import {
 export interface Props extends Omit<TuitionBarChartProps, 'rate'> {}
 
 const TuitionBarChartContainer: FC<Props> = (props: Props) => {
-  const { exrate } = useRecoilValue(globalState);
+  const forex = useRecoilValue(forexState);
 
-  return <TuitionBarChart {...props} exrate={exrate} />;
+  return <TuitionBarChart {...props} forex={forex} />;
 };
 
 export default TuitionBarChartContainer;
