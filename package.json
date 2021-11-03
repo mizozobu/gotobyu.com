@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint . && stylelint . && prettier --check --loglevel warn .",
     "format": "eslint --fix . && stylelint --fix . && prettier --write --loglevel warn .",
+    "typecheck": "tsc --noEmit --project tsconfig.json",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s public",
     "test": "jest"
