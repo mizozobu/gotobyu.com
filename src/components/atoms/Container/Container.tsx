@@ -8,7 +8,7 @@ export const Container: FC<Props> = ({ className = '', ...props }: Props) => (
   <article
     {...props}
     className={classNames(
-      'max-w-6xl px-8 mx-auto my-12',
+      'max-w-6xl px-4 sm:px-6 mx-auto my-12',
       styles.prose,
       className,
     )}
