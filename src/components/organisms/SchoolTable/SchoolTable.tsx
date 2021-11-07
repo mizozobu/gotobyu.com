@@ -65,7 +65,7 @@ export const SchoolTable: FC<Props> = () => (
         </td>
       </tr>
       <tr>
-        <th scope='row'>留学生割合</th>
+        <th scope='row'>留学生の割合</th>
         <td>
           <Digit decimals={2}>
             {SchoolData.byu.numberOfInternationStudents}
