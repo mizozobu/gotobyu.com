@@ -12,7 +12,7 @@ export const Seo: FC<Props> = ({ openGraph, ...prop }: Props) => {
     <NextSeo
       {...prop}
       titleTemplate='%s | gotobyu.com'
-      defaultTitle='gotobyu.com'
+      defaultTitle='gotobyu.com | 在学生と卒業生の声'
       /*
        * see specification at https://ogp.me
        * preview at https://www.opengraph.xyz
