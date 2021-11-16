@@ -8,6 +8,7 @@ class MyDocument extends Document {
         <Head>
           {/* favicon https://realfavicongenerator.net */}
           <link
+            // eslint-disable-next-line react/no-invalid-html-attribute
             rel='apple-touch-icon'
             sizes='180x180'
             href='/apple-touch-icon.png'
@@ -25,6 +26,7 @@ class MyDocument extends Document {
             href='/favicon-16x16.png'
           />
           <link rel='manifest' href='/site.webmanifest' />
+          {/* eslint-disable-next-line react/no-invalid-html-attribute */}
           <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
           <link
             href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap'
