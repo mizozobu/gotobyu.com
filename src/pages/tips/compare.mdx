@@ -14,8 +14,7 @@ export const TuitionBarChart = dynamic(
 
 export const getStaticProps = async(context) => {
   const atomStore = new AtomStore();
-  console.log(process.env.NODE_ENV)
-  const forex = process.env.NODE_ENV === 'production'
+  const forex = process.env.ALPHA_VANTAGE_API_KEY
     ? await getForex('USD', 'JPY')
     : defaultForexState;
   atomStore.setAtom(ForexStateKey, forex);
