@@ -3,8 +3,8 @@ import Image, { ImageProps } from 'next/image';
 import Slider, { Settings } from 'react-slick';
 import { BgRotate } from '@c/atoms/BgRotate';
 import styles from './PhotoViewer.module.css';
-import '../../../../node_modules/slick-carousel/slick/slick.css';
-import '../../../../node_modules/slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export interface Props {
   images: (ImageProps & { alt: string; citation?: string })[];

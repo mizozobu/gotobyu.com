@@ -51,6 +51,12 @@ module.exports = {
         // allow <App {...props} />
         'react/jsx-props-no-spreading': 'off',
 
+        // enforce arrow function for functional components
+        'react/function-component-definition': [
+          'error',
+          { namedComponents: 'arrow-function' },
+        ],
+
         // use <Link> instead of <a> for links
         'jsx-a11y/anchor-is-valid': [
           'error',
@@ -147,6 +153,9 @@ module.exports = {
       rules: {
         // allow voiding floating promise
         'no-void': ['error', { allowAsStatement: true }],
+
+        // allow default export for container components
+        'no-restricted-exports': 'off',
 
         // allow importing default exported XxxContainer as Xxx
         'import/no-named-as-default': 'off',
