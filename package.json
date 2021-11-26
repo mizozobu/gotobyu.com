@@ -68,7 +68,7 @@
     "jest": "^27.3.1",
     "lint-staged": "^12.1.2",
     "postcss": "^8.4.1",
-    "postcss-loader": "^6.2.0",
+    "postcss-loader": "^6.2.1",
     "prettier": "^2.5.0",
     "storybook": "^6.3.12",
     "stylelint": "^14.1.0",
