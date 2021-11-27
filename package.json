@@ -67,7 +67,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.3.1",
     "lint-staged": "^12.1.2",
-    "postcss": "^8.4.3",
+    "postcss": "^8.4.4",
     "postcss-loader": "^6.2.1",
     "prettier": "^2.5.0",
     "storybook": "^6.4.0",
