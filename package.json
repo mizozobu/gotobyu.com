@@ -69,7 +69,7 @@
     "lint-staged": "^12.1.2",
     "postcss": "^8.4.4",
     "postcss-loader": "^6.2.1",
-    "prettier": "^2.5.0",
+    "prettier": "^2.5.1",
     "storybook": "^6.4.7",
     "stylelint": "^14.1.0",
     "stylelint-config-css-modules": "^2.3.0",
