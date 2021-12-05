@@ -1,7 +1,17 @@
 import { useCallback, useState, FC, HTMLAttributes } from 'react';
 import { Pie } from 'react-chartjs-2';
-import { ChartData, ChartOptions } from 'chart.js';
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Legend,
+  Title,
+  Tooltip,
+  ChartData,
+  ChartOptions,
+} from 'chart.js';
 import { useScreenSize, gte, ScreenSize, ScreenSizeType } from '@l/ScreenSize';
+
+ChartJS.register(ArcElement, Legend, Title, Tooltip);
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   _options?: ChartOptions<'pie'>;

@@ -1,6 +1,17 @@
 import { FC, HTMLAttributes } from 'react';
 import { Bar } from 'react-chartjs-2';
-import { ChartData, ChartOptions } from 'chart.js';
+import {
+  Chart as ChartJS,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  ChartData,
+  ChartOptions,
+} from 'chart.js';
+
+ChartJS.register(BarElement, CategoryScale, LinearScale, Title, Tooltip);
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   options?: ChartOptions<'bar'>;
