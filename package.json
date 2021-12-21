@@ -71,7 +71,7 @@
     "postcss-loader": "^6.2.1",
     "prettier": "^2.5.1",
     "storybook": "^6.4.9",
-    "stylelint": "^14.1.0",
+    "stylelint": "^14.2.0",
     "stylelint-config-css-modules": "^2.3.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-rational-order": "^0.1.2",
