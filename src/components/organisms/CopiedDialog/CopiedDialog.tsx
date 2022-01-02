@@ -36,7 +36,11 @@ export const CopiedDialog: FC<Props> = ({ isOpen, onClose }: Props) => (
           leaveFrom='opacity-100 scale-100'
           leaveTo='opacity-0'
         >
-          <div className='inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-none rounded-2xl'>
+          <div
+            className='inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all bg-none rounded-2xl'
+            // see https://stackoverflow.com/questions/3461441/prevent-flicker-on-webkit-transition-of-webkit-transform
+            style={{ transformStyle: 'preserve-3d' }}
+          >
             <Dialog.Title
               as='div'
               className='flex flex-col md:flex-row items-center text-lg font-medium leading-6 text-white'

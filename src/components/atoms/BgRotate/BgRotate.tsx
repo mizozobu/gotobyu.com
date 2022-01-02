@@ -15,7 +15,7 @@ export const BgRotate: FC<Props> = ({
   <div className={classNames('relative group', styles['bg-rotate'], className)}>
     <div
       className={classNames(
-        'absolute w-full h-full rounded-xl shadow-xl transform rotate-6 group-hover:rotate-12 transition duration-500 ease-in-out',
+        'absolute w-full h-full rounded-xl shadow-xl rotate-6 group-hover:rotate-12 transition duration-500 ease-in-out',
         colorClass,
       )}
     />

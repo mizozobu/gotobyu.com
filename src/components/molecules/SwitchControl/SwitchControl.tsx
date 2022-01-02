@@ -35,7 +35,7 @@ export const SwitchControl: FC<Props> = ({
         <span className='sr-only'>{sr}</span>
         <span
           className={classNames(
-            'inline-block w-4 h-4 transform transition-transform bg-white rounded-full',
+            'inline-block w-4 h-4 transition-transform bg-white rounded-full',
             checked ? 'translate-x-6' : 'translate-x-1',
           )}
         />

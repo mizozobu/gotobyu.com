@@ -17,7 +17,7 @@ export const PageCard: FC<Props> = ({
   <div
     {...props}
     className={classNames(
-      'w-48 h-64 md:w-64 md:h-80 lg:aspect-w-4 lg:aspect-h-5 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-500 bg-gray-50 overflow-hidden',
+      'w-48 md:w-64 aspect-[3/4] rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-500 bg-gray-50 overflow-hidden',
       className,
     )}
   >

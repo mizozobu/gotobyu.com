@@ -1,11 +1,8 @@
-const tailwindcssAspectRatio = require('@tailwindcss/aspect-ratio');
-
 module.exports = {
-  purge: [
+  content: [
     './src/pages/**/*.{js,ts,jsx,tsx,md,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -18,10 +15,4 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {
-      rotate: ['group-hover'],
-    },
-  },
-  plugins: [tailwindcssAspectRatio],
 };

@@ -69,7 +69,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                       <ChevronDownIcon
                         className={classNames(
                           open ? 'text-gray-600 rotate-180' : 'text-gray-400',
-                          'ml-2 h-5 w-5 group-hover:text-gray-500 transform transition-transform',
+                          'ml-2 h-5 w-5 group-hover:text-gray-500 transition-transform',
                         )}
                         aria-hidden='true'
                       />
@@ -87,7 +87,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                     >
                       <Popover.Panel
                         static
-                        className='absolute z-20 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 md:ml-0 md:left-1/2 md:-translate-x-1/2 lg:left-full lg:-translate-x-full'
+                        className='absolute z-20 -ml-4 mt-3 px-2 w-screen max-w-md sm:px-0 md:ml-0 md:left-1/2 md:-translate-x-1/2 lg:left-full lg:-translate-x-full'
                       >
                         {({ close }) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
@@ -101,7 +101,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                                       onClick={() => close()}
                                     >
                                       <Icon
-                                        className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                                        className='shrink-0 h-6 w-6 text-indigo-700'
                                         aria-hidden='true'
                                       />
                                       <div className='ml-4'>
@@ -126,7 +126,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                                       onClick={() => close()}
                                     >
                                       <Icon
-                                        className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                                        className='shrink-0 h-6 w-6 text-indigo-700'
                                         aria-hidden='true'
                                       />
                                       <div className='ml-4'>
@@ -166,7 +166,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                       <ChevronDownIcon
                         className={classNames(
                           open ? 'text-gray-600 rotate-180' : 'text-gray-400',
-                          'ml-2 h-5 w-5 group-hover:text-gray-500 transform transition-transform',
+                          'ml-2 h-5 w-5 group-hover:text-gray-500 transition-transform',
                         )}
                         aria-hidden='true'
                       />
@@ -184,7 +184,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                     >
                       <Popover.Panel
                         static
-                        className='absolute z-20 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 md:ml-0 md:left-full md:-translate-x-full'
+                        className='absolute z-20 -ml-4 mt-3 px-2 w-screen max-w-md sm:px-0 md:ml-0 md:left-full md:-translate-x-full'
                       >
                         {({ close }) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
@@ -198,7 +198,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                                       onClick={() => close()}
                                     >
                                       <Icon
-                                        className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                                        className='shrink-0 h-6 w-6 text-indigo-700'
                                         aria-hidden='true'
                                       />
                                       <div className='ml-4'>
@@ -239,7 +239,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                       <ChevronDownIcon
                         className={classNames(
                           open ? 'text-gray-600 rotate-180' : 'text-gray-400',
-                          'ml-2 h-5 w-5 group-hover:text-gray-500 transform transition-transform',
+                          'ml-2 h-5 w-5 group-hover:text-gray-500 transition-transform',
                         )}
                         aria-hidden='true'
                       />
@@ -271,7 +271,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                                       onClick={() => close()}
                                     >
                                       <Icon
-                                        className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                                        className='shrink-0 h-6 w-6 text-indigo-700'
                                         aria-hidden='true'
                                       />
                                       <div className='ml-4'>
@@ -308,7 +308,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                       <ChevronDownIcon
                         className={classNames(
                           open ? 'text-gray-600 rotate-180' : 'text-gray-400',
-                          'ml-2 h-5 w-5 group-hover:text-gray-500 transform transition-transform',
+                          'ml-2 h-5 w-5 group-hover:text-gray-500 transition-transform',
                         )}
                         aria-hidden='true'
                       />
@@ -340,7 +340,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                                       onClick={() => close()}
                                     >
                                       <Icon
-                                        className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                                        className='shrink-0 h-6 w-6 text-indigo-700'
                                         aria-hidden='true'
                                       />
                                       <div className='ml-4'>
@@ -379,13 +379,10 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
           >
             <Popover.Panel
               static
-              className='fixed z-20 inset-0 p-2 transition transform origin-top-right md:hidden'
+              className='fixed z-20 inset-0 p-2 transition origin-top-right md:hidden'
             >
               {({ close }) => (
-                <div
-                  className='relative py-3 overflow-y-scroll overscroll-contain rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white'
-                  style={{ maxHeight: 'calc(100vh - 1rem)' }}
-                >
+                <div className='relative max-h-[calc(100vh-1rem)] py-3 overflow-y-scroll overscroll-contain rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white'>
                   <div className='p-3'>
                     <Popover.Button className='absolute top-0 right-0 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100'>
                       <span className='sr-only'>Close menu</span>
@@ -401,7 +398,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                             onClick={() => close()}
                           >
                             <Icon
-                              className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                              className='shrink-0 h-6 w-6 text-indigo-700'
                               aria-hidden='true'
                             />
                             <span className='ml-3 text-base font-medium text-gray-900'>
@@ -419,7 +416,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                               onClick={() => close()}
                             >
                               <Icon
-                                className='flex-shrink-0 h-6 w-6 text-indigo-700'
+                                className='shrink-0 h-6 w-6 text-indigo-700'
                                 aria-hidden='true'
                               />
                               <span className='ml-3 text-base font-medium text-gray-900'>
@@ -441,7 +438,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                           onClick={() => close()}
                         >
                           <Icon
-                            className='flex-shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
+                            className='shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
                             aria-hidden='true'
                           />
                           {name}
@@ -457,7 +454,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                           onClick={() => close()}
                         >
                           <Icon
-                            className='flex-shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
+                            className='shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
                             aria-hidden='true'
                           />
                           {name}
@@ -473,7 +470,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                           onClick={() => close()}
                         >
                           <Icon
-                            className='flex-shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
+                            className='shrink-0 h-5 w-5 mr-2 my-1 text-indigo-700'
                             aria-hidden='true'
                           />
                           {name}
