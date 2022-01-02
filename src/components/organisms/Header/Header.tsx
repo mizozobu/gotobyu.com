@@ -367,21 +367,23 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
           </div>
         </div>
 
-        <Transition show={openMobilePopover}>
-          <Transition.Child
-            as={Fragment}
-            enter='duration-200 ease-out'
-            enterFrom='opacity-0 scale-95'
-            enterTo='opacity-100 scale-100'
-            leave='duration-100 ease-in'
-            leaveFrom='opacity-100 scale-100'
-            leaveTo='opacity-0 scale-95'
+        <Transition
+          show={openMobilePopover}
+          as={Fragment}
+          enter='duration-200 ease-out'
+          enterFrom='opacity-0 scale-95'
+          enterTo='opacity-100 scale-100'
+          leave='duration-100 ease-in'
+          leaveFrom='opacity-100 scale-100'
+          leaveTo='opacity-0 scale-95'
+        >
+          <Popover.Panel
+            static
+            className='fixed z-20 inset-0 p-2 transition origin-top-right md:hidden'
           >
-            <Popover.Panel
-              static
-              className='fixed z-20 inset-0 p-2 transition origin-top-right md:hidden'
-            >
-              {({ close }) => (
+            {({ close }) => (
+              <>
+                <Popover.Overlay className='fixed inset-0 bg-black bg-opacity-50' />
                 <div className='relative max-h-[calc(100vh-1rem)] py-3 overflow-y-scroll overscroll-contain rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white'>
                   <div className='p-3'>
                     <Popover.Button className='absolute top-0 right-0 bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100'>
@@ -479,21 +481,9 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                     ))}
                   </div>
                 </div>
-              )}
-            </Popover.Panel>
-          </Transition.Child>
-
-          <Transition.Child
-            as={Fragment}
-            enter='duration-200 ease-out'
-            enterFrom='opacity-0 scale-95'
-            enterTo='opacity-100 scale-100'
-            leave='duration-100 ease-in'
-            leaveFrom='opacity-100 scale-100'
-            leaveTo='opacity-0 scale-95'
-          >
-            <Popover.Overlay className='fixed inset-0 bg-black bg-opacity-50' />
-          </Transition.Child>
+              </>
+            )}
+          </Popover.Panel>
         </Transition>
       </>
     )}
