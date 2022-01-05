@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { EikenTable, Props, data } from './EikenTable';
+import { EikenTable, Props } from './EikenTable';
 
 export default {
   title: 'molecules/EikenTable',
@@ -11,6 +11,4 @@ export default {
 const Template: Story<Props> = (args) => <EikenTable {...args} />;
 
 export const Example = Template.bind({});
-Example.args = {
-  data,
-};
+Example.args = {};

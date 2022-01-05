@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { PTETable, Props, data } from './PTETable';
+import { PTETable, Props } from './PTETable';
 
 export default {
   title: 'molecules/PTETable',
@@ -11,6 +11,4 @@ export default {
 const Template: Story<Props> = (args) => <PTETable {...args} />;
 
 export const Example = Template.bind({});
-Example.args = {
-  data,
-};
+Example.args = {};

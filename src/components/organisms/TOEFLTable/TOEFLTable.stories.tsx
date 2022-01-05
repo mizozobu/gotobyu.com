@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { TOEFLTable, Props, data } from './TOEFLTable';
+import { TOEFLTable, Props } from './TOEFLTable';
 
 export default {
   title: 'molecules/TOEFLTable',
@@ -11,6 +11,4 @@ export default {
 const Template: Story<Props> = (args) => <TOEFLTable {...args} />;
 
 export const Example = Template.bind({});
-Example.args = {
-  data,
-};
+Example.args = {};
