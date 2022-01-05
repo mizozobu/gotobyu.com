@@ -16,7 +16,7 @@ export const data = {
     writing: 520,
     speaking: 520,
     listening: 520,
-    total: undefined,
+    total: 2150,
   },
   byui: {
     reading: undefined,
