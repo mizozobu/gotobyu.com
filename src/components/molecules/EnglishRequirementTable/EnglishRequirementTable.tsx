@@ -4,36 +4,15 @@ import { NextImage } from '@c/atoms/NextImage';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
-import styels from './EnglishRequirementTable.module.css';
+import type { EnglishRequirement } from '@d';
+import styles from './EnglishRequirementTable.module.css';
 
 export interface Props {
-  data: {
-    byu: {
-      reading: number | undefined;
-      writing: number | undefined;
-      speaking: number | undefined;
-      listening: number | undefined;
-      total: number | undefined;
-    };
-    byuh: {
-      reading: number | undefined;
-      writing: number | undefined;
-      speaking: number | undefined;
-      listening: number | undefined;
-      total: number | undefined;
-    };
-    byui: {
-      reading: number | undefined;
-      writing: number | undefined;
-      speaking: number | undefined;
-      listening: number | undefined;
-      total: number | undefined;
-    };
-  };
+  data: EnglishRequirement;
 }
 
 export const EnglishRequirementTable: FC<Props> = ({ data }: Props) => (
-  <Table className={styels['english-requirement-table']}>
+  <Table className={styles['english-requirement-table']}>
     <thead>
       <tr>
         <th scope='col'>{}</th>

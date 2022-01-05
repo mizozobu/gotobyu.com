@@ -1,32 +1,9 @@
 import { FC } from 'react';
 import { EnglishRequirementTable } from '@c/molecules/EnglishRequirementTable';
+import { EIKENData } from '@d';
 
 export interface Props {}
 
-export const data = {
-  byu: {
-    reading: undefined,
-    writing: undefined,
-    speaking: undefined,
-    listening: undefined,
-    total: undefined,
-  },
-  byuh: {
-    reading: 520,
-    writing: 520,
-    speaking: 520,
-    listening: 520,
-    total: 2150,
-  },
-  byui: {
-    reading: undefined,
-    writing: undefined,
-    speaking: undefined,
-    listening: undefined,
-    total: undefined,
-  },
-};
-
 export const EikenTable: FC<Props> = () => (
-  <EnglishRequirementTable data={data} />
+  <EnglishRequirementTable data={EIKENData} />
 );
