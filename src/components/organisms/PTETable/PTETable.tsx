@@ -19,11 +19,11 @@ export const data = {
     total: 44,
   },
   byui: {
-    reading: 47,
-    writing: 47,
-    speaking: 45,
-    listening: 45,
-    total: 46,
+    reading: 67,
+    writing: 55,
+    speaking: 59,
+    listening: 67,
+    total: 62,
   },
 };
 
