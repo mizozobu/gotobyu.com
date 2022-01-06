@@ -47,7 +47,9 @@ export const PhotoViewer: FC<Props> = ({
           {images.map((imageProps) => (
             <div
               key={imageProps.alt}
-              className={classNames('aspect-[3/2] rounded-xl overflow-hidden')}
+              className={classNames(
+                'relative aspect-[3/2] rounded-xl overflow-hidden',
+              )}
             >
               <Image {...imageProps} />
             </div>
