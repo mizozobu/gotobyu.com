@@ -10,7 +10,7 @@ import { Footer } from '@c/organisms/Footer';
 import ScrollIntoView from '@c/atoms/ScrollIntoView';
 import CopiedDialog from '@c/organisms/CopiedDialog';
 import { GTM_ID, pageview } from '@l/gtm';
-import { hydrateAtoms, RecoilProps } from '@l/recoil';
+import { RecoilHydrate, RecoilProps } from '@l/recoil';
 import { MDX } from '@l/mdx';
 import '~/styles/globals.css';
 
@@ -32,10 +32,11 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   }, [router.events]);
 
   return (
-    <RecoilRoot
-      // eslint-disable-next-line no-underscore-dangle
-      initializeState={hydrateAtoms(pageProps._recoil as RecoilProps)}
-    >
+    <RecoilRoot>
+      <RecoilHydrate
+        // eslint-disable-next-line no-underscore-dangle
+        recoilProps={(pageProps._recoil as Partial<RecoilProps>) ?? {}}
+      />
       <Head>
         {/* define defult title here until https://github.com/garmeeh/next-seo/pull/832 is merged */}
         {/* eslint-disable-next-line @next/next/no-title-in-document-head */}

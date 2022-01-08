@@ -1,7 +1,14 @@
-import type { MutableSnapshot } from 'recoil';
+import { FC, HTMLAttributes } from 'react';
+// eslint-disable-next-line camelcase
+import { useRecoilTransaction_UNSTABLE, RecoilState } from 'recoil';
 import type { GetStaticPropsResult, Redirect } from 'next';
 import { AtomRegistry } from './recoil.constants';
-import type { AtomKey, AtomState, RecoilProps } from './recoil.interface';
+import type {
+  AtomKey,
+  AtomState,
+  AtomStatePlain,
+  RecoilProps,
+} from './recoil.interface';
 
 /**
  * store for atoms on server side
@@ -69,21 +76,43 @@ export class AtomStore {
 }
 
 /**
+ * get atom from AtomRegistry by key
+ *
+ * @param key
+ * @returns atom
+ */
+export const getAtomByKey = (key: AtomKey): RecoilState<AtomStatePlain> =>
+  AtomRegistry[key] as RecoilState<AtomStatePlain>;
+
+/**
+ * prop type for RecoilHydrate
+ */
+export interface Props extends HTMLAttributes<HTMLLIElement> {
+  recoilProps: Partial<RecoilProps>;
+}
+
+/**
  * receive recoil state plain object from withRecoil and init atoms on client side
  *
- * @param pageProps
+ * @param props
+ * @returns null
  */
-export const hydrateAtoms =
-  (recoilProps: Partial<RecoilProps> = {}) =>
-  ({ set }: MutableSnapshot) => {
-    Object.entries(recoilProps).forEach(([atomKey, atomState]) => {
-      const atom = AtomRegistry[atomKey as AtomKey];
-      // igonre type error until MutableSnapshot accepts generics
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      set(atom, (prevState) => ({
-        ...prevState,
-        ...atomState,
-      }));
-    });
-  };
+export const RecoilHydrate: FC<Props> = ({ recoilProps }: Props) => {
+  const hydrate = useRecoilTransaction_UNSTABLE(
+    ({ set }) =>
+      () => {
+        Object.entries(recoilProps).forEach(([atomKey, atomState]) => {
+          const atom = getAtomByKey(atomKey as AtomKey);
+          set(atom, (prevState) => ({
+            ...prevState,
+            ...atomState,
+          }));
+        });
+      },
+    [recoilProps],
+  );
+
+  hydrate();
+
+  return null;
+};
