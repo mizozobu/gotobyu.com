@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Strong } from '@c/atoms/Strong';
-import { Table } from '@c/atoms/Table';
+import { Strong } from '@cmp/atoms/Strong';
+import { Table } from '@cmp/atoms/Table';
 import type { ApplicationDeadline } from '@d';
 
 export interface Props {

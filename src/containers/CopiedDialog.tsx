@@ -4,7 +4,7 @@ import { urlState } from '@s/url';
 import {
   CopiedDialog as _CopiedDialog,
   Props as CopiedDialogProps,
-} from '@c/organisms/CopiedDialog';
+} from '@cmp/organisms/CopiedDialog';
 
 export interface Props extends Omit<CopiedDialogProps, 'isOpen' | 'onClose'> {}
 

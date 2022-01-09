@@ -3,9 +3,9 @@ import {
   BarChart,
   Props as BarChartProps,
   defaultOptions,
-} from '@c/molecules/BarChart';
-import { Footnote } from '@c/atoms/Footnote';
-import { SwitchControl } from '@c/molecules/SwitchControl';
+} from '@cmp/molecules/BarChart';
+import { Footnote } from '@cmp/atoms/Footnote';
+import { SwitchControl } from '@cmp/molecules/SwitchControl';
 import { Forex } from '@l/forex';
 import { MDX } from '@l/mdx';
 import { TUITION } from '@d';

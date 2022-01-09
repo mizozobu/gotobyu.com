@@ -4,7 +4,7 @@ import { forexState } from '@s/forex';
 import {
   TuitionBarChart as _TuitionBarChart,
   Props as TuitionBarChartProps,
-} from '@c/organisms/TuitionBarChart';
+} from '@cmp/organisms/TuitionBarChart';
 
 export interface Props extends Omit<TuitionBarChartProps, 'rate'> {}
 

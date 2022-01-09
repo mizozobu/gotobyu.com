@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { MailIcon, LinkIcon } from '@heroicons/react/outline';
-import { BorderDraw } from '@c/atoms/BorderDraw';
-import { FacebookIcon } from '@c/atoms/FacebookIcon';
+import { BorderDraw } from '@cmp/atoms/BorderDraw';
+import { FacebookIcon } from '@cmp/atoms/FacebookIcon';
 
 export interface Props {}
 

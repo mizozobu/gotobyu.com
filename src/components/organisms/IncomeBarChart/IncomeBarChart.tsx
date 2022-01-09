@@ -3,7 +3,7 @@ import {
   BarChart,
   Props as BarChartProps,
   defaultOptions,
-} from '@c/molecules/BarChart';
+} from '@cmp/molecules/BarChart';
 
 export interface Props extends Omit<BarChartProps, 'data' | 'title'> {}
 

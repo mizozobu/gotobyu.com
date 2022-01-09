@@ -4,7 +4,7 @@ import { urlState } from '@s/url';
 import {
   SectionTitle as _SectionTitle,
   Props as SectionTitleProps,
-} from '@c/molecules/SectionTitle';
+} from '@cmp/molecules/SectionTitle';
 
 export interface Props extends Omit<SectionTitleProps, 'active'> {
   id: string;

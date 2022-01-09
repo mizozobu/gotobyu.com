@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { EnglishRequirementTable } from '@c/molecules/EnglishRequirementTable';
+import { EnglishRequirementTable } from '@cmp/molecules/EnglishRequirementTable';
 import { EIKEN_REQUIREMENT } from '@d';
 
 export interface Props {}

@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"],
-      "@c/*": ["src/components/*"],
+      "@cmp/*": ["src/components/*"],
       "@cnt/*": ["src/containers/*"],
       "@d": ["src/data"],
       "@d/*": ["src/data/*"],

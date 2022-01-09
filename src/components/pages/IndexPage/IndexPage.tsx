@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import { H2 } from '@c/atoms/H2';
-import { NextImage } from '@c/atoms/NextImage';
-import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
-import { PageCard } from '@c/molecules/PageCard';
-import { SchoolCard } from '@c/molecules/SchoolCard';
-import { TypingEffect } from '@c/molecules/TypingEffect';
+import { H2 } from '@cmp/atoms/H2';
+import { NextImage } from '@cmp/atoms/NextImage';
+import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
+import { PageCard } from '@cmp/molecules/PageCard';
+import { SchoolCard } from '@cmp/molecules/SchoolCard';
+import { TypingEffect } from '@cmp/molecules/TypingEffect';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';

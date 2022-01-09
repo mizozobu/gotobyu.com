@@ -1,10 +1,10 @@
 import { useState, FC } from 'react';
-import { Table } from '@c/atoms/Table';
-import { TableCaption } from '@c/atoms/TableCaption';
-import { Digit } from '@c/atoms/Digit';
-import { Footnote } from '@c/atoms/Footnote';
-import { NextImage } from '@c/atoms/NextImage';
-import { SwitchControl } from '@c/molecules/SwitchControl';
+import { Table } from '@cmp/atoms/Table';
+import { TableCaption } from '@cmp/atoms/TableCaption';
+import { Digit } from '@cmp/atoms/Digit';
+import { Footnote } from '@cmp/atoms/Footnote';
+import { NextImage } from '@cmp/atoms/NextImage';
+import { SwitchControl } from '@cmp/molecules/SwitchControl';
 import { Forex } from '@l/forex';
 import { MDX } from '@l/mdx';
 import byuLogoImage from '@p/byu/byu-logo.png';

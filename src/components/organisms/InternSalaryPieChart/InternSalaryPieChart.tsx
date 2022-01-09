@@ -1,5 +1,5 @@
 import { memo, FC } from 'react';
-import { PieChart, Props as PieChartProps } from '@c/molecules/PieChart';
+import { PieChart, Props as PieChartProps } from '@cmp/molecules/PieChart';
 
 export interface Props extends Omit<PieChartProps, 'data' | 'title'> {}
 

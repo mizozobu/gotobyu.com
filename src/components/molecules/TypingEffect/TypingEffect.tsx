@@ -1,5 +1,5 @@
 import { useState, FC } from 'react';
-import { Type, Props as TypeProps } from '@c/atoms/Type';
+import { Type, Props as TypeProps } from '@cmp/atoms/Type';
 
 export interface Props extends Omit<TypeProps, 'children'> {
   children: string[];

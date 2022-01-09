@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { IndexPage } from '@c/pages/IndexPage';
-import { Seo } from '@c/organisms/Seo';
+import { IndexPage } from '@cmp/pages/IndexPage';
+import { Seo } from '@cmp/organisms/Seo';
 import { INDEX_PAGE_META } from '@d';
 
 export interface Props {}

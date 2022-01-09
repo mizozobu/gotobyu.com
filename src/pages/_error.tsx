@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
-import { ErrorPage } from '@c/pages/ErrorPage';
-import { Seo } from '@c/organisms/Seo';
+import { ErrorPage } from '@cmp/pages/ErrorPage';
+import { Seo } from '@cmp/organisms/Seo';
 
 export interface Props {
   statusCode?: number;

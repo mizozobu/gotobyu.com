@@ -1,12 +1,12 @@
 import dynamic from 'next/dynamic';
-import { Seo } from '@c/organisms/Seo';
-import { UlCol } from '@c/atoms/UlCol';
-import { Footnote } from '@c/atoms/Footnote';
+import { Seo } from '@cmp/organisms/Seo';
+import { UlCol } from '@cmp/atoms/UlCol';
+import { Footnote } from '@cmp/atoms/Footnote';
 import { INTERNSHIP_PAGE_META } from '@d';
 import { MDX } from '@l/mdx';
 
 export const InternSalaryPieChart = dynamic(
-  () => import('@c/organisms/InternSalaryPieChart').then(({ InternSalaryPieChart }) => InternSalaryPieChart),
+  () => import('@cmp/organisms/InternSalaryPieChart').then(({ InternSalaryPieChart }) => InternSalaryPieChart),
 );
 
 <Seo

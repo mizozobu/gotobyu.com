@@ -6,7 +6,7 @@ import Script from 'next/script';
 import { MDXProvider } from '@mdx-js/react';
 import { RecoilRoot } from 'recoil';
 import { Header } from '@cnt//Header';
-import { Footer } from '@c/organisms/Footer';
+import { Footer } from '@cmp/organisms/Footer';
 import { ScrollIntoView } from '@cnt/ScrollIntoView';
 import { CopiedDialog } from '@cnt/CopiedDialog';
 import { GTM_ID, pageview } from '@l/gtm';

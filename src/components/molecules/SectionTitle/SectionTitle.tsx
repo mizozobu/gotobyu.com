@@ -1,7 +1,7 @@
 import { memo, FC, HTMLAttributes, MouseEventHandler } from 'react';
 import Link from 'next/link';
 import { LinkIcon } from '@heroicons/react/outline';
-import { H2 } from '@c/atoms/H2';
+import { H2 } from '@cmp/atoms/H2';
 import styles from './SectionTitle.module.css';
 
 export interface Props

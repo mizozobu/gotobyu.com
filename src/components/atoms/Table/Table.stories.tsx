@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { TableCaption } from '@c/atoms/TableCaption';
+import { TableCaption } from '@cmp/atoms/TableCaption';
 import { Table, Props } from './Table';
 
 export default {

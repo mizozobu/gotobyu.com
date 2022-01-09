@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { BgRotate } from '@c/atoms/BgRotate';
+import { BgRotate } from '@cmp/atoms/BgRotate';
 
 export interface Props {
   className?: string;

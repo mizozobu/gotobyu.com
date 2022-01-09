@@ -4,7 +4,7 @@ import { forexState } from '@s/forex';
 import {
   CostTable as _CostTable,
   Props as CostTableProps,
-} from '@c/organisms/CostTable';
+} from '@cmp/organisms/CostTable';
 
 export interface Props extends Omit<CostTableProps, 'forex'> {}
 

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
+import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
 import { MDX } from '@l/mdx';
 
 export interface Props {

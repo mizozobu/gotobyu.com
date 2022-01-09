@@ -9,7 +9,7 @@ import {
   XIcon,
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
-import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
+import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
 import {
   SCHOOL_LINKS,
   ADDITIONAL_SCHOOL_LINKS,
