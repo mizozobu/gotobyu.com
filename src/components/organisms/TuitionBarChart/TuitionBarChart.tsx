@@ -14,44 +14,6 @@ export interface Props extends Omit<BarChartProps, 'data' | 'title'> {
   forex: Forex;
 }
 
-const data = {
-  labels: ['BYU', 'BYUH', 'BYUI', '日本国立', '日本私立', 'US国立', 'US私立'],
-  datasets: [
-    {
-      data: [
-        TUITION.byu,
-        TUITION.byuh,
-        TUITION.byui,
-        TUITION.jpKokuritsu,
-        TUITION.jpShiritsu,
-        TUITION.usPublic,
-        TUITION.usPrivate,
-      ],
-      backgroundColor: [
-        'rgba(0, 46, 93, 1)',
-        'rgba(158, 27, 52, 1)',
-        'rgba(0, 118, 182, 1)',
-        'rgba(55, 48, 163, 0.2)',
-        'rgba(55, 48, 163, 0.2)',
-        'rgba(55, 48, 163, 0.2)',
-        'rgba(55, 48, 163, 0.2)',
-        'rgba(55, 48, 163, 0.2)',
-      ],
-      borderColor: [
-        'rgba(0, 46, 93, 1)',
-        'rgba(158, 27, 52, 1)',
-        'rgba(0, 118, 182, 1)',
-        'rgba(55, 48, 163, 1)',
-        'rgba(55, 48, 163, 1)',
-        'rgba(55, 48, 163, 1)',
-        'rgba(55, 48, 163, 1)',
-        'rgba(55, 48, 163, 1)',
-      ],
-      borderWidth: 1,
-    },
-  ],
-};
-
 export const TuitionBarChart: FC<Props> = memo(({ forex, ...props }: Props) => {
   const [isJPY, setIsJPY] = useState(true);
   const [isLDS, setIsLDS] = useState(true);
@@ -79,19 +41,47 @@ export const TuitionBarChart: FC<Props> = memo(({ forex, ...props }: Props) => {
         {...props}
         title={`年間学費(${isJPY ? '円' : 'ドル'})`}
         data={{
-          ...data,
+          labels: [
+            'BYU',
+            'BYUH',
+            'BYUI',
+            '日本国立',
+            '日本私立',
+            'US国立',
+            'US私立',
+          ],
           datasets: [
             {
-              ...data.datasets[0],
               data: [
                 TUITION.byu * multiplier * ldsRate,
                 TUITION.byuh * multiplier * ldsRate,
                 TUITION.byui * multiplier * ldsRate,
-                TUITION.jpKokuritsu * multiplier,
-                TUITION.jpShiritsu * multiplier,
+                (TUITION.jpKokuritsu / forex.exrate) * multiplier,
+                (TUITION.jpShiritsu / forex.exrate) * multiplier,
                 TUITION.usPublic * multiplier,
                 TUITION.usPrivate * multiplier,
               ],
+              backgroundColor: [
+                'rgba(0, 46, 93, 1)',
+                'rgba(158, 27, 52, 1)',
+                'rgba(0, 118, 182, 1)',
+                'rgba(55, 48, 163, 0.2)',
+                'rgba(55, 48, 163, 0.2)',
+                'rgba(55, 48, 163, 0.2)',
+                'rgba(55, 48, 163, 0.2)',
+                'rgba(55, 48, 163, 0.2)',
+              ],
+              borderColor: [
+                'rgba(0, 46, 93, 1)',
+                'rgba(158, 27, 52, 1)',
+                'rgba(0, 118, 182, 1)',
+                'rgba(55, 48, 163, 1)',
+                'rgba(55, 48, 163, 1)',
+                'rgba(55, 48, 163, 1)',
+                'rgba(55, 48, 163, 1)',
+                'rgba(55, 48, 163, 1)',
+              ],
+              borderWidth: 1,
             },
           ],
         }}

@@ -68,15 +68,15 @@ export const TUITION = {
    */
   byui: COST_OF_ATTENDACE.byui.tuition * 2,
   /**
-   * JP kokuritsu school cost in USD
+   * JP kokuritsu school cost in JPY
    * see https://www.mext.go.jp/a_menu/koutou/shinkou/07021403/__icsFiles/afieldfile/2017/12/26/1399613_03.pdf
    */
-  jpKokuritsu: 535800 / 110,
+  jpKokuritsu: 535800,
   /**
-   * JP shiritsu school cost in USD
+   * JP shiritsu school cost in JPY
    * see https://www.mext.go.jp/a_menu/koutou/shinkou/07021403/__icsFiles/afieldfile/2017/12/26/1399613_03.pdf
    */
-  jpShiritsu: 877735 / 110,
+  jpShiritsu: 877735,
   /**
    * US public school cost in USD
    * see https://nces.ed.gov/fastfacts/display.asp?id=76
