@@ -1,11 +1,11 @@
 import { useEffect, useState, FC } from 'react';
 import { useRouter } from 'next/router';
 import { useScrollDirection, ScrollDirection } from '@l/ScrollDirection';
-import { Header, Props as HeaderProps } from './Header';
+import { Header as _Header, Props as HeaderProps } from '@c/organisms/Header';
 
 export interface Props extends Omit<HeaderProps, 'show' | 'loading'> {}
 
-const HeaderContainer: FC<Props> = () => {
+export const Header: FC<Props> = () => {
   const [loading, setLoading] = useState(false);
   const scrollDirectionY = useScrollDirection({ threshold: 50 });
   const router = useRouter();
@@ -28,8 +28,6 @@ const HeaderContainer: FC<Props> = () => {
   }, [router.events]);
 
   return (
-    <Header show={scrollDirectionY === ScrollDirection.up} loading={loading} />
+    <_Header show={scrollDirectionY === ScrollDirection.up} loading={loading} />
   );
 };
-
-export default HeaderContainer;

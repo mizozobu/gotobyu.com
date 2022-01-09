@@ -1,18 +1,17 @@
 import { useCallback, FC } from 'react';
 import { useRecoilState } from 'recoil';
 import { urlState } from '@s/url';
-import { SectionTitle, Props as SectionTitleProps } from './SectionTitle';
+import {
+  SectionTitle as _SectionTitle,
+  Props as SectionTitleProps,
+} from '@c/molecules/SectionTitle';
 
 export interface Props extends Omit<SectionTitleProps, 'active'> {
   id: string;
   children: string;
 }
 
-const SectionTitleContainer: FC<Props> = ({
-  id,
-  children,
-  ...props
-}: Props) => {
+export const SectionTitle: FC<Props> = ({ id, children, ...props }: Props) => {
   const [{ hash }, setUrlState] = useRecoilState(urlState);
 
   const handleClick = useCallback(() => {
@@ -28,10 +27,13 @@ const SectionTitleContainer: FC<Props> = ({
   }, [id, setUrlState]);
 
   return (
-    <SectionTitle {...props} id={id} active={hash === id} onClick={handleClick}>
+    <_SectionTitle
+      {...props}
+      id={id}
+      active={hash === id}
+      onClick={handleClick}
+    >
       {children}
-    </SectionTitle>
+    </_SectionTitle>
   );
 };
-
-export default SectionTitleContainer;

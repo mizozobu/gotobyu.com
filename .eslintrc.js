@@ -157,9 +157,6 @@ module.exports = {
         // allow default export for container components
         'no-restricted-exports': 'off',
 
-        // allow importing default exported XxxContainer as Xxx
-        'import/no-named-as-default': 'off',
-
         // allow named exports without default export
         'import/prefer-default-export': 'off',
 

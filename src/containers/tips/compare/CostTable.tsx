@@ -1,14 +1,15 @@
 import { FC } from 'react';
 import { useRecoilValue } from 'recoil';
 import { forexState } from '@s/forex';
-import { CostTable, Props as CostTableProps } from './CostTable';
+import {
+  CostTable as _CostTable,
+  Props as CostTableProps,
+} from '@c/organisms/CostTable';
 
 export interface Props extends Omit<CostTableProps, 'forex'> {}
 
-const CostTableContainer: FC<Props> = (props: Props) => {
+export const CostTable: FC<Props> = (props: Props) => {
   const forex = useRecoilValue(forexState);
 
-  return <CostTable {...props} forex={forex} />;
+  return <_CostTable {...props} forex={forex} />;
 };
-
-export default CostTableContainer;

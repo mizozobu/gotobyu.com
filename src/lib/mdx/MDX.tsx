@@ -1,7 +1,7 @@
 import { FC, AnchorHTMLAttributes } from 'react';
 import type { Required } from 'utility-types';
 import { H1 } from '@c/atoms/H1';
-import SectionTitle from '@c/molecules/SectionTitle';
+import { SectionTitle } from '@cnt/SectionTitle';
 import { H3 } from '@c/atoms/H3';
 import { P } from '@c/atoms/P';
 import { ExternalLink } from '@c/atoms/ExternalLink';

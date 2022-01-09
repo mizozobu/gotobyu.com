@@ -1,11 +1,14 @@
 import { useEffect, useCallback, FC } from 'react';
 import { useRecoilState } from 'recoil';
 import { urlState } from '@s/url';
-import { CopiedDialog, Props as CopiedDialogProps } from './CopiedDialog';
+import {
+  CopiedDialog as _CopiedDialog,
+  Props as CopiedDialogProps,
+} from '@c/organisms/CopiedDialog';
 
 export interface Props extends Omit<CopiedDialogProps, 'isOpen' | 'onClose'> {}
 
-const CopiedDialogContainer: FC<Props> = (props: Props) => {
+export const CopiedDialog: FC<Props> = (props: Props) => {
   const [{ showCopiedModal }, setIsOpen] = useRecoilState(urlState);
 
   const closeDialog = useCallback(() => {
@@ -21,8 +24,6 @@ const CopiedDialogContainer: FC<Props> = (props: Props) => {
   }, [showCopiedModal, closeDialog]);
 
   return (
-    <CopiedDialog {...props} isOpen={showCopiedModal} onClose={closeDialog} />
+    <_CopiedDialog {...props} isOpen={showCopiedModal} onClose={closeDialog} />
   );
 };
-
-export default CopiedDialogContainer;

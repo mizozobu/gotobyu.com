@@ -7,7 +7,7 @@ export interface Props {}
 
 // this is a non-UI compoenent.
 // can't find a good component to put this logic.
-const ScrollIntoViewContainer: FC<Props> = () => {
+export const ScrollIntoView: FC<Props> = () => {
   const setUrlState = useSetRecoilState(urlState);
   const router = useRouter();
   const hash = decodeURIComponent(router.asPath.split('#')[1]);
@@ -27,5 +27,3 @@ const ScrollIntoViewContainer: FC<Props> = () => {
 
   return null;
 };
-
-export default ScrollIntoViewContainer;
