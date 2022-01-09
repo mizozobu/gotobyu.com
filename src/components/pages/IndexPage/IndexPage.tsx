@@ -9,7 +9,12 @@ import { TypingEffect } from '@c/molecules/TypingEffect';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
-import { AdditionalSchoolLinks, ApplyLinks, CareerLinks, OtherLinks } from '@d';
+import {
+  ADDITIONAL_SCHOOL_LINKS,
+  APPLY_LINKS,
+  CAREER_LINKS,
+  OTHER_LINKS,
+} from '@d';
 
 export interface Props {}
 
@@ -102,10 +107,10 @@ export const IndexPage: FC<Props> = () => (
       </H2>
       <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:gap-y-10 lg:justify-items-center px-6 lg:px-0 py-10 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
         {[
-          ...AdditionalSchoolLinks,
-          ...ApplyLinks,
-          ...CareerLinks,
-          OtherLinks[0],
+          ...ADDITIONAL_SCHOOL_LINKS,
+          ...APPLY_LINKS,
+          ...CAREER_LINKS,
+          OTHER_LINKS[0],
         ].map(({ name, href, detail, icon: Icon }) => (
           <Link key={name} href={href}>
             <a className='rounded-xl'>

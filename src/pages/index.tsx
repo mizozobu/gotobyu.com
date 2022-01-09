@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IndexPage } from '@c/pages/IndexPage';
 import { Seo } from '@c/organisms/Seo';
-import { IndexPageMeta } from '@d';
+import { INDEX_PAGE_META } from '@d';
 
 export interface Props {}
 
@@ -9,12 +9,12 @@ export interface Props {}
 const _IndexPage: FC<Props> = () => (
   <>
     <Seo
-      title={IndexPageMeta.title}
-      description={IndexPageMeta.description}
+      title={INDEX_PAGE_META.title}
+      description={INDEX_PAGE_META.description}
       openGraph={{
         type: 'website',
-        title: IndexPageMeta.title,
-        description: IndexPageMeta.description,
+        title: INDEX_PAGE_META.title,
+        description: INDEX_PAGE_META.description,
       }}
     />
 

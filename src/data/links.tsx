@@ -12,6 +12,9 @@ import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
 
+/**
+ * type for page meta data
+ */
 export interface PageMeta {
   name: string;
   detail: string;
@@ -21,14 +24,20 @@ export interface PageMeta {
   icon: FC<{ className?: string }>;
 }
 
-export const IndexPageMeta: Omit<PageMeta, 'name' | 'detail' | 'icon'> = {
+/**
+ * index page meda data
+ */
+export const INDEX_PAGE_META: Omit<PageMeta, 'name' | 'detail' | 'icon'> = {
   title: undefined, // use default title
   description:
     'BYU、BYUH、BYUIへの入学を考えている方に向けて、在学生と卒業生が入学前に知っておきたかった情報をまとめました。専攻、費用、アルバイト、奨学金、入学手続き、BYU3校の比較、英語の勉強方法、卒業後のキャリアなどについて紹介しています。',
   href: '/',
 };
 
-export const BYUPageMeta: PageMeta = {
+/**
+ * byu page meda data
+ */
+export const BYU_PAGE_META: PageMeta = {
   name: 'Brigham Young University',
   detail:
     '専攻、衣住食、レクリエーション、クラブ、アルバイト、奨学金などのBYUの情報',
@@ -48,7 +57,10 @@ export const BYUPageMeta: PageMeta = {
   ),
 };
 
-export const BYUHPageMeta: PageMeta = {
+/**
+ * byuh page meda data
+ */
+export const BYUH_PAGE_META: PageMeta = {
   name: 'Brigham Young University–Hawaii',
   detail:
     '専攻、衣住食、レクリエーション、クラブ、アルバイト、奨学金などのBYUHの情報',
@@ -68,7 +80,10 @@ export const BYUHPageMeta: PageMeta = {
   ),
 };
 
-export const BYUIPageMeta: PageMeta = {
+/**
+ * byui page meda data
+ */
+export const BYUI_PAGE_META: PageMeta = {
   name: 'Brigham Young University - Idaho',
   detail:
     '専攻、衣住食、レクリエーション、クラブ、アルバイト、奨学金などのBYUIの情報',
@@ -88,7 +103,10 @@ export const BYUIPageMeta: PageMeta = {
   ),
 };
 
-export const ComparePageMeta: PageMeta = {
+/**
+ * compare page meda data
+ */
+export const COMPARE_PAGE_META: PageMeta = {
   name: 'BYU3校の比較',
   detail: 'BYU、BYUH、BYUIを必要な英語力や費用の面から数字で比較',
   title: 'BYU、BYUH、BYUIの比較',
@@ -98,7 +116,10 @@ export const ComparePageMeta: PageMeta = {
   icon: ScaleIcon,
 };
 
-export const ApplyPageMeta: PageMeta = {
+/**
+ * apply page meda data
+ */
+export const APPLY_PAGE_META: PageMeta = {
   name: '入学手続き',
   detail: 'BYU、BYUH、BYUIへの入学手続き',
   title: '入学手続き',
@@ -108,7 +129,10 @@ export const ApplyPageMeta: PageMeta = {
   icon: MailOpenIcon,
 };
 
-export const LearnEnglishPageMeta: PageMeta = {
+/**
+ * learn english page meda data
+ */
+export const LEARN_ENGLISH_PAGE_META: PageMeta = {
   name: '英語の勉強方法',
   detail: 'BYU、BYUH、BYUIへの入学基準を満たすための英語の勉強方法',
   title: '英語の勉強方法',
@@ -118,7 +142,10 @@ export const LearnEnglishPageMeta: PageMeta = {
   icon: BookOpenIcon,
 };
 
-export const CareerPageMeta: PageMeta = {
+/**
+ * career page meda data
+ */
+export const CAREER_PAGE_META: PageMeta = {
   name: '就職',
   detail: 'BYU、BYUH、BYUI卒業生の就職先と年収',
   title: '就職',
@@ -128,7 +155,10 @@ export const CareerPageMeta: PageMeta = {
   icon: OfficeBuildingIcon,
 };
 
-export const InternshipPageMeta: PageMeta = {
+/**
+ * internship page meda data
+ */
+export const INTERNSHIP_PAGE_META: PageMeta = {
   name: 'インターンシップ',
   detail: 'BYU、BYUH、BYUIの学生のインターンシップ先と給与',
   title: 'インターンシップ',
@@ -138,7 +168,10 @@ export const InternshipPageMeta: PageMeta = {
   icon: PresentationChartBarIcon,
 };
 
-export const AboutPageMeta: PageMeta = {
+/**
+ * about page meda data
+ */
+export const ABOUT_PAGE_META: PageMeta = {
   name: '運営者について',
   detail: 'このウェブサイトを運営するBYU Management Society Tokyo Chapterとは',
   title: '運営者について',
@@ -148,12 +181,27 @@ export const AboutPageMeta: PageMeta = {
   icon: UserGroupIcon,
 };
 
-export const SchoolLinks = [BYUPageMeta, BYUHPageMeta, BYUIPageMeta];
+/**
+ * links in school category
+ */
+export const SCHOOL_LINKS = [BYU_PAGE_META, BYUH_PAGE_META, BYUI_PAGE_META];
 
-export const AdditionalSchoolLinks = [ComparePageMeta];
+/**
+ * links in additional school category
+ */
+export const ADDITIONAL_SCHOOL_LINKS = [COMPARE_PAGE_META];
 
-export const ApplyLinks = [ApplyPageMeta, LearnEnglishPageMeta];
+/**
+ * links in apply category
+ */
+export const APPLY_LINKS = [APPLY_PAGE_META, LEARN_ENGLISH_PAGE_META];
 
-export const CareerLinks = [CareerPageMeta, InternshipPageMeta];
+/**
+ * links in career category
+ */
+export const CAREER_LINKS = [CAREER_PAGE_META, INTERNSHIP_PAGE_META];
 
-export const OtherLinks = [AboutPageMeta];
+/**
+ * links in other category
+ */
+export const OTHER_LINKS = [ABOUT_PAGE_META];

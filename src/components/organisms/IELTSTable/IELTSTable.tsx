@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { EnglishRequirementTable } from '@c/molecules/EnglishRequirementTable';
-import { IELTSData } from '@d';
+import { IELTS_REQUIREMENT } from '@d';
 
 export interface Props {}
 
 export const IELTSTable: FC<Props> = () => (
-  <EnglishRequirementTable data={IELTSData} />
+  <EnglishRequirementTable data={IELTS_REQUIREMENT} />
 );

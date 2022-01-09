@@ -1,32 +1,23 @@
-// https://enrollment.byu.edu/admissions/english-proficiency-requirement
-// https://hookele.byuh.edu/admissions/english-test-requirements
-// https://www.byui.edu/admissions/apply/international-students/english-requirements
+import type { SchoolDataCollection } from './school';
 
+/**
+ * type for English requirement
+ */
 export interface EnglishRequirement {
-  byu: {
-    reading: number | undefined;
-    writing: number | undefined;
-    speaking: number | undefined;
-    listening: number | undefined;
-    total: number | undefined;
-  };
-  byuh: {
-    reading: number | undefined;
-    writing: number | undefined;
-    speaking: number | undefined;
-    listening: number | undefined;
-    total: number | undefined;
-  };
-  byui: {
-    reading: number | undefined;
-    writing: number | undefined;
-    speaking: number | undefined;
-    listening: number | undefined;
-    total: number | undefined;
-  };
+  reading: number | undefined;
+  writing: number | undefined;
+  speaking: number | undefined;
+  listening: number | undefined;
+  total: number | undefined;
 }
 
-export const TOEFLData: EnglishRequirement = {
+/**
+ * TOEFL requirement
+ * see https://enrollment.byu.edu/admissions/english-proficiency-requirement
+ * see https://hookele.byuh.edu/admissions/english-test-requirements
+ * see https://www.byui.edu/admissions/apply/international-students/english-requirements
+ */
+export const TOEFL_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {
     reading: 20,
     writing: 20,
@@ -50,7 +41,13 @@ export const TOEFLData: EnglishRequirement = {
   },
 };
 
-export const IELTSData: EnglishRequirement = {
+/**
+ * IELTS requirement
+ * see https://enrollment.byu.edu/admissions/english-proficiency-requirement
+ * see https://hookele.byuh.edu/admissions/english-test-requirements
+ * see https://www.byui.edu/admissions/apply/international-students/english-requirements
+ */
+export const IELTS_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {
     reading: 6,
     writing: 6,
@@ -74,7 +71,13 @@ export const IELTSData: EnglishRequirement = {
   },
 };
 
-export const PTEdata: EnglishRequirement = {
+/**
+ * PTE requirement
+ * see https://enrollment.byu.edu/admissions/english-proficiency-requirement
+ * see https://hookele.byuh.edu/admissions/english-test-requirements
+ * see https://www.byui.edu/admissions/apply/international-students/english-requirements
+ */
+export const PTE_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {
     reading: 49,
     writing: 49,
@@ -98,7 +101,13 @@ export const PTEdata: EnglishRequirement = {
   },
 };
 
-export const EIKENData: EnglishRequirement = {
+/**
+ * EIKEN requirement
+ * see https://enrollment.byu.edu/admissions/english-proficiency-requirement
+ * see https://hookele.byuh.edu/admissions/english-test-requirements
+ * see https://www.byui.edu/admissions/apply/international-students/english-requirements
+ */
+export const EIKEN_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {
     reading: undefined,
     writing: undefined,

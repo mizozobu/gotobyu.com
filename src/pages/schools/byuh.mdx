@@ -4,7 +4,7 @@ import { Pane } from '@c/atoms/Pane';
 import { NextImage } from '@c/atoms/NextImage';
 import { Digit } from '@c/atoms/Digit';
 import { PhotoViewer } from '@c/molecules/PhotoViewer';
-import { BYUHPageMeta, SchoolData } from '@d';
+import { BYUH_PAGE_META, SCHOOL_INFO } from '@d';
 import { MDX } from '@l/mdx';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuhBbqImage from '@p/byuh/byuh-japan-student-chapter-bbq.jpg';
@@ -17,12 +17,12 @@ import byuhLuauImage from '@p/byuh/pcc-luau.jpg';
 import byuhResumeWorkshopImage from '@p/byuh/byuh-japan-student-chapter-resume-workshop.jpg';
 
 <Seo
-  title={BYUHPageMeta.title}
-  description={BYUHPageMeta.description}
+  title={BYUH_PAGE_META.title}
+  description={BYUH_PAGE_META.description}
   openGraph={{
     type: 'article',
-    title: BYUHPageMeta.title,
-    description: BYUHPageMeta.description,
+    title: BYUH_PAGE_META.title,
+    description: BYUH_PAGE_META.description,
   }}
 />
 
@@ -51,10 +51,10 @@ import byuhResumeWorkshopImage from '@p/byuh/byuh-japan-student-chapter-resume-w
           ハワイ州ライエ
         </MDX.a>
       </MDX.li>
-      <MDX.li><span className='font-bold'>合格率</span>: <Digit>{SchoolData.byuh.acceptanceRate * 100}</Digit>%</MDX.li>
-      <MDX.li><span className='font-bold'>学生数</span>: <Digit>{SchoolData.byuh.numberOfStudents}</Digit></MDX.li>
-      <MDX.li><span className='font-bold'>専攻数</span>: <Digit>{SchoolData.byuh.numberOfMajors}</Digit></MDX.li>
-      <MDX.li><span className='font-bold'>授業数</span>: <Digit>{SchoolData.byuh.numberOfCourses}</Digit></MDX.li>
+      <MDX.li><span className='font-bold'>合格率</span>: <Digit>{SCHOOL_INFO.byuh.acceptanceRate * 100}</Digit>%</MDX.li>
+      <MDX.li><span className='font-bold'>学生数</span>: <Digit>{SCHOOL_INFO.byuh.numberOfStudents}</Digit></MDX.li>
+      <MDX.li><span className='font-bold'>専攻数</span>: <Digit>{SCHOOL_INFO.byuh.numberOfMajors}</Digit></MDX.li>
+      <MDX.li><span className='font-bold'>授業数</span>: <Digit>{SCHOOL_INFO.byuh.numberOfCourses}</Digit></MDX.li>
      </MDX.ul>
   </Pane>
 </SplitPane>

@@ -3,7 +3,7 @@ import { Seo } from '@c/organisms/Seo';
 import { UlCol } from '@c/atoms/UlCol';
 import { SchoolTable } from '@c/organisms/SchoolTable';
 import CostTable from '@c/organisms/CostTable';
-import { ComparePageMeta } from '@d';
+import { COMPARE_PAGE_META } from '@d';
 import { getForex } from '@l/forex';
 import { AtomStore, withRecoil } from '@l/recoil';
 import { ForexStateKey, defaultForexState } from '@s/forex';
@@ -24,12 +24,12 @@ export const getStaticProps = async(context) => {
 }
 
 <Seo
-  title={ComparePageMeta.title}
-  description={ComparePageMeta.description}
+  title={COMPARE_PAGE_META.title}
+  description={COMPARE_PAGE_META.description}
   openGraph={{
     type: 'article',
-    title: ComparePageMeta.title,
-    description: ComparePageMeta.description,
+    title: COMPARE_PAGE_META.title,
+    description: COMPARE_PAGE_META.description,
   }}
 />
 

@@ -8,7 +8,7 @@ import { Footnote } from '@c/atoms/Footnote';
 import { SwitchControl } from '@c/molecules/SwitchControl';
 import { Forex } from '@l/forex';
 import { MDX } from '@l/mdx';
-import { TuitionData } from '@d';
+import { TUITION } from '@d';
 
 export interface Props extends Omit<BarChartProps, 'data' | 'title'> {
   forex: Forex;
@@ -19,13 +19,13 @@ const data = {
   datasets: [
     {
       data: [
-        TuitionData.byu,
-        TuitionData.byuh,
-        TuitionData.byui,
-        TuitionData.jpKokuritsu,
-        TuitionData.jpShiritsu,
-        TuitionData.usPublic,
-        TuitionData.usPrivate,
+        TUITION.byu,
+        TUITION.byuh,
+        TUITION.byui,
+        TUITION.jpKokuritsu,
+        TUITION.jpShiritsu,
+        TUITION.usPublic,
+        TUITION.usPrivate,
       ],
       backgroundColor: [
         'rgba(0, 46, 93, 1)',
@@ -84,13 +84,13 @@ export const TuitionBarChart: FC<Props> = memo(({ forex, ...props }: Props) => {
             {
               ...data.datasets[0],
               data: [
-                TuitionData.byu * multiplier * ldsRate,
-                TuitionData.byuh * multiplier * ldsRate,
-                TuitionData.byui * multiplier * ldsRate,
-                TuitionData.jpKokuritsu * multiplier,
-                TuitionData.jpShiritsu * multiplier,
-                TuitionData.usPublic * multiplier,
-                TuitionData.usPrivate * multiplier,
+                TUITION.byu * multiplier * ldsRate,
+                TUITION.byuh * multiplier * ldsRate,
+                TUITION.byui * multiplier * ldsRate,
+                TUITION.jpKokuritsu * multiplier,
+                TUITION.jpShiritsu * multiplier,
+                TUITION.usPublic * multiplier,
+                TUITION.usPrivate * multiplier,
               ],
             },
           ],

@@ -6,7 +6,7 @@ import { NextImage } from '@c/atoms/NextImage';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
-import { SchoolData } from '@d';
+import { SCHOOL_INFO } from '@d';
 
 export interface Props {}
 
@@ -55,52 +55,52 @@ export const SchoolTable: FC<Props> = () => (
       <tr>
         <th scope='row'>生徒数</th>
         <td>
-          <Digit>{SchoolData.byu.numberOfStudents}</Digit>
+          <Digit>{SCHOOL_INFO.byu.numberOfStudents}</Digit>
         </td>
         <td>
-          <Digit>{SchoolData.byuh.numberOfStudents}</Digit>
+          <Digit>{SCHOOL_INFO.byuh.numberOfStudents}</Digit>
         </td>
         <td>
-          <Digit>{SchoolData.byui.numberOfStudents}</Digit>
+          <Digit>{SCHOOL_INFO.byui.numberOfStudents}</Digit>
         </td>
       </tr>
       <tr>
         <th scope='row'>留学生の割合</th>
         <td>
           <Digit decimals={2}>
-            {SchoolData.byu.numberOfInternationStudents}
+            {SCHOOL_INFO.byu.numberOfInternationStudents}
           </Digit>
           %
         </td>
         <td>
           <Digit decimals={2}>
-            {SchoolData.byuh.numberOfInternationStudents}
+            {SCHOOL_INFO.byuh.numberOfInternationStudents}
           </Digit>
           %
         </td>
         <td>
           <Digit decimals={2}>
-            {SchoolData.byui.numberOfInternationStudents}
+            {SCHOOL_INFO.byui.numberOfInternationStudents}
           </Digit>
           %
         </td>
       </tr>
       <tr>
         <th scope='row'>生徒と教職員の比率</th>
-        <td>{SchoolData.byu.studentToFaculty}</td>
-        <td>{SchoolData.byuh.studentToFaculty}</td>
-        <td>{SchoolData.byui.studentToFaculty}</td>
+        <td>{SCHOOL_INFO.byu.studentToFaculty}</td>
+        <td>{SCHOOL_INFO.byuh.studentToFaculty}</td>
+        <td>{SCHOOL_INFO.byui.studentToFaculty}</td>
       </tr>
       <tr>
         <th scope='row'>専攻数</th>
         <td>
-          <Digit>{SchoolData.byu.numberOfMajors}</Digit>
+          <Digit>{SCHOOL_INFO.byu.numberOfMajors}</Digit>
         </td>
         <td>
-          <Digit>{SchoolData.byuh.numberOfMajors}</Digit>
+          <Digit>{SCHOOL_INFO.byuh.numberOfMajors}</Digit>
         </td>
         <td>
-          <Digit>{SchoolData.byui.numberOfMajors}</Digit>
+          <Digit>{SCHOOL_INFO.byui.numberOfMajors}</Digit>
         </td>
       </tr>
     </tbody>

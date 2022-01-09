@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import { Seo } from '@c/organisms/Seo';
 import { UlCol } from '@c/atoms/UlCol';
 import { Footnote } from '@c/atoms/Footnote';
-import { InternshipPageMeta } from '@d';
+import { INTERNSHIP_PAGE_META } from '@d';
 import { MDX } from '@l/mdx';
 
 export const InternSalaryPieChart = dynamic(
@@ -10,12 +10,12 @@ export const InternSalaryPieChart = dynamic(
 );
 
 <Seo
-  title={InternshipPageMeta.title}
-  description={InternshipPageMeta.description}
+  title={INTERNSHIP_PAGE_META.title}
+  description={INTERNSHIP_PAGE_META.description}
   openGraph={{
     type: 'article',
-    title: InternshipPageMeta.title,
-    description: InternshipPageMeta.description,
+    title: INTERNSHIP_PAGE_META.title,
+    description: INTERNSHIP_PAGE_META.description,
   }}
 />
 

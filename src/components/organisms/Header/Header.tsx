@@ -11,11 +11,11 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
 import {
-  SchoolLinks,
-  AdditionalSchoolLinks,
-  ApplyLinks,
-  CareerLinks,
-  OtherLinks,
+  SCHOOL_LINKS,
+  ADDITIONAL_SCHOOL_LINKS,
+  APPLY_LINKS,
+  CAREER_LINKS,
+  OTHER_LINKS,
 } from '@d';
 import styles from './Header.module.css';
 
@@ -92,7 +92,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                         {({ close }) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='grid gap-2 p-5 bg-white'>
-                              {SchoolLinks.map(
+                              {SCHOOL_LINKS.map(
                                 ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
@@ -117,7 +117,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                                 ),
                               )}
                               <hr />
-                              {AdditionalSchoolLinks.map(
+                              {ADDITIONAL_SCHOOL_LINKS.map(
                                 ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
@@ -189,7 +189,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                         {({ close }) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='grid gap-2 p-5 bg-white'>
-                              {ApplyLinks.map(
+                              {APPLY_LINKS.map(
                                 ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
@@ -262,7 +262,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                         {({ close }) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='grid gap-2 p-5 bg-white'>
-                              {CareerLinks.map(
+                              {CAREER_LINKS.map(
                                 ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
@@ -331,7 +331,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                         {({ close }) => (
                           <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
                             <div className='grid gap-2 p-5 bg-white'>
-                              {OtherLinks.map(
+                              {OTHER_LINKS.map(
                                 ({ name, href, detail, icon: Icon }) => (
                                   <Link key={name} href={href}>
                                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
@@ -391,7 +391,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                       <XIcon className='h-6 w-6' aria-hidden='true' />
                     </Popover.Button>
                     <nav className='grid gap-y-2'>
-                      {SchoolLinks.map(({ name, href, icon: Icon }) => (
+                      {SCHOOL_LINKS.map(({ name, href, icon: Icon }) => (
                         <Link key={name} href={href}>
                           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                           <a
@@ -409,7 +409,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                           </a>
                         </Link>
                       ))}
-                      {AdditionalSchoolLinks.map(
+                      {ADDITIONAL_SCHOOL_LINKS.map(
                         ({ name, href, icon: Icon }) => (
                           <Link key={name} href={href}>
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
@@ -432,7 +432,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                   </div>
                   <hr className='mx-6' />
                   <div className='grid grid-cols-2 gap-x-1 gap-y-2 p-3'>
-                    {ApplyLinks.map(({ name, href, icon: Icon }) => (
+                    {APPLY_LINKS.map(({ name, href, icon: Icon }) => (
                       <Link key={name} href={href}>
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                         <a
@@ -448,7 +448,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                       </Link>
                     ))}
 
-                    {CareerLinks.map(({ name, href, icon: Icon }) => (
+                    {CAREER_LINKS.map(({ name, href, icon: Icon }) => (
                       <Link key={name} href={href}>
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                         <a
@@ -464,7 +464,7 @@ export const Header: FC<Props> = ({ show, loading }: Props) => (
                       </Link>
                     ))}
 
-                    {OtherLinks.map(({ name, href, icon: Icon }) => (
+                    {OTHER_LINKS.map(({ name, href, icon: Icon }) => (
                       <Link key={name} href={href}>
                         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid, jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                         <a

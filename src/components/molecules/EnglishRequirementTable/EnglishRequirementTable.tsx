@@ -1,14 +1,14 @@
 import { FC } from 'react';
 import { Table } from '@c/atoms/Table';
 import { NextImage } from '@c/atoms/NextImage';
+import type { SchoolDataCollection, EnglishRequirement } from '@d';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
-import type { EnglishRequirement } from '@d';
 import styles from './EnglishRequirementTable.module.css';
 
 export interface Props {
-  data: EnglishRequirement;
+  data: SchoolDataCollection<EnglishRequirement>;
 }
 
 export const EnglishRequirementTable: FC<Props> = ({ data }: Props) => (
