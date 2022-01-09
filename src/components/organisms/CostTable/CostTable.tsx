@@ -228,8 +228,7 @@ export const CostTable: FC<Props> = ({ forex }: Props) => {
             day: 'numeric',
             timeZone: 'Asia/Tokyo',
           })}
-          時点での為替レート1ドル
-          {forex.exrate}円で換算
+          時点での為替レート$1=&yen;{forex.exrate}で換算
         </Footnote>
         <Footnote>BYU、BYUIは2学期分、BYUHは3学期分で換算</Footnote>
         <Footnote>

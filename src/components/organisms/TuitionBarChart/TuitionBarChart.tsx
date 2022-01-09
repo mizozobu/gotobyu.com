@@ -108,8 +108,7 @@ export const TuitionBarChart: FC<Props> = memo(({ forex, ...props }: Props) => {
             day: 'numeric',
             timeZone: 'Asia/Tokyo',
           })}
-          時点での為替レート1ドル
-          {forex.exrate}円で換算
+          時点での為替レート$1=&yen;{forex.exrate}で換算
         </Footnote>
       </MDX.ul>
     </>
