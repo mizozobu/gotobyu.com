@@ -1,16 +1,10 @@
 import { FC } from 'react';
 import { Strong } from '@c/atoms/Strong';
 import { Table } from '@c/atoms/Table';
+import type { ApplicationDeadline } from '@d';
 
 export interface Props {
-  data: {
-    term: string;
-    period: string;
-    openAt: string | undefined;
-    priorityClosedAt: string | undefined;
-    closedAt: string | undefined;
-    announcedAt: string | undefined;
-  }[];
+  data: ApplicationDeadline[];
 }
 
 export const DeadlineTable: FC<Props> = ({ data }: Props) => (

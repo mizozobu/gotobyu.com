@@ -1,5 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
+import { BYU_APPLICATION_DEADLINE } from '@d';
 import { BYUDeadlineTable, Props } from './BYUDeadlineTable';
 
 export default {
@@ -11,4 +12,4 @@ export default {
 const Template: Story<Props> = (args) => <BYUDeadlineTable {...args} />;
 
 export const Example = Template.bind({});
-Example.args = {};
+Example.args = { data: BYU_APPLICATION_DEADLINE };
