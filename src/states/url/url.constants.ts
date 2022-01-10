@@ -1,1 +1,1 @@
-export const UrlStateKey = 'url/url' as const;
+export const URL_STATE_KEY = 'url/url' as const;

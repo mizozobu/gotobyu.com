@@ -1,4 +1,4 @@
-export const ScreenSize = {
+export const SCREEN_SIZE = {
   sm: 'sm',
   md: 'md',
   lg: 'lg',
@@ -6,4 +6,4 @@ export const ScreenSize = {
   '2xl': '2xl',
 } as const;
 
-export const ScreenSizes = Object.values(ScreenSize);
+export const SCREEN_SIZE_LIST = Object.values(SCREEN_SIZE);

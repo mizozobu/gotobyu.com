@@ -1,4 +1,4 @@
 import type { ValuesType } from 'utility-types';
-import { ScrollDirection } from './ScrollDirection.constants';
+import { SCROLL_DIRECTION } from './ScrollDirection.constants';
 
-export type ScrollDirectionType = ValuesType<typeof ScrollDirection>;
+export type ScrollDirectionType = ValuesType<typeof SCROLL_DIRECTION>;

@@ -2,7 +2,7 @@ import { FC, HTMLAttributes } from 'react';
 // eslint-disable-next-line camelcase
 import { useRecoilTransaction_UNSTABLE, RecoilState } from 'recoil';
 import type { GetStaticPropsResult, Redirect } from 'next';
-import { AtomRegistry } from './recoil.constants';
+import { ATOM_REGISTRY } from './recoil.constants';
 import type {
   AtomKey,
   AtomState,
@@ -82,7 +82,7 @@ export class AtomStore {
  * @returns atom
  */
 export const getAtomByKey = (key: AtomKey): RecoilState<AtomStatePlain> =>
-  AtomRegistry[key] as RecoilState<AtomStatePlain>;
+  ATOM_REGISTRY[key] as RecoilState<AtomStatePlain>;
 
 /**
  * prop type for RecoilHydrate

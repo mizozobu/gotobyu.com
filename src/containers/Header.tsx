@@ -1,6 +1,6 @@
 import { useEffect, useState, FC } from 'react';
 import { useRouter } from 'next/router';
-import { useScrollDirection, ScrollDirection } from '@l/ScrollDirection';
+import { useScrollDirection, SCROLL_DIRECTION } from '@l/ScrollDirection';
 import { Header as _Header, Props as HeaderProps } from '@cmp/organisms/Header';
 
 export interface Props extends Omit<HeaderProps, 'show' | 'loading'> {}
@@ -28,6 +28,9 @@ export const Header: FC<Props> = () => {
   }, [router.events]);
 
   return (
-    <_Header show={scrollDirectionY === ScrollDirection.up} loading={loading} />
+    <_Header
+      show={scrollDirectionY === SCROLL_DIRECTION.up}
+      loading={loading}
+    />
   );
 };

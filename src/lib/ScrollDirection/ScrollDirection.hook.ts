@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ScrollDirection } from './ScrollDirection.constants';
+import { SCROLL_DIRECTION } from './ScrollDirection.constants';
 import type { ScrollDirectionType } from './ScrollDirection.interface';
 
 export const useScrollDirection = ({
@@ -7,7 +7,7 @@ export const useScrollDirection = ({
 }: {
   threshold: number;
 }): ScrollDirectionType => {
-  const [scrollDir, setScrollDir] = useState(ScrollDirection.up);
+  const [scrollDir, setScrollDir] = useState(SCROLL_DIRECTION.up);
 
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
@@ -19,7 +19,7 @@ export const useScrollDirection = ({
       if (Math.abs(scrollY - lastScrollY) < threshold) return;
 
       setScrollDir(
-        scrollY > lastScrollY ? ScrollDirection.down : ScrollDirection.up,
+        scrollY > lastScrollY ? SCROLL_DIRECTION.down : SCROLL_DIRECTION.up,
       );
 
       lastScrollY = Math.max(scrollY, 0);

@@ -6,7 +6,7 @@ import { CostTable } from '@cnt/tips/compare/CostTable';
 import { COMPARE_PAGE_META } from '@d';
 import { getForex } from '@l/forex';
 import { AtomStore, withRecoil } from '@l/recoil';
-import { ForexStateKey, defaultForexState } from '@s/forex';
+import { FOREX_STATE_KEY, defaultForexState } from '@s/forex';
 
 export const TuitionBarChart = dynamic(() =>
   import('@cnt/tips/compare/TuitionBarChart').then(
@@ -19,7 +19,7 @@ export const getStaticProps = async(context) => {
   const forex = process.env.ALPHA_VANTAGE_API_KEY
     ? await getForex('USD', 'JPY')
     : defaultForexState;
-  atomStore.setAtom(ForexStateKey, forex);
+  atomStore.setAtom(FOREX_STATE_KEY, forex);
   return atomStore.with({
     revalidate: 60 * 12
   });

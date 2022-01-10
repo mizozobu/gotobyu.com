@@ -1,4 +1,4 @@
 import type { ValuesType } from 'utility-types';
-import { ScreenSize } from './ScreenSize.constants';
+import { SCREEN_SIZE } from './ScreenSize.constants';
 
-export type ScreenSizeType = ValuesType<typeof ScreenSize>;
+export type ScreenSizeType = ValuesType<typeof SCREEN_SIZE>;

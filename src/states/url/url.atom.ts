@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { UrlStateKey } from './url.constants';
+import { URL_STATE_KEY } from './url.constants';
 import { UrlState } from './url.interface';
 
 export const defaultUrlState: UrlState = {
@@ -8,6 +8,6 @@ export const defaultUrlState: UrlState = {
 };
 
 export const urlState = atom<UrlState>({
-  key: UrlStateKey,
+  key: URL_STATE_KEY,
   default: defaultUrlState,
 });

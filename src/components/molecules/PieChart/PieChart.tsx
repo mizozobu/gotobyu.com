@@ -9,7 +9,7 @@ import {
   ChartData,
   ChartOptions,
 } from 'chart.js';
-import { useScreenSize, gte, ScreenSize, ScreenSizeType } from '@l/ScreenSize';
+import { useScreenSize, gte, SCREEN_SIZE, ScreenSizeType } from '@l/ScreenSize';
 
 ChartJS.register(ArcElement, Legend, Title, Tooltip);
 
@@ -54,7 +54,7 @@ export const PieChart: FC<Props> = ({
         ...prev.plugins,
         legend: {
           ...prev.plugins?.legend,
-          position: gte(screenSize, ScreenSize.lg)
+          position: gte(screenSize, SCREEN_SIZE.lg)
             ? ('right' as const)
             : ('bottom' as const),
         },

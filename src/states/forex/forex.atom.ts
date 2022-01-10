@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { ForexStateKey } from './forex.constants';
+import { FOREX_STATE_KEY } from './forex.constants';
 import { ForexState } from './forex.interface';
 
 export const defaultForexState: ForexState = {
@@ -8,6 +8,6 @@ export const defaultForexState: ForexState = {
 };
 
 export const forexState = atom<ForexState>({
-  key: ForexStateKey,
+  key: FOREX_STATE_KEY,
   default: defaultForexState,
 });
