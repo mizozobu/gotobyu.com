@@ -12,9 +12,17 @@ export const useScrollIntoView = () => {
   const hash = decodeURIComponent(router.asPath.split('#')[1]);
 
   useEffect(() => {
-    document
-      .getElementById(hash)
-      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // wait a moment to load dynamic components and headlessui tab.
+    // check document.documentElement.scrollHeight and document.documentElement.offsetHeight.
+    const timeout = setTimeout(() => {
+      document
+        .getElementById(hash)
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   });
 
   useEffect(() => {
