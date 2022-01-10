@@ -41,3 +41,9 @@ storybook-static
 
 # lighthosue
 .lighthouseci
+
+# robots.txt
+/public/robots.txt
+
+# sitemap.xml
+/public/sitemap.xml
