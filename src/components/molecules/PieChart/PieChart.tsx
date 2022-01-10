@@ -9,7 +9,12 @@ import {
   ChartData,
   ChartOptions,
 } from 'chart.js';
-import { useScreenSize, gte, SCREEN_SIZE, ScreenSizeType } from '@l/ScreenSize';
+import {
+  useScreenSize,
+  gte,
+  SCREEN_SIZE,
+  ScreenSizeType,
+} from '@l/screen-size';
 
 ChartJS.register(ArcElement, Legend, Title, Tooltip);
 

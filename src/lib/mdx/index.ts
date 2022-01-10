@@ -1,1 +1,1 @@
-export * from './MDX';
+export * from './mdx.constants';

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { usePrevious } from '@l/usePrevious';
-import { SCREEN_SIZE } from './ScreenSize.constants';
-import type { ScreenSizeType } from './ScreenSize.interface';
+import { SCREEN_SIZE } from './screen-size.constants';
+import type { ScreenSizeType } from './screen-size.interface';
 
 export type ResizeHandler = (screenSize: ScreenSizeType) => void;
 
