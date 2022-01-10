@@ -38,8 +38,6 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
         recoilProps={(pageProps._recoil as Partial<RecoilProps>) ?? {}}
       />
       <Head>
-        {/* define defult title here until https://github.com/garmeeh/next-seo/pull/832 is merged */}
-        {/* eslint-disable-next-line @next/next/no-title-in-document-head */}
         <title>gotobyu.com | 在学生と卒業生の声</title>
       </Head>
 
