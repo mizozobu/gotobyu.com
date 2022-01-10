@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { SCROLL_DIRECTION } from './scroll-direction.constants';
-import type { ScrollDirectionType } from './scroll-direction.interface';
+import { SCROLL_DIRECTION } from './scrollDirection.constants';
+import type { ScrollDirectionType } from './scrollDirection.interface';
 
 export const useScrollDirection = ({
   threshold = 0,

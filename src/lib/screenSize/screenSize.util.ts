@@ -1,5 +1,5 @@
-import { SCREEN_SIZE_LIST } from './screen-size.constants';
-import type { ScreenSizeType } from './screen-size.interface';
+import { SCREEN_SIZE_LIST } from './screenSize.constants';
+import type { ScreenSizeType } from './screenSize.interface';
 
 export const gt = (
   screenSize: ScreenSizeType,
