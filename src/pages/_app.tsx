@@ -7,10 +7,9 @@ import { MDXProvider } from '@mdx-js/react';
 import { RecoilRoot } from 'recoil';
 import { Header } from '@cnt//Header';
 import { Footer } from '@cmp/organisms/Footer';
-import { ScrollIntoView } from '@cnt/ScrollIntoView';
 import { CopiedDialog } from '@cnt/CopiedDialog';
+import { HookRegistry } from '@cnt/HookRegistry';
 import { GTM_ID, pageview } from '@l/gtm';
-import { RecoilHydrate, RecoilProps } from '@l/recoil';
 import { MDX } from '@l/mdx';
 import '~/styles/globals.css';
 
@@ -33,10 +32,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
 
   return (
     <RecoilRoot>
-      <RecoilHydrate
-        // eslint-disable-next-line no-underscore-dangle
-        recoilProps={(pageProps._recoil as Partial<RecoilProps>) ?? {}}
-      />
+      <HookRegistry pageProps={pageProps} />
       <Head>
         <title>gotobyu.com | 在学生と卒業生の声</title>
       </Head>
@@ -72,7 +68,6 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
       </main>
 
       <CopiedDialog />
-      <ScrollIntoView />
       <Footer />
     </RecoilRoot>
   );

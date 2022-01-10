@@ -1,13 +1,12 @@
-import { useEffect, FC } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useSetRecoilState } from 'recoil';
 import { urlState } from '@s/url';
 
-export interface Props {}
-
-// this is a non-UI compoenent.
-// can't find a good component to put this logic.
-export const ScrollIntoView: FC<Props> = () => {
+/**
+ * scroll into a section and update recoil when url hash changes
+ */
+export const useScrollIntoView = () => {
   const setUrlState = useSetRecoilState(urlState);
   const router = useRouter();
   const hash = decodeURIComponent(router.asPath.split('#')[1]);
@@ -24,6 +23,4 @@ export const ScrollIntoView: FC<Props> = () => {
       hash,
     }));
   }, [hash, setUrlState]);
-
-  return null;
 };
