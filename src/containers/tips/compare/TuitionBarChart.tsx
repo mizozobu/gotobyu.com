@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { useRecoilValue } from 'recoil';
-import { forexState } from '@s/forex';
 import {
   TuitionBarChart as _TuitionBarChart,
   Props as TuitionBarChartProps,
 } from '@cmp/organisms/TuitionBarChart';
+import { forexState } from '@s/forex';
 
 export interface Props extends Omit<TuitionBarChartProps, 'rate'> {}
 

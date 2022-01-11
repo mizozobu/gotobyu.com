@@ -1,6 +1,6 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
 import { ScaleIcon } from '@heroicons/react/outline';
+import { Story, Meta } from '@storybook/react';
+import React from 'react';
 import { PageCard, Props } from './PageCard';
 
 export default {

@@ -1,5 +1,5 @@
-import { FC, HTMLAttributes } from 'react';
 import Script from 'next/script';
+import { FC, HTMLAttributes } from 'react';
 
 export interface Props extends HTMLAttributes<SVGElement> {
   animated?: boolean;

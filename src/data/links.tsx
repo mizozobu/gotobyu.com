@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import {
   BookOpenIcon,
   MailOpenIcon,
@@ -7,6 +6,7 @@ import {
   ScaleIcon,
   UserGroupIcon,
 } from '@heroicons/react/outline';
+import { FC } from 'react';
 import { NextImage } from '@cmp/atoms/NextImage';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';

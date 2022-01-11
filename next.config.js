@@ -1,7 +1,7 @@
-const { ProvidePlugin } = require('webpack');
 const mdxFactory = require('@next/mdx');
-const remarkSectionize = require('remark-sectionize');
 const rehypeSlug = require('rehype-slug');
+const remarkSectionize = require('remark-sectionize');
+const { ProvidePlugin } = require('webpack');
 
 const withMDX = mdxFactory({
   extension: /\.mdx$/,

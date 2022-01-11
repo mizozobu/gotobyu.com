@@ -1,5 +1,5 @@
-import { FC, AnchorHTMLAttributes } from 'react';
 import Link from 'next/link';
+import { FC, AnchorHTMLAttributes } from 'react';
 import styles from './InternalLink.module.css';
 
 export interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {

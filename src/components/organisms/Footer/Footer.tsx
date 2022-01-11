@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import Link from 'next/link';
 import { MailIcon, LinkIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
+import { FC } from 'react';
 import { BorderDraw } from '@cmp/atoms/BorderDraw';
 import { FacebookIcon } from '@cmp/atoms/FacebookIcon';
 

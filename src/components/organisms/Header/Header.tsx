@@ -1,5 +1,3 @@
-import { FC, Fragment } from 'react';
-import Link from 'next/link';
 import { Popover, Transition } from '@headlessui/react';
 import {
   AcademicCapIcon,
@@ -9,6 +7,8 @@ import {
   XIcon,
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
+import Link from 'next/link';
+import { FC, Fragment } from 'react';
 import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
 import {
   SCHOOL_LINKS,

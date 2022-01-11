@@ -1,5 +1,5 @@
-import { useState, FC } from 'react';
 import Image, { ImageProps } from 'next/image';
+import { useState, FC } from 'react';
 import Slider, { Settings } from 'react-slick';
 import { BgRotate } from '@cmp/atoms/BgRotate';
 import styles from './PhotoViewer.module.css';

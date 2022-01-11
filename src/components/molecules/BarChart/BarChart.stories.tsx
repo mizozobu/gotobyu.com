@@ -1,5 +1,5 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
+import React from 'react';
 import { BarChart, Props } from './BarChart';
 
 export default {

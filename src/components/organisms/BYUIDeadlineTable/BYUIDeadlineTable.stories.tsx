@@ -1,5 +1,5 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
+import React from 'react';
 import { BYUI_APPLICATION_DEADLINE } from '@d';
 import { BYUIDeadlineTable, Props } from './BYUIDeadlineTable';
 

@@ -1,15 +1,15 @@
 import { FC, AnchorHTMLAttributes } from 'react';
 import type { Required } from 'utility-types';
-import { H1 } from '@cmp/atoms/H1';
-import { SectionTitle } from '@cnt/SectionTitle';
-import { H3 } from '@cmp/atoms/H3';
-import { P } from '@cmp/atoms/P';
+import { Container } from '@cmp/atoms/Container';
 import { ExternalLink } from '@cmp/atoms/ExternalLink';
+import { H1 } from '@cmp/atoms/H1';
+import { H3 } from '@cmp/atoms/H3';
 import { InternalLink } from '@cmp/atoms/InternalLink';
+import { Li } from '@cmp/atoms/Li';
+import { P } from '@cmp/atoms/P';
 import { Strong } from '@cmp/atoms/Strong';
 import { Ul } from '@cmp/atoms/Ul';
-import { Li } from '@cmp/atoms/Li';
-import { Container } from '@cmp/atoms/Container';
+import { SectionTitle } from '@cnt/SectionTitle';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const MDX: { [key: string]: FC<any> } = {

@@ -160,6 +160,26 @@ module.exports = {
         // allow named exports without default export
         'import/prefer-default-export': 'off',
 
+        // sort imports
+        'import/order': [
+          'error',
+          {
+            groups: [
+              'builtin',
+              'external',
+              'internal',
+              'parent',
+              'sibling',
+              'index',
+              'object',
+            ],
+            alphabetize: {
+              order: 'asc',
+              caseInsensitive: true,
+            },
+          },
+        ],
+
         // omit .ts .tsx in import statement
         // see https://stackoverflow.com/questions/59265981/typescript-eslint-missing-file-extension-ts-import-extensions
         'import/extensions': [

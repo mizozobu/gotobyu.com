@@ -1,16 +1,16 @@
 import { useState, FC } from 'react';
-import { Table } from '@cmp/atoms/Table';
-import { TableCaption } from '@cmp/atoms/TableCaption';
 import { Digit } from '@cmp/atoms/Digit';
 import { Footnote } from '@cmp/atoms/Footnote';
 import { NextImage } from '@cmp/atoms/NextImage';
+import { Table } from '@cmp/atoms/Table';
+import { TableCaption } from '@cmp/atoms/TableCaption';
 import { SwitchControl } from '@cmp/molecules/SwitchControl';
+import { COST_OF_ATTENDACE } from '@d';
 import { Forex } from '@l/forex';
 import { MDX } from '@l/mdx';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
-import { COST_OF_ATTENDACE } from '@d';
 
 export interface Props {
   forex: Forex;

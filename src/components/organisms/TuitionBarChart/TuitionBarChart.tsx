@@ -1,14 +1,14 @@
 import { memo, useState, FC } from 'react';
+import { Footnote } from '@cmp/atoms/Footnote';
 import {
   BarChart,
   Props as BarChartProps,
   defaultOptions,
 } from '@cmp/molecules/BarChart';
-import { Footnote } from '@cmp/atoms/Footnote';
 import { SwitchControl } from '@cmp/molecules/SwitchControl';
+import { TUITION } from '@d';
 import { Forex } from '@l/forex';
 import { MDX } from '@l/mdx';
-import { TUITION } from '@d';
 
 export interface Props extends Omit<BarChartProps, 'data' | 'title'> {
   forex: Forex;

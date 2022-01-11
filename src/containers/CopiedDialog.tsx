@@ -1,10 +1,10 @@
 import { useEffect, useCallback, FC } from 'react';
 import { useRecoilState } from 'recoil';
-import { urlState } from '@s/url';
 import {
   CopiedDialog as _CopiedDialog,
   Props as CopiedDialogProps,
 } from '@cmp/organisms/CopiedDialog';
+import { urlState } from '@s/url';
 
 export interface Props extends Omit<CopiedDialogProps, 'isOpen' | 'onClose'> {}
 

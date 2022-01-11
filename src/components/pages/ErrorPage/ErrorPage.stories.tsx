@@ -1,5 +1,5 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
+import React from 'react';
 import { ErrorPage, Props } from './ErrorPage';
 
 export default {

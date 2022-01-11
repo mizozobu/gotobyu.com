@@ -1,6 +1,6 @@
 // eslint-disable-next-line camelcase
-import { RecoilState } from 'recoil';
 import type { GetStaticPropsResult, Redirect } from 'next';
+import { RecoilState } from 'recoil';
 import { ATOM_REGISTRY } from './recoil.constants';
 import type { AtomKey, AtomState, AtomStatePlain } from './recoil.interface';
 

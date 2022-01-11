@@ -1,6 +1,6 @@
-import { memo, FC, HTMLAttributes, MouseEventHandler } from 'react';
-import Link from 'next/link';
 import { LinkIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
+import { memo, FC, HTMLAttributes, MouseEventHandler } from 'react';
 import { H2 } from '@cmp/atoms/H2';
 import styles from './SectionTitle.module.css';
 

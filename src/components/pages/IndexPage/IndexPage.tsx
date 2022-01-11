@@ -1,20 +1,20 @@
-import { FC } from 'react';
 import Link from 'next/link';
+import { FC } from 'react';
+import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
 import { H2 } from '@cmp/atoms/H2';
 import { NextImage } from '@cmp/atoms/NextImage';
-import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
 import { PageCard } from '@cmp/molecules/PageCard';
 import { SchoolCard } from '@cmp/molecules/SchoolCard';
 import { TypingEffect } from '@cmp/molecules/TypingEffect';
-import byuLogoImage from '@p/byu/byu-logo.png';
-import byuhLogoImage from '@p/byuh/byuh-logo.png';
-import byuiLogoImage from '@p/byui/byui-logo.png';
 import {
   ADDITIONAL_SCHOOL_LINKS,
   APPLY_LINKS,
   CAREER_LINKS,
   OTHER_LINKS,
 } from '@d';
+import byuLogoImage from '@p/byu/byu-logo.png';
+import byuhLogoImage from '@p/byuh/byuh-logo.png';
+import byuiLogoImage from '@p/byui/byui-logo.png';
 
 export interface Props {}
 

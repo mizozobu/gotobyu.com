@@ -1,12 +1,12 @@
-import { useEffect, FC } from 'react';
+import { MDXProvider } from '@mdx-js/react';
 import { AppProps as NextAppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
-import { MDXProvider } from '@mdx-js/react';
+import { useEffect, FC } from 'react';
 import { RecoilRoot } from 'recoil';
-import { Header } from '@cnt//Header';
 import { Footer } from '@cmp/organisms/Footer';
+import { Header } from '@cnt//Header';
 import { CopiedDialog } from '@cnt/CopiedDialog';
 import { HookRegistry } from '@cnt/HookRegistry';
 import { GTM_ID, pageview } from '@l/gtm';

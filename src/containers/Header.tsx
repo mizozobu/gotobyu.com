@@ -1,7 +1,7 @@
-import { useEffect, useState, FC } from 'react';
 import { useRouter } from 'next/router';
-import { useScrollDirection, SCROLL_DIRECTION } from '@l/scrollDirection';
+import { useEffect, useState, FC } from 'react';
 import { Header as _Header, Props as HeaderProps } from '@cmp/organisms/Header';
+import { useScrollDirection, SCROLL_DIRECTION } from '@l/scrollDirection';
 
 export interface Props extends Omit<HeaderProps, 'show' | 'loading'> {}
 

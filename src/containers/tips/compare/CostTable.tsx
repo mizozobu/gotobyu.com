@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { useRecoilValue } from 'recoil';
-import { forexState } from '@s/forex';
 import {
   CostTable as _CostTable,
   Props as CostTableProps,
 } from '@cmp/organisms/CostTable';
+import { forexState } from '@s/forex';
 
 export interface Props extends Omit<CostTableProps, 'forex'> {}
 

@@ -1,5 +1,5 @@
-import { FC, ReactNode } from 'react';
 import { Switch } from '@headlessui/react';
+import { FC, ReactNode } from 'react';
 
 export interface Props {
   label: ReactNode;

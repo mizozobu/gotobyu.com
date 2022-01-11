@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Table } from '@cmp/atoms/Table';
 import { NextImage } from '@cmp/atoms/NextImage';
+import { Table } from '@cmp/atoms/Table';
 import type { SchoolDataCollection, EnglishRequirement } from '@d';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';

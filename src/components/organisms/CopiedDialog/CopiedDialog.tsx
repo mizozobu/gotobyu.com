@@ -1,6 +1,6 @@
-import { Fragment, FC } from 'react';
 import { Transition, Dialog } from '@headlessui/react';
 import { ClipboardCheckIcon, XIcon } from '@heroicons/react/outline';
+import { Fragment, FC } from 'react';
 
 export interface Props {
   isOpen: boolean;

@@ -1,5 +1,5 @@
-import { FC, CSSProperties } from 'react';
 import Image, { ImageProps } from 'next/image';
+import { FC, CSSProperties } from 'react';
 
 export type Props = ImageProps & {
   id?: string;

@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
-import { ErrorPage } from '@cmp/pages/ErrorPage';
 import { Seo } from '@cmp/organisms/Seo';
+import { ErrorPage } from '@cmp/pages/ErrorPage';
 
 export interface Props {}
 

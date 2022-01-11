@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { useRouter } from 'next/router';
 import { NextSeo, NextSeoProps } from 'next-seo';
+import { useRouter } from 'next/router';
+import { FC } from 'react';
 import { BASE_URL } from './Seo.constants';
 
 export interface Props extends NextSeoProps {}

@@ -1,10 +1,10 @@
 import { useCallback, FC } from 'react';
 import { useRecoilState } from 'recoil';
-import { urlState } from '@s/url';
 import {
   SectionTitle as _SectionTitle,
   Props as SectionTitleProps,
 } from '@cmp/molecules/SectionTitle';
+import { urlState } from '@s/url';
 
 export interface Props extends Omit<SectionTitleProps, 'active'> {
   id: string;
