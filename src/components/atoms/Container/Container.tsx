@@ -1,10 +1,10 @@
-import { FC, HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 import styles from './Container.module.css';
 
 export interface Props
   extends HTMLAttributes<HTMLElementTagNameMap['article']> {}
 
-export const Container: FC<Props> = ({ className = '', ...props }: Props) => (
+export const Container = ({ className = '', ...props }: Props) => (
   <article
     {...props}
     className={classNames(

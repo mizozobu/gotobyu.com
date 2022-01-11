@@ -1,5 +1,5 @@
 import { Switch } from '@headlessui/react';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export interface Props {
   label: ReactNode;
@@ -9,7 +9,7 @@ export interface Props {
   className?: string;
 }
 
-export const SwitchControl: FC<Props> = ({
+export const SwitchControl = ({
   label,
   sr,
   checked,

@@ -1,4 +1,4 @@
-import { FC, AnchorHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, ReactNode } from 'react';
 import type { Required } from 'utility-types';
 import { Container } from '@cmp/atoms/Container';
 import { ExternalLink } from '@cmp/atoms/ExternalLink';
@@ -12,7 +12,7 @@ import { Ul } from '@cmp/atoms/Ul';
 import { SectionTitle } from '@cnt/SectionTitle';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const MDX: { [key: string]: FC<any> } = {
+export const MDX: { [key: string]: (props: any) => JSX.Element } = {
   h1: H1,
   h2: SectionTitle,
   h3: H3,
@@ -30,5 +30,7 @@ export const MDX: { [key: string]: FC<any> } = {
   strong: Strong,
   ul: Ul,
   li: Li,
-  wrapper: ({ children }) => <Container>{children}</Container>,
+  wrapper: ({ children }: { children: ReactNode }) => (
+    <Container>{children}</Container>
+  ),
 };

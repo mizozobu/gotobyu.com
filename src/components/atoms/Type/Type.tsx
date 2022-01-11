@@ -1,4 +1,4 @@
-import { useState, useEffect, FC, HTMLAttributes } from 'react';
+import { useState, useEffect, HTMLAttributes } from 'react';
 import styles from './Type.module.css';
 
 export interface Props extends HTMLAttributes<HTMLSpanElement> {
@@ -16,7 +16,7 @@ const Status = {
   waiting: Symbol('waiting'),
 };
 
-export const Type: FC<Props> = ({
+export const Type = ({
   children: text,
   caretWidth = '2px',
   typeSpeed = 75,

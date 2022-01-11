@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Digit } from '@cmp/atoms/Digit';
 import { NextImage } from '@cmp/atoms/NextImage';
 import { Table } from '@cmp/atoms/Table';
@@ -10,7 +9,7 @@ import byuiLogoImage from '@p/byui/byui-logo.png';
 
 export interface Props {}
 
-export const SchoolTable: FC<Props> = () => (
+export const SchoolTable = () => (
   <Table className='my-2 px-0'>
     <TableCaption>学校データ</TableCaption>
     <thead>

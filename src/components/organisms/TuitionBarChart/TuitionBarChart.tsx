@@ -1,4 +1,4 @@
-import { memo, useState, FC } from 'react';
+import { memo, useState } from 'react';
 import { Footnote } from '@cmp/atoms/Footnote';
 import {
   BarChart,
@@ -14,7 +14,7 @@ export interface Props extends Omit<BarChartProps, 'data' | 'title'> {
   forex: Forex;
 }
 
-export const TuitionBarChart: FC<Props> = memo(({ forex, ...props }: Props) => {
+export const TuitionBarChart = memo(({ forex, ...props }: Props) => {
   const [isJPY, setIsJPY] = useState(true);
   const [isLDS, setIsLDS] = useState(true);
   const multiplier = isJPY ? forex.exrate : 1;

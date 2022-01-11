@@ -1,6 +1,6 @@
 import { LinkIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
-import { memo, FC, HTMLAttributes, MouseEventHandler } from 'react';
+import { memo, HTMLAttributes, MouseEventHandler } from 'react';
 import { H2 } from '@cmp/atoms/H2';
 import styles from './SectionTitle.module.css';
 
@@ -11,7 +11,7 @@ export interface Props
   onClick?: MouseEventHandler<HTMLAnchorElement>;
 }
 
-export const SectionTitle: FC<Props> = memo(
+export const SectionTitle = memo(
   ({ id, active = false, children, onClick, ...props }: Props) => (
     <H2 {...props} id={id}>
       <Link href={`#${id}`}>

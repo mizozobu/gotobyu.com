@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { BgRotate } from '@cmp/atoms/BgRotate';
 
 export interface Props {
@@ -7,11 +7,7 @@ export interface Props {
   children: ReactNode;
 }
 
-export const SchoolCard: FC<Props> = ({
-  className = '',
-  colorClass,
-  children,
-}: Props) => (
+export const SchoolCard = ({ className = '', colorClass, children }: Props) => (
   <BgRotate
     className={classNames('w-48 md:w-64 aspect-[3/4]', className)}
     colorClass={colorClass}

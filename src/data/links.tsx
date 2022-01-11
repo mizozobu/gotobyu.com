@@ -6,7 +6,7 @@ import {
   ScaleIcon,
   UserGroupIcon,
 } from '@heroicons/react/outline';
-import { FC } from 'react';
+import { ComponentProps } from 'react';
 import { NextImage } from '@cmp/atoms/NextImage';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
@@ -21,7 +21,7 @@ export interface PageMeta {
   title: string | undefined;
   description: string;
   href: string;
-  icon: FC<{ className?: string }>;
+  icon: (props: ComponentProps<'svg'>) => JSX.Element;
 }
 
 /**

@@ -1,11 +1,11 @@
-import { useState, FC } from 'react';
+import { useState } from 'react';
 import { Type, Props as TypeProps } from '@cmp/atoms/Type';
 
 export interface Props extends Omit<TypeProps, 'children'> {
   children: string[];
 }
 
-export const TypingEffect: FC<Props> = ({ children, ...props }: Props) => {
+export const TypingEffect = ({ children, ...props }: Props) => {
   const [current, setCurrent] = useState(0);
 
   const handleBack = () => {

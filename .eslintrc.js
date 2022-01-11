@@ -43,7 +43,7 @@ module.exports = {
         // interface Props {
         //   prop1?: boolean;
         // }
-        // const Component1: FC<Props> = ({ prop1 = false }: Props) => (
+        // const Component1 = ({ prop1 = false }: Props) => (
         //   <Component1 prop1={prop1} />
         // );
         'react/require-default-props': 'off',

@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import styles from './BgRotate.module.css';
 
 export interface Props {
@@ -7,11 +7,7 @@ export interface Props {
   children: ReactNode;
 }
 
-export const BgRotate: FC<Props> = ({
-  className = '',
-  colorClass,
-  children,
-}: Props) => (
+export const BgRotate = ({ className = '', colorClass, children }: Props) => (
   <div className={classNames('relative group', styles['bg-rotate'], className)}>
     <div
       className={classNames(

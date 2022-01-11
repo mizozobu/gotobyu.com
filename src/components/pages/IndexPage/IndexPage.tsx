@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { FC } from 'react';
 import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
 import { H2 } from '@cmp/atoms/H2';
 import { NextImage } from '@cmp/atoms/NextImage';
@@ -18,7 +17,7 @@ import byuiLogoImage from '@p/byui/byui-logo.png';
 
 export interface Props {}
 
-export const IndexPage: FC<Props> = () => (
+export const IndexPage = () => (
   <div className='py-12 lg:py-16 space-y-12 lg:space-y-16'>
     <div
       className={classNames(

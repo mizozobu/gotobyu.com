@@ -8,7 +8,7 @@ import {
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
-import { FC, Fragment } from 'react';
+import { Fragment } from 'react';
 import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
 import {
   SCHOOL_LINKS,
@@ -24,7 +24,7 @@ export interface Props {
   loading: boolean;
 }
 
-export const Header: FC<Props> = ({ show, loading }: Props) => (
+export const Header = ({ show, loading }: Props) => (
   <Popover
     className={classNames(
       'sticky bg-white mb-1 z-20',

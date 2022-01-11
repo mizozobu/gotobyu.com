@@ -1,4 +1,4 @@
-import { useState, FC } from 'react';
+import { useState } from 'react';
 import { Digit } from '@cmp/atoms/Digit';
 import { Footnote } from '@cmp/atoms/Footnote';
 import { NextImage } from '@cmp/atoms/NextImage';
@@ -16,7 +16,7 @@ export interface Props {
   forex: Forex;
 }
 
-export const CostTable: FC<Props> = ({ forex }: Props) => {
+export const CostTable = ({ forex }: Props) => {
   const [isJPY, setIsJPY] = useState(true);
   const [isLDS, setIsLDS] = useState(true);
   const unit = isJPY ? '¥' : '$';

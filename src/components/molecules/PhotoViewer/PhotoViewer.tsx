@@ -1,5 +1,5 @@
 import Image, { ImageProps } from 'next/image';
-import { useState, FC } from 'react';
+import { useState } from 'react';
 import Slider, { Settings } from 'react-slick';
 import { BgRotate } from '@cmp/atoms/BgRotate';
 import styles from './PhotoViewer.module.css';
@@ -13,7 +13,7 @@ export interface Props {
   settings?: Settings;
 }
 
-export const PhotoViewer: FC<Props> = ({
+export const PhotoViewer = ({
   images,
   className = '',
   colorClass,

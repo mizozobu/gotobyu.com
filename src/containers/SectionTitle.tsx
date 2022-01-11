@@ -1,4 +1,4 @@
-import { useCallback, FC } from 'react';
+import { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 import {
   SectionTitle as _SectionTitle,
@@ -11,7 +11,7 @@ export interface Props extends Omit<SectionTitleProps, 'active'> {
   children: string;
 }
 
-export const SectionTitle: FC<Props> = ({ id, children, ...props }: Props) => {
+export const SectionTitle = ({ id, children, ...props }: Props) => {
   const [{ hash }, setUrlState] = useRecoilState(urlState);
 
   const handleClick = useCallback(() => {

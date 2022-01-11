@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { useRecoilValue } from 'recoil';
 import {
   CostTable as _CostTable,
@@ -8,7 +7,7 @@ import { forexState } from '@s/forex';
 
 export interface Props extends Omit<CostTableProps, 'forex'> {}
 
-export const CostTable: FC<Props> = (props: Props) => {
+export const CostTable = (props: Props) => {
   const forex = useRecoilValue(forexState);
 
   return <_CostTable {...props} forex={forex} />;

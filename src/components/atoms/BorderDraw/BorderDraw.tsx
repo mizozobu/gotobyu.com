@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import styles from './BorderDraw.module.css';
 
 export interface Props {
@@ -7,7 +7,7 @@ export interface Props {
   children: ReactNode;
 }
 
-export const BorderDraw: FC<Props> = ({
+export const BorderDraw = ({
   className = '',
   borderColor,
   children,

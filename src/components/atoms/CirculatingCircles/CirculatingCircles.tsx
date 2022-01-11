@@ -1,14 +1,11 @@
 import Script from 'next/script';
-import { FC, HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 
 export interface Props extends HTMLAttributes<SVGElement> {
   animated?: boolean;
 }
 
-export const CirculatingCircles: FC<Props> = ({
-  animated = false,
-  ...props
-}: Props) => {
+export const CirculatingCircles = ({ animated = false, ...props }: Props) => {
   const id = animated ? 'animated-circulating-circles' : 'circulating-circles';
 
   return (

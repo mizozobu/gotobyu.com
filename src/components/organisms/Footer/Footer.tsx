@@ -1,12 +1,11 @@
 import { MailIcon, LinkIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
-import { FC } from 'react';
 import { BorderDraw } from '@cmp/atoms/BorderDraw';
 import { FacebookIcon } from '@cmp/atoms/FacebookIcon';
 
 export interface Props {}
 
-export const Footer: FC<Props> = () => (
+export const Footer = () => (
   <footer className='flex flex-col items-center p-8 sm:p-12 lg:p-16 bg-indigo-900 text-white'>
     <div>
       <Link href='/about'>

@@ -8,7 +8,7 @@ import {
   ChartData,
   ChartOptions,
 } from 'chart.js';
-import { FC, HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Title, Tooltip);
@@ -35,7 +35,7 @@ export const defaultOptions = {
   },
 };
 
-export const BarChart: FC<Props> = ({
+export const BarChart = ({
   data,
   title,
   options: _options = defaultOptions,

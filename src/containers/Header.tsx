@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState, FC } from 'react';
+import { useEffect, useState } from 'react';
 import { Header as _Header, Props as HeaderProps } from '@cmp/organisms/Header';
 import { useScrollDirection, SCROLL_DIRECTION } from '@l/scrollDirection';
 
 export interface Props extends Omit<HeaderProps, 'show' | 'loading'> {}
 
-export const Header: FC<Props> = () => {
+export const Header = () => {
   const [loading, setLoading] = useState(false);
   const scrollDirectionY = useScrollDirection({ threshold: 50 });
   const router = useRouter();

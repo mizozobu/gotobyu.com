@@ -1,5 +1,5 @@
 import Image, { ImageProps } from 'next/image';
-import { FC, CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 
 export type Props = ImageProps & {
   id?: string;
@@ -7,7 +7,7 @@ export type Props = ImageProps & {
   style?: CSSProperties;
 };
 
-export const NextImage: FC<Props> = ({
+export const NextImage = ({
   id,
   className = '',
   style = {},

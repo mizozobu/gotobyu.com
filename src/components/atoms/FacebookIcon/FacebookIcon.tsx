@@ -1,12 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { FC, SVGAttributes } from 'react';
+import { SVGAttributes } from 'react';
 
 export interface Props extends SVGAttributes<SVGElement> {}
 
-export const FacebookIcon: FC<Props> = ({
-  className = '',
-  ...props
-}: Props) => (
+export const FacebookIcon = ({ className = '', ...props }: Props) => (
   <svg
     aria-hidden='true'
     focusable='false'

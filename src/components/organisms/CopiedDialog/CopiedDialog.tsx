@@ -1,13 +1,13 @@
 import { Transition, Dialog } from '@headlessui/react';
 import { ClipboardCheckIcon, XIcon } from '@heroicons/react/outline';
-import { Fragment, FC } from 'react';
+import { Fragment } from 'react';
 
 export interface Props {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export const CopiedDialog: FC<Props> = ({ isOpen, onClose }: Props) => (
+export const CopiedDialog = ({ isOpen, onClose }: Props) => (
   <Transition appear show={isOpen} as={Fragment}>
     <Dialog
       as='div'

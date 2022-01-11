@@ -3,7 +3,7 @@ import { AppProps as NextAppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
-import { useEffect, FC } from 'react';
+import { useEffect } from 'react';
 import { RecoilRoot } from 'recoil';
 import { Footer } from '@cmp/organisms/Footer';
 import { Header } from '@cnt//Header';
@@ -17,7 +17,7 @@ export interface AppProps extends NextAppProps {
   pageProps: { [key: string]: unknown };
 }
 
-const MyApp: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
 
   useEffect(() => {

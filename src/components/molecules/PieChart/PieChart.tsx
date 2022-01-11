@@ -7,7 +7,7 @@ import {
   ChartData,
   ChartOptions,
 } from 'chart.js';
-import { useCallback, useState, FC, HTMLAttributes } from 'react';
+import { useCallback, useState, HTMLAttributes } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { useScreenSize, gte, SCREEN_SIZE, ScreenSizeType } from '@l/screenSize';
 
@@ -28,7 +28,7 @@ export const defaultOptions = {
   },
 };
 
-export const PieChart: FC<Props> = ({
+export const PieChart = ({
   data,
   title,
   _options = defaultOptions,

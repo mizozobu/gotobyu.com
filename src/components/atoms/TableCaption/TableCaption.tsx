@@ -1,13 +1,9 @@
-import { FC, HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 import styles from './TableCaption.module.css';
 
 export interface Props extends HTMLAttributes<HTMLSpanElement> {}
 
-export const TableCaption: FC<Props> = ({
-  className = '',
-  children,
-  ...props
-}: Props) => (
+export const TableCaption = ({ className = '', children, ...props }: Props) => (
   <caption className={classNames('py-1', styles['table-caption'])}>
     <span
       {...props}

@@ -1,13 +1,13 @@
-import { FC, HTMLAttributes, ComponentProps } from 'react';
+import { HTMLAttributes, ComponentProps } from 'react';
 
 export interface Props
   extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
-  icon: FC<ComponentProps<'svg'>>;
+  icon: (props: ComponentProps<'svg'>) => JSX.Element;
   name: string;
   detail: string;
 }
 
-export const PageCard: FC<Props> = ({
+export const PageCard = ({
   icon: Icon,
   name,
   detail,

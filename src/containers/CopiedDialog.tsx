@@ -1,4 +1,4 @@
-import { useEffect, useCallback, FC } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 import {
   CopiedDialog as _CopiedDialog,
@@ -8,7 +8,7 @@ import { urlState } from '@s/url';
 
 export interface Props extends Omit<CopiedDialogProps, 'isOpen' | 'onClose'> {}
 
-export const CopiedDialog: FC<Props> = (props: Props) => {
+export const CopiedDialog = (props: Props) => {
   const [{ showCopiedModal }, setIsOpen] = useRecoilState(urlState);
 
   const closeDialog = useCallback(() => {

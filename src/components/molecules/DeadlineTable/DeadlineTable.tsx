@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { Strong } from '@cmp/atoms/Strong';
 import { Table } from '@cmp/atoms/Table';
 import type { ApplicationDeadline } from '@d';
@@ -7,7 +6,7 @@ export interface Props {
   data: ApplicationDeadline[];
 }
 
-export const DeadlineTable: FC<Props> = ({ data }: Props) => (
+export const DeadlineTable = ({ data }: Props) => (
   <Table>
     <thead>
       <tr>

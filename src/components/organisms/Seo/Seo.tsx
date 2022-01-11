@@ -1,11 +1,10 @@
 import { NextSeo, NextSeoProps } from 'next-seo';
 import { useRouter } from 'next/router';
-import { FC } from 'react';
 import { BASE_URL } from './Seo.constants';
 
 export interface Props extends NextSeoProps {}
 
-export const Seo: FC<Props> = ({ openGraph, ...prop }: Props) => {
+export const Seo = ({ openGraph, ...prop }: Props) => {
   const router = useRouter();
 
   return (

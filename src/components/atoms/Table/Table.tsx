@@ -1,11 +1,11 @@
-import { FC, HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 import styles from './Table.module.css';
 
 export interface Props extends HTMLAttributes<HTMLTableElement> {
   thickBorderColor?: string;
 }
 
-export const Table: FC<Props> = ({
+export const Table = ({
   className = '',
   thickBorderColor,
   ...props

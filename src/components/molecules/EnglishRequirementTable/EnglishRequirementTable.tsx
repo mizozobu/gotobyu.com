@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import { NextImage } from '@cmp/atoms/NextImage';
 import { Table } from '@cmp/atoms/Table';
 import type { SchoolDataCollection, EnglishRequirement } from '@d';
@@ -11,7 +10,7 @@ export interface Props {
   data: SchoolDataCollection<EnglishRequirement>;
 }
 
-export const EnglishRequirementTable: FC<Props> = ({ data }: Props) => (
+export const EnglishRequirementTable = ({ data }: Props) => (
   <Table className={styles['english-requirement-table']}>
     <thead>
       <tr>
