@@ -1,7 +1,7 @@
-import { HTMLAttributes } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 import styles from './H1.module.css';
 
-export interface Props extends HTMLAttributes<HTMLHeadingElement> {}
+export interface Props extends ComponentPropsWithoutRef<'h1'> {}
 
 export const H1 = ({ className, children, ...props }: Props) => (
   <h1 {...props} className={classNames(styles.h1, className)}>

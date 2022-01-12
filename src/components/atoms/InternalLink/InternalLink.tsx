@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { AnchorHTMLAttributes } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 import styles from './InternalLink.module.css';
 
-export interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface Props extends ComponentPropsWithoutRef<'a'> {
   href: string;
 }
 

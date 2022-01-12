@@ -1,7 +1,7 @@
-import { HTMLAttributes } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 import styles from './P.module.css';
 
-export interface Props extends HTMLAttributes<HTMLParagraphElement> {}
+export interface Props extends ComponentPropsWithoutRef<'p'> {}
 
 export const P = ({ className, children, ...props }: Props) => (
   <p {...props} className={classNames(styles.p, className)}>

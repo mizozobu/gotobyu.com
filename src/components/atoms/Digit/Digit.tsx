@@ -1,6 +1,6 @@
-import { HTMLAttributes } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
-export interface Props extends HTMLAttributes<HTMLSpanElement> {
+export interface Props extends ComponentPropsWithoutRef<'span'> {
   children: number;
   decimals?: number;
 }

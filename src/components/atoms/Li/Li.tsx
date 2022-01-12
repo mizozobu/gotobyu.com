@@ -1,7 +1,7 @@
-import { HTMLAttributes } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 import styles from './Li.module.css';
 
-export interface Props extends HTMLAttributes<HTMLLIElement> {}
+export interface Props extends ComponentPropsWithoutRef<'li'> {}
 
 export const Li = ({ className, children, ...props }: Props) => (
   <li {...props} className={classNames(styles.li, className)}>

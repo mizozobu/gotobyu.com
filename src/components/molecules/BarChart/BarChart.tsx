@@ -8,12 +8,12 @@ import {
   ChartData,
   ChartOptions,
 } from 'chart.js';
-import { HTMLAttributes } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Title, Tooltip);
 
-export interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface Props extends ComponentPropsWithoutRef<'div'> {
   options?: ChartOptions<'bar'>;
   data: ChartData<'bar'>;
   title: string;
@@ -56,7 +56,6 @@ export const BarChart = ({
 
   return (
     <div {...props}>
-      {/* prop types are any until https://github.com/reactchartjs/react-chartjs-2/issues/687 is merged */}
       <Bar data={data} options={options} />
     </div>
   );

@@ -1,7 +1,6 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { SVGAttributes } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
-export interface Props extends SVGAttributes<SVGElement> {}
+export interface Props extends ComponentPropsWithoutRef<'svg'> {}
 
 export const FacebookIcon = ({ className = '', ...props }: Props) => (
   <svg

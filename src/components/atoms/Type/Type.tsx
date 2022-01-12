@@ -1,7 +1,7 @@
-import { useState, useEffect, HTMLAttributes } from 'react';
+import { useState, useEffect, ComponentPropsWithoutRef } from 'react';
 import styles from './Type.module.css';
 
-export interface Props extends HTMLAttributes<HTMLSpanElement> {
+export interface Props extends ComponentPropsWithoutRef<'span'> {
   children: string;
   caretWidth?: string;
   typeSpeed?: number;

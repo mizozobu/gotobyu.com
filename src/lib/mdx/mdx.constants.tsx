@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import type { Required } from 'utility-types';
 import { Container } from '@cmp/atoms/Container';
 import { ExternalLink } from '@cmp/atoms/ExternalLink';
@@ -17,10 +17,7 @@ export const MDX: { [key: string]: (props: any) => JSX.Element } = {
   h2: SectionTitle,
   h3: H3,
   p: P,
-  a: ({
-    href,
-    ...props
-  }: Required<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>) => {
+  a: ({ href, ...props }: Required<ComponentPropsWithoutRef<'a'>, 'href'>) => {
     // see https://github.com/sindresorhus/is-absolute-url/blob/main/index.js#L3
     const Component = /^[a-zA-Z][a-zA-Z\d+\-.]*?:/.test(href)
       ? ExternalLink

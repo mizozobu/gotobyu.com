@@ -1,8 +1,8 @@
-import { HTMLAttributes, ComponentProps } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
 export interface Props
-  extends Omit<HTMLAttributes<HTMLDivElement>, 'children'> {
-  icon: (props: ComponentProps<'svg'>) => JSX.Element;
+  extends Omit<ComponentPropsWithoutRef<'div'>, 'children'> {
+  icon: (props: ComponentPropsWithoutRef<'svg'>) => JSX.Element;
   name: string;
   detail: string;
 }

@@ -1,8 +1,7 @@
-import { HTMLAttributes } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 import styles from './Container.module.css';
 
-export interface Props
-  extends HTMLAttributes<HTMLElementTagNameMap['article']> {}
+export interface Props extends ComponentPropsWithoutRef<'article'> {}
 
 export const Container = ({ className = '', ...props }: Props) => (
   <article

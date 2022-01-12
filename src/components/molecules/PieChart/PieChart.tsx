@@ -7,13 +7,13 @@ import {
   ChartData,
   ChartOptions,
 } from 'chart.js';
-import { useCallback, useState, HTMLAttributes } from 'react';
+import { useCallback, useState, ComponentPropsWithoutRef } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { useScreenSize, gte, SCREEN_SIZE, ScreenSizeType } from '@l/screenSize';
 
 ChartJS.register(ArcElement, Legend, Title, Tooltip);
 
-export interface Props extends HTMLAttributes<HTMLDivElement> {
+export interface Props extends ComponentPropsWithoutRef<'div'> {
   _options?: ChartOptions<'pie'>;
   data: ChartData<'pie'>;
   title: string;

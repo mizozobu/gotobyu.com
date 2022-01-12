@@ -1,7 +1,7 @@
 import Script from 'next/script';
-import { HTMLAttributes } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
-export interface Props extends HTMLAttributes<SVGElement> {
+export interface Props extends ComponentPropsWithoutRef<'svg'> {
   animated?: boolean;
 }
 
