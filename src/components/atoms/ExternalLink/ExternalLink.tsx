@@ -2,7 +2,7 @@ import { ExternalLinkIcon } from '@heroicons/react/solid';
 import type { ComponentPropsWithoutRef } from 'react';
 import styles from './ExternalLink.module.css';
 
-export interface Props extends ComponentPropsWithoutRef<'a'> {}
+interface Props extends ComponentPropsWithoutRef<'a'> {}
 
 export const ExternalLink = ({ className = '', children, ...props }: Props) => (
   <a

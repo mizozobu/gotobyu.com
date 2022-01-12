@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-export interface Props extends ComponentPropsWithoutRef<'span'> {
+interface Props extends ComponentPropsWithoutRef<'span'> {
   children: number;
   decimals?: number;
 }

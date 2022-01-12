@@ -19,7 +19,7 @@ import {
 } from '@d';
 import styles from './Header.module.css';
 
-export interface Props {
+interface Props {
   show: boolean;
   loading: boolean;
 }

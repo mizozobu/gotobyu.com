@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { BgRotate } from '@cmp/atoms/BgRotate';
 
-export interface Props {
+interface Props {
   className?: string;
   colorClass: string;
   children: ReactNode;

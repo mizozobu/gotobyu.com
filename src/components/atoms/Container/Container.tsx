@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import styles from './Container.module.css';
 
-export interface Props extends ComponentPropsWithoutRef<'article'> {}
+interface Props extends ComponentPropsWithoutRef<'article'> {}
 
 export const Container = ({ className = '', ...props }: Props) => (
   <article

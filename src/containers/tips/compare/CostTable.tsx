@@ -1,11 +1,10 @@
+import type { ComponentPropsWithoutRef } from 'react';
 import { useRecoilValue } from 'recoil';
-import {
-  CostTable as _CostTable,
-  Props as CostTableProps,
-} from '@cmp/organisms/CostTable';
+import { CostTable as _CostTable } from '@cmp/organisms/CostTable';
 import { forexState } from '@s/forex';
 
-export interface Props extends Omit<CostTableProps, 'forex'> {}
+interface Props
+  extends Omit<ComponentPropsWithoutRef<typeof _CostTable>, 'forex'> {}
 
 export const CostTable = (props: Props) => {
   const forex = useRecoilValue(forexState);

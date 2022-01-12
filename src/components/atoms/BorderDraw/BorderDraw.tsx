@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import styles from './BorderDraw.module.css';
 
-export interface Props {
+interface Props {
   className?: string;
   borderColor: string;
   children: ReactNode;

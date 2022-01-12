@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { Type, Props as TypeProps } from '@cmp/atoms/Type';
+import { useState, ComponentPropsWithoutRef } from 'react';
+import { Type } from '@cmp/atoms/Type';
 
-export interface Props extends Omit<TypeProps, 'children'> {
+interface Props
+  extends Omit<ComponentPropsWithoutRef<typeof Type>, 'children'> {
   children: string[];
 }
 

@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-export interface Props extends ComponentPropsWithoutRef<'svg'> {}
+interface Props extends ComponentPropsWithoutRef<'svg'> {}
 
 export const FacebookIcon = ({ className = '', ...props }: Props) => (
   <svg

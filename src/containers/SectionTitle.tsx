@@ -1,12 +1,10 @@
-import { useCallback } from 'react';
+import { useCallback, ComponentPropsWithoutRef } from 'react';
 import { useRecoilState } from 'recoil';
-import {
-  SectionTitle as _SectionTitle,
-  Props as SectionTitleProps,
-} from '@cmp/molecules/SectionTitle';
+import { SectionTitle as _SectionTitle } from '@cmp/molecules/SectionTitle';
 import { urlState } from '@s/url';
 
-export interface Props extends Omit<SectionTitleProps, 'active'> {
+interface Props
+  extends Omit<ComponentPropsWithoutRef<typeof _SectionTitle>, 'active'> {
   id: string;
   children: string;
 }

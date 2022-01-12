@@ -1,12 +1,13 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, ComponentPropsWithoutRef } from 'react';
 import { useRecoilState } from 'recoil';
-import {
-  CopiedDialog as _CopiedDialog,
-  Props as CopiedDialogProps,
-} from '@cmp/organisms/CopiedDialog';
+import { CopiedDialog as _CopiedDialog } from '@cmp/organisms/CopiedDialog';
 import { urlState } from '@s/url';
 
-export interface Props extends Omit<CopiedDialogProps, 'isOpen' | 'onClose'> {}
+interface Props
+  extends Omit<
+    ComponentPropsWithoutRef<typeof _CopiedDialog>,
+    'isOpen' | 'onClose'
+  > {}
 
 export const CopiedDialog = (props: Props) => {
   const [{ showCopiedModal }, setIsOpen] = useRecoilState(urlState);

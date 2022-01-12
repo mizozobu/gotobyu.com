@@ -1,7 +1,7 @@
 import { useRecoilHydrate, RecoilProps } from '@l/recoil';
 import { useScrollIntoView } from '@l/scrollIntoView';
 
-export interface Props {
+interface Props {
   pageProps: { [key: string]: unknown }; // FIXME
 }
 

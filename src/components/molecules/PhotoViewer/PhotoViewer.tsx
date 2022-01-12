@@ -6,7 +6,7 @@ import styles from './PhotoViewer.module.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-export interface Props {
+interface Props {
   images: (ImageProps & { alt: string; citation?: string })[];
   className?: string;
   colorClass: string;

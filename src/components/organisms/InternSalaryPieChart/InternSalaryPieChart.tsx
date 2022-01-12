@@ -1,7 +1,8 @@
-import { memo } from 'react';
-import { PieChart, Props as PieChartProps } from '@cmp/molecules/PieChart';
+import { memo, ComponentPropsWithoutRef } from 'react';
+import { PieChart } from '@cmp/molecules/PieChart';
 
-export interface Props extends Omit<PieChartProps, 'data' | 'title'> {}
+interface Props
+  extends Omit<ComponentPropsWithoutRef<typeof PieChart>, 'data' | 'title'> {}
 
 export const InternSalaryPieChart = memo((props: Props) => (
   <PieChart

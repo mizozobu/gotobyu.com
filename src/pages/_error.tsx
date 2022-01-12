@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import { Seo } from '@cmp/organisms/Seo';
 import { ErrorPage } from '@cmp/pages/ErrorPage';
 
-export interface Props {
+interface Props {
   statusCode?: number;
 }
 

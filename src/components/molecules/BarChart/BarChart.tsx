@@ -13,7 +13,7 @@ import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Title, Tooltip);
 
-export interface Props extends ComponentPropsWithoutRef<'div'> {
+interface Props extends ComponentPropsWithoutRef<'div'> {
   options?: ChartOptions<'bar'>;
   data: ChartData<'bar'>;
   title: string;

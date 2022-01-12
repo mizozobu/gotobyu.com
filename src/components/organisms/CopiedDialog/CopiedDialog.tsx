@@ -2,7 +2,7 @@ import { Transition, Dialog } from '@headlessui/react';
 import { ClipboardCheckIcon, XIcon } from '@heroicons/react/outline';
 import { Fragment } from 'react';
 
-export interface Props {
+interface Props {
   isOpen: boolean;
   onClose: () => void;
 }

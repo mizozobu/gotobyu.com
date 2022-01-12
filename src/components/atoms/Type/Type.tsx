@@ -1,7 +1,7 @@
 import { useState, useEffect, ComponentPropsWithoutRef } from 'react';
 import styles from './Type.module.css';
 
-export interface Props extends ComponentPropsWithoutRef<'span'> {
+interface Props extends ComponentPropsWithoutRef<'span'> {
   children: string;
   caretWidth?: string;
   typeSpeed?: number;

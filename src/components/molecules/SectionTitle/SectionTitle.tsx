@@ -4,8 +4,7 @@ import { memo, ComponentPropsWithoutRef, MouseEventHandler } from 'react';
 import { H2 } from '@cmp/atoms/H2';
 import styles from './SectionTitle.module.css';
 
-export interface Props
-  extends Omit<ComponentPropsWithoutRef<typeof H2>, 'onClick'> {
+interface Props extends Omit<ComponentPropsWithoutRef<typeof H2>, 'onClick'> {
   id: string;
   active: boolean;
   onClick?: MouseEventHandler<HTMLAnchorElement>;

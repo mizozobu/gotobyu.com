@@ -1,16 +1,13 @@
-import { memo, useState } from 'react';
+import { memo, useState, ComponentPropsWithoutRef } from 'react';
 import { Footnote } from '@cmp/atoms/Footnote';
-import {
-  BarChart,
-  Props as BarChartProps,
-  defaultOptions,
-} from '@cmp/molecules/BarChart';
+import { BarChart, defaultOptions } from '@cmp/molecules/BarChart';
 import { SwitchControl } from '@cmp/molecules/SwitchControl';
 import { TUITION } from '@d';
 import { Forex } from '@l/forex';
 import { MDX } from '@l/mdx';
 
-export interface Props extends Omit<BarChartProps, 'data' | 'title'> {
+interface Props
+  extends Omit<ComponentPropsWithoutRef<typeof BarChart>, 'data' | 'title'> {
   forex: Forex;
 }
 

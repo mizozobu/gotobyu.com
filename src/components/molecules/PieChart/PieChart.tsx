@@ -13,7 +13,7 @@ import { useScreenSize, gte, SCREEN_SIZE, ScreenSizeType } from '@l/screenSize';
 
 ChartJS.register(ArcElement, Legend, Title, Tooltip);
 
-export interface Props extends ComponentPropsWithoutRef<'div'> {
+interface Props extends ComponentPropsWithoutRef<'div'> {
   _options?: ChartOptions<'pie'>;
   data: ChartData<'pie'>;
   title: string;

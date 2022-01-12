@@ -12,7 +12,7 @@ import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
 
-export interface Props {
+interface Props {
   forex: Forex;
 }
 

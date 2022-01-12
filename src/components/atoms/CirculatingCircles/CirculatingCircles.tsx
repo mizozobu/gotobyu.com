@@ -1,7 +1,7 @@
 import Script from 'next/script';
 import type { ComponentPropsWithoutRef } from 'react';
 
-export interface Props extends ComponentPropsWithoutRef<'svg'> {
+interface Props extends ComponentPropsWithoutRef<'svg'> {
   animated?: boolean;
 }
 

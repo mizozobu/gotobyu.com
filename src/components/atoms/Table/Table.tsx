@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import styles from './Table.module.css';
 
-export interface Props extends ComponentPropsWithoutRef<'table'> {
+interface Props extends ComponentPropsWithoutRef<'table'> {
   thickBorderColor?: string;
 }
 

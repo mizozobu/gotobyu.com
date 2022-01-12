@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import styles from './BgRotate.module.css';
 
-export interface Props {
+interface Props {
   className?: string;
   colorClass: string;
   children: ReactNode;

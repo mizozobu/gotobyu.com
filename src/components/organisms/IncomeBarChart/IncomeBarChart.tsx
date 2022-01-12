@@ -1,11 +1,8 @@
-import { memo } from 'react';
-import {
-  BarChart,
-  Props as BarChartProps,
-  defaultOptions,
-} from '@cmp/molecules/BarChart';
+import { memo, ComponentPropsWithoutRef } from 'react';
+import { BarChart, defaultOptions } from '@cmp/molecules/BarChart';
 
-export interface Props extends Omit<BarChartProps, 'data' | 'title'> {}
+interface Props
+  extends Omit<ComponentPropsWithoutRef<typeof BarChart>, 'data' | 'title'> {}
 
 export const IncomeBarChart = memo((props: Props) => (
   <BarChart

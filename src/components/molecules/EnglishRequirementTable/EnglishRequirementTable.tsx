@@ -6,7 +6,7 @@ import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
 import styles from './EnglishRequirementTable.module.css';
 
-export interface Props {
+interface Props {
   data: SchoolDataCollection<EnglishRequirement>;
 }
 

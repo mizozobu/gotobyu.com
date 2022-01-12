@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
 import styles from './UlCol.module.css';
 
-export interface Props extends ComponentProps<'section'> {}
+interface Props extends ComponentProps<'section'> {}
 
 export const UlCol = ({ className, children, ...props }: Props) => (
   <section

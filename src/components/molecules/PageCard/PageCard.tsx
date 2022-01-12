@@ -1,7 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-export interface Props
-  extends Omit<ComponentPropsWithoutRef<'div'>, 'children'> {
+interface Props extends Omit<ComponentPropsWithoutRef<'div'>, 'children'> {
   icon: (props: ComponentPropsWithoutRef<'svg'>) => JSX.Element;
   name: string;
   detail: string;

@@ -2,10 +2,8 @@ import { NextPage } from 'next';
 import { Seo } from '@cmp/organisms/Seo';
 import { ErrorPage } from '@cmp/pages/ErrorPage';
 
-export interface Props {}
-
 // eslint-disable-next-line no-underscore-dangle
-const _404Page: NextPage<Props> = () => (
+const _404Page: NextPage = () => (
   <>
     <Seo title='エラー' noindex nofollow />
     <ErrorPage statusCode={404} />

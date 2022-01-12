@@ -1,7 +1,7 @@
 import { Switch } from '@headlessui/react';
 import { ReactNode } from 'react';
 
-export interface Props {
+interface Props {
   label: ReactNode;
   sr: string;
   checked: boolean;

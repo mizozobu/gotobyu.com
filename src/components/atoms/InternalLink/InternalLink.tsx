@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { ComponentPropsWithoutRef } from 'react';
 import styles from './InternalLink.module.css';
 
-export interface Props extends ComponentPropsWithoutRef<'a'> {
+interface Props extends ComponentPropsWithoutRef<'a'> {
   href: string;
 }
 

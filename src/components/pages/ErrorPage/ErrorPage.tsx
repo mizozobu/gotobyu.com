@@ -1,7 +1,7 @@
 import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
 import { MDX } from '@l/mdx';
 
-export interface Props {
+interface Props {
   statusCode: number;
 }
 

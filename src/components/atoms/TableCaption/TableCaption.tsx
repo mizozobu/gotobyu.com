@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import styles from './TableCaption.module.css';
 
-export interface Props extends ComponentPropsWithoutRef<'span'> {}
+interface Props extends ComponentPropsWithoutRef<'span'> {}
 
 export const TableCaption = ({ className = '', children, ...props }: Props) => (
   <caption className={classNames('py-1', styles['table-caption'])}>
