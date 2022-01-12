@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { CirculatingCircles, Props } from './CirculatingCircles';
+import { CirculatingCircles } from './CirculatingCircles';
 
 export default {
   title: 'atoms/CirculatingCircles',
   component: CirculatingCircles,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof CirculatingCircles>;
 
-const Template: Story<Props> = (args) => <CirculatingCircles {...args} />;
+const Template: ComponentStory<typeof CirculatingCircles> = (args) => (
+  <CirculatingCircles {...args} />
+);
 
 export const Static = Template.bind({});
 Static.args = {};

@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { Footer, Props } from './Footer';
+import { Footer } from './Footer';
 
 export default {
   title: 'organisms/Footer',
   component: Footer,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof Footer>;
 
-const Template: Story<Props> = (args) => <Footer {...args} />;
+const Template: ComponentStory<typeof Footer> = () => <Footer />;
 
 export const Example = Template.bind({});
 Example.args = {};

@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { SchoolTable, Props } from './SchoolTable';
+import { SchoolTable } from './SchoolTable';
 
 export default {
   title: 'organisms/SchoolTable',
   component: SchoolTable,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof SchoolTable>;
 
-const Template: Story<Props> = (args) => <SchoolTable {...args} />;
+const Template: ComponentStory<typeof SchoolTable> = () => <SchoolTable />;
 
 export const Example = Template.bind({});
 Example.args = {};

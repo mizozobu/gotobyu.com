@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { Container, Props } from './Container';
+import { Container } from './Container';
 
 export default {
   title: 'atoms/Container',
   component: Container,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof Container>;
 
-const Template: Story<Props> = (args) => <Container {...args} />;
+const Template: ComponentStory<typeof Container> = (args) => (
+  <Container {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {

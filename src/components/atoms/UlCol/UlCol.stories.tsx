@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { UlCol, Props } from './UlCol';
+import { UlCol } from './UlCol';
 
 export default {
   title: 'atoms/UlCol',
   component: UlCol,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof UlCol>;
 
-const Template: Story<Props> = (args) => <UlCol {...args} />;
+const Template: ComponentStory<typeof UlCol> = (args) => <UlCol {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {

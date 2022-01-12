@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { SectionTitle, Props } from './SectionTitle';
+import { SectionTitle } from './SectionTitle';
 
 export default {
   title: 'molecules/SectionTitle',
   component: SectionTitle,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof SectionTitle>;
 
-const Template: Story<Props> = (args) => <SectionTitle {...args} />;
+const Template: ComponentStory<typeof SectionTitle> = (args) => (
+  <SectionTitle {...args} />
+);
 
 export const Active = Template.bind({});
 Active.args = {

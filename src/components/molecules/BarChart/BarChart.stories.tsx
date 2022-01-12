@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { BarChart, Props } from './BarChart';
+import { BarChart } from './BarChart';
 
 export default {
   title: 'molecules/BarChart',
   component: BarChart,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof BarChart>;
 
-const Template: Story<Props> = (args) => <BarChart {...args} />;
+const Template: ComponentStory<typeof BarChart> = (args) => (
+  <BarChart {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {

@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { EikenTable, Props } from './EikenTable';
+import { EikenTable } from './EikenTable';
 
 export default {
   title: 'molecules/EikenTable',
   component: EikenTable,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof EikenTable>;
 
-const Template: Story<Props> = (args) => <EikenTable {...args} />;
+const Template: ComponentStory<typeof EikenTable> = () => <EikenTable />;
 
 export const Example = Template.bind({});
 Example.args = {};

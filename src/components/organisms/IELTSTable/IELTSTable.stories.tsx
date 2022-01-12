@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { IELTSTable, Props } from './IELTSTable';
+import { IELTSTable } from './IELTSTable';
 
 export default {
   title: 'molecules/IELTSTable',
   component: IELTSTable,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof IELTSTable>;
 
-const Template: Story<Props> = (args) => <IELTSTable {...args} />;
+const Template: ComponentStory<typeof IELTSTable> = () => <IELTSTable />;
 
 export const Example = Template.bind({});
 Example.args = {};

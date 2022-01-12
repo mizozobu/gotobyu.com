@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { CostTable, Props } from './CostTable';
+import { CostTable } from './CostTable';
 
 export default {
   title: 'organisms/CostTable',
   component: CostTable,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof CostTable>;
 
-const Template: Story<Props> = (args) => <CostTable {...args} />;
+const Template: ComponentStory<typeof CostTable> = (args) => (
+  <CostTable {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {

@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { EnglishRequirementTable, Props } from './EnglishRequirementTable';
+import { EnglishRequirementTable } from './EnglishRequirementTable';
 
 export default {
   title: 'molecules/EnglishRequirementTable',
   component: EnglishRequirementTable,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof EnglishRequirementTable>;
 
-const Template: Story<Props> = (args) => <EnglishRequirementTable {...args} />;
+const Template: ComponentStory<typeof EnglishRequirementTable> = (args) => (
+  <EnglishRequirementTable {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {

@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { BgRotate, Props } from './BgRotate';
+import { BgRotate } from './BgRotate';
 
 export default {
   title: 'atoms/BgRotate',
   component: BgRotate,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof BgRotate>;
 
-const Template: Story<Props> = (args) => <BgRotate {...args} />;
+const Template: ComponentStory<typeof BgRotate> = (args) => (
+  <BgRotate {...args} />
+);
 
 export const WithoutLayer = Template.bind({});
 WithoutLayer.args = {

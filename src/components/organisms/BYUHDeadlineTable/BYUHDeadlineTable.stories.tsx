@@ -1,15 +1,17 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { BYUH_APPLICATION_DEADLINE } from '@d';
-import { BYUHDeadlineTable, Props } from './BYUHDeadlineTable';
+import { BYUHDeadlineTable } from './BYUHDeadlineTable';
 
 export default {
   title: 'organisms/BYUHDeadlineTable',
   component: BYUHDeadlineTable,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof BYUHDeadlineTable>;
 
-const Template: Story<Props> = (args) => <BYUHDeadlineTable {...args} />;
+const Template: ComponentStory<typeof BYUHDeadlineTable> = () => (
+  <BYUHDeadlineTable />
+);
 
 export const Example = Template.bind({});
 Example.args = { data: BYUH_APPLICATION_DEADLINE };

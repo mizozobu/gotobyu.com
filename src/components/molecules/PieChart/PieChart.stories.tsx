@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { PieChart, Props } from './PieChart';
+import { PieChart } from './PieChart';
 
 export default {
   title: 'molecules/PieChart',
   component: PieChart,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof PieChart>;
 
-const Template: Story<Props> = (args) => <PieChart {...args} />;
+const Template: ComponentStory<typeof PieChart> = (args) => (
+  <PieChart {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {

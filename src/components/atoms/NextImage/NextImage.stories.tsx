@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { NextImage, Props } from './NextImage';
+import { NextImage } from './NextImage';
 
 export default {
   title: 'atoms/NextImage',
   component: NextImage,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof NextImage>;
 
-const Template: Story<Props> = (args) => <NextImage {...args} />;
+const Template: ComponentStory<typeof NextImage> = (args) => (
+  <NextImage {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {

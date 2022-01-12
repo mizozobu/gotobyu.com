@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { SwitchControl, Props } from './SwitchControl';
+import { SwitchControl } from './SwitchControl';
 
 export default {
   title: 'molecules/SwitchControl',
   component: SwitchControl,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof SwitchControl>;
 
-const Template: Story<Props> = (args) => <SwitchControl {...args} />;
+const Template: ComponentStory<typeof SwitchControl> = (args) => (
+  <SwitchControl {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {

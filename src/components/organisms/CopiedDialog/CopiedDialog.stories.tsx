@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { CopiedDialog, Props } from './CopiedDialog';
+import { CopiedDialog } from './CopiedDialog';
 
 export default {
   title: 'organisms/CopiedDialog',
   component: CopiedDialog,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof CopiedDialog>;
 
-const Template: Story<Props> = (args) => <CopiedDialog {...args} />;
+const Template: ComponentStory<typeof CopiedDialog> = (args) => (
+  <CopiedDialog {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {

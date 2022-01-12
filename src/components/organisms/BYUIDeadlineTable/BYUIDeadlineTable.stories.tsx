@@ -1,15 +1,17 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { BYUI_APPLICATION_DEADLINE } from '@d';
-import { BYUIDeadlineTable, Props } from './BYUIDeadlineTable';
+import { BYUIDeadlineTable } from './BYUIDeadlineTable';
 
 export default {
   title: 'organisms/BYUIDeadlineTable',
   component: BYUIDeadlineTable,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof BYUIDeadlineTable>;
 
-const Template: Story<Props> = (args) => <BYUIDeadlineTable {...args} />;
+const Template: ComponentStory<typeof BYUIDeadlineTable> = () => (
+  <BYUIDeadlineTable />
+);
 
 export const Example = Template.bind({});
 Example.args = { data: BYUI_APPLICATION_DEADLINE };

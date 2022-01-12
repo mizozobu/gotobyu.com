@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { InternSalaryPieChart, Props } from './InternSalaryPieChart';
+import { InternSalaryPieChart } from './InternSalaryPieChart';
 
 export default {
   title: 'organisms/InternSalaryPieChart',
   component: InternSalaryPieChart,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof InternSalaryPieChart>;
 
-const Template: Story<Props> = (args) => <InternSalaryPieChart {...args} />;
+const Template: ComponentStory<typeof InternSalaryPieChart> = (args) => (
+  <InternSalaryPieChart {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {};

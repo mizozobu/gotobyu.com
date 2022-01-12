@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { TOEFLTable, Props } from './TOEFLTable';
+import { TOEFLTable } from './TOEFLTable';
 
 export default {
   title: 'molecules/TOEFLTable',
   component: TOEFLTable,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof TOEFLTable>;
 
-const Template: Story<Props> = (args) => <TOEFLTable {...args} />;
+const Template: ComponentStory<typeof TOEFLTable> = () => <TOEFLTable />;
 
 export const Example = Template.bind({});
 Example.args = {};

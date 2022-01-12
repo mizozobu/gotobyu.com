@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { TableCaption, Props } from './TableCaption';
+import { TableCaption } from './TableCaption';
 
 export default {
   title: 'atoms/TableCaption',
   component: TableCaption,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof TableCaption>;
 
-const Template: Story<Props> = (args) => (
+const Template: ComponentStory<typeof TableCaption> = (args) => (
   <table>
     <TableCaption {...args} />
   </table>

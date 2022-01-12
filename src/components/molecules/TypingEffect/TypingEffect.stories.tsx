@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { TypingEffect, Props } from './TypingEffect';
+import { TypingEffect } from './TypingEffect';
 
 export default {
   title: 'molecules/TypingEffect',
   component: TypingEffect,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof TypingEffect>;
 
-const Template: Story<Props> = (args) => <TypingEffect {...args} />;
+const Template: ComponentStory<typeof TypingEffect> = (args) => (
+  <TypingEffect {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {};

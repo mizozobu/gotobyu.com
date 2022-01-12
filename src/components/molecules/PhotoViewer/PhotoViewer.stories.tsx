@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { PhotoViewer, Props } from './PhotoViewer';
+import { PhotoViewer } from './PhotoViewer';
 
 export default {
   title: 'molecules/PhotoViewer',
   component: PhotoViewer,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof PhotoViewer>;
 
-const Template: Story<Props> = (args) => (
+const Template: ComponentStory<typeof PhotoViewer> = (args) => (
   <div className='pt-8 pb-4 md:float-left'>
     <PhotoViewer {...args} />
   </div>

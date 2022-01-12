@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { DeadlineTable, Props } from './DeadlineTable';
+import { DeadlineTable } from './DeadlineTable';
 
 export default {
   title: 'molecules/DeadlineTable',
   component: DeadlineTable,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof DeadlineTable>;
 
-const Template: Story<Props> = (args) => <DeadlineTable {...args} />;
+const Template: ComponentStory<typeof DeadlineTable> = (args) => (
+  <DeadlineTable {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {

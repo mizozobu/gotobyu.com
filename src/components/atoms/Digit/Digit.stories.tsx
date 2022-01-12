@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { Digit, Props } from './Digit';
+import { Digit } from './Digit';
 
 export default {
   title: 'atoms/Digit',
   component: Digit,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof Digit>;
 
-const Template: Story<Props> = (args) => <Digit {...args} />;
+const Template: ComponentStory<typeof Digit> = (args) => <Digit {...args} />;
 
 export const NoComma = Template.bind({});
 NoComma.args = {

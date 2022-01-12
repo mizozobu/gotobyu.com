@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { BorderDraw, Props } from './BorderDraw';
+import { BorderDraw } from './BorderDraw';
 
 export default {
   title: 'atoms/BorderDraw',
   component: BorderDraw,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof BorderDraw>;
 
-const Template: Story<Props> = (args) => <BorderDraw {...args} />;
+const Template: ComponentStory<typeof BorderDraw> = (args) => (
+  <BorderDraw {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {

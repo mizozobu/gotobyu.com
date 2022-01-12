@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { IncomeBarChart, Props } from './IncomeBarChart';
+import { IncomeBarChart } from './IncomeBarChart';
 
 export default {
   title: 'organisms/IncomeBarChart',
   component: IncomeBarChart,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof IncomeBarChart>;
 
-const Template: Story<Props> = (args) => <IncomeBarChart {...args} />;
+const Template: ComponentStory<typeof IncomeBarChart> = (args) => (
+  <IncomeBarChart {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {};

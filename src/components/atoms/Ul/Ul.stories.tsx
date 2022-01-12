@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { Ul, Props } from './Ul';
+import { Ul } from './Ul';
 
 export default {
   title: 'atoms/Ul',
   component: Ul,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof Ul>;
 
-const Template: Story<Props> = (args) => <Ul {...args} />;
+const Template: ComponentStory<typeof Ul> = (args) => <Ul {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {

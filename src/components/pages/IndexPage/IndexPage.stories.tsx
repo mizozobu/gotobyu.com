@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { IndexPage, Props } from './IndexPage';
+import { IndexPage } from './IndexPage';
 
 export default {
   title: 'pages/IndexPage',
   component: IndexPage,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof IndexPage>;
 
-const Template: Story<Props> = (args) => <IndexPage {...args} />;
+const Template: ComponentStory<typeof IndexPage> = () => <IndexPage />;
 
 export const Example = Template.bind({});
 Example.args = {};

@@ -1,14 +1,16 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { SchoolCard, Props } from './SchoolCard';
+import { SchoolCard } from './SchoolCard';
 
 export default {
   title: 'molecules/SchoolCard',
   component: SchoolCard,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof SchoolCard>;
 
-const Template: Story<Props> = (args) => <SchoolCard {...args} />;
+const Template: ComponentStory<typeof SchoolCard> = (args) => (
+  <SchoolCard {...args} />
+);
 
 export const BYU = Template.bind({});
 BYU.args = {

@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { Strong, Props } from './Strong';
+import { Strong } from './Strong';
 
 export default {
   title: 'atoms/Strong',
   component: Strong,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof Strong>;
 
-const Template: Story<Props> = (args) => <Strong {...args} />;
+const Template: ComponentStory<typeof Strong> = (args) => <Strong {...args} />;
 
 export const SingleLine = Template.bind({});
 SingleLine.args = {

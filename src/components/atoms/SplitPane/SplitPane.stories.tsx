@@ -1,16 +1,18 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { NextImage } from '@cmp/atoms/NextImage';
 import { Pane } from '@cmp/atoms/Pane';
-import { SplitPane, Props } from './SplitPane';
+import { SplitPane } from './SplitPane';
 
 export default {
   title: 'atoms/SplitPane',
   component: SplitPane,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof SplitPane>;
 
-const Template: Story<Props> = (args) => <SplitPane {...args} />;
+const Template: ComponentStory<typeof SplitPane> = (args) => (
+  <SplitPane {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {

@@ -1,14 +1,14 @@
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { PTETable, Props } from './PTETable';
+import { PTETable } from './PTETable';
 
 export default {
   title: 'molecules/PTETable',
   component: PTETable,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof PTETable>;
 
-const Template: Story<Props> = (args) => <PTETable {...args} />;
+const Template: ComponentStory<typeof PTETable> = () => <PTETable />;
 
 export const Example = Template.bind({});
 Example.args = {};

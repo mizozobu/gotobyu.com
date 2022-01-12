@@ -1,15 +1,17 @@
 import { ScaleIcon } from '@heroicons/react/outline';
-import { Story, Meta } from '@storybook/react';
+import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { PageCard, Props } from './PageCard';
+import { PageCard } from './PageCard';
 
 export default {
   title: 'molecules/PageCard',
   component: PageCard,
   argTypes: {},
-} as Meta;
+} as ComponentMeta<typeof PageCard>;
 
-const Template: Story<Props> = (args) => <PageCard {...args} />;
+const Template: ComponentStory<typeof PageCard> = (args) => (
+  <PageCard {...args} />
+);
 
 export const Example = Template.bind({});
 Example.args = {
