@@ -154,6 +154,9 @@ module.exports = {
         // allow voiding floating promise
         'no-void': ['error', { allowAsStatement: true }],
 
+        // allow _ in variable
+        'no-underscore-dangle': 'off',
+
         // allow default export for container components
         'no-restricted-exports': 'off',
 

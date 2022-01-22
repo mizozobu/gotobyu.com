@@ -11,7 +11,6 @@ interface Props {
  * @returns null
  */
 export const HookRegistry = ({ pageProps }: Props) => {
-  // eslint-disable-next-line no-underscore-dangle
   useRecoilHydrate((pageProps._recoil as Partial<RecoilProps>) ?? {});
   useScrollIntoView();
 

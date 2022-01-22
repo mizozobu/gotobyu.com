@@ -6,7 +6,6 @@ interface Props {
   statusCode?: number;
 }
 
-// eslint-disable-next-line no-underscore-dangle
 const _ErrorPage: NextPage<Props> = ({ statusCode = 500 }: Props) => (
   <>
     <Seo title='エラー' noindex nofollow />
