@@ -1,19 +1,23 @@
-const classnames = require('classnames');
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
-const { compilerOptions } = require('./tsconfig');
+import classnames from 'classnames';
+import { pathsToModuleNameMapper } from 'ts-jest';
+import tsconfig from './tsconfig.json';
 
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
-module.exports = {
-  preset: 'ts-jest',
+export default {
+  preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'node',
+  restoreMocks: true,
   moduleNameMapper: {
     // see https://kulshekhar.github.io/ts-jest/docs/getting-started/paths-mapping/
-    ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
+    ...pathsToModuleNameMapper(tsconfig.compilerOptions.paths, {
+      prefix: '<rootDir>/',
+    }),
     // see https://jestjs.io/docs/webpack#mocking-css-modules
     '\\.css$': 'identity-obj-proxy',
   },
   globals: {
     'ts-jest': {
+      useESM: true,
       tsconfig: '<rootDir>/tsconfig.jest.json',
     },
     classNames: classnames,

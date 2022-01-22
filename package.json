@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit --project tsconfig.json",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s public",
-    "test": "jest"
+    "test": "node --experimental-vm-modules --experimental-json-modules $(yarn bin jest)"
   },
   "dependencies": {
     "@headlessui/react": "^1.4.3",
