@@ -10,9 +10,12 @@ import { P } from '@cmp/atoms/P';
 import { Strong } from '@cmp/atoms/Strong';
 import { Ul } from '@cmp/atoms/Ul';
 import { SectionTitle } from '@cnt/SectionTitle';
+import type { MDXProvider } from './mdx.interface';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const MDX: { [key: string]: (props: any) => JSX.Element } = {
+/**
+ * mdx component registry
+ */
+export const MDX: MDXProvider = {
   h1: H1,
   h2: SectionTitle,
   h3: H3,

@@ -1,4 +1,3 @@
-import { MDXProvider } from '@mdx-js/react';
 import { AppProps as NextAppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -13,7 +12,7 @@ import { GTM_ID, pageview } from '@l/gtm';
 import { MDX } from '@l/mdx';
 import '~/styles/globals.css';
 
-export interface AppProps extends NextAppProps {
+export interface AppProps extends NextAppProps<{ components: typeof MDX }> {
   pageProps: { [key: string]: unknown };
 }
 
@@ -62,9 +61,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Header />
 
       <main id='content'>
-        <MDXProvider components={MDX}>
-          <Component {...pageProps} />
-        </MDXProvider>
+        <Component {...pageProps} components={MDX} />
       </main>
 
       <CopiedDialog />
