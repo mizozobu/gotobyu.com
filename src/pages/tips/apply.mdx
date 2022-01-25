@@ -9,7 +9,6 @@ import { IELTSTable } from '@cmp/organisms/IELTSTable';
 import { PTETable } from '@cmp/organisms/PTETable';
 import { EikenTable } from '@cmp/organisms/EikenTable';
 import { APPLY_PAGE_META } from '@d';
-import { MDX } from '@l/mdx';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
@@ -90,50 +89,20 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
   <Tab.Panels>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <BYUDeadlineTable />
-      <p>優先申込締切までに申込を完了すると選考を有利に進められます。</p>
-      <MDX.ul>
-        <MDX.li>
-          <MDX.a href='https://enrollment.byu.edu/admissions/deadlines'>
-            BYUの申込締切
-          </MDX.a>
-        </MDX.li>
-        <MDX.li>
-          <MDX.a href='https://enrollment2.byu.edu/academic-calendar'>
-            BYUの年間カレンダー
-          </MDX.a>
-        </MDX.li>
-      </MDX.ul>
+      優先申込締切までに申込を完了すると選考を有利に進められます。
+      - [BYUの申込締切](https://enrollment.byu.edu/admissions/deadlines)
+      - [BYUの年間カレンダー](https://enrollment2.byu.edu/academic-calendar)
     </Tab.Panel>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <BYUHDeadlineTable />
-      <MDX.ul>
-        <MDX.li>
-          <MDX.a href='https://hookele.byuh.edu/application-deadlines-decisions-schedule'>
-            BYUHの申込締切
-          </MDX.a>
-        </MDX.li>
-        <MDX.li>
-          <MDX.a href='https://registrar.byuh.edu/academic-dates'>
-            BYUHの年間カレンダー
-          </MDX.a>
-        </MDX.li>
-      </MDX.ul>
+      - [BYUHの申込締切](https://hookele.byuh.edu/application-deadlines-decisions-schedule)
+      - [BYUHの年間カレンダー](https://registrar.byuh.edu/academic-dates)
     </Tab.Panel>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <BYUIDeadlineTable />
-      <p>優先申込締切までに申込を完了すると選考を有利に進められます。</p>
-      <MDX.ul>
-        <MDX.li>
-          <MDX.a href='https://hookele.byuh.edu/application-deadlines-decisions-schedules'>
-            BYUIの申込締切
-          </MDX.a>
-        </MDX.li>
-        <MDX.li>
-          <MDX.a href='https://www.byui.edu/student-records/academic-deadlines'>
-            BYUIの年間カレンダー
-          </MDX.a>
-        </MDX.li>
-      </MDX.ul>
+      優先申込締切までに申込を完了すると選考を有利に進められます。
+      - [BYUIの申込締切](https://www.byui.edu/admissions/application-deadlines)
+      - [BYUIの年間カレンダー](https://www.byui.edu/student-records/academic-deadlines)
     </Tab.Panel>
   </Tab.Panels>
 </Tab.Group>
@@ -141,7 +110,8 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
 
 ## 申込費用
 
-申込費用は1校につき**$35**です。
+
+申込費用は1校につき **$35**です。
 
 
 ## 入学に必要な英語力
@@ -191,41 +161,20 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
   <Tab.Panels>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <TOEFLTable />
-      <p>
-        <MDX.a href='https://www.toefl-ibt.jp'>
-          Test of English as a Foreign Language(TOEFL)
-        </MDX.a>
-        はEducational Testing Service(ETS)が主催するテストです。
-      </p>
+      [Test of English as a Foreign Language(TOEFL)](https://www.toefl-ibt.jp)はEducational Testing Service(ETS)が主催するテストです。
     </Tab.Panel>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <IELTSTable />
-      <p>
-        <MDX.a href='https://www.eiken.or.jp/ielts/'>
-          International English Language Testing System(IELTS)
-        </MDX.a>
-        はBritish Council、IDP、Cambridge Assessment
-        Englishが共同で主催するテストです。
-      </p>
+      [International English Language Testing System(IELTS)](https://www.eiken.or.jp/ielts/)はBritish Council、IDP、Cambridge Assessment Englishが共同で主催するテストです。
     </Tab.Panel>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <PTETable />
-      <p>
-        <MDX.a href='https://pearsonpte.com/japanese'>
-          Pearson Test of English(PTE)
-        </MDX.a>
-        はPearsonが主催するテストです。
-      </p>
+        [Pearson Test of English(PTE)](https://pearsonpte.com/japanese)はPearsonが主催するテストです。
     </Tab.Panel>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
       <EikenTable />
-      <p>
-        <MDX.a href='https://www.eiken.or.jp/eiken/'>
-          実用英語技能検定(英検)
-        </MDX.a>
-        は公益財団法人日本英語検定協会が主催するテストです。英検は
-        <MDX.strong>BYUHでのみ</MDX.strong>認められています。
-      </p>
+      [実用英語技能検定(英検)](https://www.eiken.or.jp/eiken/)は公益財団法人日本英語検定協会が主催するテストです。
+      英検は**BYUHでのみ**認められています。
     </Tab.Panel>
   </Tab.Panels>
 </Tab.Group>

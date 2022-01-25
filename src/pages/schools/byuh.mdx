@@ -5,7 +5,6 @@ import { NextImage } from '@cmp/atoms/NextImage';
 import { Digit } from '@cmp/atoms/Digit';
 import { PhotoViewer } from '@cmp/molecules/PhotoViewer';
 import { BYUH_PAGE_META, SCHOOL_INFO } from '@d';
-import { MDX } from '@l/mdx';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuhBbqImage from '@p/byuh/byuh-japan-student-chapter-bbq.jpg';
 import byuhClassImage from '@p/byuh/byuh-class.jpg';
@@ -44,18 +43,11 @@ import byuhResumeWorkshopImage from '@p/byuh/byuh-japan-student-chapter-resume-w
     />
   </Pane>
   <Pane>
-    <MDX.ul>
-      <MDX.li>
-        <span className='font-bold'>場所</span>:{' '}
-        <MDX.a href='https://www.google.com/maps/place/Brigham+Young+University–Hawaii/@21.6422134,-157.9284008,17z/data=!3m1!4b1!4m5!3m4!1s0x7c004568593757b1:0x5b5ff11727fa5a83!8m2!3d21.6422084!4d-157.9262121'>
-          ハワイ州ライエ
-        </MDX.a>
-      </MDX.li>
-      <MDX.li><span className='font-bold'>合格率</span>: <Digit>{SCHOOL_INFO.byuh.acceptanceRate * 100}</Digit>%</MDX.li>
-      <MDX.li><span className='font-bold'>学生数</span>: <Digit>{SCHOOL_INFO.byuh.numberOfStudents}</Digit></MDX.li>
-      <MDX.li><span className='font-bold'>専攻数</span>: <Digit>{SCHOOL_INFO.byuh.numberOfMajors}</Digit></MDX.li>
-      <MDX.li><span className='font-bold'>授業数</span>: <Digit>{SCHOOL_INFO.byuh.numberOfCourses}</Digit></MDX.li>
-     </MDX.ul>
+    - <span className='font-bold'>場所</span>: [ハワイ州ライエ](https://www.google.com/maps/place/Brigham+Young+University–Hawaii/@21.6422134,-157.9284008,17z/data=!3m1!4b1!4m5!3m4!1s0x7c004568593757b1:0x5b5ff11727fa5a83!8m2!3d21.6422084!4d-157.9262121)
+    - <span className='font-bold'>合格率</span>: <Digit>{SCHOOL_INFO.byuh.acceptanceRate * 100}</Digit>%
+    - <span className='font-bold'>学生数</span>: <Digit>{SCHOOL_INFO.byuh.numberOfStudents}</Digit>
+    - <span className='font-bold'>専攻数</span>: <Digit>{SCHOOL_INFO.byuh.numberOfMajors}</Digit>
+    - <span className='font-bold'>授業数</span>: <Digit>{SCHOOL_INFO.byuh.numberOfCourses}</Digit>
   </Pane>
 </SplitPane>
 
@@ -236,7 +228,7 @@ BYUHのクラブは[BYUHのウェブサイト](https://byuh.campuslabs.com/engag
 [BYUHの規則](https://hr.byuh.edu/student-employment)では、 学校期間中は**週19時間まで**、夏休みなどの休業期間には週40時間までアルバイトをすることができます。
 留学生はビザの関係でキャンパス内でしか働くことができませんが、BYUHでは隣接する[ポリネシアカルチャーセンター](https://www.polynesia.com)でも働くことができます。
 
-[ハワイ州の最低賃金](https://labor.hawaii.gov/wsd/minimum-wage/)は**$10.10**で近年上昇傾向にあります。
+[ハワイ州の最低賃金](https://labor.hawaii.gov/wsd/minimum-wage/)は **$10.10**で近年上昇傾向にあります。
 キャンパス内のアルバイトでも最低賃金は保証されているため、目一杯働くと
 
 $10.10 x 19時間 x 4週間 = $767.6
