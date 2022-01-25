@@ -94,6 +94,12 @@ module.exports = {
       rules: {
         // allow empty interface (for React props)
         '@typescript-eslint/no-empty-interface': 'off',
+
+        // allow typescript constructor parameter properties
+        // see https://www.typescriptlang.org/docs/handbook/2/classes.html#parameter-properties
+        // e.g. constructor(private readonly xxxx: string) {}
+        'no-useless-constructor': 'off',
+        '@typescript-eslint/no-useless-constructor': ['error'],
       },
     },
 
@@ -120,7 +126,13 @@ module.exports = {
      * jest
      */
     {
-      files: ['**/*.spec.js', '**/*.spec.ts', '**/*.spec.jsx', '**/*.spec.tsx'],
+      files: [
+        '**/*.spec.js',
+        '**/*.spec.ts',
+        '**/*.spec.jsx',
+        '**/*.spec.tsx',
+        'jest.*',
+      ],
       extends: ['plugin:jest/all'],
       env: {
         'jest/globals': true,
@@ -136,9 +148,16 @@ module.exports = {
               '**/*.spec.ts',
               '**/*.spec.jsx',
               '**/*.spec.tsx',
+              'jest.*',
             ],
           },
         ],
+
+        // allow beforeAll, beforeEach, afterAll, and afterEach
+        'jest/no-hooks': 'off',
+
+        // allow upper case at the first charactor of describe, it, ...
+        'jest/prefer-lowercase-title': 'off',
       },
     },
 
@@ -159,6 +178,13 @@ module.exports = {
 
         // allow default export for container components
         'no-restricted-exports': 'off',
+
+        // allow class properties with no blank line inbetween
+        'lines-between-class-members': [
+          'error',
+          'always',
+          { exceptAfterSingleLine: true },
+        ],
 
         // allow named exports without default export
         'import/prefer-default-export': 'off',
