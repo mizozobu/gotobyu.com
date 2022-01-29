@@ -4,7 +4,7 @@ import type { AtomKey, RecoilProps } from './recoil.interface';
 import { getAtomByKey } from './recoil.util';
 
 /**
- * receive recoil state plain object from withRecoil and init atoms on client side
+ * receive recoil state plain object from AtomStore.with and init atoms on client side
  *
  * @param recoilProps
  */
