@@ -1,21 +1,21 @@
-import type { TopLevelContent, Heading } from 'mdast';
-import type {
-  MDXFlowExpression,
-  MDXTextExpression,
-  MDXJsxFlowElement,
-  MDXJsxTextElement,
-  MDXJSEsm,
-} from 'mdast-util-mdx';
-
+import type { Element } from 'hast';
+import type { Heading } from 'mdast';
+import type { ValuesType } from 'utility-types';
+import type { HEADING_TAGS } from './algolia.constants';
 /**
  * type for heading depth
  */
 export type HeadingDepth = Heading['depth'];
 
 /**
+ * type for heading tag
+ */
+export type HeadingTag = ValuesType<typeof HEADING_TAGS>;
+
+/**
  * type for indexable object in algolia
  */
-export interface IndexableObject {
+export interface Algoliast {
   permalink: string;
   h1: string;
   h2: string;
@@ -27,12 +27,8 @@ export interface IndexableObject {
 }
 
 /**
- * type for mdast tree with mdx
+ * type for unified settings
  */
-export type MDXTopLevelContent =
-  | TopLevelContent
-  | MDXFlowExpression
-  | MDXTextExpression
-  | MDXJsxFlowElement
-  | MDXJsxTextElement
-  | MDXJSEsm;
+export interface Settings {
+  exclude: (node: Element) => boolean;
+}
