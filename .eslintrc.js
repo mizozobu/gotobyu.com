@@ -139,6 +139,9 @@ module.exports = {
       },
       plugins: ['jest'],
       rules: {
+        // allow obj['key'] to access private property
+        'dot-notation': 'off',
+
         // allow importing devDependencies in tests
         'import/no-extraneous-dependencies': [
           'error',

@@ -1,37 +1,46 @@
 import { readFile } from 'fs/promises';
-import type { Heading, Text } from 'mdast';
-import remarkMdx from 'remark-mdx';
-import remarkParse from 'remark-parse';
-import { unified, Compiler } from 'unified';
+import type { Element, Text } from 'hast';
+import { minify } from 'html-minifier';
+import rehypeParse from 'rehype-parse';
+import { unified, Compiler, Processor } from 'unified';
 import type { Node } from 'unist';
-import { filter } from 'unist-util-filter';
 import { visit } from 'unist-util-visit';
 import type { VFileCompatible } from 'vfile';
-import type { HeadingDepth, IndexableObject } from './algolia.interface';
+import { HEADING_TAGS } from './algolia.constants';
+import type {
+  HeadingDepth,
+  HeadingTag,
+  Algoliast,
+  Settings,
+} from './algolia.interface';
 
 /**
- * mdast to algolia indexable object
+ * build algolist from hast tree
  */
-export class Algoliast {
-  /** link to the content */
-  private permalink = '';
-  /** h1 heading */
-  private h1 = '';
-  /** h2 heading */
-  private h2 = '';
-  /** h3 heading */
-  private h3 = '';
-  /** h4 heading */
-  private h4 = '';
-  /** h5 heading */
-  private h5 = '';
-  /** h6 heading */
-  private h6 = '';
-  /** content body */
-  private content = '';
-
+export class AlgoliastBuilder {
   /** heading max depth */
   private readonly MAX_DEPTH: number = 6;
+  /** algoliasts */
+  private algoliasts: Algoliast[] = [];
+  /** current algoliast */
+  private current: Algoliast = {
+    /** link to the content */
+    permalink: '',
+    /** h1 heading */
+    h1: '',
+    /** h2 heading */
+    h2: '',
+    /** h3 heading */
+    h3: '',
+    /** h4 heading */
+    h4: '',
+    /** h5 heading */
+    h5: '',
+    /** h6 heading */
+    h6: '',
+    /** content body */
+    content: '',
+  };
 
   /**
    * Algoliast constructor
@@ -44,24 +53,25 @@ export class Algoliast {
   /**
    * reset headings below the specified depth
    *
-   * @param depth heading depth
+   * @param tag heading tag name
    */
-  resetHeadings(depth: HeadingDepth) {
+  resetHeadings(tag: HeadingTag) {
+    const depth = +tag.slice(-1) as HeadingDepth;
     for (let i = depth; i <= this.MAX_DEPTH; i += 1) {
-      this[`h${i}`] = '';
+      this.current[`h${i}`] = '';
     }
   }
 
   /**
    * set heading at the specified depth
    *
-   * @param depth heading depth
+   * @param tag heading tag name
    * @param value heading title
    */
-  setHeading(depth: HeadingDepth, value: string) {
-    this.resetHeadings(depth);
-    this.permalink = `${this.baseUrl}#${value}`;
-    this[`h${depth}`] = value;
+  setHeading(tag: HeadingTag, value: string) {
+    this.resetHeadings(tag);
+    this.current.permalink = `${this.baseUrl}#${value}`;
+    this.current[tag] = value;
   }
 
   /**
@@ -70,116 +80,175 @@ export class Algoliast {
    * @param content content body
    */
   setContent(content: string) {
-    this.content = content;
+    this.current.content = content;
   }
 
   /**
-   * serialize to algolia indexable object
-   *
-   * @returns algolia indexable object
+   * add algoliast
    */
-  serialize(): IndexableObject {
-    return {
-      permalink: this.permalink,
-      h1: this.h1,
-      h2: this.h2,
-      h3: this.h3,
-      h4: this.h4,
-      h5: this.h5,
-      h6: this.h6,
-      content: this.content,
-    };
+  add(algoliast: Algoliast) {
+    this.algoliasts.push(algoliast);
+  }
+
+  /**
+   * getter for algoliasts
+   *
+   * @returns array of algoliast
+   */
+  getAlgoliasts(): Algoliast[] {
+    return this.algoliasts;
+  }
+
+  /**
+   * get current algoliast
+   *
+   * @returns current algoliast
+   */
+  getCurrentAlgoliast(): Algoliast {
+    return { ...this.current };
+  }
+
+  /**
+   * get last algoliast
+   *
+   * @returns last algoliast
+   */
+  getLastAlgoliast(): Algoliast | undefined {
+    return this.algoliasts[this.algoliasts.length - 1];
   }
 }
 
 /**
- * recursively extract text and inlineCode value from tree
+ * minify html
  *
- * @param tree
+ * @param html html as string
+ * @returns minified html
+ */
+export const minifyHtml = (html: string) =>
+  minify(html, { collapseWhitespace: true });
+
+/**
+ * recursively extract text value from tree and remove new line characters
+ *
+ * @param tree hast tree
  * @returns merged texts
  */
 export const getText = (tree: Node): string => {
   let value = '';
-  visit(tree, ['text', 'inlineCode'], (node) => {
+  visit(tree, 'text', (node) => {
     value += (node as Text).value;
   });
-  return value.replace(/\n/g, '');
+  return value.replace(/(\r\n|\r|\n)/g, '');
 };
 
 /**
- * compile mdast to indexable objects
+ * check if algoliast is under the same heading
+ *
+ * @param algoliast1 algoliast to compare
+ * @param algoliast2 algoliast to compare
+ * @returns whether algoliast is under the same heading
  */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-this-alias */
-export function remarkAlgolia() {
+export const isInSameBlock = (algoliast1: Algoliast, algoliast2: Algoliast) => {
+  // eslint-disable-next-line no-restricted-syntax
+  for (const tag of HEADING_TAGS) {
+    if (algoliast1[tag] !== algoliast2[tag]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+/**
+ * compile hast to algoliast
+ */
+export function rehypeAlgolia() {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  const that = this;
+  const that = this as Processor;
   const compiler: Compiler = (tree) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-    const { filter: filterFn } = that.data('settings') as {
-      filter: (node: Node) => boolean;
-    };
+    const builder = new AlgoliastBuilder();
+    const { exclude } = that.data('settings') as Settings;
 
-    const builder = new Algoliast();
-    const indexableObjects: IndexableObject[] = [];
-
-    const filteredTree = filter(tree, filterFn);
-    visit(filteredTree, ['heading', 'paragraph'], (topLevelNode) => {
-      if (topLevelNode.type === 'heading') {
-        const heading = getText(topLevelNode);
-        builder.setHeading((topLevelNode as unknown as Heading).depth, heading);
-      } else if (topLevelNode.type === 'paragraph') {
-        const paragraph = getText(topLevelNode);
-        builder.setContent(paragraph);
-
-        indexableObjects.push(builder.serialize());
+    visit(tree, 'element', (node: Element) => {
+      if (['head', 'script'].includes(node.tagName) || exclude(node)) {
+        // eslint-disable-next-line no-param-reassign
+        node.children = [];
+        return;
       }
+
+      /** whether its children including text node. whitespace only text nodes are excluded. */
+      const includesTextNode = node.children.some(
+        (n: Node) => n.type === 'text',
+      );
+
+      if ((HEADING_TAGS as readonly string[]).includes(node.tagName)) {
+        const heading = getText(node);
+        builder.setHeading(node.tagName as HeadingTag, heading);
+      } else {
+        // do nothing if its children has no text node
+        if (!includesTextNode) return;
+
+        const content = getText(node);
+        builder.setContent(content);
+
+        const currentAlgoliast = builder.getCurrentAlgoliast();
+        const lastAlgoliast = builder.getLastAlgoliast();
+
+        if (
+          lastAlgoliast !== undefined &&
+          isInSameBlock(currentAlgoliast, lastAlgoliast)
+        ) {
+          lastAlgoliast.content += content;
+        } else {
+          builder.add(currentAlgoliast);
+        }
+      }
+
+      // since getText recursively extract texts, remove child nodes to avoid duplicates
+      // eslint-disable-next-line no-param-reassign
+      node.children = [];
     });
 
-    return indexableObjects;
+    return builder.getAlgoliasts();
   };
 
   Object.assign(that, { Compiler: compiler });
 }
-/* eslint-enable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-this-alias */
 
 /**
- * covert mdx to indexable objects
+ * covert html to array of algoliast
  *
- * @param mdx mdx file content
- * @param filterFn filter tree
- * @returns indexable objects
+ * @param html html file content
+ * @param exclude filter tree
+ * @returns array of algoliast
  */
-export const toIndexableObjects = async (
-  mdx: VFileCompatible,
-  filterFn: (node: Node) => boolean,
-): Promise<IndexableObject[]> => {
-  const { result } = (await unified()
-    .use(remarkParse)
-    .use(remarkMdx)
-    .use(remarkAlgolia)
-    .data('settings', { filter: filterFn })
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    .process(mdx)) as unknown as { result: IndexableObject[] };
+export const toAlgoliasts = async (
+  html: VFileCompatible,
+  exclude: (node: Element) => boolean,
+): Promise<Algoliast[]> => {
+  const { result } = await unified()
+    .use(rehypeParse)
+    .use(rehypeAlgolia)
+    .data('settings', { exclude })
+    .process(html);
 
-  return result;
+  return result as Algoliast[];
 };
 
 /**
- * index parse mdx file and index in algolia
+ * parse html file and index in algolia
  *
- * @param mdxFilePath path to mdx file
- * e.g. module.filename
+ * @param htmlFilePath path to html file
  */
-export const indexMdx = async (mdxFilePath: string) => {
-  const exlucdes = ['NoIndex'];
+export const indexDocument = async (htmlFilePath: string) => {
+  const html = await readFile(htmlFilePath);
+  const minifiedHtml = Buffer.from(minifyHtml(html.toString()));
 
-  const mdx = await readFile(mdxFilePath);
-  const indexableObjects = await toIndexableObjects(
-    mdx,
-    (node: Node) => !exlucdes.includes(node.name as string), // FIXME
+  const algoliasts = await toAlgoliasts(
+    minifiedHtml,
+    (node: Element) => node.properties?.dataNoindex === 'true',
   );
 
-  // TODO: send index
+  // TODO: send index to algolia
 };
