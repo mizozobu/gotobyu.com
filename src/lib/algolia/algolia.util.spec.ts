@@ -1,31 +1,32 @@
 import { jest } from '@jest/globals';
 import type { SpyInstance } from 'jest-mock';
-import remarkMdx from 'remark-mdx';
-import remarkParse from 'remark-parse';
+import rehypeParse from 'rehype-parse';
 import { unified } from 'unified';
-import type { Node } from 'unist';
-import { __MDX_CONTENT, __INDEXABLE_OBJECTS } from './algolia.fixture';
-import type { HeadingDepth } from './algolia.interface';
+import { __HTML_CONTENT, __ALGOLIASTS } from './algolia.fixture';
+import type { HeadingTag, Settings, Algoliast } from './algolia.interface';
 import {
-  Algoliast,
+  AlgoliastBuilder,
   getText,
-  remarkAlgolia,
-  toIndexableObjects,
-  indexMdx,
+  isInSameBlock,
+  rehypeAlgolia,
+  toAlgoliasts,
+  minifyHtml,
+  indexDocument,
 } from './algolia.util';
 
-describe('Algoliast', () => {
-  let algoliast: Algoliast;
+describe('AlgoliastBuilder', () => {
+  const baseUrl = 'https://example.com';
+  let builder: AlgoliastBuilder;
 
   beforeEach(() => {
-    algoliast = new Algoliast();
+    builder = new AlgoliastBuilder(baseUrl);
   });
 
   describe('constructor', () => {
-    it('should instantiate', () => {
+    it('should instantiate with each property in this.current as empty string', () => {
       expect.assertions(1);
 
-      expect(algoliast.serialize()).toStrictEqual({
+      expect(builder['current']).toStrictEqual({
         permalink: '',
         h1: '',
         h2: '',
@@ -47,20 +48,20 @@ describe('Algoliast', () => {
     const heading6 = 'heading 6';
 
     beforeEach(() => {
-      algoliast.setHeading(1, heading1);
-      algoliast.setHeading(2, heading2);
-      algoliast.setHeading(3, heading3);
-      algoliast.setHeading(4, heading4);
-      algoliast.setHeading(5, heading5);
-      algoliast.setHeading(6, heading6);
+      builder.setHeading('h1', heading1);
+      builder.setHeading('h2', heading2);
+      builder.setHeading('h3', heading3);
+      builder.setHeading('h4', heading4);
+      builder.setHeading('h5', heading5);
+      builder.setHeading('h6', heading6);
     });
 
     it('should reset h1 ~ h6', () => {
       expect.assertions(1);
 
-      algoliast.resetHeadings(1);
+      builder.resetHeadings('h1');
 
-      expect(algoliast.serialize()).toStrictEqual(
+      expect(builder['current']).toStrictEqual(
         expect.objectContaining({
           h1: '',
           h2: '',
@@ -75,9 +76,9 @@ describe('Algoliast', () => {
     it('should reset h3 ~ h6', () => {
       expect.assertions(1);
 
-      algoliast.resetHeadings(3);
+      builder.resetHeadings('h3');
 
-      expect(algoliast.serialize()).toStrictEqual(
+      expect(builder['current']).toStrictEqual(
         expect.objectContaining({
           h1: heading1,
           h2: heading2,
@@ -92,9 +93,9 @@ describe('Algoliast', () => {
     it('should reset h6', () => {
       expect.assertions(1);
 
-      algoliast.resetHeadings(6);
+      builder.resetHeadings('h6');
 
-      expect(algoliast.serialize()).toStrictEqual(
+      expect(builder['current']).toStrictEqual(
         expect.objectContaining({
           h1: heading1,
           h2: heading2,
@@ -108,23 +109,23 @@ describe('Algoliast', () => {
   });
 
   describe('setHeading', () => {
-    let __resetHeadings: SpyInstance<void, [HeadingDepth]>;
+    let __resetHeadings: SpyInstance<void, [HeadingTag]>;
 
     beforeEach(() => {
-      __resetHeadings = jest.spyOn(algoliast, 'resetHeadings');
+      __resetHeadings = jest.spyOn(builder, 'resetHeadings');
     });
 
     it('should set h1 and set permalink as h1', () => {
       expect.assertions(2);
 
       const heading1 = 'heading 1';
-      algoliast.setHeading(1, 'heading 1');
+      builder.setHeading('h1', 'heading 1');
 
       // see https://github.com/facebook/jest/issues/7929
       // eslint-disable-next-line jest/prefer-strict-equal
-      expect(__resetHeadings.mock.calls).toEqual([[1]]);
-      expect(algoliast.serialize()).toStrictEqual({
-        permalink: `#${heading1}`,
+      expect(__resetHeadings.mock.calls).toEqual([['h1']]);
+      expect(builder['current']).toStrictEqual({
+        permalink: `${baseUrl}#${heading1}`,
         h1: heading1,
         h2: '',
         h3: '',
@@ -141,15 +142,15 @@ describe('Algoliast', () => {
       const heading1 = 'heading 1';
       const heading2 = 'heading 2';
       const heading3 = 'heading 3';
-      algoliast.setHeading(1, heading1);
-      algoliast.setHeading(2, heading2);
-      algoliast.setHeading(3, heading3);
+      builder.setHeading('h1', heading1);
+      builder.setHeading('h2', heading2);
+      builder.setHeading('h3', heading3);
 
       // see https://github.com/facebook/jest/issues/7929
       // eslint-disable-next-line jest/prefer-strict-equal
-      expect(__resetHeadings.mock.calls).toEqual([[1], [2], [3]]);
-      expect(algoliast.serialize()).toStrictEqual({
-        permalink: `#${heading3}`,
+      expect(__resetHeadings.mock.calls).toEqual([['h1'], ['h2'], ['h3']]);
+      expect(builder['current']).toStrictEqual({
+        permalink: `${baseUrl}#${heading3}`,
         h1: heading1,
         h2: heading2,
         h3: heading3,
@@ -162,13 +163,13 @@ describe('Algoliast', () => {
   });
 
   describe('setContent', () => {
-    it('should set content', () => {
+    it('should set this.content', () => {
       expect.assertions(1);
 
       const content = 'content';
-      algoliast.setContent(content);
+      builder.setContent(content);
 
-      expect(algoliast.serialize()).toStrictEqual(
+      expect(builder['current']).toStrictEqual(
         expect.objectContaining({
           content,
         }),
@@ -176,8 +177,54 @@ describe('Algoliast', () => {
     });
   });
 
-  describe('serialize', () => {
-    it('should serialize to indexable data', () => {
+  describe('add', () => {
+    it('should append item to this.algoliasts', () => {
+      expect.assertions(1);
+
+      const algoliast: Algoliast = {
+        permalink: 'https://example.com#hash',
+        h1: 'heading 1',
+        h2: 'heading 2',
+        h3: 'heading 3',
+        h4: 'heading 4',
+        h5: 'heading 5',
+        h6: 'heading 6',
+        content: 'content',
+      };
+      builder.add(algoliast);
+
+      expect(builder['algoliasts']).toStrictEqual([algoliast]);
+    });
+  });
+
+  describe('getAlgoliasts', () => {
+    it('should return this.algoliasts', () => {
+      expect.assertions(1);
+
+      const algoliast: Algoliast = {
+        permalink: 'https://example.com#hash',
+        h1: 'heading 1',
+        h2: 'heading 2',
+        h3: 'heading 3',
+        h4: 'heading 4',
+        h5: 'heading 5',
+        h6: 'heading 6',
+        content: 'content',
+      };
+      builder.add(algoliast);
+      builder.add(algoliast);
+      builder.add(algoliast);
+
+      expect(builder.getAlgoliasts()).toStrictEqual([
+        algoliast,
+        algoliast,
+        algoliast,
+      ]);
+    });
+  });
+
+  describe('getCurrentAlgoliast', () => {
+    it('should return this.current', () => {
       expect.assertions(1);
 
       const heading1 = 'heading 1';
@@ -186,24 +233,68 @@ describe('Algoliast', () => {
       const heading4 = 'heading 4';
       const heading5 = 'heading 5';
       const heading6 = 'heading 6';
-      algoliast.setHeading(1, heading1);
-      algoliast.setHeading(2, heading2);
-      algoliast.setHeading(3, heading3);
-      algoliast.setHeading(4, heading4);
-      algoliast.setHeading(5, heading5);
-      algoliast.setHeading(6, heading6);
+      const content = 'content';
+      builder.setHeading('h1', heading1);
+      builder.setHeading('h2', heading2);
+      builder.setHeading('h3', heading3);
+      builder.setHeading('h4', heading4);
+      builder.setHeading('h5', heading5);
+      builder.setHeading('h6', heading6);
+      builder.setContent(content);
 
-      expect(algoliast.serialize()).toStrictEqual({
-        permalink: `#${heading6}`,
+      expect(builder.getCurrentAlgoliast()).toStrictEqual({
+        permalink: `${baseUrl}#${heading6}`,
         h1: heading1,
         h2: heading2,
         h3: heading3,
         h4: heading4,
         h5: heading5,
         h6: heading6,
-        content: '',
+        content,
       });
     });
+  });
+
+  describe('getLastAlgoliast', () => {
+    it('should return last item in this.algoliasts', () => {
+      expect.assertions(1);
+
+      const algoliast: Algoliast = {
+        permalink: 'https://example.com#hash',
+        h1: 'heading 1',
+        h2: 'heading 2',
+        h3: 'heading 3',
+        h4: 'heading 4',
+        h5: 'heading 5',
+        h6: 'heading 6',
+        content: '',
+      };
+      builder.add({ ...algoliast, content: '1' });
+      builder.add({ ...algoliast, content: '2' });
+      builder.add({ ...algoliast, content: '3' });
+
+      expect(builder.getLastAlgoliast()).toStrictEqual({
+        ...algoliast,
+        content: '3',
+      });
+    });
+  });
+});
+
+describe('minifyHtml', () => {
+  it('should return html without whitespace node', () => {
+    expect.assertions(1);
+
+    const html = `
+      <div>
+        a
+      </div>
+
+
+      <div>  b  </div>
+    `;
+
+    expect(minifyHtml(html)).toBe('<div>a</div><div>b</div>');
   });
 });
 
@@ -212,64 +303,151 @@ describe('getText', () => {
     expect.assertions(1);
 
     const text = getText({
-      type: 'paragraph',
+      type: 'element',
+      tagName: 'div',
       children: [
         {
-          type: 'text',
-          value: 'a',
-        },
-        {
-          type: 'inlineCode',
-          value: 'b',
-        },
-        {
-          type: 'strong',
+          type: 'element',
+          tagName: 'p',
           children: [
             {
               type: 'text',
-              value: 'c',
+              value: 'a',
             },
             {
-              type: 'inlineCode',
-              value: 'd',
+              type: 'text',
+              value: 'b ',
+            },
+          ],
+        },
+        {
+          type: 'element',
+          tagName: 'div',
+          children: [
+            {
+              type: 'element',
+              tagName: 'p',
+              children: [
+                {
+                  type: 'text',
+                  value: '\n \rc\r\n',
+                },
+              ],
+            },
+            {
+              type: 'element',
+              tagName: 'div',
+              children: [
+                {
+                  type: 'text',
+                  value: '  d  ',
+                },
+              ],
             },
           ],
         },
       ],
     });
 
-    expect(text).toBe('abcd');
+    expect(text).toBe('ab  c  d  ');
   });
 });
 
-describe('remarkAlgolia', () => {
-  it('should compile mdx to indexable objects', async () => {
+describe('isInSameBlock', () => {
+  it('should return true when all headings are equal', () => {
+    expect.assertions(1);
+
+    const obj1: Algoliast = {
+      permalink: '/obj1',
+      h1: 'heading 1',
+      h2: 'heading 2',
+      h3: 'heading 3',
+      h4: 'heading 4',
+      h5: 'heading 5',
+      h6: 'heading 6',
+      content: 'obj1',
+    };
+    const obj2: Algoliast = {
+      permalink: '/obj2',
+      h1: 'heading 1',
+      h2: 'heading 2',
+      h3: 'heading 3',
+      h4: 'heading 4',
+      h5: 'heading 5',
+      h6: 'heading 6',
+      content: 'obj2',
+    };
+
+    expect(isInSameBlock(obj1, obj2)).toBe(true);
+  });
+
+  it('should return false when at least one heading is not equal', () => {
+    expect.assertions(1);
+
+    const obj1: Algoliast = {
+      permalink: '/obj1',
+      h1: 'heading 1',
+      h2: 'heading 2',
+      h3: 'heading 3',
+      h4: 'heading 4',
+      h5: 'heading 5',
+      h6: 'heading 6',
+      content: 'obj1',
+    };
+    const obj2: Algoliast = {
+      permalink: '/obj2',
+      h1: 'heading 1',
+      h2: 'heading 2',
+      h3: 'heading 3',
+      h4: 'heading 4',
+      h5: 'heading 5',
+      h6: '',
+      content: 'obj2',
+    };
+
+    expect(isInSameBlock(obj1, obj2)).toBe(false);
+  });
+});
+
+describe('rehypeAlgolia', () => {
+  it('should compile html to algolists', async () => {
     expect.assertions(1);
 
     const { result } = await unified()
-      .use(remarkParse)
-      .use(remarkMdx)
-      .use(remarkAlgolia)
-      .data('settings', { filter: (node: Node) => node.name !== 'NoIndex' })
-      .process(Buffer.from(__MDX_CONTENT));
+      .use(rehypeParse)
+      .use(rehypeAlgolia)
+      .data('settings', {
+        exclude: (node) => node.properties?.dataNoindex === 'true',
+      } as Settings)
+      .process(Buffer.from(minifyHtml(__HTML_CONTENT)));
 
-    expect(result).toStrictEqual(__INDEXABLE_OBJECTS);
+    expect(result).toStrictEqual(__ALGOLIASTS);
   });
 });
 
-describe('toIndexableObjects', () => {
-  it('should return indexable objects', async () => {
+describe('toAlgoliasts', () => {
+  it('should return array of algoliast', async () => {
     expect.assertions(1);
 
-    const indexableObjects = await toIndexableObjects(
-      __MDX_CONTENT,
-      (node: Node) => node.name !== 'NoIndex',
+    const algoliasts = await toAlgoliasts(
+      minifyHtml(__HTML_CONTENT),
+      (node) => node.properties?.dataNoindex === 'true',
     );
 
-    expect(indexableObjects).toStrictEqual(__INDEXABLE_OBJECTS);
+    expect(algoliasts).toStrictEqual(__ALGOLIASTS);
   });
 });
 
-describe('indexMdx', () => {
-  it.todo('should call readFile and toIndexableObjects');
+describe('indexDocument', () => {
+  beforeAll(() => {
+    jest.mock('node-fetch');
+  });
+
+  it('should call readFile and toAlgoliasts', async () => {
+    expect.assertions(1);
+
+    await indexDocument(`${process.cwd()}/.next/server/pages/schools/byu.html`);
+
+    expect(1).toBe(1);
+  });
 });

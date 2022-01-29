@@ -1,125 +1,69 @@
 /**
- * mdx content for test
+ * html content for test
  */
-export const __MDX_CONTENT = `
-import { readFile } from 'fs/promise';
-import path from 'path';
+export const __HTML_CONTENT = `
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>this should not be indexed.</title>
+    <meta name="keywords" content="this should not be indexed.">
+  </head>
+  <body>
+    <h1>heading 1-1</h1>
+    <p>this is in heading 1-1.</p>
+    <p>this is in heading 1-1.</p>
+    <p data-noindex="true">this should not be indexed.</p>
 
-export const variable1 = 'this should not be indexed.';
-export const variable2 = () => 'this should not be indexed.';
+    <section data-noindex="true">
+      <h1>this should not be indexed.</h1>
+      <div>
+        this should not be indexed.
+        <p>this should not be indexed.</p>
+      </div>
+    </section>
 
-<NoIndex>this should not be indexed.</NoIndex>
+    <h2>
+      <a href='https://example.com'>heading 2-1</a>
+    </h2>
+    <p>this is in heading 2-1.</p>
+    <p data-noindex="true">this should not be indexed.</p>
+    <div>
+      <p data-noindex="true">this should not be indexed.</p>
+      <div>
+        <p>this is in heading 2-1.</p>
+        <p data-noindex="true">this should not be indexed.</p>
+      </div>
+    </div>
 
+    <section>
+      <h2>heading 2-2</h2>
+      <div>
+        this is in heading 2-2.
+        <div>
+          <p>this is in heading 2-2.</p>
+        </div>
+      </div>
+    </section>
 
-# heading 1-1
-
-this is in heading 1-1. this is in heading 1-1.
-this is in heading 1-1. this is in heading 1-1.
-
-
-## heading 2-1
-
-<Index>this is in heading 2-1.</Index> <Index>this is in heading 2-1.</Index>
-<Index>this is in heading 2-1.</Index> <Index>this is in heading 2-1.</Index>
-<NoIndex>this should not be indexed.</NoIndex>
-
-
-### heading 3-1
-
-this is in <Index>heading</Index> 3-1. this<Index> </Index>is in heading 3-1.
-this is in heading <Index>3</Index>-1. this is in heading <Index>3-1</Index>.
-
-
-### heading 3-2
-
-this<NoIndex>this should not be indexed.</NoIndex> is in head<NoIndex>this should not be indexed.</NoIndex>ing 3-2. this is in heading 3-2.
-<NoIndex>this should not be indexed.</NoIndex>this is in heading 3-2. this is in heading 3-2.<NoIndex>this should not be indexed.</NoIndex>
-
-
-## heading 2-2
-
-<Index>
-  <Index>
-    <Index>this is in heading 2-2.</Index>
-  </Index>
-</Index>
-<Index>
-  <Index>
-    <Index>this is in heading 2-2.</Index>
-  </Index>
-</Index>
-<Index>
-  <Index>
-    <Index>this is in heading 2-2.</Index>
-  </Index>
-</Index>
-<Index>
-  <Index>
-    <Index>this is in heading 2-2.</Index>
-  </Index>
-</Index>
-
-<NoIndex>
-  <Index>this should not be indexed.</Index>
-  <Index>
-    <Index>this should not be indexed.</Index>
-  </Index>
-</NoIndex>
-
-
----
-
-
-# **heading** *1-2*
-
-[this is in heading 1-2.](https://example.com) **this** *is* in ***heading*** \`1-2\`.
-[this is in heading 1-2.](https://example.com) **this** *is* in ***heading*** \`1-2\`.
-
-
-## [heading](https://example.com) 2-3
-
-> this is in heading 2-3. this is in heading 2-3.
-> this is in heading 2-3. this is in heading 2-3.
-
-
-## ***heading*** **2-4**
-
-### heading 3-3
-
-- this is in heading 3-3. this is in heading 3-3.
-    this is in heading 3-3. this is in heading 3-3.
-
-
-### heading 3-4
-
-1. this is in heading 3-4. this is in heading 3-4.
-    this is in heading 3-4. this is in heading 3-4.
-
-
-### heading 3-5
-
-    this is in heading 3-5. this is in heading 3-5.
-    this is in heading 3-5. this is in heading 3-5.
-
-
-### heading 3-6
-
-![this is in heading 3-6.](https://example.com "this is in heading 3-6.") ![this is in heading 3-6.](https://example.com "this is in heading 3-6.")
-![this is in heading 3-6.](https://example.com "this is in heading 3-6.") ![this is in heading 3-6.](https://example.com "this is in heading 3-6.")
-
-
-### heading 3-7
-
-<p>
-  this is in heading 3-7. this is in heading 3-7.
-  this is in heading 3-7. this is in heading 3-7.
-</p>
+    <h3>heading 3-1</h3>
+    <div data-noindex="true">
+      <p>this should not be indexed.</p>
+      <div>
+        <p>this should not be indexed.</p>
+      </div>
+    </div>
+    <div>
+      <p><a href="https://example.com">this is in<span> heading </span>3-1.</a></p>
+      <p>this <a href="https://example.com"><span>is</span></a> in<a href="https://example.com"><span> heading </span></a>3-1.</p>
+    </div>
+  </body>
+</html>
 `;
 
 /**
- * __MDX_CONTENT as indexable objects
+ * __HTML_CONTENT as algoliasts
  */
-export const __INDEXABLE_OBJECTS = [
+export const __ALGOLIASTS = [
   {
     permalink: '#heading 1-1',
     h1: 'heading 1-1',
@@ -128,8 +72,7 @@ export const __INDEXABLE_OBJECTS = [
     h4: '',
     h5: '',
     h6: '',
-    content:
-      'this is in heading 1-1. this is in heading 1-1.this is in heading 1-1. this is in heading 1-1.',
+    content: 'this is in heading 1-1.this is in heading 1-1.',
   },
   {
     permalink: '#heading 2-1',
@@ -139,145 +82,26 @@ export const __INDEXABLE_OBJECTS = [
     h4: '',
     h5: '',
     h6: '',
-    content:
-      'this is in heading 2-1. this is in heading 2-1.this is in heading 2-1. this is in heading 2-1.',
+    content: 'this is in heading 2-1.this is in heading 2-1.',
+  },
+  {
+    permalink: '#heading 2-2',
+    h1: 'heading 1-1',
+    h2: 'heading 2-2',
+    h3: '',
+    h4: '',
+    h5: '',
+    h6: '',
+    content: 'this is in heading 2-2.this is in heading 2-2.',
   },
   {
     permalink: '#heading 3-1',
     h1: 'heading 1-1',
-    h2: 'heading 2-1',
+    h2: 'heading 2-2',
     h3: 'heading 3-1',
     h4: '',
     h5: '',
     h6: '',
-    content:
-      'this is in heading 3-1. this is in heading 3-1.this is in heading 3-1. this is in heading 3-1.',
-  },
-  {
-    permalink: '#heading 3-2',
-    h1: 'heading 1-1',
-    h2: 'heading 2-1',
-    h3: 'heading 3-2',
-    h4: '',
-    h5: '',
-    h6: '',
-    content:
-      'this is in heading 3-2. this is in heading 3-2.this is in heading 3-2. this is in heading 3-2.',
-  },
-  {
-    permalink: '#heading 2-2',
-    h1: 'heading 1-1',
-    h2: 'heading 2-2',
-    h3: '',
-    h4: '',
-    h5: '',
-    h6: '',
-    content: 'this is in heading 2-2.',
-  },
-  {
-    permalink: '#heading 2-2',
-    h1: 'heading 1-1',
-    h2: 'heading 2-2',
-    h3: '',
-    h4: '',
-    h5: '',
-    h6: '',
-    content: 'this is in heading 2-2.',
-  },
-  {
-    permalink: '#heading 2-2',
-    h1: 'heading 1-1',
-    h2: 'heading 2-2',
-    h3: '',
-    h4: '',
-    h5: '',
-    h6: '',
-    content: 'this is in heading 2-2.',
-  },
-  {
-    permalink: '#heading 2-2',
-    h1: 'heading 1-1',
-    h2: 'heading 2-2',
-    h3: '',
-    h4: '',
-    h5: '',
-    h6: '',
-    content: 'this is in heading 2-2.',
-  },
-  {
-    permalink: '#heading 1-2',
-    h1: 'heading 1-2',
-    h2: '',
-    h3: '',
-    h4: '',
-    h5: '',
-    h6: '',
-    content:
-      'this is in heading 1-2. this is in heading 1-2.this is in heading 1-2. this is in heading 1-2.',
-  },
-  {
-    permalink: '#heading 2-3',
-    h1: 'heading 1-2',
-    h2: 'heading 2-3',
-    h3: '',
-    h4: '',
-    h5: '',
-    h6: '',
-    content:
-      'this is in heading 2-3. this is in heading 2-3.this is in heading 2-3. this is in heading 2-3.',
-  },
-  {
-    permalink: '#heading 3-3',
-    h1: 'heading 1-2',
-    h2: 'heading 2-4',
-    h3: 'heading 3-3',
-    h4: '',
-    h5: '',
-    h6: '',
-    content:
-      'this is in heading 3-3. this is in heading 3-3.this is in heading 3-3. this is in heading 3-3.',
-  },
-  {
-    permalink: '#heading 3-4',
-    h1: 'heading 1-2',
-    h2: 'heading 2-4',
-    h3: 'heading 3-4',
-    h4: '',
-    h5: '',
-    h6: '',
-    content:
-      'this is in heading 3-4. this is in heading 3-4.this is in heading 3-4. this is in heading 3-4.',
-  },
-  {
-    permalink: '#heading 3-5',
-    h1: 'heading 1-2',
-    h2: 'heading 2-4',
-    h3: 'heading 3-5',
-    h4: '',
-    h5: '',
-    h6: '',
-    content:
-      'this is in heading 3-5. this is in heading 3-5.this is in heading 3-5. this is in heading 3-5.',
-  },
-  {
-    permalink: '#heading 3-6',
-    h1: 'heading 1-2',
-    h2: 'heading 2-4',
-    h3: 'heading 3-6',
-    h4: '',
-    h5: '',
-    h6: '',
-    content: '  ',
-  },
-  {
-    permalink: '#heading 3-7',
-    h1: 'heading 1-2',
-    h2: 'heading 2-4',
-    h3: 'heading 3-7',
-    h4: '',
-    h5: '',
-    h6: '',
-    content:
-      'this is in heading 3-7. this is in heading 3-7.this is in heading 3-7. this is in heading 3-7.',
+    content: 'this is in heading 3-1.this is in heading 3-1.',
   },
 ];
