@@ -21,7 +21,8 @@ export const SectionTitle = memo(
           })}
           onClick={onClick}
         >
-          {children} <LinkIcon className={styles.icon} />
+          {children}
+          <LinkIcon className={classNames('ml-2', styles.icon)} />
         </a>
       </Link>
     </H2>
