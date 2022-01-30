@@ -47,3 +47,4 @@ storybook-static
 
 # sitemap.xml
 /public/sitemap.xml
+/public/sitemap-*.xml
