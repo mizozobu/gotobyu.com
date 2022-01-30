@@ -1,4 +1,3 @@
-import { readFile, stat } from 'fs/promises';
 import { resolve } from 'path';
 import type { Element, Text } from 'hast';
 import { minify } from 'html-minifier';
@@ -7,13 +6,13 @@ import { unified, Compiler, Processor } from 'unified';
 import type { Node } from 'unist';
 import { visit } from 'unist-util-visit';
 import type { VFileCompatible } from 'vfile';
-import { HEADING_TAGS, PAGE_BASE_PATH } from './algolia.constants';
+import { HEADING_TAGS, PAGE_BASE_PATH } from './builder.constants';
 import type {
   HeadingDepth,
   HeadingTag,
   Algoliast,
   Settings,
-} from './algolia.interface';
+} from './builder.interface';
 
 /**
  * build algolist from hast tree
@@ -238,37 +237,14 @@ export const toAlgoliasts = async (
 };
 
 /**
- * parse html file and index in algolia
+ * resolve path to absolute path to html file
  *
- * @param htmlFilePath realative path to html file from /pages
+ * @param path realative path to html file from /pages
+ * @returns absolute path to html file
  */
-export const indexDocument = async (
-  htmlFilePath: string,
-): Promise<Algoliast[]> => {
-  const relativePath = htmlFilePath.startsWith('/')
-    ? htmlFilePath.substring(1)
-    : htmlFilePath;
+export const resolvePathToHtmlFile = (path: string): string => {
+  const relativePath = path.startsWith('/') ? path.substring(1) : path;
   const absPath = resolve(PAGE_BASE_PATH, `${relativePath}.html`);
 
-  // do nothing if html file does not exist(at build time)
-  const exists = !!(await stat(absPath).catch(() => false));
-  if (!exists) {
-    process.stdout.write(
-      `\n\x1b[33mwarn\x1b[0m  - ${absPath} does not exist. Skipping indexing it...\n`,
-    );
-    return [];
-  }
-
-  const html = await readFile(absPath);
-  const minifiedHtml = Buffer.from(minifyHtml(html.toString()));
-  const algoliasts = await toAlgoliasts(
-    minifiedHtml,
-    (node: Element) => node.properties?.dataNoindex === 'true',
-  );
-
-  // TODO: send index to algolia
-
-  process.stdout.write(`\x1b[36minfo\x1b[0m  - Finished indexing ${absPath}\n`);
-
-  return algoliasts;
+  return absPath;
 };
