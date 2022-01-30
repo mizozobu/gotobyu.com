@@ -4,6 +4,7 @@ import { SchoolTable } from '@cmp/organisms/SchoolTable';
 import { Seo } from '@cmp/organisms/Seo';
 import { CostTable } from '@cnt/tips/compare/CostTable';
 import { COMPARE_PAGE_META } from '@d';
+import { indexDocument } from '@l/algolia';
 import { getForex } from '@l/forex';
 import { AtomStore } from '@l/recoil';
 import { FOREX_STATE_KEY, defaultForexState } from '@s/forex';
@@ -20,10 +21,11 @@ export const getStaticProps = async(context) => {
     ? await getForex('USD', 'JPY')
     : defaultForexState;
   atomStore.setAtom(FOREX_STATE_KEY, forex);
+  await indexDocument(COMPARE_PAGE_META.href);
   return atomStore.with({
     revalidate: 60 * 12
   });
-}
+};
 
 <Seo
   title={COMPARE_PAGE_META.title}
