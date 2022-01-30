@@ -16,7 +16,7 @@ export const SwitchControl = ({
   onChange,
   className = '',
 }: Props) => (
-  <Switch.Group>
+  <Switch.Group data-noindex='true'>
     <div
       className={classNames(
         'flex items-center rounded-md bg-indigo-50 px-3 py-1.5',

@@ -4,7 +4,10 @@ import { BorderDraw } from '@cmp/atoms/BorderDraw';
 import { FacebookIcon } from '@cmp/atoms/FacebookIcon';
 
 export const Footer = () => (
-  <footer className='flex flex-col items-center bg-indigo-900 p-8 text-white sm:p-12 lg:p-16'>
+  <footer
+    className='flex flex-col items-center bg-indigo-900 p-8 text-white sm:p-12 lg:p-16'
+    data-noindex='true'
+  >
     <div>
       <Link href='/about'>
         <a>BYU Management Society Tokyo Chapter</a>

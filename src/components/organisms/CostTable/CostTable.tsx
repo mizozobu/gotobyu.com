@@ -80,7 +80,7 @@ export const CostTable = ({ forex }: Props) => {
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody data-noindex='true'>
           <tr>
             <th scope='row'>学費</th>
             <td>
@@ -182,7 +182,7 @@ export const CostTable = ({ forex }: Props) => {
             </td>
           </tr>
         </tbody>
-        <tfoot>
+        <tfoot data-noindex='true'>
           <tr>
             <th scope='row'>合計</th>
             <td>

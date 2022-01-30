@@ -54,7 +54,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       )}
       {/* End Google Tag Manager */}
 
-      <MDX.a href='#content' className='sr-only focus:not-sr-only'>
+      <MDX.a
+        href='#content'
+        className='sr-only focus:not-sr-only'
+        data-noindex='true'
+      >
         Skip to main content
       </MDX.a>
 

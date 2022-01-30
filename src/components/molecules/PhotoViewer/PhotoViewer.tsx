@@ -41,7 +41,7 @@ export const PhotoViewer = ({
   };
 
   return (
-    <div className={styles['photo-viewer']}>
+    <div className={styles['photo-viewer']} data-noindex='true'>
       <BgRotate className={className} colorClass={colorClass}>
         <Slider {...settings}>
           {images.map((imageProps) => (
