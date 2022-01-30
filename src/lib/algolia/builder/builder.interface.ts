@@ -1,7 +1,7 @@
 import type { Element } from 'hast';
 import type { Heading } from 'mdast';
 import type { ValuesType } from 'utility-types';
-import type { HEADING_TAGS } from './algolia.constants';
+import type { HEADING_TAGS } from './builder.constants';
 /**
  * type for heading depth
  */

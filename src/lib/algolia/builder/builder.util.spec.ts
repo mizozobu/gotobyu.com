@@ -2,8 +2,8 @@ import { jest } from '@jest/globals';
 import type { SpyInstance } from 'jest-mock';
 import rehypeParse from 'rehype-parse';
 import { unified } from 'unified';
-import { __HTML_CONTENT, __ALGOLIASTS } from './algolia.fixture';
-import type { HeadingTag, Settings, Algoliast } from './algolia.interface';
+import { __HTML_CONTENT, __ALGOLIASTS } from './builder.fixture';
+import type { HeadingTag, Settings, Algoliast } from './builder.interface';
 import {
   AlgoliastBuilder,
   getText,
@@ -11,8 +11,8 @@ import {
   rehypeAlgolia,
   toAlgoliasts,
   minifyHtml,
-  indexDocument,
-} from './algolia.util';
+  resolvePathToHtmlFile,
+} from './builder.util';
 
 describe('AlgoliastBuilder', () => {
   const baseUrl = 'https://example.com';
@@ -438,16 +438,13 @@ describe('toAlgoliasts', () => {
   });
 });
 
-describe('indexDocument', () => {
-  beforeAll(() => {
-    jest.mock('node-fetch');
-  });
+describe('resolvePathToHtmlFile', () => {
+  it('should return absolute path to html file with extension', () => {
+    expect.assertions(2);
 
-  it('should call readFile and toAlgoliasts', async () => {
-    expect.assertions(1);
+    const absPath = `${process.cwd()}/.next/server/pages/schools/byu.html`;
 
-    await indexDocument(`${process.cwd()}/.next/server/pages/schools/byu.html`);
-
-    expect(1).toBe(1);
+    expect(resolvePathToHtmlFile('schools/byu')).toBe(absPath);
+    expect(resolvePathToHtmlFile('/schools/byu')).toBe(absPath);
   });
 });
