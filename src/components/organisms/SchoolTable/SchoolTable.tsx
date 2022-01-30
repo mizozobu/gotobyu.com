@@ -48,7 +48,7 @@ export const SchoolTable = () => (
         </th>
       </tr>
     </thead>
-    <tbody>
+    <tbody data-noindex='true'>
       <tr>
         <th scope='row'>生徒数</th>
         <td>

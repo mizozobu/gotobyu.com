@@ -32,6 +32,7 @@ export const Header = ({ show, loading }: Props) => (
       loading ? styles.loading : styles.loaded,
       show ? styles.show : styles.hide,
     )}
+    data-noindex='true'
   >
     {({ open: openMobilePopover }) => (
       <>
