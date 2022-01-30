@@ -22,7 +22,7 @@ export const EnglishRequirementTable = ({ data }: Props) => (
         <th scope='col'>合計</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody data-noindex='true'>
       <tr>
         <th scope='row'>
           <NextImage

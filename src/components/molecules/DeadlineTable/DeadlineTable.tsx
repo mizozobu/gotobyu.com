@@ -18,7 +18,7 @@ export const DeadlineTable = ({ data }: Props) => (
         <th scope='col'>合格発表</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody data-noindex='true'>
       {data.map(
         ({ term, period, openAt, priorityClosedAt, closedAt, announcedAt }) => (
           <tr key={term}>

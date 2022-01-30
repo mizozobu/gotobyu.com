@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const CopiedDialog = ({ isOpen, onClose }: Props) => (
-  <Transition appear show={isOpen} as={Fragment}>
+  <Transition appear show={isOpen} as={Fragment} data-noindex='true'>
     <Dialog
       as='div'
       className='fixed inset-0 z-30 overflow-y-auto'
