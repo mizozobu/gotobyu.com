@@ -14,7 +14,8 @@
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s public",
     "algolia": "node --loader ./src/bin/loader.mjs --experimental-specifier-resolution=node ./src/bin/algolia.ts",
-    "test": "node --experimental-vm-modules --experimental-json-modules $(yarn bin jest)"
+    "ut": "node --experimental-vm-modules --experimental-json-modules $(yarn bin jest)",
+    "ut:debug": "node --experimental-vm-modules --experimental-json-modules --inspect $(yarn bin jest) --runInBand"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
