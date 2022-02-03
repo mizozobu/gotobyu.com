@@ -65,7 +65,7 @@ export const __HTML_CONTENT = `
  */
 export const __ALGOLIASTS = [
   {
-    permalink: '#heading 1-1',
+    permalink: '/example#heading 1-1',
     h1: 'heading 1-1',
     h2: '',
     h3: '',
@@ -73,9 +73,10 @@ export const __ALGOLIASTS = [
     h5: '',
     h6: '',
     content: 'this is in heading 1-1.this is in heading 1-1.',
+    _tags: ['/example'],
   },
   {
-    permalink: '#heading 2-1',
+    permalink: '/example#heading 2-1',
     h1: 'heading 1-1',
     h2: 'heading 2-1',
     h3: '',
@@ -83,9 +84,10 @@ export const __ALGOLIASTS = [
     h5: '',
     h6: '',
     content: 'this is in heading 2-1.this is in heading 2-1.',
+    _tags: ['/example'],
   },
   {
-    permalink: '#heading 2-2',
+    permalink: '/example#heading 2-2',
     h1: 'heading 1-1',
     h2: 'heading 2-2',
     h3: '',
@@ -93,9 +95,10 @@ export const __ALGOLIASTS = [
     h5: '',
     h6: '',
     content: 'this is in heading 2-2.this is in heading 2-2.',
+    _tags: ['/example'],
   },
   {
-    permalink: '#heading 3-1',
+    permalink: '/example#heading 3-1',
     h1: 'heading 1-1',
     h2: 'heading 2-2',
     h3: 'heading 3-1',
@@ -103,5 +106,6 @@ export const __ALGOLIASTS = [
     h5: '',
     h6: '',
     content: 'this is in heading 3-1.this is in heading 3-1.',
+    _tags: ['/example'],
   },
 ];

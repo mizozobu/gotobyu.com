@@ -1,3 +1,4 @@
+import nextEnv from '@next/env';
 import {
   BYU_PAGE_META,
   BYUH_PAGE_META,
@@ -16,6 +17,8 @@ import { indexDocument } from '@l/algolia';
  * NOTE: ts-node does not support top level await yet.
  */
 void (async () => {
+  nextEnv.loadEnvConfig(process.cwd());
+
   await Promise.all(
     [
       BYU_PAGE_META,
