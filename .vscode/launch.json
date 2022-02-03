@@ -3,19 +3,19 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Next.js: debug server-side",
+      "name": "Next Server",
       "type": "node-terminal",
       "request": "launch",
       "command": "yarn dev"
     },
     {
-      "name": "Next.js: debug client-side",
+      "name": "Next Client",
       "type": "pwa-chrome",
       "request": "launch",
       "url": "http://localhost:3000"
     },
     {
-      "name": "Next.js: debug full stack",
+      "name": "Next Fullstack",
       "type": "node-terminal",
       "request": "launch",
       "command": "yarn dev",
@@ -25,6 +25,12 @@
         "uriFormat": "%s",
         "action": "debugWithChrome"
       }
+    },
+    {
+      "name": "Jest",
+      "type": "node",
+      "request": "attach",
+      "port": 9229
     }
   ]
 }
