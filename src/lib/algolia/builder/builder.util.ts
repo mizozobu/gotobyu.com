@@ -1,3 +1,4 @@
+import { stat } from 'fs/promises';
 import { resolve } from 'path';
 import type { Element, Text } from 'hast';
 import { minify } from 'html-minifier';
@@ -24,22 +25,15 @@ export class AlgoliastBuilder {
   private algoliasts: Algoliast[] = [];
   /** current algoliast */
   private current: Algoliast = {
-    /** link to the content */
     permalink: '',
-    /** h1 heading */
     h1: '',
-    /** h2 heading */
     h2: '',
-    /** h3 heading */
     h3: '',
-    /** h4 heading */
     h4: '',
-    /** h5 heading */
     h5: '',
-    /** h6 heading */
     h6: '',
-    /** content body */
     content: '',
+    _tags: [],
   };
 
   /**
@@ -48,7 +42,9 @@ export class AlgoliastBuilder {
    * @param baseUrl base url for permalink
    * e.g. https://example.com
    */
-  constructor(private readonly baseUrl: string = '') {}
+  constructor(private readonly baseUrl: string) {
+    this.current._tags = [baseUrl];
+  }
 
   /**
    * reset headings below the specified depth
@@ -148,16 +144,13 @@ export const getText = (tree: Node): string => {
  * @param algoliast2 algoliast to compare
  * @returns whether algoliast is under the same heading
  */
-export const isInSameBlock = (algoliast1: Algoliast, algoliast2: Algoliast) => {
-  // eslint-disable-next-line no-restricted-syntax
-  for (const tag of HEADING_TAGS) {
-    if (algoliast1[tag] !== algoliast2[tag]) {
-      return false;
-    }
-  }
-
-  return true;
-};
+export const isInSameBlock = (algoliast1: Algoliast, algoliast2: Algoliast) =>
+  algoliast1.h1 === algoliast2.h1 &&
+  algoliast1.h2 === algoliast2.h2 &&
+  algoliast1.h3 === algoliast2.h3 &&
+  algoliast1.h4 === algoliast2.h4 &&
+  algoliast1.h5 === algoliast2.h5 &&
+  algoliast1.h6 === algoliast2.h6;
 
 /**
  * compile hast to algoliast
@@ -167,8 +160,10 @@ export function rehypeAlgolia() {
   // @ts-ignore
   const that = this as Processor;
   const compiler: Compiler = (tree) => {
-    const builder = new AlgoliastBuilder();
-    const { exclude } = that.data('settings') as Settings;
+    const { exclude = () => false, baseUrl } = that.data(
+      'settings',
+    ) as Settings;
+    const builder = new AlgoliastBuilder(baseUrl);
 
     visit(tree, 'element', (node: Element) => {
       if (['head', 'script'].includes(node.tagName) || exclude(node)) {
@@ -225,12 +220,12 @@ export function rehypeAlgolia() {
  */
 export const toAlgoliasts = async (
   html: VFileCompatible,
-  exclude: (node: Element) => boolean,
+  settings: Settings,
 ): Promise<Algoliast[]> => {
   const { result } = await unified()
     .use(rehypeParse)
     .use(rehypeAlgolia)
-    .data('settings', { exclude })
+    .data('settings', settings)
     .process(html);
 
   return result as Algoliast[];
@@ -248,3 +243,12 @@ export const resolvePathToHtmlFile = (path: string): string => {
 
   return absPath;
 };
+
+/**
+ * check if the file exists
+ *
+ * @param path path to a file
+ * @returns whether the file exists
+ */
+export const exists = async (path: string): Promise<boolean> =>
+  !!(await stat(path).catch(() => false));
