@@ -35,6 +35,7 @@ describe('AlgoliastBuilder', () => {
         h5: '',
         h6: '',
         content: '',
+        _tags: [baseUrl],
       });
     });
   });
@@ -133,6 +134,7 @@ describe('AlgoliastBuilder', () => {
         h5: '',
         h6: '',
         content: '',
+        _tags: [baseUrl],
       });
     });
 
@@ -158,6 +160,7 @@ describe('AlgoliastBuilder', () => {
         h5: '',
         h6: '',
         content: '',
+        _tags: [baseUrl],
       });
     });
   });
@@ -190,6 +193,7 @@ describe('AlgoliastBuilder', () => {
         h5: 'heading 5',
         h6: 'heading 6',
         content: 'content',
+        _tags: ['https://example.com'],
       };
       builder.add(algoliast);
 
@@ -210,6 +214,7 @@ describe('AlgoliastBuilder', () => {
         h5: 'heading 5',
         h6: 'heading 6',
         content: 'content',
+        _tags: ['https://example.com'],
       };
       builder.add(algoliast);
       builder.add(algoliast);
@@ -251,6 +256,7 @@ describe('AlgoliastBuilder', () => {
         h5: heading5,
         h6: heading6,
         content,
+        _tags: [baseUrl],
       });
     });
   });
@@ -259,7 +265,7 @@ describe('AlgoliastBuilder', () => {
     it('should return last item in this.algoliasts', () => {
       expect.assertions(1);
 
-      const algoliast: Algoliast = {
+      const baseAlgoliast: Algoliast = {
         permalink: 'https://example.com#hash',
         h1: 'heading 1',
         h2: 'heading 2',
@@ -268,15 +274,16 @@ describe('AlgoliastBuilder', () => {
         h5: 'heading 5',
         h6: 'heading 6',
         content: '',
+        _tags: ['https://example.com'],
       };
-      builder.add({ ...algoliast, content: '1' });
-      builder.add({ ...algoliast, content: '2' });
-      builder.add({ ...algoliast, content: '3' });
+      const algoliast1 = { ...baseAlgoliast, content: '1' };
+      const algoliast2 = { ...baseAlgoliast, content: '2' };
+      const algoliast3 = { ...baseAlgoliast, content: '3' };
+      builder.add(algoliast1);
+      builder.add(algoliast2);
+      builder.add(algoliast3);
 
-      expect(builder.getLastAlgoliast()).toStrictEqual({
-        ...algoliast,
-        content: '3',
-      });
+      expect(builder.getLastAlgoliast()).toStrictEqual(algoliast3);
     });
   });
 });
@@ -358,7 +365,7 @@ describe('isInSameBlock', () => {
     expect.assertions(1);
 
     const obj1: Algoliast = {
-      permalink: '/obj1',
+      permalink: 'https://example.com/obj1',
       h1: 'heading 1',
       h2: 'heading 2',
       h3: 'heading 3',
@@ -366,9 +373,10 @@ describe('isInSameBlock', () => {
       h5: 'heading 5',
       h6: 'heading 6',
       content: 'obj1',
+      _tags: ['https://example.com'],
     };
     const obj2: Algoliast = {
-      permalink: '/obj2',
+      permalink: 'https://example.com/obj2',
       h1: 'heading 1',
       h2: 'heading 2',
       h3: 'heading 3',
@@ -376,6 +384,7 @@ describe('isInSameBlock', () => {
       h5: 'heading 5',
       h6: 'heading 6',
       content: 'obj2',
+      _tags: ['https://example.com'],
     };
 
     expect(isInSameBlock(obj1, obj2)).toBe(true);
@@ -385,7 +394,7 @@ describe('isInSameBlock', () => {
     expect.assertions(1);
 
     const obj1: Algoliast = {
-      permalink: '/obj1',
+      permalink: 'https://example.com/obj1',
       h1: 'heading 1',
       h2: 'heading 2',
       h3: 'heading 3',
@@ -393,9 +402,10 @@ describe('isInSameBlock', () => {
       h5: 'heading 5',
       h6: 'heading 6',
       content: 'obj1',
+      _tags: ['https://example.com'],
     };
     const obj2: Algoliast = {
-      permalink: '/obj2',
+      permalink: 'https://example.com/obj2',
       h1: 'heading 1',
       h2: 'heading 2',
       h3: 'heading 3',
@@ -403,6 +413,7 @@ describe('isInSameBlock', () => {
       h5: 'heading 5',
       h6: '',
       content: 'obj2',
+      _tags: ['https://example.com'],
     };
 
     expect(isInSameBlock(obj1, obj2)).toBe(false);
@@ -417,6 +428,7 @@ describe('rehypeAlgolia', () => {
       .use(rehypeParse)
       .use(rehypeAlgolia)
       .data('settings', {
+        baseUrl: '/example',
         exclude: (node) => node.properties?.dataNoindex === 'true',
       } as Settings)
       .process(Buffer.from(minifyHtml(__HTML_CONTENT)));
@@ -429,10 +441,10 @@ describe('toAlgoliasts', () => {
   it('should return array of algoliast', async () => {
     expect.assertions(1);
 
-    const algoliasts = await toAlgoliasts(
-      minifyHtml(__HTML_CONTENT),
-      (node) => node.properties?.dataNoindex === 'true',
-    );
+    const algoliasts = await toAlgoliasts(minifyHtml(__HTML_CONTENT), {
+      baseUrl: '/example',
+      exclude: (node) => node.properties?.dataNoindex === 'true',
+    });
 
     expect(algoliasts).toStrictEqual(__ALGOLIASTS);
   });
@@ -447,4 +459,14 @@ describe('resolvePathToHtmlFile', () => {
     expect(resolvePathToHtmlFile('schools/byu')).toBe(absPath);
     expect(resolvePathToHtmlFile('/schools/byu')).toBe(absPath);
   });
+});
+
+/**
+ * TODO: test after jest supports esm mock
+ * jest.mock, __mocks__, dynamic import
+ * maybe mock must be in the same scope with the import being used?
+ * @see https://github.com/facebook/jest/issues/10025
+ */
+describe('exists', () => {
+  it.todo('test exists when jest supports esm mock');
 });
