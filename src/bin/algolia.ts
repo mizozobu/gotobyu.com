@@ -10,7 +10,7 @@ import {
   INTERNSHIP_PAGE_META,
   ABOUT_PAGE_META,
 } from '@d';
-import { indexDocument } from '@l/algolia';
+import { indexDocument } from '@l/algolia/node';
 
 /**
  * index documents in algolia
