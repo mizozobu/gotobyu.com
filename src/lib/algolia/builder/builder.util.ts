@@ -1,7 +1,5 @@
-import { stat } from 'fs/promises';
 import { resolve } from 'path';
 import type { Element, Text } from 'hast';
-import { minify } from 'html-minifier';
 import rehypeParse from 'rehype-parse';
 import { unified, Compiler, Processor } from 'unified';
 import type { Node } from 'unist';
@@ -113,15 +111,6 @@ export class AlgoliastBuilder {
     return this.algoliasts[this.algoliasts.length - 1];
   }
 }
-
-/**
- * minify html
- *
- * @param html html as string
- * @returns minified html
- */
-export const minifyHtml = (html: string) =>
-  minify(html, { collapseWhitespace: true });
 
 /**
  * recursively extract text value from tree and remove new line characters
@@ -243,12 +232,3 @@ export const resolvePathToHtmlFile = (path: string): string => {
 
   return absPath;
 };
-
-/**
- * check if the file exists
- *
- * @param path path to a file
- * @returns whether the file exists
- */
-export const exists = async (path: string): Promise<boolean> =>
-  !!(await stat(path).catch(() => false));

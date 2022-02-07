@@ -2,6 +2,7 @@ import { jest } from '@jest/globals';
 import type { SpyInstance } from 'jest-mock';
 import rehypeParse from 'rehype-parse';
 import { unified } from 'unified';
+import { minifyHtml } from '@l/algolia/node';
 import { __HTML_CONTENT, __ALGOLIASTS } from './builder.fixture';
 import type { HeadingTag, Settings, Algoliast } from './builder.interface';
 import {
@@ -10,7 +11,6 @@ import {
   isInSameBlock,
   rehypeAlgolia,
   toAlgoliasts,
-  minifyHtml,
   resolvePathToHtmlFile,
 } from './builder.util';
 
@@ -285,23 +285,6 @@ describe('AlgoliastBuilder', () => {
 
       expect(builder.getLastAlgoliast()).toStrictEqual(algoliast3);
     });
-  });
-});
-
-describe('minifyHtml', () => {
-  it('should return html without whitespace node', () => {
-    expect.assertions(1);
-
-    const html = `
-      <div>
-        a
-      </div>
-
-
-      <div>  b  </div>
-    `;
-
-    expect(minifyHtml(html)).toBe('<div>a</div><div>b</div>');
   });
 });
 

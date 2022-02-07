@@ -1,0 +1,9 @@
+/* stylelint-disable selector-class-pattern */
+.powered-by :global(.ais-PoweredBy-text) {
+  @apply text-sm text-gray-400;
+}
+
+.powered-by :global(.ais-PoweredBy-logo) {
+  @apply h-5;
+}
+/* stylelint-enable selector-class-pattern */

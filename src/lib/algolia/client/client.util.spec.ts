@@ -1,6 +1,11 @@
 import '@jest/globals';
 import type { Algoliast } from '@l/algolia/builder';
-import { algoalistEqual, mapToOperations } from './client.util';
+import {
+  algoalistEqual,
+  mapToOperations,
+  getSmallestHeadingTag,
+  classifyHits,
+} from './client.util';
 
 describe('algoalistEqual', () => {
   it('should return true when all headings are equal', () => {
@@ -233,12 +238,84 @@ describe('mapToOperations', () => {
   });
 });
 
-/**
- * TODO: test after jest supports esm mock
- * jest.mock, __mocks__, dynamic import
- * maybe mock must be in the same scope with the import being used?
- * @see https://github.com/facebook/jest/issues/10025
- */
-describe('indexDocument', () => {
-  it.todo('test indexDocument when jest supports esm mock');
+describe('getSmallestHeadingTag', () => {
+  it.each(
+    // prettier-ignore
+    [
+      { hit: { h1: 'h1', h2: '', h3: '', h4: '', h5: '', h6: '' }, expected: 'h1' },
+      { hit: { h1: 'h1', h2: 'h2', h3: '', h4: '', h5: '', h6: '' }, expected: 'h2' },
+      { hit: { h1: 'h1', h2: 'h2', h3: 'h3', h4: '', h5: '', h6: '' }, expected: 'h3' },
+      { hit: { h1: 'h1', h2: 'h2', h3: 'h3', h4: 'h4', h5: '', h6: '' }, expected: 'h4' },
+      { hit: { h1: 'h1', h2: 'h2', h3: 'h3', h4: 'h4', h5: 'h5', h6: '' }, expected: 'h5' },
+      { hit: { h1: 'h1', h2: 'h2', h3: 'h3', h4: 'h4', h5: 'h5', h6: 'h6' }, expected: 'h6' },
+    ],
+  )(
+    'should return "$expected" when $expected is the smallest heading tag',
+    ({ hit, expected }) => {
+      expect.assertions(1);
+
+      expect(getSmallestHeadingTag(hit)).toBe(expected);
+    },
+  );
+
+  it('should throw when all heading tags are empty', () => {
+    expect.assertions(1);
+
+    expect(() =>
+      getSmallestHeadingTag({ h1: '', h2: '', h3: '', h4: '', h5: '', h6: '' }),
+    ).toThrow(
+      'cannot get the smallest heading tag since all headings are empty',
+    );
+  });
+});
+
+describe('classifyHits', () => {
+  it('should classify hits by h1', () => {
+    expect.assertions(1);
+
+    const obj1: Algoliast = {
+      permalink: 'https://example.com/obj1',
+      h1: 'heading a',
+      h2: '',
+      h3: '',
+      h4: '',
+      h5: '',
+      h6: '',
+      content: 'obj1',
+      _tags: ['https://example.com'],
+    };
+    const obj2: Algoliast = {
+      permalink: 'https://example.com/obj2',
+      h1: 'heading b',
+      h2: '',
+      h3: '',
+      h4: '',
+      h5: '',
+      h6: '',
+      content: 'obj2',
+      _tags: ['https://example.com'],
+    };
+    const obj3: Algoliast = {
+      permalink: 'https://example.com/obj3',
+      h1: 'heading a',
+      h2: '',
+      h3: '',
+      h4: '',
+      h5: '',
+      h6: '',
+      content: 'obj3',
+      _tags: ['https://example.com'],
+    };
+
+    expect(classifyHits([obj1, obj2, obj3])).toStrictEqual([
+      {
+        h1: 'heading a',
+        hits: [obj1, obj3],
+      },
+      {
+        h1: 'heading b',
+        hits: [obj2],
+      },
+    ]);
+  });
 });
