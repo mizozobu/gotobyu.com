@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { ALGOLIA_APP_ID } from '@l/algolia/builder';
 import { GTM_ID } from '@l/gtm';
 
 class MyDocument extends Document {
@@ -35,6 +36,13 @@ class MyDocument extends Document {
           <meta name='msapplication-TileColor' content='#da532c' />
           <meta name='theme-color' content='#ffffff' />
           {/* End favicon */}
+          {/* algolia */}
+          <link
+            rel='preconnect'
+            href={`https://${ALGOLIA_APP_ID}-dsn.algolia.net`}
+            crossOrigin='true'
+          />
+          {/* End algolia */}
         </Head>
 
         <body>
