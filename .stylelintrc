@@ -11,6 +11,7 @@
       {
         "ignoreAtRules": ["apply", "layer", "responsive", "screen", "tailwind"]
       }
-    ]
+    ],
+    "function-no-unknown": null
   }
 }
