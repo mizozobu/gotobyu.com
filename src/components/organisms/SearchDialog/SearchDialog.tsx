@@ -11,7 +11,7 @@ import { CustomSearchBox as _CustomSearchBox } from '@cmp/atoms/CustomSearchBox'
 import { CustomStats as _CustomStats } from '@cmp/atoms/CustomStats';
 import { HitItem } from '@cmp/molecules/HitItem';
 import { CustomInfiniteHits as _CustomInfiniteHits } from '@cmp/organisms/CustomInfiniteHits';
-import { AlgoliaProvider } from '@l/algolia/client';
+import { AlgoliaProvider } from '@l/algolia';
 
 const CustomSearchBox = connectSearchBox(_CustomSearchBox);
 const CustomStats = connectStats(_CustomStats);

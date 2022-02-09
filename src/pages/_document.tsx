@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ALGOLIA_APP_ID } from '@l/algolia/builder';
+import { ALGOLIA_APP_ID } from '@l/algolia';
 import { GTM_ID } from '@l/gtm';
 
 class MyDocument extends Document {
