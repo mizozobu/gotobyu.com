@@ -1,3 +1,29 @@
+import type { Requester } from '@algolia/requester-common';
+import algoliasearch from 'algoliasearch/lite';
+import { ComponentPropsWithoutRef } from 'react';
+import { InstantSearch } from 'react-instantsearch-dom';
+import { AlgoliaProvider } from '@l/algolia';
+
+export const requester: Requester = {
+  send: () => Promise.resolve({ status: 200, content: '', isTimedOut: false }),
+};
+
+interface Props extends ComponentPropsWithoutRef<typeof AlgoliaProvider> {}
+
+/**
+ * InstantSearch mock
+ *
+ * @param props
+ * @returns
+ */
+export const MockInstantSearch = (props: Props) => (
+  <InstantSearch
+    indexName=''
+    searchClient={algoliasearch('', '', { requester })}
+    {...props}
+  />
+);
+
 /**
  * html content for test
  */

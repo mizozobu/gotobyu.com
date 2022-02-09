@@ -1,16 +1,8 @@
 import type { Element } from 'hast';
 import type { Heading } from 'mdast';
+import type { Hit } from 'react-instantsearch-core';
 import type { ValuesType } from 'utility-types';
-import type { HEADING_TAGS } from './builder.constants';
-/**
- * type for heading depth
- */
-export type HeadingDepth = Heading['depth'];
-
-/**
- * type for heading tag
- */
-export type HeadingTag = ValuesType<typeof HEADING_TAGS>;
+import type { HEADING_TAGS } from './algolia.constants';
 
 /**
  * type for indexable object in algolia
@@ -45,3 +37,37 @@ export interface Settings {
   /** filter function to exclude node */
   exclude?: (node: Element) => boolean;
 }
+
+/**
+ * type for heading depth
+ */
+export type HeadingDepth = Heading['depth'];
+
+/**
+ * type for heading tag
+ */
+export type HeadingTag = ValuesType<typeof HEADING_TAGS>;
+
+/**
+ * type for equal function
+ */
+export interface Compare<T> {
+  (a: T, b: T): boolean;
+}
+
+/**
+ * type for extra properties not defined in {@link Hit}
+ */
+export interface HitExtra {
+  _snippetResult: {
+    content: {
+      matchLevel: 'none' | 'partial' | 'full';
+      value: string;
+    };
+  };
+}
+
+/**
+ * type for actual hit
+ */
+export type ActualHit<T> = Hit<T> & HitExtra;

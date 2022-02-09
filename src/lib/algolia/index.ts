@@ -1,5 +1,7 @@
-export * from './builder';
-export * from './client';
+export * from './algolia.interface';
+export * from './algolia.util';
+export * from './algolia.provider';
+export * from './algolia.constants';
 
 /**
  * exclude "./node" from re-exports.
