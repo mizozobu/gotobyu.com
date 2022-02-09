@@ -1,7 +1,7 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { HitItem } from '@cmp/molecules/HitItem';
-import { MockInstantSearch } from '~/stories/mock/algolia';
+import { MockInstantSearch } from '@l/algolia/algolia.fixture';
 import { CustomInfiniteHits } from './CustomInfiniteHits';
 
 export default {
