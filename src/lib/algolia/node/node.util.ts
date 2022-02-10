@@ -133,7 +133,6 @@ export const mapToOperations = <T>(
         action: BATCH_ACTION.add,
         body: newObj,
       });
-      newObjects.shift();
     }
   }
 
@@ -416,18 +415,29 @@ export const indexDocument = async (path: string): Promise<void> => {
     },
   ]);
   const existingAlgoliasts = results[0].hits;
-  const mappedOperations = mapToOperations(
+  const {
+    addObjectOperations,
+    updateObjectOperations,
+    deleteObjectOperations,
+  } = mapToOperations(
     process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME,
     existingAlgoliasts,
     newAlgoliasts,
     algoliastEqual,
     algoliastSkip,
   );
-  await algoliaClient
-    .multipleBatch(Object.values(mappedOperations).flat())
+  const { objectIDs } = await algoliaClient
+    .multipleBatch([
+      ...addObjectOperations,
+      ...updateObjectOperations,
+      ...deleteObjectOperations,
+    ])
     .wait();
 
   process.stdout.write(
-    `\x1b[36minfo\x1b[0m  - Finished indexing ${htmlFilePath}\n`,
+    `\x1b[36minfo\x1b[0m  - Finished indexing ${htmlFilePath}.\n`,
+  );
+  process.stdout.write(
+    `\x1b[36minfo\x1b[0m  - Affected ${objectIDs.length} records (${addObjectOperations.length} added, ${updateObjectOperations.length} updated, ${deleteObjectOperations.length} deleted).\n`,
   );
 };
