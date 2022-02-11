@@ -26,7 +26,7 @@ export const EnglishRequirementTable = ({ data }: Props) => (
       <tr>
         <th scope='row'>
           <NextImage
-            className='h-full p-4 inline mr-4'
+            className='mr-4 inline h-full p-4'
             src={byuLogoImage}
             alt='BYU Logo'
             placeholder='blur'
@@ -44,7 +44,7 @@ export const EnglishRequirementTable = ({ data }: Props) => (
       <tr>
         <th scope='row'>
           <NextImage
-            className='h-full p-4 inline mr-4'
+            className='mr-4 inline h-full p-4'
             src={byuhLogoImage}
             alt='BYUH Logo'
             placeholder='blur'
@@ -62,7 +62,7 @@ export const EnglishRequirementTable = ({ data }: Props) => (
       <tr>
         <th scope='row' className='px-24'>
           <NextImage
-            className='h-full p-4 inline mr-4'
+            className='mr-4 inline h-full p-4'
             src={byuiLogoImage}
             alt='BYUI Logo'
             placeholder='blur'

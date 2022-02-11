@@ -1,5 +1,5 @@
 .external-link {
-  @apply px-1 rounded-md text-indigo-600 bg-indigo-50 font-medium no-underline;
+  @apply rounded-md bg-indigo-50 px-1 font-medium text-indigo-600 no-underline;
 }
 
 .icon {

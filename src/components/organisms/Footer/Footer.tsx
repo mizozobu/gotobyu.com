@@ -4,12 +4,12 @@ import { BorderDraw } from '@cmp/atoms/BorderDraw';
 import { FacebookIcon } from '@cmp/atoms/FacebookIcon';
 
 export const Footer = () => (
-  <footer className='flex flex-col items-center p-8 sm:p-12 lg:p-16 bg-indigo-900 text-white'>
+  <footer className='flex flex-col items-center bg-indigo-900 p-8 text-white sm:p-12 lg:p-16'>
     <div>
       <Link href='/about'>
         <a>BYU Management Society Tokyo Chapter</a>
       </Link>
-      <div className='flex justify-between mt-8'>
+      <div className='mt-8 flex justify-between'>
         <a
           href='mailto:byums.japan@gmail.com'
           target='_blank'
@@ -18,10 +18,10 @@ export const Footer = () => (
           aria-label='email'
         >
           <BorderDraw
-            className='flex items-center justify-center w-14 h-14 p-4'
+            className='flex h-14 w-14 items-center justify-center p-4'
             borderColor='white'
           >
-            <MailIcon className='w-8 h-8' />
+            <MailIcon className='h-8 w-8' />
           </BorderDraw>
         </a>
         <a
@@ -32,10 +32,10 @@ export const Footer = () => (
           aria-label='facebook'
         >
           <BorderDraw
-            className='flex items-center justify-center w-14 h-14 p-4'
+            className='flex h-14 w-14 items-center justify-center p-4'
             borderColor='white'
           >
-            <FacebookIcon className='w-8 h-8' />
+            <FacebookIcon className='h-8 w-8' />
           </BorderDraw>
         </a>
         <a
@@ -46,10 +46,10 @@ export const Footer = () => (
           aria-label='website'
         >
           <BorderDraw
-            className='flex items-center justify-center w-14 h-14 p-4'
+            className='flex h-14 w-14 items-center justify-center p-4'
             borderColor='white'
           >
-            <LinkIcon className='w-8 h-8' />
+            <LinkIcon className='h-8 w-8' />
           </BorderDraw>
         </a>
       </div>

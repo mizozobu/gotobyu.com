@@ -14,7 +14,7 @@ export const CopiedDialog = ({ isOpen, onClose }: Props) => (
       className='fixed inset-0 z-30 overflow-y-auto'
       onClose={onClose}
     >
-      <div className='flex justify-center items-center min-h-screen w-screen'>
+      <div className='flex min-h-screen w-screen items-center justify-center'>
         <Transition.Child
           as={Fragment}
           enter='ease-out duration-200'
@@ -37,20 +37,20 @@ export const CopiedDialog = ({ isOpen, onClose }: Props) => (
           leaveTo='opacity-0'
         >
           <div
-            className='inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all bg-none rounded-2xl'
+            className='my-8 inline-block w-full max-w-md overflow-hidden rounded-2xl bg-none p-6 text-left align-middle transition-all'
             // see https://stackoverflow.com/questions/3461441/prevent-flicker-on-webkit-transition-of-webkit-transform
             style={{ transformStyle: 'preserve-3d' }}
           >
             <Dialog.Title
               as='div'
-              className='flex flex-col md:flex-row items-center text-lg font-medium leading-6 text-white'
+              className='flex flex-col items-center text-lg font-medium leading-6 text-white md:flex-row'
             >
-              <ClipboardCheckIcon className='h-24 md:h-12 mb-8 md:mb-0 md:mr-2' />
+              <ClipboardCheckIcon className='mb-8 h-24 md:mb-0 md:mr-2 md:h-12' />
               この場所へのURLをコピーしました
             </Dialog.Title>
             <button
               type='button'
-              className='p-2 text-white sr-only'
+              className='sr-only p-2 text-white'
               onClick={onClose}
             >
               <XIcon className='inline h-8' />

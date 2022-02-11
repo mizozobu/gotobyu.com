@@ -16,18 +16,18 @@ import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
 
 export const IndexPage = () => (
-  <div className='py-12 lg:py-16 space-y-12 lg:space-y-16'>
+  <div className='space-y-12 py-12 lg:space-y-16 lg:py-16'>
     <div
       className={classNames(
-        'grid grid-cols-1 lg:grid-cols-5 grid-rows-1 max-w-screen-lg xl:max-w-screen-xl mx-auto px-6 pb-10',
+        'mx-auto grid max-w-screen-lg grid-cols-1 grid-rows-1 px-6 pb-10 lg:grid-cols-5 xl:max-w-screen-xl',
       )}
     >
       <div className='col-span-3'>
-        <h1 className='text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl'>
+        <h1 className='text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl'>
           <span className='block text-byu'>BYU</span>
           <span className='block text-byuh'>BYUH</span>
           <span className='block text-byui'>BYUI</span>
-          <div className='h-32 md:h-48 overflow-hidden'>
+          <div className='h-32 overflow-hidden md:h-48'>
             <TypingEffect
               caretWidth='5px'
               waitBeforeType={1000}
@@ -43,19 +43,19 @@ export const IndexPage = () => (
             </TypingEffect>
           </div>
         </h1>
-        <p className='mt-3 md:mt-5 text-base sm:text-lg md:text-xl text-gray-500'>
+        <p className='mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl'>
           在学生と卒業生がBYU、BYUH、BYUIについて入学前に知っておきたい情報をまとめました。
         </p>
       </div>
-      <div className='hidden lg:flex items-center justify-center max-w-4xl col-span-2'>
+      <div className='col-span-2 hidden max-w-4xl items-center justify-center lg:flex'>
         <CirculatingCircles className='max-w-md' animated />
       </div>
     </div>
-    <div className='max-w-screen-lg xl:max-w-screen-xl mx-auto'>
-      <H2 className='px-6 text-2xl md:text-4xl font-bold'>各大学について</H2>
-      <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:gap-y-10 lg:justify-items-center py-10 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
+    <div className='mx-auto max-w-screen-lg xl:max-w-screen-xl'>
+      <H2 className='px-6 text-2xl font-bold md:text-4xl'>各大学について</H2>
+      <div className='flex space-x-12 overflow-scroll py-10 lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:justify-items-center lg:gap-y-10 lg:space-x-0 lg:overflow-visible'>
         <Link href='/schools/byu'>
-          <a className='mt-4 mx-8 rounded-xl'>
+          <a className='mx-8 mt-4 rounded-xl'>
             <SchoolCard colorClass='bg-gradient-to-br from-byu to-byu-dark'>
               <NextImage
                 className='h-full p-4'
@@ -69,7 +69,7 @@ export const IndexPage = () => (
           </a>
         </Link>
         <Link href='/schools/byuh'>
-          <a className='mt-4 mx-8 rounded-xl'>
+          <a className='mx-8 mt-4 rounded-xl'>
             <SchoolCard colorClass='bg-gradient-to-br from-byuh to-byuh-dark'>
               <NextImage
                 className='h-full p-4'
@@ -83,7 +83,7 @@ export const IndexPage = () => (
           </a>
         </Link>
         <Link href='/schools/byui'>
-          <a className='mt-4 mx-8 rounded-xl'>
+          <a className='mx-8 mt-4 rounded-xl'>
             <SchoolCard colorClass='bg-gradient-to-br from-byui to-byui-dark'>
               <NextImage
                 className='h-full p-4'
@@ -98,11 +98,11 @@ export const IndexPage = () => (
         </Link>
       </div>
     </div>
-    <div className='max-w-screen-lg xl:max-w-screen-xl mx-auto'>
-      <H2 className='px-6 text-2xl md:text-4xl font-bold'>
+    <div className='mx-auto max-w-screen-lg xl:max-w-screen-xl'>
+      <H2 className='px-6 text-2xl font-bold md:text-4xl'>
         知っておきたい情報
       </H2>
-      <div className='flex lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:gap-y-10 lg:justify-items-center px-6 lg:px-0 py-10 space-x-12 lg:space-x-0 overflow-scroll lg:overflow-visible'>
+      <div className='flex space-x-12 overflow-scroll px-6 py-10 lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:justify-items-center lg:gap-y-10 lg:space-x-0 lg:overflow-visible lg:px-0'>
         {[
           ...ADDITIONAL_SCHOOL_LINKS,
           ...APPLY_LINKS,

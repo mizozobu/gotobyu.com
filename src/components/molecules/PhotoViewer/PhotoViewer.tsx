@@ -48,7 +48,7 @@ export const PhotoViewer = ({
             <div
               key={imageProps.alt}
               className={classNames(
-                'relative aspect-[3/2] rounded-xl overflow-hidden',
+                'relative aspect-[3/2] overflow-hidden rounded-xl',
               )}
             >
               <Image {...imageProps} />
@@ -60,7 +60,7 @@ export const PhotoViewer = ({
       <div
         className={classNames(
           styles.citation,
-          'mt-4 lg:mt-8 text-xs break-all transition-opacity',
+          'mt-4 break-all text-xs transition-opacity lg:mt-8',
           {
             'opacity-0': !showCitation,
           },

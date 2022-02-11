@@ -19,7 +19,7 @@ export const SwitchControl = ({
   <Switch.Group>
     <div
       className={classNames(
-        'flex items-center px-3 py-1.5 rounded-md bg-indigo-50',
+        'flex items-center rounded-md bg-indigo-50 px-3 py-1.5',
         className,
       )}
     >
@@ -28,14 +28,14 @@ export const SwitchControl = ({
         checked={checked}
         onChange={onChange}
         className={classNames(
-          'relative inline-flex items-center h-6 rounded-full w-11',
+          'relative inline-flex h-6 w-11 items-center rounded-full',
           checked ? 'bg-indigo-700' : 'bg-indigo-100',
         )}
       >
         <span className='sr-only'>{sr}</span>
         <span
           className={classNames(
-            'inline-block w-4 h-4 transition-transform bg-white rounded-full',
+            'inline-block h-4 w-4 rounded-full bg-white transition-transform',
             checked ? 'translate-x-6' : 'translate-x-1',
           )}
         />

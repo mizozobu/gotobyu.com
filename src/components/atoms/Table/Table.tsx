@@ -12,7 +12,7 @@ export const Table = ({
 }: Props) => (
   <div
     className={classNames(
-      'rounded-md overflow-x-auto overflow-y-hidden whitespace-nowrap',
+      'overflow-x-auto overflow-y-hidden whitespace-nowrap rounded-md',
       className,
     )}
   >

@@ -4,7 +4,7 @@
 }
 
 .icon {
-  @apply h-4 inline text-indigo-200;
+  @apply inline h-4 text-indigo-200;
 }
 
 @screen sm {

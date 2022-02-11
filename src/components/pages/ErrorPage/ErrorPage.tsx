@@ -8,7 +8,7 @@ interface Props {
 export const ErrorPage = (
   { statusCode }: Props, // see https://stackoverflow.com/questions/8468066/child-inside-parent-with-min-height-100-not-inheriting-height
 ) => (
-  <div className='absolute inset-0 flex flex-col justify-center items-center'>
+  <div className='absolute inset-0 flex flex-col items-center justify-center'>
     <MDX.a href='/'>
       <CirculatingCircles animated className='w-48' />
     </MDX.a>

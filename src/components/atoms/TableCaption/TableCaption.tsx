@@ -7,7 +7,7 @@ export const TableCaption = ({ className = '', children, ...props }: Props) => (
   <caption className={classNames('py-1', styles['table-caption'])}>
     <span
       {...props}
-      className={classNames('px-2 py-1 rounded-full bg-gray-100', className)}
+      className={classNames('rounded-full bg-gray-100 px-2 py-1', className)}
     >
       {children}
     </span>

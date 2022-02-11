@@ -9,10 +9,10 @@ interface Props {
 
 export const SchoolCard = ({ className = '', colorClass, children }: Props) => (
   <BgRotate
-    className={classNames('w-48 md:w-64 aspect-[3/4]', className)}
+    className={classNames('aspect-[3/4] w-48 md:w-64', className)}
     colorClass={colorClass}
   >
-    <div className='w-full h-full p-4 rounded-xl shadow-xl bg-gray-50'>
+    <div className='h-full w-full rounded-xl bg-gray-50 p-4 shadow-xl'>
       {children}
     </div>
   </BgRotate>
