@@ -7,19 +7,19 @@
   @apply inline h-4 text-indigo-200;
 }
 
-@screen sm {
+@media screen(sm) {
   .icon {
     @apply h-4;
   }
 }
 
-@screen md {
+@media screen(md) {
   .icon {
     @apply h-5;
   }
 }
 
-@screen lg {
+@media screen(lg) {
   .icon {
     @apply h-6;
   }

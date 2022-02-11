@@ -10,7 +10,7 @@
   @apply -top-16;
 }
 
-@screen md {
+@media screen(md) {
   .header.hide {
     @apply top-0;
   }

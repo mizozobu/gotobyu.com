@@ -14,7 +14,7 @@ ul > .li::before {
   content: '';
 }
 
-@screen sm {
+@media screen(sm) {
   ul > .li {
     padding-left: calc(22em / 14);
   }
@@ -27,7 +27,7 @@ ul > .li::before {
   }
 }
 
-@screen md {
+@media screen(md) {
   ul > .li {
     padding-left: calc(28em / 16);
   }
@@ -40,7 +40,7 @@ ul > .li::before {
   }
 }
 
-@screen lg {
+@media screen(lg) {
   ul > .li {
     padding-left: calc(30em / 18);
   }

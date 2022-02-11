@@ -7,7 +7,7 @@
   line-height: calc(32 / 20);
 }
 
-@screen sm {
+@media screen(sm) {
   .h3 {
     margin-top: calc(28em / 18);
     margin-bottom: calc(8em / 18);
@@ -16,7 +16,7 @@
   }
 }
 
-@screen md {
+@media screen(md) {
   .h3 {
     margin-top: calc(32em / 20);
     margin-bottom: calc(12em / 20);
@@ -25,7 +25,7 @@
   }
 }
 
-@screen lg {
+@media screen(lg) {
   .h3 {
     margin-top: calc(40em / 24);
     margin-bottom: calc(16em / 24);

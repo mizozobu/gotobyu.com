@@ -3,21 +3,21 @@
   margin-bottom: calc(20em / 16);
 }
 
-@screen sm {
+@media screen(sm) {
   .p {
     margin-top: calc(16em / 14);
     margin-bottom: calc(16em / 14);
   }
 }
 
-@screen md {
+@media screen(md) {
   .p {
     margin-top: calc(20em / 16);
     margin-bottom: calc(20em / 16);
   }
 }
 
-@screen lg {
+@media screen(lg) {
   .p {
     margin-top: calc(24em / 18);
     margin-bottom: calc(24em / 18);

@@ -23,20 +23,20 @@ see https://stackoverflow.com/questions/2062258/floating-elements-within-a-div-f
   @apply clear-both block;
 }
 
-@screen sm {
+@media screen(sm) {
   .prose {
     font-size: 0.875rem;
     line-height: calc(24 / 14);
   }
 
-  @screen md {
+  @media screen(md) {
     .prose {
       font-size: 1rem;
       line-height: calc(28 / 16);
     }
   }
 
-  @screen lg {
+  @media screen(lg) {
     .prose {
       font-size: 1.125rem;
       line-height: calc(32 / 18);
