@@ -8,7 +8,7 @@ export const CustomStats = ({ nbHits }: Props) =>
       検索結果{nbHits.toLocaleString()}件
     </span>
   ) : (
-    <div className='flex grow justify-center items-center'>
+    <div className='flex grow items-center justify-center'>
       <span className='text-sm text-gray-400'>検索結果はありません</span>
     </div>
   );

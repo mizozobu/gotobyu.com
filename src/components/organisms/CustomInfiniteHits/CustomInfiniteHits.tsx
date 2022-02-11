@@ -18,7 +18,7 @@ export const CustomInfiniteHits = ({
       {hasPrevious && (
         <button
           type='button'
-          className='mb-4 text-indigo-700 text-sm font-bold'
+          className='mb-4 text-sm font-bold text-indigo-700'
           onClick={refinePrevious}
         >
           さらに表示する
@@ -37,7 +37,7 @@ export const CustomInfiniteHits = ({
       {hasMore && (
         <button
           type='button'
-          className='mt-4 text-indigo-700 text-sm font-bold'
+          className='mt-4 text-sm font-bold text-indigo-700'
           onClick={refineNext}
         >
           さらに表示する
