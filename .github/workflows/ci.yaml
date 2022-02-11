@@ -68,7 +68,7 @@ jobs:
       - name: Generate lighthouse summary
         if: ${{ github.event_name == 'pull_request' && github.base_ref == 'master' }}
         id: generate_lighthouse_summary
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             const manifest = ${{ steps.lighthouse.outputs.manifest }};
