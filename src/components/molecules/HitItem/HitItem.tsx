@@ -15,11 +15,11 @@ export const HitItem = ({ hit, onClick }: Props) => (
     <a>
       <button
         type='button'
-        className='flex items-stretch w-full px-4 py-3 rounded-md bg-gray-50 hover:bg-indigo-50 text-left'
+        className='flex w-full items-stretch rounded-md bg-gray-50 px-4 py-3 text-left hover:bg-indigo-50'
         onClick={onClick}
       >
-        <div className='hidden md:flex items-center'>
-          <HashtagIcon className='w-6 h-6 p-1 border border-gray-200 rounded-md mr-4 text-gray-400 bg-white' />
+        <div className='hidden items-center md:flex'>
+          <HashtagIcon className='mr-4 h-6 w-6 rounded-md border border-gray-200 bg-white p-1 text-gray-400' />
         </div>
         <div className='grow'>
           <Highlight
@@ -37,8 +37,8 @@ export const HitItem = ({ hit, onClick }: Props) => (
             ...
           </div>
         </div>
-        <div className='hidden md:flex items-center'>
-          <ChevronRightIcon className='w-6 h-6 p-1 ml-4 text-gray-400' />
+        <div className='hidden items-center md:flex'>
+          <ChevronRightIcon className='ml-4 h-6 w-6 p-1 text-gray-400' />
         </div>
       </button>
     </a>

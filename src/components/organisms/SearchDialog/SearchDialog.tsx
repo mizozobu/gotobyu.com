@@ -43,28 +43,28 @@ export const SearchDialog = ({ isOpen, onClose }: Props) => (
         onClose={onClose}
       >
         <Dialog.Overlay className='fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm' />
-        <div className='relative flex flex-col max-w-3xl min-h-[50%] max-h-full lg:max-h-[76vh] rounded divide-y border-slate-100 mx-auto bg-white'>
-          <div className='flex justify-end items-center px-4 md:px-6'>
+        <div className='relative mx-auto flex max-h-full min-h-[50%] max-w-3xl flex-col divide-y rounded border-slate-100 bg-white lg:max-h-[76vh]'>
+          <div className='flex items-center justify-end px-4 md:px-6'>
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label htmlFor='search'>
-              <SearchIcon className='w-6 h-6 text-gray-400' />
+              <SearchIcon className='h-6 w-6 text-gray-400' />
             </label>
             <CustomSearchBox
               id='search'
-              className='w-full h-full py-4 mx-3'
+              className='mx-3 h-full w-full py-4'
               placeholder='検索'
               maxLength={64}
               delay={500}
             />
             <button
               type='button'
-              className='p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100'
+              className='rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500'
               onClick={onClose}
             >
-              <XIcon className='w-6 h-6 text-gray-400' />
+              <XIcon className='h-6 w-6 text-gray-400' />
             </button>
           </div>
-          <div className='flex flex-col grow px-4 md:px-6 py-4 space-y-2 overflow-y-auto'>
+          <div className='flex grow flex-col space-y-2 overflow-y-auto px-4 py-4 md:px-6'>
             <CustomStats />
             <CustomInfiniteHits>
               {(hit) => (
@@ -72,7 +72,7 @@ export const SearchDialog = ({ isOpen, onClose }: Props) => (
               )}
             </CustomInfiniteHits>
           </div>
-          <div className='flex justify-end px-4 md:px-6 py-4'>
+          <div className='flex justify-end px-4 py-4 md:px-6'>
             <CustomPoweredBy />
           </div>
         </div>
