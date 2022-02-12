@@ -35,15 +35,11 @@
     scroll-margin-top: calc(64px * 1.5);
   }
 
-  *:focus {
+  *:focus-visible {
     @apply outline-none ring ring-indigo-500;
   }
 
   main {
     min-height: calc(100vh - 64px);
-  }
-
-  input[type='submit'] {
-    @apply cursor-pointer;
   }
 }
