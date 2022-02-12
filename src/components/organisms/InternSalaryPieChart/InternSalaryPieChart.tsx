@@ -1,11 +1,14 @@
 import { memo, ComponentPropsWithoutRef } from 'react';
-import { PieChart } from '@cmp/molecules/PieChart';
+import { DynamicPieChart } from '@cmp/organisms/DynamicPieChart';
 
 interface Props
-  extends Omit<ComponentPropsWithoutRef<typeof PieChart>, 'data' | 'title'> {}
+  extends Omit<
+    ComponentPropsWithoutRef<typeof DynamicPieChart>,
+    'data' | 'title'
+  > {}
 
 export const InternSalaryPieChart = memo((props: Props) => (
-  <PieChart
+  <DynamicPieChart
     {...props}
     title='インターシップ給与(月)'
     data={{

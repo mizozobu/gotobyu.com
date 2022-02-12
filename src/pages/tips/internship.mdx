@@ -1,13 +1,11 @@
 import dynamic from 'next/dynamic';
 import { Footnote } from '@cmp/atoms/Footnote';
 import { UlCol } from '@cmp/atoms/UlCol';
+import { PieChartLoader } from '@cmp/molecules/PieChartLoader';
+import { InternSalaryPieChart } from '@cmp/organisms/InternSalaryPieChart';
 import { Seo } from '@cmp/organisms/Seo';
 import { INTERNSHIP_PAGE_META } from '@d';
 import { MDX } from '@l/mdx';
-
-export const InternSalaryPieChart = dynamic(
-  () => import('@cmp/organisms/InternSalaryPieChart').then(({ InternSalaryPieChart }) => InternSalaryPieChart),
-);
 
 <Seo
   title={INTERNSHIP_PAGE_META.title}
@@ -26,7 +24,9 @@ export const InternSalaryPieChart = dynamic(
 ## インターンシップの給与
 
 <div className='md:float-left w-full md:w-2/3 lg:w-1/2'>
-  <InternSalaryPieChart className='w-full h-72 md:h-80 lg:h-96' />
+  <div className='w-full h-72 md:h-80 lg:h-96'>
+    <InternSalaryPieChart />
+  </div>
   <MDX.ul className='mt-4 text-xs'>
     <Footnote>独自調査に基づく</Footnote>
   </MDX.ul>

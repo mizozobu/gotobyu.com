@@ -8,8 +8,8 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof IncomeBarChart>;
 
-const Template: ComponentStory<typeof IncomeBarChart> = (args) => (
-  <IncomeBarChart {...args} />
+const Template: ComponentStory<typeof IncomeBarChart> = () => (
+  <IncomeBarChart />
 );
 
 export const Example = Template.bind({});
