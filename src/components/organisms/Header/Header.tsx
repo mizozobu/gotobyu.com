@@ -66,7 +66,7 @@ export const Header = ({ show, loading }: Props) => {
               <div className='relative flex h-16 items-center justify-between'>
                 <div className='flex justify-start lg:w-0 lg:flex-1'>
                   <Link href='/'>
-                    <a>
+                    <a tabIndex={-1}>
                       <span className='sr-only'>Home</span>
                       <CirculatingCircles className='h-8 w-8' />
                     </a>
@@ -132,7 +132,7 @@ export const Header = ({ show, loading }: Props) => {
                                   {SCHOOL_LINKS.map(
                                     ({ name, href, detail, icon: Icon }) => (
                                       <Link key={name} href={href}>
-                                        <a>
+                                        <a tabIndex={-1}>
                                           <button
                                             type='button'
                                             className='flex w-full items-start rounded-lg p-3 text-left hover:bg-gray-50'
@@ -159,7 +159,7 @@ export const Header = ({ show, loading }: Props) => {
                                   {ADDITIONAL_SCHOOL_LINKS.map(
                                     ({ name, href, detail, icon: Icon }) => (
                                       <Link key={name} href={href}>
-                                        <a>
+                                        <a tabIndex={-1}>
                                           <button
                                             type='button'
                                             className='flex w-full items-start rounded-lg p-3 text-left hover:bg-gray-50'
@@ -235,7 +235,7 @@ export const Header = ({ show, loading }: Props) => {
                                   {APPLY_LINKS.map(
                                     ({ name, href, detail, icon: Icon }) => (
                                       <Link key={name} href={href}>
-                                        <a>
+                                        <a tabIndex={-1}>
                                           <button
                                             type='button'
                                             className='flex w-full items-start rounded-lg p-3 text-left hover:bg-gray-50'
@@ -312,7 +312,7 @@ export const Header = ({ show, loading }: Props) => {
                                   {CAREER_LINKS.map(
                                     ({ name, href, detail, icon: Icon }) => (
                                       <Link key={name} href={href}>
-                                        <a>
+                                        <a tabIndex={-1}>
                                           <button
                                             type='button'
                                             className='flex w-full items-start rounded-lg p-3 text-left hover:bg-gray-50'
@@ -385,7 +385,7 @@ export const Header = ({ show, loading }: Props) => {
                                   {OTHER_LINKS.map(
                                     ({ name, href, detail, icon: Icon }) => (
                                       <Link key={name} href={href}>
-                                        <a>
+                                        <a tabIndex={-1}>
                                           <button
                                             type='button'
                                             className='flex w-full items-start rounded-lg p-3 text-left hover:bg-gray-50'
@@ -460,7 +460,7 @@ export const Header = ({ show, loading }: Props) => {
                         <nav className='grid gap-y-2'>
                           {SCHOOL_LINKS.map(({ name, href, icon: Icon }) => (
                             <Link key={name} href={href}>
-                              <a>
+                              <a tabIndex={-1}>
                                 <button
                                   type='button'
                                   className='flex w-full items-center rounded-md px-3 py-2 text-left hover:bg-gray-50'
@@ -480,7 +480,7 @@ export const Header = ({ show, loading }: Props) => {
                           {ADDITIONAL_SCHOOL_LINKS.map(
                             ({ name, href, icon: Icon }) => (
                               <Link key={name} href={href}>
-                                <a>
+                                <a tabIndex={-1}>
                                   <button
                                     type='button'
                                     className='flex w-full items-center rounded-md px-3 py-2 text-left hover:bg-gray-50'
@@ -504,7 +504,7 @@ export const Header = ({ show, loading }: Props) => {
                       <div className='grid grid-cols-2 gap-x-1 gap-y-2 p-3'>
                         {APPLY_LINKS.map(({ name, href, icon: Icon }) => (
                           <Link key={name} href={href}>
-                            <a>
+                            <a tabIndex={-1}>
                               <button
                                 type='button'
                                 className='flex h-full w-full items-center rounded-lg px-3 py-1 text-left text-base font-medium hover:bg-gray-50'
@@ -522,7 +522,7 @@ export const Header = ({ show, loading }: Props) => {
 
                         {CAREER_LINKS.map(({ name, href, icon: Icon }) => (
                           <Link key={name} href={href}>
-                            <a>
+                            <a tabIndex={-1}>
                               <button
                                 type='button'
                                 className='flex h-full w-full items-center rounded-lg px-3 py-1 text-left text-base font-medium hover:bg-gray-50'
@@ -540,7 +540,7 @@ export const Header = ({ show, loading }: Props) => {
 
                         {OTHER_LINKS.map(({ name, href, icon: Icon }) => (
                           <Link key={name} href={href}>
-                            <a>
+                            <a tabIndex={-1}>
                               <button
                                 type='button'
                                 className='flex h-full w-full items-center rounded-lg px-3 py-1 text-left text-base font-medium hover:bg-gray-50'
