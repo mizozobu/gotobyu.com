@@ -4,46 +4,30 @@ import {
   Legend,
   Title,
   Tooltip,
-  ChartData,
   ChartOptions,
 } from 'chart.js';
-import { useCallback, useState, ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, useCallback, useState } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { useScreenSize, gte, SCREEN_SIZE, ScreenSizeType } from '@l/screenSize';
 
 ChartJS.register(ArcElement, Legend, Title, Tooltip);
 
-interface Props extends ComponentPropsWithoutRef<'div'> {
-  _options?: ChartOptions<'pie'>;
-  data: ChartData<'pie'>;
+export interface Props
+  extends Omit<ComponentPropsWithoutRef<typeof Pie>, 'options'> {
   title: string;
 }
 
-export const defaultOptions = {
-  maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      position: 'bottom' as const,
-    },
-  },
-};
-
-export const PieChart = ({
-  data,
-  title,
-  _options = defaultOptions,
-  ...props
-}: Props) => {
+export const PieChart = ({ title, ...props }: Props) => {
   const [options, setOptions] = useState<ChartOptions<'pie'>>({
-    ..._options,
+    maintainAspectRatio: false,
     plugins: {
-      ..._options.plugins,
-      title: title
-        ? {
-            display: true,
-            text: title,
-          }
-        : undefined,
+      legend: {
+        position: 'bottom',
+      },
+      title: {
+        display: true,
+        text: title,
+      },
     },
   });
 
@@ -64,9 +48,5 @@ export const PieChart = ({
 
   useScreenSize(handler);
 
-  return (
-    <div {...props}>
-      <Pie data={data} options={options} />
-    </div>
-  );
+  return <Pie options={options} {...props} />;
 };

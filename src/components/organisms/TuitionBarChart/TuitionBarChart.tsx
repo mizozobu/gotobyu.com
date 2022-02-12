@@ -1,17 +1,16 @@
-import { memo, useState, ComponentPropsWithoutRef } from 'react';
+import { memo, useState } from 'react';
 import { Footnote } from '@cmp/atoms/Footnote';
-import { BarChart, defaultOptions } from '@cmp/molecules/BarChart';
 import { SwitchControl } from '@cmp/molecules/SwitchControl';
+import { DynamicBarChart } from '@cmp/organisms/DynamicBarChart';
 import { TUITION } from '@d';
 import { Forex } from '@l/forex';
 import { MDX } from '@l/mdx';
 
-interface Props
-  extends Omit<ComponentPropsWithoutRef<typeof BarChart>, 'data' | 'title'> {
+interface Props {
   forex: Forex;
 }
 
-export const TuitionBarChart = memo(({ forex, ...props }: Props) => {
+export const TuitionBarChart = memo(({ forex }: Props) => {
   const [isJPY, setIsJPY] = useState(true);
   const [isLDS, setIsLDS] = useState(true);
   const multiplier = isJPY ? forex.exrate : 1;
@@ -34,67 +33,59 @@ export const TuitionBarChart = memo(({ forex, ...props }: Props) => {
         />
       </div>
 
-      <BarChart
-        {...props}
-        title={`年間学費(${isJPY ? '円' : 'ドル'})`}
-        data={{
-          labels: [
-            'BYU',
-            'BYUH',
-            'BYUI',
-            '日本国立',
-            '日本私立',
-            'US国立',
-            'US私立',
-          ],
-          datasets: [
-            {
-              data: [
-                TUITION.byu * multiplier * ldsRate,
-                TUITION.byuh * multiplier * ldsRate,
-                TUITION.byui * multiplier * ldsRate,
-                (TUITION.jpKokuritsu / forex.exrate) * multiplier,
-                (TUITION.jpShiritsu / forex.exrate) * multiplier,
-                TUITION.usPublic * multiplier,
-                TUITION.usPrivate * multiplier,
-              ],
-              backgroundColor: [
-                'rgba(0, 46, 93, 1)',
-                'rgba(158, 27, 52, 1)',
-                'rgba(0, 118, 182, 1)',
-                'rgba(55, 48, 163, 0.2)',
-                'rgba(55, 48, 163, 0.2)',
-                'rgba(55, 48, 163, 0.2)',
-                'rgba(55, 48, 163, 0.2)',
-                'rgba(55, 48, 163, 0.2)',
-              ],
-              borderColor: [
-                'rgba(0, 46, 93, 1)',
-                'rgba(158, 27, 52, 1)',
-                'rgba(0, 118, 182, 1)',
-                'rgba(55, 48, 163, 1)',
-                'rgba(55, 48, 163, 1)',
-                'rgba(55, 48, 163, 1)',
-                'rgba(55, 48, 163, 1)',
-                'rgba(55, 48, 163, 1)',
-              ],
-              borderWidth: 1,
-            },
-          ],
-        }}
-        options={{
-          ...defaultOptions,
-          scales: {
-            ...defaultOptions.scales,
-            yAxes: {
-              ticks: {
-                callback: (value: number | string) =>
-                  `${isJPY ? '¥' : '$'}${value.toLocaleString()}`,
+      <div className='h-96 lg:h-120'>
+        <DynamicBarChart
+          title={`年間学費(${isJPY ? '円' : 'ドル'})`}
+          data={{
+            labels: [
+              'BYU',
+              'BYUH',
+              'BYUI',
+              '日本国立',
+              '日本私立',
+              'US国立',
+              'US私立',
+            ],
+            datasets: [
+              {
+                data: [
+                  TUITION.byu * multiplier * ldsRate,
+                  TUITION.byuh * multiplier * ldsRate,
+                  TUITION.byui * multiplier * ldsRate,
+                  (TUITION.jpKokuritsu / forex.exrate) * multiplier,
+                  (TUITION.jpShiritsu / forex.exrate) * multiplier,
+                  TUITION.usPublic * multiplier,
+                  TUITION.usPrivate * multiplier,
+                ],
+                backgroundColor: [
+                  'rgba(0, 46, 93, 1)',
+                  'rgba(158, 27, 52, 1)',
+                  'rgba(0, 118, 182, 1)',
+                  'rgba(55, 48, 163, 0.2)',
+                  'rgba(55, 48, 163, 0.2)',
+                  'rgba(55, 48, 163, 0.2)',
+                  'rgba(55, 48, 163, 0.2)',
+                  'rgba(55, 48, 163, 0.2)',
+                ],
+                borderColor: [
+                  'rgba(0, 46, 93, 1)',
+                  'rgba(158, 27, 52, 1)',
+                  'rgba(0, 118, 182, 1)',
+                  'rgba(55, 48, 163, 1)',
+                  'rgba(55, 48, 163, 1)',
+                  'rgba(55, 48, 163, 1)',
+                  'rgba(55, 48, 163, 1)',
+                  'rgba(55, 48, 163, 1)',
+                ],
+                borderWidth: 1,
               },
-            },
-          },
-        }}
-      />
+            ],
+          }}
+          yAxesTicksCallback={(value) =>
+            `${isJPY ? '¥' : '$'}${value.toLocaleString()}`
+          }
+        />
+      </div>
 
       {/* eslint-disable-next-line react/jsx-pascal-case */}
       <MDX.ul className='mt-4 text-xs'>
