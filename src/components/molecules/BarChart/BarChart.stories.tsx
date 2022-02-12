@@ -14,7 +14,6 @@ const Template: ComponentStory<typeof BarChart> = (args) => (
 
 export const Example = Template.bind({});
 Example.args = {
-  className: 'w-96 h-80',
   title: 'Title',
   data: {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],

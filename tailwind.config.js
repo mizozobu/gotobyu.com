@@ -13,6 +13,9 @@ module.exports = {
         byui: '#0076B6',
         'byui-dark': '#002f48',
       },
+      spacing: {
+        120: '30rem',
+      },
     },
   },
 };

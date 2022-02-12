@@ -5,58 +5,51 @@ import {
   LinearScale,
   Title,
   Tooltip,
-  ChartData,
-  ChartOptions,
+  TickOptions,
 } from 'chart.js';
-import type { ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Title, Tooltip);
 
-interface Props extends ComponentPropsWithoutRef<'div'> {
-  options?: ChartOptions<'bar'>;
-  data: ChartData<'bar'>;
+export interface Props
+  extends Omit<ComponentPropsWithoutRef<typeof Bar>, 'options'> {
   title: string;
+  yAxesTicksCallback: TickOptions['callback'];
 }
-
-export const defaultOptions = {
-  maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      display: false,
-    },
-  },
-  scales: {
-    xAxes: {
-      grid: {
-        display: false,
-      },
-    },
-  },
-};
 
 export const BarChart = ({
   data,
   title,
-  options: _options = defaultOptions,
+  yAxesTicksCallback,
   ...props
-}: Props) => {
-  const options = {
-    ..._options,
-    plugins: {
-      ..._options.plugins,
-      title: title
-        ? {
-            display: true,
-            text: title,
-          }
-        : undefined,
-    },
-  };
-
-  return (
-    <div {...props}>
-      <Bar data={data} options={options} />
-    </div>
-  );
-};
+}: Props) => (
+  <Bar
+    data={data}
+    options={{
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false,
+        },
+        title: {
+          display: true,
+          text: title,
+        },
+      },
+      scales: {
+        xAxes: {
+          grid: {
+            display: false,
+          },
+        },
+        yAxes: {
+          ticks: {
+            callback: yAxesTicksCallback,
+          },
+        },
+      },
+    }}
+    {...props}
+  />
+);

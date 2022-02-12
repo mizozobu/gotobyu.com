@@ -3,17 +3,12 @@ import { UlCol } from '@cmp/atoms/UlCol';
 import { SchoolTable } from '@cmp/organisms/SchoolTable';
 import { Seo } from '@cmp/organisms/Seo';
 import { CostTable } from '@cnt/tips/compare/CostTable';
+import { TuitionBarChart } from '@cnt/tips/compare/TuitionBarChart';
 import { COMPARE_PAGE_META } from '@d';
 import { indexDocument } from '@l/algolia/node';
 import { getForex } from '@l/forex';
 import { AtomStore } from '@l/recoil';
 import { FOREX_STATE_KEY, defaultForexState } from '@s/forex';
-
-export const TuitionBarChart = dynamic(() =>
-  import('@cnt/tips/compare/TuitionBarChart').then(
-    ({ TuitionBarChart }) => TuitionBarChart,
-  ),
-);
 
 export const getStaticProps = async(context) => {
   const atomStore = new AtomStore();
@@ -53,7 +48,7 @@ export const getStaticProps = async(context) => {
 
 ## 学費
 
-<TuitionBarChart className='w-full h-72 md:h-80 lg:h-96' />
+<TuitionBarChart />
 
 
 ## 1学期の費用

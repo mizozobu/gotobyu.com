@@ -14,7 +14,6 @@ const Template: ComponentStory<typeof PieChart> = (args) => (
 
 export const Example = Template.bind({});
 Example.args = {
-  className: 'w-96 h-80',
   title: 'Title',
   data: {
     labels: ['Red', 'Blue', 'Yellow'],
