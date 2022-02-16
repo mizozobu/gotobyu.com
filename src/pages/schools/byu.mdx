@@ -2,7 +2,7 @@ import { Digit } from '@cmp/atoms/Digit';
 import { NextImage } from '@cmp/atoms/NextImage';
 import { Pane } from '@cmp/atoms/Pane';
 import { SplitPane } from '@cmp/atoms/SplitPane';
-import { PhotoViewer } from '@cmp/molecules/PhotoViewer';
+import { DynamicPhotoViewer } from '@cmp/organisms/DynamicPhotoViewer';
 import { Seo } from '@cmp/organisms/Seo';
 import { BYU_PAGE_META, SCHOOL_INFO } from '@d';
 import archesNationalParkImage from '@p/byu/arches-national-park.jpg';
@@ -64,8 +64,8 @@ BYUは[アメリカの大学ランキング](https://www.byu.edu/facts-figures)�
 
 ## 専攻と授業
 
-<div className='pt-8 pb-4 md:float-left'>
-  <PhotoViewer
+<div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
+  <DynamicPhotoViewer
     colorClass='bg-gradient-to-br from-byu to-byu-dark'
     images={[
       {
@@ -116,8 +116,8 @@ BYU生徒は[電車やバスが無料で使える](https://www.rideuta.com/Fares
 
 ## レクリエーション
 
-<div className='pt-8 pb-4 md:float-left'>
-  <PhotoViewer
+<div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
+  <DynamicPhotoViewer
     colorClass='bg-gradient-to-br from-byu to-byu-dark'
     images={[
       {
