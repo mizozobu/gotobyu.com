@@ -20,8 +20,10 @@ export const CostTable = ({ exrate, isJPY, isLDS }: Props) => {
 
   return (
     <Table className='my-2 px-0'>
-      <TableCaption>1学期の費用({isJPY ? '円' : 'ドル'})</TableCaption>
-      <thead>
+      <TableCaption description='BYU、BYUH、BYUIの1学期の費用(学費、家賃と食費、教科書費、生活費、交通費、ローン費用)'>
+        1学期の費用({isJPY ? '円' : 'ドル'})
+      </TableCaption>
+      <thead data-noindex='true'>
         <tr>
           <th scope='col'>{}</th>
           <th scope='col'>

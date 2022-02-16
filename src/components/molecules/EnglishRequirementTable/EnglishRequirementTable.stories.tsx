@@ -14,6 +14,7 @@ const Template: ComponentStory<typeof EnglishRequirementTable> = (args) => (
 
 export const Example = Template.bind({});
 Example.args = {
+  exam: 'TOEFL',
   data: {
     byu: {
       reading: 20,

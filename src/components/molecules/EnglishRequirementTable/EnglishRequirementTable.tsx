@@ -1,5 +1,6 @@
 import { NextImage } from '@cmp/atoms/NextImage';
 import { Table } from '@cmp/atoms/Table';
+import { TableCaption } from '@cmp/atoms/TableCaption';
 import type { SchoolDataCollection, EnglishRequirement } from '@d';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
@@ -7,12 +8,18 @@ import byuiLogoImage from '@p/byui/byui-logo.png';
 import styles from './EnglishRequirementTable.module.css';
 
 interface Props {
+  exam: string;
   data: SchoolDataCollection<EnglishRequirement>;
 }
 
-export const EnglishRequirementTable = ({ data }: Props) => (
+export const EnglishRequirementTable = ({ exam, data }: Props) => (
   <Table className={styles['english-requirement-table']}>
-    <thead>
+    <TableCaption
+      description={`BYU、BYUH、BYUIの入学に必要な${exam}のスコア(Reading、Writing、Speaking、Listening、合計)`}
+    >
+      入学に必要な{exam}のスコア
+    </TableCaption>
+    <thead data-noindex='true'>
       <tr>
         <th scope='col'>{}</th>
         <th scope='col'>Reading</th>
