@@ -1,14 +1,21 @@
 import { Strong } from '@cmp/atoms/Strong';
 import { Table } from '@cmp/atoms/Table';
+import { TableCaption } from '@cmp/atoms/TableCaption';
 import type { ApplicationDeadline } from '@d';
 
 interface Props {
+  school: string;
   data: ApplicationDeadline[];
 }
 
-export const DeadlineTable = ({ data }: Props) => (
+export const DeadlineTable = ({ school, data }: Props) => (
   <Table>
-    <thead>
+    <TableCaption
+      description={`${school}の学期期間、申込開始、優先申込締切、申込締切、合格発表`}
+    >
+      {school}の申込締切
+    </TableCaption>
+    <thead data-noindex='true'>
       <tr>
         <th scope='col'>{}</th>
         <th scope='col'>学期期間</th>
