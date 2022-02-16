@@ -1,14 +1,19 @@
 import dynamic from 'next/dynamic';
+import { Footnote } from '@cmp/atoms/Footnote';
 import { UlCol } from '@cmp/atoms/UlCol';
 import { SchoolTable } from '@cmp/organisms/SchoolTable';
 import { Seo } from '@cmp/organisms/Seo';
+import { CurrencySwitchControl } from '@cnt/CurrencySwitchControl';
+import { ExrateAnnotation } from '@cnt/ExrateAnnotation';
+import { LDSSwitchControl } from '@cnt/LDSSwitchControl';
 import { CostTable } from '@cnt/tips/compare/CostTable';
 import { TuitionBarChart } from '@cnt/tips/compare/TuitionBarChart';
 import { COMPARE_PAGE_META } from '@d';
 import { indexDocument } from '@l/algolia/node';
 import { getForex } from '@l/forex';
+import { MDX } from '@l/mdx';
 import { AtomStore } from '@l/recoil';
-import { FOREX_STATE_KEY, defaultForexState } from '@s/forex';
+import { forexState, defaultForexState, FOREX_STATE_KEY } from '@s/forex';
 
 export const getStaticProps = async(context) => {
   const atomStore = new AtomStore();
@@ -48,9 +53,36 @@ export const getStaticProps = async(context) => {
 
 ## 学費
 
-<TuitionBarChart />
+<div className='flex flex-row space-x-4'>
+  <CurrencySwitchControl />
+  <LDSSwitchControl />
+</div>
+
+<div className='h-96 lg:h-120'>
+  <TuitionBarChart />
+</div>
+
+<MDX.ul className='mt-4 text-xs'>
+  <Footnote>
+    <ExrateAnnotation />
+  </Footnote>
+</MDX.ul>
 
 
 ## 1学期の費用
 
+<div className='flex flex-row space-x-4'>
+  <CurrencySwitchControl />
+  <LDSSwitchControl />
+</div>
+
 <CostTable />
+
+<MDX.ul className='mt-4 text-xs'>
+  <Footnote>
+    <ExrateAnnotation />
+  </Footnote>
+  <Footnote>BYUとBYUIは2学期分、BYUHは3学期分で換算</Footnote>
+  <Footnote>日本国立、日本私立は[国公私立大学の授業料等の推移](https://www.mext.go.jp/a_menu/koutou/shinkou/07021403/__icsFiles/afieldfile/2017/12/26/1399613_03.pdf)より平成29年度の値</Footnote>
+  <Footnote>US国立、US私立は[See the Average College Tuition in 2020-2021](https://www.usnews.com/education/best-colleges/paying-for-college/articles/paying-for-college-infographic)より</Footnote>
+</MDX.ul>

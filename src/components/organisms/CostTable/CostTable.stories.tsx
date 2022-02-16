@@ -14,8 +14,7 @@ const Template: ComponentStory<typeof CostTable> = (args) => (
 
 export const Example = Template.bind({});
 Example.args = {
-  forex: {
-    exrate: 110,
-    timestamp: new Date().toISOString(),
-  },
+  exrate: 110,
+  isJPY: true,
+  isLDS: true,
 };
