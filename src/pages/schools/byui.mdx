@@ -2,7 +2,7 @@ import { Digit } from '@cmp/atoms/Digit';
 import { NextImage } from '@cmp/atoms/NextImage';
 import { Pane } from '@cmp/atoms/Pane';
 import { SplitPane } from '@cmp/atoms/SplitPane';
-import { PhotoViewer } from '@cmp/molecules/PhotoViewer';
+import { DynamicPhotoViewer } from '@cmp/organisms/DynamicPhotoViewer';
 import { Seo } from '@cmp/organisms/Seo';
 import { BYUI_PAGE_META, SCHOOL_INFO } from '@d';
 import byuiClassImage from '@p/byui/byui-class.png';
@@ -52,8 +52,8 @@ BYUから車で5時間ほどのところにあるレックスバーグという�
 
 ## 専攻と授業
 
-<div className='pt-8 pb-4 md:float-left'>
-  <PhotoViewer
+<div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
+  <DynamicPhotoViewer
     colorClass='bg-gradient-to-br from-byui to-byui-dark'
     images={[
       {
@@ -88,8 +88,8 @@ BYUIの教授たちは研究と並行して教師を勤めるのではなく、�
 
 ## 衣住食
 
-<div className='pt-8 pb-4 md:float-left'>
-  <PhotoViewer
+<div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
+  <DynamicPhotoViewer
     colorClass='bg-gradient-to-br from-byui to-byui-dark'
     images={[
       {
@@ -130,8 +130,8 @@ BYUIから車で10分ほどのところに[Walmart](https://www.google.com/maps/
 
 ## クラブ
 
-<div className='pt-8 pb-4 md:float-left'>
-  <PhotoViewer
+<div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
+  <DynamicPhotoViewer
     colorClass='bg-gradient-to-br from-byui to-byui-dark'
     images={[
       {
