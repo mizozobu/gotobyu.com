@@ -1,5 +1,7 @@
 import type { InfiniteHitsProvided } from 'react-instantsearch-core';
+import { Highlight } from 'react-instantsearch-dom';
 import { classifyHits, Algoliast, ActualHit } from '@l/algolia';
+import styles from './CustomInfiniteHits.module.css';
 
 interface Props extends InfiniteHitsProvided<ActualHit<Algoliast>> {
   children: (hit: ActualHit<Algoliast>) => JSX.Element;
@@ -27,7 +29,15 @@ export const CustomInfiniteHits = ({
       <ul className='flex flex-col space-y-5'>
         {classifyHits(hits).map(({ h1, hits: hitsInH1 }) => (
           <div key={h1} className='space-y-3'>
-            <span className='text-lg font-bold'>{h1}</span>
+            {hitsInH1[0] ? (
+              <Highlight
+                attribute='h1'
+                hit={hitsInH1[0]}
+                className={classNames(styles.h1, 'text-lg font-bold')}
+              />
+            ) : (
+              <span className='text-lg font-bold'>{h1}</span>
+            )}
             <ul className='flex flex-col space-y-2 md:mx-6'>
               {hitsInH1.map((hit) => children(hit))}
             </ul>
