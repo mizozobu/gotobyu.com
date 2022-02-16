@@ -59,7 +59,7 @@ jobs:
       - name: Build storybook
         run: yarn build-storybook --quiet
       - name: Lighthouse
-        uses: treosh/lighthouse-ci-action@v8
+        uses: treosh/lighthouse-ci-action@v9
         if: ${{ github.event_name == 'pull_request' && github.base_ref == 'master' }}
         id: lighthouse
         with:
