@@ -379,6 +379,7 @@ export const indexDocument = async (path: string): Promise<void> => {
     process.stdout.write(
       `\x1b[33mwarn\x1b[0m  - ${htmlFilePath} does not exist. Skipping indexing it...\n`,
     );
+    return;
   }
 
   const html = await readFile(htmlFilePath);
