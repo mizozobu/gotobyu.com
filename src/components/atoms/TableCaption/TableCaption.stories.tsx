@@ -14,7 +14,13 @@ const Template: ComponentStory<typeof TableCaption> = (args) => (
   </table>
 );
 
-export const Example = Template.bind({});
-Example.args = {
-  children: 'table 1.1',
+export const WithoutDescription = Template.bind({});
+WithoutDescription.args = {
+  children: 'table',
+};
+
+export const WithDescription = Template.bind({});
+WithDescription.args = {
+  description: 'table description',
+  children: 'table',
 };

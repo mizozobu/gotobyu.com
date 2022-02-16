@@ -14,6 +14,7 @@ const Template: ComponentStory<typeof DeadlineTable> = (args) => (
 
 export const Example = Template.bind({});
 Example.args = {
+  school: 'BYUI',
   data: [
     {
       term: '秋学期',

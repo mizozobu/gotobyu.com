@@ -5,11 +5,7 @@ interface Props extends ComponentPropsWithoutRef<'table'> {
   thickBorderColor?: string;
 }
 
-export const Table = ({
-  className = '',
-  thickBorderColor,
-  ...props
-}: Props) => (
+export const Table = ({ className, thickBorderColor, ...props }: Props) => (
   <div
     className={classNames(
       'overflow-x-auto overflow-y-hidden whitespace-nowrap rounded-md',
