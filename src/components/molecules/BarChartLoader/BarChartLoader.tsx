@@ -58,13 +58,6 @@ export const BarChartLoader = ({
             x2='0'
             y2='100'
           />
-          <line
-            className='stroke-slate-200 stroke-1'
-            x1='0'
-            y1='100'
-            x2='100'
-            y2='100'
-          />
           {Array.from(Array(barCount).keys()).map((i) => (
             <rect
               key={i}
@@ -75,6 +68,13 @@ export const BarChartLoader = ({
               height={((i + 1) * 100) / barCount}
             />
           ))}
+          <line
+            className='stroke-slate-200 stroke-1'
+            x1='0'
+            y1='100'
+            x2='100'
+            y2='100'
+          />
         </g>
       </svg>
     </div>
