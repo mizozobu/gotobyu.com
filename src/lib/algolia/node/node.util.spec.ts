@@ -715,6 +715,7 @@ describe('rehypeAlgolia', () => {
       .use(rehypeAlgolia)
       .data('settings', {
         baseUrl: '/example',
+        endingChar: '.',
         exclude: (node) => node.properties?.dataNoindex === 'true',
       } as Settings)
       .process(Buffer.from(minifyHtml(__HTML_CONTENT)));
@@ -729,6 +730,7 @@ describe('toAlgoliasts', () => {
 
     const algoliasts = await toAlgoliasts(minifyHtml(__HTML_CONTENT), {
       baseUrl: '/example',
+      endingChar: '.',
       exclude: (node) => node.properties?.dataNoindex === 'true',
     });
 
