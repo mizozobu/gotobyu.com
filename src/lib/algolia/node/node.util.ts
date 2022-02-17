@@ -287,9 +287,11 @@ export function rehypeAlgolia() {
   // @ts-ignore
   const that = this as Processor;
   const compiler: Compiler = (tree) => {
-    const { exclude = () => false, baseUrl } = that.data(
-      'settings',
-    ) as Settings;
+    const {
+      baseUrl,
+      endingChar = '',
+      exclude = () => false,
+    } = that.data('settings') as Settings;
     const builder = new AlgoliastBuilder(baseUrl);
 
     visit(tree, 'element', (node: Element) => {
@@ -312,7 +314,11 @@ export function rehypeAlgolia() {
         if (!includesTextNode) return;
 
         const content = getText(node);
-        builder.setContent(content);
+        const contentWithEndingChar =
+          content.slice(-1) === endingChar
+            ? content
+            : `${content}${endingChar}`;
+        builder.setContent(contentWithEndingChar);
 
         const currentAlgoliast = builder.getCurrentAlgoliast();
         const lastAlgoliast = builder.getLastAlgoliast();
@@ -321,7 +327,7 @@ export function rehypeAlgolia() {
           lastAlgoliast !== undefined &&
           isInSameBlock(currentAlgoliast, lastAlgoliast)
         ) {
-          lastAlgoliast.content += content;
+          lastAlgoliast.content += contentWithEndingChar;
         } else {
           builder.add(currentAlgoliast);
         }
@@ -386,6 +392,7 @@ export const indexDocument = async (path: string): Promise<void> => {
   const minifiedHtml = Buffer.from(minifyHtml(html.toString()));
   const newAlgoliasts = await toAlgoliasts(minifiedHtml, {
     baseUrl: path,
+    endingChar: '。',
     exclude: (node: Element) => node.properties?.dataNoindex === 'true',
   });
 

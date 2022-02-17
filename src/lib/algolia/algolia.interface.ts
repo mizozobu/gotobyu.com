@@ -34,6 +34,8 @@ export interface Algoliast {
 export interface Settings {
   /** base URL for Algoliast permalink */
   baseUrl: string;
+  /** ending charater of a sentense such as "." and "。" */
+  endingChar?: string;
   /** filter function to exclude node */
   exclude?: (node: Element) => boolean;
 }

@@ -82,6 +82,12 @@ export const __HTML_CONTENT = `
       <p><a href="https://example.com">this is in<span> heading </span>3-1.</a></p>
       <p>this <a href="https://example.com"><span>is</span></a> in<a href="https://example.com"><span> heading </span></a>3-1.</p>
     </div>
+
+    <h3>heading 3-2</h3>
+    <div>
+      <p>this is in heading 3-2</p>
+      <p>this is in heading 3-2</p>
+    </div>
   </body>
 </html>
 `;
@@ -132,6 +138,17 @@ export const __ALGOLIASTS = [
     h5: '',
     h6: '',
     content: 'this is in heading 3-1.this is in heading 3-1.',
+    _tags: ['/example'],
+  },
+  {
+    permalink: '/example#heading 3-2',
+    h1: 'heading 1-1',
+    h2: 'heading 2-2',
+    h3: 'heading 3-2',
+    h4: '',
+    h5: '',
+    h6: '',
+    content: 'this is in heading 3-2.this is in heading 3-2.',
     _tags: ['/example'],
   },
 ];
