@@ -1,30 +1,51 @@
 import { LinkIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
-import { memo, ComponentPropsWithoutRef, MouseEventHandler } from 'react';
-import { H2 } from '@cmp/atoms/H2';
+import {
+  memo,
+  ComponentPropsWithoutRef,
+  MouseEventHandler,
+  ComponentType,
+  HTMLAttributes,
+} from 'react';
 import styles from './SectionTitle.module.css';
 
-interface Props extends Omit<ComponentPropsWithoutRef<typeof H2>, 'onClick'> {
+type HeadingComponent = ComponentType<HTMLAttributes<HTMLHeadingElement>>;
+
+interface Props
+  extends Omit<ComponentPropsWithoutRef<HeadingComponent>, 'onClick'> {
+  as: HeadingComponent;
   id: string;
   active: boolean;
-  onClick?: MouseEventHandler<HTMLAnchorElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export const SectionTitle = memo(
-  ({ id, active = false, children, onClick, ...props }: Props) => (
-    <H2 {...props} id={id}>
+  ({
+    as: Component,
+    id,
+    active = false,
+    children,
+    onClick,
+    ...props
+  }: Props) => (
+    <Component {...props} id={id}>
       <Link href={`#${id}`}>
-        {/* eslint-disable-next-line */}
-        <a
-          className={classNames({
-            [styles.active]: active,
-          })}
-          onClick={onClick}
-        >
-          {children}
-          <LinkIcon className={classNames('ml-2', styles.icon)} />
+        <a tabIndex={-1}>
+          <button
+            type='button'
+            className={classNames(
+              {
+                [styles.active]: active,
+              },
+              'font-bold',
+            )}
+            onClick={onClick}
+          >
+            {children}
+            <LinkIcon className={classNames('ml-2', styles.icon)} />
+          </button>
         </a>
       </Link>
-    </H2>
+    </Component>
   ),
 );
