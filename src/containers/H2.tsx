@@ -1,5 +1,6 @@
 import { useCallback, ComponentPropsWithoutRef } from 'react';
 import { useRecoilState } from 'recoil';
+import { H2 as _H2 } from '@cmp/atoms/H2';
 import { SectionTitle as _SectionTitle } from '@cmp/molecules/SectionTitle';
 import { urlState } from '@s/url';
 
@@ -9,7 +10,7 @@ interface Props
   children: string;
 }
 
-export const SectionTitle = ({ id, children, ...props }: Props) => {
+export const H2 = ({ id, children, ...props }: Props) => {
   const [{ hash }, setUrlState] = useRecoilState(urlState);
 
   const handleClick = useCallback(() => {
@@ -27,6 +28,7 @@ export const SectionTitle = ({ id, children, ...props }: Props) => {
   return (
     <_SectionTitle
       {...props}
+      as={_H2}
       id={id}
       active={hash === id}
       onClick={handleClick}
