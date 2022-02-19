@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { DynamicBarChart } from '@cmp/organisms/DynamicBarChart';
-import { TUITION } from '@d';
+import { TUITION } from '@d/cost-of-attendance';
 
 interface Props {
   exrate: number;

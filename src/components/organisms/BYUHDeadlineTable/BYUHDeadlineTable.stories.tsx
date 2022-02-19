@@ -1,6 +1,6 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { BYUH_APPLICATION_DEADLINE } from '@d';
+import { BYUH_APPLICATION_DEADLINE } from '@d/application-deadline';
 import { BYUHDeadlineTable } from './BYUHDeadlineTable';
 
 export default {

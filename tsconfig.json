@@ -7,6 +7,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
+    "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -18,15 +19,19 @@
       "~/*": ["src/*"],
       "@cmp/*": ["src/components/*"],
       "@cnt/*": ["src/containers/*"],
-      "@d": ["src/data"],
       "@d/*": ["src/data/*"],
       "@p/*": ["public/*"],
       "@l/*": ["src/lib/*"],
       "@s/*": ["src/states/*"]
-    },
-    "incremental": true
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx"
+  ],
   "exclude": ["node_modules"],
   "ts-node": {
     "transpileOnly": true,

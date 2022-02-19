@@ -1,6 +1,6 @@
 import { Seo } from '@cmp/organisms/Seo';
 import { IndexPage } from '@cmp/pages/IndexPage';
-import { INDEX_PAGE_META } from '@d';
+import { INDEX_PAGE_META } from '@d/links';
 
 const _IndexPage = () => (
   <>

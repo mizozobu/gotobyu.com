@@ -2,7 +2,7 @@ import { Digit } from '@cmp/atoms/Digit';
 import { NextImage } from '@cmp/atoms/NextImage';
 import { Table } from '@cmp/atoms/Table';
 import { TableCaption } from '@cmp/atoms/TableCaption';
-import { COST_OF_ATTENDACE } from '@d';
+import { COST_OF_ATTENDACE } from '@d/cost-of-attendance';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
