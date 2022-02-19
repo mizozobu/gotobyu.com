@@ -1,4 +1,5 @@
 import { useState, useEffect, ComponentPropsWithoutRef } from 'react';
+import { Style } from '@cmp/atoms/Style';
 import styles from './Type.module.css';
 
 interface Props extends ComponentPropsWithoutRef<'span'> {
@@ -69,11 +70,12 @@ export const Type = ({
           {typed[typed.length - 1]}
         </span>
       </span>
-      <style jsx>{`
-        .${styles.type} {
-          --caret-width: ${caretWidth};
-        }
-      `}</style>
+      <Style
+        selector={`.${styles.type}`}
+        styles={{
+          '--caret-width': caretWidth,
+        }}
+      />
     </>
   );
 };

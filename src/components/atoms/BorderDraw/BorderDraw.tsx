@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { Style } from '@cmp/atoms/Style';
 import styles from './BorderDraw.module.css';
 
 interface Props {
@@ -16,10 +17,11 @@ export const BorderDraw = ({
     <div className={classNames(styles['border-draw'], className)}>
       {children}
     </div>
-    <style jsx>{`
-      .${styles['border-draw']} {
-        --border-color: ${borderColor};
-      }
-    `}</style>
+    <Style
+      selector={`.${styles['border-draw']}`}
+      styles={{
+        '--border-color': borderColor,
+      }}
+    />
   </>
 );
