@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil';
 import { CopiedDialog as _CopiedDialog } from '@cmp/organisms/CopiedDialog';
 import { urlState } from '@s/url';
 
-interface Props
+export interface Props
   extends Omit<
     ComponentPropsWithoutRef<typeof _CopiedDialog>,
     'isOpen' | 'onClose'
