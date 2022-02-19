@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
+import { Style } from '@cmp/atoms/Style';
 import styles from './Table.module.css';
 
 interface Props extends ComponentPropsWithoutRef<'table'> {
@@ -16,10 +17,11 @@ export const Table = ({ className, thickBorderColor, ...props }: Props) => (
       {...props}
       className={classNames('min-w-full table-auto', styles.table)}
     />
-    <style jsx>{`
-      .${styles.table} {
-        ${thickBorderColor ? `--thick-border-color: ${thickBorderColor}` : ''};
-      }
-    `}</style>
+    <Style
+      selector={`.${styles.table}`}
+      styles={{
+        '--thick-border-color': thickBorderColor ?? '',
+      }}
+    />
   </div>
 );
