@@ -1,4 +1,10 @@
 const mdxFactory = require('@next/mdx');
+/* eslint-disable import/no-extraneous-dependencies */
+const withBundleAnalyzer =
+  process.env.ANALYZE === 'true'
+    ? require('@next/bundle-analyzer')({ enabled: true })
+    : (config) => config;
+/* eslint-enable import/no-extraneous-dependencies */
 const rehypeSlug = require('rehype-slug');
 const remarkSectionize = require('remark-sectionize');
 const { ProvidePlugin } = require('webpack');
@@ -28,4 +34,4 @@ const nextConfig = {
   }),
 };
 
-module.exports = withMDX(nextConfig);
+module.exports = withBundleAnalyzer(withMDX(nextConfig));
