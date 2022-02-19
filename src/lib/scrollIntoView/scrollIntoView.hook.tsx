@@ -9,21 +9,7 @@ import { urlState } from '@s/url';
 export const useScrollIntoView = () => {
   const setUrlState = useSetRecoilState(urlState);
   const router = useRouter();
-  const hash = decodeURIComponent(router.asPath.split('#')[1]);
-
-  useEffect(() => {
-    // wait a moment to load dynamic components and headlessui tab.
-    // check document.documentElement.scrollHeight and document.documentElement.offsetHeight.
-    const timeout = setTimeout(() => {
-      document
-        .getElementById(hash)
-        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  });
+  const hash = decodeURIComponent(router.asPath.split('#')[1] ?? '');
 
   useEffect(() => {
     setUrlState((prevState) => ({

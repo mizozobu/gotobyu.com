@@ -10,11 +10,7 @@ export const Header = () => {
 
   useEffect(() => {
     const startLoading = () => setLoading(true);
-    const endLoading = () => {
-      setTimeout(() => {
-        setLoading(false);
-      }, 500);
-    };
+    const endLoading = () => setLoading(false);
 
     router.events.on('routeChangeStart', startLoading);
     router.events.on('routeChangeComplete', endLoading);

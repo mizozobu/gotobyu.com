@@ -39,6 +39,10 @@
     @apply outline-none ring ring-indigo-500;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   main {
     min-height: calc(100vh - 64px);
   }
