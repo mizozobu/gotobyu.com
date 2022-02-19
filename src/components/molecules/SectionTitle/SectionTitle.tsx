@@ -1,4 +1,3 @@
-import { LinkIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import {
   memo,
@@ -31,18 +30,14 @@ export const SectionTitle = memo(
     <Component {...props} id={id}>
       <Link href={`#${id}`}>
         <a tabIndex={-1}>
-          <button
-            type='button'
-            className={classNames(
-              {
-                [styles.active]: active,
-              },
-              'font-bold',
-            )}
-            onClick={onClick}
-          >
-            {children}
-            <LinkIcon className={classNames('ml-2', styles.icon)} />
+          <button type='button' className='text-left' onClick={onClick}>
+            <span
+              className={classNames(styles['section-title'], {
+                [styles.highlighted]: active,
+              })}
+            >
+              {children}
+            </span>
           </button>
         </a>
       </Link>
