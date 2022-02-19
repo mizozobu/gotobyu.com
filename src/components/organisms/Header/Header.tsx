@@ -19,7 +19,7 @@ import {
   APPLY_LINKS,
   CAREER_LINKS,
   OTHER_LINKS,
-} from '@d';
+} from '@d/links';
 import styles from './Header.module.css';
 
 export const SearchDialog = dynamic<SearchDialogProps>(

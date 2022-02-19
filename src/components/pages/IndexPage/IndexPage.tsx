@@ -10,7 +10,7 @@ import {
   APPLY_LINKS,
   CAREER_LINKS,
   OTHER_LINKS,
-} from '@d';
+} from '@d/links';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
