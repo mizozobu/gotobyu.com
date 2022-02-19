@@ -1,6 +1,6 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { BYUI_APPLICATION_DEADLINE } from '@d';
+import { BYUI_APPLICATION_DEADLINE } from '@d/application-deadline';
 import { BYUIDeadlineTable } from './BYUIDeadlineTable';
 
 export default {

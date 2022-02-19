@@ -9,7 +9,7 @@ import {
   CAREER_PAGE_META,
   INTERNSHIP_PAGE_META,
   ABOUT_PAGE_META,
-} from '@d';
+} from '@d/links';
 import { indexDocument } from '@l/algolia/node';
 
 /**

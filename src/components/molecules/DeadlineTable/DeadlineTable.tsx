@@ -1,7 +1,7 @@
 import { Strong } from '@cmp/atoms/Strong';
 import { Table } from '@cmp/atoms/Table';
 import { TableCaption } from '@cmp/atoms/TableCaption';
-import type { ApplicationDeadline } from '@d';
+import type { ApplicationDeadline } from '@d/application-deadline';
 
 interface Props {
   school: string;
