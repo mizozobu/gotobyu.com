@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import { pathsToModuleNameMapper } from 'ts-jest';
-import tsconfig from './tsconfig.json';
+import tsconfig from './tsconfig.json' assert { type: 'json' };
 
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 export default {
