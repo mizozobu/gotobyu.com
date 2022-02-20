@@ -1,6 +1,8 @@
 import classnames from 'classnames';
 import { pathsToModuleNameMapper } from 'ts-jest';
-import tsconfig from './tsconfig.json' assert { type: 'json' };
+import * as tsConfigPaths from 'tsconfig-paths';
+
+const { paths } = tsConfigPaths.loadConfig();
 
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 export default {
@@ -9,7 +11,7 @@ export default {
   restoreMocks: true,
   moduleNameMapper: {
     // see https://kulshekhar.github.io/ts-jest/docs/getting-started/paths-mapping/
-    ...pathsToModuleNameMapper(tsconfig.compilerOptions.paths, {
+    ...pathsToModuleNameMapper(paths, {
       prefix: '<rootDir>/',
     }),
     // see https://jestjs.io/docs/webpack#mocking-css-modules
