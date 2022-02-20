@@ -1,9 +1,7 @@
-import { readFile, stat } from 'fs/promises';
 import { resolve } from 'path';
 import type { MultipleBatchRequest, Hit } from '@algolia/client-search';
 import algoliasearch from 'algoliasearch';
 import type { Element, Text } from 'hast';
-import { minify } from 'html-minifier';
 import rehypeParse from 'rehype-parse';
 import { unified, Compiler, Processor } from 'unified';
 import type { Node } from 'unist';
@@ -32,24 +30,6 @@ export const resolvePathToHtmlFile = (path: string): string => {
 
   return absPath;
 };
-
-/**
- * check if the file exists
- *
- * @param path path to a file
- * @returns whether the file exists
- */
-export const exists = async (path: string): Promise<boolean> =>
-  !!(await stat(path).catch(() => false));
-
-/**
- * minify html
- *
- * @param html html as string
- * @returns minified html
- */
-export const minifyHtml = (html: string) =>
-  minify(html, { collapseWhitespace: true });
 
 /**
  * check equality of algoliast
@@ -364,38 +344,18 @@ export const toAlgoliasts = async (
   return result as Algoliast[];
 };
 
+/* eslint-disable no-console */
 /**
  * parse html file and index in algolia
  *
- * @param path realative path to html file from /pages
+ * @param path realative path from process.env.NEXT_PUBLIC_BASE_URL
  */
 export const indexDocument = async (path: string): Promise<void> => {
-  // skip indexing(used in CI)
   if (process.env.ALGOLIA_BUILD_INDEX !== 'true') {
-    process.stdout.write(
-      `\x1b[33mwarn\x1b[0m  - Skip indexing ${path} since "ALGOLIA_BUILD_INDEX" is not set\n`,
+    return console.log(
+      `\x1b[33mwarn\x1b[0m  - Skip indexing since "ALGOLIA_BUILD_INDEX" is not set to "true" (${path})`,
     );
-    return;
   }
-
-  const htmlFilePath = resolvePathToHtmlFile(path);
-
-  // do nothing if html file does not exist(at build time)
-  if (!(await exists(htmlFilePath))) {
-    process.stdout.write(
-      `\x1b[33mwarn\x1b[0m  - ${htmlFilePath} does not exist. Skipping indexing it...\n`,
-    );
-    return;
-  }
-
-  const html = await readFile(htmlFilePath);
-  const minifiedHtml = Buffer.from(minifyHtml(html.toString()));
-  const newAlgoliasts = await toAlgoliasts(minifiedHtml, {
-    baseUrl: path,
-    endingChar: '。',
-    exclude: (node: Element) => node.properties?.dataNoindex === 'true',
-  });
-
   if (process.env.NEXT_PUBLIC_ALGOLIA_APP_ID === undefined)
     throw new Error(
       'environment variable "NEXT_PUBLIC_ALGOLIA_APP_ID" must be defined',
@@ -408,7 +368,24 @@ export const indexDocument = async (path: string): Promise<void> => {
     throw new Error(
       'environment variable "ALGOLIA_ADMIN_API_KEY" must be defined',
     );
+  if (process.env.NEXT_PUBLIC_BASE_URL === undefined)
+    throw new Error(
+      'environment variable "NEXT_PUBLIC_BASE_URL" must be defined',
+    );
 
+  /** html document to be indexed */
+  const html = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${path}`).then(
+    (res) => res.text(),
+  );
+
+  /** new algoliasts to be indexed */
+  const newAlgoliasts = await toAlgoliasts(html, {
+    baseUrl: path,
+    endingChar: '。',
+    exclude: (node: Element) => node.properties?.dataNoindex === 'true',
+  });
+
+  /** algolia admin client */
   const algoliaClient = algoliasearch(
     process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
     process.env.ALGOLIA_ADMIN_API_KEY,
@@ -422,7 +399,7 @@ export const indexDocument = async (path: string): Promise<void> => {
       },
     },
   ]);
-  const existingAlgoliasts = results[0].hits;
+  const existingAlgoliasts = results[0].hits; // FIXME
   const {
     addObjectOperations,
     updateObjectOperations,
@@ -442,10 +419,11 @@ export const indexDocument = async (path: string): Promise<void> => {
     ])
     .wait();
 
-  process.stdout.write(
-    `\x1b[36minfo\x1b[0m  - Finished indexing ${htmlFilePath}.\n`,
+  console.log(`\x1b[35mevent\x1b[0m - Finished indexing ${path}`);
+  console.log(
+    `\x1b[36minfo\x1b[0m  - Affected ${objectIDs.length} records (${addObjectOperations.length} added, ${updateObjectOperations.length} updated, ${deleteObjectOperations.length} deleted).`,
   );
-  process.stdout.write(
-    `\x1b[36minfo\x1b[0m  - Affected ${objectIDs.length} records (${addObjectOperations.length} added, ${updateObjectOperations.length} updated, ${deleteObjectOperations.length} deleted).\n`,
-  );
+
+  return Promise.resolve();
 };
+/* eslint-enable no-console */
