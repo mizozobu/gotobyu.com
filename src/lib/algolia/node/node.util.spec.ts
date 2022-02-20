@@ -6,7 +6,6 @@ import { HeadingTag, Settings, Algoliast } from '@l/algolia';
 import { __HTML_CONTENT, __ALGOLIASTS } from '@l/algolia/algolia.fixture';
 import {
   resolvePathToHtmlFile,
-  minifyHtml,
   algoliastEqual,
   algoliastSkip,
   mapToOperations,
@@ -25,33 +24,6 @@ describe('resolvePathToHtmlFile', () => {
 
     expect(resolvePathToHtmlFile('schools/byu')).toBe(absPath);
     expect(resolvePathToHtmlFile('/schools/byu')).toBe(absPath);
-  });
-});
-
-/**
- * TODO: test after jest supports esm mock
- * jest.mock, __mocks__, dynamic import
- * maybe mock must be in the same scope with the import being used?
- * @see https://github.com/facebook/jest/issues/10025
- */
-describe('exists', () => {
-  it.todo('test exists when jest supports esm mock');
-});
-
-describe('minifyHtml', () => {
-  it('should return html without whitespace node', () => {
-    expect.assertions(1);
-
-    const html = `
-      <div>
-        a
-      </div>
-
-
-      <div>  b  </div>
-    `;
-
-    expect(minifyHtml(html)).toBe('<div>a</div><div>b</div>');
   });
 });
 
@@ -718,7 +690,7 @@ describe('rehypeAlgolia', () => {
         endingChar: '.',
         exclude: (node) => node.properties?.dataNoindex === 'true',
       } as Settings)
-      .process(Buffer.from(minifyHtml(__HTML_CONTENT)));
+      .process(Buffer.from(__HTML_CONTENT));
 
     expect(result).toStrictEqual(__ALGOLIASTS);
   });
@@ -728,7 +700,7 @@ describe('toAlgoliasts', () => {
   it('should return array of algoliast', async () => {
     expect.assertions(1);
 
-    const algoliasts = await toAlgoliasts(minifyHtml(__HTML_CONTENT), {
+    const algoliasts = await toAlgoliasts(__HTML_CONTENT, {
       baseUrl: '/example',
       endingChar: '.',
       exclude: (node) => node.properties?.dataNoindex === 'true',

@@ -26,6 +26,7 @@ export const MockInstantSearch = (props: Props) => (
 
 /**
  * html content for test
+ * minifying part is not accurate as how next.js minifies html
  */
 export const __HTML_CONTENT = `
 <!DOCTYPE html>
@@ -79,8 +80,8 @@ export const __HTML_CONTENT = `
       </div>
     </div>
     <div>
-      <p><a href="https://example.com">this is in<span> heading </span>3-1.</a></p>
-      <p>this <a href="https://example.com"><span>is</span></a> in<a href="https://example.com"><span> heading </span></a>3-1.</p>
+      <p><a href="https://example.com">this is in h<span>eadin</span>g 3-1.</a></p>
+      <p>thi<a href="https://example.com"><span>s is i</span></a>n h<a href="https://example.com"><span>eadin</span></a>g 3-1.</p>
     </div>
 
     <h3>heading 3-2</h3>
@@ -90,7 +91,7 @@ export const __HTML_CONTENT = `
     </div>
   </body>
 </html>
-`;
+`.replace(/>\s+|\s+</g, (s) => s.trim());
 
 /**
  * __HTML_CONTENT as algoliasts
