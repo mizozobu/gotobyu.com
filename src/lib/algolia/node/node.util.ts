@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import type { MultipleBatchRequest, Hit } from '@algolia/client-search';
 import algoliasearch from 'algoliasearch';
+import axios from 'axios';
 import type { Element, Text } from 'hast';
 import rehypeParse from 'rehype-parse';
 import { unified, Compiler, Processor } from 'unified';
@@ -17,6 +18,7 @@ import {
   Settings,
   Compare,
 } from '@l/algolia';
+import { getEnvVar } from '@l/env';
 
 /**
  * resolve path to absolute path to html file
@@ -283,7 +285,8 @@ export function rehypeAlgolia() {
 
       /** whether its children including text node. whitespace only text nodes are excluded. */
       const includesTextNode = node.children.some(
-        (n: Node) => n.type === 'text',
+        ({ type, value }: Node) =>
+          type === 'text' && /\S/.test(value as string),
       );
 
       if ((HEADING_TAGS as readonly string[]).includes(node.tagName)) {
@@ -351,31 +354,22 @@ export const toAlgoliasts = async (
  * @param path realative path from process.env.NEXT_PUBLIC_BASE_URL
  */
 export const indexDocument = async (path: string): Promise<void> => {
-  if (process.env.ALGOLIA_BUILD_INDEX !== 'true') {
+  const ALGOLIA_BUILD_INDEX = getEnvVar('ALGOLIA_BUILD_INDEX');
+  const NEXT_PUBLIC_ALGOLIA_APP_ID = getEnvVar('NEXT_PUBLIC_ALGOLIA_APP_ID');
+  const NEXT_PUBLIC_ALGOLIA_INDEX_NAME = getEnvVar(
+    'NEXT_PUBLIC_ALGOLIA_INDEX_NAME',
+  );
+  const ALGOLIA_ADMIN_API_KEY = getEnvVar('ALGOLIA_ADMIN_API_KEY');
+  const NEXT_PUBLIC_BASE_URL = getEnvVar('NEXT_PUBLIC_BASE_URL');
+  if (ALGOLIA_BUILD_INDEX !== 'true') {
     return console.log(
       `\x1b[33mwarn\x1b[0m  - Skip indexing since "ALGOLIA_BUILD_INDEX" is not set to "true" (${path})`,
     );
   }
-  if (process.env.NEXT_PUBLIC_ALGOLIA_APP_ID === undefined)
-    throw new Error(
-      'environment variable "NEXT_PUBLIC_ALGOLIA_APP_ID" must be defined',
-    );
-  if (process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME === undefined)
-    throw new Error(
-      'environment variable "NEXT_PUBLIC_ALGOLIA_INDEX_NAME" must be defined',
-    );
-  if (process.env.ALGOLIA_ADMIN_API_KEY === undefined)
-    throw new Error(
-      'environment variable "ALGOLIA_ADMIN_API_KEY" must be defined',
-    );
-  if (process.env.NEXT_PUBLIC_BASE_URL === undefined)
-    throw new Error(
-      'environment variable "NEXT_PUBLIC_BASE_URL" must be defined',
-    );
 
   /** html document to be indexed */
-  const html = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${path}`).then(
-    (res) => res.text(),
+  const { data: html } = await axios.get<string>(
+    new URL(path, NEXT_PUBLIC_BASE_URL).href,
   );
 
   /** new algoliasts to be indexed */
@@ -387,12 +381,12 @@ export const indexDocument = async (path: string): Promise<void> => {
 
   /** algolia admin client */
   const algoliaClient = algoliasearch(
-    process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
-    process.env.ALGOLIA_ADMIN_API_KEY,
+    NEXT_PUBLIC_ALGOLIA_APP_ID,
+    ALGOLIA_ADMIN_API_KEY,
   );
   const { results } = await algoliaClient.search<Algoliast>([
     {
-      indexName: process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME,
+      indexName: NEXT_PUBLIC_ALGOLIA_INDEX_NAME,
       query: '',
       params: {
         tagFilters: [path],
@@ -405,7 +399,7 @@ export const indexDocument = async (path: string): Promise<void> => {
     updateObjectOperations,
     deleteObjectOperations,
   } = mapToOperations(
-    process.env.NEXT_PUBLIC_ALGOLIA_INDEX_NAME,
+    NEXT_PUBLIC_ALGOLIA_INDEX_NAME,
     existingAlgoliasts,
     newAlgoliasts,
     algoliastEqual,
