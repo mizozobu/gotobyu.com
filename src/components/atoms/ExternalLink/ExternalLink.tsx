@@ -4,7 +4,7 @@ import styles from './ExternalLink.module.css';
 
 interface Props extends ComponentPropsWithoutRef<'a'> {}
 
-export const ExternalLink = ({ className = '', children, ...props }: Props) => (
+export const ExternalLink = ({ className, children, ...props }: Props) => (
   <a
     {...props}
     target='_blank'

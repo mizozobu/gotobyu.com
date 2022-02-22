@@ -7,12 +7,7 @@ export type Props = ImageProps & {
   style?: CSSProperties;
 };
 
-export const NextImage = ({
-  id,
-  className = '',
-  style = {},
-  ...props
-}: Props) => (
+export const NextImage = ({ id, className, style = {}, ...props }: Props) => (
   <div id={id} className={classNames('relative', className)} style={style}>
     <Image {...props} />
   </div>

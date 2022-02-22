@@ -4,7 +4,7 @@ import { PartialCircle } from '@cmp/atoms/PartialCircle';
 interface Props
   extends Omit<ComponentPropsWithoutRef<'svg'>, 'viewBox' | 'height'> {}
 
-export const PieChartLoader = ({ className = '', ...props }: Props) => {
+export const PieChartLoader = ({ className, ...props }: Props) => {
   const r = 50;
 
   return (

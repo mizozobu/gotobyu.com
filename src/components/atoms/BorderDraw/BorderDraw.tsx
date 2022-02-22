@@ -8,11 +8,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const BorderDraw = ({
-  className = '',
-  borderColor,
-  children,
-}: Props) => (
+export const BorderDraw = ({ className, borderColor, children }: Props) => (
   <>
     <div className={classNames(styles['border-draw'], className)}>
       {children}

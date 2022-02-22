@@ -7,7 +7,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const BgRotate = ({ className = '', colorClass, children }: Props) => (
+export const BgRotate = ({ className, colorClass, children }: Props) => (
   <div className={classNames('group relative', styles['bg-rotate'], className)}>
     <div
       className={classNames(

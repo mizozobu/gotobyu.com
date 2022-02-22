@@ -7,7 +7,7 @@ interface Props {
   children: ReactNode;
 }
 
-export const SchoolCard = ({ className = '', colorClass, children }: Props) => (
+export const SchoolCard = ({ className, colorClass, children }: Props) => (
   <BgRotate
     className={classNames('aspect-[3/4] w-48 md:w-64', className)}
     colorClass={colorClass}

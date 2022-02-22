@@ -8,7 +8,7 @@ interface Props extends ComponentPropsWithoutRef<'a'> {
 
 export const InternalLink = ({
   href,
-  className = '',
+  className,
   children,
   ...props
 }: Props) => (

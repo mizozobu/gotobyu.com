@@ -15,7 +15,7 @@ export interface Props {
 
 export const PhotoViewer = ({
   images,
-  className = '',
+  className,
   colorClass,
   settings: _settings = {},
 }: Props) => {

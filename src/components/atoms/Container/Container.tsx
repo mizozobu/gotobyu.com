@@ -3,7 +3,7 @@ import styles from './Container.module.css';
 
 interface Props extends ComponentPropsWithoutRef<'article'> {}
 
-export const Container = ({ className = '', ...props }: Props) => (
+export const Container = ({ className, ...props }: Props) => (
   <article
     {...props}
     className={classNames(

@@ -10,7 +10,7 @@ export const PageCard = ({
   icon: Icon,
   name,
   detail,
-  className = '',
+  className,
   ...props
 }: Props) => (
   <div
