@@ -1,10 +1,10 @@
 import { NextSeo, NextSeoProps } from 'next-seo';
 import { useRouter } from 'next/router';
-import { BASE_URL } from './Seo.constants';
 
 interface Props extends NextSeoProps {}
 
 export const Seo = ({ openGraph, ...prop }: Props) => {
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
   const router = useRouter();
 
   return (
