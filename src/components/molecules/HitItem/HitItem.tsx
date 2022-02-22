@@ -12,7 +12,7 @@ interface Props {
 
 export const HitItem = ({ hit, onClick }: Props) => (
   <Link href={hit.permalink}>
-    <a>
+    <a tabIndex={-1}>
       <button
         type='button'
         className='flex w-full items-stretch rounded-md bg-gray-50 px-4 py-3 text-left hover:bg-indigo-50'
