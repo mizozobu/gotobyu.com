@@ -1,5 +1,6 @@
 import { memo, ComponentPropsWithoutRef } from 'react';
 import { DynamicPieChart } from '@cmp/organisms/DynamicPieChart';
+import { INTERNSHIP_SALARY } from '@d/income';
 
 interface Props
   extends Omit<
@@ -22,7 +23,13 @@ export const InternSalaryPieChart = memo((props: Props) => (
         ],
         datasets: [
           {
-            data: [22.7, 22.7, 13.6, 22.7, 18.2],
+            data: [
+              INTERNSHIP_SALARY._0,
+              INTERNSHIP_SALARY._0to10,
+              INTERNSHIP_SALARY._10to20,
+              INTERNSHIP_SALARY._20to30,
+              INTERNSHIP_SALARY._30over,
+            ],
             backgroundColor: [
               'rgba(55, 48, 163, 0.2)',
               'rgba(55, 48, 163, 0.4)',
