@@ -17,7 +17,7 @@ let isIndexed = false;
 /** time indexed */
 let indexedAt: Date | undefined;
 
-const handler = async (
+export default async (
   req: NextApiRequest,
   res: NextApiResponse<{
     status: 'indexed' | 'skipped' | 'failed';
@@ -27,8 +27,11 @@ const handler = async (
   if (isIndexed && indexedAt) {
     // Not Modified(no message body)
     // see https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304
-    res.status(304);
+    res.status(304).end();
   } else {
+    isIndexed = true;
+    indexedAt = new Date();
+
     try {
       await Promise.all(
         [
@@ -43,9 +46,6 @@ const handler = async (
           ABOUT_PAGE_META,
         ].map(({ href }) => indexDocument(href)),
       );
-
-      isIndexed = true;
-      indexedAt = new Date();
       res
         .status(200)
         .json({ status: 'indexed', indexedAt: indexedAt.toISOString() });
@@ -58,5 +58,3 @@ const handler = async (
     }
   }
 };
-
-export default handler;
