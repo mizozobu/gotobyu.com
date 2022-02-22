@@ -5,14 +5,14 @@ import {
   LoginIcon,
   MenuIcon,
   XIcon,
-  SearchIcon,
+  // SearchIcon,
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useState, Fragment } from 'react';
 import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
-import type { Props as SearchDialogProps } from '@cmp/organisms/SearchDialog';
+// import type { Props as SearchDialogProps } from '@cmp/organisms/SearchDialog';
 import {
   SCHOOL_LINKS,
   ADDITIONAL_SCHOOL_LINKS,
@@ -22,13 +22,13 @@ import {
 } from '@d/links';
 import styles from './Header.module.css';
 
-export const SearchDialog = dynamic<SearchDialogProps>(
-  () =>
-    import('@cmp/organisms/SearchDialog').then(
-      ({ SearchDialog: Component }) => Component,
-    ),
-  { ssr: false },
-);
+// export const SearchDialog = dynamic<SearchDialogProps>(
+//   () =>
+//     import('@cmp/organisms/SearchDialog').then(
+//       ({ SearchDialog: Component }) => Component,
+//     ),
+//   { ssr: false },
+// );
 
 interface Props {
   show: boolean;
@@ -73,14 +73,14 @@ export const Header = ({ show, loading }: Props) => {
                   </Link>
                 </div>
                 <div className='space-x-1 lg:hidden'>
-                  <button
+                  {/* <button
                     type='button'
                     className='inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500'
                     onClick={openSearchDialog}
                   >
                     <span className='sr-only'>Open search</span>
                     <SearchIcon className='h-6 w-6' aria-hidden='true' />
-                  </button>
+                  </button> */}
                   <Popover.Button className='inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500'>
                     <span className='sr-only'>Open menu</span>
                     <MenuIcon className='h-6 w-6' aria-hidden='true' />
@@ -417,7 +417,7 @@ export const Header = ({ show, loading }: Props) => {
                     )}
                   </Popover>
 
-                  <div>
+                  {/* <div>
                     <button
                       type='button'
                       className='inline-flex h-full items-center justify-start rounded-full bg-gray-100 py-1.5 pl-4 pr-40 text-sm text-gray-400 shadow'
@@ -429,7 +429,7 @@ export const Header = ({ show, loading }: Props) => {
                       />
                       <span>検索</span>
                     </button>
-                  </div>
+                  </div> */}
                 </Popover.Group>
               </div>
             </div>
@@ -564,10 +564,10 @@ export const Header = ({ show, loading }: Props) => {
           </>
         )}
       </Popover>
-      <SearchDialog
+      {/* <SearchDialog
         isOpen={isSearchDialogDisplayed}
         onClose={closeSearchDialog}
-      />
+      /> */}
     </>
   );
 };
