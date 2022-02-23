@@ -35,15 +35,22 @@
     scroll-margin-top: calc(64px * 1.5);
   }
 
-  *:focus-visible {
-    @apply outline-none ring ring-indigo-500;
-  }
-
   html {
     scroll-behavior: smooth;
   }
 
   main {
     min-height: calc(100vh - 64px);
+
+    /* see https://stackoverflow.com/questions/8468066/child-inside-parent-with-min-height-100-not-inheriting-height */
+    @apply flex flex-col;
+  }
+
+  main > * {
+    @apply w-full;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring ring-indigo-500;
   }
 }

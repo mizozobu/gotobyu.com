@@ -1,13 +1,19 @@
 import { Tab } from '@headlessui/react';
 import { NextImage } from '@cmp/atoms/NextImage';
-import { BYUDeadlineTable } from '@cmp/organisms/BYUDeadlineTable';
-import { BYUHDeadlineTable } from '@cmp/organisms/BYUHDeadlineTable';
-import { BYUIDeadlineTable } from '@cmp/organisms/BYUIDeadlineTable';
-import { EikenTable } from '@cmp/organisms/EikenTable';
-import { IELTSTable } from '@cmp/organisms/IELTSTable';
-import { PTETable } from '@cmp/organisms/PTETable';
+import { DeadlineTable } from '@cmp/organisms/DeadlineTable';
+import { EnglishRequirementTable } from '@cmp/organisms/EnglishRequirementTable';
 import { Seo } from '@cmp/organisms/Seo';
-import { TOEFLTable } from '@cmp/organisms/TOEFLTable';
+import {
+  BYU_APPLICATION_DEADLINE,
+  BYUH_APPLICATION_DEADLINE,
+  BYUI_APPLICATION_DEADLINE,
+} from '@d/application-deadline';
+import {
+  TOEFL_REQUIREMENT,
+  IELTS_REQUIREMENT,
+  PTE_REQUIREMENT,
+  EIKEN_REQUIREMENT,
+} from '@d/english-requirement';
 import { APPLY_PAGE_META } from '@d/links';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
@@ -88,18 +94,18 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
   </Tab.List>
   <Tab.Panels>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
-      <BYUDeadlineTable />
+      <DeadlineTable school='BYU' data={BYU_APPLICATION_DEADLINE} />
       優先申込締切までに申込を完了すると選考を有利に進められます。
       - [BYUの申込締切](https://enrollment.byu.edu/admissions/deadlines)
       - [BYUの年間カレンダー](https://enrollment2.byu.edu/academic-calendar)
     </Tab.Panel>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
-      <BYUHDeadlineTable />
+      <DeadlineTable school='BYUH' data={BYUH_APPLICATION_DEADLINE} />
       - [BYUHの申込締切](https://hookele.byuh.edu/application-deadlines-decisions-schedule)
       - [BYUHの年間カレンダー](https://registrar.byuh.edu/academic-dates)
     </Tab.Panel>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
-      <BYUIDeadlineTable />
+      <DeadlineTable school='BYUI' data={BYUI_APPLICATION_DEADLINE} />
       優先申込締切までに申込を完了すると選考を有利に進められます。
       - [BYUIの申込締切](https://www.byui.edu/admissions/application-deadlines)
       - [BYUIの年間カレンダー](https://www.byui.edu/student-records/academic-deadlines)
@@ -160,19 +166,19 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
   </Tab.List>
   <Tab.Panels>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
-      <TOEFLTable />
+      <EnglishRequirementTable exam='TOEFL' data={TOEFL_REQUIREMENT} />
       [Test of English as a Foreign Language(TOEFL)](https://www.toefl-ibt.jp)はEducational Testing Service(ETS)が主催するテストです。
     </Tab.Panel>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
-      <IELTSTable />
+      <EnglishRequirementTable exam='IELTS' data={IELTS_REQUIREMENT} />
       [International English Language Testing System(IELTS)](https://www.eiken.or.jp/ielts/)はBritish Council、IDP、Cambridge Assessment Englishが共同で主催するテストです。
     </Tab.Panel>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
-      <PTETable />
-        [Pearson Test of English(PTE)](https://pearsonpte.com/japanese)はPearsonが主催するテストです。
+      <EnglishRequirementTable exam='PTE' data={PTE_REQUIREMENT} />
+      [Pearson Test of English(PTE)](https://pearsonpte.com/japanese)はPearsonが主催するテストです。
     </Tab.Panel>
     <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
-      <EikenTable />
+      <EnglishRequirementTable exam='英検' data={EIKEN_REQUIREMENT} />
       [実用英語技能検定(英検)](https://www.eiken.or.jp/eiken/)は公益財団法人日本英語検定協会が主催するテストです。
       英検は**BYUHでのみ**認められています。
     </Tab.Panel>

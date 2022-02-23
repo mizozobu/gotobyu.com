@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
 import { H2 } from '@cmp/atoms/H2';
 import { NextImage } from '@cmp/atoms/NextImage';
+import { BgRotateCard } from '@cmp/molecules/BgRotateCard';
 import { PageCard } from '@cmp/molecules/PageCard';
-import { SchoolCard } from '@cmp/molecules/SchoolCard';
 import { TypingEffect } from '@cmp/molecules/TypingEffect';
 import {
   ADDITIONAL_SCHOOL_LINKS,
@@ -56,7 +56,7 @@ export const IndexPage = () => (
       <div className='flex space-x-12 overflow-scroll py-10 lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:justify-items-center lg:gap-y-10 lg:space-x-0 lg:overflow-visible'>
         <Link href='/schools/byu'>
           <a className='mx-8 mt-4 rounded-xl'>
-            <SchoolCard colorClass='bg-gradient-to-br from-byu to-byu-dark'>
+            <BgRotateCard colorClass='bg-gradient-to-br from-byu to-byu-dark'>
               <NextImage
                 className='h-full p-4'
                 src={byuLogoImage}
@@ -65,12 +65,12 @@ export const IndexPage = () => (
                 layout='fill'
                 objectFit='scale-down'
               />
-            </SchoolCard>
+            </BgRotateCard>
           </a>
         </Link>
         <Link href='/schools/byuh'>
           <a className='mx-8 mt-4 rounded-xl'>
-            <SchoolCard colorClass='bg-gradient-to-br from-byuh to-byuh-dark'>
+            <BgRotateCard colorClass='bg-gradient-to-br from-byuh to-byuh-dark'>
               <NextImage
                 className='h-full p-4'
                 src={byuhLogoImage}
@@ -79,12 +79,12 @@ export const IndexPage = () => (
                 layout='fill'
                 objectFit='scale-down'
               />
-            </SchoolCard>
+            </BgRotateCard>
           </a>
         </Link>
         <Link href='/schools/byui'>
           <a className='mx-8 mt-4 rounded-xl'>
-            <SchoolCard colorClass='bg-gradient-to-br from-byui to-byui-dark'>
+            <BgRotateCard colorClass='bg-gradient-to-br from-byui to-byui-dark'>
               <NextImage
                 className='h-full p-4'
                 src={byuiLogoImage}
@@ -93,7 +93,7 @@ export const IndexPage = () => (
                 layout='fill'
                 objectFit='scale-down'
               />
-            </SchoolCard>
+            </BgRotateCard>
           </a>
         </Link>
       </div>

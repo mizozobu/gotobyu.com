@@ -1,3 +1,4 @@
+import { useGtm } from '@l/gtm';
 import { useRecoilHydrate, RecoilProps } from '@l/recoil';
 import { useScrollIntoView } from '@l/scrollIntoView';
 
@@ -11,6 +12,7 @@ interface Props {
  * @returns null
  */
 export const HookRegistry = ({ pageProps }: Props) => {
+  useGtm();
   useRecoilHydrate((pageProps._recoil as Partial<RecoilProps>) ?? {});
   useScrollIntoView();
 

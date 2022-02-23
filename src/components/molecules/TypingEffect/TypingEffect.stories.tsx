@@ -13,4 +13,6 @@ const Template: ComponentStory<typeof TypingEffect> = (args) => (
 );
 
 export const Example = Template.bind({});
-Example.args = {};
+Example.args = {
+  children: ['first string', 'second string', 'third string'],
+};

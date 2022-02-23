@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { DynamicBarChart } from '@cmp/organisms/DynamicBarChart';
+import { DynamicBarChart } from '@cmp/dynamics/DynamicBarChart';
 import { FIRST_YEAR_INCOME } from '@d/income';
 
 export const IncomeBarChart = memo(() => (

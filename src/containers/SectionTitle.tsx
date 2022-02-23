@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
-import { SectionTitle as _SectionTitle } from '@cmp/molecules/SectionTitle';
+import { SectionTitle as _SectionTitle } from '@cmp/atoms/SectionTitle';
 import { useSmoothScroll } from '@l/useSmoothScroll';
 
 interface Props

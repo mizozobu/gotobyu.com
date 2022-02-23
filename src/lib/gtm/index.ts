@@ -1,2 +1,2 @@
 export * from './gtm.constants';
-export * from './gtm.util';
+export * from './gtm.hook';

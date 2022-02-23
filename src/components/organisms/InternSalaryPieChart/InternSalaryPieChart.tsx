@@ -1,5 +1,5 @@
 import { memo, ComponentPropsWithoutRef } from 'react';
-import { DynamicPieChart } from '@cmp/organisms/DynamicPieChart';
+import { DynamicPieChart } from '@cmp/dynamics/DynamicPieChart';
 import { INTERNSHIP_SALARY } from '@d/income';
 
 interface Props

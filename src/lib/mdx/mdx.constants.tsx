@@ -1,12 +1,12 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import type { Required } from 'utility-types';
-import { Container } from '@cmp/atoms/Container';
 import { ExternalLink } from '@cmp/atoms/ExternalLink';
 import { InternalLink } from '@cmp/atoms/InternalLink';
 import { Li } from '@cmp/atoms/Li';
 import { P } from '@cmp/atoms/P';
 import { Strong } from '@cmp/atoms/Strong';
 import { Ul } from '@cmp/atoms/Ul';
+import { MdxContainer } from '@cmp/templates/MdxContainer';
 import { H1 } from '@cnt/H1';
 import { H2 } from '@cnt/H2';
 import { H3 } from '@cnt/H3';
@@ -31,6 +31,6 @@ export const MDX: MDXProvider = {
   ul: Ul,
   li: Li,
   wrapper: ({ children }: { children: ReactNode }) => (
-    <Container>{children}</Container>
+    <MdxContainer>{children}</MdxContainer>
   ),
 };

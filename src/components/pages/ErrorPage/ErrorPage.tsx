@@ -1,14 +1,13 @@
 import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
+import { CenterMiddleContainer } from '@cmp/templates/CenterMiddleContainer';
 import { MDX } from '@l/mdx';
 
 interface Props {
   statusCode: number;
 }
 
-export const ErrorPage = (
-  { statusCode }: Props, // see https://stackoverflow.com/questions/8468066/child-inside-parent-with-min-height-100-not-inheriting-height
-) => (
-  <div className='absolute inset-0 flex flex-col items-center justify-center'>
+export const ErrorPage = ({ statusCode }: Props) => (
+  <CenterMiddleContainer>
     <MDX.a href='/'>
       <CirculatingCircles animated className='w-48' />
     </MDX.a>
@@ -22,5 +21,5 @@ export const ErrorPage = (
         <MDX.a href='/'>ホームに戻る</MDX.a>
       </p>
     </div>
-  </div>
+  </CenterMiddleContainer>
 );

@@ -8,11 +8,10 @@ import {
   // SearchIcon,
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
-// import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useState, Fragment } from 'react';
 import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
-// import type { Props as SearchDialogProps } from '@cmp/organisms/SearchDialog';
+// import { DynamicSearchDialog as SearchDialog } from '@cmp/dynamics/DynamicSearchDialog';
 import {
   SCHOOL_LINKS,
   ADDITIONAL_SCHOOL_LINKS,
@@ -21,14 +20,6 @@ import {
   OTHER_LINKS,
 } from '@d/links';
 import styles from './Header.module.css';
-
-// export const SearchDialog = dynamic<SearchDialogProps>(
-//   () =>
-//     import('@cmp/organisms/SearchDialog').then(
-//       ({ SearchDialog: Component }) => Component,
-//     ),
-//   { ssr: false },
-// );
 
 interface Props {
   show: boolean;

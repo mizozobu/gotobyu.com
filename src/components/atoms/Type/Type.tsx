@@ -46,7 +46,7 @@ export const Type = ({
         if (typed === prev) {
           setStatus(Status.waiting);
           setTimeout(() => {
-            if (onBack) onBack();
+            onBack?.();
             setStatus(Status.forward);
           }, waitBeforeType);
         }
