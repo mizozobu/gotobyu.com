@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
-import styles from './H4.module.css'; // use styles for h4 instead
+import styles from '@cmp/atoms/H4/H4.module.css'; // use styles for h4 instead
 
 interface Props extends ComponentPropsWithoutRef<'h3'> {}
 
