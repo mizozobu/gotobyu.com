@@ -1,6 +1,6 @@
 import { useEffect, useCallback, ComponentPropsWithoutRef } from 'react';
 import { useRecoilState } from 'recoil';
-import { CopiedDialog as _CopiedDialog } from '@cmp/organisms/CopiedDialog';
+import { CopiedDialog as _CopiedDialog } from '@cmp/ecosystems/CopiedDialog';
 import { urlState } from '@s/url';
 
 export interface Props

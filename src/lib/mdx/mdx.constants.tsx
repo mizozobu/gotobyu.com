@@ -7,9 +7,7 @@ import { P } from '@cmp/atoms/P';
 import { Strong } from '@cmp/atoms/Strong';
 import { Ul } from '@cmp/atoms/Ul';
 import { MdxContainer } from '@cmp/templates/MdxContainer';
-import { H1 } from '@cnt/H1';
-import { H2 } from '@cnt/H2';
-import { H3 } from '@cnt/H3';
+import { H1, H2, H3 } from '@cnt/Heading';
 import type { MDXProvider } from './mdx.interface';
 
 /**

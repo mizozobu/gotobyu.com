@@ -2,7 +2,7 @@ import { AppProps as NextAppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
 import { RecoilRoot } from 'recoil';
-import { Footer } from '@cmp/organisms/Footer';
+import { Footer } from '@cmp/ecosystems/Footer';
 import { Header } from '@cnt//Header';
 import { HookRegistry } from '@cnt/HookRegistry';
 import { GTM_ID } from '@l/gtm';

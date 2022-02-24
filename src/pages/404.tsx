@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { Seo } from '@cmp/organisms/Seo';
+import { Seo } from '@cmp/ecosystems/Seo';
 import { ErrorPage } from '@cmp/pages/ErrorPage';
 
 const _404Page: NextPage = () => (

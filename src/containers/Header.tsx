@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { Header as _Header } from '@cmp/organisms/Header';
+import { Header as _Header } from '@cmp/ecosystems/Header';
 import { useScrollDirection, SCROLL_DIRECTION } from '@l/scrollDirection';
 
 export const Header = () => {

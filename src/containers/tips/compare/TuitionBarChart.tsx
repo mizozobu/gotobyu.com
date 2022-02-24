@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { useRecoilValue } from 'recoil';
-import { TuitionBarChart as _TuitionBarChart } from '@cmp/organisms/TuitionBarChart';
+import { TuitionBarChart as _TuitionBarChart } from '@cmp/ecosystems/TuitionBarChart';
 import { forexState } from '@s/forex';
 import { statsState, CURRENCY } from '@s/stats';
 
