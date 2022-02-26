@@ -1,5 +1,5 @@
 import { Seo } from '@cmp/ecosystems/Seo';
-import { IndexPage } from '@cmp/pages/IndexPage';
+import { IndexPage } from '@cmp/environments/IndexPage';
 import { INDEX_PAGE_META } from '@d/links';
 
 const _IndexPage = () => (
