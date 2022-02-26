@@ -6,7 +6,7 @@ import { urlState } from '@s/url';
 /**
  * scroll into a section and update recoil when url hash changes
  */
-export const useScrollIntoView = () => {
+export const useSyncRouteHash = () => {
   const setUrlState = useSetRecoilState(urlState);
   const router = useRouter();
   const hash = decodeURIComponent(router.asPath.split('#')[1] ?? '');

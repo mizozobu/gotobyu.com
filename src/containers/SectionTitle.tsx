@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { SectionTitle as _SectionTitle } from '@cmp/atoms/SectionTitle';
-import { useSmoothScroll } from '@l/useSmoothScroll';
+import { useAnchorLink } from '@l/useAnchorLink';
 
 interface Props
   extends Omit<
@@ -9,7 +9,7 @@ interface Props
   > {}
 
 export const SectionTitle = ({ id, as, children, ...props }: Props) => {
-  const { active, handleClick } = useSmoothScroll(id);
+  const { active, handleClick } = useAnchorLink(id);
   const encodedId = encodeURIComponent(id);
 
   return (

@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 import { urlState } from '@s/url';
 
-export const useSmoothScroll = (id: string) => {
+export const useAnchorLink = (id: string) => {
   const [{ hash }, setUrlState] = useRecoilState(urlState);
 
   const handleClick = useCallback(() => {

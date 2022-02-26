@@ -1,6 +1,6 @@
 import { useGtm } from '@l/gtm';
 import { useRecoilHydrate, RecoilProps } from '@l/recoil';
-import { useScrollIntoView } from '@l/scrollIntoView';
+import { useSyncRouteHash } from '@l/useSyncRouteHash';
 
 interface Props {
   pageProps: { [key: string]: unknown }; // FIXME
@@ -14,7 +14,7 @@ interface Props {
 export const HookRegistry = ({ pageProps }: Props) => {
   useGtm();
   useRecoilHydrate((pageProps._recoil as Partial<RecoilProps>) ?? {});
-  useScrollIntoView();
+  useSyncRouteHash();
 
   return null;
 };
