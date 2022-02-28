@@ -13,7 +13,6 @@ type HeadingComponent = ComponentType<HTMLAttributes<HTMLHeadingElement>>;
 interface Props
   extends Omit<ComponentPropsWithoutRef<HeadingComponent>, 'onClick'> {
   as: HeadingComponent;
-  id: string;
   active: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
@@ -21,7 +20,7 @@ interface Props
 export const SectionTitle = memo(
   ({
     as: Component,
-    id,
+    id = '',
     active = false,
     children,
     onClick,

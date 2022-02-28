@@ -10,7 +10,7 @@ export class AtomStore {
   /**
    * atom store
    */
-  store = new Map<AtomKey, AtomState>();
+  store = new Map<AtomKey, AtomStatePlain>();
 
   /**
    * register atom in store
@@ -18,7 +18,7 @@ export class AtomStore {
    * @param atomKey
    * @param value
    */
-  setAtom(atomKey: AtomKey, value: AtomState): void {
+  setAtom(atomKey: AtomKey, value: AtomStatePlain): void {
     this.store.set(atomKey, value);
   }
 
@@ -27,8 +27,10 @@ export class AtomStore {
    *
    * @returns recoil store as a plain object
    */
-  serializeStore(): { [key in AtomKey]: AtomState } {
-    return Object.fromEntries(this.store) as { [key in AtomKey]: AtomState };
+  serializeStore(): { [key in AtomKey]: AtomStatePlain } {
+    return Object.fromEntries(this.store) as {
+      [key in AtomKey]: AtomStatePlain;
+    };
   }
 
   /**

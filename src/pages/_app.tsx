@@ -9,7 +9,7 @@ import { GTM_ID } from '@l/gtm';
 import { MDX } from '@l/mdx';
 import '~/styles/globals.css';
 
-export interface AppProps extends NextAppProps<{ components: typeof MDX }> {
+export interface AppProps extends NextAppProps {
   pageProps: { [key: string]: unknown };
 }
 
@@ -49,7 +49,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
     <Header />
 
     <main id='content'>
-      <Component {...pageProps} components={MDX} />
+      <Component {...pageProps} />
     </main>
 
     <Footer />

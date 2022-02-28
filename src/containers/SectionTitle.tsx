@@ -8,7 +8,7 @@ interface Props
     'active' | 'onClick'
   > {}
 
-export const SectionTitle = ({ id, as, children, ...props }: Props) => {
+export const SectionTitle = ({ id = '', as, children, ...props }: Props) => {
   const { active, handleClick } = useAnchorLink(id);
   const encodedId = encodeURIComponent(id);
 

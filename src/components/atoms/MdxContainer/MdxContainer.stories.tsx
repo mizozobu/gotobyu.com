@@ -3,7 +3,7 @@ import React from 'react';
 import { MdxContainer } from './MdxContainer';
 
 export default {
-  title: 'templates/MdxContainer',
+  title: 'atoms/MdxContainer',
   component: MdxContainer,
   argTypes: {},
 } as ComponentMeta<typeof MdxContainer>;

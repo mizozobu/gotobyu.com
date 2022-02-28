@@ -1,8 +1,8 @@
 import { Seo } from '@cmp/ecosystems/Seo';
-import { IndexPage } from '@cmp/environments/IndexPage';
+import { IndexEnvironment } from '@cmp/environments/index';
 import { INDEX_PAGE_META } from '@d/links';
 
-const _IndexPage = () => (
+const IndexPage = () => (
   <>
     <Seo
       title={INDEX_PAGE_META.title}
@@ -13,9 +13,8 @@ const _IndexPage = () => (
         description: INDEX_PAGE_META.description,
       }}
     />
-
-    <IndexPage />
+    <IndexEnvironment />
   </>
 );
 
-export default _IndexPage;
+export default IndexPage;

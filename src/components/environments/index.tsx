@@ -15,7 +15,7 @@ import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
 
-export const IndexPage = () => (
+export const IndexEnvironment = () => (
   <div className='space-y-12 py-12 lg:space-y-16 lg:py-16'>
     <div
       className={classNames(
