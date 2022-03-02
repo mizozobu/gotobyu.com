@@ -5,9 +5,11 @@ import {
   connectSearchBox,
   connectStats,
   connectInfiniteHits,
+  connectStateResults,
 } from 'react-instantsearch-dom';
 import { CustomPoweredBy } from '@cmp/atoms/CustomPoweredBy';
 import { CustomSearchBox as _CustomSearchBox } from '@cmp/atoms/CustomSearchBox';
+import { CustomStateResults as _CustomStateResults } from '@cmp/atoms/CustomStateResults';
 import { CustomStats as _CustomStats } from '@cmp/atoms/CustomStats';
 import { HitItem } from '@cmp/molecules/HitItem';
 import { CustomInfiniteHits as _CustomInfiniteHits } from '@cmp/organisms/CustomInfiniteHits';
@@ -16,17 +18,20 @@ import { AlgoliaProvider } from '@l/algolia';
 const CustomSearchBox = connectSearchBox(_CustomSearchBox);
 const CustomStats = connectStats(_CustomStats);
 const CustomInfiniteHits = connectInfiniteHits(_CustomInfiniteHits);
+const CustomStateResults = connectStateResults(_CustomStateResults);
 
 export interface Props {
   isOpen: boolean;
+  isAvailable: boolean;
   onClose: () => void;
 }
 
 /**
  * @see https://fwywd.com/tech/next-algolia
  */
-export const SearchDialog = ({ isOpen, onClose }: Props) => (
+export const SearchDialog = ({ isOpen, isAvailable, onClose }: Props) => (
   <AlgoliaProvider>
+    <CustomStateResults />
     <Transition
       show={isOpen}
       as={Fragment}
@@ -43,19 +48,35 @@ export const SearchDialog = ({ isOpen, onClose }: Props) => (
         onClose={onClose}
       >
         <Dialog.Overlay className='fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm' />
-        <div className='relative mx-auto flex max-h-full min-h-[50%] max-w-3xl flex-col divide-y rounded border-slate-100 bg-white lg:max-h-[76vh]'>
+        <div
+          className={classNames(
+            'relative mx-auto flex max-h-full min-h-[50%] max-w-3xl flex-col divide-y rounded border-slate-100 bg-white lg:max-h-[76vh]',
+            { 'cursor-not-allowed': !isAvailable },
+          )}
+        >
           <div className='flex items-center justify-end px-4 md:px-6'>
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label htmlFor='search'>
-              <SearchIcon className='h-6 w-6 text-gray-400' />
+              <SearchIcon
+                className={classNames(
+                  'h-6 w-6',
+                  isAvailable ? 'text-gray-400' : 'text-red-400',
+                )}
+              />
             </label>
-            <CustomSearchBox
-              id='search'
-              className='mx-3 h-full w-full py-4'
-              placeholder='検索'
-              maxLength={64}
-              delay={500}
-            />
+            {isAvailable ? (
+              <CustomSearchBox
+                id='search'
+                className='mx-3 h-full w-full py-4'
+                placeholder='検索'
+                maxLength={64}
+                delay={500}
+              />
+            ) : (
+              <div className='mx-3 h-full w-full py-4 text-red-400'>
+                現在検索は利用できません
+              </div>
+            )}
             <button
               type='button'
               className='rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500'
