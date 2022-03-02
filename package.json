@@ -23,7 +23,7 @@
     "@heroicons/react": "^1.0.6",
     "@mdx-js/loader": "^2.0.0",
     "@next/mdx": "^12.1.0",
-    "algoliasearch": "^4.12.1",
+    "algoliasearch": "^4.12.2",
     "axios": "^0.26.0",
     "chart.js": "^3.7.1",
     "classnames": "^2.3.1",
