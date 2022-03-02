@@ -58,7 +58,7 @@
     "@storybook/react": "^6.4.19",
     "@types/jest": "^27.4.1",
     "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.12",
+    "@types/react-dom": "^17.0.13",
     "@types/react-instantsearch-dom": "^6.12.2",
     "@types/react-slick": "^0.23.8",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
