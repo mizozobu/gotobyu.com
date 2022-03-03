@@ -1,4 +1,5 @@
 import { ExternalLinkIcon } from '@heroicons/react/solid';
+import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 import styles from './ExternalLink.module.css';
 

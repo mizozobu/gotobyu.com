@@ -24,7 +24,6 @@ module.exports = {
       },
       globals: {
         JSX: true,
-        classNames: 'readonly',
       },
       rules: {
         // hush no-use-before-define error in "import React from 'react';"

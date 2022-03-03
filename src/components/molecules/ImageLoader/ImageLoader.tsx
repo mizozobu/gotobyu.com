@@ -1,4 +1,5 @@
 import { PhotographIcon } from '@heroicons/react/outline';
+import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 
 interface Props extends ComponentPropsWithoutRef<'div'> {}

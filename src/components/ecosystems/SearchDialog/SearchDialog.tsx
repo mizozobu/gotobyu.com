@@ -1,5 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { SearchIcon, XIcon } from '@heroicons/react/outline';
+import classNames from 'classnames';
 import { Fragment } from 'react';
 import {
   connectSearchBox,

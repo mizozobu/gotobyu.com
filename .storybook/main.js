@@ -1,5 +1,4 @@
 const { resolve } = require('path');
-const { ProvidePlugin } = require('webpack');
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -19,12 +18,6 @@ module.exports = {
         },
       ],
     });
-
-    config.plugins.push(
-      new ProvidePlugin({
-        classNames: 'classnames',
-      }),
-    );
 
     config.resolve.alias = {
       '~': resolve(__dirname, '..', 'src'),

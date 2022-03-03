@@ -1,4 +1,5 @@
 import { HashtagIcon, ChevronRightIcon } from '@heroicons/react/outline';
+import classNames from 'classnames';
 import Link from 'next/link';
 import type { MouseEventHandler } from 'react';
 import { Highlight, Snippet } from 'react-instantsearch-dom';

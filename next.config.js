@@ -7,7 +7,6 @@ const withBundleAnalyzer =
 /* eslint-enable import/no-extraneous-dependencies */
 const rehypeSlug = require('rehype-slug');
 const remarkSectionize = require('remark-sectionize');
-const { ProvidePlugin } = require('webpack');
 
 const withMDX = mdxFactory({
   extension: /\.mdx$/,
@@ -23,15 +22,6 @@ const withMDX = mdxFactory({
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  webpack: (config) => ({
-    ...config,
-    plugins: [
-      ...config.plugins,
-      new ProvidePlugin({
-        classNames: 'classnames',
-      }),
-    ],
-  }),
 };
 
 module.exports = withBundleAnalyzer(withMDX(nextConfig));

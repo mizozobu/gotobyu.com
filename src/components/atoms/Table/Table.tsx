@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 import { Style } from '@cmp/atoms/Style';
 import styles from './Table.module.css';
