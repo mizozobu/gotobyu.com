@@ -43,7 +43,7 @@
     "slick-carousel": "^1.8.1",
     "unified": "^10.1.1",
     "unist-util-visit": "^4.1.0",
-    "webpack": "^5.69.1"
+    "webpack": "^5.70.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
