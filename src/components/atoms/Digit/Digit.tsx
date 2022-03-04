@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
+import { round } from '@l/round';
 
 interface Props extends ComponentPropsWithoutRef<'span'> {
   children: number;
@@ -6,10 +7,5 @@ interface Props extends ComponentPropsWithoutRef<'span'> {
 }
 
 export const Digit = ({ children, decimals = 0, ...props }: Props) => (
-  <span {...props}>
-    {(
-      Math.round((children + Number.EPSILON) * 10 ** decimals) /
-      10 ** decimals
-    ).toLocaleString()}
-  </span>
+  <span {...props}>{round(children, decimals).toLocaleString()}</span>
 );

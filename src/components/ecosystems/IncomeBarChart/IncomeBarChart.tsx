@@ -1,6 +1,7 @@
 import { memo, useCallback, ComponentPropsWithoutRef } from 'react';
 import { DynamicBarChart } from '@cmp/dynamics/DynamicBarChart';
 import { FIRST_YEAR_INCOME } from '@d/income';
+import { round } from '@l/round';
 
 type BarChartProps = ComponentPropsWithoutRef<typeof DynamicBarChart>;
 
@@ -13,10 +14,7 @@ interface Props
 export const IncomeBarChart = memo((props: Props) => {
   const formatLabel:
     | BarChartProps['labelCallback'] & BarChartProps['yAxesTicksCallback'] =
-    useCallback(
-      (value: string | number) => `${value.toLocaleString()}万円`,
-      [],
-    );
+    useCallback((value) => `${round(+value).toLocaleString()}万円`, []);
 
   return (
     <>

@@ -1,6 +1,7 @@
 import { memo, useCallback, ComponentPropsWithoutRef } from 'react';
 import { DynamicPieChart } from '@cmp/dynamics/DynamicPieChart';
 import { INTERNSHIP_SALARY } from '@d/income';
+import { round } from '@l/round';
 
 type PieChartProps = ComponentPropsWithoutRef<typeof DynamicPieChart>;
 
@@ -9,7 +10,7 @@ interface Props
 
 export const InternSalaryPieChart = memo((props: Props) => {
   const formatLabel: PieChartProps['labelCallback'] = useCallback(
-    (value) => `${value.toLocaleString()}%`,
+    (value) => `${round(value, 2).toLocaleString()}%`,
     [],
   );
 
