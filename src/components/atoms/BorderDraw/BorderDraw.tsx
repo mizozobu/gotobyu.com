@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { ReactNode } from 'react';
-import { Style } from '@cmp/atoms/Style';
+import { Style } from '@c/atoms/Style';
 import styles from './BorderDraw.module.css';
 
 interface Props {

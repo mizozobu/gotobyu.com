@@ -25,8 +25,7 @@ module.exports = {
 
     config.resolve.alias = {
       '~': resolve(__dirname, '..', 'src'),
-      '@cmp': resolve(__dirname, '..', 'src', 'components'),
-      '@cnt': resolve(__dirname, '..', 'src', 'containers'),
+      '@c': resolve(__dirname, '..', 'src', 'components'),
       '@d': resolve(__dirname, '..', 'src', 'data'),
       '@p': resolve(__dirname, '..', 'public'),
       '@l': resolve(__dirname, '..', 'src', 'lib'),

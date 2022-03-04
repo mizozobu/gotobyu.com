@@ -17,8 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"],
-      "@cmp/*": ["src/components/*"],
-      "@cnt/*": ["src/containers/*"],
+      "@c/*": ["src/components/*"],
       "@d/*": ["src/data/*"],
       "@p/*": ["public/*"],
       "@l/*": ["src/lib/*"],

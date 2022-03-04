@@ -1,7 +1,7 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { NextImage } from '@cmp/atoms/NextImage';
-import { Pane } from '@cmp/atoms/Pane';
+import { NextImage } from '@c/atoms/NextImage';
+import { Pane } from '@c/atoms/Pane';
 import { SplitPane } from './SplitPane';
 
 export default {

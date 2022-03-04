@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
-import { H2 } from '@cmp/atoms/H2';
-import { NextImage } from '@cmp/atoms/NextImage';
-import { BgRotateCard } from '@cmp/molecules/BgRotateCard';
-import { PageCard } from '@cmp/molecules/PageCard';
-import { TypingEffect } from '@cmp/molecules/TypingEffect';
+import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
+import { H2 } from '@c/atoms/H2';
+import { NextImage } from '@c/atoms/NextImage';
+import { BgRotateCard } from '@c/molecules/BgRotateCard';
+import { PageCard } from '@c/molecules/PageCard';
+import { TypingEffect } from '@c/molecules/TypingEffect';
 import {
   ADDITIONAL_SCHOOL_LINKS,
   APPLY_LINKS,

@@ -1,10 +1,10 @@
 import dynamic from 'next/dynamic';
-import type { Props } from '@cmp/molecules/BarChart';
-import { BarChartLoader } from '@cmp/molecules/BarChartLoader';
+import type { Props } from '@c/molecules/BarChart';
+import { BarChartLoader } from '@c/molecules/BarChartLoader';
 
 export const DynamicBarChart = dynamic<Props>(
   () =>
-    import('@cmp/molecules/BarChart').then(
+    import('@c/molecules/BarChart').then(
       ({ BarChart: Component }) => Component,
     ),
   { loading: () => <BarChartLoader /> },

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { ReactNode } from 'react';
-import { BgRotate } from '@cmp/atoms/BgRotate';
+import { BgRotate } from '@c/atoms/BgRotate';
 
 interface Props {
   className?: string;

@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
-import { PartialCircle } from '@cmp/atoms/PartialCircle';
+import { PartialCircle } from '@c/atoms/PartialCircle';
 
 interface Props
   extends Omit<ComponentPropsWithoutRef<'svg'>, 'viewBox' | 'height'> {}

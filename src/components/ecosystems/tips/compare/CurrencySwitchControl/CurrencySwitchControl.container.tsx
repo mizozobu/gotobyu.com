@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { useRecoilState } from 'recoil';
-import { SwitchControl } from '@cmp/molecules/SwitchControl';
+import { SwitchControl } from '@c/molecules/SwitchControl';
 import { statsState, CURRENCY } from '@s/stats';
 
 export const CurrencySwitchControl = () => {

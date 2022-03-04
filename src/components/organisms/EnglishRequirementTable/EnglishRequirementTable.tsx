@@ -1,6 +1,6 @@
-import { NextImage } from '@cmp/atoms/NextImage';
-import { Table } from '@cmp/atoms/Table';
-import { TableCaption } from '@cmp/atoms/TableCaption';
+import { NextImage } from '@c/atoms/NextImage';
+import { Table } from '@c/atoms/Table';
+import { TableCaption } from '@c/atoms/TableCaption';
 import type { EnglishRequirement } from '@d/english-requirement';
 import type { SchoolDataCollection } from '@d/school';
 import byuLogoImage from '@p/byu/byu-logo.png';

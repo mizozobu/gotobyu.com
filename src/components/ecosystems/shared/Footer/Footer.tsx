@@ -1,7 +1,7 @@
 import { MailIcon, LinkIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
-import { BorderDraw } from '@cmp/atoms/BorderDraw';
-import { FacebookIcon } from '@cmp/atoms/FacebookIcon';
+import { BorderDraw } from '@c/atoms/BorderDraw';
+import { FacebookIcon } from '@c/atoms/FacebookIcon';
 
 export const Footer = () => (
   <footer

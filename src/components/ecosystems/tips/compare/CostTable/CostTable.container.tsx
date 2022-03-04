@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { useRecoilValue } from 'recoil';
-import { CostTable as _CostTable } from '@cmp/organisms/CostTable';
+import { CostTable as _CostTable } from '@c/organisms/CostTable';
 import { forexState } from '@s/forex';
 import { statsState, CURRENCY } from '@s/stats';
 

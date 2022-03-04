@@ -1,5 +1,5 @@
-import { Seo } from '@cmp/ecosystems/shared/Seo';
-import ApplyEnvironment from '@cmp/environments/tips/apply.mdx';
+import { Seo } from '@c/ecosystems/shared/Seo';
+import ApplyEnvironment from '@c/environments/tips/apply.mdx';
 import { APPLY_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';
 

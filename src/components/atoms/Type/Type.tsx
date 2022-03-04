@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useState, useEffect, ComponentPropsWithoutRef } from 'react';
-import { Style } from '@cmp/atoms/Style';
+import { Style } from '@c/atoms/Style';
 import styles from './Type.module.css';
 
 interface Props extends ComponentPropsWithoutRef<'span'> {

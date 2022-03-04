@@ -8,12 +8,12 @@ import {
   connectInfiniteHits,
   connectStateResults,
 } from 'react-instantsearch-dom';
-import { CustomInfiniteHits as _CustomInfiniteHits } from '@cmp/ecosystems/shared/CustomInfiniteHits';
-import { CustomPoweredBy } from '@cmp/ecosystems/shared/CustomPoweredBy';
-import { CustomSearchBox as _CustomSearchBox } from '@cmp/ecosystems/shared/CustomSearchBox';
-import { CustomStateResults as _CustomStateResults } from '@cmp/ecosystems/shared/CustomStateResults';
-import { CustomStats as _CustomStats } from '@cmp/ecosystems/shared/CustomStats';
-import { HitItem } from '@cmp/molecules/HitItem';
+import { CustomInfiniteHits as _CustomInfiniteHits } from '@c/ecosystems/shared/CustomInfiniteHits';
+import { CustomPoweredBy } from '@c/ecosystems/shared/CustomPoweredBy';
+import { CustomSearchBox as _CustomSearchBox } from '@c/ecosystems/shared/CustomSearchBox';
+import { CustomStateResults as _CustomStateResults } from '@c/ecosystems/shared/CustomStateResults';
+import { CustomStats as _CustomStats } from '@c/ecosystems/shared/CustomStats';
+import { HitItem } from '@c/molecules/HitItem';
 import { AlgoliaProvider } from '@l/algolia';
 
 const CustomSearchBox = connectSearchBox(_CustomSearchBox);

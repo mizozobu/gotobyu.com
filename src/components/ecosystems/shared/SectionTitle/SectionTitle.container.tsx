@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
-import { SectionTitle as _SectionTitle } from '@cmp/atoms/SectionTitle';
+import { SectionTitle as _SectionTitle } from '@c/atoms/SectionTitle';
 import { useAnchorLink } from '@l/useAnchorLink';
 
 interface Props

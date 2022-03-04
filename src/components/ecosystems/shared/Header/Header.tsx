@@ -11,8 +11,8 @@ import { ChevronDownIcon } from '@heroicons/react/solid';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { Fragment, useState } from 'react';
-import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
-import { DynamicSearchDialog as SearchDialog } from '@cmp/dynamics/DynamicSearchDialog';
+import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
+import { DynamicSearchDialog as SearchDialog } from '@c/dynamics/DynamicSearchDialog';
 import {
   SCHOOL_LINKS,
   ADDITIONAL_SCHOOL_LINKS,

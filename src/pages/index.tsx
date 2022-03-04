@@ -1,5 +1,5 @@
-import { Seo } from '@cmp/ecosystems/shared/Seo';
-import { IndexEnvironment } from '@cmp/environments/index';
+import { Seo } from '@c/ecosystems/shared/Seo';
+import { IndexEnvironment } from '@c/environments/index';
 import { INDEX_PAGE_META } from '@d/links';
 
 const IndexPage = () => (

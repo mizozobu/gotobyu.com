@@ -1,5 +1,5 @@
 import { useState, ComponentPropsWithoutRef } from 'react';
-import { Type } from '@cmp/atoms/Type';
+import { Type } from '@c/atoms/Type';
 
 interface Props
   extends Omit<ComponentPropsWithoutRef<typeof Type>, 'children'> {

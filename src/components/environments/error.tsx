@@ -1,5 +1,5 @@
-import { CenterMiddleContainer } from '@cmp/atoms/CenterMiddleContainer';
-import { CirculatingCircles } from '@cmp/atoms/CirculatingCircles';
+import { CenterMiddleContainer } from '@c/atoms/CenterMiddleContainer';
+import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
 import { MDX } from '@l/mdx';
 
 interface Props {

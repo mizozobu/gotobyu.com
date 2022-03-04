@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
-import { Seo } from '@cmp/ecosystems/shared/Seo';
-import { ErrorEnvironment } from '@cmp/environments/error';
+import { Seo } from '@c/ecosystems/shared/Seo';
+import { ErrorEnvironment } from '@c/environments/error';
 
 const _500Page: NextPage = () => (
   <>

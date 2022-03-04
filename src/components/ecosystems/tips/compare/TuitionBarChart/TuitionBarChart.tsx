@@ -1,5 +1,5 @@
 import { memo, useCallback, ComponentPropsWithoutRef } from 'react';
-import { DynamicBarChart } from '@cmp/dynamics/DynamicBarChart';
+import { DynamicBarChart } from '@c/dynamics/DynamicBarChart';
 import { TUITION } from '@d/cost-of-attendance';
 import { round } from '@l/round';
 

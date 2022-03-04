@@ -1,15 +1,15 @@
 import type { MDXComponents } from 'mdx/types';
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import type { Required } from 'utility-types';
-import { ExternalLink } from '@cmp/atoms/ExternalLink';
-import { InternalLink } from '@cmp/atoms/InternalLink';
-import { Li } from '@cmp/atoms/Li';
-import { MdxContainer } from '@cmp/atoms/MdxContainer';
-import { P } from '@cmp/atoms/P';
-import { Strong } from '@cmp/atoms/Strong';
-import { Ul } from '@cmp/atoms/Ul';
-import { DynamicCopiedDialog as CopiedDialog } from '@cmp/dynamics/DynamicCopiedDialog';
-import { H1, H2, H3 } from '@cmp/ecosystems/shared/Heading';
+import { ExternalLink } from '@c/atoms/ExternalLink';
+import { InternalLink } from '@c/atoms/InternalLink';
+import { Li } from '@c/atoms/Li';
+import { MdxContainer } from '@c/atoms/MdxContainer';
+import { P } from '@c/atoms/P';
+import { Strong } from '@c/atoms/Strong';
+import { Ul } from '@c/atoms/Ul';
+import { DynamicCopiedDialog as CopiedDialog } from '@c/dynamics/DynamicCopiedDialog';
+import { H1, H2, H3 } from '@c/ecosystems/shared/Heading';
 
 /**
  * mdx component registry

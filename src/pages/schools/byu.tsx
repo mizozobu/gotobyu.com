@@ -1,5 +1,5 @@
-import { Seo } from '@cmp/ecosystems/shared/Seo';
-import ByuEnvironment from '@cmp/environments/schools/byu.mdx';
+import { Seo } from '@c/ecosystems/shared/Seo';
+import ByuEnvironment from '@c/environments/schools/byu.mdx';
 import { BYU_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';
 

@@ -1,6 +1,6 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { TableCaption } from '@cmp/atoms/TableCaption';
+import { TableCaption } from '@c/atoms/TableCaption';
 import { Table } from './Table';
 
 export default {

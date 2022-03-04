@@ -1,5 +1,5 @@
-import { Seo } from '@cmp/ecosystems/shared/Seo';
-import LearnEnglishEnvironment from '@cmp/environments/tips/learn-english.mdx';
+import { Seo } from '@c/ecosystems/shared/Seo';
+import LearnEnglishEnvironment from '@c/environments/tips/learn-english.mdx';
 import { LEARN_ENGLISH_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';
 

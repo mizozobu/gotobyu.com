@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
-import { Style } from '@cmp/atoms/Style';
+import { Style } from '@c/atoms/Style';
 import styles from './Table.module.css';
 
 interface Props extends ComponentPropsWithoutRef<'table'> {
