@@ -4,14 +4,13 @@ import {
   CategoryScale,
   LinearScale,
   Title,
-  Tooltip,
   TickOptions,
 } from 'chart.js';
 import ChartDataLabels, { Context } from 'chartjs-plugin-datalabels';
 import { ComponentPropsWithoutRef } from 'react';
 import { Bar } from 'react-chartjs-2';
 
-Chart.register(BarElement, CategoryScale, LinearScale, Title, Tooltip);
+Chart.register(BarElement, CategoryScale, LinearScale, Title);
 Chart.register(ChartDataLabels);
 
 export interface Props

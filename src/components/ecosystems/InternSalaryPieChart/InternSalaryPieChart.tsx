@@ -1,3 +1,4 @@
+import { Context } from 'chartjs-plugin-datalabels';
 import { memo, useCallback, ComponentPropsWithoutRef } from 'react';
 import { DynamicPieChart } from '@cmp/dynamics/DynamicPieChart';
 import { INTERNSHIP_SALARY } from '@d/income';
@@ -10,7 +11,10 @@ interface Props
 
 export const InternSalaryPieChart = memo((props: Props) => {
   const formatLabel: PieChartProps['labelCallback'] = useCallback(
-    (value) => `${round(value, 2).toLocaleString()}%`,
+    (value: number, context: Context) => [
+      `${context.chart.data.labels?.[context.dataIndex] as string}`,
+      `${round(value, 2).toLocaleString()}%`,
+    ],
     [],
   );
 

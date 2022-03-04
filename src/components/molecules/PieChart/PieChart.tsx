@@ -1,24 +1,17 @@
-import {
-  Chart,
-  ArcElement,
-  Legend,
-  Title,
-  Tooltip,
-  ChartOptions,
-} from 'chart.js';
+import { Chart, ArcElement, Title, ChartOptions } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import type { Context } from 'chartjs-plugin-datalabels';
+import type { Options } from 'chartjs-plugin-datalabels/types/options';
 import { ComponentPropsWithoutRef, useCallback, useState } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { useScreenSize, gte, SCREEN_SIZE, ScreenSizeType } from '@l/screenSize';
 
-Chart.register(ArcElement, Legend, Title, Tooltip);
+Chart.register(ArcElement, Title);
 Chart.register(ChartDataLabels);
 
 export interface Props
   extends Omit<ComponentPropsWithoutRef<typeof Pie>, 'options'> {
   title: string;
-  labelCallback: (value: number, ctx: Context) => string;
+  labelCallback: Options['formatter'];
 }
 
 export const PieChart = ({ title, labelCallback, ...props }: Props) => {
@@ -37,6 +30,7 @@ export const PieChart = ({ title, labelCallback, ...props }: Props) => {
         backgroundColor: 'rgba(55, 48, 163, 0.2)',
         borderRadius: 4,
         formatter: labelCallback,
+        textAlign: 'center',
       },
     },
   });
