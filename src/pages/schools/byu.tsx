@@ -1,4 +1,4 @@
-import { Seo } from '@cmp/ecosystems/Seo';
+import { Seo } from '@cmp/ecosystems/shared/Seo';
 import ByuEnvironment from '@cmp/environments/schools/byu.mdx';
 import { BYU_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';

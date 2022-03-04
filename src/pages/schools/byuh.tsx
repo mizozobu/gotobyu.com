@@ -1,4 +1,4 @@
-import { Seo } from '@cmp/ecosystems/Seo';
+import { Seo } from '@cmp/ecosystems/shared/Seo';
 import ByuhEnvironment from '@cmp/environments/schools/byuh.mdx';
 import { BYUH_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';

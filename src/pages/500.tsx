@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { Seo } from '@cmp/ecosystems/Seo';
+import { Seo } from '@cmp/ecosystems/shared/Seo';
 import { ErrorEnvironment } from '@cmp/environments/error';
 
 const _500Page: NextPage = () => (

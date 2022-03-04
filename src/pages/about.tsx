@@ -1,4 +1,4 @@
-import { Seo } from '@cmp/ecosystems/Seo';
+import { Seo } from '@cmp/ecosystems/shared/Seo';
 import AboutEnvironment from '@cmp/environments/about.mdx';
 import { ABOUT_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';

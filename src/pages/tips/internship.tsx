@@ -1,4 +1,4 @@
-import { Seo } from '@cmp/ecosystems/Seo';
+import { Seo } from '@cmp/ecosystems/shared/Seo';
 import InternshipEnvironment from '@cmp/environments/tips/internship.mdx';
 import { INTERNSHIP_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';

@@ -69,6 +69,17 @@ module.exports = {
     },
 
     /**
+     * container components
+     */
+    {
+      files: ['**/*.container.jsx', '**/*.container.tsx'],
+      rules: {
+        // allow importing presentational component as _XXX
+        'react/jsx-pascal-case': 'off',
+      },
+    },
+
+    /**
      * typescript
      * - must come after jsx to turn off airbnb rules conflicted with typescript
      */

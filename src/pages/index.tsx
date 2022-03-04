@@ -1,4 +1,4 @@
-import { Seo } from '@cmp/ecosystems/Seo';
+import { Seo } from '@cmp/ecosystems/shared/Seo';
 import { IndexEnvironment } from '@cmp/environments/index';
 import { INDEX_PAGE_META } from '@d/links';
 

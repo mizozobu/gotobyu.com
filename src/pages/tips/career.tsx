@@ -1,4 +1,4 @@
-import { Seo } from '@cmp/ecosystems/Seo';
+import { Seo } from '@cmp/ecosystems/shared/Seo';
 import CareerEnvironment from '@cmp/environments/tips/career.mdx';
 import { CAREER_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';

@@ -1,5 +1,5 @@
 import type { GetStaticProps } from 'next';
-import { Seo } from '@cmp/ecosystems/Seo';
+import { Seo } from '@cmp/ecosystems/shared/Seo';
 import CompareEnvironment from '@cmp/environments/tips/compare.mdx';
 import { COMPARE_PAGE_META } from '@d/links';
 import { indexDocument } from '@l/algolia/node';

@@ -9,7 +9,7 @@ import { P } from '@cmp/atoms/P';
 import { Strong } from '@cmp/atoms/Strong';
 import { Ul } from '@cmp/atoms/Ul';
 import { DynamicCopiedDialog as CopiedDialog } from '@cmp/dynamics/DynamicCopiedDialog';
-import { H1, H2, H3 } from '@cnt/Heading';
+import { H1, H2, H3 } from '@cmp/ecosystems/shared/Heading';
 
 /**
  * mdx component registry
