@@ -6,7 +6,14 @@ import { RecoilRoot } from 'recoil';
 const OriginalNextImage = NextImage.default;
 Object.defineProperty(NextImage, 'default', {
   configurable: true,
-  value: (props) => <OriginalNextImage {...props} unoptimized />,
+  value: (props) => (
+    <OriginalNextImage
+      {...props}
+      unoptimized
+      // 1px x 1px transparent image generated on https://png-pixel.com
+      blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='
+    />
+  ),
 });
 
 export const parameters = {
