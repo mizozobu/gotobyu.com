@@ -85,6 +85,7 @@
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.8",
     "storybook": "^6.4.19",
+    "storybook-addon-next-router": "^3.1.1",
     "stylelint": "^14.5.3",
     "stylelint-config-css-modules": "^3.0.0",
     "stylelint-config-prettier": "^9.0.3",
