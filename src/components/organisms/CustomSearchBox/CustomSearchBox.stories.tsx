@@ -3,7 +3,7 @@ import React from 'react';
 import { CustomSearchBox } from './CustomSearchBox';
 
 export default {
-  title: 'ecosystems/CustomSearchBox',
+  title: 'organisms/CustomSearchBox',
   component: CustomSearchBox,
   argTypes: {},
 } as ComponentMeta<typeof CustomSearchBox>;

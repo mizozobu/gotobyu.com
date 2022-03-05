@@ -4,7 +4,7 @@ import { MockInstantSearch } from '@l/algolia/algolia.fixture';
 import { CustomPoweredBy } from './CustomPoweredBy';
 
 export default {
-  title: 'ecosystems/CustomPoweredBy',
+  title: 'organisms/CustomPoweredBy',
   component: CustomPoweredBy,
   argTypes: {},
 } as ComponentMeta<typeof CustomPoweredBy>;

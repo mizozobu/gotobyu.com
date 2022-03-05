@@ -4,7 +4,7 @@ import { MockInstantSearch } from '@l/algolia/algolia.fixture';
 import { CustomStateResults } from './CustomStateResults';
 
 export default {
-  title: 'ecosystems/CustomStateResults',
+  title: 'organisms/CustomStateResults',
   component: CustomStateResults,
   argTypes: {},
 } as ComponentMeta<typeof CustomStateResults>;

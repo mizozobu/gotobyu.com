@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { H1 as _H1 } from '@c/atoms/H1';
 import { H2 as _H2 } from '@c/atoms/H2';
 import { H3 as _H3 } from '@c/atoms/H3';
-import { SectionTitle } from '@c/ecosystems/shared/SectionTitle';
+import { SectionTitle } from '@c/organisms/SectionTitle';
 
 interface Props
   extends Omit<ComponentPropsWithoutRef<typeof SectionTitle>, 'as'> {}

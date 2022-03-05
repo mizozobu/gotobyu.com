@@ -9,7 +9,7 @@ import { P } from '@c/atoms/P';
 import { Strong } from '@c/atoms/Strong';
 import { Ul } from '@c/atoms/Ul';
 import { DynamicCopiedDialog as CopiedDialog } from '@c/dynamics/DynamicCopiedDialog';
-import { H1, H2, H3 } from '@c/ecosystems/shared/Heading';
+import { H1, H2, H3 } from '@c/organisms/Heading';
 
 /**
  * mdx component registry

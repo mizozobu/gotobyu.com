@@ -5,7 +5,7 @@ import { MockInstantSearch } from '@l/algolia/algolia.fixture';
 import { CustomInfiniteHits } from './CustomInfiniteHits';
 
 export default {
-  title: 'ecosystems/CustomInfiniteHits',
+  title: 'organisms/CustomInfiniteHits',
   component: CustomInfiniteHits,
   argTypes: {},
 } as ComponentMeta<typeof CustomInfiniteHits>;

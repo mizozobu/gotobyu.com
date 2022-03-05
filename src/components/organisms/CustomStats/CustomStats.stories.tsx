@@ -3,7 +3,7 @@ import React from 'react';
 import { CustomStats } from './CustomStats';
 
 export default {
-  title: 'ecosystems/CustomStats',
+  title: 'organisms/CustomStats',
   component: CustomStats,
   argTypes: {},
 } as ComponentMeta<typeof CustomStats>;
