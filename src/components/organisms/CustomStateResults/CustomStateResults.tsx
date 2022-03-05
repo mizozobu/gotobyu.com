@@ -3,11 +3,20 @@ import type { StateResultsProvided } from 'react-instantsearch-core';
 import { useSetRecoilState } from 'recoil';
 import { algoliaState } from '@s/algolia';
 
+/**
+ * Props for CustomStateResults
+ */
 interface Props extends StateResultsProvided {
-  /** AlgoliaError does not have "status" (probably a bug in DefinitelyTyped) */
+  /**
+   * Algolia error.
+   * AlgoliaError does not have "status" (probably a bug in DefinitelyTyped).
+   */
   error: StateResultsProvided['error'] & { status: number };
 }
 
+/**
+ * Custom algolia StateResults
+ */
 export const CustomStateResults = ({ error }: Props) => {
   const setAlgoliaState = useSetRecoilState(algoliaState);
 

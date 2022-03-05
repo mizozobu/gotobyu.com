@@ -1,11 +1,18 @@
 import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 
+/**
+ * Props for BarChartLoader
+ */
 interface Props
   extends Omit<ComponentPropsWithoutRef<'svg'>, 'viewBox' | 'height'> {
+  /** The number of bars in loader */
   barCount?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 }
 
+/**
+ * Loader for bar chart
+ */
 export const BarChartLoader = ({
   barCount = 5,
   className,

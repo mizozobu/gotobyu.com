@@ -22,6 +22,9 @@ import {
 } from '@d/links';
 import styles from './Header.module.css';
 
+/**
+ * Props for Header
+ */
 interface Props {
   show: boolean;
   loading: boolean;
@@ -29,7 +32,8 @@ interface Props {
 }
 
 /**
- * @see https://tailwindui.com/components/marketing/elements/headers
+ * Header
+ * @see {@link https://tailwindui.com/components/marketing/elements/headers}
  */
 export const Header = ({ show, loading, isSearchAvailable }: Props) => {
   const [isSearchDialogDisplayed, setIsSearchDialogDisplayed] = useState(false);

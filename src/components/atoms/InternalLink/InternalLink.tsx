@@ -3,10 +3,16 @@ import Link from 'next/link';
 import type { ComponentPropsWithoutRef } from 'react';
 import styles from './InternalLink.module.css';
 
+/**
+ * Props for InternalLink
+ */
 interface Props extends ComponentPropsWithoutRef<'a'> {
   href: string;
 }
 
+/**
+ * `<a>` for an internal link
+ */
 export const InternalLink = ({
   href,
   className,

@@ -2,9 +2,15 @@ import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 import { PartialCircle } from '@c/atoms/PartialCircle';
 
+/**
+ * Props for PieChartLoader
+ */
 interface Props
   extends Omit<ComponentPropsWithoutRef<'svg'>, 'viewBox' | 'height'> {}
 
+/**
+ * Loader for pie chart
+ */
 export const PieChartLoader = ({ className, ...props }: Props) => {
   const r = 50;
 

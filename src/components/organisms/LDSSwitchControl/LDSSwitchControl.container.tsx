@@ -3,6 +3,9 @@ import { useRecoilState } from 'recoil';
 import { SwitchControl } from '@c/molecules/SwitchControl';
 import { statsState } from '@s/stats';
 
+/**
+ * Toggle switch for LDS status
+ */
 export const LDSSwitchControl = () => {
   const [{ isLDS }, setStatsState] = useRecoilState(statsState);
 

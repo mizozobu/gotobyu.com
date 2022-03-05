@@ -2,12 +2,21 @@ import classNames from 'classnames';
 import { ReactNode } from 'react';
 import { BgRotate } from '@c/atoms/BgRotate';
 
+/**
+ * Props for BgRotateCard
+ */
 interface Props {
+  /** className to pass */
   className?: string;
+  /** className to set color for the rotating background */
   colorClass: string;
+  /** Card content */
   children: ReactNode;
 }
 
+/**
+ * Card with rotating background
+ */
 export const BgRotateCard = ({ className, colorClass, children }: Props) => (
   <BgRotate
     className={classNames('aspect-[3/4] w-48 md:w-64', className)}

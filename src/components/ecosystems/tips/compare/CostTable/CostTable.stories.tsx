@@ -3,7 +3,7 @@ import React from 'react';
 import { CostTable } from './CostTable';
 
 export default {
-  title: 'organisms/CostTable',
+  title: 'ecosystems/CostTable',
   component: CostTable,
   argTypes: {},
 } as ComponentMeta<typeof CostTable>;

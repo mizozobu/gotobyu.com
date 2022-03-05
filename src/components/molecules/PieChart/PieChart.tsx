@@ -8,12 +8,20 @@ import { useScreenSize, gte, SCREEN_SIZE, ScreenSizeType } from '@l/screenSize';
 Chart.register(ArcElement, Title);
 Chart.register(ChartDataLabels);
 
+/**
+ * Props for PieChart
+ */
 export interface Props
   extends Omit<ComponentPropsWithoutRef<typeof Pie>, 'options'> {
+  /** Chart title */
   title: string;
+  /** Function to format label */
   labelCallback: Options['formatter'];
 }
 
+/**
+ * Pie chart
+ */
 export const PieChart = ({ title, labelCallback, ...props }: Props) => {
   const [options, setOptions] = useState<ChartOptions<'pie'>>({
     maintainAspectRatio: false,

@@ -7,6 +7,9 @@ import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
 
+/**
+ * Table for school data
+ */
 export const SchoolTable = () => (
   <Table className='my-2 px-0'>
     <TableCaption description='BYU、BYUH、BYUIの学校データ(生徒数、留学生の割合、生徒と教職員の比率、専攻数)'>

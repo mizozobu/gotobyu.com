@@ -5,21 +5,28 @@ import React, {
 } from 'react';
 import type { SearchBoxProvided } from 'react-instantsearch-core';
 
+/**
+ * Props for CustomSearchBox
+ */
 interface Props
   extends SearchBoxProvided,
     Omit<ComponentPropsWithoutRef<'input'>, 'value' | 'onChange'> {
+  /** Debounce interval */
   delay: number;
 }
 
+/**
+ * State for CustomSearchBox
+ */
 interface State {
+  /** Input value */
   value: string;
 }
 
 /**
- * algolia SearchBox with debounce.
- * use class component since debouncing wihtout using extra node_modules in functional component is tricky.
- *
- * @see https://www.algolia.com/doc/guides/building-search-ui/going-further/improve-performance/react/#debouncing
+ * Custom algolia SearchBox with debounce.
+ * Use class component since debouncing wihtout using extra node_modules in functional component is tricky.
+ * @see {@link https://www.algolia.com/doc/guides/building-search-ui/going-further/improve-performance/react/#debouncing}
  */
 export class CustomSearchBox extends Component<Props, State> {
   private timerId: number | undefined;

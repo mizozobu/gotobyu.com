@@ -2,12 +2,18 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { SectionTitle as _SectionTitle } from '@c/atoms/SectionTitle';
 import { useAnchorLink } from '@l/useAnchorLink';
 
+/**
+ * Props for SectionTitle container
+ */
 interface Props
   extends Omit<
     ComponentPropsWithoutRef<typeof _SectionTitle>,
     'active' | 'onClick'
   > {}
 
+/**
+ * Container component for SectionTitle
+ */
 export const SectionTitle = ({ id = '', as, children, ...props }: Props) => {
   const { active, handleClick } = useAnchorLink(id);
   const encodedId = encodeURIComponent(id);

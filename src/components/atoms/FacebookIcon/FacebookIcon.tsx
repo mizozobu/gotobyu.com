@@ -1,8 +1,14 @@
 import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 
+/**
+ * Props for FacebookIcon
+ */
 interface Props extends ComponentPropsWithoutRef<'svg'> {}
 
+/**
+ * SVG Facebook icon
+ */
 export const FacebookIcon = ({ className, ...props }: Props) => (
   <svg
     aria-hidden='true'

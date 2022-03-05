@@ -3,6 +3,9 @@ import { useRecoilState } from 'recoil';
 import { SwitchControl } from '@c/molecules/SwitchControl';
 import { statsState, CURRENCY } from '@s/stats';
 
+/**
+ * Toggle switch for currency
+ */
 export const CurrencySwitchControl = () => {
   const [{ currency }, setStatsState] = useRecoilState(statsState);
 

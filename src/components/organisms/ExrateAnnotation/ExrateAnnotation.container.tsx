@@ -1,6 +1,9 @@
 import { useRecoilValue } from 'recoil';
 import { forexState } from '@s/forex';
 
+/**
+ * FX rate annotation
+ */
 export const ExrateAnnotation = () => {
   const { exrate, timestamp } = useRecoilValue(forexState);
   const date = new Date(timestamp).toLocaleString('ja-JP', {

@@ -9,15 +9,27 @@ import {
 } from 'react';
 import styles from './SectionTitle.module.css';
 
+/**
+ * Type for HTML Heading Component
+ */
 type HeadingComponent = ComponentType<HTMLAttributes<HTMLHeadingElement>>;
 
+/**
+ * Props for SectionTitle
+ */
 interface Props
   extends Omit<ComponentPropsWithoutRef<HeadingComponent>, 'onClick'> {
+  /** Component to render the title as */
   as: HeadingComponent;
+  /** Whether the element is targeted */
   active: boolean;
+  /** Click event handler */
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
+/**
+ * Title for a section with an anchor link
+ */
 export const SectionTitle = memo(
   ({
     as: Component,

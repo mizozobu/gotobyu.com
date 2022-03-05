@@ -6,11 +6,19 @@ import { Highlight, Snippet } from 'react-instantsearch-dom';
 import { getSmallestHeadingTag, ActualHit, Algoliast } from '@l/algolia';
 import styles from './HitItem.module.css';
 
+/**
+ * Props for HitItem
+ */
 interface Props {
+  /** Hit object */
   hit: ActualHit<Algoliast>;
+  /** Click event handler */
   onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
+/**
+ * Algolia hit item
+ */
 export const HitItem = ({ hit, onClick }: Props) => (
   <Link href={hit.permalink}>
     <a tabIndex={-1}>

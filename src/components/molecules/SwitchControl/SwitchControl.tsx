@@ -2,14 +2,25 @@ import { Switch } from '@headlessui/react';
 import classNames from 'classnames';
 import { ReactNode } from 'react';
 
+/**
+ * Props for SwitchControl
+ */
 interface Props {
+  /** Label */
   label: ReactNode;
+  /** Text for screen reader */
   sr: string;
+  /** Whether the switch is on */
   checked: boolean;
+  /** Change event handler */
   onChange: (checked: boolean) => void;
+  /** className to pass */
   className?: string;
 }
 
+/**
+ * Toggle wwitch
+ */
 export const SwitchControl = ({
   label,
   sr,

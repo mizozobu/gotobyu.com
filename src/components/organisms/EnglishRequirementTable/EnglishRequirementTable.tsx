@@ -8,11 +8,19 @@ import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
 import styles from './EnglishRequirementTable.module.css';
 
+/**
+ * Props for EnglishRequirementTable
+ */
 interface Props {
+  /** Exam name */
   exam: string;
+  /** Score data for each school */
   data: SchoolDataCollection<EnglishRequirement>;
 }
 
+/**
+ * Table to compare the english requirement for each school
+ */
 export const EnglishRequirementTable = ({ exam, data }: Props) => (
   <Table className={styles['english-requirement-table']}>
     <TableCaption

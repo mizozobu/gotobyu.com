@@ -1,12 +1,21 @@
 import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 
+/**
+ * Props for PageCard
+ */
 interface Props extends Omit<ComponentPropsWithoutRef<'div'>, 'children'> {
+  /** Card icon */
   icon: (props: ComponentPropsWithoutRef<'svg'>) => JSX.Element;
+  /** Card title */
   name: string;
+  /** Card description */
   detail: string;
 }
 
+/**
+ * Card for a page
+ */
 export const PageCard = ({
   icon: Icon,
   name,

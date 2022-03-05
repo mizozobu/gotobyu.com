@@ -7,13 +7,23 @@ import styles from './PhotoViewer.module.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+/**
+ * Props for PhotoViewer
+ */
 export interface Props {
+  /** Array of Next.js images with "alt" attr and optional citation  */
   images: (ImageProps & { alt: string; citation?: string })[];
+  /** className to pass */
   className?: string;
+  /** className to set color for the rotating background */
   colorClass: string;
+  /** react-slick settings */
   settings?: Settings;
 }
 
+/**
+ * Slider for images
+ */
 export const PhotoViewer = ({
   images,
   className,

@@ -2,10 +2,17 @@ import { CenterMiddleContainer } from '@c/atoms/CenterMiddleContainer';
 import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
 import { MDX } from '@l/mdx';
 
+/**
+ * Props for ErrorEnvironment
+ */
 interface Props {
+  /** Error message */
   message?: string;
 }
 
+/**
+ * Error page
+ */
 export const ErrorEnvironment = ({
   message = 'エラーが発生しました。',
 }: Props) => (

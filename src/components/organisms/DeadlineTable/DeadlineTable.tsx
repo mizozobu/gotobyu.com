@@ -3,11 +3,19 @@ import { Table } from '@c/atoms/Table';
 import { TableCaption } from '@c/atoms/TableCaption';
 import type { ApplicationDeadline } from '@d/application-deadline';
 
+/**
+ * Props for DeadlineTable
+ */
 interface Props {
+  /** School name */
   school: string;
+  /** Deadline data */
   data: ApplicationDeadline[];
 }
 
+/**
+ * Table to compare application deadline for each school
+ */
 export const DeadlineTable = ({ school, data }: Props) => (
   <Table>
     <TableCaption

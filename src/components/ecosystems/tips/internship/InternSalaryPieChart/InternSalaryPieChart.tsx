@@ -4,11 +4,20 @@ import { DynamicPieChart } from '@c/dynamics/DynamicPieChart';
 import { INTERNSHIP_SALARY } from '@d/income';
 import { round } from '@l/round';
 
+/**
+ * Props for PieChart
+ */
 type PieChartProps = ComponentPropsWithoutRef<typeof DynamicPieChart>;
 
+/**
+ * Props for InternSalaryPieChart
+ */
 interface Props
   extends Omit<PieChartProps, 'data' | 'title' | 'labelCallback'> {}
 
+/**
+ * Pie chart to show internship salary distribution
+ */
 export const InternSalaryPieChart = memo((props: Props) => {
   const formatLabel: PieChartProps['labelCallback'] = useCallback(
     (value: number, context: Context) => [

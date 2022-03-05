@@ -21,6 +21,9 @@ const CustomStats = connectStats(_CustomStats);
 const CustomInfiniteHits = connectInfiniteHits(_CustomInfiniteHits);
 const CustomStateResults = connectStateResults(_CustomStateResults);
 
+/**
+ * Props for SearchDialog
+ */
 export interface Props {
   isOpen: boolean;
   isAvailable: boolean;
@@ -28,7 +31,8 @@ export interface Props {
 }
 
 /**
- * @see https://fwywd.com/tech/next-algolia
+ * Modal for site-wide search
+ * @see {@link https://fwywd.com/tech/next-algolia}
  */
 export const SearchDialog = ({ isOpen, isAvailable, onClose }: Props) => (
   <AlgoliaProvider>

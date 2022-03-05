@@ -3,8 +3,14 @@ import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 import styles from './ExternalLink.module.css';
 
+/**
+ * Props for ExternalLink
+ */
 interface Props extends ComponentPropsWithoutRef<'a'> {}
 
+/**
+ * `<a>` for an external link
+ */
 export const ExternalLink = ({ className, children, ...props }: Props) => (
   <a
     {...props}

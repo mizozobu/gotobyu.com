@@ -1,12 +1,18 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
+/**
+ * Props for PartialCircle
+ */
 interface Props extends Omit<ComponentPropsWithoutRef<'path'>, 'd'> {
+  /** Radius */
   r: number;
+  /** Angle to rotate */
   angle: number;
 }
 
 /**
- * @see http://www.yamatyuu.net/computer/html/svg/arc.html
+ * SVG partial circle
+ * @see {@link http://www.yamatyuu.net/computer/html/svg/arc.html}
  */
 export const PartialCircle = ({ r, angle, ...props }: Props) => {
   const x2 = 0 + r * Math.cos((angle - 90) * (Math.PI / 180));

@@ -2,8 +2,14 @@ import { PhotographIcon } from '@heroicons/react/outline';
 import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 
+/**
+ * Props for ImageLoader
+ */
 interface Props extends ComponentPropsWithoutRef<'div'> {}
 
+/**
+ * Loader for image
+ */
 export const ImageLoader = ({ className, ...props }: Props) => (
   <div
     className={classNames(

@@ -2,11 +2,17 @@ import { Transition, Dialog } from '@headlessui/react';
 import { ClipboardCheckIcon, XIcon } from '@heroicons/react/outline';
 import { Fragment } from 'react';
 
+/**
+ * Props for CopiedDialog
+ */
 interface Props {
   isOpen: boolean;
   onClose: () => void;
 }
 
+/**
+ * Modal to show when a text is copied to the clipboard
+ */
 export const CopiedDialog = ({ isOpen, onClose }: Props) => (
   <Transition appear show={isOpen} as={Fragment} data-noindex='true'>
     <Dialog

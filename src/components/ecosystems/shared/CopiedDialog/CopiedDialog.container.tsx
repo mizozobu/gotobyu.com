@@ -3,12 +3,18 @@ import { useRecoilState } from 'recoil';
 import { urlState } from '@s/url';
 import { CopiedDialog as _CopiedDialog } from './CopiedDialog';
 
+/**
+ * Props for CopiedDialog container
+ */
 export interface Props
   extends Omit<
     ComponentPropsWithoutRef<typeof _CopiedDialog>,
     'isOpen' | 'onClose'
   > {}
 
+/**
+ * Container component for CopiedDialog
+ */
 export const CopiedDialog = (props: Props) => {
   const [{ showCopiedModal }, setIsOpen] = useRecoilState(urlState);
 

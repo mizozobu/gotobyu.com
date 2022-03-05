@@ -3,21 +3,39 @@ import { useState, useEffect, ComponentPropsWithoutRef } from 'react';
 import { Style } from '@c/atoms/Style';
 import styles from './Type.module.css';
 
+/**
+ * Props for Type
+ */
 interface Props extends ComponentPropsWithoutRef<'span'> {
+  /** Text to effect */
   children: string;
+  /** Caret width */
   caretWidth?: string;
+  /** Time in seconds between types */
   typeSpeed?: number;
+  /** Time in seconds to wait before start typing the text */
   waitAfterType?: number;
+  /** Time in seconds to wait after complete typing the text */
   waitBeforeType?: number;
+  /** Called when all characters are erased  */
   onBack?: () => void;
 }
 
+/**
+ * Typing status
+ */
 const Status = {
+  /** Typing a text */
   forward: Symbol('forward'),
+  /** Erasing a text */
   backward: Symbol('backward'),
+  /** Waiting(doing nothing) */
   waiting: Symbol('waiting'),
 };
 
+/**
+ * Text with typing effect
+ */
 export const Type = ({
   children: text,
   caretWidth = '2px',

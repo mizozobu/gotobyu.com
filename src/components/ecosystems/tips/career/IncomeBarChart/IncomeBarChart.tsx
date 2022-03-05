@@ -3,14 +3,23 @@ import { DynamicBarChart } from '@c/dynamics/DynamicBarChart';
 import { FIRST_YEAR_INCOME } from '@d/income';
 import { round } from '@l/round';
 
+/**
+ * Props for BarChart
+ */
 type BarChartProps = ComponentPropsWithoutRef<typeof DynamicBarChart>;
 
+/**
+ * Props for IncomeBarChart
+ */
 interface Props
   extends Omit<
     BarChartProps,
     'data' | 'title' | 'yAxesTicksCallback' | 'labelCallback'
   > {}
 
+/**
+ * Bar chart to compare the 1st year income of BYUs grads and normal grads
+ */
 export const IncomeBarChart = memo((props: Props) => {
   const formatLabel:
     | BarChartProps['labelCallback'] & BarChartProps['yAxesTicksCallback'] =

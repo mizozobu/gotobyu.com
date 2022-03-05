@@ -1,1 +1,1 @@
-export * from './CostTable.container';
+export * from './CostTable';

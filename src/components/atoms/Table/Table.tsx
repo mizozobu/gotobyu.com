@@ -3,10 +3,21 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { Style } from '@c/atoms/Style';
 import styles from './Table.module.css';
 
+/**
+ * Props for Table
+ */
 interface Props extends ComponentPropsWithoutRef<'table'> {
+  /** Color for thick border
+   * - bottom of header
+   * - top of footer
+   * - right of the first column
+   */
   thickBorderColor?: string;
 }
 
+/**
+ * Styled `<table>`
+ */
 export const Table = ({ className, thickBorderColor, ...props }: Props) => (
   <div
     className={classNames(

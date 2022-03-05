@@ -4,10 +4,16 @@ import { Highlight } from 'react-instantsearch-dom';
 import { classifyHits, Algoliast, ActualHit } from '@l/algolia';
 import styles from './CustomInfiniteHits.module.css';
 
+/**
+ * Props for CustomInfiniteHits
+ */
 interface Props extends InfiniteHitsProvided<ActualHit<Algoliast>> {
   children: (hit: ActualHit<Algoliast>) => JSX.Element;
 }
 
+/**
+ * Custom algolia InfiniteHits
+ */
 export const CustomInfiniteHits = ({
   hits,
   hasPrevious,

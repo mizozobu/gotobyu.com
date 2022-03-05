@@ -7,12 +7,18 @@ import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
 
+/**
+ * Props for CostTable
+ */
 interface Props {
   exrate: number;
   isJPY: boolean;
   isLDS: boolean;
 }
 
+/**
+ * Table to compare the cost of attendance for each school
+ */
 export const CostTable = ({ exrate, isJPY, isLDS }: Props) => {
   const unit = isJPY ? '¥' : '$';
   const multiplier = isJPY ? exrate : 1;

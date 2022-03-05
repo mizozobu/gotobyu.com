@@ -5,6 +5,9 @@ import { useScrollDirection, SCROLL_DIRECTION } from '@l/scrollDirection';
 import { algoliaState } from '@s/algolia';
 import { Header as _Header } from './Header';
 
+/**
+ * Container component for Header
+ */
 export const Header = () => {
   const { isAvailable } = useRecoilValue(algoliaState);
   const [loading, setLoading] = useState(false);

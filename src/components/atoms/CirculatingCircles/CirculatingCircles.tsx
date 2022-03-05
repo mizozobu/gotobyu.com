@@ -1,10 +1,18 @@
 import Script from 'next/script';
 import type { ComponentPropsWithoutRef } from 'react';
 
+/**
+ * Props for CirculatingCircles
+ */
 interface Props extends ComponentPropsWithoutRef<'svg'> {
+  /** Whether to animate circles */
   animated?: boolean;
 }
 
+/**
+ * Three circles.
+ * Used as a logo.
+ */
 export const CirculatingCircles = ({ animated = false, ...props }: Props) => {
   const id = animated ? 'animated-circulating-circles' : 'circulating-circles';
 

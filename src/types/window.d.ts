@@ -1,5 +1,5 @@
 interface Window {
-  /** for Google Tag Manager */
+  /** For Google Tag Manager */
   dataLayer: unknown[];
 }
 

@@ -2,13 +2,16 @@ import { useGtm } from '@l/gtm';
 import { useRecoilHydrate, RecoilProps } from '@l/recoil';
 import { useSyncRouteHash } from '@l/useSyncRouteHash';
 
+/**
+ * Props for HookRegistry
+ */
 interface Props {
+  /** Next.js pageProps typed since it's originally any */
   pageProps: { [key: string]: unknown }; // FIXME
 }
 
 /**
- * component to register hooks required to be used in certain components (e.g. RecoilRoot)
- *
+ * Component to register hooks required to be used in certain components (e.g. RecoilRoot)
  * @returns null
  */
 export const HookRegistry = ({ pageProps }: Props) => {

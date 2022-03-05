@@ -3,18 +3,30 @@ import { DynamicBarChart } from '@c/dynamics/DynamicBarChart';
 import { TUITION } from '@d/cost-of-attendance';
 import { round } from '@l/round';
 
+/**
+ * Props for BarChart
+ */
 type BarChartProps = ComponentPropsWithoutRef<typeof DynamicBarChart>;
 
+/**
+ * Props for TuitionBarChart
+ */
 interface Props
   extends Omit<
     BarChartProps,
     'data' | 'title' | 'yAxesTicksCallback' | 'labelCallback'
   > {
+  /** FX rate(JPY <=> USD) */
   exrate: number;
+  /** Whether to use JPY */
   isJPY: boolean;
+  /** Whether to use LDS rate */
   isLDS: boolean;
 }
 
+/**
+ * Bar chart to compare the tuituion of each school
+ */
 export const TuitionBarChart = memo(
   ({ exrate, isJPY, isLDS, ...props }: Props) => {
     const multiplier = isJPY ? exrate : 1;
