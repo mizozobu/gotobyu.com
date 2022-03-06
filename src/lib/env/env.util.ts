@@ -1,8 +1,8 @@
 /**
- * type safe getter for an environment variable
- *
- * @param key environment variable name
- * @returns environment variable
+ * Type safe getter for an environment variable
+ * @param key Environment variable name
+ * @returns Environment variable "{@link key}"
+ * @throws Throws when environment variable "{@link key}" is not defined
  */
 export const getEnvVar = (key: string) => {
   const envVar = process.env[key];

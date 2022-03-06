@@ -4,7 +4,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import styles from './ExternalLink.module.css';
 
 /**
- * Props for ExternalLink
+ * Props for {@link ExternalLink}
  */
 interface Props extends ComponentPropsWithoutRef<'a'> {}
 

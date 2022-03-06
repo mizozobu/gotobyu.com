@@ -15,7 +15,7 @@ import styles from './SectionTitle.module.css';
 type HeadingComponent = ComponentType<HTMLAttributes<HTMLHeadingElement>>;
 
 /**
- * Props for SectionTitle
+ * Props for {@link SectionTitle}
  */
 interface Props
   extends Omit<ComponentPropsWithoutRef<HeadingComponent>, 'onClick'> {

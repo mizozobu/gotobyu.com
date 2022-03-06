@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import styles from './Li.module.css';
 
 /**
- * Props for Li
+ * Props for {@link Li}
  */
 interface Props extends ComponentPropsWithoutRef<'li'> {}
 

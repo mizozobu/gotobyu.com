@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { GTM_ID } from '@l/gtm';
 
 /**
- * google tag manager preview event
+ * Hook to register Google Tag Manager preview event
  */
 export const useGtm = () => {
   const router = useRouter();

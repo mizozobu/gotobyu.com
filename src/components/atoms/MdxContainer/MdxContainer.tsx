@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import styles from './MdxContainer.module.css';
 
 /**
- * Props for MdxContainer
+ * Props for {@link MdxContainer}
  */
 interface Props extends ComponentPropsWithoutRef<'article'> {}
 

@@ -3,7 +3,7 @@ import Image, { ImageProps } from 'next/image';
 import { CSSProperties } from 'react';
 
 /**
- * Props for ImageProps
+ * Props for {@link ImageProps}
  */
 export type Props = ImageProps & {
   /** id to pass */

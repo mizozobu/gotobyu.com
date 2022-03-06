@@ -5,7 +5,7 @@ import { statsState, CURRENCY } from '@s/stats';
 import { TuitionBarChart as _TuitionBarChart } from './TuitionBarChart';
 
 /**
- * Props for TuitionBarChart container
+ * Props for {@link TuitionBarChart} container
  */
 interface Props
   extends Omit<

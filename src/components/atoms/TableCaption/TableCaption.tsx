@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import styles from './TableCaption.module.css';
 
 /**
- * Props for TableCaption
+ * Props for {@link TableCaption}
  */
 interface Props extends ComponentPropsWithoutRef<'span'> {
   /** Description for screen reader */

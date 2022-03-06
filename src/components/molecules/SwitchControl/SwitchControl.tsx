@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { ReactNode } from 'react';
 
 /**
- * Props for SwitchControl
+ * Props for {@link SwitchControl}
  */
 interface Props {
   /** Label */

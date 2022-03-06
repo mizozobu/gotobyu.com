@@ -5,7 +5,7 @@ import { statsState, CURRENCY } from '@s/stats';
 import { CostTable as _CostTable } from './CostTable';
 
 /**
- * Props for CostTable container
+ * Props for {@link CostTable} container
  */
 interface Props
   extends Omit<

@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import styles from './Strong.module.css';
 
 /**
- * Props for Strong
+ * Props for {@link Strong}
  */
 interface Props extends ComponentPropsWithoutRef<'strong'> {}
 

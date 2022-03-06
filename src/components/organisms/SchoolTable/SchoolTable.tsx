@@ -69,21 +69,14 @@ export const SchoolTable = () => (
       <tr>
         <th scope='row'>留学生の割合</th>
         <td>
-          <Digit decimals={2}>
-            {SCHOOL_INFO.byu.numberOfInternationStudents}
-          </Digit>
+          <Digit decimals={2}>{SCHOOL_INFO.byu.internationStudentRatio}</Digit>%
+        </td>
+        <td>
+          <Digit decimals={2}>{SCHOOL_INFO.byuh.internationStudentRatio}</Digit>
           %
         </td>
         <td>
-          <Digit decimals={2}>
-            {SCHOOL_INFO.byuh.numberOfInternationStudents}
-          </Digit>
-          %
-        </td>
-        <td>
-          <Digit decimals={2}>
-            {SCHOOL_INFO.byui.numberOfInternationStudents}
-          </Digit>
+          <Digit decimals={2}>{SCHOOL_INFO.byui.internationStudentRatio}</Digit>
           %
         </td>
       </tr>

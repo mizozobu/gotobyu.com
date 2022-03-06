@@ -1,3 +1,6 @@
+/**
+ * Type for recoil algolia state
+ */
 export interface AlgoliaState {
   /**
    * Whether algolia is available.

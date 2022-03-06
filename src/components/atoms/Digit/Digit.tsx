@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { round } from '@l/round';
 
 /**
- * Props for Digit
+ * Props for {@link Digit}
  */
 interface Props extends ComponentPropsWithoutRef<'span'> {
   /** Digit */

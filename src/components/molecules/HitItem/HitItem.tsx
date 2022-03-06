@@ -7,7 +7,7 @@ import { getSmallestHeadingTag, ActualHit, Algoliast } from '@l/algolia';
 import styles from './HitItem.module.css';
 
 /**
- * Props for HitItem
+ * Props for {@link HitItem}
  */
 interface Props {
   /** Hit object */

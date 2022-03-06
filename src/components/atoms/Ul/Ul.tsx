@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import styles from './Ul.module.css';
 
 /**
- * Props for Ul
+ * Props for {@link Ul}
  */
 interface Props extends ComponentPropsWithoutRef<'ul'> {}
 

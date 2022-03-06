@@ -5,12 +5,12 @@ import { INTERNSHIP_SALARY } from '@d/income';
 import { round } from '@l/round';
 
 /**
- * Props for PieChart
+ * Props for {@link DynamicPieChart}
  */
 type PieChartProps = ComponentPropsWithoutRef<typeof DynamicPieChart>;
 
 /**
- * Props for InternSalaryPieChart
+ * Props for {@link InternSalaryPieChart}
  */
 interface Props
   extends Omit<PieChartProps, 'data' | 'title' | 'labelCallback'> {}

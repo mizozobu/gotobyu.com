@@ -14,7 +14,7 @@ Chart.register(BarElement, CategoryScale, LinearScale, Title);
 Chart.register(ChartDataLabels);
 
 /**
- * Props for BarChart
+ * Props for {@link BarChart}
  */
 export interface Props
   extends Omit<ComponentPropsWithoutRef<typeof Bar>, 'options'> {

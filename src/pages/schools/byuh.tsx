@@ -3,6 +3,9 @@ import ByuhEnvironment from '@c/environments/schools/byuh.mdx';
 import { BYUH_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';
 
+/**
+ * BYUH Page
+ */
 const ByuhPage = () => (
   <>
     <Seo

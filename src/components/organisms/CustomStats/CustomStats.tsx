@@ -1,7 +1,7 @@
 import type { StatsProvided } from 'react-instantsearch-core';
 
 /**
- * Props for CustomStats
+ * Props for {@link CustomStats}
  */
 interface Props extends StatsProvided {}
 

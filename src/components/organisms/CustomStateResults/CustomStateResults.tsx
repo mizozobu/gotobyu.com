@@ -4,7 +4,7 @@ import { useSetRecoilState } from 'recoil';
 import { algoliaState } from '@s/algolia';
 
 /**
- * Props for CustomStateResults
+ * Props for {@link CustomStateResults}
  */
 interface Props extends StateResultsProvided {
   /**

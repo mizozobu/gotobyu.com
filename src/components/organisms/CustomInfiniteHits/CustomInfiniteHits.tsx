@@ -5,7 +5,7 @@ import { classifyHits, Algoliast, ActualHit } from '@l/algolia';
 import styles from './CustomInfiniteHits.module.css';
 
 /**
- * Props for CustomInfiniteHits
+ * Props for {@link CustomInfiniteHits}
  */
 interface Props extends InfiniteHitsProvided<ActualHit<Algoliast>> {
   children: (hit: ActualHit<Algoliast>) => JSX.Element;

@@ -22,7 +22,7 @@ const CustomInfiniteHits = connectInfiniteHits(_CustomInfiniteHits);
 const CustomStateResults = connectStateResults(_CustomStateResults);
 
 /**
- * Props for SearchDialog
+ * Props for {@link SearchDialog}
  */
 export interface Props {
   isOpen: boolean;

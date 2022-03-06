@@ -9,10 +9,16 @@ import { GTM_ID } from '@l/gtm';
 import { MDX } from '@l/mdx';
 import '~/styles/globals.css';
 
-export interface AppProps extends NextAppProps {
+/**
+ * Props for {@link MyApp}
+ */
+interface AppProps extends NextAppProps {
   pageProps: { [key: string]: unknown };
 }
 
+/**
+ * Custom Next.js App
+ */
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <RecoilRoot>
     <HookRegistry pageProps={pageProps} />

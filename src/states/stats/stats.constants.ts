@@ -1,6 +1,14 @@
+/**
+ * Key for recoil stats state
+ */
 export const STATS_STATE_KEY = 'stats/stats' as const;
 
+/**
+ * Type for recoil stats state
+ */
 export const CURRENCY = {
-  JPY: 'JPY',
-  USD: 'USD',
+  /** Symbol for JPY */
+  JPY: Symbol('JPY'),
+  /** Symbol for USD */
+  USD: Symbol('USD'),
 } as const;

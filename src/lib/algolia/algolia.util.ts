@@ -2,10 +2,10 @@ import type { SearchClient } from 'algoliasearch/lite';
 import type { Algoliast } from './algolia.interface';
 
 /**
- * get smallest heading tag
- *
- * @param algoliast algoliast
- * @returns tag name for the smallest heading
+ * Get smallest heading tag from hit
+ * @param algoliast {@link Algoliast}
+ * @returns Tag name for the smallest heading
+ * @throws Throws when all headings are empty
  */
 export const getSmallestHeadingTag = ({
   h1,
@@ -27,11 +27,12 @@ export const getSmallestHeadingTag = ({
 };
 
 /**
- * custom algolia search client with the features below.
- * - avoid empty search request
- * - request only when keyword is more than 1 characters
- *
- * @see https://www.algolia.com/doc/guides/building-search-ui/going-further/conditional-requests/react/#detecting-empty-search-requests
+ * Custom algolia search client with the features below.
+ * - Avoid empty search request
+ * - Request only when keyword is more than 1 characters
+ * @see {@link https://www.algolia.com/doc/guides/building-search-ui/going-further/conditional-requests/react/#detecting-empty-search-requests}
+ * @param algoliaSearch Algolia {@link SearchClient}
+ * @returns Custom algolia search client
  */
 export const createCustomAlgoliaSearchClient = (
   algoliaSearch: SearchClient,
@@ -64,22 +65,21 @@ export const createCustomAlgoliaSearchClient = (
 });
 
 /**
- * classify hits by h1
- *
- * @param hits hits
- * @returns hits classified by h1
+ * Classify algoliasts by h1
+ * @param algoliasts Array of {@link Algoliast}
+ * @returns Algoliasts classified by h1
  */
 export const classifyHits = <T extends Algoliast>(
-  hits: T[],
+  algoliasts: T[],
 ): { h1: string; hits: T[] }[] => {
   const tmp: Record<string, T[]> = {};
 
   // eslint-disable-next-line no-restricted-syntax
-  for (const hit of hits) {
-    if (tmp[hit.h1] === undefined) {
-      tmp[hit.h1] = [hit];
+  for (const algoliast of algoliasts) {
+    if (tmp[algoliast.h1] === undefined) {
+      tmp[algoliast.h1] = [algoliast];
     } else {
-      tmp[hit.h1].push(hit);
+      tmp[algoliast.h1].push(algoliast);
     }
   }
 

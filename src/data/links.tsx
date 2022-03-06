@@ -13,19 +13,25 @@ import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
 
 /**
- * type for page meta data
+ * Type for page meta data
  */
 export interface PageMeta {
+  /** Page name. Used in header and card. */
   name: string;
+  /** Page detail. Used in header and card. */
   detail: string;
+  /** Page title. Used in `<title>`. */
   title: string | undefined;
+  /** Page description. Used in `<meta name="description">`. */
   description: string;
+  /** Page link */
   href: string;
+  /** Page icon. Used in header and card. */
   icon: (props: ComponentProps<'svg'>) => JSX.Element;
 }
 
 /**
- * index page meda data
+ * Index page meda data
  */
 export const INDEX_PAGE_META: Omit<PageMeta, 'name' | 'detail' | 'icon'> = {
   title: undefined, // use default title
@@ -35,7 +41,7 @@ export const INDEX_PAGE_META: Omit<PageMeta, 'name' | 'detail' | 'icon'> = {
 };
 
 /**
- * byu page meda data
+ * BYU page meda data
  */
 export const BYU_PAGE_META: PageMeta = {
   name: 'Brigham Young University',
@@ -58,7 +64,7 @@ export const BYU_PAGE_META: PageMeta = {
 };
 
 /**
- * byuh page meda data
+ * BYUH page meda data
  */
 export const BYUH_PAGE_META: PageMeta = {
   name: 'Brigham Young University–Hawaii',
@@ -81,7 +87,7 @@ export const BYUH_PAGE_META: PageMeta = {
 };
 
 /**
- * byui page meda data
+ * BYUI page meda data
  */
 export const BYUI_PAGE_META: PageMeta = {
   name: 'Brigham Young University - Idaho',
@@ -104,7 +110,7 @@ export const BYUI_PAGE_META: PageMeta = {
 };
 
 /**
- * compare page meda data
+ * Compare page meda data
  */
 export const COMPARE_PAGE_META: PageMeta = {
   name: 'BYU3校の比較',
@@ -117,7 +123,7 @@ export const COMPARE_PAGE_META: PageMeta = {
 };
 
 /**
- * apply page meda data
+ * Apply page meda data
  */
 export const APPLY_PAGE_META: PageMeta = {
   name: '入学手続き',
@@ -130,7 +136,7 @@ export const APPLY_PAGE_META: PageMeta = {
 };
 
 /**
- * learn english page meda data
+ * Learn English page meda data
  */
 export const LEARN_ENGLISH_PAGE_META: PageMeta = {
   name: '英語の勉強方法',
@@ -143,7 +149,7 @@ export const LEARN_ENGLISH_PAGE_META: PageMeta = {
 };
 
 /**
- * career page meda data
+ * Career page meda data
  */
 export const CAREER_PAGE_META: PageMeta = {
   name: '就職',
@@ -156,7 +162,7 @@ export const CAREER_PAGE_META: PageMeta = {
 };
 
 /**
- * internship page meda data
+ * Internship page meda data
  */
 export const INTERNSHIP_PAGE_META: PageMeta = {
   name: 'インターンシップ',
@@ -169,7 +175,7 @@ export const INTERNSHIP_PAGE_META: PageMeta = {
 };
 
 /**
- * about page meda data
+ * About page meda data
  */
 export const ABOUT_PAGE_META: PageMeta = {
   name: '運営者について',
@@ -182,26 +188,26 @@ export const ABOUT_PAGE_META: PageMeta = {
 };
 
 /**
- * links in school category
+ * Links in school category
  */
 export const SCHOOL_LINKS = [BYU_PAGE_META, BYUH_PAGE_META, BYUI_PAGE_META];
 
 /**
- * links in additional school category
+ * Links in additional school category
  */
 export const ADDITIONAL_SCHOOL_LINKS = [COMPARE_PAGE_META];
 
 /**
- * links in apply category
+ * Links in apply category
  */
 export const APPLY_LINKS = [APPLY_PAGE_META, LEARN_ENGLISH_PAGE_META];
 
 /**
- * links in career category
+ * Links in career category
  */
 export const CAREER_LINKS = [CAREER_PAGE_META, INTERNSHIP_PAGE_META];
 
 /**
- * links in other category
+ * Links in other category
  */
 export const OTHER_LINKS = [ABOUT_PAGE_META];

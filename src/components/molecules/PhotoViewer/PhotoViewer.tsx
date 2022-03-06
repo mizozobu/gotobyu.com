@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 /**
- * Props for PhotoViewer
+ * Props for {@link PhotoViewer}
  */
 export interface Props {
   /** Array of Next.js images with "alt" attr and optional citation  */

@@ -8,7 +8,7 @@ import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
 
 /**
- * Props for CostTable
+ * Props for {@link CostTable}
  */
 interface Props {
   exrate: number;

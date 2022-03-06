@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 
 /**
- * Props for FacebookIcon
+ * Props for {@link FacebookIcon}
  */
 interface Props extends ComponentPropsWithoutRef<'svg'> {}
 

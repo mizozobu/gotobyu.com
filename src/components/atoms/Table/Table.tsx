@@ -4,7 +4,7 @@ import { Style } from '@c/atoms/Style';
 import styles from './Table.module.css';
 
 /**
- * Props for Table
+ * Props for {@link Table}
  */
 interface Props extends ComponentPropsWithoutRef<'table'> {
   /** Color for thick border

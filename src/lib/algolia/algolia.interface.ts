@@ -5,10 +5,10 @@ import type { ValuesType } from 'utility-types';
 import type { HEADING_TAGS } from './algolia.constants';
 
 /**
- * type for indexable object in algolia
+ * Type for indexable object in algolia
  */
 export interface Algoliast {
-  /** link to the content */
+  /** Link to the content */
   permalink: string;
   /** h1 heading */
   h1: string;
@@ -22,43 +22,43 @@ export interface Algoliast {
   h5: string;
   /** h6 heading */
   h6: string;
-  /** content body */
+  /** Content body */
   content: string;
-  /** tags */
+  /** Tags */
   _tags: string[];
 }
 
 /**
- * type for unified settings
+ * Type for unified settings
  */
 export interface Settings {
-  /** base URL for Algoliast permalink */
+  /** Base URL for {@link Algoliast.permalink} */
   baseUrl: string;
-  /** ending charater of a sentense such as "." and "。" */
+  /** Ending charater of a sentense such as "." and "。" */
   endingChar?: string;
-  /** filter function to exclude node */
+  /** Filter function to exclude node */
   exclude?: (node: Element) => boolean;
 }
 
 /**
- * type for heading depth
+ * Type for heading depth
  */
 export type HeadingDepth = Heading['depth'];
 
 /**
- * type for heading tag
+ * Type for heading tag
  */
 export type HeadingTag = ValuesType<typeof HEADING_TAGS>;
 
 /**
- * type for equal function
+ * Type for {@link Algoliast} equal function
  */
 export interface Compare<T> {
   (a: T, b: T): boolean;
 }
 
 /**
- * type for extra properties not defined in {@link Hit}
+ * Type for extra properties not defined in {@link Hit}
  */
 export interface HitExtra {
   _snippetResult: {
@@ -70,6 +70,6 @@ export interface HitExtra {
 }
 
 /**
- * type for actual hit
+ * Type for actual hit object
  */
 export type ActualHit<T> = Hit<T> & HitExtra;

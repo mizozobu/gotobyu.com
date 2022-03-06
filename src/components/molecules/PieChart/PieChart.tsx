@@ -9,7 +9,7 @@ Chart.register(ArcElement, Title);
 Chart.register(ChartDataLabels);
 
 /**
- * Props for PieChart
+ * Props for {@link PieChart}
  */
 export interface Props
   extends Omit<ComponentPropsWithoutRef<typeof Pie>, 'options'> {

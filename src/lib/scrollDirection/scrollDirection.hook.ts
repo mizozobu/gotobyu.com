@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react';
 import { SCROLL_DIRECTION } from './scrollDirection.constants';
 import type { ScrollDirectionType } from './scrollDirection.interface';
 
+/**
+ * Hook to use scroll direction
+ * @returns Scroll direction
+ */
 export const useScrollDirection = ({
   threshold = 0,
 }: {

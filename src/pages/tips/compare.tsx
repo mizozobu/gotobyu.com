@@ -8,6 +8,9 @@ import { MDX } from '@l/mdx';
 import { AtomStore } from '@l/recoil';
 import { defaultForexState, FOREX_STATE_KEY } from '@s/forex';
 
+/**
+ * getStaticProps for BYUI Page
+ */
 export const getStaticProps: GetStaticProps = async () => {
   const atomStore = new AtomStore();
   const forex = process.env.ALPHA_VANTAGE_API_KEY
@@ -20,6 +23,9 @@ export const getStaticProps: GetStaticProps = async () => {
   });
 };
 
+/**
+ * Compare Page
+ */
 const ComparePage = () => (
   <>
     <Seo

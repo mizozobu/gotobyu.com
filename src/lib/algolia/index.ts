@@ -4,7 +4,7 @@ export * from './algolia.provider';
 export * from './algolia.constants';
 
 /**
- * exclude "./node" from re-exports.
- * make sure to import "./node" explicitly.
+ * Exclude "./node" from re-exports.
+ * Make sure to import "./node" explicitly.
  * e.g. import from "@l/algolia/node"
  */

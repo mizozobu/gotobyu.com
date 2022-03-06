@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import styles from './H1.module.css';
 
 /**
- * Props for H1
+ * Props for {@link H1}
  */
 interface Props extends ComponentPropsWithoutRef<'h1'> {}
 

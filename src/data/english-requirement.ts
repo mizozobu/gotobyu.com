@@ -1,21 +1,26 @@
 import type { SchoolDataCollection } from './school';
 
 /**
- * type for English requirement
+ * Type for English requirement
  */
 export interface EnglishRequirement {
+  /** Minimal required score for reading */
   reading: number | undefined;
+  /** Minimal required score for writing */
   writing: number | undefined;
+  /** Minimal required score for speaking */
   speaking: number | undefined;
+  /** Minimal required score for listening */
   listening: number | undefined;
+  /** Minimal required total score */
   total: number | undefined;
 }
 
 /**
  * TOEFL requirement
- * see https://enrollment.byu.edu/admissions/english-proficiency-requirement
- * see https://hookele.byuh.edu/admissions/english-test-requirements
- * see https://www.byui.edu/admissions/apply/international-students/english-requirements
+ * - BYU: @see {@link https://enrollment.byu.edu/admissions/english-proficiency-requirement}
+ * - BYUH: @see {@link https://hookele.byuh.edu/admissions/english-test-requirements}
+ * - BYUI: @see {@link https://www.byui.edu/admissions/apply/international-students/english-requirements}
  */
 export const TOEFL_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {
@@ -43,9 +48,9 @@ export const TOEFL_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
 
 /**
  * IELTS requirement
- * see https://enrollment.byu.edu/admissions/english-proficiency-requirement
- * see https://hookele.byuh.edu/admissions/english-test-requirements
- * see https://www.byui.edu/admissions/apply/international-students/english-requirements
+ * - BYU: @see {@link https://enrollment.byu.edu/admissions/english-proficiency-requirement}
+ * - BYUH: @see {@link https://hookele.byuh.edu/admissions/english-test-requirements}
+ * - BYUI: @see {@link https://www.byui.edu/admissions/apply/international-students/english-requirements}
  */
 export const IELTS_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {
@@ -73,9 +78,9 @@ export const IELTS_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
 
 /**
  * PTE requirement
- * see https://enrollment.byu.edu/admissions/english-proficiency-requirement
- * see https://hookele.byuh.edu/admissions/english-test-requirements
- * see https://www.byui.edu/admissions/apply/international-students/english-requirements
+ * - BYU: @see {@link https://enrollment.byu.edu/admissions/english-proficiency-requirement}
+ * - BYUH: @see {@link https://hookele.byuh.edu/admissions/english-test-requirements}
+ * - BYUI: @see {@link https://www.byui.edu/admissions/apply/international-students/english-requirements}
  */
 export const PTE_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {
@@ -103,9 +108,7 @@ export const PTE_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
 
 /**
  * EIKEN requirement
- * see https://enrollment.byu.edu/admissions/english-proficiency-requirement
- * see https://hookele.byuh.edu/admissions/english-test-requirements
- * see https://www.byui.edu/admissions/apply/international-students/english-requirements
+ * - BYUH: @see {@link https://hookele.byuh.edu/admissions/english-test-requirements}
  */
 export const EIKEN_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {

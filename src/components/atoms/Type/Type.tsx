@@ -4,7 +4,7 @@ import { Style } from '@c/atoms/Style';
 import styles from './Type.module.css';
 
 /**
- * Props for Type
+ * Props for {@link Type}
  */
 interface Props extends ComponentPropsWithoutRef<'span'> {
   /** Text to effect */

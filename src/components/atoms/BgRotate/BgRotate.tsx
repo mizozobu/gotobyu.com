@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import styles from './BgRotate.module.css';
 
 /**
- * Props for BgRorate
+ * Props for {@link BgRorate}
  */
 interface Props {
   /** className to pass */

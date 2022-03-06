@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import styles from './Footnote.module.css';
 
 /**
- * Props for Footnote
+ * Props for {@link Footnote}
  */
 interface Props extends ComponentPropsWithoutRef<'li'> {}
 

@@ -3,6 +3,9 @@ import ApplyEnvironment from '@c/environments/tips/apply.mdx';
 import { APPLY_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';
 
+/**
+ * Apply Page
+ */
 const ApplyPage = () => (
   <>
     <Seo

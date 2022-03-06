@@ -1,5 +1,5 @@
 /**
- * Props for Style
+ * Props for {@link Style}
  */
 type Props = {
   /** CSS selector for the style */

@@ -4,17 +4,20 @@ import { ComponentPropsWithoutRef } from 'react';
 import { InstantSearch } from 'react-instantsearch-dom';
 import { AlgoliaProvider } from '@l/algolia';
 
+/**
+ * Mock {@link Requester}
+ */
 export const requester: Requester = {
   send: () => Promise.resolve({ status: 200, content: '', isTimedOut: false }),
 };
 
+/**
+ * Props for {@link MockInstantSearch}
+ */
 interface Props extends ComponentPropsWithoutRef<typeof AlgoliaProvider> {}
 
 /**
- * InstantSearch mock
- *
- * @param props
- * @returns
+ * Mock {@link InstantSearch}
  */
 export const MockInstantSearch = (props: Props) => (
   <InstantSearch
@@ -25,8 +28,8 @@ export const MockInstantSearch = (props: Props) => (
 );
 
 /**
- * html content for test
- * minifying part is not accurate as how next.js minifies html
+ * HTML content for test.
+ * Minifying part is not reproduced exactly as how Next.js minifies HTML.
  */
 export const __HTML_CONTENT = `
 <!DOCTYPE html>
@@ -95,7 +98,7 @@ export const __HTML_CONTENT = `
 `.replace(/>\s+|\s+</g, (s) => s.trim());
 
 /**
- * __HTML_CONTENT as algoliasts
+ * {@link __HTML_CONTENT} represented as algoliasts
  */
 export const __ALGOLIASTS = [
   {

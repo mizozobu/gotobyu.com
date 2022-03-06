@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 
 /**
- * Props for CenterMiddleContainer
+ * Props for {@link CenterMiddleContainer}
  */
 interface Props extends ComponentPropsWithoutRef<'div'> {}
 

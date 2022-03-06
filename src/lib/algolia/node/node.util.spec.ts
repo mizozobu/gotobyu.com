@@ -5,7 +5,6 @@ import { unified } from 'unified';
 import { HeadingTag, Settings, Algoliast } from '@l/algolia';
 import { __HTML_CONTENT, __ALGOLIASTS } from '@l/algolia/algolia.fixture';
 import {
-  resolvePathToHtmlFile,
   algoliastEqual,
   algoliastSkip,
   mapToOperations,
@@ -15,17 +14,6 @@ import {
   rehypeAlgolia,
   toAlgoliasts,
 } from './node.util';
-
-describe('resolvePathToHtmlFile', () => {
-  it('should return absolute path to html file with extension', () => {
-    expect.assertions(2);
-
-    const absPath = `${process.cwd()}/.next/server/pages/schools/byu.html`;
-
-    expect(resolvePathToHtmlFile('schools/byu')).toBe(absPath);
-    expect(resolvePathToHtmlFile('/schools/byu')).toBe(absPath);
-  });
-});
 
 describe('algoliastEqual', () => {
   it('should return true when all headings are equal', () => {

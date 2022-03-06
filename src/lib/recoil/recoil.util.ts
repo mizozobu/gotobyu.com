@@ -4,28 +4,24 @@ import { ATOM_REGISTRY } from './recoil.constants';
 import type { AtomKey, AtomStatePlain } from './recoil.interface';
 
 /**
- * store for atoms on server side
+ * Store for atoms on server side
  */
 export class AtomStore {
-  /**
-   * atom store
-   */
+  /** Atom store */
   store = new Map<AtomKey, AtomStatePlain>();
 
   /**
-   * register atom in store
-   *
-   * @param atomKey
-   * @param value
+   * Register atom in store
+   * @param atomKey Key for the atom
+   * @param value Atom as plain object
    */
-  setAtom(atomKey: AtomKey, value: AtomStatePlain): void {
+  setAtom(atomKey: AtomKey, value: AtomStatePlain) {
     this.store.set(atomKey, value);
   }
 
   /**
-   * get recoil store as a plain object
-   *
-   * @returns recoil store as a plain object
+   * Get {@link AtomStore} as a plain object
+   * @returns AtomStore as a plain object
    */
   serializeStore(): { [key in AtomKey]: AtomStatePlain } {
     return Object.fromEntries(this.store) as {
@@ -34,8 +30,7 @@ export class AtomStore {
   }
 
   /**
-   * wrap props with recoil state in getStaticProps/getServerSideProps
-   *
+   * Wrap props with recoil state in getStaticProps/getServerSideProps
    * @param getStaticPropsResult
    * @returns GetStaticPropsResult
    */
@@ -71,10 +66,9 @@ export class AtomStore {
 }
 
 /**
- * get atom from AtomRegistry by key
- *
- * @param key
- * @returns atom
+ * Get atom from {@link ATOM_REGISTRY} by key
+ * @param key Key for the atom
+ * @returns Atom as plain object
  */
 export const getAtomByKey = (key: AtomKey): RecoilState<AtomStatePlain> =>
   ATOM_REGISTRY[key] as RecoilState<AtomStatePlain>;

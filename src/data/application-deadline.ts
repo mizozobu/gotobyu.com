@@ -1,18 +1,24 @@
 /**
- * type for application deadline
+ * Type for application deadline
  */
 export interface ApplicationDeadline {
+  /** Term(e.g. spring, summer, fall, winter) */
   term: string;
+  /** Period when the term is held */
   period: string;
+  /** Date the application opens at */
   openAt: string | undefined;
+  /** Date the priority application closes at */
   priorityClosedAt: string | undefined;
+  /** Date the application closes at */
   closedAt: string | undefined;
+  /** Date the result is announced at */
   announcedAt: string | undefined;
 }
 
 /**
  * BYU application deadline
- * see https://enrollment.byu.edu/admissions/when-should-i-apply
+ * @see {@link https://enrollment.byu.edu/admissions/when-should-i-apply}
  */
 export const BYU_APPLICATION_DEADLINE: ApplicationDeadline[] = [
   {
@@ -20,7 +26,7 @@ export const BYU_APPLICATION_DEADLINE: ApplicationDeadline[] = [
     period: '1月初旬 ~ 4月中旬',
     openAt: '4/1',
     priorityClosedAt: '-',
-    closedAt: ' 8/2',
+    closedAt: '8/2',
     announcedAt: '8/30',
   },
   {
@@ -28,7 +34,7 @@ export const BYU_APPLICATION_DEADLINE: ApplicationDeadline[] = [
     period: '4月下旬 ~ 6月中旬',
     openAt: '8/25',
     priorityClosedAt: '11/1',
-    closedAt: ' 12/15',
+    closedAt: '12/15',
     announcedAt: '2/21',
   },
   {
@@ -36,7 +42,7 @@ export const BYU_APPLICATION_DEADLINE: ApplicationDeadline[] = [
     period: '6月下旬 ~ 8月中旬',
     openAt: '8/25',
     priorityClosedAt: '11/1',
-    closedAt: ' 12/15',
+    closedAt: '12/15',
     announcedAt: '2/21',
   },
   {
@@ -44,14 +50,14 @@ export const BYU_APPLICATION_DEADLINE: ApplicationDeadline[] = [
     period: '9月初旬 ~ 12月中旬',
     openAt: '8/25',
     priorityClosedAt: '11/1',
-    closedAt: ' 12/15',
+    closedAt: '12/15',
     announcedAt: '2/21',
   },
 ];
 
 /**
  * BYUH application deadline
- * see https://hookele.byuh.edu/application-deadlines-decisions-schedule
+ * @see {@link https://hookele.byuh.edu/application-deadlines-decisions-schedule}
  */
 export const BYUH_APPLICATION_DEADLINE: ApplicationDeadline[] = [
   {
@@ -82,7 +88,7 @@ export const BYUH_APPLICATION_DEADLINE: ApplicationDeadline[] = [
 
 /**
  * BYUI application deadline
- * see https://www.byui.edu/admissions/application-deadlines
+ * @see {@link https://www.byui.edu/admissions/application-deadlines}
  */
 export const BYUI_APPLICATION_DEADLINE: ApplicationDeadline[] = [
   {

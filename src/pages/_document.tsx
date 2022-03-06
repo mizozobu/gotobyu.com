@@ -2,6 +2,9 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ALGOLIA_APP_ID } from '@l/algolia';
 import { GTM_ID } from '@l/gtm';
 
+/**
+ * Next.js custom document
+ */
 class MyDocument extends Document {
   render(): JSX.Element {
     return (

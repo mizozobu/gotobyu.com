@@ -13,7 +13,8 @@ import {
 import { indexDocument } from '@l/algolia/node';
 
 /**
- * index documents in algolia
+ * Index documents in algolia
+ *
  * NOTE: ts-node does not support top level await yet.
  */
 void (async () => {

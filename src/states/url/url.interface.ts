@@ -1,11 +1,10 @@
+/**
+ * Type for recoil url state
+ */
 export interface UrlState {
-  /**
-   * current hash of url
-   */
+  /** Current hash(id) of url */
   hash: string;
 
-  /**
-   * boolean to show copied modal
-   */
+  /** Whether to show the copied modal */
   showCopiedModal: boolean;
 }

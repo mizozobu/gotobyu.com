@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
 /**
- * Props for PartialCircle
+ * Props for {@link PartialCircle}
  */
 interface Props extends Omit<ComponentPropsWithoutRef<'path'>, 'd'> {
   /** Radius */

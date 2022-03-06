@@ -2,7 +2,7 @@ import { useState, ComponentPropsWithoutRef } from 'react';
 import { Type } from '@c/atoms/Type';
 
 /**
- * Props for TypingEffect
+ * Props for {@link TypingEffect}
  */
 interface Props
   extends Omit<ComponentPropsWithoutRef<typeof Type>, 'children'> {

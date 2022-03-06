@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 
 /**
- * Props for BarChartLoader
+ * Props for {@link BarChartLoader}
  */
 interface Props
   extends Omit<ComponentPropsWithoutRef<'svg'>, 'viewBox' | 'height'> {

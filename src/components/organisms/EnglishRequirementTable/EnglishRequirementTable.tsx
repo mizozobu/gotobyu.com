@@ -9,7 +9,7 @@ import byuiLogoImage from '@p/byui/byui-logo.png';
 import styles from './EnglishRequirementTable.module.css';
 
 /**
- * Props for EnglishRequirementTable
+ * Props for {@link EnglishRequirementTable}
  */
 interface Props {
   /** Exam name */

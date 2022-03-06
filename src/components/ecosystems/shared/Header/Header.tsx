@@ -23,7 +23,7 @@ import {
 import styles from './Header.module.css';
 
 /**
- * Props for Header
+ * Props for {@link Header}
  */
 interface Props {
   show: boolean;

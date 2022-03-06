@@ -6,7 +6,7 @@ import React, {
 import type { SearchBoxProvided } from 'react-instantsearch-core';
 
 /**
- * Props for CustomSearchBox
+ * Props for {@link CustomSearchBox}
  */
 interface Props
   extends SearchBoxProvided,

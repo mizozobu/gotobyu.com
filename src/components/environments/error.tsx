@@ -3,7 +3,7 @@ import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
 import { MDX } from '@l/mdx';
 
 /**
- * Props for ErrorEnvironment
+ * Props for {@link ErrorEnvironment}
  */
 interface Props {
   /** Error message */

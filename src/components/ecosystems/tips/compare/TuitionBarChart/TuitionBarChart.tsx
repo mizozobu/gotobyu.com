@@ -4,12 +4,12 @@ import { TUITION } from '@d/cost-of-attendance';
 import { round } from '@l/round';
 
 /**
- * Props for BarChart
+ * Props for {@link DynamicBarChart}
  */
 type BarChartProps = ComponentPropsWithoutRef<typeof DynamicBarChart>;
 
 /**
- * Props for TuitionBarChart
+ * Props for {@link TuitionBarChart}
  */
 interface Props
   extends Omit<

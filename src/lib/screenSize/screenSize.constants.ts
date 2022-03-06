@@ -1,3 +1,6 @@
+/**
+ * Screen size
+ */
 export const SCREEN_SIZE = {
   sm: 'sm',
   md: 'md',
@@ -6,4 +9,7 @@ export const SCREEN_SIZE = {
   '2xl': '2xl',
 } as const;
 
+/**
+ * Array of possible screen sizes ordered from smallest
+ */
 export const SCREEN_SIZE_LIST = Object.values(SCREEN_SIZE);

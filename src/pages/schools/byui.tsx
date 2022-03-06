@@ -3,6 +3,9 @@ import ByuiEnvironment from '@c/environments/schools/byui.mdx';
 import { BYUI_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';
 
+/**
+ * BYUI Page
+ */
 const ByuiPage = () => (
   <>
     <Seo

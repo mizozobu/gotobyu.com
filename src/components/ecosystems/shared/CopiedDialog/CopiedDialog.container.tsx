@@ -4,7 +4,7 @@ import { urlState } from '@s/url';
 import { CopiedDialog as _CopiedDialog } from './CopiedDialog';
 
 /**
- * Props for CopiedDialog container
+ * Props for {@link CopiedDialog} container
  */
 export interface Props
   extends Omit<

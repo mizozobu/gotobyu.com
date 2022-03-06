@@ -1,4 +1,3 @@
-import { resolve } from 'path';
 import type { MultipleBatchRequest, Hit } from '@algolia/client-search';
 import algoliasearch from 'algoliasearch';
 import axios from 'axios';
@@ -11,7 +10,6 @@ import type { VFileCompatible } from 'vfile';
 import {
   BATCH_ACTION,
   HEADING_TAGS,
-  PAGE_BASE_PATH,
   HeadingDepth,
   HeadingTag,
   Algoliast,
@@ -21,24 +19,10 @@ import {
 import { getEnvVar } from '@l/env';
 
 /**
- * resolve path to absolute path to html file
- *
- * @param path realative path to html file from /pages
- * @returns absolute path to html file
- */
-export const resolvePathToHtmlFile = (path: string): string => {
-  const relativePath = path.startsWith('/') ? path.substring(1) : path;
-  const absPath = resolve(PAGE_BASE_PATH, `${relativePath}.html`);
-
-  return absPath;
-};
-
-/**
- * check equality of algoliast
- *
- * @param a algoliast1
- * @param b algoliast2
- * @returns whether algoliast1 is equal to algoliast2
+ * Check equality of {@link Algoliast}
+ * @param a {@link Algoliast} to compare
+ * @param b {@link Algoliast} to compare
+ * @returns Whether algoliast1 is equal to algoliast2
  */
 export const algoliastEqual: Compare<Algoliast> = (a, b) =>
   a.h1 === b.h1 &&
@@ -49,23 +33,21 @@ export const algoliastEqual: Compare<Algoliast> = (a, b) =>
   a.h6 === b.h6;
 
 /**
- * check whether to skip operation
- *
- * @param a algoliast1
- * @param b algoliast2
- * @returns whether to skip mapping to operation(no operation required)
+ * Check whether to skip operation
+ * @param a {@link Algoliast}
+ * @param b {@link Algoliast}
+ * @returns Whether to skip mapping to operation(no operation required)
  */
 export const algoliastSkip: Compare<Algoliast> = (a, b) =>
   a.content === b.content;
 
 /**
- * map search hit objects and new records to addObject, updateObject, and deleteObject operations.
- * do the same thing as "replaceAllObjects", but in a better way.
- *
- * @param objectsfromAlgolia list of objects returned from algolia
- * @param newObjects list of objects to replace the current index
+ * Map search hit objects and new records to addObject, updateObject, and deleteObject operations.
+ * Do the same thing as "replaceAllObjects", but in a better way.
+ * @see {@link https://www.algolia.com/doc/api-reference/api-methods/batch/}
+ * @param _objectsfromAlgolia list of objects returned from algolia
+ * @param _newObjects list of objects to replace the current index
  * @returns algolia custom batch operations supplied to "multipleBatch"
- * @see https://www.algolia.com/doc/api-reference/api-methods/batch/
  */
 export const mapToOperations = <T>(
   indexName: string,
@@ -134,14 +116,14 @@ export const mapToOperations = <T>(
 };
 
 /**
- * build algolist from hast tree
+ * Build {@link Algoliast} from hast tree
  */
 export class AlgoliastBuilder {
-  /** heading max depth */
+  /** Heading max depth */
   private readonly MAX_DEPTH: number = 6;
-  /** algoliasts */
+  /** Array of {@link Algoliast} */
   private algoliasts: Algoliast[] = [];
-  /** current algoliast */
+  /** Current {@link Algoliast} */
   private current: Algoliast = {
     permalink: '',
     h1: '',
@@ -155,9 +137,8 @@ export class AlgoliastBuilder {
   };
 
   /**
-   * Algoliast constructor
-   *
-   * @param baseUrl base url for permalink
+   * @constructor
+   * @param baseUrl Base url for permalink
    * e.g. https://example.com
    */
   constructor(private readonly baseUrl: string) {
@@ -165,8 +146,7 @@ export class AlgoliastBuilder {
   }
 
   /**
-   * reset headings below the specified depth
-   *
+   * Reset headings below the specified depth
    * @param tag heading tag name
    */
   resetHeadings(tag: HeadingTag) {
@@ -177,10 +157,9 @@ export class AlgoliastBuilder {
   }
 
   /**
-   * set heading at the specified depth
-   *
-   * @param tag heading tag name
-   * @param value heading title
+   * Set heading at the specified depth
+   * @param tag Heading tag name
+   * @param value Heading title
    */
   setHeading(tag: HeadingTag, value: string) {
     this.resetHeadings(tag);
@@ -189,43 +168,39 @@ export class AlgoliastBuilder {
   }
 
   /**
-   * set content
-   *
-   * @param content content body
+   * Set content
+   * @param content Content body
    */
   setContent(content: string) {
     this.current.content = content;
   }
 
   /**
-   * add algoliast
+   * Add {@link Algoliast}
    */
   add(algoliast: Algoliast) {
     this.algoliasts.push(algoliast);
   }
 
   /**
-   * getter for algoliasts
-   *
-   * @returns array of algoliast
+   * Getter for algoliasts
+   * @returns Array of {@link Algoliast}
    */
   getAlgoliasts(): Algoliast[] {
     return this.algoliasts;
   }
 
   /**
-   * get current algoliast
-   *
-   * @returns current algoliast
+   * Get current {@link Algoliast}
+   * @returns Current {@link Algoliast}
    */
   getCurrentAlgoliast(): Algoliast {
     return { ...this.current };
   }
 
   /**
-   * get last algoliast
-   *
-   * @returns last algoliast
+   * Get last {@link Algoliast}
+   * @returns Last {@link Algoliast}
    */
   getLastAlgoliast(): Algoliast | undefined {
     return this.algoliasts[this.algoliasts.length - 1];
@@ -233,10 +208,9 @@ export class AlgoliastBuilder {
 }
 
 /**
- * recursively extract text value from tree and remove new line characters
- *
- * @param tree hast tree
- * @returns merged texts
+ * Recursively extract text value from tree and remove new line characters
+ * @param tree Hast tree
+ * @returns Merged texts
  */
 export const getText = (tree: Node): string => {
   let value = '';
@@ -247,11 +221,10 @@ export const getText = (tree: Node): string => {
 };
 
 /**
- * check if algoliast is under the same heading
- *
- * @param algoliast1 algoliast to compare
- * @param algoliast2 algoliast to compare
- * @returns whether algoliast is under the same heading
+ * Check if algoliast is under the same heading
+ * @param algoliast1 {@link Algoliast} to compare
+ * @param algoliast2 {@link Algoliast} to compare
+ * @returns Whether the two {@link Algoliast Algoliasts} are under the same heading
  */
 export const isInSameBlock = (algoliast1: Algoliast, algoliast2: Algoliast) =>
   algoliast1.h1 === algoliast2.h1 &&
@@ -262,7 +235,7 @@ export const isInSameBlock = (algoliast1: Algoliast, algoliast2: Algoliast) =>
   algoliast1.h6 === algoliast2.h6;
 
 /**
- * compile hast to algoliast
+ * Compile hast to an array of {@link Algoliast Algoliasts}
  */
 export function rehypeAlgolia() {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -328,11 +301,10 @@ export function rehypeAlgolia() {
 }
 
 /**
- * covert html to array of algoliast
- *
- * @param html html file content
- * @param exclude filter tree
- * @returns array of algoliast
+ * Covert HTML to an array of {@link Algoliast Algoliasts}
+ * @param html HTML file content
+ * @param settings {@link Settings}
+ * @returns Array of {@link Algoliast Algoliasts}
  */
 export const toAlgoliasts = async (
   html: VFileCompatible,
@@ -349,9 +321,8 @@ export const toAlgoliasts = async (
 
 /* eslint-disable no-console */
 /**
- * parse html file and index in algolia
- *
- * @param path realative path from process.env.NEXT_PUBLIC_BASE_URL
+ * Parse HTML file and index in algolia
+ * @param path Realative path from process.env.NEXT_PUBLIC_BASE_URL
  */
 export const indexDocument = async (path: string): Promise<void> => {
   const ALGOLIA_BUILD_INDEX = getEnvVar('ALGOLIA_BUILD_INDEX');
@@ -367,7 +338,7 @@ export const indexDocument = async (path: string): Promise<void> => {
     );
   }
 
-  /** html document to be indexed */
+  /** HTML document to be indexed */
   const { data: html } = await axios.get<string>(
     new URL(path, NEXT_PUBLIC_BASE_URL).href,
   );

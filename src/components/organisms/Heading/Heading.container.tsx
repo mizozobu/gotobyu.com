@@ -5,7 +5,7 @@ import { H3 as _H3 } from '@c/atoms/H3';
 import { SectionTitle } from '@c/organisms/SectionTitle';
 
 /**
- * Props for H1, H2, and H3 container
+ * Props for {@link H1}, {@link H2}, and {@link H3} container
  */
 interface Props
   extends Omit<ComponentPropsWithoutRef<typeof SectionTitle>, 'as'> {}

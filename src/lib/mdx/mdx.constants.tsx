@@ -12,7 +12,7 @@ import { DynamicCopiedDialog as CopiedDialog } from '@c/dynamics/DynamicCopiedDi
 import { H1, H2, H3 } from '@c/organisms/Heading';
 
 /**
- * mdx component registry
+ * MDX component registry
  */
 const _MDX = {
   h1: H1,
@@ -38,6 +38,6 @@ const _MDX = {
 };
 
 /**
- * typed _MDX
+ * Typed _MDX
  */
 export const MDX: Required<MDXComponents, keyof typeof _MDX> = _MDX;

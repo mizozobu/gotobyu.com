@@ -17,6 +17,10 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 // /** time indexed */
 // let indexedAt: Date | undefined;
 
+// /**
+//  * Index documents in algolia.
+//  * Allowed to be called only once.
+//  */
 // export default async (
 //   req: NextApiRequest,
 //   res: NextApiResponse<{

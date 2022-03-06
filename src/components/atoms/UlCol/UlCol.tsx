@@ -3,7 +3,7 @@ import { ComponentProps } from 'react';
 import styles from './UlCol.module.css';
 
 /**
- * Props for UlCol
+ * Props for {@link UlCol}
  */
 interface Props extends ComponentProps<'section'> {}
 

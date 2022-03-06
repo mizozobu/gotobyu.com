@@ -4,12 +4,12 @@ import { FIRST_YEAR_INCOME } from '@d/income';
 import { round } from '@l/round';
 
 /**
- * Props for BarChart
+ * Props for {@link DynamicBarChart}
  */
 type BarChartProps = ComponentPropsWithoutRef<typeof DynamicBarChart>;
 
 /**
- * Props for IncomeBarChart
+ * Props for {@link IncomeBarChart}
  */
 interface Props
   extends Omit<

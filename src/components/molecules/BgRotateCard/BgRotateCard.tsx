@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { BgRotate } from '@c/atoms/BgRotate';
 
 /**
- * Props for BgRotateCard
+ * Props for {@link BgRotateCard}
  */
 interface Props {
   /** className to pass */

@@ -8,15 +8,21 @@ import {
 import { createCustomAlgoliaSearchClient } from './algolia.util';
 
 /**
- * algolia search client instance
+ * Algolia search client
  */
 const algoliaSearchClient = createCustomAlgoliaSearchClient(
   algoliasearch(ALGOLIA_APP_ID, ALGOLIA_API_KEY),
 );
 
+/**
+ * Props for {@link AlgoliaProvider}
+ */
 interface Props
   extends Omit<InstantSearchProps, 'indexName' | 'searchClient'> {}
 
+/**
+ * Root component for algolia search. Most algolia components should be rendered within this component
+ */
 export const AlgoliaProvider = (props: Props) => (
   <InstantSearch
     indexName={ALGOLIA_INDEX_NAME}

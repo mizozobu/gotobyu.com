@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { usePrevious } from '@l/usePrevious';
 import { SCREEN_SIZE } from './screenSize.constants';
-import type { ScreenSizeType } from './screenSize.interface';
+import type { ScreenSizeType, ResizeHandler } from './screenSize.interface';
 
-export type ResizeHandler = (screenSize: ScreenSizeType) => void;
-
+/**
+ * Hook to use the screen size
+ * @param handler Resize event handler
+ * @returns Current screen size
+ */
 export const useScreenSize = (handler?: ResizeHandler): ScreenSizeType => {
   const [screenSize, setScreenSize] = useState<ScreenSizeType>(SCREEN_SIZE.sm);
   const prevScreenSize = usePrevious(screenSize);

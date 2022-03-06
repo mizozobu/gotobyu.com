@@ -1,14 +1,13 @@
 import type { ValuesType } from 'utility-types';
 import { CURRENCY } from './stats.constants';
 
+/**
+ * Type for recoil stats state
+ */
 export interface StatsState {
-  /**
-   * currency
-   */
+  /** Currency */
   currency: ValuesType<typeof CURRENCY>;
 
-  /**
-   * whether a member of the church
-   */
+  /** Whether a member of the church */
   isLDS: boolean;
 }

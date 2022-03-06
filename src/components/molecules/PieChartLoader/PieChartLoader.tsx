@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { PartialCircle } from '@c/atoms/PartialCircle';
 
 /**
- * Props for PieChartLoader
+ * Props for {@link PieChartLoader}
  */
 interface Props
   extends Omit<ComponentPropsWithoutRef<'svg'>, 'viewBox' | 'height'> {}

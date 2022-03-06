@@ -4,7 +4,7 @@ import { statsState, STATS_STATE_KEY } from '@s/stats';
 import { urlState, URL_STATE_KEY } from '@s/url';
 
 /**
- * register atoms
+ * Atom registry
  */
 export const ATOM_REGISTRY = {
   [ALGOLIA_STATE_KEY]: algoliaState,

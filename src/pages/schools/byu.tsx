@@ -3,6 +3,9 @@ import ByuEnvironment from '@c/environments/schools/byu.mdx';
 import { BYU_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';
 
+/**
+ * BYU Page
+ */
 const ByuPage = () => (
   <>
     <Seo

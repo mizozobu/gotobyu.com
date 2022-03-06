@@ -3,6 +3,9 @@ import CareerEnvironment from '@c/environments/tips/career.mdx';
 import { CAREER_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';
 
+/**
+ * Career Page
+ */
 const CareerPage = () => (
   <>
     <Seo

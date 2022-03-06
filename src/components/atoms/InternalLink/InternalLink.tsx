@@ -4,7 +4,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import styles from './InternalLink.module.css';
 
 /**
- * Props for InternalLink
+ * Props for {@link InternalLink}
  */
 interface Props extends ComponentPropsWithoutRef<'a'> {
   href: string;

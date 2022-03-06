@@ -3,7 +3,7 @@ import { SectionTitle as _SectionTitle } from '@c/atoms/SectionTitle';
 import { useAnchorLink } from '@l/useAnchorLink';
 
 /**
- * Props for SectionTitle container
+ * Props for {@link SectionTitle} container
  */
 interface Props
   extends Omit<

@@ -1,11 +1,10 @@
+/**
+ * Type for recoil forex state
+ */
 export interface ForexState {
-  /**
-   * exchange rate JPY/USD
-   */
+  /** FX rate(JPY <=> USD) */
   exrate: number;
 
-  /**
-   * datetime when exchange rate is retrieved in ISO string
-   */
+  /** Timestamp when exchange rate is retrieved in ISO string */
   timestamp: string;
 }

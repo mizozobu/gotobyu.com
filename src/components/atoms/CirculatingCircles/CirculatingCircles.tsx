@@ -2,7 +2,7 @@ import Script from 'next/script';
 import type { ComponentPropsWithoutRef } from 'react';
 
 /**
- * Props for CirculatingCircles
+ * Props for {@link CirculatingCircles}
  */
 interface Props extends ComponentPropsWithoutRef<'svg'> {
   /** Whether to animate circles */

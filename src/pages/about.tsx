@@ -3,6 +3,9 @@ import AboutEnvironment from '@c/environments/about.mdx';
 import { ABOUT_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';
 
+/**
+ * About Page
+ */
 const AboutPage = () => (
   <>
     <Seo

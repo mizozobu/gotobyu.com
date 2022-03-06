@@ -2,7 +2,7 @@ import { NextSeo, NextSeoProps } from 'next-seo';
 import { useRouter } from 'next/router';
 
 /**
- * Props for Seo
+ * Props for {@link Seo}
  */
 interface Props extends NextSeoProps {}
 

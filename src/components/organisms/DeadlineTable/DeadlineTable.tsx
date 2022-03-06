@@ -4,7 +4,7 @@ import { TableCaption } from '@c/atoms/TableCaption';
 import type { ApplicationDeadline } from '@d/application-deadline';
 
 /**
- * Props for DeadlineTable
+ * Props for {@link DeadlineTable}
  */
 interface Props {
   /** School name */

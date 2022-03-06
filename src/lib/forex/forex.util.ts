@@ -2,9 +2,11 @@ import axios from 'axios';
 import { AlphaVantageForexResponse, Forex } from './forex.interface';
 
 /**
- * get exchange rate
- *
- * @returns exchage rate
+ * Get exchange rate from external alphavantage API
+ * @param from Currency exchanged from
+ * @param to Currency exchanged to
+ * @returns Exchage rate and timestamp
+ * @throws Throws when Exchage rate or timestamp returned from API is not valid
  */
 export const getForex = async (from: string, to: string): Promise<Forex> => {
   const res = await axios.get<AlphaVantageForexResponse>(

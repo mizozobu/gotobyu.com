@@ -3,6 +3,9 @@ import LearnEnglishEnvironment from '@c/environments/tips/learn-english.mdx';
 import { LEARN_ENGLISH_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';
 
+/**
+ * Learn English Page
+ */
 const LearnEnglishPage = () => (
   <>
     <Seo

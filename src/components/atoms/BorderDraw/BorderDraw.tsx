@@ -4,7 +4,7 @@ import { Style } from '@c/atoms/Style';
 import styles from './BorderDraw.module.css';
 
 /**
- * Props for BorderDraw
+ * Props for {@link BorderDraw}
  */
 interface Props {
   /** className to pass */
@@ -16,7 +16,7 @@ interface Props {
 }
 
 /**
- *  Drawing effect border
+ * Drawing effect border
  */
 export const BorderDraw = ({ className, borderColor, children }: Props) => (
   <>

@@ -3,7 +3,7 @@ import { ClipboardCheckIcon, XIcon } from '@heroicons/react/outline';
 import { Fragment } from 'react';
 
 /**
- * Props for CopiedDialog
+ * Props for {@link CopiedDialog}
  */
 interface Props {
   isOpen: boolean;

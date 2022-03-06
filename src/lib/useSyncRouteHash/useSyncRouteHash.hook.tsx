@@ -4,7 +4,7 @@ import { useSetRecoilState } from 'recoil';
 import { urlState } from '@s/url';
 
 /**
- * scroll into a section and update recoil when url hash changes
+ * Hook to scroll into a section and update {@link urlState} when url hash changes
  */
 export const useSyncRouteHash = () => {
   const setUrlState = useSetRecoilState(urlState);

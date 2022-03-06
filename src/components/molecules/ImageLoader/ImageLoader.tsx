@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 
 /**
- * Props for ImageLoader
+ * Props for {@link ImageLoader}
  */
 interface Props extends ComponentPropsWithoutRef<'div'> {}
 

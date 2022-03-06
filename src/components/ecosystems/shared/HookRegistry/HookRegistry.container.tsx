@@ -3,7 +3,7 @@ import { useRecoilHydrate, RecoilProps } from '@l/recoil';
 import { useSyncRouteHash } from '@l/useSyncRouteHash';
 
 /**
- * Props for HookRegistry
+ * Props for {@link HookRegistry}
  */
 interface Props {
   /** Next.js pageProps typed since it's originally any */

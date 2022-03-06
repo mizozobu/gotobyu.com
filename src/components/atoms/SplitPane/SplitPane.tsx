@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 
 /**
- * Props for SplitPane
+ * Props for {@link SplitPane}
  */
 interface Props extends ComponentPropsWithoutRef<'div'> {}
 

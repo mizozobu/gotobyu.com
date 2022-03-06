@@ -3,6 +3,9 @@ import InternshipEnvironment from '@c/environments/tips/internship.mdx';
 import { INTERNSHIP_PAGE_META } from '@d/links';
 import { MDX } from '@l/mdx';
 
+/**
+ * Internship Page
+ */
 const InternshipPage = () => (
   <>
     <Seo
