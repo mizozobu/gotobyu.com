@@ -10,7 +10,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {}
 /**
  * Loader for image
  */
-export const ImageLoader = ({ className, ...props }: Props) => (
+export const ImageLoader = ({ className, ...props }: Props): JSX.Element => (
   <div
     className={classNames(
       className,

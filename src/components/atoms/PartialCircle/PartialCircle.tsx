@@ -14,7 +14,7 @@ interface Props extends Omit<ComponentPropsWithoutRef<'path'>, 'd'> {
  * SVG partial circle
  * @see {@link http://www.yamatyuu.net/computer/html/svg/arc.html}
  */
-export const PartialCircle = ({ r, angle, ...props }: Props) => {
+export const PartialCircle = ({ r, angle, ...props }: Props): JSX.Element => {
   const x2 = 0 + r * Math.cos((angle - 90) * (Math.PI / 180));
   const y2 = 0 + r * Math.sin((angle - 90) * (Math.PI / 180));
   const f1 = angle > 180 ? 1 : 0;

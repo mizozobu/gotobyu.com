@@ -16,7 +16,7 @@ interface Props
 /**
  * Container component for {@link _CostTable CostTable} in /tips/compare
  */
-export const CostTable = (props: Props) => {
+export const CostTable = (props: Props): JSX.Element => {
   const { exrate } = useRecoilValue(forexState);
   const { currency, isLDS } = useRecoilValue(statsState);
 

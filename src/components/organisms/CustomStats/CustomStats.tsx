@@ -8,7 +8,7 @@ interface Props extends StatsProvided {}
 /**
  * Custom algolia Stats
  */
-export const CustomStats = ({ nbHits }: Props) =>
+export const CustomStats = ({ nbHits }: Props): JSX.Element =>
   nbHits > 0 ? (
     <span className='text-sm text-gray-400'>
       検索結果{nbHits.toLocaleString()}件

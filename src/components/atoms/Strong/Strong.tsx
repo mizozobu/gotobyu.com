@@ -10,6 +10,6 @@ interface Props extends ComponentPropsWithoutRef<'strong'> {}
 /**
  * Styled `<strong>`
  */
-export const Strong = ({ className, ...props }: Props) => (
+export const Strong = ({ className, ...props }: Props): JSX.Element => (
   <strong {...props} className={classNames(styles.strong, className)} />
 );

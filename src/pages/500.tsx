@@ -5,7 +5,7 @@ import { ErrorEnvironment } from '@c/environments/error';
 /**
  * 500 Page
  */
-const _500Page: NextPage = () => (
+const _500Page: NextPage<never> = () => (
   <>
     <Seo title='エラー' noindex nofollow />
     <ErrorEnvironment />

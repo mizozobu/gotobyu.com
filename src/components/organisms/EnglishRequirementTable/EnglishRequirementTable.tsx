@@ -21,7 +21,7 @@ interface Props {
 /**
  * Table to compare the english requirement for each school
  */
-export const EnglishRequirementTable = ({ exam, data }: Props) => (
+export const EnglishRequirementTable = ({ exam, data }: Props): JSX.Element => (
   <Table className={styles['english-requirement-table']}>
     <TableCaption
       description={`BYU、BYUH、BYUIの入学に必要な${exam}のスコア(Reading、Writing、Speaking、Listening、合計)`}

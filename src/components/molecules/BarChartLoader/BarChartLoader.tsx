@@ -17,14 +17,14 @@ export const BarChartLoader = ({
   barCount = 5,
   className,
   ...props
-}: Props) => {
+}: Props): JSX.Element => {
   const nBar = barCount;
   const nGap = barCount + 1;
   const barToGapRatio = 2;
   const gapWidth = 100 / (barToGapRatio * nBar + nGap);
   const barWidth = barToGapRatio * gapWidth;
 
-  const getFillClass = (i: number) => {
+  const getFillClass = (i: number): string => {
     switch (i) {
       case 0:
         return 'fill-slate-100';

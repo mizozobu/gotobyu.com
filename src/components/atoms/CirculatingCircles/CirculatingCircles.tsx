@@ -13,7 +13,10 @@ interface Props extends ComponentPropsWithoutRef<'svg'> {
  * Three circles.
  * Used as a logo.
  */
-export const CirculatingCircles = ({ animated = false, ...props }: Props) => {
+export const CirculatingCircles = ({
+  animated = false,
+  ...props
+}: Props): JSX.Element => {
   const id = animated ? 'animated-circulating-circles' : 'circulating-circles';
 
   return (

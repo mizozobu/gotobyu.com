@@ -17,7 +17,11 @@ interface Props {
 /**
  * Rotate background on hover
  */
-export const BgRotate = ({ className, colorClass, children }: Props) => (
+export const BgRotate = ({
+  className,
+  colorClass,
+  children,
+}: Props): JSX.Element => (
   <div className={classNames('group relative', styles['bg-rotate'], className)}>
     <div
       className={classNames(

@@ -5,7 +5,7 @@ import { ErrorEnvironment } from '@c/environments/error';
 /**
  * 404 Page
  */
-const _404Page: NextPage = () => (
+const _404Page: NextPage<never> = () => (
   <>
     <Seo title='エラー' noindex nofollow />
     <ErrorEnvironment message='このページは存在しません。' />

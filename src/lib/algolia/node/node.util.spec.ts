@@ -126,11 +126,11 @@ describe('mapToOperations', () => {
   const equal = (
     a: { a: string; content: string },
     b: { a: string; content: string },
-  ) => a.a === b.a;
+  ): boolean => a.a === b.a;
   const skip = (
     a: { a: string; content: string },
     b: { a: string; content: string },
-  ) => a.content === b.content;
+  ): boolean => a.content === b.content;
 
   it('should map to an addObject operation when the object exists only in algolia', () => {
     expect.assertions(1);

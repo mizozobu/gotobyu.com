@@ -38,7 +38,7 @@ export const SectionTitle = memo(
     children,
     onClick,
     ...props
-  }: Props) => (
+  }: Props): JSX.Element => (
     <Component {...props} id={id}>
       <Link href={`#${id}`}>
         <a tabIndex={-1}>

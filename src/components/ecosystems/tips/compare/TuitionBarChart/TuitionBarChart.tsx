@@ -28,7 +28,7 @@ interface Props
  * Bar chart to compare the tuituion of each school
  */
 export const TuitionBarChart = memo(
-  ({ exrate, isJPY, isLDS, ...props }: Props) => {
+  ({ exrate, isJPY, isLDS, ...props }: Props): JSX.Element => {
     const multiplier = isJPY ? exrate : 1;
     const ldsRate = isLDS ? 1 : 2;
 

@@ -17,7 +17,7 @@ interface Props extends StateResultsProvided {
 /**
  * Custom algolia StateResults
  */
-export const CustomStateResults = ({ error }: Props) => {
+export const CustomStateResults = ({ error }: Props): null => {
   const setAlgoliaState = useSetRecoilState(algoliaState);
 
   useEffect(() => {

@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import { Seo } from '@c/ecosystems/shared/Seo';
 import LearnEnglishEnvironment from '@c/environments/tips/learn-english.mdx';
 import { LEARN_ENGLISH_PAGE_META } from '@d/links';
@@ -6,7 +7,7 @@ import { MDX } from '@l/mdx';
 /**
  * Learn English Page
  */
-const LearnEnglishPage = () => (
+const LearnEnglishPage: NextPage<never> = (): JSX.Element => (
   <>
     <Seo
       title={LEARN_ENGLISH_PAGE_META.title}

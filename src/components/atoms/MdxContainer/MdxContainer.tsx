@@ -10,7 +10,7 @@ interface Props extends ComponentPropsWithoutRef<'article'> {}
 /**
  * Container to for a mdx page
  */
-export const MdxContainer = ({ className, ...props }: Props) => (
+export const MdxContainer = ({ className, ...props }: Props): JSX.Element => (
   <article
     {...props}
     className={classNames(

@@ -5,7 +5,7 @@ import styles from './CustomPoweredBy.module.css';
 /**
  * Custom algolia PoweredBy
  */
-export const CustomPoweredBy = () => (
+export const CustomPoweredBy = (): JSX.Element => (
   <PoweredBy
     className={classNames(styles['powered-by'], 'flex items-center')}
   />

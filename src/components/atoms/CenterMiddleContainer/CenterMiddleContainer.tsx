@@ -13,7 +13,7 @@ export const CenterMiddleContainer = ({
   className,
   children,
   ...props
-}: Props) => (
+}: Props): JSX.Element => (
   <div
     className={classNames(
       className,

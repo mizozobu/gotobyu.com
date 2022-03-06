@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import type { GetStaticProps } from 'next';
 import { Seo } from '@c/ecosystems/shared/Seo';
 import CompareEnvironment from '@c/environments/tips/compare.mdx';
@@ -26,7 +27,7 @@ export const getStaticProps: GetStaticProps = async () => {
 /**
  * Compare Page
  */
-const ComparePage = () => (
+const ComparePage: NextPage<never> = (): JSX.Element => (
   <>
     <Seo
       title={COMPARE_PAGE_META.title}

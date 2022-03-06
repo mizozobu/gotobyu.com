@@ -8,15 +8,15 @@ import { Header as _Header } from './Header';
 /**
  * Container component for {@link _Header Header}
  */
-export const Header = () => {
+export const Header = (): JSX.Element => {
   const { isAvailable } = useRecoilValue(algoliaState);
   const [loading, setLoading] = useState(false);
   const scrollDirectionY = useScrollDirection({ threshold: 50 });
   const router = useRouter();
 
   useEffect(() => {
-    const startLoading = () => setLoading(true);
-    const endLoading = () => {
+    const startLoading = (): void => setLoading(true);
+    const endLoading = (): void => {
       setTimeout(() => {
         setLoading(false);
       }, 500);

@@ -15,6 +15,6 @@
 //   }
 // })();
 
-export function middleware() {
+export function middleware(): void {
   // do nothing
 }

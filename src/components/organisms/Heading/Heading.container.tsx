@@ -13,14 +13,20 @@ interface Props
 /**
  * Container compoenent for H1
  */
-export const H1 = ({ ...props }: Props) => <SectionTitle as={_H1} {...props} />;
+export const H1 = ({ ...props }: Props): JSX.Element => (
+  <SectionTitle as={_H1} {...props} />
+);
 
 /**
  * Container compoenent for H2
  */
-export const H2 = ({ ...props }: Props) => <SectionTitle as={_H2} {...props} />;
+export const H2 = ({ ...props }: Props): JSX.Element => (
+  <SectionTitle as={_H2} {...props} />
+);
 
 /**
  * Container compoenent for H3
  */
-export const H3 = ({ ...props }: Props) => <SectionTitle as={_H3} {...props} />;
+export const H3 = ({ ...props }: Props): JSX.Element => (
+  <SectionTitle as={_H3} {...props} />
+);

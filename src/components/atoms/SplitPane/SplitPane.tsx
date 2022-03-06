@@ -11,7 +11,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {}
  * - \< sm: no split
  * - \>= md: split
  */
-export const SplitPane = ({ className, ...props }: Props) => (
+export const SplitPane = ({ className, ...props }: Props): JSX.Element => (
   <div
     {...props}
     className={classNames('grid grid-cols-1 md:grid-cols-2', className)}

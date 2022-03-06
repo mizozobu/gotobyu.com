@@ -29,7 +29,7 @@ export const PhotoViewer = ({
   className,
   colorClass,
   settings: _settings = {},
-}: Props) => {
+}: Props): JSX.Element => {
   const [i, setI] = useState(0);
   const [showCitation, setShowCitation] = useState(true);
 

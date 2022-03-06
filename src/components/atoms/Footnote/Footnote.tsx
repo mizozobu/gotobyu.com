@@ -10,7 +10,11 @@ interface Props extends ComponentPropsWithoutRef<'li'> {}
 /**
  * `<li>` with "*". Used for annotations for a chart or a table
  */
-export const Footnote = ({ className, children, ...props }: Props) => (
+export const Footnote = ({
+  className,
+  children,
+  ...props
+}: Props): JSX.Element => (
   <li {...props} className={classNames(styles.footnote, className)}>
     {children}
   </li>

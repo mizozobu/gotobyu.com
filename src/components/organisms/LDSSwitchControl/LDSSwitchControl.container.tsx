@@ -6,7 +6,7 @@ import { statsState } from '@s/stats';
 /**
  * Toggle switch for LDS status
  */
-export const LDSSwitchControl = () => {
+export const LDSSwitchControl = (): JSX.Element => {
   const [{ isLDS }, setStatsState] = useRecoilState(statsState);
 
   const handleChange: ComponentPropsWithoutRef<

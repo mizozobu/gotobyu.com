@@ -44,7 +44,7 @@ export const Type = ({
   waitAfterType = 1000,
   onBack,
   ...props
-}: Props) => {
+}: Props): JSX.Element => {
   const [typed, setTyped] = useState('');
   const [status, setStatus] = useState(Status.forward);
 

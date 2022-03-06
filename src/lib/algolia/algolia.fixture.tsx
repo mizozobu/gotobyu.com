@@ -19,7 +19,7 @@ interface Props extends ComponentPropsWithoutRef<typeof AlgoliaProvider> {}
 /**
  * Mock {@link InstantSearch}
  */
-export const MockInstantSearch = (props: Props) => (
+export const MockInstantSearch = (props: Props): JSX.Element => (
   <InstantSearch
     indexName=''
     searchClient={algoliasearch('', '', { requester })}

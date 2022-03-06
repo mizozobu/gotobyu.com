@@ -27,7 +27,7 @@ export const SwitchControl = ({
   checked,
   onChange,
   className,
-}: Props) => (
+}: Props): JSX.Element => (
   <Switch.Group data-noindex='true'>
     <div
       className={classNames(

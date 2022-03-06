@@ -15,7 +15,7 @@ export interface Props
 /**
  * Container component for {@link _CopiedDialog CopiedDialog}
  */
-export const CopiedDialog = (props: Props) => {
+export const CopiedDialog = (props: Props): JSX.Element => {
   const [{ showCopiedModal }, setIsOpen] = useRecoilState(urlState);
 
   const closeDialog = useCallback(() => {

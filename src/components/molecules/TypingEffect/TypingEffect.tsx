@@ -13,10 +13,10 @@ interface Props
 /**
  * Type texts one after another
  */
-export const TypingEffect = ({ children, ...props }: Props) => {
+export const TypingEffect = ({ children, ...props }: Props): JSX.Element => {
   const [current, setCurrent] = useState(0);
 
-  const handleBack = () => {
+  const handleBack = (): void => {
     setCurrent(current < children.length - 1 ? current + 1 : 0);
   };
 

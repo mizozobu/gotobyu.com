@@ -20,7 +20,7 @@ interface Props
 /**
  * Bar chart to compare the 1st year income of BYUs grads and normal grads
  */
-export const IncomeBarChart = memo((props: Props) => {
+export const IncomeBarChart = memo((props: Props): JSX.Element => {
   const formatLabel:
     | BarChartProps['labelCallback'] & BarChartProps['yAxesTicksCallback'] =
     useCallback((value) => `${round(+value).toLocaleString()}万円`, []);

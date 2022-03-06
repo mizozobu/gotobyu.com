@@ -17,7 +17,11 @@ interface Props {
 /**
  * Card with rotating background
  */
-export const BgRotateCard = ({ className, colorClass, children }: Props) => (
+export const BgRotateCard = ({
+  className,
+  colorClass,
+  children,
+}: Props): JSX.Element => (
   <BgRotate
     className={classNames('aspect-[3/4] w-48 md:w-64', className)}
     colorClass={colorClass}

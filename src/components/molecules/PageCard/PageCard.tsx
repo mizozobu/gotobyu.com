@@ -22,7 +22,7 @@ export const PageCard = ({
   detail,
   className,
   ...props
-}: Props) => (
+}: Props): JSX.Element => (
   <div
     {...props}
     className={classNames(

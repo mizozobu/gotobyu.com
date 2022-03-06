@@ -110,6 +110,14 @@ module.exports = {
         // e.g. constructor(private readonly xxxx: string) {}
         'no-useless-constructor': 'off',
         '@typescript-eslint/no-useless-constructor': ['error'],
+
+        // require return type
+        '@typescript-eslint/explicit-function-return-type': [
+          'error',
+          {
+            allowExpressions: true,
+          },
+        ],
       },
     },
 

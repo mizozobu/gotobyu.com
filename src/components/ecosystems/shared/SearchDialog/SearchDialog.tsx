@@ -34,7 +34,11 @@ export interface Props {
  * Modal for site-wide search
  * @see {@link https://fwywd.com/tech/next-algolia}
  */
-export const SearchDialog = ({ isOpen, isAvailable, onClose }: Props) => (
+export const SearchDialog = ({
+  isOpen,
+  isAvailable,
+  onClose,
+}: Props): JSX.Element => (
   <AlgoliaProvider>
     <CustomStateResults />
     <Transition

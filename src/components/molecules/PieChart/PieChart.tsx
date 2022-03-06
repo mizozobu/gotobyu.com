@@ -21,7 +21,11 @@ export interface Props
 /**
  * Pie chart
  */
-export const PieChart = ({ title, labelCallback, ...props }: Props) => (
+export const PieChart = ({
+  title,
+  labelCallback,
+  ...props
+}: Props): JSX.Element => (
   <Pie
     options={{
       maintainAspectRatio: false,

@@ -19,7 +19,7 @@ interface Props {
 /**
  * Table to compare the cost of attendance for each school
  */
-export const CostTable = ({ exrate, isJPY, isLDS }: Props) => {
+export const CostTable = ({ exrate, isJPY, isLDS }: Props): JSX.Element => {
   const unit = isJPY ? '¥' : '$';
   const multiplier = isJPY ? exrate : 1;
   const ldsRate = isLDS ? 1 : 2;

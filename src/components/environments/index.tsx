@@ -19,7 +19,7 @@ import byuiLogoImage from '@p/byui/byui-logo.png';
 /**
  * Index page
  */
-export const IndexEnvironment = () => (
+export const IndexEnvironment = (): JSX.Element => (
   <div className='space-y-12 py-12 lg:space-y-16 lg:py-16'>
     <div
       className={classNames(

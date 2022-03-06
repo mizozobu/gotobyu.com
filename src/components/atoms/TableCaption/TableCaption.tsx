@@ -18,7 +18,7 @@ export const TableCaption = ({
   description,
   children,
   ...props
-}: Props) => (
+}: Props): JSX.Element => (
   <caption className={classNames('py-1', styles['table-caption'])}>
     <span
       {...props}

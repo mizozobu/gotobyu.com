@@ -14,7 +14,12 @@ interface Props
 /**
  * Container component for {@link _SectionTitle SectionTitle}
  */
-export const SectionTitle = ({ id = '', as, children, ...props }: Props) => {
+export const SectionTitle = ({
+  id = '',
+  as,
+  children,
+  ...props
+}: Props): JSX.Element => {
   const { active, handleClick } = useAnchorLink(id);
   const encodedId = encodeURIComponent(id);
 

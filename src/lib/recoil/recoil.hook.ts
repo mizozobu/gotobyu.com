@@ -7,7 +7,7 @@ import { getAtomByKey } from './recoil.util';
  * Hook to initialize atoms on client side
  * @param recoilProps Recoil atoms received from AtomStore.with
  */
-export const useRecoilHydrate = (recoilProps: Partial<RecoilProps>) => {
+export const useRecoilHydrate = (recoilProps: Partial<RecoilProps>): void => {
   const hydrate = useRecoilTransaction_UNSTABLE(
     ({ set }) =>
       () => {

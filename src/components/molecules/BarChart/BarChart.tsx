@@ -35,7 +35,7 @@ export const BarChart = ({
   yAxesTicksCallback,
   labelCallback,
   ...props
-}: Props) => (
+}: Props): JSX.Element => (
   <Bar
     data={data}
     options={{

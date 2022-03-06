@@ -14,7 +14,7 @@ interface Props {
  * Component to register hooks required to be used in certain components (e.g. RecoilRoot)
  * @returns null
  */
-export const HookRegistry = ({ pageProps }: Props) => {
+export const HookRegistry = ({ pageProps }: Props): null => {
   useGtm();
   useRecoilHydrate((pageProps._recoil as Partial<RecoilProps>) ?? {});
   useSyncRouteHash();

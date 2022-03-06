@@ -6,7 +6,7 @@ import { FacebookIcon } from '@c/atoms/FacebookIcon';
 /**
  * Footer
  */
-export const Footer = () => (
+export const Footer = (): JSX.Element => (
   <footer
     className='flex flex-col items-center bg-indigo-900 p-8 text-white sm:p-12 lg:p-16'
     data-noindex='true'

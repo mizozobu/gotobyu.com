@@ -13,7 +13,7 @@ type Props = {
 /**
  * `<style>` made easier
  */
-export const Style = ({ selector, styles }: Props) => (
+export const Style = ({ selector, styles }: Props): JSX.Element => (
   <style jsx>{`
     ${selector} {
       ${Object.entries(styles)

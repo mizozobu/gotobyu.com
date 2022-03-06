@@ -10,7 +10,7 @@ interface Props extends ComponentPropsWithoutRef<'li'> {}
 /**
  * Styled `<li>`
  */
-export const Li = ({ className, children, ...props }: Props) => (
+export const Li = ({ className, children, ...props }: Props): JSX.Element => (
   <li {...props} className={classNames(styles.li, className)}>
     {children}
   </li>

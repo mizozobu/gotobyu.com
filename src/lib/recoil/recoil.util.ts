@@ -15,7 +15,7 @@ export class AtomStore {
    * @param atomKey Key for the atom
    * @param value Atom as plain object
    */
-  setAtom(atomKey: AtomKey, value: AtomStatePlain) {
+  setAtom(atomKey: AtomKey, value: AtomStatePlain): void {
     this.store.set(atomKey, value);
   }
 

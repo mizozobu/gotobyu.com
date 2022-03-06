@@ -19,7 +19,7 @@ interface AppProps extends NextAppProps {
 /**
  * Custom Next.js App
  */
-const MyApp = ({ Component, pageProps }: AppProps) => (
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
   <RecoilRoot>
     <HookRegistry pageProps={pageProps} />
     <Head>

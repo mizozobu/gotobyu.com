@@ -10,7 +10,7 @@ interface Props extends ComponentPropsWithoutRef<'h2'> {}
 /**
  * Styled `<h2>`
  */
-export const H2 = ({ className, children, ...props }: Props) => (
+export const H2 = ({ className, children, ...props }: Props): JSX.Element => (
   <h2 {...props} className={classNames(styles.h2, className)}>
     {children}
   </h2>

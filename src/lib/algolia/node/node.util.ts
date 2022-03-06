@@ -149,7 +149,7 @@ export class AlgoliastBuilder {
    * Reset headings below the specified depth
    * @param tag heading tag name
    */
-  resetHeadings(tag: HeadingTag) {
+  resetHeadings(tag: HeadingTag): void {
     const depth = +tag.slice(-1) as HeadingDepth;
     for (let i = depth; i <= this.MAX_DEPTH; i += 1) {
       this.current[`h${i}`] = '';
@@ -161,7 +161,7 @@ export class AlgoliastBuilder {
    * @param tag Heading tag name
    * @param value Heading title
    */
-  setHeading(tag: HeadingTag, value: string) {
+  setHeading(tag: HeadingTag, value: string): void {
     this.resetHeadings(tag);
     this.current.permalink = `${this.baseUrl}#${value}`;
     this.current[tag] = value;
@@ -171,14 +171,14 @@ export class AlgoliastBuilder {
    * Set content
    * @param content Content body
    */
-  setContent(content: string) {
+  setContent(content: string): void {
     this.current.content = content;
   }
 
   /**
    * Add {@link Algoliast}
    */
-  add(algoliast: Algoliast) {
+  add(algoliast: Algoliast): void {
     this.algoliasts.push(algoliast);
   }
 
@@ -226,7 +226,10 @@ export const getText = (tree: Node): string => {
  * @param algoliast2 {@link Algoliast} to compare
  * @returns Whether the two {@link Algoliast Algoliasts} are under the same heading
  */
-export const isInSameBlock = (algoliast1: Algoliast, algoliast2: Algoliast) =>
+export const isInSameBlock = (
+  algoliast1: Algoliast,
+  algoliast2: Algoliast,
+): boolean =>
   algoliast1.h1 === algoliast2.h1 &&
   algoliast1.h2 === algoliast2.h2 &&
   algoliast1.h3 === algoliast2.h3 &&
@@ -237,7 +240,7 @@ export const isInSameBlock = (algoliast1: Algoliast, algoliast2: Algoliast) =>
 /**
  * Compile hast to an array of {@link Algoliast Algoliasts}
  */
-export function rehypeAlgolia() {
+export function rehypeAlgolia(): void {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const that = this as Processor;
@@ -245,7 +248,7 @@ export function rehypeAlgolia() {
     const {
       baseUrl,
       endingChar = '',
-      exclude = () => false,
+      exclude = (): boolean => false,
     } = that.data('settings') as Settings;
     const builder = new AlgoliastBuilder(baseUrl);
 

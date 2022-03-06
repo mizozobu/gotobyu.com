@@ -11,7 +11,7 @@ interface Props
 /**
  * Loader for pie chart
  */
-export const PieChartLoader = ({ className, ...props }: Props) => {
+export const PieChartLoader = ({ className, ...props }: Props): JSX.Element => {
   const r = 50;
 
   return (

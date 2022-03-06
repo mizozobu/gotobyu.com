@@ -21,7 +21,7 @@ export const CustomInfiniteHits = ({
   refinePrevious,
   refineNext,
   children,
-}: Props) =>
+}: Props): JSX.Element | null =>
   hits.length > 0 ? (
     <div className='flex flex-col'>
       {hasPrevious && (

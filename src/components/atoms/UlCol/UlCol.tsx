@@ -10,7 +10,11 @@ interface Props extends ComponentProps<'section'> {}
 /**
  * Multiline `<ul>` to break at a right place
  */
-export const UlCol = ({ className, children, ...props }: Props) => (
+export const UlCol = ({
+  className,
+  children,
+  ...props
+}: Props): JSX.Element => (
   <section
     {...props}
     className={classNames('column-1 md:columns-2', styles.ulcol, className)}

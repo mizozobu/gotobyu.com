@@ -9,7 +9,7 @@ interface Props extends NextSeoProps {}
 /**
  * SEO
  */
-export const Seo = ({ openGraph, ...prop }: Props) => {
+export const Seo = ({ openGraph, ...prop }: Props): JSX.Element => {
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
   const router = useRouter();
 

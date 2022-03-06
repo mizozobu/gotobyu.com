@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import { Seo } from '@c/ecosystems/shared/Seo';
 import { IndexEnvironment } from '@c/environments/index';
 import { INDEX_PAGE_META } from '@d/links';
@@ -5,7 +6,7 @@ import { INDEX_PAGE_META } from '@d/links';
 /**
  * Index Page
  */
-const IndexPage = () => (
+const IndexPage: NextPage<never> = () => (
   <>
     <Seo
       title={INDEX_PAGE_META.title}

@@ -14,6 +14,10 @@ interface Props extends ComponentPropsWithoutRef<'span'> {
 /**
  * Round a number and display with commas
  */
-export const Digit = ({ children, decimals = 0, ...props }: Props) => (
+export const Digit = ({
+  children,
+  decimals = 0,
+  ...props
+}: Props): JSX.Element => (
   <span {...props}>{round(children, decimals).toLocaleString()}</span>
 );

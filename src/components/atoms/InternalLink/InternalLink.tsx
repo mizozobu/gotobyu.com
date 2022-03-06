@@ -18,7 +18,7 @@ export const InternalLink = ({
   className,
   children,
   ...props
-}: Props) => (
+}: Props): JSX.Element => (
   <Link href={href}>
     <a {...props} className={classNames(styles['internal-link'], className)}>
       {children}

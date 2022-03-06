@@ -6,7 +6,7 @@ import { statsState, CURRENCY } from '@s/stats';
 /**
  * Toggle switch for currency
  */
-export const CurrencySwitchControl = () => {
+export const CurrencySwitchControl = (): JSX.Element => {
   const [{ currency }, setStatsState] = useRecoilState(statsState);
 
   const handleChange: ComponentPropsWithoutRef<

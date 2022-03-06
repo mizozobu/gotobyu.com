@@ -15,7 +15,7 @@ interface Props {
  */
 export const ErrorEnvironment = ({
   message = 'エラーが発生しました。',
-}: Props) => (
+}: Props): JSX.Element => (
   <CenterMiddleContainer>
     <MDX.a href='/'>
       <CirculatingCircles animated className='w-48' />

@@ -23,7 +23,7 @@ interface Props
 /**
  * Root component for algolia search. Most algolia components should be rendered within this component
  */
-export const AlgoliaProvider = (props: Props) => (
+export const AlgoliaProvider = (props: Props): JSX.Element => (
   <InstantSearch
     indexName={ALGOLIA_INDEX_NAME}
     searchClient={algoliaSearchClient}

@@ -56,7 +56,7 @@ export class CustomSearchBox extends Component<Props, State> {
     this.setState({ value });
   };
 
-  render() {
+  render(): JSX.Element {
     const { value } = this.state;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { refine, currentRefinement, ...props } = this.props;

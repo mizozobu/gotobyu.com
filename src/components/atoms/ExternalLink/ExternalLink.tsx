@@ -11,7 +11,11 @@ interface Props extends ComponentPropsWithoutRef<'a'> {}
 /**
  * `<a>` for an external link
  */
-export const ExternalLink = ({ className, children, ...props }: Props) => (
+export const ExternalLink = ({
+  className,
+  children,
+  ...props
+}: Props): JSX.Element => (
   <a
     {...props}
     target='_blank'

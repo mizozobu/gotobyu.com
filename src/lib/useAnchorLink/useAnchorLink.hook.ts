@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { MouseEventHandler, useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 import { urlState } from '@s/url';
 
@@ -7,7 +7,9 @@ import { urlState } from '@s/url';
  * @param id id to check if it's same as the the current hash
  * @returns Whether {@link id} is same as the the current hash and click event handler
  */
-export const useAnchorLink = (id: string) => {
+export const useAnchorLink = (
+  id: string,
+): { active: boolean; handleClick: MouseEventHandler<HTMLElement> } => {
   const [{ hash }, setUrlState] = useRecoilState(urlState);
 
   const handleClick = useCallback(() => {

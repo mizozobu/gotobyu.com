@@ -9,7 +9,7 @@ interface Props extends ComponentPropsWithoutRef<'svg'> {}
 /**
  * SVG Facebook icon
  */
-export const FacebookIcon = ({ className, ...props }: Props) => (
+export const FacebookIcon = ({ className, ...props }: Props): JSX.Element => (
   <svg
     aria-hidden='true'
     focusable='false'

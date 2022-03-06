@@ -1,5 +1,5 @@
 import type { SearchClient } from 'algoliasearch/lite';
-import type { Algoliast } from './algolia.interface';
+import type { Algoliast, HeadingTag } from './algolia.interface';
 
 /**
  * Get smallest heading tag from hit
@@ -14,7 +14,7 @@ export const getSmallestHeadingTag = ({
   h4,
   h5,
   h6,
-}: Omit<Algoliast, 'permalink' | 'content' | '_tags'>) => {
+}: Omit<Algoliast, 'permalink' | 'content' | '_tags'>): HeadingTag => {
   if (h6 !== '') return 'h6';
   if (h5 !== '') return 'h5';
   if (h4 !== '') return 'h4';

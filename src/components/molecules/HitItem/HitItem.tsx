@@ -19,7 +19,7 @@ interface Props {
 /**
  * Algolia hit item
  */
-export const HitItem = ({ hit, onClick }: Props) => (
+export const HitItem = ({ hit, onClick }: Props): JSX.Element => (
   <Link href={hit.permalink}>
     <a tabIndex={-1}>
       <button

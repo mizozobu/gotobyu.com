@@ -5,7 +5,7 @@ import { GTM_ID } from '@l/gtm';
 /**
  * Hook to register Google Tag Manager preview event
  */
-export const useGtm = () => {
+export const useGtm = (): void => {
   const router = useRouter();
 
   const pageview = (url: string): void => {

@@ -16,7 +16,7 @@ interface Props {
 /**
  * Table to compare application deadline for each school
  */
-export const DeadlineTable = ({ school, data }: Props) => (
+export const DeadlineTable = ({ school, data }: Props): JSX.Element => (
   <Table>
     <TableCaption
       description={`${school}の学期期間、申込開始、優先申込締切、申込締切、合格発表`}

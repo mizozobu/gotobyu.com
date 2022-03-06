@@ -18,7 +18,11 @@ interface Props {
 /**
  * Drawing effect border
  */
-export const BorderDraw = ({ className, borderColor, children }: Props) => (
+export const BorderDraw = ({
+  className,
+  borderColor,
+  children,
+}: Props): JSX.Element => (
   <>
     <div className={classNames(styles['border-draw'], className)}>
       {children}

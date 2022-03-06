@@ -35,14 +35,18 @@ interface Props {
  * Header
  * @see {@link https://tailwindui.com/components/marketing/elements/headers}
  */
-export const Header = ({ show, loading, isSearchAvailable }: Props) => {
+export const Header = ({
+  show,
+  loading,
+  isSearchAvailable,
+}: Props): JSX.Element => {
   const [isSearchDialogDisplayed, setIsSearchDialogDisplayed] = useState(false);
 
-  const openSearchDialog = () => {
+  const openSearchDialog = (): void => {
     setIsSearchDialogDisplayed(true);
   };
 
-  const closeSearchDialog = () => {
+  const closeSearchDialog = (): void => {
     setIsSearchDialogDisplayed(false);
   };
 

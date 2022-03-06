@@ -16,7 +16,7 @@ export const useScrollDirection = ({
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
 
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       const scrollY = window.pageYOffset;
 
       // debounce

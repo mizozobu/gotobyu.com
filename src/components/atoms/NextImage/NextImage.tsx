@@ -17,7 +17,12 @@ export type Props = ImageProps & {
 /**
  * Next.js Image component with a wrapper for easy styling
  */
-export const NextImage = ({ id, className, style = {}, ...props }: Props) => (
+export const NextImage = ({
+  id,
+  className,
+  style = {},
+  ...props
+}: Props): JSX.Element => (
   <div id={id} className={classNames('relative', className)} style={style}>
     <Image {...props} />
   </div>

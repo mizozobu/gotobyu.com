@@ -16,7 +16,7 @@ interface Props
 /**
  * Container component for {@link _TuitionBarChart TuitionBarChart} in /tips/compare
  */
-export const TuitionBarChart = (props: Props) => {
+export const TuitionBarChart = (props: Props): JSX.Element => {
   const { exrate } = useRecoilValue(forexState);
   const { currency, isLDS } = useRecoilValue(statsState);
 

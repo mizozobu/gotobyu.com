@@ -13,7 +13,7 @@ interface Props {
 /**
  * Modal to show when a text is copied to the clipboard
  */
-export const CopiedDialog = ({ isOpen, onClose }: Props) => (
+export const CopiedDialog = ({ isOpen, onClose }: Props): JSX.Element => (
   <Transition appear show={isOpen} as={Fragment} data-noindex='true'>
     <Dialog
       as='div'
