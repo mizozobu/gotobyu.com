@@ -14,7 +14,7 @@ interface Props
   > {}
 
 /**
- * Container component for TuitionBarChart in /tips/compare
+ * Container component for {@link _TuitionBarChart TuitionBarChart} in /tips/compare
  */
 export const TuitionBarChart = (props: Props) => {
   const { exrate } = useRecoilValue(forexState);

@@ -13,7 +13,7 @@ export interface Props
   > {}
 
 /**
- * Container component for CopiedDialog
+ * Container component for {@link _CopiedDialog CopiedDialog}
  */
 export const CopiedDialog = (props: Props) => {
   const [{ showCopiedModal }, setIsOpen] = useRecoilState(urlState);

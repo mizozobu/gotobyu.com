@@ -12,7 +12,7 @@ interface Props
   > {}
 
 /**
- * Container component for SectionTitle
+ * Container component for {@link _SectionTitle SectionTitle}
  */
 export const SectionTitle = ({ id = '', as, children, ...props }: Props) => {
   const { active, handleClick } = useAnchorLink(id);
