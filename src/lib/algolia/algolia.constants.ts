@@ -1,4 +1,3 @@
-import { resolve } from 'path';
 import type { BatchActionType } from '@algolia/client-search';
 
 /**

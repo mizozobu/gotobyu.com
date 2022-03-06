@@ -41,9 +41,6 @@ export const BarChart = ({
     options={{
       maintainAspectRatio: false,
       plugins: {
-        legend: {
-          display: false,
-        },
         title: {
           display: true,
           text: title,
