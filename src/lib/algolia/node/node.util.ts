@@ -328,18 +328,12 @@ export const toAlgoliasts = async (
  * @param path Realative path from process.env.NEXT_PUBLIC_BASE_URL
  */
 export const indexDocument = async (path: string): Promise<void> => {
-  const ALGOLIA_BUILD_INDEX = getEnvVar('ALGOLIA_BUILD_INDEX');
   const NEXT_PUBLIC_ALGOLIA_APP_ID = getEnvVar('NEXT_PUBLIC_ALGOLIA_APP_ID');
   const NEXT_PUBLIC_ALGOLIA_INDEX_NAME = getEnvVar(
     'NEXT_PUBLIC_ALGOLIA_INDEX_NAME',
   );
   const ALGOLIA_ADMIN_API_KEY = getEnvVar('ALGOLIA_ADMIN_API_KEY');
   const NEXT_PUBLIC_BASE_URL = getEnvVar('NEXT_PUBLIC_BASE_URL');
-  if (ALGOLIA_BUILD_INDEX !== 'true') {
-    return console.log(
-      `\x1b[33mwarn\x1b[0m  - Skip indexing since "ALGOLIA_BUILD_INDEX" is not set to "true" (${path})`,
-    );
-  }
 
   /** HTML document to be indexed */
   const { data: html } = await axios.get<string>(

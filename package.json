@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "husky install",
     "dev": "next dev",
-    "build": "cross-env ALGOLIA_BUILD_INDEX=false next build",
+    "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "eslint . && stylelint . && prettier --check --loglevel warn .",
