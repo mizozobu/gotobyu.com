@@ -3,7 +3,6 @@ import type { GetStaticProps } from 'next';
 import { Seo } from '@c/ecosystems/shared/Seo';
 import CompareEnvironment from '@c/environments/tips/compare.mdx';
 import { COMPARE_PAGE_META } from '@d/links';
-import { indexDocument } from '@l/algolia/node';
 import { getForex } from '@l/forex';
 import { MDX } from '@l/mdx';
 import { AtomStore } from '@l/recoil';
@@ -18,7 +17,6 @@ export const getStaticProps: GetStaticProps = async () => {
     ? await getForex('USD', 'JPY')
     : defaultForexState;
   atomStore.setAtom(FOREX_STATE_KEY, forex);
-  await indexDocument(COMPARE_PAGE_META.href);
   return atomStore.with({
     revalidate: 60 * 12,
   });
