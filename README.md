@@ -7,6 +7,7 @@
 
 - [Next.js](https://nextjs.org)
 - [Tailwind CSS](https://tailwindcss.com)
+- [MDX](https://mdxjs.com)
 - [Algolia](https://www.algolia.com)
 
 ## Getting Started
@@ -39,12 +40,26 @@ Open [http://localhost:6006](http://localhost:6006) with your browser to see the
 # check
 yarn lint
 
-# format
+# auto fix
 yarn format
+```
+
+### Test
+
+```sh
+# debug & watch mode
+yarn ut:debug --watch
+```
+
+### Index
+
+```sh
+# index pages in algolia
+yarn algolia
 ```
 
 ## CI/CD
 
-- [Github Actions](https://github.com/features/actions) automatically checks lint and build
-- [Vercel](https://vercel.com) automatically deploys each branch
-- [Renovate Bot](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) automatically updates dependencies
+- [Github Actions](https://github.com/features/actions) runs CI
+- [Vercel](https://vercel.com) deploys each branch
+- [Renovate Bot](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) updates dependencies
