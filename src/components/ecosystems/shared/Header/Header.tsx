@@ -7,11 +7,12 @@ import {
   SearchIcon,
 } from '@heroicons/react/outline';
 import classNames from 'classnames';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useState } from 'react';
 import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
-import { DynamicSearchDialog as SearchDialog } from '@c/dynamics/DynamicSearchDialog';
-import { MobileMenuDialog } from '@c/ecosystems/shared/MobileMenuDialog';
+import type { Props as HeaderMobileMenuDialogProps } from '@c/ecosystems/shared/HeaderMobileMenuDialog';
+import type { Props as SearchDialogProps } from '@c/ecosystems/shared/SearchDialog';
 import { HeaderMenuLink } from '@c/molecules/HeaderMenuLink';
 import { HeaderMenuPopover } from '@c/organisms/HeaderMenuPopover';
 import {
@@ -22,6 +23,28 @@ import {
   OTHER_LINKS,
 } from '@d/links';
 import styles from './Header.module.css';
+
+/**
+ * Dynamically imported HeaderMobileMenuDialog with no SSR
+ */
+const HeaderMobileMenuDialog = dynamic<HeaderMobileMenuDialogProps>(
+  () =>
+    import('@c/ecosystems/shared/HeaderMobileMenuDialog').then(
+      ({ HeaderMobileMenuDialog: Component }) => Component,
+    ),
+  { ssr: false },
+);
+
+/**
+ * Dynamically imported SearchDialog with no SSR
+ */
+const SearchDialog = dynamic<SearchDialogProps>(
+  () =>
+    import('@c/ecosystems/shared/SearchDialog').then(
+      ({ SearchDialog: Component }) => Component,
+    ),
+  { ssr: false },
+);
 
 /**
  * Props for {@link Header}
@@ -203,7 +226,7 @@ export const Header = ({
         </div>
       </div>
 
-      <MobileMenuDialog
+      <HeaderMobileMenuDialog
         isOpen={isMenuDialogDisplayed}
         onClose={closeMenuDialog}
       />

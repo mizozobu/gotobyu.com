@@ -3,7 +3,7 @@ import type { Props } from '@c/molecules/PieChart';
 import { PieChartLoader } from '@c/molecules/PieChartLoader';
 
 /**
- * Dynamic PieChart with loader
+ * Dynamically imported PieChart with loader
  */
 export const DynamicPieChart = dynamic<Props>(
   () =>

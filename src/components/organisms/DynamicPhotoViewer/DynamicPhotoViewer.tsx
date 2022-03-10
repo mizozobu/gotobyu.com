@@ -3,7 +3,7 @@ import { ImageLoader } from '@c/molecules/ImageLoader';
 import type { Props } from '@c/molecules/PhotoViewer';
 
 /**
- * Dynamic PhotoViewer with loader
+ * Dynamically imported PhotoViewer with loader
  */
 export const DynamicPhotoViewer = dynamic<Props>(
   () =>

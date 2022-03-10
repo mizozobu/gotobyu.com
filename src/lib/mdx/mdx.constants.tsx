@@ -1,4 +1,5 @@
 import type { MDXComponents } from 'mdx/types';
+import dynamic from 'next/dynamic';
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import type { Required } from 'utility-types';
 import { ExternalLink } from '@c/atoms/ExternalLink';
@@ -8,8 +9,19 @@ import { MdxContainer } from '@c/atoms/MdxContainer';
 import { P } from '@c/atoms/P';
 import { Strong } from '@c/atoms/Strong';
 import { Ul } from '@c/atoms/Ul';
-import { DynamicCopiedDialog as CopiedDialog } from '@c/dynamics/DynamicCopiedDialog';
+import type { Props as CopiedDialogProps } from '@c/ecosystems/shared/CopiedDialog';
 import { H1, H2, H3 } from '@c/organisms/Heading';
+
+/**
+ * Dynamically imported CopiedDialog with no SSR
+ */
+const CopiedDialog = dynamic<CopiedDialogProps>(
+  () =>
+    import('@c/ecosystems/shared/CopiedDialog').then(
+      ({ CopiedDialog: Component }) => Component,
+    ),
+  { ssr: false },
+);
 
 /**
  * MDX component registry

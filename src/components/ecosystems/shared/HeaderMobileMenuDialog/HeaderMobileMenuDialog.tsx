@@ -10,9 +10,9 @@ import {
 } from '@d/links';
 
 /**
- * Props for {@link MobileMenuDialog}
+ * Props for {@link HeaderMobileMenuDialog}
  */
-interface Props {
+export interface Props {
   isOpen: boolean;
   onClose: () => void;
 }
@@ -20,7 +20,10 @@ interface Props {
 /**
  * Menu dialog for mobile
  */
-export const MobileMenuDialog = ({ isOpen, onClose }: Props): JSX.Element => (
+export const HeaderMobileMenuDialog = ({
+  isOpen,
+  onClose,
+}: Props): JSX.Element => (
   <Modal isOpen={isOpen} onClose={onClose}>
     <div className='relative mx-auto flex max-h-full max-w-3xl flex-col overflow-y-auto rounded bg-white'>
       <div className='flex items-center justify-end px-4 py-2 md:px-6'>
