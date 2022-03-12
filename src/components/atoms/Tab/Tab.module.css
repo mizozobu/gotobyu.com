@@ -1,0 +1,4 @@
+.tab,
+.tab * {
+  @apply overflow-x-hidden text-ellipsis whitespace-nowrap;
+}
