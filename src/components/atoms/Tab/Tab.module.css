@@ -1,4 +1,9 @@
 .tab,
 .tab * {
-  @apply overflow-x-hidden text-ellipsis whitespace-nowrap;
+  @apply whitespace-nowrap;
+}
+
+.tab:not([aria-selected='true']),
+.tab:not([aria-selected='true']) * {
+  @apply overflow-x-hidden text-ellipsis;
 }

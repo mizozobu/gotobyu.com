@@ -27,13 +27,16 @@ import { MDX } from '@l/mdx';
 <Tab.Group>
   <Tab.List className='flex'>
     <Tab>
-      <span className='font-bold'>TOEFL</span>
+      <span className='font-bold'>TOEFL(iBT)</span>
     </Tab>
     <Tab>
       <span className='font-bold'>IELTS</span>
     </Tab>
     <Tab>
       <span className='font-bold'>PTE</span>
+    </Tab>
+    <Tab>
+      <span className='font-bold'>Cambridge English</span>
     </Tab>
     <Tab>
       <span className='font-bold'>英検</span>
@@ -51,9 +54,15 @@ import { MDX } from '@l/mdx';
     <Tab.Panel>
       <EnglishRequirementByExamTable exam='PTE' data={ENGLISH_REQUIREMENT_BY_EXAM.PTE} />
       [Pearson Test of English(PTE)](https://pearsonpte.com/japanese)はPearsonが主催するテストです。
+      BYUIでは[普通のPTE](https://www.pearsonpte.com/pte-academic)ではなく、[PTE Academic Online](https://www.pearsonpte.com/pte-academic-online)を受験する必要があります。
     </Tab.Panel>
     <Tab.Panel>
-      <EnglishRequirementByExamTable exam='英検' data={ENGLISH_REQUIREMENT_BY_EXAM.EIKEN} />
+      <EnglishRequirementByExamTable exam='Cambridge English' data={ENGLISH_REQUIREMENT_BY_EXAM.cambridge} withUseOfEnglish />
+      [Cambridge English](https://www.cambridgeenglish.org/exams-and-tests/qualifications/general/)はCambridge University Press &amp; Assessmentが主催するテストです。
+      Cambridge Englishは**BYUとBYUIでのみ**認められています。
+    </Tab.Panel>
+    <Tab.Panel>
+      <EnglishRequirementByExamTable exam='英検' data={ENGLISH_REQUIREMENT_BY_EXAM.eiken} />
       [実用英語技能検定(英検)](https://www.eiken.or.jp/eiken/)は公益財団法人日本英語検定協会が主催するテストです。
       英検は**BYUHでのみ**認められています。
     </Tab.Panel>
@@ -76,6 +85,7 @@ import { MDX } from '@l/mdx';
   <Footnote>
     <ExrateAnnotation />
   </Footnote>
+  <Footnote>BYUとBYUIは2学期分、BYUHは3学期分で換算</Footnote>
 </MDX.ul>
 
 
