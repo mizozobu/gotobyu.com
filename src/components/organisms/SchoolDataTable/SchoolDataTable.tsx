@@ -1,56 +1,23 @@
 import { Digit } from '@c/atoms/Digit';
-import { NextImage } from '@c/atoms/NextImage';
 import { Table } from '@c/atoms/Table';
 import { TableCaption } from '@c/atoms/TableCaption';
+import { SchoolTh } from '@c/molecules/SchoolTh';
 import { SCHOOL_INFO } from '@d/school';
-import byuLogoImage from '@p/byu/byu-logo.png';
-import byuhLogoImage from '@p/byuh/byuh-logo.png';
-import byuiLogoImage from '@p/byui/byui-logo.png';
 
 /**
  * Table for school data
  */
-export const SchoolTable = (): JSX.Element => (
-  <Table className='my-2 px-0'>
+export const SchoolDataTable = (): JSX.Element => (
+  <Table>
     <TableCaption description='BYU、BYUH、BYUIの学校データ(生徒数、留学生の割合、生徒と教職員の比率、専攻数)'>
       学校データ
     </TableCaption>
     <thead data-noindex='true'>
       <tr>
         <th scope='col'>{}</th>
-        <th scope='col'>
-          <NextImage
-            className='h-full p-4'
-            src={byuLogoImage}
-            alt='BYU Logo'
-            placeholder='blur'
-            layout='fill'
-            objectFit='scale-down'
-          />
-          <span className='text-byu'>BYU</span>
-        </th>
-        <th scope='col'>
-          <NextImage
-            className='h-full p-4'
-            src={byuhLogoImage}
-            alt='BYUH Logo'
-            placeholder='blur'
-            layout='fill'
-            objectFit='scale-down'
-          />
-          <span className='text-byuh'>BYUH</span>
-        </th>
-        <th scope='col'>
-          <NextImage
-            className='h-full p-4'
-            src={byuiLogoImage}
-            alt='BYUI Logo'
-            placeholder='blur'
-            layout='fill'
-            objectFit='scale-down'
-          />
-          <span className='text-byui'>BYUI</span>
-        </th>
+        <SchoolTh.BYU />
+        <SchoolTh.BYUH />
+        <SchoolTh.BYUI />
       </tr>
     </thead>
     <tbody data-noindex='true'>

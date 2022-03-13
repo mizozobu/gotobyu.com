@@ -17,12 +17,26 @@ export interface EnglishRequirement {
 }
 
 /**
+ * Generic type for English requirement data collection for each school
+ */
+export interface EnglishExamCollection {
+  /** TOEFL data */
+  TOEFL: EnglishRequirement;
+  /** IELTS data */
+  IELTS: EnglishRequirement;
+  /** PTE data */
+  PTE: EnglishRequirement;
+  /** EIKEN data */
+  EIKEN: EnglishRequirement;
+}
+
+/**
  * TOEFL requirement
  * - BYU: @see {@link https://enrollment.byu.edu/admissions/english-proficiency-requirement}
  * - BYUH: @see {@link https://hookele.byuh.edu/admissions/english-test-requirements}
  * - BYUI: @see {@link https://www.byui.edu/admissions/apply/international-students/english-requirements}
  */
-export const TOEFL_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
+const TOEFL_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {
     reading: 20,
     writing: 20,
@@ -52,7 +66,7 @@ export const TOEFL_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
  * - BYUH: @see {@link https://hookele.byuh.edu/admissions/english-test-requirements}
  * - BYUI: @see {@link https://www.byui.edu/admissions/apply/international-students/english-requirements}
  */
-export const IELTS_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
+const IELTS_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {
     reading: 6,
     writing: 6,
@@ -82,7 +96,7 @@ export const IELTS_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
  * - BYUH: @see {@link https://hookele.byuh.edu/admissions/english-test-requirements}
  * - BYUI: @see {@link https://www.byui.edu/admissions/apply/international-students/english-requirements}
  */
-export const PTE_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
+const PTE_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {
     reading: 49,
     writing: 49,
@@ -110,7 +124,7 @@ export const PTE_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
  * EIKEN requirement
  * - BYUH: @see {@link https://hookele.byuh.edu/admissions/english-test-requirements}
  */
-export const EIKEN_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
+const EIKEN_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {
     reading: undefined,
     writing: undefined,
@@ -132,4 +146,60 @@ export const EIKEN_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
     listening: undefined,
     total: undefined,
   },
+};
+
+/**
+ * English requirement for BYU
+ */
+const BYU_REQUIREMENT: EnglishExamCollection = {
+  TOEFL: TOEFL_REQUIREMENT.byu,
+  IELTS: IELTS_REQUIREMENT.byu,
+  PTE: PTE_REQUIREMENT.byu,
+  EIKEN: EIKEN_REQUIREMENT.byu,
+};
+
+/**
+ * English requirement for BYUH
+ */
+const BYUH_REQUIREMENT: EnglishExamCollection = {
+  TOEFL: TOEFL_REQUIREMENT.byuh,
+  IELTS: IELTS_REQUIREMENT.byuh,
+  PTE: PTE_REQUIREMENT.byuh,
+  EIKEN: EIKEN_REQUIREMENT.byuh,
+};
+
+/**
+ * English requirement for BYUI
+ */
+const BYUI_REQUIREMENT: EnglishExamCollection = {
+  TOEFL: TOEFL_REQUIREMENT.byui,
+  IELTS: IELTS_REQUIREMENT.byui,
+  PTE: PTE_REQUIREMENT.byui,
+  EIKEN: EIKEN_REQUIREMENT.byui,
+};
+
+/**
+ * English requirement by test
+ */
+export const ENGLISH_REQUIREMENT_BY_EXAM = {
+  /** TOEFL requirement */
+  TOEFL: TOEFL_REQUIREMENT,
+  /** IELTS requirement */
+  IELTS: IELTS_REQUIREMENT,
+  /** PTE requirement */
+  PTE: PTE_REQUIREMENT,
+  /** EIKEN requirement */
+  EIKEN: EIKEN_REQUIREMENT,
+};
+
+/**
+ * English requirement by school
+ */
+export const ENGLISH_REQUIREMENT_BY_SCHOOL = {
+  /** English requirement for BYU */
+  byu: BYU_REQUIREMENT,
+  /** English requirement for BYUH */
+  byuh: BYUH_REQUIREMENT,
+  /** English requirement for BYUI */
+  byui: BYUI_REQUIREMENT,
 };

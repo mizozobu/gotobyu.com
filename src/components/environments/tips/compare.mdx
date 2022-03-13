@@ -1,11 +1,16 @@
+import classNames from 'classnames';
 import { Footnote } from '@c/atoms/Footnote';
+import { Tab } from '@c/atoms/Tab';
 import { UlCol } from '@c/atoms/UlCol';
 import { CostTable } from '@c/ecosystems/tips/compare/CostTable';
 import { TuitionBarChart } from '@c/ecosystems/tips/compare/TuitionBarChart';
 import { CurrencySwitchControl } from '@c/organisms/CurrencySwitchControl';
+import { DeadlineTable } from '@c/organisms/DeadlineTable';
+import { EnglishRequirementByExamTable } from '@c/organisms/EnglishRequirementByExamTable';
 import { ExrateAnnotation } from '@c/organisms/ExrateAnnotation';
 import { LDSSwitchControl } from '@c/organisms/LDSSwitchControl';
-import { SchoolTable } from '@c/organisms/SchoolTable';
+import { SchoolDataTable } from '@c/organisms/SchoolDataTable';
+import { ENGLISH_REQUIREMENT_BY_EXAM } from '@d/english-requirement';
 import { MDX } from '@l/mdx';
 
 
@@ -14,12 +19,46 @@ import { MDX } from '@l/mdx';
 
 ## 学校データ
 
-<SchoolTable />
+<SchoolDataTable />
 
 
 ## 入学に必要な英語力
 
-[英語の勉強方法](/tips/apply#入学に必要な英語力)を参照してください。
+<Tab.Group>
+  <Tab.List className='flex'>
+    <Tab>
+      <span className='font-bold'>TOEFL</span>
+    </Tab>
+    <Tab>
+      <span className='font-bold'>IELTS</span>
+    </Tab>
+    <Tab>
+      <span className='font-bold'>PTE</span>
+    </Tab>
+    <Tab>
+      <span className='font-bold'>英検</span>
+    </Tab>
+  </Tab.List>
+  <Tab.Panels>
+    <Tab.Panel>
+      <EnglishRequirementByExamTable exam='TOEFL' data={ENGLISH_REQUIREMENT_BY_EXAM.TOEFL} />
+      [Test of English as a Foreign Language(TOEFL)](https://www.toefl-ibt.jp)はEducational Testing Service(ETS)が主催するテストです。
+    </Tab.Panel>
+    <Tab.Panel>
+      <EnglishRequirementByExamTable exam='IELTS' data={ENGLISH_REQUIREMENT_BY_EXAM.IELTS} />
+      [International English Language Testing System(IELTS)](https://www.eiken.or.jp/ielts/)はBritish Council、IDP、Cambridge Assessment Englishが共同で主催するテストです。
+    </Tab.Panel>
+    <Tab.Panel>
+      <EnglishRequirementByExamTable exam='PTE' data={ENGLISH_REQUIREMENT_BY_EXAM.PTE} />
+      [Pearson Test of English(PTE)](https://pearsonpte.com/japanese)はPearsonが主催するテストです。
+    </Tab.Panel>
+    <Tab.Panel>
+      <EnglishRequirementByExamTable exam='英検' data={ENGLISH_REQUIREMENT_BY_EXAM.EIKEN} />
+      [実用英語技能検定(英検)](https://www.eiken.or.jp/eiken/)は公益財団法人日本英語検定協会が主催するテストです。
+      英検は**BYUHでのみ**認められています。
+    </Tab.Panel>
+  </Tab.Panels>
+</Tab.Group>
 
 
 ## 学費

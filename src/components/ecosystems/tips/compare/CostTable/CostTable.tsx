@@ -1,11 +1,8 @@
 import { Digit } from '@c/atoms/Digit';
-import { NextImage } from '@c/atoms/NextImage';
 import { Table } from '@c/atoms/Table';
 import { TableCaption } from '@c/atoms/TableCaption';
+import { SchoolTh } from '@c/molecules/SchoolTh';
 import { COST_OF_ATTENDACE } from '@d/cost-of-attendance';
-import byuLogoImage from '@p/byu/byu-logo.png';
-import byuhLogoImage from '@p/byuh/byuh-logo.png';
-import byuiLogoImage from '@p/byui/byui-logo.png';
 
 /**
  * Props for {@link CostTable}
@@ -25,46 +22,16 @@ export const CostTable = ({ exrate, isJPY, isLDS }: Props): JSX.Element => {
   const ldsRate = isLDS ? 1 : 2;
 
   return (
-    <Table className='my-2 px-0'>
+    <Table>
       <TableCaption description='BYU、BYUH、BYUIの1学期の費用(学費、家賃と食費、教科書費、生活費、交通費、ローン費用)'>
         1学期の費用({isJPY ? '円' : 'ドル'})
       </TableCaption>
       <thead data-noindex='true'>
         <tr>
           <th scope='col'>{}</th>
-          <th scope='col'>
-            <NextImage
-              className='h-full p-4'
-              src={byuLogoImage}
-              alt='BYU Logo'
-              placeholder='blur'
-              layout='fill'
-              objectFit='scale-down'
-            />
-            <span className='text-byu'>BYU</span>
-          </th>
-          <th scope='col'>
-            <NextImage
-              className='h-full p-4'
-              src={byuhLogoImage}
-              alt='BYUH Logo'
-              placeholder='blur'
-              layout='fill'
-              objectFit='scale-down'
-            />
-            <span className='text-byuh'>BYUH</span>
-          </th>
-          <th scope='col'>
-            <NextImage
-              className='h-full p-4'
-              src={byuiLogoImage}
-              alt='BYUI Logo'
-              placeholder='blur'
-              layout='fill'
-              objectFit='scale-down'
-            />
-            <span className='text-byui'>BYUI</span>
-          </th>
+          <SchoolTh.BYU />
+          <SchoolTh.BYUH />
+          <SchoolTh.BYUI />
         </tr>
       </thead>
       <tbody data-noindex='true'>

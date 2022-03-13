@@ -1,23 +1,14 @@
-import classNames from 'classnames';
 import { NextImage } from '@c/atoms/NextImage';
 import { Tab } from '@c/atoms/Tab';
 import { DeadlineTable } from '@c/organisms/DeadlineTable';
-import { EnglishRequirementTable } from '@c/organisms/EnglishRequirementTable';
+import { EnglishRequirementBySchoolTable } from '@c/organisms/EnglishRequirementBySchoolTable';
 import { SchoolTab } from '@c/organisms/SchoolTab';
 import {
   BYU_APPLICATION_DEADLINE,
   BYUH_APPLICATION_DEADLINE,
   BYUI_APPLICATION_DEADLINE,
 } from '@d/application-deadline';
-import {
-  TOEFL_REQUIREMENT,
-  IELTS_REQUIREMENT,
-  PTE_REQUIREMENT,
-  EIKEN_REQUIREMENT,
-} from '@d/english-requirement';
-import byuLogoImage from '@p/byu/byu-logo.png';
-import byuhLogoImage from '@p/byuh/byuh-logo.png';
-import byuiLogoImage from '@p/byui/byui-logo.png';
+import { ENGLISH_REQUIREMENT_BY_SCHOOL } from '@d/english-requirement';
 
 
 # 入学手続き
@@ -54,7 +45,6 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
 
 ## 申込費用
 
-
 申込費用は1校につき **$35**です。
 
 
@@ -67,61 +57,17 @@ BYU、BYUH、BYUIに申し込む場合は[このウェブサイト](https://www.
 主なテストの点数は下の表に記載していますが、他のテストも受け入れられているので各学校のウェブサイトを確認してください。
 直近の受験日の予約が満席になっていたり、受験から結果が出るまでに時間がかかったりするので余裕を持って受験しておきましょう。
 
-<Tab.Group>
-  <Tab.List className='flex'>
-    <Tab
-      className={({ selected }) => classNames(
-        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
-        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
-      )}
-    >
-      <span className='font-bold'>TOEFL</span>
-    </Tab>
-    <Tab
-      className={({ selected }) => classNames(
-        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
-        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
-      )}
-    >
-      <span className='font-bold'>IELTS</span>
-    </Tab>
-    <Tab
-      className={({ selected }) => classNames(
-        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
-        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
-      )}
-    >
-      <span className='font-bold'>PTE</span>
-    </Tab>
-    <Tab
-      className={({ selected }) => classNames(
-        'flex items-center justify-center w-1/3 p-2 border rounded-t-xl',
-        selected ? 'border-b-0 -mt-2 -mb-px' : 'border-b-1 bg-gray-50'
-      )}
-    >
-      <span className='font-bold'>英検</span>
-    </Tab>
-  </Tab.List>
-  <Tab.Panels>
-    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
-      <EnglishRequirementTable exam='TOEFL' data={TOEFL_REQUIREMENT} />
-      [Test of English as a Foreign Language(TOEFL)](https://www.toefl-ibt.jp)はEducational Testing Service(ETS)が主催するテストです。
-    </Tab.Panel>
-    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
-      <EnglishRequirementTable exam='IELTS' data={IELTS_REQUIREMENT} />
-      [International English Language Testing System(IELTS)](https://www.eiken.or.jp/ielts/)はBritish Council、IDP、Cambridge Assessment Englishが共同で主催するテストです。
-    </Tab.Panel>
-    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
-      <EnglishRequirementTable exam='PTE' data={PTE_REQUIREMENT} />
-      [Pearson Test of English(PTE)](https://pearsonpte.com/japanese)はPearsonが主催するテストです。
-    </Tab.Panel>
-    <Tab.Panel className='px-4 md:px-8 py-8 border-r border-b border-l rounded-b-xl space-y-8'>
-      <EnglishRequirementTable exam='英検' data={EIKEN_REQUIREMENT} />
-      [実用英語技能検定(英検)](https://www.eiken.or.jp/eiken/)は公益財団法人日本英語検定協会が主催するテストです。
-      英検は**BYUHでのみ**認められています。
-    </Tab.Panel>
-  </Tab.Panels>
-</Tab.Group>
+<SchoolTab>
+  <SchoolTab.Panel paneFor='byu'>
+     <EnglishRequirementBySchoolTable school='BYU' data={ENGLISH_REQUIREMENT_BY_SCHOOL.byu} />
+  </SchoolTab.Panel>
+  <SchoolTab.Panel paneFor='byuh'>
+    <EnglishRequirementBySchoolTable school='BYUH' data={ENGLISH_REQUIREMENT_BY_SCHOOL.byuh} />
+  </SchoolTab.Panel>
+  <SchoolTab.Panel paneFor='byui'>
+    <EnglishRequirementBySchoolTable school='BYUI' data={ENGLISH_REQUIREMENT_BY_SCHOOL.byui} />
+  </SchoolTab.Panel>
+</SchoolTab>
 
 
 ## SAT/ACT
