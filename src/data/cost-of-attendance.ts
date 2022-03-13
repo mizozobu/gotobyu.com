@@ -26,11 +26,11 @@ export interface ConstOfAttendance {
  */
 export const COST_OF_ATTENDACE: SchoolDataCollection<ConstOfAttendance> = {
   byu: {
-    tuition: 5970 / 2,
-    housing: 7808 / 2,
-    books: 896 / 2,
-    personal: 2408 / 2,
-    transportation: 2512 / 2,
+    tuition: 6120 / 2,
+    housing: 8048 / 2,
+    books: 912 / 2,
+    personal: 2456 / 2,
+    transportation: 2560 / 2,
     loan: 60 / 2,
   },
   byuh: {
@@ -42,10 +42,10 @@ export const COST_OF_ATTENDACE: SchoolDataCollection<ConstOfAttendance> = {
     loan: 0 / 2,
   },
   byui: {
-    tuition: 2150,
-    housing: 2184,
+    tuition: 2208,
+    housing: 2226,
     books: 200,
-    personal: 1192,
+    personal: 1176,
     transportation: 630,
     loan: 0 / 2,
   },

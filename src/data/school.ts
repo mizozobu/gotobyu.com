@@ -34,35 +34,35 @@ export interface SchoolInfo {
  * | | BYU | BYUH | BYUI |
  * | -- | -- | -- | -- |
  * | Number of students | https://www.byu.edu/facts-figures | https://about.byuh.edu/00000177-1ce4-d89c-af77-7df626210000/20-11-09-quickfactsupdate-pdf | https://www.byui.edu/executive-strategy-and-planning/institutional-data/official-enrollment-statistics |
- * | International student ratio | https://www.usnews.com/best-colleges/byu-3670 | https://about.byuh.edu/00000177-1ce4-d89c-af77-7df626210000/20-11-09-quickfactsupdate-pdf | https://www.collegefactual.com/colleges/brigham-young-university-idaho/student-life/international/ |
- * | Student to faculty ratio | https://www.usnews.com/best-colleges/byu-3670 | https://about.byuh.edu/00000177-1ce4-d89c-af77-7df626210000/20-11-09-quickfactsupdate-pdf | https://www.communitycollegereview.com/brigham-young-university-idaho-profile |
- * | Number of majors | https://www.byu.edu/facts-figures | https://holokai.byuh.edu/programs-of-study# | https://www.collegefactual.com/colleges/brigham-young-university-idaho/academic-life/academic-majors/ |
+ * | International student ratio | https://www.collegefactual.com/colleges/brigham-young-university-provo/student-life/international/ | https://about.byuh.edu/00000177-1ce4-d89c-af77-7df626210000/20-11-09-quickfactsupdate-pdf | https://www.collegefactual.com/colleges/brigham-young-university-idaho/student-life/international/ |
+ * | Student to faculty ratio | https://www.usnews.com/best-colleges/byu-3670 | https://www.byuh.edu/academics | https://www.communitycollegereview.com/brigham-young-university-idaho-profile |
+ * | Number of majors | https://www.byu.edu/facts-figures | https://www.byuh.edu/academics, https://holokai.byuh.edu/programs-of-study# | https://www.byui.edu/campus-career-and-academic-advising/career-and-major-exploration/major-to-career |
  * | Number of courses | https://catalog.byu.edu/courses | https://catalog.byuh.edu/courses | https://www.byui.edu/catalog#/courses |
- * | Acceptance rate | https://enrollment.byu.edu/admissions/entrance-averages | https://www.usnews.com/best-colleges/brigham-young-university-hawaii-1606 | https://www.byui.edu/admissions/application-help/academic-requirements |
+ * | Acceptance rate | https://www.byu.edu/admissions | https://www.byuh.edu/admissions-aid | https://www.byui.edu/admissions/application-help/academic-requirements |
  */
 export const SCHOOL_INFO: SchoolDataCollection<SchoolInfo> = {
   byu: {
-    numberOfStudents: 36024,
-    internationStudentRatio: 4.5,
-    studentToFaculty: '20:1',
-    numberOfMajors: 186,
-    numberOfCourses: 5765,
+    numberOfStudents: 31627,
+    internationStudentRatio: 3.8,
+    studentToFaculty: '21:1',
+    numberOfMajors: 190,
+    numberOfCourses: 5715,
     acceptanceRate: 0.59,
   },
   byuh: {
     numberOfStudents: 3096,
     internationStudentRatio: 48,
-    studentToFaculty: '17:1',
-    numberOfMajors: 65,
-    numberOfCourses: 935,
-    acceptanceRate: 0.45,
+    studentToFaculty: '16:1',
+    numberOfMajors: 37,
+    numberOfCourses: 930,
+    acceptanceRate: 0.42,
   },
   byui: {
-    numberOfStudents: 21140,
+    numberOfStudents: 23703,
     internationStudentRatio: 15.5,
-    studentToFaculty: '48:1',
-    numberOfMajors: 69,
-    numberOfCourses: 2090,
+    studentToFaculty: '19:1',
+    numberOfMajors: 77,
+    numberOfCourses: 2109,
     acceptanceRate: 0.96,
   },
 };
