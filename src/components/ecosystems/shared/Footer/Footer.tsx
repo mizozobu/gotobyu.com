@@ -1,7 +1,7 @@
 import { MailIcon, LinkIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
-import { BorderDraw } from '@c/atoms/BorderDraw';
 import { FacebookIcon } from '@c/atoms/FacebookIcon';
+import { RippleButton } from '@c/atoms/RippleButton';
 
 /**
  * Footer
@@ -23,12 +23,13 @@ export const Footer = (): JSX.Element => (
           className='rounded-full'
           aria-label='email'
         >
-          <BorderDraw
-            className='flex h-14 w-14 items-center justify-center p-4'
-            borderColor='white'
+          <RippleButton
+            className='flex h-14 w-14 items-center justify-center rounded-full border border-white p-4'
+            backgroundColor='rgb(49 46 129)'
+            rippleColor='white'
           >
             <MailIcon className='h-8 w-8' />
-          </BorderDraw>
+          </RippleButton>
         </a>
         <a
           href='https://www.facebook.com/BYUMSJP'
@@ -37,12 +38,13 @@ export const Footer = (): JSX.Element => (
           className='rounded-full'
           aria-label='facebook'
         >
-          <BorderDraw
-            className='flex h-14 w-14 items-center justify-center p-4'
-            borderColor='white'
+          <RippleButton
+            className='flex h-14 w-14 items-center justify-center rounded-full border border-white p-4'
+            backgroundColor='rgb(49 46 129)'
+            rippleColor='white'
           >
             <FacebookIcon className='h-8 w-8' />
-          </BorderDraw>
+          </RippleButton>
         </a>
         <a
           href='https://byums.byu.edu/tokyo/'
@@ -51,12 +53,13 @@ export const Footer = (): JSX.Element => (
           className='rounded-full'
           aria-label='website'
         >
-          <BorderDraw
-            className='flex h-14 w-14 items-center justify-center p-4'
-            borderColor='white'
+          <RippleButton
+            className='flex h-14 w-14 items-center justify-center rounded-full border border-white p-4'
+            backgroundColor='rgb(49 46 129)'
+            rippleColor='red'
           >
             <LinkIcon className='h-8 w-8' />
-          </BorderDraw>
+          </RippleButton>
         </a>
       </div>
     </div>
