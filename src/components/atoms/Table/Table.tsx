@@ -1,6 +1,5 @@
 import classNames from 'classnames';
-import type { ComponentPropsWithoutRef } from 'react';
-import { Style } from '@c/atoms/Style';
+import type { ComponentPropsWithoutRef, CSSProperties } from 'react';
 import styles from './Table.module.css';
 
 /**
@@ -28,16 +27,15 @@ export const Table = ({
       'overflow-x-auto overflow-y-hidden whitespace-nowrap rounded-md',
       className,
     )}
+    style={
+      {
+        '--thick-border-color': thickBorderColor ?? '',
+      } as CSSProperties
+    }
   >
     <table
       {...props}
       className={classNames('min-w-full table-auto', styles.table)}
-    />
-    <Style
-      selector={`.${styles.table}`}
-      styles={{
-        '--thick-border-color': thickBorderColor ?? '',
-      }}
     />
   </div>
 );

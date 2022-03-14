@@ -1,6 +1,10 @@
 import classNames from 'classnames';
-import { useState, useEffect, ComponentPropsWithoutRef } from 'react';
-import { Style } from '@c/atoms/Style';
+import {
+  useState,
+  useEffect,
+  ComponentPropsWithoutRef,
+  CSSProperties,
+} from 'react';
 import styles from './Type.module.css';
 
 /**
@@ -77,24 +81,23 @@ export const Type = ({
   }, [text, typed, status, typeSpeed, waitAfterType, waitBeforeType, onBack]);
 
   return (
-    <>
-      <span {...props}>
-        {typed.substring(0, typed.length - 1)}
-        <span
-          className={classNames(
-            styles.type,
-            status === Status.waiting ? styles.stopped : styles.typing,
-          )}
-        >
-          {typed[typed.length - 1]}
-        </span>
-      </span>
-      <Style
-        selector={`.${styles.type}`}
-        styles={{
+    <span
+      {...props}
+      style={
+        {
           '--caret-width': caretWidth,
-        }}
-      />
-    </>
+        } as CSSProperties
+      }
+    >
+      {typed.substring(0, typed.length - 1)}
+      <span
+        className={classNames(
+          styles.type,
+          status === Status.waiting ? styles.stopped : styles.typing,
+        )}
+      >
+        {typed[typed.length - 1]}
+      </span>
+    </span>
   );
 };
