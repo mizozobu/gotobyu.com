@@ -43,6 +43,7 @@
     "slick-carousel": "^1.8.1",
     "unified": "^10.1.1",
     "unist-util-visit": "^4.1.0",
+    "unist-util-visit-cjs": "npm:unist-util-visit@2.x",
     "webpack": "^5.70.0"
   },
   "devDependencies": {

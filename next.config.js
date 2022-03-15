@@ -7,11 +7,25 @@ const withBundleAnalyzer =
 /* eslint-enable import/no-extraneous-dependencies */
 const rehypeSlug = require('rehype-slug');
 const remarkSectionize = require('remark-sectionize');
+const visit = require('unist-util-visit-cjs');
 
+/**
+ * Remark plugin to remove a space converted from a new line in markdown
+ */
+const remarkJPN = () => (tree) => {
+  visit(tree, 'text', (node) => {
+    // eslint-disable-next-line no-param-reassign
+    node.value = node.value.replace(/\r\n|\r|\n/g, '');
+  });
+};
+
+/**
+ * MDX setting
+ */
 const withMDX = mdxFactory({
   extension: /\.mdx$/,
   options: {
-    remarkPlugins: [remarkSectionize],
+    remarkPlugins: [remarkSectionize, remarkJPN],
     rehypePlugins: [rehypeSlug],
   },
 });
