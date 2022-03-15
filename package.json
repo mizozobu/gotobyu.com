@@ -80,7 +80,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "lint-staged": "^12.3.5",
-    "next-sitemap": "^2.5.9",
+    "next-sitemap": "^2.5.10",
     "postcss": "^8.4.8",
     "postcss-loader": "^6.2.1",
     "prettier": "^2.5.1",
