@@ -83,7 +83,7 @@
     "next-sitemap": "^2.5.10",
     "postcss": "^8.4.11",
     "postcss-loader": "^6.2.1",
-    "prettier": "^2.5.1",
+    "prettier": "^2.6.0",
     "prettier-plugin-tailwindcss": "^0.1.8",
     "storybook": "^6.4.19",
     "storybook-addon-next-router": "^3.1.1",
