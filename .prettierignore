@@ -1,6 +1,6 @@
 /.next
+/.storybook-static
 /node_modules
-/storybook-static
 
 *.md
 *.mdx

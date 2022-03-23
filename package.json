@@ -13,10 +13,12 @@
     "typecheck": "tsc --noEmit --project tsconfig.json",
     "analyze": "cross-env ANALYZE=true yarn build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -o .storybook-static",
     "algolia": "node --loader ./src/bin/loader.mjs --experimental-specifier-resolution=node ./src/bin/algolia.ts",
     "ut": "node --experimental-vm-modules --experimental-json-modules $(yarn bin jest)",
-    "ut:debug": "node --experimental-vm-modules --experimental-json-modules --inspect $(yarn bin jest) --runInBand"
+    "ut:debug": "node --experimental-vm-modules --experimental-json-modules --inspect $(yarn bin jest) --runInBand",
+    "e2e": "playwright test",
+    "e2e:debug": "cross-env PWDEBUG=1 yarn e2e"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
@@ -51,6 +53,7 @@
     "@jest/globals": "^27.5.1",
     "@next/bundle-analyzer": "^12.1.5",
     "@next/eslint-plugin-next": "^12.1.5",
+    "@playwright/test": "^1.20.2",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/builder-webpack5": "^6.4.22",
     "@storybook/manager-webpack5": "^6.4.22",
@@ -72,6 +75,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.1.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-playwright": "^0.8.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-storybook": "^0.5.10",

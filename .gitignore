@@ -34,13 +34,16 @@ yarn-error.log*
 *.tsbuildinfo
 
 # vercel
-.vercel
+/.vercel
 
 # storybook
-storybook-static
+/.storybook-static
+
+# playwright
+/test-results
 
 # lighthosue
-.lighthouseci
+/.lighthouseci
 
 # robots.txt
 /public/robots.txt
