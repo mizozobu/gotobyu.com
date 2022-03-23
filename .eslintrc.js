@@ -106,12 +106,12 @@ module.exports = {
       plugins: ['@typescript-eslint'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
-        project: './tsconfig.json',
+        project: './tsconfig.base.json',
       },
       settings: {
         'import/resolver': {
           typescript: {
-            project: './tsconfig.json',
+            project: './tsconfig.base.json',
           },
         },
       },
@@ -167,7 +167,11 @@ module.exports = {
         'import/no-extraneous-dependencies': [
           'error',
           {
-            devDependencies: ['.storybook/**', '**/*.stories.tsx'],
+            devDependencies: [
+              '**/*.stories.jsx',
+              '**/*.stories.tsx',
+              '.storybook/**',
+            ],
           },
         ],
       },
@@ -178,10 +182,10 @@ module.exports = {
      */
     {
       files: [
-        '**/*.spec.js',
-        '**/*.spec.ts',
-        '**/*.spec.jsx',
-        '**/*.spec.tsx',
+        'src/**/*.spec.js',
+        'src/**/*.spec.ts',
+        'src/**/*.spec.jsx',
+        'src/**/*.spec.tsx',
         'jest.*',
       ],
       extends: ['plugin:jest/all'],
@@ -212,6 +216,27 @@ module.exports = {
 
         // allow upper case at the first charactor of describe, it, ...
         'jest/prefer-lowercase-title': 'off',
+      },
+    },
+
+    /**
+     * playwright
+     */
+    {
+      files: ['e2e/**/*.js', 'e2e/**/*.ts', 'playwright.config.ts'],
+      extends: ['plugin:playwright/playwright-test'],
+      rules: {
+        // allow importing devDependencies in tests
+        'import/no-extraneous-dependencies': [
+          'error',
+          {
+            devDependencies: [
+              'e2e/**/*.js',
+              'e2e/**/*.ts',
+              'playwright.config.ts',
+            ],
+          },
+        ],
       },
     },
 
