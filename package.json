@@ -12,8 +12,8 @@
     "format": "eslint --fix . && stylelint --fix . && prettier --write --loglevel warn .",
     "typecheck": "tsc --noEmit --project tsconfig.json",
     "analyze": "cross-env ANALYZE=true yarn build",
-    "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook -s public",
+    "sb": "start-storybook -p 6006",
+    "sb:build": "build-storybook",
     "algolia": "node --loader ./src/bin/loader.mjs --experimental-specifier-resolution=node ./src/bin/algolia.ts",
     "ut": "node --experimental-vm-modules --experimental-json-modules $(yarn bin jest)",
     "ut:debug": "node --experimental-vm-modules --experimental-json-modules --inspect $(yarn bin jest) --runInBand"
