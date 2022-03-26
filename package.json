@@ -18,7 +18,8 @@
     "ut": "node --experimental-vm-modules --experimental-json-modules $(yarn bin jest)",
     "ut:debug": "node --experimental-vm-modules --experimental-json-modules --inspect $(yarn bin jest) --runInBand",
     "e2e": "playwright test",
-    "e2e:debug": "cross-env PWDEBUG=1 yarn e2e"
+    "e2e:debug": "cross-env PWDEBUG=1 yarn e2e",
+    "vrt": "reg-cli .reg/actual .reg/expected .reg/diff -R .reg/report.html -J .reg/reg.json -E"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
@@ -88,6 +89,7 @@
     "postcss-loader": "^6.2.1",
     "prettier": "^2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.8",
+    "reg-cli": "^0.17.6",
     "storybook": "^6.4.22",
     "storybook-addon-next-router": "^3.1.1",
     "stylelint": "^14.7.0",
