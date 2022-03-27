@@ -1,0 +1,25 @@
+name: Prepare
+description: Prepare repository, node.js, and node_modules
+runs:
+  using: composite
+  steps:
+    - name: Get node.js version
+      id: get-node-version
+      run: echo ::set-output name=nodeVersion::$(node -p "require('./package.json').engines.node")
+      shell: bash
+    - name: Use node.js ${{ steps.get-node-version.outputs.nodeVersion }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ steps.get-node-version.outputs.nodeVersion }}
+    - name: Cache node_modules
+      id: cache-node-modules
+      uses: actions/cache@v3
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-${{ steps.get-node-version.outputs.nodeVersion }}-nodemodules-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-${{ steps.get-node-version.outputs.nodeVersion }}-nodemodules-
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile --prefer-offline
+      shell: bash
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'

@@ -1,0 +1,22 @@
+name: Build
+description: Build next.js app
+runs:
+  using: composite
+  steps:
+    - name: Prepare
+      uses: ./.github/actions/prepare
+    - name: Cache build
+      id: cache-build
+      uses: actions/cache@v3
+      with:
+        path: |
+          ${{ github.workspace }}/.next
+          !${{ github.workspace }}/.next/cache
+        key: ${{ runner.os }}-nextjs-${{ hashFiles('**.[jt]sx?') }}-${{ hashFiles('**/yarn.lock') }}-
+        restore-keys: |
+          ${{ runner.os }}-nextjs-${{ hashFiles('**.[jt]sx?') }}-
+          ${{ runner.os }}-nextjs-
+    - name: Build app
+      run: NODE_ENV=test yarn build
+      shell: bash
+      if: steps.cache-build.outputs.cache-hit != 'true'

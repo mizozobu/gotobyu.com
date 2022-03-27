@@ -1,0 +1,30 @@
+name: Deploy
+description: Deploy to vercel
+inputs:
+  production:
+    required: true
+    default: 'false'
+    description: Set 'true' to deploy to production environment
+  github-token:
+    required: true
+    description: GitHub Access Token
+  vercel-token:
+    required: true
+    description: Vercel Token
+  vercel-org-id:
+    required: true
+    description: Vercel Organization ID
+  vercel-project-id:
+    required: true
+    description: Vercel Project ID
+runs:
+  using: composite
+  steps:
+    - name: Deploy to vercel
+      uses: amondnet/vercel-action@v20
+      with:
+        github-token: ${{ inputs.github-token }}
+        vercel-token: ${{ inputs.vercel-token }}
+        vercel-org-id: ${{ inputs.vercel-org-id}}
+        vercel-project-id: ${{ inputs.vercel-project-id}}
+        vercel-args: ${{ inputs.production == 'true' && '--prod' || '' }}
