@@ -41,7 +41,7 @@ Open [http://localhost:6006](http://localhost:6006) with your browser to see the
 yarn lint
 
 # auto fix
-yarn format
+yarn lint:fix
 ```
 
 ### Test
