@@ -1,0 +1,170 @@
+name: PR
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  onboard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - name: Check if skippable
+        id: skip_check
+        uses: fkirc/skip-duplicate-actions@master
+        with:
+          paths_ignore: '[".husky", ".vscode", ".commitlintrc.js", ".editorconfig", ".lintstagedrc", "README.md", "renovate.json"]'
+
+  setup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs:
+      - onboard
+    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build
+        uses: ./.github/actions/build
+
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs:
+      - setup
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Prepare
+        uses: ./.github/actions/prepare
+      - name: Lint
+        run: yarn lint
+
+  ut:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs:
+      - setup
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Prepare
+        uses: ./.github/actions/prepare
+      - name: Unit test
+        run: yarn ut
+
+  # e2e:
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 5
+  #   needs:
+  #     - setup
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v3
+  #       with:
+  #         token: ${{ secrets.GITHUB_TOKEN }}
+  #     - name: Build
+  #       uses: ./.github/actions/build
+  #     - name: E2E test
+  #       run: yarn e2e
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs:
+      - setup
+      - lint
+      - ut
+      # - e2e
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build
+        uses: ./.github/actions/build
+      - name: Lighthouse
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          configPath: './.lighthouserc.js'
+          uploadArtifacts: true
+      - name: Generate lighthouse summary
+        id: generate_lighthouse_summary
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const manifest = ${{ steps.lighthouse.outputs.manifest }};
+            const f = d => {
+              const i = Math.round(d * 100);
+              if(i == null) return `-`;
+              if(i >= 90) return `:white_check_mark: ${i}`;
+              if(i >= 50) return `:warning: ${i}`;
+              return `:exclamation: ${i}`;
+            };
+            const comment = [
+              `:zap: Lighthouse Report :zap:`,
+              ``,
+              `|    | Performance | Accessibility | Best Practices | SEO | PWA |`,
+              `| :- | :---------: | :-----------: | :------------: | :-: | :-: |`,
+              ...manifest.map(({ url, summary }) => (
+                `| ${url.replace(/^https?:\/\/[^\/]+/, '')} | ${f(summary.performance)} | ${f(summary.accessibility)} | ${f(summary['best-practices'])} | ${f(summary.seo)} | ${f(summary.pwa)} |`
+              )),
+              ``,
+              `View full report by downloading artifacts at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`,
+            ].join(`\n`);
+            core.setOutput(`comment`, comment);
+      - name: Post lighthouse summary
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          number: ${{ github.event.issue.number }}
+          message: ${{ steps.generate_lighthouse_summary.outputs.comment }}
+
+  storybook:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs:
+      - setup
+      - lint
+      - ut
+      # - e2e
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Prepare
+        uses: ./.github/actions/prepare
+      - name: Build storybook
+        run: yarn build-storybook --quiet
+
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs:
+      - setup
+      - lint
+      - ut
+      # - e2e
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to vercel
+        uses: ./.github/actions/deploy
+        with:
+          production: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
