@@ -1,0 +1,18 @@
+name: Storybook
+
+on:
+  workflow_call:
+
+jobs:
+  storybook:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Prepare
+        uses: ./.github/actions/prepare
+      - name: Build storybook
+        run: yarn build-storybook --quiet

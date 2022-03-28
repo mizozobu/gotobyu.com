@@ -1,0 +1,52 @@
+name: Lighthouse
+
+on:
+  workflow_call:
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build
+        uses: ./.github/actions/build
+      - name: Lighthouse
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          configPath: './.lighthouserc.js'
+          uploadArtifacts: true
+      - name: Generate lighthouse summary
+        id: generate_lighthouse_summary
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const manifest = ${{ steps.lighthouse.outputs.manifest }};
+            const f = d => {
+              const i = Math.round(d * 100);
+              if(i == null) return `-`;
+              if(i >= 90) return `:white_check_mark: ${i}`;
+              if(i >= 50) return `:warning: ${i}`;
+              return `:exclamation: ${i}`;
+            };
+            const comment = [
+              `:zap: Lighthouse Report :zap:`,
+              ``,
+              `|    | Performance | Accessibility | Best Practices | SEO | PWA |`,
+              `| :- | :---------: | :-----------: | :------------: | :-: | :-: |`,
+              ...manifest.map(({ url, summary }) => (
+                `| ${url.replace(/^https?:\/\/[^\/]+/, '')} | ${f(summary.performance)} | ${f(summary.accessibility)} | ${f(summary['best-practices'])} | ${f(summary.seo)} | ${f(summary.pwa)} |`
+              )),
+              ``,
+              `View full report by downloading artifacts at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`,
+            ].join(`\n`);
+            core.setOutput(`comment`, comment);
+      - name: Post lighthouse summary
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          number: ${{ github.event.issue.number }}
+          message: ${{ steps.generate_lighthouse_summary.outputs.comment }}
