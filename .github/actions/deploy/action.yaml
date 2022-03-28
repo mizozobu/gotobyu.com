@@ -3,8 +3,8 @@ description: Deploy to vercel
 inputs:
   production:
     required: true
-    default: 'false'
-    description: Set 'true' to deploy to production environment
+    default: false
+    description: Whether to deploy to production environment
   github-token:
     required: true
     description: GitHub Access Token
