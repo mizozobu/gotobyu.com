@@ -6,7 +6,7 @@ on:
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -19,15 +19,14 @@ jobs:
         uses: treosh/lighthouse-ci-action@v9
         with:
           configPath: './.lighthouserc.js'
-          uploadArtifacts: true
+          runs: 3
       - name: Generate lighthouse summary
         id: generate_lighthouse_summary
         uses: actions/github-script@v6
         with:
           script: |
-            const manifest = ${{ steps.lighthouse.outputs.manifest }};
             const f = d => {
-              const i = Math.round(d * 100);
+              const i = Math.round(d / 3 * 100);
               if(i == null) return `-`;
               if(i >= 90) return `:white_check_mark: ${i}`;
               if(i >= 50) return `:warning: ${i}`;
@@ -38,11 +37,25 @@ jobs:
               ``,
               `|    | Performance | Accessibility | Best Practices | SEO | PWA |`,
               `| :- | :---------: | :-----------: | :------------: | :-: | :-: |`,
-              ...manifest.map(({ url, summary }) => (
+              ...Object.entries(${{ steps.lighthouse.outputs.manifest }}.reduce((cumulative, { url, summary }) => {
+                const currentSummary = cumulative[url];
+                if (currentSummary) {
+                  return {
+                    ...cumulative,
+                    [url]: {
+                      performance: currentSummary.performance + summary.performance,
+                      accessibility: currentSummary.accessibility + summary.accessibility,
+                      'best-practices': currentSummary['best-practices'] + summary['best-practices'],
+                      seo: currentSummary.seo + summary.seo,
+                      pwa: currentSummary.pwa + summary.pwa,
+                    },
+                  };
+                }
+                return { ...cumulative, [url]: summary };
+              }, {})).map(([url, summary]) => (
                 `| ${url.replace(/^https?:\/\/[^\/]+/, '')} | ${f(summary.performance)} | ${f(summary.accessibility)} | ${f(summary['best-practices'])} | ${f(summary.seo)} | ${f(summary.pwa)} |`
               )),
               ``,
-              `View full report by downloading artifacts at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`,
             ].join(`\n`);
             core.setOutput(`comment`, comment);
       - name: Post lighthouse summary to commit
