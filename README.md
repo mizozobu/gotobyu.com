@@ -1,6 +1,6 @@
 # gotobyu.com
 
-![CI](https://github.com/mizozobu/gotobyu.com/workflows/CI/badge.svg)
+[![CI](https://github.com/mizozobu/gotobyu.com/actions/workflows/ci.yaml/badge.svg)](https://github.com/mizozobu/gotobyu.com/actions/workflows/ci.yaml)
 [![renovate](https://img.shields.io/badge/renovate-enabled-%231A1F6C?logo=renovatebot)](https://app.renovatebot.com/dashboard#github/mizozobu/gotobyu.com)
 
 ## Tech Stack
