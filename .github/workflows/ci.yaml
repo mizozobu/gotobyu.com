@@ -1,9 +1,8 @@
-name: Pull Request
+name: Continuous Integration
 
 on:
-  pull_request:
+  push:
     branches:
-      - master
 
 jobs:
   onboard:
@@ -11,7 +10,7 @@ jobs:
 
   setup:
     uses: ./.github/workflows/setup.yaml
-    if: ${{ needs.pre_job.outputs.should_skip != 'true' }}
+    if: ${{ needs.onboard.outputs.should_skip != 'true' }}
     needs:
       - onboard
 
@@ -54,7 +53,7 @@ jobs:
       - ut
       # - e2e
     with:
-      production: false
+      production: ${{ github.ref_name == 'master' }}
     secrets:
       vercel-token: ${{ secrets.VERCEL_TOKEN }}
       vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}

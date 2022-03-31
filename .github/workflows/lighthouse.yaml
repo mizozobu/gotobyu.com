@@ -45,8 +45,7 @@ jobs:
               `View full report by downloading artifacts at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`,
             ].join(`\n`);
             core.setOutput(`comment`, comment);
-      - name: Post lighthouse summary
-        uses: marocchino/sticky-pull-request-comment@v2
+      - name: Post lighthouse summary to commit
+        uses: peter-evans/commit-comment@v2
         with:
-          number: ${{ github.event.issue.number }}
-          message: ${{ steps.generate_lighthouse_summary.outputs.comment }}
+          body: ${{ steps.generate_lighthouse_summary.outputs.comment }}
