@@ -18,4 +18,6 @@ jobs:
         id: skip_check
         uses: fkirc/skip-duplicate-actions@master
         with:
+          cancel_others: true
+          concurrent_skipping: same_content_newer
           paths_ignore: '[".husky", ".vscode", ".commitlintrc.js", ".editorconfig", ".lintstagedrc", "README.md", "renovate.json"]'
