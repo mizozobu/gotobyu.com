@@ -8,6 +8,7 @@ const { paths } = tsConfigPaths.loadConfig();
 export default {
   preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'node',
+  testMatch: ['<rootDir>/src/**/?(*.)+(spec|test).[jt]s?(x)'],
   restoreMocks: true,
   moduleNameMapper: {
     // see https://kulshekhar.github.io/ts-jest/docs/getting-started/paths-mapping/

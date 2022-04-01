@@ -24,6 +24,7 @@ module.exports = {
       '~': resolve(__dirname, '..', 'src'),
       '@c': resolve(__dirname, '..', 'src', 'components'),
       '@d': resolve(__dirname, '..', 'src', 'data'),
+      '@e': resolve(__dirname, '..', 'e2e'),
       '@p': resolve(__dirname, '..', 'public'),
       '@l': resolve(__dirname, '..', 'src', 'lib'),
       '@s': resolve(__dirname, '..', 'src', 'states'),
