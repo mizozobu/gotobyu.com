@@ -1,6 +1,10 @@
+import { loadEnvConfig } from '@next/env';
 import { PlaywrightTestConfig, devices } from '@playwright/test';
 
+loadEnvConfig(process.cwd());
+
 const config: PlaywrightTestConfig = {
+  testDir: 'e2e',
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   use: {

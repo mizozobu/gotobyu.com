@@ -19,6 +19,7 @@
       "~/*": ["src/*"],
       "@c/*": ["src/components/*"],
       "@d/*": ["src/data/*"],
+      "@e/*": ["e2e/*"],
       "@p/*": ["public/*"],
       "@l/*": ["src/lib/*"],
       "@s/*": ["src/states/*"]
