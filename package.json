@@ -18,8 +18,8 @@
     "ut": "node --experimental-vm-modules --experimental-json-modules $(yarn bin jest)",
     "ut:debug": "node --experimental-vm-modules --experimental-json-modules --inspect $(yarn bin jest) --runInBand",
     "e2e": "playwright test",
-    "e2e:debug": "cross-env PWDEBUG=1 yarn e2e",
-    "vrt": "reg-cli .reg/actual .reg/expected .reg/diff -R .reg/report.html -J .reg/reg.json -E"
+    "e2e:debug": "yarn e2e --debug",
+    "vrt": "reg-cli .reg/actual .reg/expected .reg/diff -R .reg/report.html -J .reg/reg.json -T 0.01 -E"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
