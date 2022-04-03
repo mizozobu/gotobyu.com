@@ -1,13 +1,14 @@
-import { test } from '@playwright/test';
-import { toAbsUrl, toSnapshotPath, loadLazyElements } from '@e/e2e.util';
+import { test, expect } from '@e/e2e.fixture';
+import { toAbsUrl, loadLazyElements } from '@e/e2e.util';
 
-test('take screenshots', async ({ page }, testInfo) => {
+test('visual regression test', async ({ fakeTimerPage: page }, testInfo) => {
   await page.goto(toAbsUrl('/tips/internship'));
-  await loadLazyElements(page);
+  await loadLazyElements(page, testInfo);
 
-  await page.screenshot({
-    path: toSnapshotPath('init', testInfo),
+  const screenshot = await page.screenshot({
     fullPage: true,
     animations: 'disabled',
   });
+
+  expect(screenshot).toMatchSnapshot('init.png');
 });
