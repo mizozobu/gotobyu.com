@@ -1,4 +1,4 @@
-import type { TestInfo, Page } from '@playwright/test';
+import type { Page, TestInfo } from '@playwright/test';
 import { getEnvVar } from '@l/env';
 
 /**
@@ -21,38 +21,39 @@ export const toSnapshotPath = (name: string, testInfo: TestInfo): string =>
   }.png`;
 
 /**
- * Load lazy-load elements on the page
+ * Load lazy-load elements on the page.
+ * Use setTimeout on node.js side since browser setTimeout is mocked
  * @param page PlayWright page object
+ * @param testInfo PlayWright test info object
+ * @param _options extra options
  */
 export const loadLazyElements = async (
   page: Page,
-  options: { waitAfterZoomout?: number; waitAfterZoomIn?: number } = {},
-): Promise<void> =>
-  page.evaluate(async ({ waitAfterZoomout = 1000, waitAfterZoomIn = 1000 }) => {
-    /** option1: load by zoom */
+  testInfo: TestInfo,
+  _options: {
+    /** Milliseconds to wait after zooming out */
+    waitAfterZoomOut?: number;
+    /** Milliseconds to wait after zooming back in */
+    waitAfterZoomIn?: number;
+  } = {},
+): Promise<void> => {
+  const { waitAfterZoomOut, waitAfterZoomIn } = {
+    waitAfterZoomOut: 1000,
+    waitAfterZoomIn: 1000,
+    ..._options,
+  };
+  await page.evaluate(() => {
     document.documentElement.style.transform = 'scale(0.01)';
     document.getElementById('content')?.scrollIntoView();
-    await new Promise((r) => {
-      setTimeout(r, waitAfterZoomout);
-    });
+  });
+  await new Promise((r) => {
+    setTimeout(r, waitAfterZoomOut * (testInfo.retry + 1));
+  });
+  await page.evaluate(() => {
     document.documentElement.style.transform = 'scale(1)';
     window.scrollTo(0, 0);
-    await new Promise((r) => {
-      setTimeout(r, waitAfterZoomIn);
-    });
-
-    /** option 2: load by scroll */
-    // const vh = Math.max(
-    //   document.documentElement.clientHeight || 0,
-    //   window.innerHeight || 0,
-    // );
-
-    // let i = 1;
-    // while (vh * i < document.documentElement.scrollHeight) {
-    //   console.log('scroll');
-    //   window.scrollTo({ top: vh * i });
-    //   // eslint-disable-next-line no-await-in-loop, no-promise-executor-return
-    //   await new Promise((r) => setTimeout(r, 500));
-    //   i += 1;
-    // }
-  }, options);
+  });
+  await new Promise((r) => {
+    setTimeout(r, waitAfterZoomIn * (testInfo.retry + 1));
+  });
+};
