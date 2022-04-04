@@ -19,18 +19,22 @@ const config: PlaywrightTestConfig = {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['iPad (gen 7)'] },
+    // },
     {
       name: 'chromium mobile',
       use: { ...devices['Pixel 5'] },
     },
-    {
-      name: 'webkit mobile',
-      use: { ...devices['iPhone 13'] },
-    },
+    // {
+    //   name: 'webkit mobile',
+    //   use: { ...devices['iPhone 13'] },
+    // },
   ],
 };
 
