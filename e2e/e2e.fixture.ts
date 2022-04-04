@@ -20,6 +20,7 @@ interface Fixture {
 /**
  * Playwright test object with fake timer
  * @see {@link https://github.com/microsoft/playwright/issues/6347}
+ * @see {@link https://github.com/sinonjs/fake-timers#var-clock--faketimersinstallconfig}
  */
 export const test = base.extend<Fixture>({
   fakeTimerPage: async ({ page }, use) => {
@@ -29,7 +30,27 @@ export const test = base.extend<Fixture>({
     await page.addInitScript(() => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      window.__clock = sinon.useFakeTimers();
+      window.__clock = sinon.useFakeTimers({
+        /**
+         * Opt-in for faking API.
+         * NOTE: use fake timer carefully since it may conflict with playwright page.waitForFunction.
+         */
+        toFake: [
+          'setTimeout',
+          'clearTimeout',
+          // 'setImmediate',
+          // 'clearImmediate',
+          'setInterval',
+          'clearInterval',
+          // 'Date',
+          // 'requestAnimationFrame',
+          // 'cancelAnimationFrame',
+          // 'requestIdleCallback',
+          // 'cancelIdleCallback',
+          // 'hrtime',
+          // 'performance',
+        ],
+      });
     });
 
     await use(page);

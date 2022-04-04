@@ -22,38 +22,38 @@ export const toSnapshotPath = (name: string, testInfo: TestInfo): string =>
 
 /**
  * Load lazy-load elements on the page.
- * Use setTimeout on node.js side since browser setTimeout is mocked
  * @param page PlayWright page object
- * @param testInfo PlayWright test info object
- * @param _options extra options
  */
-export const loadLazyElements = async (
-  page: Page,
-  testInfo: TestInfo,
-  _options: {
-    /** Milliseconds to wait after zooming out */
-    waitAfterZoomOut?: number;
-    /** Milliseconds to wait after zooming back in */
-    waitAfterZoomIn?: number;
-  } = {},
-): Promise<void> => {
-  const { waitAfterZoomOut, waitAfterZoomIn } = {
-    waitAfterZoomOut: 1000,
-    waitAfterZoomIn: 1000,
-    ..._options,
-  };
+export const loadLazyElements = async (page: Page): Promise<void> => {
   await page.evaluate(() => {
     document.documentElement.style.transform = 'scale(0.01)';
-    document.getElementById('content')?.scrollIntoView();
+    document.documentElement.scrollIntoView();
   });
-  await new Promise((r) => {
-    setTimeout(r, waitAfterZoomOut * (testInfo.retry + 1));
+  await page.waitForFunction(() => {
+    /** all images on page */
+    const imageNodes = document.querySelectorAll('img');
+    /** hidden slider images */
+    const hiddenImageNodes = document.querySelectorAll(
+      '.slick-slide:nth-of-type(n+4) img',
+    );
+    /**
+     * loaded images
+     * @see {@link https://stackoverflow.com/questions/1977871/check-if-an-image-is-loaded-no-errors-with-jquery}
+     */
+    const loadedImageNodes = Array.from(imageNodes).filter(
+      (img) => img.complete && img.naturalWidth > 1,
+    );
+
+    return (
+      loadedImageNodes.length >= imageNodes.length - hiddenImageNodes.length
+    );
   });
   await page.evaluate(() => {
     document.documentElement.style.transform = 'scale(1)';
     window.scrollTo(0, 0);
   });
+  // wait for browser overscroll effect to finish
   await new Promise((r) => {
-    setTimeout(r, waitAfterZoomIn * (testInfo.retry + 1));
+    setTimeout(r, 500);
   });
 };

@@ -1,12 +1,9 @@
 import { test, expect } from '@e/e2e.fixture';
 import { toAbsUrl, loadLazyElements } from '@e/e2e.util';
 
-test('visual regression test', async ({
-  fakeTimerPage: page,
-  browserName,
-}, testInfo) => {
+test('visual regression test', async ({ fakeTimerPage: page, browserName }) => {
   await page.goto(toAbsUrl('/'));
-  await loadLazyElements(page, testInfo);
+  await loadLazyElements(page);
   // tick the clock ahead to type "にはどうやって入学するの?"
   await page.evaluate(async () => window.__clock.tickAsync(75 * 13));
 
