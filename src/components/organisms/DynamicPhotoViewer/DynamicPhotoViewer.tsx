@@ -10,5 +10,5 @@ export const DynamicPhotoViewer = dynamic<Props>(
     import('@c/molecules/PhotoViewer').then(
       ({ PhotoViewer: Component }) => Component,
     ),
-  { loading: () => <ImageLoader /> },
+  { loading: () => <ImageLoader data-testid='loader' /> },
 );

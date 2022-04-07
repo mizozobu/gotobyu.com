@@ -1,20 +1,13 @@
 import { test, expect } from '@e/e2e.fixture';
-import { toAbsUrl, loadLazyElements } from '@e/e2e.util';
 
-test('visual regression test', async ({ fakeTimerPage: page, browserName }) => {
-  await page.goto(toAbsUrl('/'));
-  await loadLazyElements(page);
+test('visual regression test', async ({ screenshotPage }) => {
+  await screenshotPage.init('/');
   // tick the clock ahead to type "にはどうやって入学するの?"
-  await page.evaluate(async () => window.__clock.tickAsync(75 * 13));
+  await screenshotPage.page.evaluate(async () =>
+    window.__clock.tickAsync(75 * 13),
+  );
 
-  const screenshot = await page.screenshot({
-    fullPage: true,
-    animations: 'disabled',
-    mask:
-      browserName === 'webkit' // FIXME: workaround for addInitScript bug for WebKit
-        ? [page.locator('#animated-circulating-circles')]
-        : undefined,
-  });
+  const screenshot = await screenshotPage.screenshot();
 
   expect(screenshot).toMatchSnapshot('init.png');
 });

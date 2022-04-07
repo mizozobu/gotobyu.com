@@ -105,6 +105,7 @@ export const Header = ({
           show ? styles.show : styles.hide,
         )}
         data-noindex='true'
+        data-testid='header'
       >
         <div className='px-4 sm:px-6'>
           <div className='relative flex h-16 items-center justify-between'>

@@ -1,14 +1,9 @@
 import { test, expect } from '@e/e2e.fixture';
-import { toAbsUrl, loadLazyElements } from '@e/e2e.util';
 
-test('visual regression test', async ({ fakeTimerPage: page }) => {
-  await page.goto(toAbsUrl('/tips/apply'));
-  await loadLazyElements(page);
+test('visual regression test', async ({ screenshotPage }) => {
+  await screenshotPage.init('/tips/apply');
 
-  const screenshot = await page.screenshot({
-    fullPage: true,
-    animations: 'disabled',
-  });
+  const screenshot = await screenshotPage.screenshot();
 
   expect(screenshot).toMatchSnapshot('init.png');
 });
