@@ -1,59 +1,20 @@
-import { resolve } from 'path';
-import { test as base, Page } from '@playwright/test';
-import type { SinonFakeTimers } from 'sinon';
-
-declare global {
-  interface Window {
-    /** For sinon fake timer */
-    __clock: SinonFakeTimers;
-  }
-}
+import { test as base } from '@playwright/test';
+import { ScreenshotPage } from '@e/ScreenshotPage';
 
 /**
  * Type for Fixture
  */
-interface Fixture {
-  /** Fake timer page */
-  fakeTimerPage: Page;
+interface Fixtures {
+  /** Page object model to capture screenshots */
+  screenshotPage: ScreenshotPage;
 }
 
 /**
- * Playwright test object with fake timer
- * @see {@link https://github.com/microsoft/playwright/issues/6347}
- * @see {@link https://github.com/sinonjs/fake-timers#var-clock--faketimersinstallconfig}
+ * Custom test
  */
-export const test = base.extend<Fixture>({
-  fakeTimerPage: async ({ page }, use) => {
-    await page.addInitScript({
-      path: resolve(__dirname, '..', 'node_modules/sinon/pkg/sinon.js'),
-    });
-    await page.addInitScript(() => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      window.__clock = sinon.useFakeTimers({
-        /**
-         * Opt-in for faking API.
-         * NOTE: use fake timer carefully since it may conflict with playwright page.waitForFunction.
-         */
-        toFake: [
-          'setTimeout',
-          'clearTimeout',
-          // 'setImmediate',
-          // 'clearImmediate',
-          'setInterval',
-          'clearInterval',
-          // 'Date',
-          // 'requestAnimationFrame',
-          // 'cancelAnimationFrame',
-          // 'requestIdleCallback',
-          // 'cancelIdleCallback',
-          // 'hrtime',
-          // 'performance',
-        ],
-      });
-    });
-
-    await use(page);
+export const test = base.extend<Fixtures>({
+  screenshotPage: async ({ page }, use) => {
+    await use(new ScreenshotPage(page));
   },
 });
 

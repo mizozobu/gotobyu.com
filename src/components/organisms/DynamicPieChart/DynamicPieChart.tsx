@@ -10,5 +10,5 @@ export const DynamicPieChart = dynamic<Props>(
     import('@c/molecules/PieChart').then(
       ({ PieChart: Component }) => Component,
     ),
-  { loading: () => <PieChartLoader /> },
+  { loading: () => <PieChartLoader data-testid='loader' /> },
 );

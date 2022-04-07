@@ -119,6 +119,8 @@ export const mapToOperations = <T>(
  * Build {@link Algoliast} from hast tree
  */
 export class AlgoliastBuilder {
+  /** Base url for permalink */
+  private readonly baseUrl: string;
   /** Heading max depth */
   private readonly MAX_DEPTH: number = 6;
   /** Array of {@link Algoliast} */
@@ -141,7 +143,8 @@ export class AlgoliastBuilder {
    * @param baseUrl Base url for permalink
    * e.g. https://example.com
    */
-  constructor(private readonly baseUrl: string) {
+  constructor(baseUrl: string) {
+    this.baseUrl = baseUrl;
     this.current._tags = [baseUrl];
   }
 
