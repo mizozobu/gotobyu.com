@@ -1,12 +1,7 @@
 import type { Page } from '@playwright/test';
 import type { PageFunction } from 'playwright-core/types/structs';
 import type { SinonFakeTimers } from 'sinon';
-import {
-  toAbsUrl,
-  injectScripts,
-  fakeTimers,
-  loadLazyElements,
-} from '@e/e2e.util';
+import { injectScripts, fakeTimers, loadLazyElements } from '@e/e2e.util';
 
 declare global {
   interface Window {
@@ -56,7 +51,7 @@ export class ScreenshotPage {
    * @param path relative path
    */
   public async goto(path: string): Promise<void> {
-    await this.page.goto(toAbsUrl(path));
+    await this.page.goto(path);
   }
 
   /**
