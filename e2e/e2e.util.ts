@@ -1,14 +1,5 @@
 import { resolve } from 'path';
 import type { Page } from '@playwright/test';
-import { getEnvVar } from '@l/env';
-
-/**
- * Resolve a given path to an absolute URL
- * @param path path
- * @returns absolute URL
- */
-export const toAbsUrl = (path: string): string =>
-  new URL(path, getEnvVar('NEXT_PUBLIC_BASE_URL')).href;
 
 /**
  * Inject helper functions

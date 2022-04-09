@@ -7,8 +7,13 @@ const config: PlaywrightTestConfig = {
   testDir: 'e2e',
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
+  webServer: {
+    command: 'yarn start',
+    port: 3000,
+  },
   use: {
     trace: 'on-first-retry',
+    baseURL: process.env.NEXT_PUBLIC_BASE_URL,
   },
   projects: [
     {
