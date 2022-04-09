@@ -2,8 +2,8 @@ import type { Page } from '@playwright/test';
 import type { SinonFakeTimers } from 'sinon';
 import {
   toAbsUrl,
+  injectScripts,
   fakeTimers,
-  scollAllElementsFromEndToStart,
   loadLazyElements,
 } from '@e/e2e.util';
 
@@ -33,9 +33,8 @@ export class ScreenshotPage {
    * @param path relative path
    */
   async init(path: string): Promise<void> {
-    await fakeTimers(this.page);
+    await Promise.all([injectScripts(this.page), fakeTimers(this.page)]);
     await this.goto(path);
-    await scollAllElementsFromEndToStart(this.page);
     await loadLazyElements(this.page);
   }
 
@@ -62,6 +61,7 @@ export class ScreenshotPage {
     const screenshot = await this.page.screenshot({
       fullPage: true,
       animations: 'disabled',
+      mask: [this.page.locator('#animated-circulating-circles')],
     });
 
     // restore original style
