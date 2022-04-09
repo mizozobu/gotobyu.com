@@ -1,15 +1,29 @@
 module.exports = {
-  extends: ['airbnb-base'],
   env: {
     browser: true,
     es2021: true,
     node: true,
   },
-  parserOptions: {
-    ecmaVersion: 12,
-    sourceType: 'module',
-  },
   overrides: [
+    /**
+     * js
+     */
+    {
+      files: ['**/*.js', '**/*.jsx'],
+      extends: ['airbnb-base'],
+      parserOptions: {
+        ecmaVersion: 12,
+        sourceType: 'module',
+      },
+      rules: {
+        // allow not using positional arguments before the last used argument
+        'no-unused-vars': [
+          'warn',
+          { args: 'after-used', ignoreRestSiblings: true },
+        ],
+      },
+    },
+
     /**
      * jsx
      */
@@ -105,6 +119,13 @@ module.exports = {
         // allow empty interface (for React props)
         '@typescript-eslint/no-empty-interface': 'off',
 
+        // allow not using positional arguments before the last used argument
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': [
+          'warn',
+          { args: 'after-used', ignoreRestSiblings: true },
+        ],
+
         // allow typescript constructor parameter properties
         // see https://www.typescriptlang.org/docs/handbook/2/classes.html#parameter-properties
         // e.g. constructor(private readonly xxxx: string) {}
@@ -183,7 +204,7 @@ module.exports = {
     },
 
     /**
-     * wrap it up
+     * all
      * - turn off rules conflicted with prettier for all files
      * - add custom rules at last to make sure they aren't overridden
      */
