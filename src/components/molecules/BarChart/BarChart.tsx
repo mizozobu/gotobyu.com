@@ -40,6 +40,10 @@ export const BarChart = ({
     data={data}
     options={{
       maintainAspectRatio: false,
+      animation: {
+        /** disable animation for for VRT */
+        duration: process.env.NEXT_PUBLIC_NODE_ENV === 'test' ? 0 : undefined,
+      },
       plugins: {
         title: {
           display: true,
