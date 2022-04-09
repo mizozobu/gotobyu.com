@@ -24,10 +24,10 @@ jobs:
     needs:
       - setup
 
-  # e2e:
-  #   uses: ./.github/workflows/e2e.yaml
-  #   needs:
-  #     - setup
+  e2e:
+    uses: ./.github/workflows/e2e.yaml
+    needs:
+      - setup
 
   lighthouse:
     uses: ./.github/workflows/lighthouse.yaml
@@ -35,7 +35,7 @@ jobs:
       - setup
       - lint
       - ut
-      # - e2e
+      - e2e
 
   storybook:
     uses: ./.github/workflows/storybook.yaml
@@ -43,4 +43,4 @@ jobs:
       - setup
       - lint
       - ut
-      # - e2e
+      - e2e
