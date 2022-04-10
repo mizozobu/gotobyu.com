@@ -22,4 +22,6 @@ runs:
     - name: Install dependencies
       run: yarn install --frozen-lockfile --prefer-offline
       shell: bash
+      env:
+        PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
       if: steps.cache-node-modules.outputs.cache-hit != 'true'
