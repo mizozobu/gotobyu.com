@@ -7,6 +7,7 @@ const config: PlaywrightTestConfig = {
   testDir: 'e2e',
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
+  reporter: process.env.CI ? 'github' : 'line',
   webServer: {
     command: 'yarn start',
     port: 3000,
