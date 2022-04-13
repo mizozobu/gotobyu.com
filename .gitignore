@@ -42,10 +42,6 @@ yarn-error.log*
 # playwright
 /test-results
 
-# reg-cli
-/.reg/*
-!/.reg/expected
-
 # lighthosue
 /.lighthouseci
 
