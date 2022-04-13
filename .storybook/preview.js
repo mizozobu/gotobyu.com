@@ -7,14 +7,12 @@ import '../src/styles/globals.css';
 const OriginalNextImage = NextImage.default;
 Object.defineProperty(NextImage, 'default', {
   configurable: true,
-  value: (props) => (
-    <OriginalNextImage
-      {...props}
-      unoptimized
-      // 1px x 1px transparent image generated on https://png-pixel.com
-      blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='
-    />
-  ),
+  value: (props) =>
+    typeof props.src === 'string' ? (
+      <OriginalNextImage {...props} unoptimized blurDataURL={props.src} />
+    ) : (
+      <OriginalNextImage {...props} unoptimized />
+    ),
 });
 
 export const parameters = {
