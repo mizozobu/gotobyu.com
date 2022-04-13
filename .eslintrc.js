@@ -1,29 +1,29 @@
 module.exports = {
+  extends: ['airbnb-base'],
+  parserOptions: {
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
   env: {
     browser: true,
     es2021: true,
     node: true,
   },
-  overrides: [
-    /**
-     * js
-     */
-    {
-      files: ['**/*.js', '**/*.jsx'],
-      extends: ['airbnb-base'],
-      parserOptions: {
-        ecmaVersion: 12,
-        sourceType: 'module',
-      },
-      rules: {
-        // allow not using positional arguments before the last used argument
-        'no-unused-vars': [
-          'warn',
-          { args: 'after-used', ignoreRestSiblings: true },
-        ],
-      },
-    },
+  rules: {
+    // allow not using positional arguments before the last used argument
+    'no-unused-vars': [
+      'warn',
+      { args: 'after-used', ignoreRestSiblings: true },
+    ],
 
+    // allow class properties with no blank line inbetween
+    'lines-between-class-members': [
+      'error',
+      'always',
+      { exceptAfterSingleLine: true },
+    ],
+  },
+  overrides: [
     /**
      * jsx
      */
@@ -147,6 +147,7 @@ module.exports = {
      */
     {
       files: ['**/*.stories.jsx', '**/*.stories.tsx', '.storybook/**'],
+      extends: ['plugin:storybook/recommended'],
       rules: {
         'no-alert': 'off',
 
