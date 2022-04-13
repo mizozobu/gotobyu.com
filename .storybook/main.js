@@ -3,12 +3,8 @@ const { resolve } = require('path');
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   staticDirs: ['../public'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    'storybook-addon-next-router',
-  ],
-  webpackFinal: async (config) => {
+  addons: ['@storybook/addon-essentials', 'storybook-addon-next-router'],
+  webpackFinal: (config) => {
     config.module.rules.push({
       test: /\.css$/,
       use: [
@@ -36,7 +32,6 @@ module.exports = {
     return config;
   },
   core: {
-    // manually added webpack@5 util https://github.com/storybookjs/storybook/issues/15336 is solved
-    builder: 'webpack5',
+    builder: '@storybook/builder-webpack5',
   },
 };

@@ -3,7 +3,6 @@ import * as NextImage from 'next/image';
 import { RecoilRoot } from 'recoil';
 import '../src/styles/globals.css';
 
-// see https://github.com/vercel/next.js/issues/18393#issuecomment-783269086
 const OriginalNextImage = NextImage.default;
 Object.defineProperty(NextImage, 'default', {
   configurable: true,
