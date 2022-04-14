@@ -1,11 +1,11 @@
 import classNames from 'classnames';
-import { ComponentProps } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 import styles from './UlCol.module.css';
 
 /**
  * Props for {@link UlCol}
  */
-interface Props extends ComponentProps<'section'> {}
+interface Props extends ComponentPropsWithoutRef<'section'> {}
 
 /**
  * Multiline `<ul>` to break at a right place

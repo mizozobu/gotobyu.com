@@ -6,7 +6,7 @@ import {
   ScaleIcon,
   UserGroupIcon,
 } from '@heroicons/react/outline';
-import { ComponentProps } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 import { NextImage } from '@c/atoms/NextImage';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
@@ -27,7 +27,7 @@ export interface PageMeta {
   /** Page link */
   href: string;
   /** Page icon. Used in header and card. */
-  icon: (props: ComponentProps<'svg'>) => JSX.Element;
+  icon: (props: ComponentPropsWithoutRef<'svg'>) => JSX.Element;
 }
 
 /**
