@@ -1,0 +1,30 @@
+name: PlayWright
+description: Run playwright test
+inputs:
+  update:
+    required: true
+    default: false
+    description: Whether to update snapshots
+  tag:
+    required: true
+    default: ''
+    description: Tag to filter tests
+runs:
+  using: composite
+  steps:
+    - name: Get @playwright/test version
+      id: get-playwright-version
+      run: echo ::set-output name=playwrightVersion::$(node -p "/(?<=@playwright\/test@)(\d+\.\d+\.\d+)/.exec(require('child_process').spawnSync('yarn',['list','--pattern','@playwright/test']).stdout.toString())[0]")
+      shell: bash
+    - name: Cache browsers
+      id: cache-browsers
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/ms-playwright
+        key: ${{ runner.os }}-playwright-${{ steps.get-playwright-version.outputs.playwrightVersion }}-
+    - name: Install Playwright
+      run: yarn playwright install --with-deps
+      shell: bash
+    - name: E2E test
+      run: yarn e2e ${{ inputs.tag != '' && format('--grep {0}', inputs.tag) || '' }} ${{ inputs.update == 'true' && '--update-snapshots' || '' }}
+      shell: bash

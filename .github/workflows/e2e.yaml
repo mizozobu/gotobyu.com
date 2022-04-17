@@ -14,19 +14,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
         uses: ./.github/actions/build
-      - name: Get @playwright/test version
-        id: get-playwright-version
-        run: echo ::set-output name=playwrightVersion::$(node -p "/(?<=@playwright\/test@)(\d+\.\d+\.\d+)/.exec(require('child_process').spawnSync('yarn',['list','--pattern','@playwright/test']).stdout.toString())[0]")
-      - name: Cache browsers
-        id: cache-browsers
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ steps.get-playwright-version.outputs.playwrightVersion }}-
-      - name: Install Playwright
-        run: yarn playwright install --with-deps
       - name: E2E test
-        run: yarn e2e
+        uses: ./.github/actions/playwright
+        with:
+          tag: '@vrt'
       - name: Upload results
         uses: actions/upload-artifact@v3
         if: always()

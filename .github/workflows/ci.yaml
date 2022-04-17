@@ -2,7 +2,8 @@ name: Continuous Integration
 
 on:
   push:
-    branches:
+    branches-ignore:
+      - 'bot/*'
 
 jobs:
   onboard:
