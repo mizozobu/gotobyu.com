@@ -1,0 +1,56 @@
+name: Update Snapshots
+
+on:
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  update-snapshots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: ${{ github.event.issue.pull_request && github.event.comment.body == '':camera_flash:' }}
+    steps:
+      - name: Add a start reaction to comment
+        run: |
+          curl \
+            -X POST \
+            -u ${{ secrets.BOT_NAME }}:${{ secrets.BOT_TOKEN }} \
+            -H "Accept: application/vnd.github.v3+json" \
+            ${{ github.event.comment.url }}/reactions \
+            -d '{"content":"rocket"}'
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build
+        uses: ./.github/actions/build
+      - name: E2E test
+        uses: ./.github/actions/playwright
+        with:
+          update: 'true'
+          tag: '@vrt'
+      - name: Setup bot git information
+        run: |
+          git config user.email ${{ secrets.BOT_EMAIL }}
+          git config user.name ${{ secrets.BOT_NAME }}
+          git checkout -B bot/${{ github.ref_name }}
+          git reset --hard origin/${{ github.ref_name }}
+          git add e2e
+          git commit -m 'test: update snapshots'
+          git push --force-with-lease
+      - name: Post a comment to PR
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            :camera_flash: Snapshots updated :camera_flash:
+            https://github.com/mizozobu/gotobyu.com/compare/${{ github.ref_name }}...bot/${{ github.ref_name }}
+      - name: Add a start reaction to comment
+        run: |
+          curl \
+            -X POST \
+            -u ${{ secrets.BOT_NAME }}:${{ secrets.BOT_TOKEN }} \
+            -H "Accept: application/vnd.github.v3+json" \
+            ${{ github.event.comment.url }}/reactions \
+            -d '{"content":"white_check_mark"}'
