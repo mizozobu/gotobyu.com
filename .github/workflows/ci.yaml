@@ -44,17 +44,3 @@ jobs:
       - lint
       - ut
       # - e2e
-
-  deploy:
-    uses: ./.github/workflows/deploy.yaml
-    needs:
-      - setup
-      - lint
-      - ut
-      # - e2e
-    with:
-      production: ${{ github.ref_name == 'master' }}
-    secrets:
-      vercel-token: ${{ secrets.VERCEL_TOKEN }}
-      vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
-      vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
