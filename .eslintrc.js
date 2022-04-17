@@ -139,6 +139,17 @@ module.exports = {
             allowExpressions: true,
           },
         ],
+
+        // allow class properties with no blank line inbetween
+        'lines-between-class-members': 'off',
+        '@typescript-eslint/lines-between-class-members': [
+          'error',
+          'always',
+          { exceptAfterSingleLine: true, exceptAfterOverload: true },
+        ],
+
+        // type must be imported as type
+        '@typescript-eslint/consistent-type-imports': 'error',
       },
     },
 
@@ -221,13 +232,6 @@ module.exports = {
 
         // allow default export for container components
         'no-restricted-exports': 'off',
-
-        // allow class properties with no blank line inbetween
-        'lines-between-class-members': [
-          'error',
-          'always',
-          { exceptAfterSingleLine: true },
-        ],
 
         // allow named exports without default export
         'import/prefer-default-export': 'off',
