@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import Image, { ImageProps } from 'next/image';
-import { CSSProperties } from 'react';
+import Image, { type ImageProps } from 'next/image';
+import type { CSSProperties } from 'react';
 
 /**
  * Props for {@link ImageProps}

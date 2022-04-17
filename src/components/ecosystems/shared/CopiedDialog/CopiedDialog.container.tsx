@@ -1,4 +1,4 @@
-import { useEffect, useCallback, ComponentPropsWithoutRef } from 'react';
+import { useEffect, useCallback, type ComponentPropsWithoutRef } from 'react';
 import { useRecoilState } from 'recoil';
 import { urlState } from '@s/url';
 import { CopiedDialog as _CopiedDialog } from './CopiedDialog';

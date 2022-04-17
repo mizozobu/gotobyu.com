@@ -1,5 +1,5 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-import React from 'react';
+import React, { type ComponentPropsWithoutRef } from 'react';
 import { SectionTitle } from './SectionTitle';
 
 export default {
@@ -14,6 +14,9 @@ const Template: ComponentStory<typeof SectionTitle> = (args) => (
 
 export const Active = Template.bind({});
 Active.args = {
+  as: ({ children, ...props }: ComponentPropsWithoutRef<'h1'>) => (
+    <h1 {...props}>{children}</h1>
+  ),
   id: '',
   active: true,
   children: 'active',
@@ -21,6 +24,9 @@ Active.args = {
 
 export const Inactive = Template.bind({});
 Inactive.args = {
+  as: ({ children, ...props }: ComponentPropsWithoutRef<'h1'>) => (
+    <h1 {...props}>{children}</h1>
+  ),
   id: '',
   active: false,
   children: 'inactive',

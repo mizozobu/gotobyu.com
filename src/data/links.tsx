@@ -6,7 +6,7 @@ import {
   ScaleIcon,
   UserGroupIcon,
 } from '@heroicons/react/outline';
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 import { NextImage } from '@c/atoms/NextImage';
 import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';

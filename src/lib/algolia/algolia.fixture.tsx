@@ -1,8 +1,8 @@
 import type { Requester } from '@algolia/requester-common';
 import algoliasearch from 'algoliasearch/lite';
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 import { InstantSearch } from 'react-instantsearch-dom';
-import { AlgoliaProvider } from '@l/algolia';
+import type { AlgoliaProvider } from '@l/algolia';
 
 /**
  * Mock {@link Requester}

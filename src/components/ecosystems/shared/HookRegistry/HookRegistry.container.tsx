@@ -1,5 +1,5 @@
 import { useGtm } from '@l/gtm';
-import { useRecoilHydrate, RecoilProps } from '@l/recoil';
+import { useRecoilHydrate, type RecoilProps } from '@l/recoil';
 import { useSyncRouteHash } from '@l/useSyncRouteHash';
 
 /**

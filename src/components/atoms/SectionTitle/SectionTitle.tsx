@@ -2,10 +2,10 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import {
   memo,
-  ComponentPropsWithoutRef,
-  MouseEventHandler,
-  ComponentType,
-  HTMLAttributes,
+  type ComponentPropsWithoutRef,
+  type MouseEventHandler,
+  type ComponentType,
+  type HTMLAttributes,
 } from 'react';
 import styles from './SectionTitle.module.css';
 

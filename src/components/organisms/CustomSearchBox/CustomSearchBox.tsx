@@ -1,7 +1,7 @@
 import React, {
   Component,
-  ComponentPropsWithoutRef,
-  ChangeEventHandler,
+  type ComponentPropsWithoutRef,
+  type ChangeEventHandler,
 } from 'react';
 import type { SearchBoxProvided } from 'react-instantsearch-core';
 

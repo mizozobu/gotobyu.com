@@ -1,5 +1,4 @@
-import { NextPage } from 'next';
-import type { GetStaticProps } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import { Seo } from '@c/ecosystems/shared/Seo';
 import CompareEnvironment from '@c/environments/tips/compare.mdx';
 import { COMPARE_PAGE_META } from '@d/links';

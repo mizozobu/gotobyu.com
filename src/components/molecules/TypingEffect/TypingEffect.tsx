@@ -1,4 +1,4 @@
-import { useState, ComponentPropsWithoutRef } from 'react';
+import { useState, type ComponentPropsWithoutRef } from 'react';
 import { Type } from '@c/atoms/Type';
 
 /**

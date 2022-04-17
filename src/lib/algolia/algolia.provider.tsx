@@ -1,5 +1,8 @@
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, InstantSearchProps } from 'react-instantsearch-dom';
+import {
+  InstantSearch,
+  type InstantSearchProps,
+} from 'react-instantsearch-dom';
 import {
   ALGOLIA_INDEX_NAME,
   ALGOLIA_APP_ID,

@@ -1,4 +1,4 @@
-import { NextSeo, NextSeoProps } from 'next-seo';
+import { NextSeo, type NextSeoProps } from 'next-seo';
 import { useRouter } from 'next/router';
 
 /**

@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import { Seo } from '@c/ecosystems/shared/Seo';
 import ApplyEnvironment from '@c/environments/tips/apply.mdx';
 import { APPLY_PAGE_META } from '@d/links';

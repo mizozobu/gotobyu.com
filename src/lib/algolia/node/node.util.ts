@@ -3,18 +3,18 @@ import algoliasearch from 'algoliasearch';
 import axios from 'axios';
 import type { Element, Text } from 'hast';
 import rehypeParse from 'rehype-parse';
-import { unified, Compiler, Processor } from 'unified';
+import { unified, type Compiler, type Processor } from 'unified';
 import type { Node } from 'unist';
 import { visit } from 'unist-util-visit';
 import type { VFileCompatible } from 'vfile';
 import {
   BATCH_ACTION,
   HEADING_TAGS,
-  HeadingDepth,
-  HeadingTag,
-  Algoliast,
-  Settings,
-  Compare,
+  type Algoliast,
+  type HeadingDepth,
+  type HeadingTag,
+  type Settings,
+  type Compare,
 } from '@l/algolia';
 import { getEnvVar } from '@l/env';
 

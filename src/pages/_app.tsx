@@ -1,4 +1,4 @@
-import { AppProps as NextAppProps } from 'next/app';
+import type { AppProps as NextAppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
 import { RecoilRoot } from 'recoil';

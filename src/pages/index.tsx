@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import { Seo } from '@c/ecosystems/shared/Seo';
 import { IndexEnvironment } from '@c/environments/index';
 import { INDEX_PAGE_META } from '@d/links';

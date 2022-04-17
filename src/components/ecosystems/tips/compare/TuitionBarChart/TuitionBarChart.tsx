@@ -1,4 +1,4 @@
-import { memo, useCallback, ComponentPropsWithoutRef } from 'react';
+import { memo, useCallback, type ComponentPropsWithoutRef } from 'react';
 import { DynamicBarChart } from '@c/organisms/DynamicBarChart';
 import { TUITION } from '@d/cost-of-attendance';
 import { round } from '@l/round';

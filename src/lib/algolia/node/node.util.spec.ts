@@ -2,7 +2,7 @@ import { jest } from '@jest/globals';
 import type { SpyInstance } from 'jest-mock';
 import rehypeParse from 'rehype-parse';
 import { unified } from 'unified';
-import { HeadingTag, Settings, Algoliast } from '@l/algolia';
+import type { Algoliast, HeadingTag, Settings } from '@l/algolia';
 import { __HTML_CONTENT, __ALGOLIASTS } from '@l/algolia/algolia.fixture';
 import {
   algoliastEqual,

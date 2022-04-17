@@ -2,8 +2,8 @@ import classNames from 'classnames';
 import {
   useState,
   useEffect,
-  ComponentPropsWithoutRef,
-  CSSProperties,
+  type ComponentPropsWithoutRef,
+  type CSSProperties,
 } from 'react';
 import styles from './Type.module.css';
 

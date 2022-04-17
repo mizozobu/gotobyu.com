@@ -1,4 +1,4 @@
-import { useMemo, ReactNode, ReactElement } from 'react';
+import { useMemo, type ReactNode, type ReactElement } from 'react';
 import { NextImage } from '@c/atoms/NextImage';
 import { Tab } from '@c/atoms/Tab';
 import byuLogoImage from '@p/byu/byu-logo.png';

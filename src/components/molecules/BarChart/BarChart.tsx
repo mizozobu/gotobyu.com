@@ -4,10 +4,10 @@ import {
   CategoryScale,
   LinearScale,
   Title,
-  TickOptions,
+  type TickOptions,
 } from 'chart.js';
-import ChartDataLabels, { Context } from 'chartjs-plugin-datalabels';
-import { ComponentPropsWithoutRef } from 'react';
+import ChartDataLabels, { type Context } from 'chartjs-plugin-datalabels';
+import type { ComponentPropsWithoutRef } from 'react';
 import { Bar } from 'react-chartjs-2';
 
 Chart.register(BarElement, CategoryScale, LinearScale, Title);

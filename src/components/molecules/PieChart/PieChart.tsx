@@ -1,7 +1,7 @@
 import { Chart, ArcElement, Title } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import type { Options } from 'chartjs-plugin-datalabels/types/options';
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 import { Pie } from 'react-chartjs-2';
 
 Chart.register(ArcElement, Title);

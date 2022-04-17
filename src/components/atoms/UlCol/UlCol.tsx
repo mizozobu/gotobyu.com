@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 import styles from './UlCol.module.css';
 
 /**

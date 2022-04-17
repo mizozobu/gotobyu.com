@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
 import { Seo } from '@c/ecosystems/shared/Seo';
 import ByuEnvironment from '@c/environments/schools/byu.mdx';
 import { BYU_PAGE_META } from '@d/links';

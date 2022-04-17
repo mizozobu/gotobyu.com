@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 import { URL_STATE_KEY } from './url.constants';
-import { UrlState } from './url.interface';
+import type { UrlState } from './url.interface';
 
 /**
  * Default state for recoil url state

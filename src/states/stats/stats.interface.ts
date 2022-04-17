@@ -1,5 +1,5 @@
 import type { ValuesType } from 'utility-types';
-import { CURRENCY } from './stats.constants';
+import type { CURRENCY } from './stats.constants';
 
 /**
  * Type for recoil stats state

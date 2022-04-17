@@ -1,6 +1,6 @@
 import { Switch } from '@headlessui/react';
 import classNames from 'classnames';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 /**
  * Props for {@link SwitchControl}

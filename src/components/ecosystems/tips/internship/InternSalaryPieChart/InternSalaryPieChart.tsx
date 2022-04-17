@@ -1,5 +1,5 @@
-import { Context } from 'chartjs-plugin-datalabels';
-import { memo, useCallback, ComponentPropsWithoutRef } from 'react';
+import type { Context } from 'chartjs-plugin-datalabels';
+import { memo, useCallback, type ComponentPropsWithoutRef } from 'react';
 import { DynamicPieChart } from '@c/organisms/DynamicPieChart';
 import { INTERNSHIP_SALARY } from '@d/income';
 import { round } from '@l/round';

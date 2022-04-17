@@ -3,7 +3,8 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import type { MouseEventHandler } from 'react';
 import { Highlight, Snippet } from 'react-instantsearch-dom';
-import { getSmallestHeadingTag, ActualHit, Algoliast } from '@l/algolia';
+import type { ActualHit, Algoliast } from '@l/algolia';
+import { getSmallestHeadingTag } from '@l/algolia';
 import styles from './HitItem.module.css';
 
 /**

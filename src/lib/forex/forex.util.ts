@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { AlphaVantageForexResponse, Forex } from './forex.interface';
+import type { AlphaVantageForexResponse, Forex } from './forex.interface';
 
 /**
  * Get exchange rate from external alphavantage API

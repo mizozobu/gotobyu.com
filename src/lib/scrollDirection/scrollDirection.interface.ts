@@ -1,5 +1,5 @@
 import type { ValuesType } from 'utility-types';
-import { SCROLL_DIRECTION } from './scrollDirection.constants';
+import type { SCROLL_DIRECTION } from './scrollDirection.constants';
 
 /**
  * Possible scroll direction

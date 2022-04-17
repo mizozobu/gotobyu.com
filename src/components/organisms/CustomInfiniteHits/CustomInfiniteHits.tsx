@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import type { InfiniteHitsProvided } from 'react-instantsearch-core';
 import { Highlight } from 'react-instantsearch-dom';
-import { classifyHits, Algoliast, ActualHit } from '@l/algolia';
+import type { Algoliast, ActualHit } from '@l/algolia';
+import { classifyHits } from '@l/algolia';
 import styles from './CustomInfiniteHits.module.css';
 
 /**

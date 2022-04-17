@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 import { FOREX_STATE_KEY } from './forex.constants';
-import { ForexState } from './forex.interface';
+import type { ForexState } from './forex.interface';
 
 /**
  * Default state for recoil forex state

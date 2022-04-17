@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import Image, { ImageProps } from 'next/image';
+import Image, { type ImageProps } from 'next/image';
 import { useState } from 'react';
-import Slider, { Settings } from 'react-slick';
+import Slider, { type Settings } from 'react-slick';
 import { BgRotate } from '@c/atoms/BgRotate';
 import styles from './PhotoViewer.module.css';
 import 'slick-carousel/slick/slick.css';

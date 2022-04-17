@@ -1,6 +1,6 @@
 import type { RecoilState } from 'recoil';
 import type { ValuesType } from 'utility-types';
-import { ATOM_REGISTRY } from './recoil.constants';
+import type { ATOM_REGISTRY } from './recoil.constants';
 
 /**
  * Extract T from {@link RecoilState<T>}

@@ -1,4 +1,4 @@
-import { MouseEventHandler, useCallback } from 'react';
+import { useCallback, type MouseEventHandler } from 'react';
 import { useRecoilState } from 'recoil';
 import { urlState } from '@s/url';
 

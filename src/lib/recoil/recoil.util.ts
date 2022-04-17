@@ -1,5 +1,5 @@
 import type { GetStaticPropsResult, Redirect } from 'next';
-import { RecoilState } from 'recoil';
+import type { RecoilState } from 'recoil';
 import { ATOM_REGISTRY } from './recoil.constants';
 import type { AtomKey, AtomStatePlain } from './recoil.interface';
 

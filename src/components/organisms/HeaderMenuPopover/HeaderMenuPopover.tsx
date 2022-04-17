@@ -1,7 +1,7 @@
 import { Popover, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import classNames from 'classnames';
-import { Fragment, ComponentType, ReactNode } from 'react';
+import { Fragment, type ComponentType, type ReactNode } from 'react';
 
 /**
  * Props for {@link HeaderMenuPopover}

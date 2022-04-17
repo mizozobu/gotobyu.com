@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { CSSProperties, ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import styles from './RippleButton.module.css';
 
 /**

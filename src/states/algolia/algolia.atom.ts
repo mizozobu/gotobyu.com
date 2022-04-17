@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 import { ALGOLIA_STATE_KEY } from './algolia.constants';
-import { AlgoliaState } from './algolia.interface';
+import type { AlgoliaState } from './algolia.interface';
 
 /**
  * Default state for recoil algolia state
