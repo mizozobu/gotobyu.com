@@ -30,7 +30,7 @@ jobs:
         with:
           update: 'true'
           tag: '@vrt'
-      - name: Setup bot git information
+      - name: Commit and push snapshots
         run: |
           git config user.email ${{ secrets.BOT_EMAIL }}
           git config user.name ${{ secrets.BOT_NAME }}
