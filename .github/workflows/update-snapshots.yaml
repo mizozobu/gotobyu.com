@@ -9,7 +9,7 @@ jobs:
   update-snapshots:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    if: ${{ github.event.issue.pull_request && github.event.comment.body == '':camera_flash:' }}
+    if: ${{ github.event.issue.pull_request && github.event.comment.body == ':camera_flash:' }}
     steps:
       - name: Add a start reaction to comment
         run: |
