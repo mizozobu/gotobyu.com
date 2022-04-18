@@ -1,5 +1,5 @@
 import { loadEnvConfig } from '@next/env';
-import { PlaywrightTestConfig, devices } from '@playwright/test';
+import { devices, type PlaywrightTestConfig } from '@playwright/test';
 
 loadEnvConfig(process.cwd());
 
