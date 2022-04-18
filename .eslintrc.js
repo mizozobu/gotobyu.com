@@ -22,6 +22,9 @@ module.exports = {
       'always',
       { exceptAfterSingleLine: true },
     ],
+
+    // allow instance method without "this"
+    'class-methods-use-this': 'off',
   },
   overrides: [
     /**
