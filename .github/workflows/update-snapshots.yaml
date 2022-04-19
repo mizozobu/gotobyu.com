@@ -30,6 +30,8 @@ jobs:
       - name: Checkout PR head
         run: |
           hub pr checkout ${{ github.event.issue.number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
         uses: ./.github/actions/build
       - name: E2E test
