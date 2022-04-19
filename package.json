@@ -18,8 +18,8 @@
     "ut": "node --experimental-vm-modules --experimental-json-modules $(yarn bin jest)",
     "ut:debug": "node --experimental-vm-modules --experimental-json-modules --inspect $(yarn bin jest) --runInBand",
     "e2e": "playwright test",
-    "e2e:linux": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -e NEXT_PUBLIC_BASE_URL=http://host.docker.internal:3000 -it mcr.microsoft.com/playwright:v1.21.1-focal /bin/bash -c 'yarn e2e --retries=2'",
-    "e2e:linux:update": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -e NEXT_PUBLIC_BASE_URL=http://host.docker.internal:3000 -it mcr.microsoft.com/playwright:v1.21.1-focal /bin/bash -c 'yarn e2e --update-snapshots'"
+    "e2e:linux": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.21.1-focal /bin/bash -c 'yarn e2e --retries=2'",
+    "e2e:linux:update": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.21.1-focal /bin/bash -c 'yarn e2e --update-snapshots'"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
