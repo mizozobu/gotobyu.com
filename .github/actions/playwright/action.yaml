@@ -21,6 +21,7 @@ runs:
     - name: Install Playwright
       run: yarn playwright install --with-deps
       shell: bash
+      if: steps.cache-browsers.outputs.cache-hit != 'true'
     - name: E2E test
       run: yarn e2e ${{ inputs.args }}
       shell: bash

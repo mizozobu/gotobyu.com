@@ -11,14 +11,26 @@ runs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ steps.get-node-version.outputs.nodeVersion }}
+    # cache node_modules itself
     - name: Cache node_modules
       id: cache-node-modules
       uses: actions/cache@v3
       with:
         path: '**/node_modules'
         key: ${{ runner.os }}-${{ steps.get-node-version.outputs.nodeVersion }}-nodemodules-${{ hashFiles('**/yarn.lock') }}
+    # cache yarn cache as a fallback
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+      shell: bash
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+    - uses: actions/cache@v3
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          ${{ runner.os }}-${{ steps.get-node-version.outputs.nodeVersion }}-nodemodules-
+          ${{ runner.os }}-yarn-
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
     - name: Install dependencies
       run: yarn install --frozen-lockfile --prefer-offline
       shell: bash
