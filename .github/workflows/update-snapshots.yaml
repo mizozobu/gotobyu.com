@@ -29,8 +29,7 @@ jobs:
           git config user.name ${{ secrets.BOT_NAME }}
       - name: Checkout PR head
         run: |
-          git fetch origin +refs/pull/${{ github.event.issue.number }}/head
-          git checkout FETCH_HEAD
+          hub pr checkout ${{ github.event.issue.number }}
       - name: Build
         uses: ./.github/actions/build
       - name: E2E test
@@ -39,8 +38,8 @@ jobs:
           args: '--update-snapshots'
       - name: Commit and push snapshots
         run: |
-          git checkout -B bot/${{ github.ref_name }}
-          git reset --hard origin/${{ github.ref_name }}
+          TARGET_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          git checkout -B bot/$TARGET_BRANCH $TARGET_BRANCH
           git add e2e
           git commit -m 'test: update snapshots'
           git push --force-with-lease
