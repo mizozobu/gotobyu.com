@@ -16,8 +16,6 @@ jobs:
         uses: ./.github/actions/build
       - name: E2E test
         uses: ./.github/actions/playwright
-        with:
-          tag: '@vrt'
       - name: Upload results
         uses: actions/upload-artifact@v3
         if: always()

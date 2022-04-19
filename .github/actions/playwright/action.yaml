@@ -1,14 +1,10 @@
 name: PlayWright
 description: Run playwright test
 inputs:
-  update:
-    required: true
-    default: false
-    description: Whether to update snapshots
-  tag:
+  args:
     required: true
     default: ''
-    description: Tag to filter tests
+    description: Args passed to "playwright test"
 runs:
   using: composite
   steps:
@@ -26,5 +22,5 @@ runs:
       run: yarn playwright install --with-deps
       shell: bash
     - name: E2E test
-      run: yarn e2e ${{ inputs.tag != '' && format('--grep {0}', inputs.tag) || '' }} ${{ inputs.update == 'true' && '--update-snapshots' || '' }}
+      run: yarn e2e ${{ inputs.args }}
       shell: bash
