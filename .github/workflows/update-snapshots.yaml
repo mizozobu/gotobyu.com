@@ -28,8 +28,7 @@ jobs:
       - name: E2E test
         uses: ./.github/actions/playwright
         with:
-          update: 'true'
-          tag: '@vrt'
+          args: '--update-snaphosts'
       - name: Commit and push snapshots
         run: |
           git config user.email ${{ secrets.BOT_EMAIL }}

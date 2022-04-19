@@ -2,7 +2,7 @@ import { test, expect } from '@e/fixtures';
 
 test.describe.configure({ mode: 'parallel' });
 
-test('/index @vrt', async ({ indexPage }) => {
+test('/index', async ({ indexPage }) => {
   await indexPage.setup();
   await indexPage.goto();
   await indexPage.loadLazyElements();
@@ -13,7 +13,7 @@ test('/index @vrt', async ({ indexPage }) => {
   expect(screenshot).toMatchSnapshot();
 });
 
-test('/about @vrt', async ({ aboutPage }) => {
+test('/about', async ({ aboutPage }) => {
   await aboutPage.setup();
   await aboutPage.goto();
   await aboutPage.loadLazyElements();
@@ -23,7 +23,7 @@ test('/about @vrt', async ({ aboutPage }) => {
   expect(screenshot).toMatchSnapshot();
 });
 
-test('/404 @vrt', async ({ _404Page }) => {
+test('/404', async ({ _404Page }) => {
   await _404Page.setup();
   // temporarily ignore console error for http status code 500
   _404Page.unwatchConsoleError();
@@ -36,7 +36,7 @@ test('/404 @vrt', async ({ _404Page }) => {
   expect(screenshot).toMatchSnapshot();
 });
 
-test('/500 @vrt', async ({ _500Page }) => {
+test('/500', async ({ _500Page }) => {
   await _500Page.setup();
   // temporarily ignore console error for http status code 500
   _500Page.unwatchConsoleError();
@@ -49,7 +49,7 @@ test('/500 @vrt', async ({ _500Page }) => {
   expect(screenshot).toMatchSnapshot();
 });
 
-test('/schools/byu @vrt', async ({ byuPage }) => {
+test('/schools/byu', async ({ byuPage }) => {
   await byuPage.setup();
   await byuPage.goto();
   await byuPage.loadLazyElements();
@@ -59,7 +59,7 @@ test('/schools/byu @vrt', async ({ byuPage }) => {
   expect(screenshot).toMatchSnapshot();
 });
 
-test('/schools/byuh @vrt', async ({ byuhPage }) => {
+test('/schools/byuh', async ({ byuhPage }) => {
   await byuhPage.setup();
   await byuhPage.goto();
   await byuhPage.loadLazyElements();
@@ -69,7 +69,7 @@ test('/schools/byuh @vrt', async ({ byuhPage }) => {
   expect(screenshot).toMatchSnapshot();
 });
 
-test('/schools/byui @vrt', async ({ byuiPage }) => {
+test('/schools/byui', async ({ byuiPage }) => {
   await byuiPage.setup();
   await byuiPage.goto();
   await byuiPage.loadLazyElements();
@@ -79,7 +79,7 @@ test('/schools/byui @vrt', async ({ byuiPage }) => {
   expect(screenshot).toMatchSnapshot();
 });
 
-test('/tips/apply @vrt', async ({ applyPage }) => {
+test('/tips/apply', async ({ applyPage }) => {
   await applyPage.setup();
   await applyPage.goto();
   await applyPage.loadLazyElements();
@@ -89,7 +89,7 @@ test('/tips/apply @vrt', async ({ applyPage }) => {
   expect(screenshot).toMatchSnapshot();
 });
 
-test('/tips/career @vrt', async ({ careerPage }) => {
+test('/tips/career', async ({ careerPage }) => {
   await careerPage.setup();
   await careerPage.goto();
   await careerPage.loadLazyElements();
@@ -99,7 +99,7 @@ test('/tips/career @vrt', async ({ careerPage }) => {
   expect(screenshot).toMatchSnapshot();
 });
 
-test('/tips/compare @vrt', async ({ comparePage }) => {
+test('/tips/compare', async ({ comparePage }) => {
   await comparePage.setup();
   await comparePage.goto();
   await comparePage.loadLazyElements();
@@ -109,7 +109,7 @@ test('/tips/compare @vrt', async ({ comparePage }) => {
   expect(screenshot).toMatchSnapshot();
 });
 
-test('/tips/internship @vrt', async ({ internshipPage }) => {
+test('/tips/internship', async ({ internshipPage }) => {
   await internshipPage.setup();
   await internshipPage.goto();
   await internshipPage.loadLazyElements();
@@ -119,7 +119,7 @@ test('/tips/internship @vrt', async ({ internshipPage }) => {
   expect(screenshot).toMatchSnapshot();
 });
 
-test('/tips/learn-english @vrt', async ({ learnEnglishPage }) => {
+test('/tips/learn-english', async ({ learnEnglishPage }) => {
   await learnEnglishPage.setup();
   await learnEnglishPage.goto();
   await learnEnglishPage.loadLazyElements();
