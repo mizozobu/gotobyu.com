@@ -18,8 +18,8 @@
     "ut": "node --experimental-vm-modules --experimental-json-modules $(yarn bin jest)",
     "ut:debug": "node --experimental-vm-modules --experimental-json-modules --inspect $(yarn bin jest) --runInBand",
     "e2e": "playwright test",
-    "e2e:linux": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -e NEXT_PUBLIC_BASE_URL=http://host.docker.internal:3000 -it mcr.microsoft.com/playwright:v1.20.0-focal /bin/bash -c 'yarn e2e --retries=2'",
-    "e2e:linux:update": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -e NEXT_PUBLIC_BASE_URL=http://host.docker.internal:3000 -it mcr.microsoft.com/playwright:v1.20.0-focal /bin/bash -c 'yarn e2e --update-snapshots'"
+    "e2e:linux": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -e NEXT_PUBLIC_BASE_URL=http://host.docker.internal:3000 -it mcr.microsoft.com/playwright:v1.21.1-focal /bin/bash -c 'yarn e2e --retries=2'",
+    "e2e:linux:update": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -e NEXT_PUBLIC_BASE_URL=http://host.docker.internal:3000 -it mcr.microsoft.com/playwright:v1.21.1-focal /bin/bash -c 'yarn e2e --update-snapshots'"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
@@ -55,7 +55,7 @@
     "@next/bundle-analyzer": "^12.1.5",
     "@next/env": "^12.1.4",
     "@next/eslint-plugin-next": "^12.1.5",
-    "@playwright/test": "^1.21.0",
+    "@playwright/test": "^1.21.1",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/builder-webpack5": "^6.4.22",
     "@storybook/manager-webpack5": "^6.4.22",
