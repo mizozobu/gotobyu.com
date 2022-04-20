@@ -193,9 +193,15 @@ export abstract class _CustomPage {
         ?.setAttribute('style', 'position: relative !important;');
     });
 
+    // wait for sticky header to be back
+    await new Promise((r) => {
+      setTimeout(r, 250);
+    });
+
     const screenshot = await this.page.screenshot({
       fullPage: true,
       animations: 'disabled',
+      scale: 'css',
       ...options,
     });
 
