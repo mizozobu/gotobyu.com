@@ -41,9 +41,7 @@ jobs:
         run: |
           git config user.email ${{ secrets.BOT_EMAIL }}
           git config user.name ${{ secrets.BOT_NAME }}
-          git rev-parse --verify bot/${{ steps.get-target-branch.outputs.branch }} &&
-            git push --delete origin bot/${{ steps.get-target-branch.outputs.branch }} ||
-            true
+          git push --delete origin bot/${{ steps.get-target-branch.outputs.branch }} || true
           git checkout -B bot/${{ steps.get-target-branch.outputs.branch }} ${{ steps.get-target-branch.outputs.branch }}
           git add e2e
           git commit -m 'test: update snapshots'
