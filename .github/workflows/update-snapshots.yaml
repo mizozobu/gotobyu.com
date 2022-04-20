@@ -36,28 +36,33 @@ jobs:
           args: '--update-snapshots'
       - name: Get PR target branch
         id: get-target-branch
-        run: echo "::set-output name=name::$(git rev-parse --abbrev-ref HEAD)"
+        run: echo "::set-output name=branch::$(git rev-parse --abbrev-ref HEAD)"
       - name: Commit and push snapshots
         run: |
           git config user.email ${{ secrets.BOT_EMAIL }}
           git config user.name ${{ secrets.BOT_NAME }}
-          git checkout -B bot/${{ steps.get-target-branch.outputs.name }} ${{ steps.get-target-branch.outputs.name }}
+          git rev-parse --verify bot/${{ steps.get-target-branch.outputs.branch }} &&
+            git push --delete origin bot/${{ steps.get-target-branch.outputs.branch }} ||
+            true
+          git checkout -B bot/${{ steps.get-target-branch.outputs.branch }} ${{ steps.get-target-branch.outputs.branch }}
           git add e2e
           git commit -m 'test: update snapshots'
-          git push -u origin HEAD --force-with-lease
-      - name: Post a comment to PR
+          git push -u origin HEAD
+      - name: Post a success comment to PR
+        if: ${{ success() }}
         uses: peter-evans/create-or-update-comment@v2
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            :camera_flash: Snapshots Updated :camera_flash:
+            :camera_flash: Updated snapshots
 
-            See the diff at https://github.com/mizozobu/gotobyu.com/compare/${{ steps.get-target-branch.outputs.name }}...bot/${{ steps.get-target-branch.outputs.name }} and manually merge changes.
-      - name: Add a tada reaction to the comment
-        run: |
-          curl \
-            -X POST \
-            -u ${{ secrets.BOT_NAME }}:${{ secrets.BOT_TOKEN }} \
-            -H "Accept: application/vnd.github.v3+json" \
-            ${{ github.event.comment.url }}/reactions \
-            -d '{"content":"tada"}'
+            See the diff at https://github.com/mizozobu/gotobyu.com/compare/${{ steps.get-target-branch.outputs.branch }}...bot/${{ steps.get-target-branch.outputs.branch }} and manually merge changes.
+      - name: Post a failure comment to PR
+        if: ${{ failure() }}
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            :warning: Snapshot update failed
+
+            See the workflow details at https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}.
