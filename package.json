@@ -81,7 +81,7 @@
     "eslint-plugin-playwright": "^0.8.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
-    "eslint-plugin-storybook": "^0.5.10",
+    "eslint-plugin-storybook": "^0.5.11",
     "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
