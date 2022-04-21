@@ -4,13 +4,14 @@ import {
   CategoryScale,
   LinearScale,
   Title,
+  Tooltip,
   type TickOptions,
 } from 'chart.js';
 import ChartDataLabels, { type Context } from 'chartjs-plugin-datalabels';
 import type { ComponentPropsWithoutRef } from 'react';
 import { Bar } from 'react-chartjs-2';
 
-Chart.register(BarElement, CategoryScale, LinearScale, Title);
+Chart.register(BarElement, CategoryScale, LinearScale, Title, Tooltip);
 Chart.register(ChartDataLabels);
 
 /**
@@ -24,6 +25,10 @@ export interface Props
   yAxesTicksCallback: TickOptions['callback'];
   /** Function to format label */
   labelCallback: (value: number, ctx: Context) => string;
+  /** Whether to show data label */
+  enableDataLable?: boolean;
+  /** Whether to show tooltip */
+  enableTooltip?: boolean;
 }
 
 /**
@@ -34,6 +39,8 @@ export const BarChart = ({
   title,
   yAxesTicksCallback,
   labelCallback,
+  enableDataLable = false,
+  enableTooltip = false,
   ...props
 }: Props): JSX.Element => (
   <Bar
@@ -50,10 +57,14 @@ export const BarChart = ({
           text: title,
         },
         datalabels: {
+          display: enableDataLable,
           color: 'rgb(255, 255, 255)',
           backgroundColor: 'rgba(55, 48, 163, 0.2)',
           borderRadius: 4,
           formatter: labelCallback,
+        },
+        tooltip: {
+          enabled: enableTooltip,
         },
       },
       scales: {
