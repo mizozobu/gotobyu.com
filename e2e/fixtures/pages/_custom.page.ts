@@ -160,6 +160,12 @@ export abstract class _CustomPage {
       this.page.waitForFunction(
         () => document.querySelectorAll('[data-testid="loader"]').length === 0,
       ),
+
+      // wait for fonts to be loaded
+      // see https://www.chartjs.org/docs/latest/general/fonts.html
+      this.page.waitForFunction(() =>
+        document.fonts.check('normal normal 12px Noto Sans JP'),
+      ),
     ]);
 
     // wait for next/image blur placeholder to disappear
