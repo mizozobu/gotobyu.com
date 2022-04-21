@@ -1,10 +1,10 @@
-import { Chart, ArcElement, Title } from 'chart.js';
+import { Chart, ArcElement, Title, Tooltip } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import type { Options } from 'chartjs-plugin-datalabels/types/options';
 import type { ComponentPropsWithoutRef } from 'react';
 import { Pie } from 'react-chartjs-2';
 
-Chart.register(ArcElement, Title);
+Chart.register(ArcElement, Title, Tooltip);
 Chart.register(ChartDataLabels);
 
 /**
@@ -16,6 +16,10 @@ export interface Props
   title: string;
   /** Function to format label */
   labelCallback: Options['formatter'];
+  /** Whether to show data label */
+  enableDataLable?: boolean;
+  /** Whether to show tooltip */
+  enableTooltip?: boolean;
 }
 
 /**
@@ -24,6 +28,8 @@ export interface Props
 export const PieChart = ({
   title,
   labelCallback,
+  enableDataLable = false,
+  enableTooltip = false,
   ...props
 }: Props): JSX.Element => (
   <Pie
@@ -39,11 +45,15 @@ export const PieChart = ({
           text: title,
         },
         datalabels: {
+          display: enableDataLable,
           color: 'rgb(255, 255, 255)',
           backgroundColor: 'rgba(55, 48, 163, 0.2)',
           borderRadius: 4,
           formatter: labelCallback,
           textAlign: 'center',
+        },
+        tooltip: {
+          enabled: enableTooltip,
         },
       },
     }}

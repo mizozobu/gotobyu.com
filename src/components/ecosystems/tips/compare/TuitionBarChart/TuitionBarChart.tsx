@@ -1,6 +1,7 @@
 import { memo, useCallback, type ComponentPropsWithoutRef } from 'react';
 import { DynamicBarChart } from '@c/organisms/DynamicBarChart';
 import { TUITION } from '@d/cost-of-attendance';
+import { useMediaMinWidth } from '@l/media';
 import { round } from '@l/round';
 
 /**
@@ -29,6 +30,7 @@ interface Props
  */
 export const TuitionBarChart = memo(
   ({ exrate, isJPY, isLDS, ...props }: Props): JSX.Element => {
+    const isGteMd = useMediaMinWidth('md');
     const multiplier = isJPY ? exrate : 1;
     const ldsRate = isLDS ? 1 : 2;
 
@@ -91,6 +93,8 @@ export const TuitionBarChart = memo(
           }}
           yAxesTicksCallback={formatLabel}
           labelCallback={formatLabel}
+          enableDataLable={isGteMd}
+          enableTooltip={!isGteMd}
         />
         <span className='sr-only'>
           BYU、BYUH、BYUI、日本国立、日本私立、US国立、US私立における年間学費の比較

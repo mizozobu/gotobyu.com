@@ -61,6 +61,7 @@ export const InternSalaryPieChart = memo((props: Props): JSX.Element => {
           ],
         }}
         labelCallback={formatLabel}
+        enableDataLable
       />
       <span className='sr-only'>
         BYU、BYUH、BYUIの学生のインターンシップの給与(月)

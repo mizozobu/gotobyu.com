@@ -46,6 +46,7 @@ export const IncomeBarChart = memo((props: Props): JSX.Element => {
         }}
         yAxesTicksCallback={formatLabel}
         labelCallback={formatLabel}
+        enableDataLable
       />
       <span className='sr-only'>
         一般的な大卒とBYU、BYUH、BYUI卒業生の大卒1年目の年収の比較
