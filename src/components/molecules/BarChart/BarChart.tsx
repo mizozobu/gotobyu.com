@@ -10,6 +10,8 @@ import ChartDataLabels, { type Context } from 'chartjs-plugin-datalabels';
 import type { ComponentPropsWithoutRef } from 'react';
 import { Bar } from 'react-chartjs-2';
 
+Chart.defaults.font.family =
+  "'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";
 Chart.register(BarElement, CategoryScale, LinearScale, Title);
 Chart.register(ChartDataLabels);
 

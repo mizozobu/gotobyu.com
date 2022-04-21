@@ -4,6 +4,8 @@ import type { Options } from 'chartjs-plugin-datalabels/types/options';
 import type { ComponentPropsWithoutRef } from 'react';
 import { Pie } from 'react-chartjs-2';
 
+Chart.defaults.font.family =
+  "'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'";
 Chart.register(ArcElement, Title);
 Chart.register(ChartDataLabels);
 
