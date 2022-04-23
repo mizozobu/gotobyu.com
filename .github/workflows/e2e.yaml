@@ -17,8 +17,8 @@ jobs:
       - name: E2E test
         uses: ./.github/actions/playwright
       - name: Upload results
-        uses: actions/upload-artifact@v3
         if: always()
+        uses: actions/upload-artifact@v3
         with:
           name: playwright-results
           path: test-results
