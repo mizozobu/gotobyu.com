@@ -186,13 +186,6 @@ export abstract class _CustomPage {
   public async screenshot(
     options: PageScreenshotOptions = {},
   ): Promise<Buffer> {
-    // workaround to avoid sticking the sticky header in the middle of a page on a full-size screenshot
-    await this.page.evaluate(() => {
-      document
-        .querySelector('[data-testid="header"]')
-        ?.setAttribute('style', 'position: relative !important;');
-    });
-
     // wait for sticky header to be back
     await new Promise((r) => {
       setTimeout(r, 250);
@@ -203,13 +196,6 @@ export abstract class _CustomPage {
       animations: 'disabled',
       scale: 'css',
       ...options,
-    });
-
-    // restore original style
-    await this.page.evaluate(() => {
-      document
-        .querySelector('[data-testid="header"]')
-        ?.removeAttribute('style');
     });
 
     return screenshot;
