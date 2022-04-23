@@ -7,7 +7,7 @@ const { paths } = tsConfigPaths.loadConfig();
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 export default {
   preset: 'ts-jest/presets/default-esm',
-  testEnvironment: 'node',
+  testEnvironment: 'jest-environment-jsdom',
   testMatch: ['<rootDir>/src/**/?(*.)+(spec|test).[jt]s?(x)'],
   restoreMocks: true,
   moduleNameMapper: {
