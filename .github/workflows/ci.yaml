@@ -10,8 +10,8 @@ jobs:
     uses: ./.github/workflows/onboard.yaml
 
   setup:
-    uses: ./.github/workflows/setup.yaml
     if: ${{ needs.onboard.outputs.should_skip != 'true' }}
+    uses: ./.github/workflows/setup.yaml
     needs:
       - onboard
 
