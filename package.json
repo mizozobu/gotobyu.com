@@ -22,7 +22,7 @@
     "e2e:linux:update": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.21.1-focal /bin/bash -c 'yarn e2e --update-snapshots'"
   },
   "dependencies": {
-    "@headlessui/react": "^1.5.0",
+    "@headlessui/react": "^1.6.0",
     "@heroicons/react": "^1.0.6",
     "@mdx-js/loader": "^2.1.1",
     "@next/mdx": "^12.1.5",
