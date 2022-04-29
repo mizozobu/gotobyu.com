@@ -23,10 +23,10 @@ runs:
         workflow: ${{ inputs.workflow }}
         branch: main
         name: bundle
-        path: .next/analyze/base
+        path: .next/analyze/base/bundle
     - name: Compare with base branch bundle
       if: ${{ steps.download-base-stats.outcome == 'success' }}
-      run: ls -laR .next/analyze/base && npx -p nextjs-bundle-analysis compare
+      run: ls -laR .next/analyze/base/bundle && npx -p nextjs-bundle-analysis compare
       shell: bash
     - name: Get comment body
       if: ${{ steps.download-base-stats.outcome == 'success' }}
