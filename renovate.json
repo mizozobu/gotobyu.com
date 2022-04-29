@@ -18,9 +18,16 @@
     {
       "automerge": true,
       "automergeType": "branch",
-      "groupName": "eslint",
+      "groupName": "next",
       "matchLanguages": ["js"],
-      "matchPackagePatterns": ["eslint"]
+      "matchPackagePatterns": ["next"]
+    },
+    {
+      "automerge": true,
+      "automergeType": "branch",
+      "groupName": "jest",
+      "matchLanguages": ["js"],
+      "matchPackagePatterns": ["jest"]
     },
     {
       "automerge": true,
@@ -28,6 +35,27 @@
       "groupName": "storybook",
       "matchLanguages": ["js"],
       "matchPackagePatterns": ["storybook"]
+    },
+    {
+      "automerge": true,
+      "automergeType": "branch",
+      "groupName": "eslint",
+      "matchLanguages": ["js"],
+      "matchPackagePatterns": ["eslint"]
+    },
+    {
+      "automerge": true,
+      "automergeType": "branch",
+      "groupName": "stylelint",
+      "matchLanguages": ["js"],
+      "matchPackagePatterns": ["stylelint"]
+    },
+    {
+      "automerge": true,
+      "automergeType": "branch",
+      "groupName": "commitlint",
+      "matchLanguages": ["js"],
+      "matchPackagePatterns": ["commitlint"]
     }
   ]
 }
