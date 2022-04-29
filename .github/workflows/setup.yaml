@@ -2,6 +2,11 @@ name: Setup
 
 on:
   workflow_call:
+    inputs:
+      workflow:
+        required: true
+        type: string
+        description: Workflow file name
 
 jobs:
   setup:
@@ -16,3 +21,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
         uses: ./.github/actions/build
+      - name: Analyze
+        uses: ./.github/actions/analyze
+        with:
+          workflow: ${{ inputs.workflow }}

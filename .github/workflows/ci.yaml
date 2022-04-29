@@ -14,6 +14,8 @@ jobs:
     uses: ./.github/workflows/setup.yaml
     needs:
       - onboard
+    with:
+      workflow: ci.yaml
 
   lint:
     uses: ./.github/workflows/lint.yaml
