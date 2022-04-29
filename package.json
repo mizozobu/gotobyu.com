@@ -51,7 +51,7 @@
   "devDependencies": {
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
-    "@jest/globals": "^27.5.1",
+    "@jest/globals": "^28.0.3",
     "@next/bundle-analyzer": "^12.1.5",
     "@next/env": "^12.1.5",
     "@next/eslint-plugin-next": "^12.1.5",
