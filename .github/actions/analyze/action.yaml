@@ -16,6 +16,7 @@ runs:
         name: bundle
         path: .next/analyze/__bundle_analysis.json
     - name: Download base branch bundle stats
+      continue-on-error: true
       uses: dawidd6/action-download-artifact@v2
       with:
         workflow: ${{ inputs.workflow }}
@@ -23,9 +24,11 @@ runs:
         name: bundle
         path: .next/analyze/base
     - name: Compare with base branch bundle
+      if: ${{ success() }}
       run: ls -laR .next/analyze/base && npx -p nextjs-bundle-analysis compare
       shell: bash
     - name: Get comment body
+      if: ${{ success() }}
       id: get-comment-body
       run: |
         body=$(cat .next/analyze/__bundle_analysis_comment.txt)
@@ -35,6 +38,7 @@ runs:
         echo ::set-output name=body::$body
       shell: bash
     - name: Post bundle size comment to commit
+      if: ${{ success() }}
       uses: peter-evans/commit-comment@v2
       with:
         body: ${{ steps.get-comment-body.outputs.body }}
