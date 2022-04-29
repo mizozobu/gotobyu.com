@@ -7,8 +7,11 @@ import { Fragment, type ComponentType, type ReactNode } from 'react';
  * Props for {@link HeaderMenuPopover}
  */
 interface Props {
+  /** Popover label */
   label: string;
+  /** Icon */
   icon?: ComponentType<{ className?: string }>;
+  /** Render function for popover content */
   children: ({ close }: { close: () => void }) => ReactNode;
 }
 

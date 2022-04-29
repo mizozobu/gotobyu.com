@@ -9,6 +9,9 @@ import { statsState, CURRENCY } from '@s/stats';
 export const CurrencySwitchControl = (): JSX.Element => {
   const [{ currency }, setStatsState] = useRecoilState(statsState);
 
+  /**
+   * Change event handler
+   */
   const handleChange: ComponentPropsWithoutRef<
     typeof SwitchControl
   >['onChange'] = (checked) => {

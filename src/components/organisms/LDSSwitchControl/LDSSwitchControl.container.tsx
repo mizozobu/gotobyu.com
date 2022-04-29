@@ -9,6 +9,10 @@ import { statsState } from '@s/stats';
 export const LDSSwitchControl = (): JSX.Element => {
   const [{ isLDS }, setStatsState] = useRecoilState(statsState);
 
+  /**
+   * Change event handler
+   * @param checked Whether switch in on
+   */
   const handleChange: ComponentPropsWithoutRef<
     typeof SwitchControl
   >['onChange'] = (checked) => {

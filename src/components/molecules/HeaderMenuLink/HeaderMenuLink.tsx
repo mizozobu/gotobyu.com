@@ -5,10 +5,15 @@ import type { ComponentType } from 'react';
  * Props for {@link HeaderMenuLink}
  */
 interface Props {
+  /** Title for the link */
   name: string;
+  /** Details for the link */
   detail: string;
+  /** href to pass */
   href: string;
+  /** Icon */
   icon: ComponentType<{ className?: string }>;
+  /** Click event handler */
   onClick: () => void;
 }
 

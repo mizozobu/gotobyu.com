@@ -50,8 +50,11 @@ const SearchDialog = dynamic<SearchDialogProps>(
  * Props for {@link Header}
  */
 interface Props {
+  /** Whether header is visible */
   show: boolean;
+  /** Whether loading indicator is visible */
   loading: boolean;
+  /** Whether search is available */
   isSearchAvailable: boolean;
 }
 

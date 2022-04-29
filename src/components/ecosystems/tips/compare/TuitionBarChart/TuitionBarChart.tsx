@@ -34,6 +34,9 @@ export const TuitionBarChart = memo(
     const multiplier = isJPY ? exrate : 1;
     const ldsRate = isLDS ? 1 : 2;
 
+    /**
+     * Format label
+     */
     const formatLabel:
       | BarChartProps['labelCallback'] & BarChartProps['yAxesTicksCallback'] =
       useCallback(

@@ -6,7 +6,9 @@ import { Fragment } from 'react';
  * Props for {@link CopiedDialog}
  */
 interface Props {
+  /** Whether dialog is open */
   isOpen: boolean;
+  /** Close dialog */
   onClose: () => void;
 }
 

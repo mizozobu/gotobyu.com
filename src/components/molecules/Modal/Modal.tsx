@@ -5,8 +5,11 @@ import { Fragment, type ReactNode } from 'react';
  * Props for {@link Modal}
  */
 interface Props {
+  /** Whether dialog is open */
   isOpen: boolean;
+  /** Dialog content */
   children: ReactNode;
+  /** Close dialog */
   onClose: () => void;
 }
 

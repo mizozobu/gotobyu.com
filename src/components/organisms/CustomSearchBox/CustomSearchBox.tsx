@@ -41,6 +41,10 @@ export class CustomSearchBox extends Component<Props, State> {
     };
   }
 
+  /**
+   * Debounced change event handler
+   * @param event Click event
+   */
   onChangeDebounced: ChangeEventHandler<HTMLInputElement> = (event) => {
     const { refine, delay } = this.props;
     const { value } = event.currentTarget;

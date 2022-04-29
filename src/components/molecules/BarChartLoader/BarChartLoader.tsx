@@ -24,6 +24,11 @@ export const BarChartLoader = ({
   const gapWidth = 100 / (barToGapRatio * nBar + nGap);
   const barWidth = barToGapRatio * gapWidth;
 
+  /**
+   * Return className for fill color
+   * @param i Index
+   * @returns className for fill color
+   */
   const getFillClass = (i: number): string => {
     switch (i) {
       case 0:

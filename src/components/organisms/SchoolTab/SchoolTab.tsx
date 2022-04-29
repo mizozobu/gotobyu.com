@@ -9,7 +9,9 @@ import byuiLogoImage from '@p/byui/byui-logo.png';
  * Props for {@link SchoolTabPanel}
  */
 interface TabPanelForSchoolProps {
+  /** School name for tab  */
   paneFor: 'byu' | 'byuh' | 'byui';
+  /** Tab content */
   children: ReactNode;
 }
 

@@ -7,6 +7,7 @@ import styles from './InternalLink.module.css';
  * Props for {@link InternalLink}
  */
 interface Props extends ComponentPropsWithoutRef<'a'> {
+  /** href to pass */
   href: string;
 }
 

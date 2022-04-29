@@ -6,7 +6,7 @@ import styles from './Table.module.css';
  * Props for {@link Table}
  */
 interface Props extends ComponentPropsWithoutRef<'table'> {
-  /** Color for thick border
+  /** Color for thick border applied to
    * - bottom of header
    * - top of footer
    * - right of the first column

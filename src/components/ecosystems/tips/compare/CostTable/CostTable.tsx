@@ -8,8 +8,11 @@ import { COST_OF_ATTENDACE } from '@d/cost-of-attendance';
  * Props for {@link CostTable}
  */
 interface Props {
+  /** JPY => USD exchange rate */
   exrate: number;
+  /** Whether to show cost in JPY */
   isJPY: boolean;
+  /** Whether to show LDS rate of tuition */
   isLDS: boolean;
 }
 

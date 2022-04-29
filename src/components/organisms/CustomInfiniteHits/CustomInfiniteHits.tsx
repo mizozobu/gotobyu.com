@@ -9,6 +9,7 @@ import styles from './CustomInfiniteHits.module.css';
  * Props for {@link CustomInfiniteHits}
  */
 interface Props extends InfiniteHitsProvided<ActualHit<Algoliast>> {
+  /** Render function for hit content */
   children: (hit: ActualHit<Algoliast>) => JSX.Element;
 }
 

@@ -19,6 +19,9 @@ interface Props
  * Pie chart to show internship salary distribution
  */
 export const InternSalaryPieChart = memo((props: Props): JSX.Element => {
+  /**
+   * Format label
+   */
   const formatLabel: PieChartProps['labelCallback'] = useCallback(
     (value: number, context: Context) => [
       `${context.chart.data.labels?.[context.dataIndex] as string}`,

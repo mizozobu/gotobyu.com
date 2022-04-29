@@ -24,8 +24,11 @@ const CustomStateResults = connectStateResults(_CustomStateResults);
  * Props for {@link SearchDialog}
  */
 export interface Props {
+  /** Whether dialog is open */
   isOpen: boolean;
+  /** Whether search is available */
   isAvailable: boolean;
+  /** Close dialog */
   onClose: () => void;
 }
 

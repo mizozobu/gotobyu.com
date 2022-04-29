@@ -20,6 +20,13 @@ export const EnglishRequirementBySchoolTable = ({
   school,
   data,
 }: Props): JSX.Element => {
+  /**
+   * Format score or text
+   * - score: add comma
+   * - text: as is
+   * @param score Score or text
+   * @returns Formatted score node or text
+   */
   const renderScore = (score: number | string): string | JSX.Element => {
     if (typeof score === 'number') return <Digit>{score}</Digit>;
     return score;

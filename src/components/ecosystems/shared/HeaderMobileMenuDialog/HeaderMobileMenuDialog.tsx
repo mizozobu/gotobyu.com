@@ -13,7 +13,9 @@ import {
  * Props for {@link HeaderMobileMenuDialog}
  */
 export interface Props {
+  /** Whether dialog is open */
   isOpen: boolean;
+  /** Close dialog */
   onClose: () => void;
 }
 
