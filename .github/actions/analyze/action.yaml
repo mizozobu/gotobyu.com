@@ -35,6 +35,6 @@ runs:
         echo ::set-output name=body::$body
       shell: bash
     - name: Post bundle size comment to commit
-        uses: peter-evans/commit-comment@v2
-        with:
-          body: ${{ steps.get-comment-body.outputs.body }}
+      uses: peter-evans/commit-comment@v2
+      with:
+        body: ${{ steps.get-comment-body.outputs.body }}

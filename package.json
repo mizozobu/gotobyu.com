@@ -110,6 +110,5 @@
   "engines": {
     "node": ">=14 <17",
     "yarn": "^1.22.17"
-  },
-  "nextBundleAnalysis": {}
+  }
 }
