@@ -7,7 +7,7 @@ const withBundleAnalyzer =
 /* eslint-enable import/no-extraneous-dependencies */
 const rehypeSlug = require('rehype-slug');
 const remarkSectionize = require('remark-sectionize');
-const visit = require('unist-util-visit-cjs');
+const visit = require('unist-util-visit');
 
 /**
  * Remark plugin to remove a space converted from a new line in markdown

@@ -3,7 +3,6 @@ import { pathsToModuleNameMapper, type InitialOptionsTsJest } from 'ts-jest';
 import { loadConfig, type ConfigLoaderSuccessResult } from 'tsconfig-paths';
 
 const jestConfig: InitialOptionsTsJest = {
-  preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'jest-environment-jsdom',
   testMatch: ['<rootDir>/src/**/?(*.)+(spec|test).[jt]s?(x)'],
   restoreMocks: true,
@@ -14,11 +13,6 @@ const jestConfig: InitialOptionsTsJest = {
       prefix: '<rootDir>/',
     },
   ),
-  globals: {
-    'ts-jest': {
-      useESM: true,
-    },
-  },
 };
 
 export default nextJest({

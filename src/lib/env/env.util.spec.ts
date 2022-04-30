@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import { getEnvVar } from './env.util';
 
 describe('getEnvVar', () => {

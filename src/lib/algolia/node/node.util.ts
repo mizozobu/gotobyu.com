@@ -3,9 +3,9 @@ import algoliasearch from 'algoliasearch';
 import axios from 'axios';
 import type { Element, Text } from 'hast';
 import rehypeParse from 'rehype-parse';
-import { unified, type Compiler, type Processor } from 'unified';
+import unified, { type Processor } from 'unified';
 import type { Node } from 'unist';
-import { visit } from 'unist-util-visit';
+import visit from 'unist-util-visit';
 import type { VFileCompatible } from 'vfile';
 import {
   BATCH_ACTION,
@@ -247,7 +247,7 @@ export function rehypeAlgolia(): void {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const that = this as Processor;
-  const compiler: Compiler = (tree) => {
+  const compiler = (tree: Node): Algoliast[] => {
     const {
       baseUrl,
       endingChar = '',

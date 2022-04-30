@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import algoliasearch from 'algoliasearch';
 import type { SpyInstance } from 'jest-mock';
 import type { Algoliast } from './algolia.interface';
@@ -59,6 +58,8 @@ describe('createCustomAlgoliaSearchClient', () => {
     >;
 
     beforeEach(() => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       __search = jest.spyOn(algoliaSearch, 'search').mockResolvedValueOnce({
         results: [],
       });
