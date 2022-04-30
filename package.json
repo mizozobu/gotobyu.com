@@ -40,19 +40,17 @@
     "react-instantsearch-dom": "^6.26.0",
     "react-slick": "^0.29.0",
     "recoil": "^0.7.2",
-    "rehype-parse": "^8.0.4",
+    "rehype-parse": "7.x",
     "rehype-slug": "4.x",
     "remark-sectionize": "^1.1.1",
     "sharp": "^0.30.5",
     "slick-carousel": "^1.8.1",
-    "unified": "^10.1.1",
-    "unist-util-visit": "^4.1.0",
-    "unist-util-visit-cjs": "npm:unist-util-visit@2.x"
+    "unified": "9.x",
+    "unist-util-visit": "2.x"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.1",
     "@commitlint/config-conventional": "^17.0.0",
-    "@jest/globals": "^27.5.1",
     "@next/bundle-analyzer": "^12.1.6",
     "@next/env": "^12.1.6",
     "@next/eslint-plugin-next": "^12.1.6",

@@ -1,7 +1,6 @@
-import { jest } from '@jest/globals';
 import type { SpyInstance } from 'jest-mock';
 import rehypeParse from 'rehype-parse';
-import { unified } from 'unified';
+import unified from 'unified';
 import type { Algoliast, HeadingTag, Settings } from '@l/algolia';
 import { __HTML_CONTENT, __ALGOLIASTS } from '@l/algolia/algolia.fixture';
 import {
@@ -672,6 +671,7 @@ describe('rehypeAlgolia', () => {
   it('should compile html to algolists', async () => {
     expect.assertions(1);
 
+    // eslint-disable-next-line
     const { result } = await unified()
       .use(rehypeParse)
       .use(rehypeAlgolia)

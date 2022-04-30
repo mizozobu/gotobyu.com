@@ -1,4 +1,3 @@
-import { jest } from '@jest/globals';
 import type { ScreenSize } from './media.interface';
 import { mediaGte } from './media.util';
 
@@ -13,7 +12,7 @@ describe('mediaGte', () => {
       writable: true,
       value: jest.fn().mockImplementation((query) => ({
         matches: ((query as string).match(/\d+/) ?? 0) <= windowSize,
-        media: query,
+        media: query as string,
         onchange: null,
         addListener: jest.fn(),
         removeListener: jest.fn(),
