@@ -8,14 +8,14 @@ import type { AtomKey, AtomStatePlain } from './recoil.interface';
  */
 export class AtomStore {
   /** Atom store */
-  store = new Map<AtomKey, AtomStatePlain>();
+  private store = new Map<AtomKey, AtomStatePlain>();
 
   /**
    * Register atom in store
    * @param atomKey Key for the atom
    * @param value Atom as plain object
    */
-  setAtom(atomKey: AtomKey, value: AtomStatePlain): void {
+  public setAtom(atomKey: AtomKey, value: AtomStatePlain): void {
     this.store.set(atomKey, value);
   }
 
@@ -23,7 +23,7 @@ export class AtomStore {
    * Get {@link AtomStore} as a plain object
    * @returns AtomStore as a plain object
    */
-  serializeStore(): { [key in AtomKey]: AtomStatePlain } {
+  public serializeStore(): { [key in AtomKey]: AtomStatePlain } {
     return Object.fromEntries(this.store) as {
       [key in AtomKey]: AtomStatePlain;
     };
@@ -34,7 +34,9 @@ export class AtomStore {
    * @param getStaticPropsResult
    * @returns GetStaticPropsResult
    */
-  with<P extends { [key: string]: unknown } = { [key: string]: unknown }>(
+  public with<
+    P extends { [key: string]: unknown } = { [key: string]: unknown },
+  >(
     // really hard to use GetStaticPropsResult<P>
     getStaticPropsResult: {
       redirect?: Redirect;

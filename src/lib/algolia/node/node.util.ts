@@ -152,7 +152,7 @@ export class AlgoliastBuilder {
    * Reset headings below the specified depth
    * @param tag heading tag name
    */
-  resetHeadings(tag: HeadingTag): void {
+  private resetHeadings(tag: HeadingTag): void {
     const depth = +tag.slice(-1) as HeadingDepth;
     for (let i = depth; i <= this.MAX_DEPTH; i += 1) {
       this.current[`h${i}`] = '';
@@ -164,7 +164,7 @@ export class AlgoliastBuilder {
    * @param tag Heading tag name
    * @param value Heading title
    */
-  setHeading(tag: HeadingTag, value: string): void {
+  public setHeading(tag: HeadingTag, value: string): void {
     this.resetHeadings(tag);
     this.current.permalink = `${this.baseUrl}#${value}`;
     this.current[tag] = value;
@@ -174,14 +174,14 @@ export class AlgoliastBuilder {
    * Set content
    * @param content Content body
    */
-  setContent(content: string): void {
+  public setContent(content: string): void {
     this.current.content = content;
   }
 
   /**
    * Add {@link Algoliast}
    */
-  add(algoliast: Algoliast): void {
+  public add(algoliast: Algoliast): void {
     this.algoliasts.push(algoliast);
   }
 
@@ -189,7 +189,7 @@ export class AlgoliastBuilder {
    * Getter for algoliasts
    * @returns Array of {@link Algoliast}
    */
-  getAlgoliasts(): Algoliast[] {
+  public getAlgoliasts(): Algoliast[] {
     return this.algoliasts;
   }
 
@@ -197,7 +197,7 @@ export class AlgoliastBuilder {
    * Get current {@link Algoliast}
    * @returns Current {@link Algoliast}
    */
-  getCurrentAlgoliast(): Algoliast {
+  public getCurrentAlgoliast(): Algoliast {
     return { ...this.current };
   }
 
@@ -205,7 +205,7 @@ export class AlgoliastBuilder {
    * Get last {@link Algoliast}
    * @returns Last {@link Algoliast}
    */
-  getLastAlgoliast(): Algoliast | undefined {
+  public getLastAlgoliast(): Algoliast | undefined {
     return this.algoliasts[this.algoliasts.length - 1];
   }
 }

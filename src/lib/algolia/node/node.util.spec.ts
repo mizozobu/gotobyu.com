@@ -323,7 +323,7 @@ describe('AlgoliastBuilder', () => {
     it('should reset h1 ~ h6', () => {
       expect.assertions(1);
 
-      builder.resetHeadings('h1');
+      builder['resetHeadings']('h1');
 
       expect(builder['current']).toStrictEqual(
         expect.objectContaining({
@@ -340,7 +340,7 @@ describe('AlgoliastBuilder', () => {
     it('should reset h3 ~ h6', () => {
       expect.assertions(1);
 
-      builder.resetHeadings('h3');
+      builder['resetHeadings']('h3');
 
       expect(builder['current']).toStrictEqual(
         expect.objectContaining({
@@ -357,7 +357,7 @@ describe('AlgoliastBuilder', () => {
     it('should reset h6', () => {
       expect.assertions(1);
 
-      builder.resetHeadings('h6');
+      builder['resetHeadings']('h6');
 
       expect(builder['current']).toStrictEqual(
         expect.objectContaining({
@@ -376,6 +376,8 @@ describe('AlgoliastBuilder', () => {
     let __resetHeadings: SpyInstance<void, [HeadingTag]>;
 
     beforeEach(() => {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       __resetHeadings = jest.spyOn(builder, 'resetHeadings');
     });
 

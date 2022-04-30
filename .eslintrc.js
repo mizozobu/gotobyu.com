@@ -153,6 +153,18 @@ module.exports = {
 
         // type must be imported as type
         '@typescript-eslint/consistent-type-imports': 'error',
+
+        // require public/private/protected
+        '@typescript-eslint/explicit-member-accessibility': [
+          'error',
+          {
+            accessibility: 'explicit',
+            ignoredMethodNames: ['render'],
+            overrides: {
+              constructors: 'no-public',
+            },
+          },
+        ],
       },
     },
 
