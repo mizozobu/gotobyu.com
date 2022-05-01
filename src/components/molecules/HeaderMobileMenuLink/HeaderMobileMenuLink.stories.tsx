@@ -18,5 +18,4 @@ Example.args = {
   name: 'link',
   href: '/',
   icon: TerminalIcon,
-  onClick: () => alert('click'),
 };

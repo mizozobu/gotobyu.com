@@ -15,7 +15,4 @@ const Template: ComponentStory<typeof HeaderMobileMenuDialog> = (args) => (
 export const Example = Template.bind({});
 Example.args = {
   isOpen: true,
-  onClose: () => {
-    alert('close');
-  },
 };

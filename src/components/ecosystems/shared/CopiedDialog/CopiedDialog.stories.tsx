@@ -15,5 +15,4 @@ const Template: ComponentStory<typeof CopiedDialog> = (args) => (
 export const Example = Template.bind({});
 Example.args = {
   isOpen: true,
-  onClose: () => alert('close'),
 };

@@ -17,5 +17,4 @@ Example.args = {
   label: 'Label',
   sr: 'Switch',
   checked: true,
-  onChange: (checked: boolean) => alert(`switch to ${checked.toString()}`),
 };

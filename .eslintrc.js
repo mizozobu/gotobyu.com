@@ -175,8 +175,6 @@ module.exports = {
       files: ['**/*.stories.jsx', '**/*.stories.tsx', '.storybook/**'],
       extends: ['plugin:storybook/recommended'],
       rules: {
-        'no-alert': 'off',
-
         // allow importing storybooks from devDependencies
         // see https://github.com/storybookjs/storybook/issues/1992#issuecomment-335001056
         'import/no-extraneous-dependencies': [
