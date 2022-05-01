@@ -9,9 +9,10 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof HitItem>;
 
-const Template: ComponentStory<typeof HitItem> = (args) => (
+// eslint-disable-next-line react/prop-types
+const Template: ComponentStory<typeof HitItem> = ({ hit, ...args }) => (
   <MockInstantSearch>
-    <HitItem {...args} />
+    <HitItem {...args} hit={{ ...hit, permalink: window.location.href }} />
   </MockInstantSearch>
 );
 

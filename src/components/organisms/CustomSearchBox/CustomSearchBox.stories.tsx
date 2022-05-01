@@ -5,7 +5,7 @@ import { CustomSearchBox } from './CustomSearchBox';
 export default {
   title: 'organisms/CustomSearchBox',
   component: CustomSearchBox,
-  argTypes: {},
+  argTypes: { refine: { action: 'refine' } },
 } as ComponentMeta<typeof CustomSearchBox>;
 
 const Template: ComponentStory<typeof CustomSearchBox> = (args) => (
@@ -16,6 +16,5 @@ export const Example = Template.bind({});
 Example.args = {
   className: 'px-4 py-2 rounded-full bg-indigo-50',
   currentRefinement: 'default value',
-  refine: (v) => alert(v),
   delay: 500,
 };

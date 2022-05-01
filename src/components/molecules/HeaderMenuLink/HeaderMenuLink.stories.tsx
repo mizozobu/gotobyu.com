@@ -19,5 +19,4 @@ Example.args = {
   detail: 'detail for link',
   href: '/',
   icon: TerminalIcon,
-  onClick: () => alert('click'),
 };

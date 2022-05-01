@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { HitItem } from '@c/molecules/HitItem';
@@ -7,14 +8,24 @@ import { CustomInfiniteHits } from './CustomInfiniteHits';
 export default {
   title: 'organisms/CustomInfiniteHits',
   component: CustomInfiniteHits,
-  argTypes: {},
+  argTypes: {
+    refinePrevious: { action: 'refinePrevious' },
+    refineNext: { action: 'refineNext' },
+  },
 } as ComponentMeta<typeof CustomInfiniteHits>;
 
 const Template: ComponentStory<typeof CustomInfiniteHits> = (args) => (
   <MockInstantSearch>
     <CustomInfiniteHits {...args}>
       {(hit) => (
-        <HitItem key={hit.objectID} hit={hit} onClick={() => alert('click')} />
+        <HitItem
+          key={hit.objectID}
+          hit={{
+            ...hit,
+            permalink: window.location.href,
+          }}
+          onClick={action('click')}
+        />
       )}
     </CustomInfiniteHits>
   </MockInstantSearch>
@@ -146,6 +157,4 @@ Example.args = {
   ],
   hasPrevious: false,
   hasMore: false,
-  refinePrevious: () => alert('show prev'),
-  refineNext: () => alert('show more'),
 };
