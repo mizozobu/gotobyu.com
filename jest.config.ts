@@ -5,6 +5,7 @@ import { loadConfig, type ConfigLoaderSuccessResult } from 'tsconfig-paths';
 const jestConfig: InitialOptionsTsJest = {
   testEnvironment: 'jest-environment-jsdom',
   testMatch: ['<rootDir>/src/**/?(*.)+(spec|test).[jt]s?(x)'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   restoreMocks: true,
   // see https://kulshekhar.github.io/ts-jest/docs/getting-started/paths-mapping/
   moduleNameMapper: pathsToModuleNameMapper(

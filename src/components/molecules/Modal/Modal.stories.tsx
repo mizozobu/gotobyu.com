@@ -10,15 +10,28 @@ export default {
 
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
-export const Example = Template.bind({});
-Example.args = {
+export const Open = Template.bind({});
+Open.args = {
   isOpen: true,
   children: (
-    <div className='relative mx-auto flex h-64 w-80 items-center justify-center rounded bg-white'>
-      Modal
-    </div>
+    <button
+      type='button'
+      className='relative mx-auto flex h-64 w-80 items-center justify-center rounded bg-white'
+    >
+      button
+    </button>
   ),
-  onClose: () => {
-    alert('close');
-  },
+};
+
+export const Closed = Template.bind({});
+Closed.args = {
+  isOpen: false,
+  children: (
+    <button
+      type='button'
+      className='relative mx-auto flex h-64 w-80 items-center justify-center rounded bg-white'
+    >
+      button
+    </button>
+  ),
 };
