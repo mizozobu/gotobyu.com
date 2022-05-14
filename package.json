@@ -50,7 +50,7 @@
     "unist-util-visit-cjs": "npm:unist-util-visit@2.x"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.4",
+    "@commitlint/cli": "^16.3.0",
     "@commitlint/config-conventional": "^16.2.4",
     "@jest/globals": "^27.5.1",
     "@next/bundle-analyzer": "^12.1.6",
