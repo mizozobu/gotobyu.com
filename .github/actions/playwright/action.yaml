@@ -10,7 +10,7 @@ runs:
   steps:
     - name: Get @playwright/test version
       id: get-playwright-version
-      run: echo ::set-output name=playwrightVersion::$(node -p "/(?<=@playwright\/test@)(\d+\.\d+\.\d+)/.exec(require('child_process').spawnSync('yarn',['list','--pattern','@playwright/test']).stdout.toString())[0]")
+      run: echo ::set-output name=playwrightVersion::$(yarn --silent ver @playwright/test)
       shell: bash
     - name: Cache browsers
       id: cache-browsers
