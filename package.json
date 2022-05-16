@@ -91,7 +91,7 @@
     "postcss": "^8.4.13",
     "postcss-loader": "^6.2.1",
     "prettier": "^2.6.2",
-    "prettier-plugin-tailwindcss": "^0.1.10",
+    "prettier-plugin-tailwindcss": "^0.1.11",
     "sinon": "^14.0.0",
     "storybook": "^6.4.22",
     "storybook-addon-next-router": "^3.1.1",
