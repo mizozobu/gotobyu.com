@@ -18,7 +18,7 @@
     "algolia": "node --loader ./src/bin/loader.mjs --experimental-specifier-resolution=node ./src/bin/algolia.ts",
     "ut": "node --experimental-vm-modules --experimental-json-modules $(yarn bin jest)",
     "ut:debug": "node --experimental-vm-modules --experimental-json-modules --inspect $(yarn bin jest) --runInBand",
-    "e2e": "playwright test",
+    "e2e": "cross-env NODE_ENV=test playwright test",
     "e2e:linux": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v$(yarn --silent ver @playwright/test)-focal /bin/bash -c 'yarn e2e --retries=2'",
     "e2e:linux:update": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v$(yarn --silent ver @playwright/test)-focal /bin/bash -c 'yarn e2e --update-snapshots'"
   },

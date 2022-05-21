@@ -177,6 +177,11 @@ export abstract class _CustomPage {
     await new Promise((r) => {
       setTimeout(r, 500);
     });
+
+    // wait for sticky header to be back
+    await new Promise((r) => {
+      setTimeout(r, 250);
+    });
   }
 
   /**
@@ -186,11 +191,6 @@ export abstract class _CustomPage {
   public async screenshot(
     options: PageScreenshotOptions = {},
   ): Promise<Buffer> {
-    // wait for sticky header to be back
-    await new Promise((r) => {
-      setTimeout(r, 250);
-    });
-
     const screenshot = await this.page.screenshot({
       fullPage: true,
       animations: 'disabled',
