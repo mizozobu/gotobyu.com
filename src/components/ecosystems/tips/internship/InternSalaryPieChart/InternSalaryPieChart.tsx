@@ -22,7 +22,9 @@ export const InternSalaryPieChart = memo((props: Props): JSX.Element => {
   /**
    * Format label
    */
-  const formatLabel: PieChartProps['labelCallback'] = useCallback(
+  const formatLabel = useCallback<
+    Exclude<PieChartProps['labelCallback'], undefined>
+  >(
     (value: number, context: Context) => [
       `${context.chart.data.labels?.[context.dataIndex] as string}`,
       `${round(value, 2).toLocaleString()}%`,

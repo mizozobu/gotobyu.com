@@ -12,5 +12,5 @@ const Template: ComponentStory<typeof H3> = (args) => <H3 {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
-  children: 'example',
+  children: 'Heading',
 };

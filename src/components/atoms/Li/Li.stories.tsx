@@ -12,5 +12,5 @@ const Template: ComponentStory<typeof Li> = (args) => <Li {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
-  children: 'example',
+  children: 'item',
 };

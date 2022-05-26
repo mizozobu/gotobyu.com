@@ -23,7 +23,12 @@ export const NextImage = ({
   style = {},
   ...props
 }: Props): JSX.Element => (
-  <div id={id} className={classNames('relative', className)} style={style}>
+  <div
+    id={id}
+    className={classNames('relative', className)}
+    style={style}
+    data-testid='NextImage'
+  >
     <Image {...props} />
   </div>
 );

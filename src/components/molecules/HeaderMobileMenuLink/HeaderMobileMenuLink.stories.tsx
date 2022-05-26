@@ -16,6 +16,6 @@ const Template: ComponentStory<typeof HeaderMobileMenuLink> = (args) => (
 export const Example = Template.bind({});
 Example.args = {
   name: 'link',
-  href: '/',
+  href: '/link',
   icon: TerminalIcon,
 };

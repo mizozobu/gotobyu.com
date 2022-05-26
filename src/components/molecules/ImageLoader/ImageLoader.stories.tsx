@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof ImageLoader>;
 
 const Template: ComponentStory<typeof ImageLoader> = (args) => (
-  <ImageLoader {...args} className='h-32 w-64' />
+  <div className='h-40 w-64'>
+    <ImageLoader {...args} />
+  </div>
 );
 
 export const Example = Template.bind({});

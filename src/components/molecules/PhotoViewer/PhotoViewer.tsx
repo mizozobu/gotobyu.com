@@ -1,8 +1,9 @@
 import classNames from 'classnames';
-import Image, { type ImageProps } from 'next/image';
+import { type ImageProps } from 'next/image';
 import { useState } from 'react';
 import Slider, { type Settings } from 'react-slick';
 import { BgRotate } from '@c/atoms/BgRotate';
+import { NextImage } from '@c/atoms/NextImage';
 import styles from './PhotoViewer.module.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -56,14 +57,13 @@ export const PhotoViewer = ({
       <BgRotate className={className} colorClass={colorClass}>
         <Slider {...settings}>
           {images.map((imageProps) => (
-            <div
+            <NextImage
               key={imageProps.alt}
               className={classNames(
                 'relative aspect-[3/2] overflow-hidden rounded-xl',
               )}
-            >
-              <Image {...imageProps} />
-            </div>
+              {...imageProps}
+            />
           ))}
         </Slider>
       </BgRotate>

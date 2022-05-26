@@ -14,6 +14,6 @@ const Template: ComponentStory<typeof ExternalLink> = (args) => (
 
 export const Example = Template.bind({});
 Example.args = {
-  href: '/',
-  children: 'example',
+  href: 'https://example.com',
+  children: 'Link',
 };

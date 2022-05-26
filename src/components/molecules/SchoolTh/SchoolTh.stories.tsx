@@ -6,9 +6,9 @@ export default {
   title: 'molecules/SchoolTh',
   component: SchoolTh.BYU,
   argTypes: {},
-} as ComponentMeta<typeof SchoolTh.BYU>;
+} as ComponentMeta<() => JSX.Element>;
 
-const Template: ComponentStory<typeof SchoolTh.BYU> = () => (
+const Template: ComponentStory<() => JSX.Element> = () => (
   <table>
     <thead>
       <tr>

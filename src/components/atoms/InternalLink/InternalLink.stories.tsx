@@ -15,5 +15,5 @@ const Template: ComponentStory<typeof InternalLink> = (args) => (
 export const Example = Template.bind({});
 Example.args = {
   href: '/',
-  children: 'example',
+  children: 'Link',
 };

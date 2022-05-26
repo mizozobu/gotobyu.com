@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import Link from 'next/link';
 import {
   memo,
@@ -39,17 +38,16 @@ export const SectionTitle = memo(
     onClick,
     ...props
   }: Props): JSX.Element => (
-    <Component {...props} id={id}>
+    <Component
+      {...props}
+      id={id}
+      className={styles['section-title']}
+      aria-current={active}
+    >
       <Link href={`#${id}`}>
         <a tabIndex={-1}>
           <button type='button' className='text-left' onClick={onClick}>
-            <span
-              className={classNames(styles['section-title'], {
-                [styles.highlighted]: active,
-              })}
-            >
-              {children}
-            </span>
+            <span className={styles['section-title-text']}>{children}</span>
           </button>
         </a>
       </Link>

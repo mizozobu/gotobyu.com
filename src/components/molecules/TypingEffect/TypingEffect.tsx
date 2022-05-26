@@ -1,4 +1,4 @@
-import { useState, type ComponentPropsWithoutRef } from 'react';
+import { useState, useCallback, type ComponentPropsWithoutRef } from 'react';
 import { Type } from '@c/atoms/Type';
 
 /**
@@ -19,9 +19,9 @@ export const TypingEffect = ({ children, ...props }: Props): JSX.Element => {
   /**
    * Fired after erasing all characters after complete typing
    */
-  const handleBack = (): void => {
-    setCurrent(current < children.length - 1 ? current + 1 : 0);
-  };
+  const handleBack = useCallback((): void => {
+    setCurrent((prev) => (prev < children.length - 1 ? prev + 1 : 0));
+  }, [children]);
 
   return (
     <Type {...props} onBack={handleBack}>

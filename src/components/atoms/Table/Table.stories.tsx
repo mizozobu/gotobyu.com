@@ -13,6 +13,8 @@ const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
+  className: 'shadow-md p-4',
+  thickBorderColor: 'indigo',
   children: (
     <>
       <TableCaption>Table Example</TableCaption>

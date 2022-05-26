@@ -3,10 +3,12 @@ import byuLogoImage from '@p/byu/byu-logo.png';
 import byuhLogoImage from '@p/byuh/byuh-logo.png';
 import byuiLogoImage from '@p/byui/byui-logo.png';
 
+type ISchoolTh = () => JSX.Element;
+
 /**
  * <th> for BYU
  */
-const ThBYU = (): JSX.Element => (
+const ByuTh: ISchoolTh = () => (
   <th scope='col'>
     <NextImage
       className='h-full p-4'
@@ -23,7 +25,7 @@ const ThBYU = (): JSX.Element => (
 /**
  * <th> for BYUH
  */
-const ThBYUH = (): JSX.Element => (
+const ByuhTh: ISchoolTh = () => (
   <th scope='col'>
     <NextImage
       className='h-full p-4'
@@ -40,7 +42,7 @@ const ThBYUH = (): JSX.Element => (
 /**
  * <th> for BYUI
  */
-const ThBYUI = (): JSX.Element => (
+const ByuiTh: ISchoolTh = () => (
   <th scope='col'>
     <NextImage
       className='h-full p-4'
@@ -55,7 +57,7 @@ const ThBYUI = (): JSX.Element => (
 );
 
 export const SchoolTh = {
-  BYU: ThBYU,
-  BYUH: ThBYUH,
-  BYUI: ThBYUI,
+  BYU: ByuTh,
+  BYUH: ByuhTh,
+  BYUI: ByuiTh,
 };

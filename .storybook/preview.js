@@ -29,8 +29,19 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <RecoilRoot>
-      <Story />
-    </RecoilRoot>
+    // HACK: storybook-addon-next-router does not work with jest-dom
+    <RouterContext.Provider
+      value={{
+        push: () => Promise.resolve(),
+        replace: () => Promise.resolve(),
+        reload: () => Promise.resolve(),
+        back: () => Promise.resolve(),
+        prefetch: () => Promise.resolve(),
+      }}
+    >
+      <RecoilRoot>
+        <Story />
+      </RecoilRoot>
+    </RouterContext.Provider>
   ),
 ];

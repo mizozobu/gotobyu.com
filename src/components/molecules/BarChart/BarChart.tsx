@@ -22,9 +22,9 @@ export interface Props
   /** Chart title */
   title: string;
   /** Function to format y axis label */
-  yAxesTicksCallback: TickOptions['callback'];
+  yAxesTicksCallback?: TickOptions['callback'];
   /** Function to format label */
-  labelCallback: (value: number, ctx: Context) => string;
+  labelCallback?: (value: number, ctx: Context) => string;
   /** Whether to show data label */
   enableDataLable?: boolean;
   /** Whether to show tooltip */

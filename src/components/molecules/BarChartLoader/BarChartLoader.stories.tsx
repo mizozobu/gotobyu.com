@@ -9,8 +9,12 @@ export default {
 } as ComponentMeta<typeof BarChartLoader>;
 
 const Template: ComponentStory<typeof BarChartLoader> = (args) => (
-  <BarChartLoader {...args} className='h-32 w-64' />
+  <div className='h-64 w-96'>
+    <BarChartLoader {...args} />
+  </div>
 );
 
 export const Example = Template.bind({});
-Example.args = {};
+Example.args = {
+  barCount: 9,
+};

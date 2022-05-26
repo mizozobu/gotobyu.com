@@ -1,8 +1,8 @@
-.section-title {
+.section-title .section-title-text {
   @apply relative px-2 font-bold;
 }
 
-.section-title::after {
+.section-title .section-title-text::after {
   right: -1em;
   bottom: 0.1em;
   width: 1em;
@@ -15,11 +15,11 @@
   @apply absolute bg-center bg-no-repeat opacity-0 transition-opacity;
 }
 
-.section-title:hover::after,
-.section-title.highlighted::after {
+.section-title .section-title-text:hover::after,
+.section-title[aria-current='true'] .section-title-text::after {
   @apply opacity-100;
 }
 
-.section-title.highlighted {
+.section-title[aria-current='true'] .section-title-text {
   box-shadow: inset 0 -0.3em 0 0 theme('colors.indigo.300');
 }

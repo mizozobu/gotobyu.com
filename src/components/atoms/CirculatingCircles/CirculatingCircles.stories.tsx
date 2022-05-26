@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof CirculatingCircles>;
 
 const Template: ComponentStory<typeof CirculatingCircles> = (args) => (
-  <CirculatingCircles {...args} />
+  <div className='w-48'>
+    <CirculatingCircles {...args} />
+  </div>
 );
 
 export const Static = Template.bind({});

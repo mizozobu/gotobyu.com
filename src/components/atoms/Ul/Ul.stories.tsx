@@ -12,5 +12,12 @@ const Template: ComponentStory<typeof Ul> = (args) => <Ul {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
-  children: 'example',
+  children: (
+    <>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+    </>
+  ),
 };

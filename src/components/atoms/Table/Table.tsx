@@ -19,7 +19,7 @@ interface Props extends ComponentPropsWithoutRef<'table'> {
  */
 export const Table = ({
   className,
-  thickBorderColor,
+  thickBorderColor = '',
   ...props
 }: Props): JSX.Element => (
   <div
@@ -27,15 +27,16 @@ export const Table = ({
       'overflow-x-auto overflow-y-hidden whitespace-nowrap rounded-md',
       className,
     )}
-    style={
-      {
-        '--thick-border-color': thickBorderColor ?? '',
-      } as CSSProperties
-    }
+    data-testid='Table'
   >
     <table
       {...props}
       className={classNames('min-w-full table-auto', styles.table)}
+      style={
+        {
+          '--thick-border-color': thickBorderColor,
+        } as CSSProperties
+      }
     />
   </div>
 );

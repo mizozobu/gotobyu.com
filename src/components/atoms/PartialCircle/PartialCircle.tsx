@@ -21,12 +21,13 @@ export const PartialCircle = ({ r, angle, ...props }: Props): JSX.Element => {
 
   return (
     <path
+      {...props}
       d={`
         M 0,${-r}
         A ${r},${r} 0 ${f1},1 ${x2},${y2}
         L 0,0
       `}
-      {...props}
+      data-testid='PartialCircle'
     />
   );
 };

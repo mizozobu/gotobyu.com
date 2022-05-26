@@ -15,7 +15,10 @@ export const PieChartLoader = ({ className, ...props }: Props): JSX.Element => {
   const r = 50;
 
   return (
-    <div className='flex h-full w-full items-center justify-center'>
+    <div
+      className='flex h-full w-full items-center justify-center'
+      role='progressbar'
+    >
       <svg
         className={classNames(className, 'aspect-square')}
         height='80%'
@@ -26,23 +29,29 @@ export const PieChartLoader = ({ className, ...props }: Props): JSX.Element => {
           <PartialCircle
             className='fill-slate-100'
             r={r}
-            angle={210}
+            angle={150}
             transform='rotate(0)'
           />
           <PartialCircle
             className='fill-slate-200'
             r={r}
             angle={90}
-            transform='rotate(210)'
+            transform='rotate(150)'
           />
           <PartialCircle
             className='fill-slate-300'
+            r={r}
+            angle={60}
+            transform='rotate(240)'
+          />
+          <PartialCircle
+            className='fill-slate-400'
             r={r}
             angle={40}
             transform='rotate(300)'
           />
           <PartialCircle
-            className='fill-slate-400'
+            className='fill-slate-500'
             r={r}
             angle={20}
             transform='rotate(340)'

@@ -114,7 +114,7 @@ export const Header = ({
           <div className='relative flex h-16 items-center justify-between'>
             <div className='flex justify-start lg:w-0 lg:flex-1'>
               <Link href='/'>
-                <a tabIndex={-1}>
+                <a>
                   <span className='sr-only'>Home</span>
                   <CirculatingCircles className='h-8 w-8' />
                 </a>

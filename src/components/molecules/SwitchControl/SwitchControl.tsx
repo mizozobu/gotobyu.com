@@ -6,6 +6,8 @@ import type { ReactNode } from 'react';
  * Props for {@link SwitchControl}
  */
 interface Props {
+  /** className to pass */
+  className?: string;
   /** Label */
   label: ReactNode;
   /** Text for screen reader */
@@ -14,19 +16,17 @@ interface Props {
   checked: boolean;
   /** Change event handler */
   onChange: (checked: boolean) => void;
-  /** className to pass */
-  className?: string;
 }
 
 /**
  * Toggle wwitch
  */
 export const SwitchControl = ({
+  className,
   label,
   sr,
   checked,
   onChange,
-  className,
 }: Props): JSX.Element => (
   <Switch.Group data-noindex='true'>
     <div
@@ -34,6 +34,7 @@ export const SwitchControl = ({
         'flex items-center rounded-md bg-indigo-50 px-3 py-1.5',
         className,
       )}
+      data-testid='SwitchControl-wrapper'
     >
       <Switch.Label className='mr-2 text-sm'>{label}</Switch.Label>
       <Switch

@@ -2,7 +2,7 @@
  * Returns if the given text node is visible
  * @param node Text node
  * @returns Whether the node is vislble
- * @type {(node: Text) => boolean)}
+ * @type {(node: Text) => boolean}
  * @see {@link https://github.com/microsoft/playwright/blob/cdb68448e15f848ebb3f31834c2431e7bd8b681b/packages/playwright-core/src/server/injected/selectorEvaluator.ts#L701-L707}
  */
 // eslint-disable-next-line no-unused-vars
@@ -18,7 +18,7 @@ const isVisibleTextNode = (node) => {
  * Returns if the given element is visible
  * @param element Element
  * @returns Whether the element is vislble
- * @type {(node: Element) => boolean)}
+ * @type {(node: Element) => boolean}
  * @see {@link https://github.com/microsoft/playwright/blob/cdb68448e15f848ebb3f31834c2431e7bd8b681b/packages/playwright-core/src/server/injected/selectorEvaluator.ts#L680-L699}
  */
 // eslint-disable-next-line no-unused-vars
