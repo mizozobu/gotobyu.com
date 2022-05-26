@@ -17,6 +17,6 @@ export const Example = Template.bind({});
 Example.args = {
   name: 'link',
   detail: 'detail for link',
-  href: '/',
+  href: '/link',
   icon: TerminalIcon,
 };

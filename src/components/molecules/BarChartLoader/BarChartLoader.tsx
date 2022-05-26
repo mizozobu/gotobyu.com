@@ -55,9 +55,12 @@ export const BarChartLoader = ({
   };
 
   return (
-    <div className='flex h-full w-full items-center justify-center'>
+    <div
+      className='flex h-full w-full items-center justify-center'
+      role='progressbar'
+    >
       <svg
-        className={classNames(className, 'h-full w-full p-8')}
+        className={classNames(className, 'h-full w-full p-[3%]')}
         viewBox='0 0 100 100'
         preserveAspectRatio='none'
         {...props}
@@ -79,6 +82,7 @@ export const BarChartLoader = ({
               y={100 - ((i + 1) * 100) / barCount}
               width={barWidth}
               height={((i + 1) * 100) / barCount}
+              data-testid='BarChartLoader-bar'
             />
           ))}
           <line

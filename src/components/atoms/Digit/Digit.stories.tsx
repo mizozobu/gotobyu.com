@@ -17,5 +17,21 @@ NoComma.args = {
 
 export const Comma = Template.bind({});
 Comma.args = {
-  children: 123456789,
+  children: 1234,
+};
+
+export const RoundUp = Template.bind({});
+RoundUp.args = {
+  children: 999.5,
+};
+
+export const RoundDown = Template.bind({});
+RoundDown.args = {
+  children: 1000.4,
+};
+
+export const RoundTo2DecimalPlaces = Template.bind({});
+RoundTo2DecimalPlaces.args = {
+  children: 1000.1234,
+  decimals: 2,
 };

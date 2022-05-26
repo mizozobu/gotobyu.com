@@ -18,6 +18,7 @@ export const UlCol = ({
   <section
     {...props}
     className={classNames('column-1 md:columns-2', styles.ulcol, className)}
+    data-testid='UlCol'
   >
     {children}
   </section>

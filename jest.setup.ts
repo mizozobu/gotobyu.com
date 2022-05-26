@@ -1,8 +1,8 @@
+/* eslint-disable max-classes-per-file, jest/require-hook */
 import { setGlobalConfig } from '@storybook/testing-react';
 import * as globalStorybookConfig from './.storybook/preview';
 import '@testing-library/jest-dom';
 
-/* eslint-disable-next-line jest/require-hook */
 setGlobalConfig(globalStorybookConfig);
 
 global.IntersectionObserver = class MockIntersectionObserver {
@@ -14,3 +14,20 @@ global.IntersectionObserver = class MockIntersectionObserver {
   public disconnect = jest.fn();
   public takeRecords = jest.fn();
 };
+
+global.ResizeObserver = class MockResizeObserver {
+  public observe = jest.fn();
+  public unobserve = jest.fn();
+  public disconnect = jest.fn();
+};
+
+global.matchMedia = (query: string) => ({
+  matches: false,
+  media: query,
+  onchange: null,
+  addListener: jest.fn(),
+  removeListener: jest.fn(),
+  addEventListener: jest.fn(),
+  removeEventListener: jest.fn(),
+  dispatchEvent: jest.fn(),
+});

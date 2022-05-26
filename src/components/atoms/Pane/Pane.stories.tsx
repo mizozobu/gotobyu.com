@@ -13,5 +13,5 @@ const Template: ComponentStory<typeof Pane> = (args) => <Pane {...args} />;
 export const Example = Template.bind({});
 Example.args = {
   className: 'flex items-center bg-indigo-200',
-  children: 'this is a pane',
+  children: 'Content',
 };

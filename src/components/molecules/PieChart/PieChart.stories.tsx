@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof PieChart>;
 
 const Template: ComponentStory<typeof PieChart> = (args) => (
-  <PieChart {...args} />
+  <div className='h-64 w-64'>
+    <PieChart {...args} />
+  </div>
 );
 
 export const Example = Template.bind({});
@@ -28,4 +30,17 @@ Example.args = {
       },
     ],
   },
+};
+
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+  ...Example.args,
+  enableDataLable: true,
+  labelCallback: (value: number) => `${value}%`,
+};
+
+export const WithTooltip = Template.bind({});
+WithTooltip.args = {
+  ...Example.args,
+  enableTooltip: true,
 };

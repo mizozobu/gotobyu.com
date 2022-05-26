@@ -12,5 +12,5 @@ const Template: ComponentStory<typeof P> = (args) => <P {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
-  children: 'example',
+  children: 'Paragraph',
 };

@@ -36,18 +36,21 @@ Multi.args = {
       alt: 'BYU',
       layout: 'fill',
       objectFit: 'scale-down',
+      citation: 'http://localhost:3000/schools/byu',
     },
     {
       src: '/byuh/byuh.png',
       alt: 'BYUH',
       layout: 'fill',
       objectFit: 'scale-down',
+      citation: 'http://localhost:3000/schools/byuh',
     },
     {
       src: '/byui/byui.png',
       alt: 'BYUI',
       layout: 'fill',
       objectFit: 'scale-down',
+      citation: 'http://localhost:3000/schools/byui',
     },
   ],
 };

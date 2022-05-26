@@ -201,7 +201,11 @@ module.exports = {
         'src/**/*.spec.tsx',
         'jest.*',
       ],
-      extends: ['plugin:jest/all'],
+      extends: [
+        'plugin:jest/all',
+        'plugin:testing-library/react',
+        'plugin:jest-dom/recommended',
+      ],
       env: {
         'jest/globals': true,
       },

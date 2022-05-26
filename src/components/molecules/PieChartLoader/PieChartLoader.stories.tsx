@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof PieChartLoader>;
 
 const Template: ComponentStory<typeof PieChartLoader> = (args) => (
-  <PieChartLoader {...args} className='w-64' />
+  <div className='h-64 w-96'>
+    <PieChartLoader {...args} />
+  </div>
 );
 
 export const Example = Template.bind({});

@@ -1,19 +1,15 @@
 import classNames from 'classnames';
-import type { ComponentPropsWithoutRef, CSSProperties, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, CSSProperties } from 'react';
 import styles from './RippleButton.module.css';
 
 /**
  * Props for {@link RippleButton}
  */
 interface Props extends ComponentPropsWithoutRef<'button'> {
-  /** className to pass */
-  className?: string;
   /** Background color */
   backgroundColor: string;
   /** Ripple color */
   rippleColor: string;
-  /** Component to add a border to  */
-  children: ReactNode;
 }
 
 /**
@@ -23,7 +19,6 @@ export const RippleButton = ({
   className,
   backgroundColor,
   rippleColor,
-  children,
   ...props
 }: Props): JSX.Element => (
   <button
@@ -36,7 +31,5 @@ export const RippleButton = ({
       } as CSSProperties
     }
     {...props}
-  >
-    {children}
-  </button>
+  />
 );

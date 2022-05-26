@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
-import styles from '@c/atoms/H4/H4.module.css'; // use styles for h4 instead
+import styles from '@c/atoms/H4/H4.module.css'; // use h4 styles
 
 /**
  * Props for {@link H3}

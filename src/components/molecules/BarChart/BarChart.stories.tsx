@@ -9,7 +9,9 @@ export default {
 } as ComponentMeta<typeof BarChart>;
 
 const Template: ComponentStory<typeof BarChart> = (args) => (
-  <BarChart {...args} />
+  <div className='h-64 w-96'>
+    <BarChart {...args} />
+  </div>
 );
 
 export const Example = Template.bind({});
@@ -43,4 +45,23 @@ Example.args = {
       },
     ],
   },
+};
+
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+  ...Example.args,
+  enableDataLable: true,
+  labelCallback: (value) => `${value}%`,
+};
+
+export const WithTooltip = Template.bind({});
+WithTooltip.args = {
+  ...Example.args,
+  enableTooltip: true,
+};
+
+export const CustomYAxes = Template.bind({});
+CustomYAxes.args = {
+  ...Example.args,
+  yAxesTicksCallback: (value) => `${value}%`,
 };

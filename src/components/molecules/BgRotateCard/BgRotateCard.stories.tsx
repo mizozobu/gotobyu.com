@@ -9,26 +9,13 @@ export default {
 } as ComponentMeta<typeof BgRotateCard>;
 
 const Template: ComponentStory<typeof BgRotateCard> = (args) => (
-  <BgRotateCard {...args} />
+  <div className='p-16'>
+    <BgRotateCard {...args} />
+  </div>
 );
 
-export const BYU = Template.bind({});
-BYU.args = {
-  className: 'w-48 h-60',
-  colorClass: 'bg-byu',
-  children: <div>byu</div>,
-};
-
-export const BYUH = Template.bind({});
-BYUH.args = {
-  className: 'w-48 h-60',
-  colorClass: 'bg-byuh',
-  children: <div>byuh</div>,
-};
-
-export const BYUI = Template.bind({});
-BYUI.args = {
-  className: 'w-48 h-60',
-  colorClass: 'bg-byui',
-  children: <div>byui</div>,
+export const Example = Template.bind({});
+Example.args = {
+  colorClass: 'bg-indigo-500',
+  children: <div>content</div>,
 };

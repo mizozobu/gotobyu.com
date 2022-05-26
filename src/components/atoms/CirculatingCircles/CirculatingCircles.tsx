@@ -31,6 +31,7 @@ export const CirculatingCircles = ({
       width='100%'
       height='100%'
     >
+      <title>circulating circles</title>
       <ellipse
         id='byui'
         rx='50'

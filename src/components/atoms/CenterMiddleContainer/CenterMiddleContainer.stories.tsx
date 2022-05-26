@@ -14,5 +14,5 @@ const Template: ComponentStory<typeof CenterMiddleContainer> = (args) => (
 
 export const Example = Template.bind({});
 Example.args = {
-  children: 'example',
+  children: 'Content',
 };

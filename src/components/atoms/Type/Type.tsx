@@ -50,54 +50,81 @@ export const Type = ({
   ...props
 }: Props): JSX.Element => {
   const [typed, setTyped] = useState('');
-  const [status, setStatus] = useState(Status.forward);
+  const [status, setStatus] = useState(Status.waiting);
 
+  /**
+   * start typing on load
+   */
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (status === Status.forward) {
-        const next = text.substring(0, typed.length + 1);
-        if (typed === next) {
-          setStatus(Status.waiting);
-          setTimeout(() => {
-            setStatus(Status.backward);
-          }, waitAfterType);
-        }
-
-        setTyped(next);
-      } else if (status === Status.backward) {
-        const prev = text.substring(0, typed.length - 1);
-        if (typed === prev) {
-          setStatus(Status.waiting);
-          setTimeout(() => {
-            onBack?.();
-            setStatus(Status.forward);
-          }, waitBeforeType);
-        }
-
-        setTyped(text.substring(0, typed.length - 1));
-      }
+    const timeout = setTimeout(() => {
+      setTyped(text[0]);
+      setStatus(Status.forward);
     }, typeSpeed);
-    return () => clearInterval(interval);
-  }, [text, typed, status, typeSpeed, waitAfterType, waitBeforeType, onBack]);
+    return () => clearTimeout(timeout);
+  }, [text, typeSpeed]);
+
+  /**
+   * change interval function when status changes
+   */
+  useEffect(() => {
+    if (status === Status.forward) {
+      const interval = setInterval(() => {
+        setTyped((prevTyped) => text.substring(0, prevTyped.length + 1));
+      }, typeSpeed);
+      return () => clearInterval(interval);
+    }
+    if (status === Status.backward) {
+      const interval = setInterval(() => {
+        setTyped((prevTyped) => text.substring(0, prevTyped.length - 1));
+      }, typeSpeed);
+      return () => clearInterval(interval);
+    }
+    return undefined;
+  }, [status, text, typeSpeed]);
+
+  /**
+   * change status when typed changes
+   */
+  useEffect(() => {
+    if (typed === text) {
+      setStatus(Status.waiting);
+      const timeout = setTimeout(() => {
+        setStatus(Status.backward);
+      }, waitAfterType);
+      return () => clearTimeout(timeout);
+    }
+    if (typed === '') {
+      setStatus(Status.waiting);
+      const timeout = setTimeout(() => {
+        setStatus(Status.forward);
+        onBack?.();
+      }, waitBeforeType);
+      return () => clearTimeout(timeout);
+    }
+    return undefined;
+  }, [typed, text, onBack, waitAfterType, waitBeforeType]);
 
   return (
-    <span
-      {...props}
-      style={
-        {
-          '--caret-width': caretWidth,
-        } as CSSProperties
-      }
-    >
-      {typed.substring(0, typed.length - 1)}
+    <>
+      <span className='sr-only'>{text}</span>
       <span
-        className={classNames(
-          styles.type,
-          status === Status.waiting ? styles.stopped : styles.typing,
-        )}
+        {...props}
+        style={
+          {
+            '--caret-width': caretWidth,
+          } as CSSProperties
+        }
+        aria-hidden='true'
+        data-testid='Type'
       >
-        {typed[typed.length - 1]}
+        {typed}
+        <span
+          className={classNames(
+            styles.type,
+            status === Status.waiting ? styles.stopped : styles.typing,
+          )}
+        />
       </span>
-    </span>
+    </>
   );
 };

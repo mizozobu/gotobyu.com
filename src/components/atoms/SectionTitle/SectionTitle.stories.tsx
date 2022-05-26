@@ -12,22 +12,25 @@ const Template: ComponentStory<typeof SectionTitle> = (args) => (
   <SectionTitle {...args} />
 );
 
+export const Default = Template.bind({});
+Default.args = {
+  as: ({ children, ...props }: ComponentPropsWithoutRef<'h1'>) => (
+    <h1 {...props} data-testid='mock-h1'>
+      {children}
+    </h1>
+  ),
+  id: 'title',
+  children: 'Section Title',
+};
+
 export const Active = Template.bind({});
 Active.args = {
   as: ({ children, ...props }: ComponentPropsWithoutRef<'h1'>) => (
-    <h1 {...props}>{children}</h1>
+    <h1 {...props} data-testid='mock-h1'>
+      {children}
+    </h1>
   ),
-  id: '',
+  id: 'title',
   active: true,
-  children: 'active',
-};
-
-export const Inactive = Template.bind({});
-Inactive.args = {
-  as: ({ children, ...props }: ComponentPropsWithoutRef<'h1'>) => (
-    <h1 {...props}>{children}</h1>
-  ),
-  id: '',
-  active: false,
-  children: 'inactive',
+  children: 'Section Title',
 };

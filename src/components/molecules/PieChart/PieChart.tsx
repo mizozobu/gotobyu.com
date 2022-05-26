@@ -15,7 +15,7 @@ export interface Props
   /** Chart title */
   title: string;
   /** Function to format label */
-  labelCallback: Options['formatter'];
+  labelCallback?: Options['formatter'];
   /** Whether to show data label */
   enableDataLable?: boolean;
   /** Whether to show tooltip */

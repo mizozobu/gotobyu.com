@@ -11,7 +11,6 @@ interface Props extends ComponentPropsWithoutRef<'div'> {}
  */
 export const CenterMiddleContainer = ({
   className,
-  children,
   ...props
 }: Props): JSX.Element => (
   <div
@@ -20,7 +19,5 @@ export const CenterMiddleContainer = ({
       'flex h-full grow flex-col items-center justify-center',
     )}
     {...props}
-  >
-    {children}
-  </div>
+  />
 );

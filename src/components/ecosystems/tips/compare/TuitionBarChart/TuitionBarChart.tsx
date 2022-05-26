@@ -35,14 +35,17 @@ export const TuitionBarChart = memo(
     const ldsRate = isLDS ? 1 : 2;
 
     /**
-     * Format label
+     * Format label and y axes
      */
-    const formatLabel:
-      | BarChartProps['labelCallback'] & BarChartProps['yAxesTicksCallback'] =
-      useCallback(
-        (value) => `${isJPY ? '¥' : '$'}${round(+value).toLocaleString()}`,
-        [isJPY],
-      );
+    const formatLabel = useCallback<
+      Exclude<
+        BarChartProps['labelCallback'] & BarChartProps['yAxesTicksCallback'],
+        undefined
+      >
+    >(
+      (value) => `${isJPY ? '¥' : '$'}${round(+value).toLocaleString()}`,
+      [isJPY],
+    );
 
     return (
       <>

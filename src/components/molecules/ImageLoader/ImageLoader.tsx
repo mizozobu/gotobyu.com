@@ -16,6 +16,7 @@ export const ImageLoader = ({ className, ...props }: Props): JSX.Element => (
       className,
       'flex h-full w-full animate-pulse items-center justify-center rounded-xl bg-slate-200',
     )}
+    role='progressbar'
     {...props}
   >
     <PhotographIcon className='h-8 w-8 text-slate-400' />
