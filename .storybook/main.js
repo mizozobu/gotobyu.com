@@ -3,7 +3,7 @@ const { resolve } = require('path');
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   staticDirs: ['../public'],
-  addons: ['@storybook/addon-essentials', 'storybook-addon-next-router'],
+  addons: ['@storybook/addon-essentials'],
   webpackFinal: (config) => {
     config.module.rules.push({
       test: /\.css$/,

@@ -22,14 +22,11 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  nextRouter: {
-    Provider: RouterContext.Provider,
-  },
 };
 
 export const decorators = [
-  (Story) => (
-    // HACK: storybook-addon-next-router does not work with jest-dom
+  (Story, { parameters }) => (
+    // HACK: storybook-addon-next-router does not work with @testing-library/jest-dom
     <RouterContext.Provider
       value={{
         push: () => Promise.resolve(),
@@ -37,11 +34,15 @@ export const decorators = [
         reload: () => Promise.resolve(),
         back: () => Promise.resolve(),
         prefetch: () => Promise.resolve(),
+        ...parameters.nextRouter,
       }}
     >
-      <RecoilRoot>
-        <Story />
-      </RecoilRoot>
+      <Story />
     </RouterContext.Provider>
+  ),
+  (Story) => (
+    <RecoilRoot>
+      <Story />
+    </RecoilRoot>
   ),
 ];
