@@ -30,6 +30,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
         uses: ./.github/actions/build
+      - name: Prepare E2E test
+        uses: ./.github/actions/prepare-playwright
       - name: E2E test
         uses: ./.github/actions/playwright
         with:

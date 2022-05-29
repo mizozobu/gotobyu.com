@@ -1,4 +1,4 @@
-name: PlayWright
+name: Playwright
 description: Run playwright test
 inputs:
   args:
@@ -8,20 +8,8 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Get @playwright/test version
-      id: get-playwright-version
-      run: echo ::set-output name=playwrightVersion::$(yarn --silent ver @playwright/test)
-      shell: bash
-    - name: Cache browsers
-      id: cache-browsers
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/ms-playwright
-        key: ${{ runner.os }}-playwright-${{ steps.get-playwright-version.outputs.playwrightVersion }}-
-    - name: Install Playwright
-      if: steps.cache-browsers.outputs.cache-hit != 'true'
-      run: yarn playwright install --with-deps
-      shell: bash
+    - name: Prepare playwright
+      uses: ./.github/actions/prepare-playwright
     - name: E2E test
       run: yarn e2e ${{ inputs.args }}
       shell: bash

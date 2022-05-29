@@ -1,0 +1,19 @@
+name: Prepare playwright
+description: Prepare playwright
+runs:
+  using: composite
+  steps:
+    - name: Get @playwright/test version
+      id: get-playwright-version
+      run: echo ::set-output name=playwrightVersion::$(yarn --silent ver @playwright/test)
+      shell: bash
+    - name: Cache browsers
+      id: cache-browsers
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/ms-playwright
+        key: ${{ runner.os }}-playwright-${{ steps.get-playwright-version.outputs.playwrightVersion }}-
+    - name: Install Playwright
+      if: steps.cache-browsers.outputs.cache-hit != 'true'
+      run: yarn playwright install --with-deps
+      shell: bash
