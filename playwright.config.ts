@@ -30,7 +30,7 @@ const config: PlaywrightTestConfig = {
     //   use: { ...devices['Desktop Safari'] },
     // },
     // {
-    //   name: 'webkit',
+    //   name: 'webkit tablet',
     //   use: { ...devices['iPad (gen 7)'] },
     // },
     {

@@ -1,0 +1,18 @@
+name: Setup E2E Test
+
+on:
+  workflow_call:
+
+jobs:
+  setup-e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Prepare
+        uses: ./.github/actions/prepare
+      - name: Prepare E2E test
+        uses: ./.github/actions/prepare-playwright

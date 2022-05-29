@@ -7,6 +7,15 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    strategy:
+      matrix:
+        browser:
+          - chromium
+          - firefox
+          # - webkit
+          - chromium mobile
+          # - webkit tablet
+          # - webkit mobile
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -14,11 +23,15 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
         uses: ./.github/actions/build
+      - name: Prepare E2E test
+        uses: ./.github/actions/prepare-playwright
       - name: E2E test
         uses: ./.github/actions/playwright
+        with:
+          args: --project '${{ matrix.browser }}'
       - name: Upload results
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: playwright-results
+          name: playwright-results-${{ matrix.browser }}
           path: test-results
