@@ -6,14 +6,8 @@ on:
       - 'bot/*'
 
 jobs:
-  onboard:
-    uses: ./.github/workflows/onboard.yaml
-
   setup:
-    if: ${{ needs.onboard.outputs.should_skip != 'true' }}
     uses: ./.github/workflows/setup.yaml
-    needs:
-      - onboard
     with:
       workflow: ci.yaml
 
