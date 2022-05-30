@@ -19,7 +19,7 @@ export const TableCaption = ({
   children,
   ...props
 }: Props): JSX.Element => (
-  <caption className={classNames('py-1', styles['table-caption'])}>
+  <caption className={classNames('relative py-1', styles['table-caption'])}>
     <span
       {...props}
       className={classNames(className, 'rounded-full bg-gray-100 px-2 py-1')}
