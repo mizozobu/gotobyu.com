@@ -6,14 +6,15 @@ on:
 jobs:
   e2e:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 5
     strategy:
+      fail-fast: false
       matrix:
         browser:
           - chromium
+          - chromium mobile
           - firefox
           - webkit
-          - chromium mobile
           - webkit tablet
           - webkit mobile
     steps:
