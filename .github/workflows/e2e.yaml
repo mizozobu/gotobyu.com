@@ -12,10 +12,10 @@ jobs:
         browser:
           - chromium
           - firefox
-          # - webkit
+          - webkit
           - chromium mobile
-          # - webkit tablet
-          # - webkit mobile
+          - webkit tablet
+          - webkit mobile
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
