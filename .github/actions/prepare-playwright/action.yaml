@@ -14,6 +14,5 @@ runs:
         path: ~/.cache/ms-playwright
         key: ${{ runner.os }}-playwright-${{ steps.get-playwright-version.outputs.playwrightVersion }}-
     - name: Install Playwright
-      if: steps.cache-browsers.outputs.cache-hit != 'true'
       run: yarn playwright install --with-deps
       shell: bash
