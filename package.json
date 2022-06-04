@@ -39,7 +39,7 @@
     "react-dom": "^18.1.0",
     "react-instantsearch-dom": "^6.26.0",
     "react-slick": "^0.29.0",
-    "recoil": "^0.7.2",
+    "recoil": "^0.7.3",
     "rehype-parse": "7.x",
     "rehype-slug": "4.x",
     "remark-sectionize": "^1.1.1",
