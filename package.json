@@ -37,7 +37,7 @@
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
-    "react-instantsearch-dom": "^6.30.1",
+    "react-instantsearch-dom": "^6.30.2",
     "react-slick": "^0.29.0",
     "recoil": "^0.7.4",
     "rehype-parse": "7.x",
