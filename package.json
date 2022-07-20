@@ -68,7 +68,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-instantsearch-dom": "^6.12.3",
     "@types/react-slick": "^0.23.10",
-    "@types/sinon": "^10.0.12",
+    "@types/sinon": "^10.0.13",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "autoprefixer": "^10.4.7",
