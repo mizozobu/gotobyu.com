@@ -71,7 +71,7 @@
     "@types/sinon": "^10.0.13",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
-    "autoprefixer": "^10.4.7",
+    "autoprefixer": "^10.4.8",
     "canvas": "^2.9.3",
     "concurrently": "^7.3.0",
     "cross-env": "^7.0.3",
