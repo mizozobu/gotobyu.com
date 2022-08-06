@@ -48,6 +48,16 @@ module.exports = {
         'no-use-before-define': 'off',
         '@typescript-eslint/no-use-before-define': ['error'],
 
+        // allow async event handler
+        '@typescript-eslint/no-misused-promises': [
+          'error',
+          {
+            checksVoidReturn: {
+              attributes: false,
+            },
+          },
+        ],
+
         // allow jsx in .tsx
         'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
 
@@ -233,6 +243,9 @@ module.exports = {
 
         // allow upper case at the first charactor of describe, it, ...
         'jest/prefer-lowercase-title': 'off',
+
+        // allow unlimited expects per test
+        'jest/max-expects': 'off',
       },
     },
 
