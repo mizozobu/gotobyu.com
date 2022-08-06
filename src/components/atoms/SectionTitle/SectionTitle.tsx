@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import Link from 'next/link';
 import {
   memo,
@@ -33,6 +34,7 @@ export const SectionTitle = memo(
   ({
     as: Component,
     id = '',
+    className,
     active = false,
     children,
     onClick,
@@ -41,7 +43,7 @@ export const SectionTitle = memo(
     <Component
       {...props}
       id={id}
-      className={styles['section-title']}
+      className={classNames(className, styles['section-title'])}
       aria-current={active}
     >
       <Link href={`#${id}`}>
