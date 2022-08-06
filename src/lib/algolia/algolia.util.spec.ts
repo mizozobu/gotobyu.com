@@ -52,10 +52,7 @@ describe('createCustomAlgoliaSearchClient', () => {
 
   describe('search', () => {
     const algoliaSearch = algoliasearch('', '');
-    let __search: SpyInstance<
-      ReturnType<typeof algoliaSearch.search>,
-      Parameters<typeof algoliaSearch.search>
-    >;
+    let __search: SpyInstance<typeof algoliaSearch.search>;
 
     beforeEach(() => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment

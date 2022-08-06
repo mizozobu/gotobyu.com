@@ -1,7 +1,7 @@
 import type { SpyInstance } from 'jest-mock';
 import rehypeParse from 'rehype-parse';
 import unified from 'unified';
-import type { Algoliast, HeadingTag, Settings } from '@l/algolia';
+import type { Algoliast, Settings } from '@l/algolia';
 import { __HTML_CONTENT, __ALGOLIASTS } from '@l/algolia/algolia.fixture';
 import {
   algoliastEqual,
@@ -372,7 +372,7 @@ describe('AlgoliastBuilder', () => {
   });
 
   describe('setHeading', () => {
-    let __resetHeadings: SpyInstance<void, [HeadingTag]>;
+    let __resetHeadings: SpyInstance<typeof builder['resetHeadings']>;
 
     beforeEach(() => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
