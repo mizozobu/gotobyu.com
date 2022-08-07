@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import Link from 'next/link';
 import type { ComponentPropsWithoutRef } from 'react';
+import { Link } from '@c/atoms/Link';
 import styles from './InternalLink.module.css';
 
 /**
@@ -20,9 +20,11 @@ export const InternalLink = ({
   children,
   ...props
 }: Props): JSX.Element => (
-  <Link href={href}>
-    <a {...props} className={classNames(styles['internal-link'], className)}>
-      {children}
-    </a>
+  <Link
+    href={href}
+    className={classNames(styles['internal-link'], className)}
+    {...props}
+  >
+    {children}
   </Link>
 );

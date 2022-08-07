@@ -1,6 +1,6 @@
 import { MailIcon, LinkIcon } from '@heroicons/react/outline';
-import Link from 'next/link';
 import { FacebookIcon } from '@c/atoms/FacebookIcon';
+import { Link } from '@c/atoms/Link';
 import { RippleButton } from '@c/atoms/RippleButton';
 
 /**
@@ -12,9 +12,7 @@ export const Footer = (): JSX.Element => (
     data-noindex='true'
   >
     <div>
-      <Link href='/about'>
-        <a>BYU Management Society Tokyo Chapter</a>
-      </Link>
+      <Link href='/about'>BYU Management Society Tokyo Chapter</Link>
       <div className='mt-8 flex justify-between'>
         <a
           href='mailto:byums.japan@gmail.com'

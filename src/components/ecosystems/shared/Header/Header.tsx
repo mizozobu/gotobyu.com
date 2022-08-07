@@ -8,9 +8,9 @@ import {
 } from '@heroicons/react/outline';
 import classNames from 'classnames';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { useState } from 'react';
 import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
+import { Link } from '@c/atoms/Link';
 import type { Props as HeaderMobileMenuDialogProps } from '@c/ecosystems/shared/HeaderMobileMenuDialog';
 import type { Props as SearchDialogProps } from '@c/ecosystems/shared/SearchDialog';
 import { HeaderMenuLink } from '@c/molecules/HeaderMenuLink';
@@ -114,10 +114,8 @@ export const Header = ({
           <div className='relative flex h-16 items-center justify-between'>
             <div className='flex justify-start lg:w-0 lg:flex-1'>
               <Link href='/'>
-                <a>
-                  <span className='sr-only'>Home</span>
-                  <CirculatingCircles className='h-8 w-8' />
-                </a>
+                <span className='sr-only'>Home</span>
+                <CirculatingCircles className='h-8 w-8' />
               </Link>
             </div>
             <div className='space-x-1 lg:hidden'>
