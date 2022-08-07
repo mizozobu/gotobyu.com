@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import Link from 'next/link';
 import {
   memo,
   type ComponentPropsWithoutRef,
@@ -7,6 +6,7 @@ import {
   type ComponentType,
   type HTMLAttributes,
 } from 'react';
+import { Link } from '@c/atoms/Link';
 import styles from './SectionTitle.module.css';
 
 /**
@@ -46,12 +46,10 @@ export const SectionTitle = memo(
       className={classNames(className, styles['section-title'])}
       aria-current={active}
     >
-      <Link href={`#${id}`}>
-        <a tabIndex={-1}>
-          <button type='button' className='text-left' onClick={onClick}>
-            <span className={styles['section-title-text']}>{children}</span>
-          </button>
-        </a>
+      <Link href={`#${id}`} tabIndex={-1}>
+        <button type='button' className='text-left' onClick={onClick}>
+          <span className={styles['section-title-text']}>{children}</span>
+        </button>
       </Link>
     </Component>
   ),

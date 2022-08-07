@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import Link from 'next/link';
 import { CirculatingCircles } from '@c/atoms/CirculatingCircles';
 import { H2 } from '@c/atoms/H2';
+import { Link } from '@c/atoms/Link';
 import { NextImage } from '@c/atoms/NextImage';
 import { BgRotateCard } from '@c/molecules/BgRotateCard';
 import { PageCard } from '@c/molecules/PageCard';
@@ -58,47 +58,41 @@ export const IndexEnvironment = (): JSX.Element => (
     <div className='mx-auto max-w-screen-lg xl:max-w-screen-xl'>
       <H2 className='px-6 text-2xl font-bold md:text-4xl'>各大学について</H2>
       <div className='flex space-x-12 overflow-scroll py-10 lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:justify-items-center lg:gap-y-10 lg:space-x-0 lg:overflow-visible'>
-        <Link href='/schools/byu'>
-          <a className='mx-8 mt-4 rounded-xl'>
-            <BgRotateCard colorClass='bg-gradient-to-br from-byu to-byu-dark'>
-              <NextImage
-                className='h-full p-4'
-                src={byuLogoImage}
-                alt='BYU Logo'
-                placeholder='blur'
-                layout='fill'
-                objectFit='scale-down'
-              />
-            </BgRotateCard>
-          </a>
+        <Link href='/schools/byu' className='mx-8 mt-4 rounded-xl'>
+          <BgRotateCard colorClass='bg-gradient-to-br from-byu to-byu-dark'>
+            <NextImage
+              className='h-full p-4'
+              src={byuLogoImage}
+              alt='BYU Logo'
+              placeholder='blur'
+              layout='fill'
+              objectFit='scale-down'
+            />
+          </BgRotateCard>
         </Link>
-        <Link href='/schools/byuh'>
-          <a className='mx-8 mt-4 rounded-xl'>
-            <BgRotateCard colorClass='bg-gradient-to-br from-byuh to-byuh-dark'>
-              <NextImage
-                className='h-full p-4'
-                src={byuhLogoImage}
-                alt='BYUH Logo'
-                placeholder='blur'
-                layout='fill'
-                objectFit='scale-down'
-              />
-            </BgRotateCard>
-          </a>
+        <Link href='/schools/byuh' className='mx-8 mt-4 rounded-xl'>
+          <BgRotateCard colorClass='bg-gradient-to-br from-byuh to-byuh-dark'>
+            <NextImage
+              className='h-full p-4'
+              src={byuhLogoImage}
+              alt='BYUH Logo'
+              placeholder='blur'
+              layout='fill'
+              objectFit='scale-down'
+            />
+          </BgRotateCard>
         </Link>
-        <Link href='/schools/byui'>
-          <a className='mx-8 mt-4 rounded-xl'>
-            <BgRotateCard colorClass='bg-gradient-to-br from-byui to-byui-dark'>
-              <NextImage
-                className='h-full p-4'
-                src={byuiLogoImage}
-                alt='BYUI Logo'
-                placeholder='blur'
-                layout='fill'
-                objectFit='scale-down'
-              />
-            </BgRotateCard>
-          </a>
+        <Link href='/schools/byui' className='mx-8 mt-4 rounded-xl'>
+          <BgRotateCard colorClass='bg-gradient-to-br from-byui to-byui-dark'>
+            <NextImage
+              className='h-full p-4'
+              src={byuiLogoImage}
+              alt='BYUI Logo'
+              placeholder='blur'
+              layout='fill'
+              objectFit='scale-down'
+            />
+          </BgRotateCard>
         </Link>
       </div>
     </div>
@@ -113,10 +107,8 @@ export const IndexEnvironment = (): JSX.Element => (
           ...CAREER_LINKS,
           OTHER_LINKS[0],
         ].map(({ name, href, detail, icon: Icon }) => (
-          <Link key={name} href={href}>
-            <a className='rounded-xl'>
-              <PageCard icon={Icon} name={name} detail={detail} />
-            </a>
+          <Link key={name} href={href} className='rounded-xl'>
+            <PageCard icon={Icon} name={name} detail={detail} />
           </Link>
         ))}
       </div>
