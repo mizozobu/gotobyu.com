@@ -14,51 +14,15 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
         uses: ./.github/actions/build
-      - name: Lighthouse
-        id: lighthouse
-        uses: treosh/lighthouse-ci-action@v9
+      - name: Prepare E2E test
+        uses: ./.github/actions/prepare-playwright
+      - name: E2E test
+        uses: ./.github/actions/playwright
         with:
-          configPath: './.lighthouserc.js'
-          runs: 3
-      - name: Generate lighthouse summary
-        id: generate_lighthouse_summary
-        uses: actions/github-script@v6
+          args: e2e/tests/lighthouse.spec.ts --project chromium
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v3
         with:
-          script: |
-            const f = d => {
-              const i = Math.round(d / 3 * 100);
-              if(i == null) return `-`;
-              if(i >= 90) return `:white_check_mark: ${i}`;
-              if(i >= 50) return `:warning: ${i}`;
-              return `:exclamation: ${i}`;
-            };
-            const comment = [
-              `:zap: Lighthouse Report :zap:`,
-              ``,
-              `|    | Performance | Accessibility | Best Practices | SEO | PWA |`,
-              `| :- | :---------: | :-----------: | :------------: | :-: | :-: |`,
-              ...Object.entries(${{ steps.lighthouse.outputs.manifest }}.reduce((cumulative, { url, summary }) => {
-                const currentSummary = cumulative[url];
-                if (currentSummary) {
-                  return {
-                    ...cumulative,
-                    [url]: {
-                      performance: currentSummary.performance + summary.performance,
-                      accessibility: currentSummary.accessibility + summary.accessibility,
-                      'best-practices': currentSummary['best-practices'] + summary['best-practices'],
-                      seo: currentSummary.seo + summary.seo,
-                      pwa: currentSummary.pwa + summary.pwa,
-                    },
-                  };
-                }
-                return { ...cumulative, [url]: summary };
-              }, {})).map(([url, summary]) => (
-                `| ${url.replace(/^https?:\/\/[^\/]+/, '')} | ${f(summary.performance)} | ${f(summary.accessibility)} | ${f(summary['best-practices'])} | ${f(summary.seo)} | ${f(summary.pwa)} |`
-              )),
-              ``,
-            ].join(`\n`);
-            core.setOutput(`comment`, comment);
-      - name: Post lighthouse summary to commit
-        uses: peter-evans/commit-comment@v2
-        with:
-          body: ${{ steps.generate_lighthouse_summary.outputs.comment }}
+          name: playwright-results-${{ matrix.browser }}
+          path: test-results

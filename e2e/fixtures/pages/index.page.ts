@@ -5,19 +5,13 @@ import { _CustomPage } from '@e/fixtures/pages/_custom.page';
  * Index page object model
  */
 export class IndexPage extends _CustomPage {
+  public readonly path: string = '/';
   /** Logo */
   private logo: Locator;
 
   constructor(page: Page) {
     super(page);
     this.logo = this.page.locator('#animated-circulating-circles');
-  }
-
-  /**
-   * Navigate to index page
-   */
-  public async goto(): Promise<void> {
-    await this.page.goto('/');
   }
 
   /**

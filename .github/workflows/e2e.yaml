@@ -29,7 +29,7 @@ jobs:
       - name: E2E test
         uses: ./.github/actions/playwright
         with:
-          args: --project '${{ matrix.browser }}'
+          args: e2e/tests/visual-regression.spec.ts --project '${{ matrix.browser }}'
       - name: Upload results
         if: always()
         uses: actions/upload-artifact@v3

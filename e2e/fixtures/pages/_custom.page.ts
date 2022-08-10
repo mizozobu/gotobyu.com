@@ -17,6 +17,9 @@ declare global {
  * Page object model
  */
 export abstract class _CustomPage {
+  /** Page path */
+  public readonly path: string = 'about:blank';
+  /** Playright page object */
   protected readonly page: Page;
 
   /**
@@ -117,6 +120,13 @@ export abstract class _CustomPage {
         ],
       });
     });
+  }
+
+  /**
+   * Navigate to about page
+   */
+  public async goto(): Promise<void> {
+    await this.page.goto(this.path);
   }
 
   /**
