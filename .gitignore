@@ -42,9 +42,6 @@ yarn-error.log*
 # playwright
 /test-results
 
-# lighthosue
-/.lighthouseci
-
 # robots.txt
 /public/robots.txt
 
