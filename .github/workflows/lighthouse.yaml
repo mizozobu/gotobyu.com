@@ -20,9 +20,3 @@ jobs:
         uses: ./.github/actions/playwright
         with:
           args: e2e/tests/lighthouse.spec.ts --project chromium
-      - name: Upload results
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: playwright-results-${{ matrix.browser }}
-          path: test-results
