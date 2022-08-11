@@ -35,7 +35,7 @@ jobs:
       - name: E2E test
         uses: ./.github/actions/playwright
         with:
-          args: '--update-snapshots'
+          args: 'e2e/tests/visual-regression.spec.ts --update-snapshots'
       - name: Get PR target branch
         id: get-target-branch
         run: echo "::set-output name=branch::$(git rev-parse --abbrev-ref HEAD)"
