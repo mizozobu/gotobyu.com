@@ -22,8 +22,8 @@
 }
 
 @keyframes blink-caret {
-  from,
-  to {
+  0%,
+  100% {
     background-color: transparent;
   }
 
