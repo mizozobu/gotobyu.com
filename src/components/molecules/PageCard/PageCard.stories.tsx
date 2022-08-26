@@ -1,4 +1,4 @@
-import { ScaleIcon } from '@heroicons/react/outline';
+import { ScaleIcon } from '@heroicons/react/24/outline';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { PageCard } from './PageCard';

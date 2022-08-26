@@ -1,4 +1,4 @@
-import { SearchIcon, XIcon } from '@heroicons/react/outline';
+import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import {
   connectSearchBox,
@@ -53,7 +53,7 @@ export const SearchDialog = ({
         <div className='flex items-center justify-end px-4 md:px-6'>
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
           <label htmlFor='search'>
-            <SearchIcon
+            <MagnifyingGlassIcon
               className={classNames(
                 'h-6 w-6',
                 isAvailable ? 'text-gray-400' : 'text-red-400',
@@ -78,7 +78,7 @@ export const SearchDialog = ({
             className='rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500'
             onClick={onClose}
           >
-            <XIcon className='h-6 w-6 text-gray-400' />
+            <XMarkIcon className='h-6 w-6 text-gray-400' />
           </button>
         </div>
         <div className='flex grow flex-col space-y-2 overflow-y-auto px-4 py-4 md:px-6'>

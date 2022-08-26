@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from '@heroicons/react/solid';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 import styles from './ExternalLink.module.css';
@@ -23,6 +23,6 @@ export const ExternalLink = ({
     className={classNames(styles['external-link'], className)}
   >
     {children}
-    <ExternalLinkIcon className={classNames(styles.icon, className)} />
+    <ArrowTopRightOnSquareIcon className={classNames(styles.icon, className)} />
   </a>
 );
