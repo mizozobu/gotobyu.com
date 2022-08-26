@@ -49,7 +49,8 @@ export const algoliastSkip: Compare<Algoliast> = (a, b) =>
  * @param _newObjects list of objects to replace the current index
  * @returns algolia custom batch operations supplied to "multipleBatch"
  */
-export const mapToOperations = <T>(
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const mapToOperations = <T extends Record<string, any>>(
   indexName: string,
   _objectsfromAlgolia: Hit<T>[],
   _newObjects: T[],
