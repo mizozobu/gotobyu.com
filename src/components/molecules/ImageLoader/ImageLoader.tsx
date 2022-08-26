@@ -1,4 +1,4 @@
-import { PhotographIcon } from '@heroicons/react/outline';
+import { PhotoIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
 
@@ -19,6 +19,6 @@ export const ImageLoader = ({ className, ...props }: Props): JSX.Element => (
     role='progressbar'
     {...props}
   >
-    <PhotographIcon className='h-8 w-8 text-slate-400' />
+    <PhotoIcon className='h-8 w-8 text-slate-400' />
   </div>
 );

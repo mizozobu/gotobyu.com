@@ -1,4 +1,4 @@
-import { MailIcon, LinkIcon } from '@heroicons/react/outline';
+import { EnvelopeIcon, LinkIcon } from '@heroicons/react/24/outline';
 import { FacebookIcon } from '@c/atoms/FacebookIcon';
 import { Link } from '@c/atoms/Link';
 import { RippleButton } from '@c/atoms/RippleButton';
@@ -26,7 +26,7 @@ export const Footer = (): JSX.Element => (
             rippleColor='white'
             aria-label='email'
           >
-            <MailIcon className='h-8 w-8' />
+            <EnvelopeIcon className='h-8 w-8' />
           </RippleButton>
         </a>
         <a

@@ -1,4 +1,4 @@
-import { XIcon } from '@heroicons/react/outline';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import { HeaderMobileMenuLink } from '@c/molecules/HeaderMobileMenuLink';
 import { Modal } from '@c/molecules/Modal/Modal';
 import {
@@ -34,7 +34,7 @@ export const HeaderMobileMenuDialog = ({
           className='rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500'
           onClick={onClose}
         >
-          <XIcon className='h-6 w-6 text-gray-400' />
+          <XMarkIcon className='h-6 w-6 text-gray-400' />
         </button>
       </div>
       <nav className='grid gap-y-2 px-2 py-4'>

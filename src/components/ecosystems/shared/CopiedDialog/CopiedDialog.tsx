@@ -1,5 +1,8 @@
 import { Transition, Dialog } from '@headlessui/react';
-import { ClipboardCheckIcon, XIcon } from '@heroicons/react/outline';
+import {
+  ClipboardDocumentCheckIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline';
 import { Fragment } from 'react';
 
 /**
@@ -53,7 +56,7 @@ export const CopiedDialog = ({ isOpen, onClose }: Props): JSX.Element => (
               as='div'
               className='flex flex-col items-center text-lg font-medium leading-6 text-white md:flex-row'
             >
-              <ClipboardCheckIcon className='mb-8 h-24 md:mb-0 md:mr-2 md:h-12' />
+              <ClipboardDocumentCheckIcon className='mb-8 h-24 md:mb-0 md:mr-2 md:h-12' />
               この場所へのURLをコピーしました
             </Dialog.Title>
             <button
@@ -61,7 +64,7 @@ export const CopiedDialog = ({ isOpen, onClose }: Props): JSX.Element => (
               className='sr-only p-2 text-white'
               onClick={onClose}
             >
-              <XIcon className='inline h-8' />
+              <XMarkIcon className='inline h-8' />
             </button>
           </div>
         </Transition.Child>

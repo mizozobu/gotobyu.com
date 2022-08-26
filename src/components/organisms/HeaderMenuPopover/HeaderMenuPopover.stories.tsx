@@ -1,4 +1,4 @@
-import { TerminalIcon } from '@heroicons/react/outline';
+import { CommandLineIcon } from '@heroicons/react/24/outline';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { HeaderMenuPopover } from './HeaderMenuPopover';
@@ -21,7 +21,7 @@ const Template: ComponentStory<typeof HeaderMenuPopover> = (args) => (
 export const WithIcon = Template.bind({});
 WithIcon.args = {
   label: 'Button',
-  icon: TerminalIcon,
+  icon: CommandLineIcon,
   children: ({ close }) => (
     <button type='button' onClick={close}>
       Link

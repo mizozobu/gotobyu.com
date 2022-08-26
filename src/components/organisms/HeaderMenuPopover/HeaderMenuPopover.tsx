@@ -1,5 +1,5 @@
 import { Popover, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/solid';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import { Fragment, type ComponentType, type ReactNode } from 'react';
 

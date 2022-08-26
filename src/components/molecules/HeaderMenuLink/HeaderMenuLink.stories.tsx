@@ -1,4 +1,4 @@
-import { TerminalIcon } from '@heroicons/react/outline';
+import { CommandLineIcon } from '@heroicons/react/24/outline';
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { HeaderMenuLink } from './HeaderMenuLink';
@@ -18,5 +18,5 @@ Example.args = {
   name: 'link',
   detail: 'detail for link',
   href: '/link',
-  icon: TerminalIcon,
+  icon: CommandLineIcon,
 };

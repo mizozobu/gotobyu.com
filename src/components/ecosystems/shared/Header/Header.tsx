@@ -2,10 +2,10 @@ import { Popover } from '@headlessui/react';
 import {
   AcademicCapIcon,
   BriefcaseIcon,
-  LoginIcon,
-  MenuIcon,
-  SearchIcon,
-} from '@heroicons/react/outline';
+  ArrowRightOnRectangleIcon,
+  Bars3Icon,
+  MagnifyingGlassIcon,
+} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
@@ -125,7 +125,7 @@ export const Header = ({
                 onClick={openSearchDialog}
               >
                 <span className='sr-only'>Open search</span>
-                <SearchIcon className='h-6 w-6' aria-hidden='true' />
+                <MagnifyingGlassIcon className='h-6 w-6' aria-hidden='true' />
               </button>
               <button
                 type='button'
@@ -133,7 +133,7 @@ export const Header = ({
                 onClick={openMenuDialog}
               >
                 <span className='sr-only'>Open menu</span>
-                <MenuIcon className='h-6 w-6' aria-hidden='true' />
+                <Bars3Icon className='h-6 w-6' aria-hidden='true' />
               </button>
             </div>
 
@@ -167,7 +167,10 @@ export const Header = ({
                   </>
                 )}
               </HeaderMenuPopover>
-              <HeaderMenuPopover label='入学準備' icon={LoginIcon}>
+              <HeaderMenuPopover
+                label='入学準備'
+                icon={ArrowRightOnRectangleIcon}
+              >
                 {({ close }) =>
                   APPLY_LINKS.map(({ name, detail, href, icon }) => (
                     <HeaderMenuLink
@@ -216,7 +219,7 @@ export const Header = ({
                   className='inline-flex h-full items-center justify-start rounded-full bg-gray-100 py-1.5 pl-4 pr-40 text-sm text-gray-400 shadow'
                   onClick={openSearchDialog}
                 >
-                  <SearchIcon
+                  <MagnifyingGlassIcon
                     className='mr-4 h-5 w-5 text-gray-400'
                     aria-hidden='true'
                   />

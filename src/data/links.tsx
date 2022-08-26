@@ -1,11 +1,11 @@
 import {
   BookOpenIcon,
-  MailOpenIcon,
-  OfficeBuildingIcon,
+  EnvelopeOpenIcon,
+  BuildingOfficeIcon,
   PresentationChartBarIcon,
   ScaleIcon,
   UserGroupIcon,
-} from '@heroicons/react/outline';
+} from '@heroicons/react/24/outline';
 import type { ComponentPropsWithoutRef } from 'react';
 import { NextImage } from '@c/atoms/NextImage';
 import byuLogoImage from '@p/byu/byu-logo.png';
@@ -132,7 +132,7 @@ export const APPLY_PAGE_META: PageMeta = {
   description:
     'BYU、BYUH、BYUIの入学手続きについて。締め切り、申込費用、必要な英語力、試験、必要書類についてまとめています。',
   href: '/tips/apply',
-  icon: MailOpenIcon,
+  icon: EnvelopeOpenIcon,
 };
 
 /**
@@ -158,7 +158,7 @@ export const CAREER_PAGE_META: PageMeta = {
   description:
     'BYU、BYUH、BYUIの学生の就職先と1年目の年収について。新卒の平均を上回る年収を貰う人や、外資系企業で活躍する人がいます。',
   href: '/tips/career',
-  icon: OfficeBuildingIcon,
+  icon: BuildingOfficeIcon,
 };
 
 /**
