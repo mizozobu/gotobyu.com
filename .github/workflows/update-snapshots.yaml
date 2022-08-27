@@ -8,7 +8,7 @@ on:
 jobs:
   update-snapshots:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     if: ${{ github.event.issue.pull_request && github.event.comment.body == '📸' }}
     steps:
       - name: Add a rocket reaction to the comment
