@@ -8,8 +8,8 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "concurrently -n eslint,stylelint,prettier -r 'eslint .' 'stylelint .' 'prettier --check --loglevel warn .'",
-    "lint:fix": "concurrently -n eslint,stylelint,prettier -r 'eslint --fix .' 'stylelint --fix .' 'prettier --write --loglevel warn .'",
+    "lint": "concurrently -r 'eslint .' 'stylelint .' 'prettier --check --loglevel warn .'",
+    "lint:fix": "concurrently -r 'eslint --fix .' 'stylelint --fix .' 'prettier --write --loglevel warn .'",
     "ver": "node ./src/bin/get-version",
     "typecheck": "tsc --noEmit --project tsconfig.json",
     "analyze": "cross-env ANALYZE=true yarn build",
@@ -19,8 +19,7 @@
     "ut": "node --experimental-vm-modules --experimental-json-modules --experimental-specifier-resolution=node $(yarn bin jest)",
     "ut:debug": "node --experimental-vm-modules --experimental-json-modules --experimental-specifier-resolution=node --inspect $(yarn bin jest) --runInBand",
     "e2e": "cross-env NODE_ENV=test playwright test",
-    "e2e:linux": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v$(yarn --silent ver @playwright/test)-focal /bin/bash -c 'yarn e2e --retries=2'",
-    "e2e:linux:update": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v$(yarn --silent ver @playwright/test)-focal /bin/bash -c 'yarn e2e --update-snapshots'"
+    "e2e:linux": "node ./src/bin/playwright.js"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
