@@ -1,6 +1,8 @@
+import { readFile } from 'fs/promises';
+import { join } from 'path';
+import { URL } from 'url';
 import type { MultipleBatchRequest, Hit } from '@algolia/client-search';
 import algoliasearch from 'algoliasearch';
-import axios from 'axios';
 import type { Element, Text } from 'hast';
 import rehypeParse from 'rehype-parse';
 import unified, { type Processor } from 'unified';
@@ -337,11 +339,13 @@ export const indexDocument = async (path: string): Promise<void> => {
     'NEXT_PUBLIC_ALGOLIA_INDEX_NAME',
   );
   const ALGOLIA_ADMIN_API_KEY = getEnvVar('ALGOLIA_ADMIN_API_KEY');
-  const NEXT_PUBLIC_BASE_URL = getEnvVar('NEXT_PUBLIC_BASE_URL');
 
   /** HTML document to be indexed */
-  const { data: html } = await axios.get<string>(
-    new URL(path, NEXT_PUBLIC_BASE_URL).href,
+  const html = await readFile(
+    new URL(
+      join('..', '..', '..', '..', 'out', `${path}.html`),
+      import.meta.url,
+    ).pathname,
   );
 
   /** new algoliasts to be indexed */
