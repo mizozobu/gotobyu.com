@@ -1,6 +1,7 @@
 /.next
 /storybook-static
 /node_modules
+/out
 
 *.*
 !*.css
