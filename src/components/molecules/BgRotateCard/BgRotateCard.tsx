@@ -1,15 +1,13 @@
 import classNames from 'classnames';
-import type { ReactNode } from 'react';
+import type { ReactNode, ComponentPropsWithoutRef } from 'react';
 import { BgRotate } from '@c/atoms/BgRotate';
 
 /**
  * Props for {@link BgRotateCard}
  */
-interface Props {
+interface Props extends ComponentPropsWithoutRef<typeof BgRotate> {
   /** className to pass */
   className?: string;
-  /** className to set color for the rotating background */
-  colorClass: string;
   /** Card content */
   children: ReactNode;
 }
@@ -19,12 +17,12 @@ interface Props {
  */
 export const BgRotateCard = ({
   className,
-  colorClass,
   children,
+  ...props
 }: Props): JSX.Element => (
   <BgRotate
     className={classNames('aspect-[3/4] w-48 md:w-64', className)}
-    colorClass={colorClass}
+    {...props}
   >
     <div className='h-full w-full rounded-xl bg-gray-50 p-4 shadow-xl'>
       {children}

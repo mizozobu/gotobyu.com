@@ -13,11 +13,13 @@ describe('<BgRotate />', () => {
     expect(screen.getByText('Content')).toBeVisible();
   });
 
-  it('background element should have props.colorClass in class', () => {
+  it('should pass props.style', () => {
     expect.assertions(1);
 
     render(<Example />);
 
-    expect(screen.getByTestId('BgRotate-bg')).toHaveClass('bg-indigo-500');
+    expect(screen.getByTestId('BgRotate')).toHaveStyle({
+      '--bg': '#002e5d',
+    });
   });
 });

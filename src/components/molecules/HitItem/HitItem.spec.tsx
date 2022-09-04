@@ -37,7 +37,7 @@ describe('<HitItem />', () => {
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  it('should a focusable element', async () => {
+  it('should have a focusable element', async () => {
     expect.assertions(2);
     const user = userEvent.setup();
 

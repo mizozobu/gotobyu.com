@@ -16,7 +16,9 @@ const Template: ComponentStory<typeof PhotoViewer> = (args) => (
 
 export const Single = Template.bind({});
 Single.args = {
-  colorClass: 'bg-indigo-500',
+  style: {
+    '--bg': '#002e5d',
+  },
   images: [
     {
       src: '/byu/byu.png',
@@ -29,7 +31,9 @@ Single.args = {
 
 export const Multi = Template.bind({});
 Multi.args = {
-  colorClass: 'bg-indigo-500',
+  style: {
+    '--bg': '#002e5d',
+  },
   images: [
     {
       src: '/byu/byu.png',
