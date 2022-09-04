@@ -1,13 +1,16 @@
 import classNames from 'classnames';
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, CSSProperties } from 'react';
 import styles from './BgRotate.module.css';
 
 /**
- * Props for {@link BgRorate}
+ * Props for {@link BgRotate}
  */
 interface Props extends ComponentPropsWithoutRef<'div'> {
-  /** className to set color for the rotating background */
-  colorClass: string;
+  /** style to pass */
+  style: CSSProperties & {
+    /** color for the rotating background */
+    '--bg': CSSProperties['backgroundColor'];
+  };
 }
 
 /**
@@ -15,22 +18,22 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
  */
 export const BgRotate = ({
   className,
-  colorClass,
+  style,
   children,
   ...props
 }: Props): JSX.Element => (
   <div
     {...props}
-    className={classNames('group relative', styles['bg-rotate'], className)}
+    className={classNames(className, 'group relative')}
+    style={style}
     data-testid='BgRotate'
   >
     <div
       className={classNames(
+        styles['bg-rotate-bg'],
         'absolute h-full w-full rotate-6 rounded-xl shadow-xl transition duration-500 ease-in-out group-hover:rotate-12',
-        colorClass,
       )}
       aria-hidden
-      data-testid='BgRotate-bg'
     />
     {children}
   </div>

@@ -28,6 +28,16 @@ describe.skip('<PhotoViewer />', () => {
     });
   });
 
+  it('should pass props.style["--bg"] to <BgRotate />', () => {
+    expect.assertions(1);
+
+    render(<Multi />);
+
+    expect(screen.getByTestId('BgRotate')).toHaveStyle({
+      '--bg': '#002e5d',
+    });
+  });
+
   it('should render props.images[].citation', () => {
     expect.assertions(1);
 

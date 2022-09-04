@@ -1,3 +1,4 @@
-.bg-rotate > div:first-of-type {
+.bg-rotate-bg {
   z-index: -1;
+  background: var(--bg);
 }

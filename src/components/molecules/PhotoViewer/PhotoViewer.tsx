@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { type ImageProps } from 'next/image';
-import { useState } from 'react';
+import { useState, type ComponentPropsWithoutRef } from 'react';
 import Slider, { type Settings } from 'react-slick';
 import { BgRotate } from '@c/atoms/BgRotate';
 import { NextImage } from '@c/atoms/NextImage';
@@ -11,13 +11,11 @@ import 'slick-carousel/slick/slick-theme.css';
 /**
  * Props for {@link PhotoViewer}
  */
-export interface Props {
+export interface Props extends ComponentPropsWithoutRef<typeof BgRotate> {
   /** Array of Next.js images with "alt" attr and optional citation  */
   images: (ImageProps & { alt: string; citation?: string })[];
   /** className to pass */
   className?: string;
-  /** className to set color for the rotating background */
-  colorClass: string;
   /** react-slick settings */
   settings?: Settings;
 }
@@ -28,7 +26,7 @@ export interface Props {
 export const PhotoViewer = ({
   images,
   className,
-  colorClass,
+  style: { '--bg': bgColor, ...style },
   settings: _settings = {},
 }: Props): JSX.Element => {
   const [i, setI] = useState(0);
@@ -53,8 +51,12 @@ export const PhotoViewer = ({
   };
 
   return (
-    <div className={styles['photo-viewer']} data-noindex='true'>
-      <BgRotate className={className} colorClass={colorClass}>
+    <div
+      className={classNames(styles['photo-viewer'], className)}
+      style={style}
+      data-noindex='true'
+    >
+      <BgRotate style={{ '--bg': bgColor }}>
         <Slider {...settings}>
           {images.map((imageProps) => (
             <NextImage

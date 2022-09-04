@@ -16,6 +16,8 @@ const Template: ComponentStory<typeof BgRotateCard> = (args) => (
 
 export const Example = Template.bind({});
 Example.args = {
-  colorClass: 'bg-indigo-500',
   children: <div>content</div>,
+  style: {
+    '--bg': '#002e5d',
+  },
 };

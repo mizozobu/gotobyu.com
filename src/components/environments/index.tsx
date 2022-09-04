@@ -59,7 +59,11 @@ export const IndexEnvironment = (): JSX.Element => (
       <H2 className='px-6 text-2xl font-bold md:text-4xl'>各大学について</H2>
       <div className='flex space-x-12 overflow-scroll py-10 lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:justify-items-center lg:gap-y-10 lg:space-x-0 lg:overflow-visible'>
         <Link href='/schools/byu' className='mx-8 mt-4 rounded-xl'>
-          <BgRotateCard colorClass='bg-gradient-to-br from-byu to-byu-dark'>
+          <BgRotateCard
+            style={{
+              '--bg': 'linear-gradient(to bottom right, #002e5d, #001225)',
+            }}
+          >
             <NextImage
               className='h-full p-4'
               src={byuLogoImage}
@@ -71,7 +75,11 @@ export const IndexEnvironment = (): JSX.Element => (
           </BgRotateCard>
         </Link>
         <Link href='/schools/byuh' className='mx-8 mt-4 rounded-xl'>
-          <BgRotateCard colorClass='bg-gradient-to-br from-byuh to-byuh-dark'>
+          <BgRotateCard
+            style={{
+              '--bg': 'linear-gradient(to bottom right, #9e1b34, #3f0a14)',
+            }}
+          >
             <NextImage
               className='h-full p-4'
               src={byuhLogoImage}
@@ -83,7 +91,11 @@ export const IndexEnvironment = (): JSX.Element => (
           </BgRotateCard>
         </Link>
         <Link href='/schools/byui' className='mx-8 mt-4 rounded-xl'>
-          <BgRotateCard colorClass='bg-gradient-to-br from-byui to-byui-dark'>
+          <BgRotateCard
+            style={{
+              '--bg': 'linear-gradient(to bottom right, #0076B6, #002f48)',
+            }}
+          >
             <NextImage
               className='h-full p-4'
               src={byuiLogoImage}
