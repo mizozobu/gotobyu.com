@@ -12,6 +12,7 @@ interface Props extends ComponentPropsWithoutRef<'svg'> {}
 export const FacebookIcon = ({ className, ...props }: Props): JSX.Element => (
   <svg
     aria-hidden='true'
+    // eslint-disable-next-line react/no-unknown-property
     focusable='false'
     data-prefix='fab'
     data-icon='facebook-f'
