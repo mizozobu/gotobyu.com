@@ -6,11 +6,11 @@ import styles from './BgRotate.module.css';
  * Props for {@link BgRotate}
  */
 interface Props extends ComponentPropsWithoutRef<'div'> {
-  /** style to pass */
-  style: CSSProperties & {
-    /** color for the rotating background */
-    '--bg': CSSProperties['backgroundColor'];
-  };
+  /** Style to pass */
+  style: Style<{
+    /** Rotating background */
+    '--bg': CSSProperties['background'];
+  }>;
 }
 
 /**
