@@ -13,22 +13,13 @@ describe('<RippleButton />', () => {
     expect(screen.getByRole('button', { name: 'Button' })).toBeVisible();
   });
 
-  it('should assign props.backgroundColor to css variable --background-color', () => {
+  it('should pass props.style', () => {
     expect.assertions(1);
 
     render(<Example />);
 
     expect(screen.getByRole('button')).toHaveStyle({
-      '--background-color': 'rgb(49 46 129)',
-    });
-  });
-
-  it('should assign props.rippleColor to css variable --ripple-color', () => {
-    expect.assertions(1);
-
-    render(<Example />);
-
-    expect(screen.getByRole('button')).toHaveStyle({
+      '--bg-color': 'rgb(49 46 129)',
       '--ripple-color': 'rgb(165 180 252)',
     });
   });

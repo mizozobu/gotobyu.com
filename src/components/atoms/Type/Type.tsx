@@ -5,6 +5,7 @@ import {
   type ComponentPropsWithoutRef,
   type CSSProperties,
 } from 'react';
+import type { SetIntersection } from 'utility-types';
 import styles from './Type.module.css';
 
 /**
@@ -13,8 +14,14 @@ import styles from './Type.module.css';
 interface Props extends ComponentPropsWithoutRef<'span'> {
   /** Text to effect */
   children: string;
-  /** Caret width */
-  caretWidth?: string;
+  /** Style to pass */
+  style?: Style<{
+    /** Caret width */
+    '--caret-width'?: SetIntersection<
+      CSSProperties['width'],
+      CSSProperties['paddingRight']
+    >;
+  }>;
   /** Time in seconds between types */
   typeSpeed?: number;
   /** Time in seconds to wait before start typing the text */
@@ -28,7 +35,7 @@ interface Props extends ComponentPropsWithoutRef<'span'> {
 /**
  * Typing status
  */
-const Status = {
+const STATUS = {
   /** Typing a text */
   forward: Symbol('forward'),
   /** Erasing a text */
@@ -42,7 +49,6 @@ const Status = {
  */
 export const Type = ({
   children: text,
-  caretWidth = '2px',
   typeSpeed = 75,
   waitBeforeType = 3000,
   waitAfterType = 1000,
@@ -50,7 +56,7 @@ export const Type = ({
   ...props
 }: Props): JSX.Element => {
   const [typed, setTyped] = useState('');
-  const [status, setStatus] = useState(Status.waiting);
+  const [status, setStatus] = useState(STATUS.waiting);
 
   /**
    * start typing on load
@@ -58,7 +64,7 @@ export const Type = ({
   useEffect(() => {
     const timeout = setTimeout(() => {
       setTyped(text[0]);
-      setStatus(Status.forward);
+      setStatus(STATUS.forward);
     }, typeSpeed);
     return () => clearTimeout(timeout);
   }, [text, typeSpeed]);
@@ -67,13 +73,13 @@ export const Type = ({
    * change interval function when status changes
    */
   useEffect(() => {
-    if (status === Status.forward) {
+    if (status === STATUS.forward) {
       const interval = setInterval(() => {
         setTyped((prevTyped) => text.substring(0, prevTyped.length + 1));
       }, typeSpeed);
       return () => clearInterval(interval);
     }
-    if (status === Status.backward) {
+    if (status === STATUS.backward) {
       const interval = setInterval(() => {
         setTyped((prevTyped) => text.substring(0, prevTyped.length - 1));
       }, typeSpeed);
@@ -87,16 +93,16 @@ export const Type = ({
    */
   useEffect(() => {
     if (typed === text) {
-      setStatus(Status.waiting);
+      setStatus(STATUS.waiting);
       const timeout = setTimeout(() => {
-        setStatus(Status.backward);
+        setStatus(STATUS.backward);
       }, waitAfterType);
       return () => clearTimeout(timeout);
     }
     if (typed === '') {
-      setStatus(Status.waiting);
+      setStatus(STATUS.waiting);
       const timeout = setTimeout(() => {
-        setStatus(Status.forward);
+        setStatus(STATUS.forward);
         onBack?.();
       }, waitBeforeType);
       return () => clearTimeout(timeout);
@@ -107,21 +113,12 @@ export const Type = ({
   return (
     <>
       <span className='sr-only'>{text}</span>
-      <span
-        {...props}
-        style={
-          {
-            '--caret-width': caretWidth,
-          } as CSSProperties
-        }
-        aria-hidden='true'
-        data-testid='Type'
-      >
+      <span aria-hidden='true' data-testid='Type' {...props}>
         {typed}
         <span
           className={classNames(
             styles.type,
-            status === Status.waiting ? styles.stopped : styles.typing,
+            status === STATUS.waiting ? styles.stopped : styles.typing,
           )}
         />
       </span>

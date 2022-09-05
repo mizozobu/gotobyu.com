@@ -33,7 +33,7 @@ export const IndexEnvironment = (): JSX.Element => (
           <span className='block text-byui'>BYUI</span>
           <div className='h-32 overflow-hidden md:h-48'>
             <TypingEffect
-              caretWidth='5px'
+              style={{ '--caret-width': '5px' }}
               waitBeforeType={1000}
               waitAfterType={3000}
             >
