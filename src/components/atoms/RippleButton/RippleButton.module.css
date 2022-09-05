@@ -1,13 +1,12 @@
 /* see https://css-tricks.com/how-to-recreate-the-ripple-effect-of-material-design-buttons/ */
 button.ripple {
-  background: var(--background-color)
-    radial-gradient(circle, transparent 1%, var(--background-color) 1%)
-    center/100%;
+  background: var(--bg-color)
+    radial-gradient(circle, transparent 1%, var(--bg-color) 1%) center/100%;
   transition: background-color 0s, background-size 0s;
 }
 
 button.ripple:hover {
-  color: var(--background-color);
+  color: var(--bg-color);
   background-color: var(--ripple-color);
   background-size: 15000%;
   border-color: var(--ripple-color);

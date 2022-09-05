@@ -13,7 +13,7 @@ describe('<Table />', () => {
     expect(screen.getByRole('table')).toBeVisible();
   });
 
-  it('should assign props.thickBorderColor to css variable --thick-border-color', () => {
+  it('should pass props.style', () => {
     expect.assertions(1);
 
     render(<Example />);

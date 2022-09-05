@@ -1,5 +1,5 @@
 .type {
-  padding-right: var(--caret-width);
+  padding-right: var(--caret-width, 2px);
 
   @apply relative;
 }
@@ -7,7 +7,7 @@
 .type::after {
   top: 10%;
   bottom: 10%;
-  width: var(--caret-width);
+  width: var(--caret-width, 2px);
   content: '';
 
   @apply absolute;

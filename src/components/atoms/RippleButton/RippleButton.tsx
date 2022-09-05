@@ -1,35 +1,34 @@
 import classNames from 'classnames';
 import type { ComponentPropsWithoutRef, CSSProperties } from 'react';
+import type { SetIntersection } from 'utility-types';
 import styles from './RippleButton.module.css';
 
 /**
  * Props for {@link RippleButton}
  */
 interface Props extends ComponentPropsWithoutRef<'button'> {
-  /** Background color */
-  backgroundColor: string;
-  /** Ripple color */
-  rippleColor: string;
+  /** Style to pass */
+  style: Style<{
+    /** Background color for the button */
+    '--bg-color': SetIntersection<
+      CSSProperties['backgroundColor'],
+      CSSProperties['color']
+    >;
+    /** Ripple color for the button */
+    '--ripple-color': SetIntersection<
+      CSSProperties['backgroundColor'],
+      CSSProperties['borderColor']
+    >;
+  }>;
 }
 
 /**
  * Drawing effect border
  */
-export const RippleButton = ({
-  className,
-  backgroundColor,
-  rippleColor,
-  ...props
-}: Props): JSX.Element => (
+export const RippleButton = ({ className, ...props }: Props): JSX.Element => (
   <button
     type='button'
     className={classNames(styles.ripple, className)}
-    style={
-      {
-        '--background-color': backgroundColor,
-        '--ripple-color': rippleColor,
-      } as CSSProperties
-    }
     {...props}
   />
 );

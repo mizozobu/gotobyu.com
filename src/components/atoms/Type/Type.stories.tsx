@@ -13,7 +13,9 @@ const Template: ComponentStory<typeof Type> = (args) => <Type {...args} />;
 export const Example = Template.bind({});
 Example.args = {
   children: '123456789',
-  caretWidth: '3px',
+  style: {
+    '--caret-width': '3px',
+  },
   typeSpeed: 50,
   waitBeforeType: 2000,
   waitAfterType: 2000,

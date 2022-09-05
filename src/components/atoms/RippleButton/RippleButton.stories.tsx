@@ -16,6 +16,8 @@ export const Example = Template.bind({});
 Example.args = {
   children: 'Button',
   className: 'text-white rounded-md px-4 py-2',
-  backgroundColor: 'rgb(49 46 129)',
-  rippleColor: 'rgb(165 180 252)',
+  style: {
+    '--bg-color': 'rgb(49 46 129)',
+    '--ripple-color': 'rgb(165 180 252)',
+  },
 };

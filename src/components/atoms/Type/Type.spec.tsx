@@ -15,12 +15,12 @@ describe.skip('<Type />', () => {
     jest.useRealTimers();
   });
 
-  it('should assign props.caretWidth to css variable --caret-width', () => {
+  it('should pass props.style', () => {
     expect.assertions(1);
 
     render(<Example />);
 
-    expect(screen.getByTestId('Type')).toHaveStyle({
+    expect(screen.getByRole('button')).toHaveStyle({
       '--caret-width': '3px',
     });
   });

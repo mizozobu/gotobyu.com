@@ -22,8 +22,10 @@ export const Footer = (): JSX.Element => (
         >
           <RippleButton
             className='flex h-14 w-14 items-center justify-center rounded-full border border-white p-4'
-            backgroundColor='rgb(49 46 129)'
-            rippleColor='white'
+            style={{
+              '--bg-color': 'rgb(49 46 129)',
+              '--ripple-color': 'white',
+            }}
             aria-label='email'
           >
             <EnvelopeIcon className='h-8 w-8' />
@@ -37,8 +39,10 @@ export const Footer = (): JSX.Element => (
         >
           <RippleButton
             className='flex h-14 w-14 items-center justify-center rounded-full border border-white p-4'
-            backgroundColor='rgb(49 46 129)'
-            rippleColor='white'
+            style={{
+              '--bg-color': 'rgb(49 46 129)',
+              '--ripple-color': 'white',
+            }}
             aria-label='facebook'
           >
             <FacebookIcon className='h-8 w-8' />
@@ -52,8 +56,10 @@ export const Footer = (): JSX.Element => (
         >
           <RippleButton
             className='flex h-14 w-14 items-center justify-center rounded-full border border-white p-4'
-            backgroundColor='rgb(49 46 129)'
-            rippleColor='white'
+            style={{
+              '--bg-color': 'rgb(49 46 129)',
+              '--ripple-color': 'white',
+            }}
             aria-label='website'
           >
             <LinkIcon className='h-8 w-8' />
