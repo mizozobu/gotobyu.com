@@ -71,7 +71,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "autoprefixer": "^10.4.8",
-    "canvas": "^2.9.3",
+    "canvas": "^2.10.0",
     "concurrently": "^7.3.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.23.0",
