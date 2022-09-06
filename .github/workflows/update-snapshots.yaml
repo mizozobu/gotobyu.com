@@ -23,8 +23,9 @@ jobs:
         id: get-e2e-args
         uses: actions/github-script@v6
         with:
+          result-encoding: string
           script: |
-            const comment = `${{ github.event.comment.body }}`;
+            const comment = context.comment.body;
             const [, codeblock] = comment.match(/📸\s+```[a-z]*\n([\s\S]*?)\n```/);
             core.setOutput('args', codeblock.trim());
       - name: Checkout repository
