@@ -9,7 +9,7 @@ jobs:
   update-snapshots:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    if: ${{ github.event.issue.pull_request && github.event.comment.body == '📸' }}
+    if: ${{ github.event.issue.pull_request && startsWith(github.event.comment.body, '📸')}}
     steps:
       - name: Add a rocket reaction to the comment
         run: |
@@ -19,6 +19,14 @@ jobs:
             -H "Accept: application/vnd.github.v3+json" \
             ${{ github.event.comment.url }}/reactions \
             -d '{"content":"rocket"}'
+      - name: Get args for E2E test
+        id: get-e2e-args
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const comment = ${{ github.event.comment.body };
+            const [, codeblock] = comment.match(/📸\s+```[a-z]*\n([\s\S]*?)\n```/);
+            core.setOutput('args', codeblock.trim());
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
@@ -35,7 +43,7 @@ jobs:
       - name: E2E test
         uses: ./.github/actions/playwright
         with:
-          args: 'e2e/tests/visual-regression.spec.ts --update-snapshots'
+          args: 'e2e/tests/visual-regression.spec.ts --update-snapshots ${{ steps.get-e2e-args.outputs.args }}'
       - name: Get PR target branch
         id: get-target-branch
         run: echo "::set-output name=branch::$(git rev-parse --abbrev-ref HEAD)"
@@ -54,7 +62,7 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            :camera_flash: Updated snapshots
+            :white_check_mark: Snapshots updated
 
             See the diff at https://github.com/mizozobu/gotobyu.com/compare/${{ steps.get-target-branch.outputs.branch }}...bot/${{ steps.get-target-branch.outputs.branch }} and manually merge changes.
       - name: Post a failure comment to PR
