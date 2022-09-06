@@ -24,7 +24,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const comment = ${{ github.event.comment.body };
+            const comment = ${{ github.event.comment.body }};
             const [, codeblock] = comment.match(/📸\s+```[a-z]*\n([\s\S]*?)\n```/);
             core.setOutput('args', codeblock.trim());
       - name: Checkout repository
@@ -43,7 +43,7 @@ jobs:
       - name: E2E test
         uses: ./.github/actions/playwright
         with:
-          args: 'e2e/tests/visual-regression.spec.ts --update-snapshots ${{ steps.get-e2e-args.outputs.args }}'
+          args: e2e/tests/visual-regression.spec.ts --update-snapshots ${{ steps.get-e2e-args.outputs.args }}
       - name: Get PR target branch
         id: get-target-branch
         run: echo "::set-output name=branch::$(git rev-parse --abbrev-ref HEAD)"
