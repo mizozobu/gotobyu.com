@@ -22,10 +22,12 @@ jobs:
       - name: Get args for E2E test
         id: get-e2e-args
         uses: actions/github-script@v6
+        env:
+          COMMENT: ${{ github.event.comment.body }}
         with:
           result-encoding: string
           script: |
-            const comment = context.payload.comment.body;
+            const comment = process.env.COMMENT;
             const [, codeblock] = comment.match(/📸\s+```[a-z]*\n([\s\S]*?)\n```/);
             core.setOutput('args', codeblock.trim());
       - name: Checkout repository
