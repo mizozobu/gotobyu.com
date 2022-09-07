@@ -5,6 +5,10 @@ on:
     branches-ignore:
       - 'bot/*'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   setup:
     uses: ./.github/workflows/setup.yaml
