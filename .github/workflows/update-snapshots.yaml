@@ -28,14 +28,10 @@ jobs:
           result-encoding: string
           script: |
             const comment = process.env.COMMENT;
-            console.log(comment);
             console.log(comment.match(/[\s\S]*/));
-            console.log(comment.match(/📸/));
-            console.log(comment.match(/```/));
-            console.log(comment.match(/--project 'webkit mobile'/));
-            console.log(comment.match(/📸\s+```[a-z]*/));
-            console.log(comment.match(/📸\s+```[a-z]*\n([\s\S]*?)\n```/));
-            const [, codeblock] = comment.match(/📸\s+```[a-z]*\n([\s\S]*?)\n```/);
+            const [, codeblock] = comment.match(
+              /📸\s+```[a-z]*(?:\r\n|\r|\n)+([\s\S]*?)(?:\r\n|\r|\n)+```/,
+            );
             console.log(codeblock);
             core.setOutput('args', codeblock.trim());
       - name: Checkout repository
