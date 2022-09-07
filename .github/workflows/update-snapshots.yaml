@@ -28,7 +28,9 @@ jobs:
           result-encoding: string
           script: |
             const comment = process.env.COMMENT;
+            console.log(comment);
             const [, codeblock] = comment.match(/📸\s+```[a-z]*\n([\s\S]*?)\n```/);
+            console.log(codeblock);
             core.setOutput('args', codeblock.trim());
       - name: Checkout repository
         uses: actions/checkout@v3
