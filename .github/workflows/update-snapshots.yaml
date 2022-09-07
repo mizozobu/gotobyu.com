@@ -29,7 +29,12 @@ jobs:
           script: |
             const comment = process.env.COMMENT;
             console.log(comment);
-            comment.split('').forEach((c) => console.log(c));
+            console.log(comment.match(/[\s\S]*/));
+            console.log(comment.match(/📸/));
+            console.log(comment.match(/```/));
+            console.log(comment.match(/--project 'webkit mobile'/));
+            console.log(comment.match(/📸\s+```[a-z]*/));
+            console.log(comment.match(/📸\s+```[a-z]*\n([\s\S]*?)\n```/));
             const [, codeblock] = comment.match(/📸\s+```[a-z]*\n([\s\S]*?)\n```/);
             console.log(codeblock);
             core.setOutput('args', codeblock.trim());
