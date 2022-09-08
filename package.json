@@ -22,7 +22,7 @@
     "e2e:linux": "node ./src/bin/playwright.js"
   },
   "dependencies": {
-    "@headlessui/react": "^1.6.6",
+    "@headlessui/react": "^1.7.0",
     "@heroicons/react": "^2.0.10",
     "@mdx-js/loader": "^2.1.3",
     "@next/mdx": "^12.2.5",
