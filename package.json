@@ -7,6 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
+    "export": "UNOPTIMIZE_IMAGE=true next export",
     "start": "next start",
     "lint": "concurrently -r 'eslint .' 'stylelint .' 'prettier --check --loglevel warn .'",
     "lint:fix": "concurrently -r 'eslint --fix .' 'stylelint --fix .' 'prettier --write --loglevel warn .'",
