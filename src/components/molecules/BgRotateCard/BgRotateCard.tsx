@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import type { ReactNode, ComponentPropsWithoutRef } from 'react';
-import { BgRotate } from '@c/atoms/BgRotate';
+import { BgRotate } from '@/components/atoms/BgRotate';
 
 /**
  * Props for {@link BgRotateCard}

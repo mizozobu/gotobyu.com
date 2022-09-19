@@ -3,7 +3,7 @@ import React from 'react';
 import { InternalLink } from './InternalLink';
 
 export default {
-  title: 'atoms/InternalLink',
+  title: 'components/atoms/InternalLink',
   component: InternalLink,
   argTypes: {},
 } as ComponentMeta<typeof InternalLink>;

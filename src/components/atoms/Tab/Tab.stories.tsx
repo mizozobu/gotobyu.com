@@ -3,7 +3,7 @@ import React from 'react';
 import { Tab } from './Tab';
 
 export default {
-  title: 'atoms/Tab',
+  title: 'components/atoms/Tab',
   component: Tab,
   argTypes: {},
 } as ComponentMeta<typeof Tab>;

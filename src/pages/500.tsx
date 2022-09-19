@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import { Seo } from '@c/ecosystems/shared/Seo';
-import { ErrorEnvironment } from '@c/environments/error';
+import { Error } from '@/features/misc';
+import { Seo } from '@/lib/seo';
 
 /**
  * 500 Page
@@ -8,7 +8,7 @@ import { ErrorEnvironment } from '@c/environments/error';
 const _500Page: NextPage<never> = () => (
   <>
     <Seo title='エラー' noindex nofollow />
-    <ErrorEnvironment />
+    <Error />
   </>
 );
 

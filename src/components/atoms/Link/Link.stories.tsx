@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from './Link';
 
 export default {
-  title: 'atoms/Link',
+  title: 'components/atoms/Link',
   component: Link,
   argTypes: {},
 } as ComponentMeta<typeof Link>;

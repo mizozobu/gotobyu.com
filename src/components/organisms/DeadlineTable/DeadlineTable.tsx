@@ -1,7 +1,7 @@
-import { Strong } from '@c/atoms/Strong';
-import { Table } from '@c/atoms/Table';
-import { TableCaption } from '@c/atoms/TableCaption';
-import type { ApplicationDeadline } from '@d/application-deadline';
+import { Strong } from '@/components/atoms/Strong';
+import { Table } from '@/components/atoms/Table';
+import { TableCaption } from '@/components/atoms/TableCaption';
+import type { ApplicationDeadline } from '@/data/application-deadline';
 
 /**
  * Props for {@link DeadlineTable}

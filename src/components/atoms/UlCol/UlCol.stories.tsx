@@ -3,7 +3,7 @@ import React from 'react';
 import { UlCol } from './UlCol';
 
 export default {
-  title: 'atoms/UlCol',
+  title: 'components/atoms/UlCol',
   component: UlCol,
   argTypes: {},
 } as ComponentMeta<typeof UlCol>;

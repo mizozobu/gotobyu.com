@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import { Seo } from '@c/ecosystems/shared/Seo';
-import ByuEnvironment from '@c/environments/schools/byu.mdx';
-import { BYU_PAGE_META } from '@d/links';
-import { MDX } from '@l/mdx';
+import { BYU_PAGE_META } from '@/data/links';
+import { Byu } from '@/features/byu';
+import { MDX } from '@/features/mdx';
+import { Seo } from '@/lib/seo';
 
 /**
  * BYU Page
@@ -18,7 +18,7 @@ const ByuPage: NextPage<never> = () => (
         description: BYU_PAGE_META.description,
       }}
     />
-    <ByuEnvironment components={MDX} />
+    <Byu components={MDX} />
   </>
 );
 

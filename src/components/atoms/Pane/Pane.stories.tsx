@@ -3,7 +3,7 @@ import React from 'react';
 import { Pane } from './Pane';
 
 export default {
-  title: 'atoms/Pane',
+  title: 'components/atoms/Pane',
   component: Pane,
   argTypes: {},
 } as ComponentMeta<typeof Pane>;

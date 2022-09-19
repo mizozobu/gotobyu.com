@@ -9,8 +9,8 @@ import {
   CAREER_PAGE_META,
   INTERNSHIP_PAGE_META,
   ABOUT_PAGE_META,
-} from '@d/links';
-import { indexDocument } from '@l/algolia/node';
+} from '@/data/links';
+import { indexDocument } from '@/features/index';
 
 /**
  * Index documents in algolia

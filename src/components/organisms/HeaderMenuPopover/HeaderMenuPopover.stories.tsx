@@ -4,7 +4,7 @@ import React from 'react';
 import { HeaderMenuPopover } from './HeaderMenuPopover';
 
 export default {
-  title: 'organisms/HeaderMenuPopover',
+  title: 'components/organisms/HeaderMenuPopover',
   component: HeaderMenuPopover,
   argTypes: {},
   parameters: {

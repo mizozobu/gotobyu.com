@@ -1,16 +1,16 @@
 import { test as base } from '@playwright/test';
-import { _404Page } from '@e/fixtures/pages/404.page';
-import { _500Page } from '@e/fixtures/pages/500.page';
-import { AboutPage } from '@e/fixtures/pages/about.page';
-import { ApplyPage } from '@e/fixtures/pages/apply.page';
-import { ByuPage } from '@e/fixtures/pages/byu.page';
-import { ByuhPage } from '@e/fixtures/pages/byuh.page';
-import { ByuiPage } from '@e/fixtures/pages/byui.page';
-import { CareerPage } from '@e/fixtures/pages/career.page';
-import { ComparePage } from '@e/fixtures/pages/compare.page';
-import { IndexPage } from '@e/fixtures/pages/index.page';
-import { InternshipPage } from '@e/fixtures/pages/internship.page';
-import { LearnEnglishPage } from '@e/fixtures/pages/learn-english.page';
+import { _404Page } from '@e2e/fixtures/pages/404.page';
+import { _500Page } from '@e2e/fixtures/pages/500.page';
+import { AboutPage } from '@e2e/fixtures/pages/about.page';
+import { ApplyPage } from '@e2e/fixtures/pages/apply.page';
+import { ByuPage } from '@e2e/fixtures/pages/byu.page';
+import { ByuhPage } from '@e2e/fixtures/pages/byuh.page';
+import { ByuiPage } from '@e2e/fixtures/pages/byui.page';
+import { CareerPage } from '@e2e/fixtures/pages/career.page';
+import { ComparePage } from '@e2e/fixtures/pages/compare.page';
+import { IndexPage } from '@e2e/fixtures/pages/index.page';
+import { InternshipPage } from '@e2e/fixtures/pages/internship.page';
+import { LearnEnglishPage } from '@e2e/fixtures/pages/learn-english.page';
 
 /**
  * Type for Fixture

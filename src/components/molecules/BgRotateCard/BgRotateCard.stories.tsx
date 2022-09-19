@@ -3,7 +3,7 @@ import React from 'react';
 import { BgRotateCard } from './BgRotateCard';
 
 export default {
-  title: 'molecules/BgRotateCard',
+  title: 'components/molecules/BgRotateCard',
   component: BgRotateCard,
   argTypes: {},
 } as ComponentMeta<typeof BgRotateCard>;

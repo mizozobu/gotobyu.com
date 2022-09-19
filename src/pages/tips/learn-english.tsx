@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import { Seo } from '@c/ecosystems/shared/Seo';
-import LearnEnglishEnvironment from '@c/environments/tips/learn-english.mdx';
-import { LEARN_ENGLISH_PAGE_META } from '@d/links';
-import { MDX } from '@l/mdx';
+import { LEARN_ENGLISH_PAGE_META } from '@/data/links';
+import { MDX } from '@/features/mdx';
+import { LearnEnglish } from '@/features/misc';
+import { Seo } from '@/lib/seo';
 
 /**
  * Learn English Page
@@ -18,7 +18,7 @@ const LearnEnglishPage: NextPage<never> = (): JSX.Element => (
         description: LEARN_ENGLISH_PAGE_META.description,
       }}
     />
-    <LearnEnglishEnvironment components={MDX} />
+    <LearnEnglish components={MDX} />
   </>
 );
 

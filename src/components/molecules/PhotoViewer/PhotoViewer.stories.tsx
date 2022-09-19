@@ -3,7 +3,7 @@ import React from 'react';
 import { PhotoViewer } from './PhotoViewer';
 
 export default {
-  title: 'molecules/PhotoViewer',
+  title: 'components/molecules/PhotoViewer',
   component: PhotoViewer,
   argTypes: {},
 } as ComponentMeta<typeof PhotoViewer>;

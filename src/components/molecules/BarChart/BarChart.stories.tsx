@@ -3,7 +3,7 @@ import React from 'react';
 import { BarChart } from './BarChart';
 
 export default {
-  title: 'molecules/BarChart',
+  title: 'components/molecules/BarChart',
   component: BarChart,
   argTypes: {},
 } as ComponentMeta<typeof BarChart>;

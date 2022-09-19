@@ -1,21 +1,23 @@
 import type { NextPage, GetStaticProps } from 'next';
-import { Seo } from '@c/ecosystems/shared/Seo';
-import CompareEnvironment from '@c/environments/tips/compare.mdx';
-import { COMPARE_PAGE_META } from '@d/links';
-import { getForex } from '@l/forex';
-import { MDX } from '@l/mdx';
-import { AtomStore } from '@l/recoil';
-import { defaultForexState, FOREX_STATE_KEY } from '@s/forex';
+import { ALPHA_VANTAGE_API_KEY } from '@/config';
+import { COMPARE_PAGE_META } from '@/data/links';
+import { Compare } from '@/features/compare';
+import { FOREX_STATE_KEY, getForex } from '@/features/forex';
+import { MDX } from '@/features/mdx';
+import { AtomStore } from '@/lib/recoil';
+import { Seo } from '@/lib/seo';
 
 /**
  * getStaticProps for BYUI Page
  */
 export const getStaticProps: GetStaticProps = async () => {
   const atomStore = new AtomStore();
-  const forex = process.env.ALPHA_VANTAGE_API_KEY
-    ? await getForex('USD', 'JPY')
-    : defaultForexState;
-  atomStore.setAtom(FOREX_STATE_KEY, forex);
+
+  if (ALPHA_VANTAGE_API_KEY) {
+    const forex = await getForex('USD', 'JPY');
+    atomStore.setAtom(FOREX_STATE_KEY, forex);
+  }
+
   return atomStore.with({
     revalidate: 60 * 12,
   });
@@ -35,7 +37,7 @@ const ComparePage: NextPage<never> = (): JSX.Element => (
         description: COMPARE_PAGE_META.description,
       }}
     />
-    <CompareEnvironment components={MDX} />
+    <Compare components={MDX} />
   </>
 );
 

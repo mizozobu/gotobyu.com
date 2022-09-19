@@ -3,7 +3,7 @@ import React from 'react';
 import { RippleButton } from './RippleButton';
 
 export default {
-  title: 'atoms/RippleButton',
+  title: 'components/atoms/RippleButton',
   component: RippleButton,
   argTypes: {},
 } as ComponentMeta<typeof RippleButton>;

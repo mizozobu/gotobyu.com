@@ -4,7 +4,7 @@ import React from 'react';
 import { PageCard } from './PageCard';
 
 export default {
-  title: 'molecules/PageCard',
+  title: 'components/molecules/PageCard',
   component: PageCard,
   argTypes: {},
 } as ComponentMeta<typeof PageCard>;

@@ -3,7 +3,7 @@ import React from 'react';
 import { TableCaption } from './TableCaption';
 
 export default {
-  title: 'atoms/TableCaption',
+  title: 'components/atoms/TableCaption',
   component: TableCaption,
   argTypes: {},
 } as ComponentMeta<typeof TableCaption>;

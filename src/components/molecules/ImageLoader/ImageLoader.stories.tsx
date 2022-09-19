@@ -3,7 +3,7 @@ import React from 'react';
 import { ImageLoader } from './ImageLoader';
 
 export default {
-  title: 'molecules/ImageLoader',
+  title: 'components/molecules/ImageLoader',
   component: ImageLoader,
   argTypes: {},
 } as ComponentMeta<typeof ImageLoader>;

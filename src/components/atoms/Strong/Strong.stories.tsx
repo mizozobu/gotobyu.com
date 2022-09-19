@@ -3,7 +3,7 @@ import React from 'react';
 import { Strong } from './Strong';
 
 export default {
-  title: 'atoms/Strong',
+  title: 'components/atoms/Strong',
   component: Strong,
   argTypes: {},
 } as ComponentMeta<typeof Strong>;

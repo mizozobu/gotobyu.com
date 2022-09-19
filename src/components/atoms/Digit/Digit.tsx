@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from 'react';
-import { round } from '@l/round';
+import { round } from '@/utils/round';
 
 /**
  * Props for {@link Digit}

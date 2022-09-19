@@ -3,7 +3,7 @@ import React from 'react';
 import { SchoolTh } from './SchoolTh';
 
 export default {
-  title: 'molecules/SchoolTh',
+  title: 'components/molecules/SchoolTh',
   component: SchoolTh.BYU,
   argTypes: {},
 } as ComponentMeta<() => JSX.Element>;

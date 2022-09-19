@@ -3,7 +3,7 @@ import React from 'react';
 import { PartialCircle } from './PartialCircle';
 
 export default {
-  title: 'atoms/PartialCircle',
+  title: 'components/atoms/PartialCircle',
   component: PartialCircle,
   argTypes: {},
 } as ComponentMeta<typeof PartialCircle>;

@@ -3,7 +3,7 @@ import React from 'react';
 import { Footnote } from './Footnote';
 
 export default {
-  title: 'atoms/Footnote',
+  title: 'components/atoms/Footnote',
   component: Footnote,
   argTypes: {},
 } as ComponentMeta<typeof Footnote>;

@@ -3,7 +3,7 @@ import React from 'react';
 import { Modal } from './Modal';
 
 export default {
-  title: 'molecules/Modal',
+  title: 'components/molecules/Modal',
   component: Modal,
   argTypes: {},
 } as ComponentMeta<typeof Modal>;

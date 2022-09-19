@@ -3,7 +3,7 @@ import React from 'react';
 import { P } from './P';
 
 export default {
-  title: 'atoms/P',
+  title: 'components/atoms/P',
   component: P,
   argTypes: {},
 } as ComponentMeta<typeof P>;

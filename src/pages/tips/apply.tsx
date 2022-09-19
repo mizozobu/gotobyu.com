@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import { Seo } from '@c/ecosystems/shared/Seo';
-import ApplyEnvironment from '@c/environments/tips/apply.mdx';
-import { APPLY_PAGE_META } from '@d/links';
-import { MDX } from '@l/mdx';
+import { APPLY_PAGE_META } from '@/data/links';
+import { Apply } from '@/features/apply';
+import { MDX } from '@/features/mdx';
+import { Seo } from '@/lib/seo';
 
 /**
  * Apply Page
@@ -18,7 +18,7 @@ const ApplyPage: NextPage<never> = () => (
         description: APPLY_PAGE_META.description,
       }}
     />
-    <ApplyEnvironment components={MDX} />
+    <Apply components={MDX} />
   </>
 );
 

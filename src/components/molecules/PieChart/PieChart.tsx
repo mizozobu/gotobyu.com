@@ -3,6 +3,7 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import type { Options } from 'chartjs-plugin-datalabels/types/options';
 import type { ComponentPropsWithoutRef } from 'react';
 import { Pie } from 'react-chartjs-2';
+import { NODE_ENV } from '@/config';
 
 Chart.register(ArcElement, Title, Tooltip);
 Chart.register(ChartDataLabels);
@@ -37,7 +38,7 @@ export const PieChart = ({
       maintainAspectRatio: false,
       animation: {
         /** disable animation for for VRT */
-        duration: process.env.NEXT_PUBLIC_NODE_ENV === 'test' ? 0 : undefined,
+        duration: NODE_ENV === 'test' ? 0 : undefined,
       },
       plugins: {
         title: {
