@@ -1,10 +1,10 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { TableCaption } from '@c/atoms/TableCaption';
+import { TableCaption } from '@/components/atoms/TableCaption';
 import { Table } from './Table';
 
 export default {
-  title: 'atoms/Table',
+  title: 'components/atoms/Table',
   component: Table,
   argTypes: {},
 } as ComponentMeta<typeof Table>;

@@ -3,7 +3,7 @@ import React from 'react';
 import { PieChartLoader } from './PieChartLoader';
 
 export default {
-  title: 'molecules/PieChartLoader',
+  title: 'components/molecules/PieChartLoader',
   component: PieChartLoader,
   argTypes: {},
 } as ComponentMeta<typeof PieChartLoader>;

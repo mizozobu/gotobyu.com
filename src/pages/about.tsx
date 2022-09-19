@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import { Seo } from '@c/ecosystems/shared/Seo';
-import AboutEnvironment from '@c/environments/about.mdx';
-import { ABOUT_PAGE_META } from '@d/links';
-import { MDX } from '@l/mdx';
+import { ABOUT_PAGE_META } from '@/data/links';
+import { MDX } from '@/features/mdx';
+import { About } from '@/features/misc';
+import { Seo } from '@/lib/seo';
 
 /**
  * About Page
@@ -18,7 +18,7 @@ const AboutPage: NextPage<never> = () => (
         description: ABOUT_PAGE_META.description,
       }}
     />
-    <AboutEnvironment components={MDX} />
+    <About components={MDX} />
   </>
 );
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { SwitchControl } from './SwitchControl';
 
 export default {
-  title: 'molecules/SwitchControl',
+  title: 'components/molecules/SwitchControl',
   component: SwitchControl,
   argTypes: {},
 } as ComponentMeta<typeof SwitchControl>;

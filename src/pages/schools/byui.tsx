@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import { Seo } from '@c/ecosystems/shared/Seo';
-import ByuiEnvironment from '@c/environments/schools/byui.mdx';
-import { BYUI_PAGE_META } from '@d/links';
-import { MDX } from '@l/mdx';
+import { BYUI_PAGE_META } from '@/data/links';
+import { Byui } from '@/features/byui';
+import { MDX } from '@/features/mdx';
+import { Seo } from '@/lib/seo';
 
 /**
  * BYUI Page
@@ -18,7 +18,7 @@ const ByuiPage: NextPage<never> = () => (
         description: BYUI_PAGE_META.description,
       }}
     />
-    <ByuiEnvironment components={MDX} />
+    <Byui components={MDX} />
   </>
 );
 

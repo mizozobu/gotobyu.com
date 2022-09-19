@@ -3,7 +3,7 @@ import React from 'react';
 import { CirculatingCircles } from './CirculatingCircles';
 
 export default {
-  title: 'atoms/CirculatingCircles',
+  title: 'components/atoms/CirculatingCircles',
   component: CirculatingCircles,
   argTypes: {},
 } as ComponentMeta<typeof CirculatingCircles>;

@@ -1,10 +1,10 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import { Pane } from '@c/atoms/Pane';
+import { Pane } from '@/components/atoms/Pane';
 import { SplitPane } from './SplitPane';
 
 export default {
-  title: 'atoms/SplitPane',
+  title: 'components/atoms/SplitPane',
   component: SplitPane,
   argTypes: {},
 } as ComponentMeta<typeof SplitPane>;

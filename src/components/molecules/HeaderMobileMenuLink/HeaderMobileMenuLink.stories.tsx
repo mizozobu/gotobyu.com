@@ -4,7 +4,7 @@ import React from 'react';
 import { HeaderMobileMenuLink } from './HeaderMobileMenuLink';
 
 export default {
-  title: 'molecules/HeaderMobileMenuLink',
+  title: 'components/molecules/HeaderMobileMenuLink',
   component: HeaderMobileMenuLink,
   argTypes: {},
 } as ComponentMeta<typeof HeaderMobileMenuLink>;

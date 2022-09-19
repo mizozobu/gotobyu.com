@@ -1,5 +1,5 @@
 import type { MouseEventHandler, ComponentType } from 'react';
-import { Link } from '@c/atoms/Link';
+import { Link } from '@/components/atoms/Link';
 
 /**
  * Props for {@link HeaderMobileMenuLink}

@@ -1,4 +1,4 @@
-import { _CustomPage } from '@e/fixtures/pages/_custom.page';
+import { _CustomPage } from '@e2e/fixtures/pages/_custom.page';
 
 /**
  * Internship page object model

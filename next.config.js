@@ -39,6 +39,21 @@ const nextConfig = {
   images: {
     unoptimized: process.env.UNOPTIMIZE_IMAGE === 'true',
   },
+  // workaround for tree shaking re-exported files in typescript
+  // @see https://github.com/vercel/next.js/issues/12557#issuecomment-994278512
+  webpack: (config) => ({
+    ...config,
+    module: {
+      ...config.module,
+      rules: [
+        ...config.module.rules,
+        {
+          test: /src\/.*\/index.tsx?/,
+          sideEffects: false,
+        },
+      ],
+    },
+  }),
 };
 
 module.exports = withBundleAnalyzer(withMDX(nextConfig));

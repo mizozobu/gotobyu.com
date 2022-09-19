@@ -4,7 +4,7 @@ import React from 'react';
 import { HeaderMenuLink } from './HeaderMenuLink';
 
 export default {
-  title: 'molecules/HeaderMenuLink',
+  title: 'components/molecules/HeaderMenuLink',
   component: HeaderMenuLink,
   argTypes: {},
 } as ComponentMeta<typeof HeaderMenuLink>;

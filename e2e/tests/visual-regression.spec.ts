@@ -1,4 +1,4 @@
-import { test, expect } from '@e/fixtures';
+import { test, expect } from '@e2e/fixtures';
 
 test.describe.configure({ mode: 'parallel' });
 

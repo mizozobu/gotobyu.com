@@ -3,7 +3,7 @@ import React from 'react';
 import { DeadlineTable } from './DeadlineTable';
 
 export default {
-  title: 'organisms/DeadlineTable',
+  title: 'components/organisms/DeadlineTable',
   component: DeadlineTable,
   argTypes: {},
 } as ComponentMeta<typeof DeadlineTable>;

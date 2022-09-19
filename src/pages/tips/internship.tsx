@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import { Seo } from '@c/ecosystems/shared/Seo';
-import InternshipEnvironment from '@c/environments/tips/internship.mdx';
-import { INTERNSHIP_PAGE_META } from '@d/links';
-import { MDX } from '@l/mdx';
+import { INTERNSHIP_PAGE_META } from '@/data/links';
+import { Internship } from '@/features/internship';
+import { MDX } from '@/features/mdx';
+import { Seo } from '@/lib/seo';
 
 /**
  * Internship Page
@@ -18,7 +18,7 @@ const InternshipPage: NextPage<never> = (): JSX.Element => (
         description: INTERNSHIP_PAGE_META.description,
       }}
     />
-    <InternshipEnvironment components={MDX} />
+    <Internship components={MDX} />
   </>
 );
 

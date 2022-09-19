@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import { Seo } from '@c/ecosystems/shared/Seo';
-import { IndexEnvironment } from '@c/environments/index';
-import { INDEX_PAGE_META } from '@d/links';
+import { INDEX_PAGE_META } from '@/data/links';
+import { Index } from '@/features/misc';
+import { Seo } from '@/lib/seo';
 
 /**
  * Index Page
@@ -17,7 +17,7 @@ const IndexPage: NextPage<never> = () => (
         description: INDEX_PAGE_META.description,
       }}
     />
-    <IndexEnvironment />
+    <Index />
   </>
 );
 

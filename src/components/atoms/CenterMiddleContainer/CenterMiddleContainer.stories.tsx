@@ -3,7 +3,7 @@ import React from 'react';
 import { CenterMiddleContainer } from './CenterMiddleContainer';
 
 export default {
-  title: 'atoms/CenterMiddleContainer',
+  title: 'components/atoms/CenterMiddleContainer',
   component: CenterMiddleContainer,
   argTypes: {},
 } as ComponentMeta<typeof CenterMiddleContainer>;

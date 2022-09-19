@@ -1,5 +1,5 @@
 import { useState, useCallback, type ComponentPropsWithoutRef } from 'react';
-import { Type } from '@c/atoms/Type';
+import { Type } from '@/components/atoms/Type';
 
 /**
  * Props for {@link TypingEffect}

@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ALGOLIA_APP_ID } from '@l/algolia';
-import { GTM_ID } from '@l/gtm';
+import { GOOGLE_TAG_MANAGER_ID, ALGOLIA_APP_ID } from '@/config';
 
 /**
  * Next.js custom document
@@ -50,11 +49,11 @@ class MyDocument extends Document {
 
         <body>
           {/* Google Tag Manager (noscript) */}
-          {GTM_ID && (
+          {GOOGLE_TAG_MANAGER_ID && (
             <noscript>
               {/* eslint-disable-next-line jsx-a11y/iframe-has-title */}
               <iframe
-                src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+                src={`https://www.googletagmanager.com/ns.html?id=${GOOGLE_TAG_MANAGER_ID}`}
                 height='0'
                 width='0'
                 style={{ display: 'none', visibility: 'hidden' }}

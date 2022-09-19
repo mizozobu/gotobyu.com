@@ -3,7 +3,7 @@ import React from 'react';
 import { BgRotate } from './BgRotate';
 
 export default {
-  title: 'atoms/BgRotate',
+  title: 'components/atoms/BgRotate',
   component: BgRotate,
   argTypes: {},
 } as ComponentMeta<typeof BgRotate>;

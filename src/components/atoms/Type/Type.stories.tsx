@@ -3,7 +3,7 @@ import React from 'react';
 import { Type } from './Type';
 
 export default {
-  title: 'atoms/Type',
+  title: 'components/atoms/Type',
   component: Type,
   argTypes: {},
 } as ComponentMeta<typeof Type>;

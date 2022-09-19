@@ -3,7 +3,7 @@ import React from 'react';
 import { Ul } from './Ul';
 
 export default {
-  title: 'atoms/Ul',
+  title: 'components/atoms/Ul',
   component: Ul,
   argTypes: {},
 } as ComponentMeta<typeof Ul>;

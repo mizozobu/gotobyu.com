@@ -1,7 +1,7 @@
-import { NextImage } from '@c/atoms/NextImage';
-import byuLogoImage from '@p/byu/byu-logo.png';
-import byuhLogoImage from '@p/byuh/byuh-logo.png';
-import byuiLogoImage from '@p/byui/byui-logo.png';
+import { NextImage } from '@/components/atoms/NextImage';
+import byuLogoImage from '@/features/byu/assets/byu-logo.png';
+import byuhLogoImage from '@/features/byuh/assets/byuh-logo.png';
+import byuiLogoImage from '@/features/byui/assets/byui-logo.png';
 
 type ISchoolTh = () => JSX.Element;
 

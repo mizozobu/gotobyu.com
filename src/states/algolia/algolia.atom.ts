@@ -5,7 +5,7 @@ import type { AlgoliaState } from './algolia.interface';
 /**
  * Default state for recoil algolia state
  */
-export const defaultAlgoliaState: AlgoliaState = {
+const defaultAlgoliaState: AlgoliaState = {
   isAvailable: true,
 };
 

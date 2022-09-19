@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import type { ComponentPropsWithoutRef } from 'react';
-import { PartialCircle } from '@c/atoms/PartialCircle';
+import { PartialCircle } from '@/components/atoms/PartialCircle';
 
 /**
  * Props for {@link PieChartLoader}

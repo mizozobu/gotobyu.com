@@ -3,7 +3,7 @@ import React from 'react';
 import { FacebookIcon } from './FacebookIcon';
 
 export default {
-  title: 'atoms/FacebookIcon',
+  title: 'components/atoms/FacebookIcon',
   component: FacebookIcon,
   argTypes: {},
 } as ComponentMeta<typeof FacebookIcon>;

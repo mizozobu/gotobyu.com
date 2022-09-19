@@ -1,13 +1,12 @@
 import type { AppProps as NextAppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
-import { RecoilRoot } from 'recoil';
-import { Footer } from '@c/ecosystems/shared/Footer';
-import { Header } from '@c/ecosystems/shared/Header';
-import { HookRegistry } from '@c/ecosystems/shared/HookRegistry';
-import { GTM_ID } from '@l/gtm';
-import { MDX } from '@l/mdx';
-import '~/styles/globals.css';
+import { InternalLink } from '@/components/atoms/InternalLink';
+import { Footer } from '@/components/organisms/Footer';
+import { Header } from '@/components/organisms/Header';
+import { GOOGLE_TAG_MANAGER_ID } from '@/config';
+import { AppProvider } from '@/providers/app';
+import '@/styles/globals.css';
 
 /**
  * Props for {@link MyApp}
@@ -20,14 +19,13 @@ interface AppProps extends NextAppProps {
  * Custom Next.js App
  */
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
-  <RecoilRoot>
-    <HookRegistry pageProps={pageProps} />
+  <AppProvider pageProps={pageProps}>
     <Head>
       <title>gotobyu.com | 在学生と卒業生の声</title>
     </Head>
 
     {/* Google Tag Manager */}
-    {GTM_ID && (
+    {GOOGLE_TAG_MANAGER_ID && (
       <Script
         id='gtm'
         strategy='afterInteractive'
@@ -37,20 +35,20 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer', '${GTM_ID}');
+              })(window,document,'script','dataLayer', '${GOOGLE_TAG_MANAGER_ID}');
             `,
         }}
       />
     )}
     {/* End Google Tag Manager */}
 
-    <MDX.a
+    <InternalLink
       href='#content'
       className='sr-only focus:not-sr-only'
       data-noindex='true'
     >
       Skip to main content
-    </MDX.a>
+    </InternalLink>
 
     <Header />
 
@@ -59,7 +57,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
     </main>
 
     <Footer />
-  </RecoilRoot>
+  </AppProvider>
 );
 
 export default MyApp;

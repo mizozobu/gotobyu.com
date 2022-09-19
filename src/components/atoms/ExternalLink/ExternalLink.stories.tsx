@@ -3,7 +3,7 @@ import React from 'react';
 import { ExternalLink } from './ExternalLink';
 
 export default {
-  title: 'atoms/ExternalLink',
+  title: 'components/atoms/ExternalLink',
   component: ExternalLink,
   argTypes: {},
 } as ComponentMeta<typeof ExternalLink>;

@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import { Seo } from '@c/ecosystems/shared/Seo';
-import ByuhEnvironment from '@c/environments/schools/byuh.mdx';
-import { BYUH_PAGE_META } from '@d/links';
-import { MDX } from '@l/mdx';
+import { BYUH_PAGE_META } from '@/data/links';
+import { Byuh } from '@/features/byuh';
+import { MDX } from '@/features/mdx';
+import { Seo } from '@/lib/seo';
 
 /**
  * BYUH Page
@@ -18,7 +18,7 @@ const ByuhPage: NextPage<never> = () => (
         description: BYUH_PAGE_META.description,
       }}
     />
-    <ByuhEnvironment components={MDX} />
+    <Byuh components={MDX} />
   </>
 );
 

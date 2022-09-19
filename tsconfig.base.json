@@ -17,13 +17,8 @@
     "baseUrl": ".",
     "typeRoots": ["node_modules/@types", "src/types"],
     "paths": {
-      "~/*": ["src/*"],
-      "@c/*": ["src/components/*"],
-      "@d/*": ["src/data/*"],
-      "@e/*": ["e2e/*"],
-      "@p/*": ["public/*"],
-      "@l/*": ["src/lib/*"],
-      "@s/*": ["src/states/*"]
+      "@/*": ["src/*"],
+      "@e2e/*": ["e2e/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],

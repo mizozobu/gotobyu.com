@@ -3,7 +3,7 @@ import React from 'react';
 import { TypingEffect } from './TypingEffect';
 
 export default {
-  title: 'molecules/TypingEffect',
+  title: 'components/molecules/TypingEffect',
   component: TypingEffect,
   argTypes: {},
 } as ComponentMeta<typeof TypingEffect>;

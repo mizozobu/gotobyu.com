@@ -1,5 +1,5 @@
 import lighthouse from 'lighthouse';
-import { test, expect } from '@e/fixtures';
+import { test, expect } from '@e2e/fixtures';
 
 test.use({
   launchOptions: {

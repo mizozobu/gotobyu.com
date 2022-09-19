@@ -1,0 +1,157 @@
+import { Digit } from '@/components/atoms/Digit';
+import { NextImage } from '@/components/atoms/NextImage';
+import { Pane } from '@/components/atoms/Pane';
+import { SplitPane } from '@/components/atoms/SplitPane';
+import { DynamicPhotoViewer } from '@/components/organisms/DynamicPhotoViewer';
+import { SCHOOL_INFO } from '@/data/school';
+import byuiClassImage from '../assets/byui-class.png';
+import byuiFitnessImage from '../assets/byui-fitness.png';
+import byuiHousingImage from '../assets/byui-housing.png';
+import byuiLogoImage from '../assets/byui-logo.png';
+
+
+# Brigham Young University - Idaho
+
+
+## 概要
+
+<SplitPane>
+  <Pane>
+    <NextImage
+      className='h-80'
+      src={byuiLogoImage}
+      alt='BYUI Logo'
+      placeholder='blur'
+      layout='fill'
+      objectFit='scale-down'
+    />
+  </Pane>
+  <Pane>
+    - <span className='font-bold'>場所</span>: [アイダホ州レックスバーグ](https://www.google.com/maps/place/Brigham+Young+University-Idaho/@43.814414,-111.7854437,17z/data=!3m1!4b1!4m5!3m4!1s0x53540b03dc48a5cf:0x1e5534d3c38ef412!8m2!3d43.8144101!4d-111.783255)
+    - <span className='font-bold'>合格率</span>: <Digit>{SCHOOL_INFO.byui.acceptanceRate * 100}</Digit>%
+    - <span className='font-bold'>学生数</span>: <Digit>{SCHOOL_INFO.byui.numberOfStudents}</Digit>
+    - <span className='font-bold'>専攻数</span>: <Digit>{SCHOOL_INFO.byui.numberOfMajors}</Digit>
+    - <span className='font-bold'>授業数</span>: <Digit>{SCHOOL_INFO.byui.numberOfCourses}</Digit>
+  </Pane>
+</SplitPane>
+
+BYUから車で5時間ほどのところにあるレックスバーグという小さな市にある大学です。
+学生街に囲まれているため、近場にレストランやゲームセンターなどの娯楽施設もあります。
+
+
+## 専攻と授業
+
+<div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
+  <DynamicPhotoViewer
+    style={{
+      '--bg': 'linear-gradient(to bottom right, #0076B6, #002f48)',
+    }}
+    images={[
+      {
+        src: byuiClassImage,
+        alt: 'BYUI 授業風景',
+        citation: 'https://www.byui.edu/foundations/for-students/course-requirements/fdwld101-world-foundations-i',
+        placeholder: 'blur',
+        layout: 'fill',
+        objectFit: 'cover',
+      },
+    ]}
+  />
+</div>
+
+[69のMajor(専攻)と95のMinor(副専攻)に加えて、Certificate(資格)やCluster(ある分野に関してまとまった授業)](https://www.byui.edu/catalog#/programs)があります。
+学部によっては2年でAssociate’s Degree(准学士号)を取得して卒業することもできますが、ほとんどの生徒はBachelor’s Degree(学士号)の取得を目指しています。
+Bachelor’s Degreを取得するためには120単位を取る必要がありますが、多くの専攻の必修は120単位に満たないため、残りの**約30単位はElectivesという好きな授業を取ることで補填します**。
+Electivesにはダンス、水泳、運動、料理などの授業も含まれるので、各学期で気晴らしにElectiveを散りばめるのが効果的かもしれません。
+
+生徒は必ず1つの専攻を決める必要があります。
+専攻を途中で変えることができますが、卒業の時期も遅くなるためよく考える必要があります。
+看護学部などの**一部の専攻では学科に入るための選考が必要なことがあります**。
+
+留学生はACT/SATのスコアで免除されない限り、留学生用の英語と数学の授業を取らなければなりません。
+**英語に自信があって初級の数学や英語を取りたくないという場合は、ACT/SATを受験しておくことをおすすめします。**
+ACT/SATとはアメリカの高校生が受ける日本の大学入学共通テストのようなもので、試験は全て英語で行われます。
+
+ほとんどの授業は小規模で10人〜40人程度で行われます。
+授業や先生によって異なりますが、**グループワークが多い**ため、英語力に加えてコミュニケーション力やチームワークが鍛えられます。
+BYUIの教授たちは研究と並行して教師を勤めるのではなく、教鞭をとることを本業としているので、その分生徒たちに全力を注いでくれます。
+
+
+## 衣住食
+
+<div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
+  <DynamicPhotoViewer
+    style={{
+      '--bg': 'linear-gradient(to bottom right, #0076B6, #002f48)',
+    }}
+    images={[
+      {
+        src: byuiHousingImage,
+        alt: 'BYUI 学生寮',
+        citation: 'https://www.byui.edu/housing/centre-square/features-and-gallery',
+        placeholder: 'blur',
+        layout: 'fill',
+        objectFit: 'cover',
+      },
+    ]}
+  />
+</div>
+
+アイダホ州には四季があるので、**夏服も冬服も必要**です。
+冬は−10度まで冷え込み、夏は30度前半まで暑くなります。
+10月の後半から雪が降り始め、5月になっても雪が降ることもあるので、防寒具は必需品です。
+アメリカ人は半袖ででも外出しますが、極暖ヒートテックを必ず持って来ましょう。
+
+家賃に関してはアイダホがBYU3校の中で一番安く、最安値で1学期(3ヶ月半)700ドルからのアパートがあります。
+平均は1学期$1100~$1400で、セメスターによっても価格は異なります。
+
+BYUIから車で10分ほどのところに[Walmart](https://www.google.com/maps/place/Walmart+Supercenter/@43.8373123,-111.8275946,13z/data=!4m5!3m4!1s0x53540a467e9da89f:0x28d9dfc6b68872db!8m2!3d43.8558611!4d-111.774149)があります。
+車が無くても毎時間**無料の送迎バス**があるので食料の調達には困りません。
+パン粉、カレールー、ラーメン、味噌汁、豆腐など一部の日本食も売っていますが少し物足りないです。
+スーパーで手に入らない日本の食材はネットで購入するか、ユタに行った際にアジアンマーケットで購入するしかありません。
+マヨネーズ、鶏ガラ、味覇などの手に入りにくい食材を日本から持ち込む人もいます。
+昼食は大学の食堂で$4から買えるので、そこで済ませることもできます。
+
+
+## レクリエーション
+
+アイダホは自然が多いので登山やキャンプを楽しむことが多いです。
+冬場は室内で友達と映画をみたりゲームをしたりします。
+また5時間運転してユタへ遊びに行くことこともできます。
+車のあてがなければバスや電車でも行くことができます。
+
+
+## クラブ
+
+<div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
+  <DynamicPhotoViewer
+    style={{
+      '--bg': 'linear-gradient(to bottom right, #0076B6, #002f48)',
+    }}
+    images={[
+      {
+        src: byuiFitnessImage,
+        alt: 'BYUI フィットネス',
+        citation: 'https://www.byui.edu/wellness-center',
+        placeholder: 'blur',
+        layout: 'fill',
+        objectFit: 'cover',
+      },
+    ]}
+  />
+</div>
+
+クラブなどはありませんが、チームを組んで申し込むことでサッカー、バレーボール、フットボールなどいろんなスポーツが楽しめます。
+放課後にヨガクラス、ローラースケート、ダンス、レーザータッグなどの活動もあります。
+
+
+## アルバイト
+
+留学生はインターンシップ以外ではキャンパス内でしか働けません。
+その他ではオンラインで教師をするなどの方法もあります。
+キャンパス内ではキッチン、売店スタッフ、お掃除、イベントスタッフ、先生の助手などの仕事があります。
+
+
+## 奨学金
+
+Thomas E. Ricks Grantという奨学金があり、経済状況と成績が考慮されて奨学金を受けられるかどうかが決まります。

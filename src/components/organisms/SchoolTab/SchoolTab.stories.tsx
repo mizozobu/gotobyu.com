@@ -3,7 +3,7 @@ import React from 'react';
 import { SchoolTab } from './SchoolTab';
 
 export default {
-  title: 'organisms/SchoolTab',
+  title: 'components/organisms/SchoolTab',
   component: SchoolTab,
   argTypes: {},
 } as ComponentMeta<typeof SchoolTab>;

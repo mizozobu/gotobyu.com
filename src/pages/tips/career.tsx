@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
-import { Seo } from '@c/ecosystems/shared/Seo';
-import CareerEnvironment from '@c/environments/tips/career.mdx';
-import { CAREER_PAGE_META } from '@d/links';
-import { MDX } from '@l/mdx';
+import { CAREER_PAGE_META } from '@/data/links';
+import { Career } from '@/features/career';
+import { MDX } from '@/features/mdx';
+import { Seo } from '@/lib/seo';
 
 /**
  * Career Page
@@ -18,7 +18,7 @@ const CareerPage: NextPage<never> = () => (
         description: CAREER_PAGE_META.description,
       }}
     />
-    <CareerEnvironment components={MDX} />
+    <Career components={MDX} />
   </>
 );
 

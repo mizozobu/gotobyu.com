@@ -3,7 +3,7 @@ import React from 'react';
 import { Li } from './Li';
 
 export default {
-  title: 'atoms/Li',
+  title: 'components/atoms/Li',
   component: Li,
   argTypes: {},
 } as ComponentMeta<typeof Li>;

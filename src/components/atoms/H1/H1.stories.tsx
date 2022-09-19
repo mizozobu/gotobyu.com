@@ -3,7 +3,7 @@ import React from 'react';
 import { H1 } from './H1';
 
 export default {
-  title: 'atoms/H1',
+  title: 'components/atoms/H1',
   component: H1,
   argTypes: {},
 } as ComponentMeta<typeof H1>;

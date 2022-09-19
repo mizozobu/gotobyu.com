@@ -3,7 +3,7 @@ import React from 'react';
 import { NextImage } from './NextImage';
 
 export default {
-  title: 'atoms/NextImage',
+  title: 'components/atoms/NextImage',
   component: NextImage,
   argTypes: {},
 } as ComponentMeta<typeof NextImage>;
