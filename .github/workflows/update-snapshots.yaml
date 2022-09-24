@@ -28,10 +28,10 @@ jobs:
           result-encoding: string
           script: |
             const comment = process.env.COMMENT;
-            const [, codeblock] = comment.match(
+            const result = comment.match(
               /📸\s+```[a-z]*(?:\r\n|\r|\n)([\s\S]*?)(?:\r\n|\r|\n)```/,
             );
-            core.setOutput('args', codeblock.trim());
+            core.setOutput('args', (result?.[1] ?? '').trim());
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
