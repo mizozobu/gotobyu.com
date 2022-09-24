@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import { CirculatingCircles } from '@/components/atoms/CirculatingCircles';
-import { H2 } from '@/components/atoms/H2';
 import { Link } from '@/components/atoms/Link';
 import { NextImage } from '@/components/atoms/NextImage';
 import { BgRotateCard } from '@/components/molecules/BgRotateCard';
@@ -56,7 +55,9 @@ export const Index = (): JSX.Element => (
       </div>
     </div>
     <div className='mx-auto max-w-screen-lg xl:max-w-screen-xl'>
-      <H2 className='px-6 text-2xl font-bold md:text-4xl'>各大学について</H2>
+      <h2 className='mt-8 mb-4 px-6 text-2xl font-bold md:mt-16 md:mb-8 md:text-4xl'>
+        各大学について
+      </h2>
       <div className='flex space-x-12 overflow-scroll py-10 lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:justify-items-center lg:gap-y-10 lg:space-x-0 lg:overflow-visible'>
         <Link href='/schools/byu' className='mx-8 mt-4 rounded-xl'>
           <BgRotateCard
@@ -109,9 +110,9 @@ export const Index = (): JSX.Element => (
       </div>
     </div>
     <div className='mx-auto max-w-screen-lg xl:max-w-screen-xl'>
-      <H2 className='px-6 text-2xl font-bold md:text-4xl'>
+      <h2 className='mt-8 mb-4 px-6 text-2xl font-bold md:mt-16 md:mb-8 md:text-4xl'>
         知っておきたい情報
-      </H2>
+      </h2>
       <div className='flex space-x-12 overflow-scroll px-6 py-10 lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:justify-items-center lg:gap-y-10 lg:space-x-0 lg:overflow-visible lg:px-0'>
         {[
           ...ADDITIONAL_SCHOOL_LINKS,
