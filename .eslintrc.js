@@ -23,6 +23,9 @@ module.exports = {
       { exceptAfterSingleLine: true },
     ],
 
+    // allow voiding floating promise
+    'no-void': ['error', { allowAsStatement: true }],
+
     // allow instance method without "this"
     'class-methods-use-this': 'off',
   },
@@ -82,17 +85,6 @@ module.exports = {
             aspects: ['invalidHref', 'preferButton'],
           },
         ],
-      },
-    },
-
-    /**
-     * container components
-     */
-    {
-      files: ['**/*.container.jsx', '**/*.container.tsx'],
-      rules: {
-        // allow importing presentational component as _XXX
-        'react/jsx-pascal-case': 'off',
       },
     },
 
@@ -272,14 +264,8 @@ module.exports = {
       files: ['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx'],
       extends: ['prettier'],
       rules: {
-        // allow voiding floating promise
-        'no-void': ['error', { allowAsStatement: true }],
-
         // allow _ in variable
         'no-underscore-dangle': 'off',
-
-        // allow default export for container components
-        'no-restricted-exports': 'off',
 
         // allow named exports without default export
         'import/prefer-default-export': 'off',
