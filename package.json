@@ -106,7 +106,7 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^29.0.0",
-    "tailwindcss": "^3.1.8",
+    "tailwindcss": "^3.2.0",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",
