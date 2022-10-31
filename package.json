@@ -49,8 +49,8 @@
     "unist-util-visit": "2.x"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
     "@next/bundle-analyzer": "^12.3.2",
     "@next/env": "^12.3.2",
     "@next/eslint-plugin-next": "^13.0.0",
