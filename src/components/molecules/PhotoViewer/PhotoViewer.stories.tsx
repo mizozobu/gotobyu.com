@@ -1,5 +1,6 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
+import skiResortImage from '@/features/byu/assets/ski-resort.jpg';
 import { PhotoViewer } from './PhotoViewer';
 
 export default {
@@ -9,7 +10,7 @@ export default {
 } as ComponentMeta<typeof PhotoViewer>;
 
 const Template: ComponentStory<typeof PhotoViewer> = (args) => (
-  <div className='pt-8 pb-4 md:float-left'>
+  <div className='w-64'>
     <PhotoViewer {...args} />
   </div>
 );
@@ -21,10 +22,10 @@ Single.args = {
   },
   images: [
     {
-      src: '/byu/byu.png',
-      alt: 'BYU',
-      layout: 'fill',
-      objectFit: 'scale-down',
+      src: skiResortImage,
+      alt: 'alt text',
+      width: 0, // set any number to avoid error
+      height: 0, // set any number to avoid error
     },
   ],
 };
@@ -36,25 +37,25 @@ Multi.args = {
   },
   images: [
     {
-      src: '/byu/byu.png',
-      alt: 'BYU',
-      layout: 'fill',
-      objectFit: 'scale-down',
-      citation: 'http://localhost:3000/schools/byu',
+      src: skiResortImage,
+      alt: 'alt text',
+      citation: 'http://localhost:3000',
+      width: 0, // set any number to avoid error
+      height: 0, // set any number to avoid error
     },
     {
-      src: '/byuh/byuh.png',
-      alt: 'BYUH',
-      layout: 'fill',
-      objectFit: 'scale-down',
-      citation: 'http://localhost:3000/schools/byuh',
+      src: skiResortImage,
+      alt: 'alt text',
+      citation: 'http://localhost:3000',
+      width: 0, // set any number to avoid error
+      height: 0, // set any number to avoid error
     },
     {
-      src: '/byui/byui.png',
-      alt: 'BYUI',
-      layout: 'fill',
-      objectFit: 'scale-down',
-      citation: 'http://localhost:3000/schools/byui',
+      src: skiResortImage,
+      alt: 'alt text',
+      citation: 'http://localhost:3000',
+      width: 0, // set any number to avoid error
+      height: 0, // set any number to avoid error
     },
   ],
 };

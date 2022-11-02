@@ -9,14 +9,12 @@ type ISchoolTh = () => JSX.Element;
  * <th> for BYU
  */
 const ByuTh: ISchoolTh = () => (
-  <th scope='col'>
+  <th scope='col' className='relative'>
     <NextImage
-      className='h-full p-4'
+      className='mx-auto w-8 object-contain'
       src={byuLogoImage}
       alt='BYU Logo'
       placeholder='blur'
-      layout='fill'
-      objectFit='scale-down'
     />
     <span className='text-byu'>BYU</span>
   </th>
@@ -28,12 +26,10 @@ const ByuTh: ISchoolTh = () => (
 const ByuhTh: ISchoolTh = () => (
   <th scope='col'>
     <NextImage
-      className='h-full p-4'
+      className='mx-auto w-8 object-contain'
       src={byuhLogoImage}
       alt='BYUH Logo'
       placeholder='blur'
-      layout='fill'
-      objectFit='scale-down'
     />
     <span className='text-byuh'>BYUH</span>
   </th>
@@ -45,12 +41,10 @@ const ByuhTh: ISchoolTh = () => (
 const ByuiTh: ISchoolTh = () => (
   <th scope='col'>
     <NextImage
-      className='h-full p-4'
+      className='mx-auto w-8 object-contain'
       src={byuiLogoImage}
       alt='BYUI Logo'
       placeholder='blur'
-      layout='fill'
-      objectFit='scale-down'
     />
     <span className='text-byui'>BYUI</span>
   </th>
