@@ -66,12 +66,10 @@ export const Index = (): JSX.Element => (
             }}
           >
             <NextImage
-              className='h-full p-4'
+              className='h-full object-contain'
               src={byuLogoImage}
               alt='BYU Logo'
               placeholder='blur'
-              layout='fill'
-              objectFit='scale-down'
             />
           </BgRotateCard>
         </Link>
@@ -82,12 +80,10 @@ export const Index = (): JSX.Element => (
             }}
           >
             <NextImage
-              className='h-full p-4'
+              className='h-full object-contain'
               src={byuhLogoImage}
               alt='BYUH Logo'
               placeholder='blur'
-              layout='fill'
-              objectFit='scale-down'
             />
           </BgRotateCard>
         </Link>
@@ -98,12 +94,10 @@ export const Index = (): JSX.Element => (
             }}
           >
             <NextImage
-              className='h-full p-4'
+              className='h-full object-contain'
               src={byuiLogoImage}
               alt='BYUI Logo'
               placeholder='blur'
-              layout='fill'
-              objectFit='scale-down'
             />
           </BgRotateCard>
         </Link>

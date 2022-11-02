@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import Image, { type ImageProps } from 'next/image';
 import type { CSSProperties } from 'react';
 
@@ -17,18 +16,6 @@ export type Props = ImageProps & {
 /**
  * Next.js Image component with a wrapper for easy styling
  */
-export const NextImage = ({
-  id,
-  className,
-  style = {},
-  ...props
-}: Props): JSX.Element => (
-  <div
-    id={id}
-    className={classNames('relative', className)}
-    style={style}
-    data-testid='NextImage'
-  >
-    <Image {...props} />
-  </div>
+export const NextImage = (props: Props): JSX.Element => (
+  <Image {...props} data-testid='NextImage' />
 );

@@ -58,8 +58,6 @@ const SchoolTabRoot = ({ children }: Props): JSX.Element => {
               src={byuLogoImage}
               alt='BYU Logo'
               placeholder='blur'
-              layout='fill'
-              objectFit='scale-down'
             />
             <span className='font-bold text-byu'>BYU</span>
           </div>
@@ -71,8 +69,6 @@ const SchoolTabRoot = ({ children }: Props): JSX.Element => {
               src={byuhLogoImage}
               alt='BYUH Logo'
               placeholder='blur'
-              layout='fill'
-              objectFit='scale-down'
             />
             <span className='font-bold text-byuh'>BYUH</span>
           </div>
@@ -84,8 +80,6 @@ const SchoolTabRoot = ({ children }: Props): JSX.Element => {
               src={byuiLogoImage}
               alt='BYUI Logo'
               placeholder='blur'
-              layout='fill'
-              objectFit='scale-down'
             />
             <span className='font-bold text-byui'>BYUI</span>
           </div>

@@ -58,11 +58,12 @@ export const PhotoViewer = ({
     >
       <BgRotate style={{ '--bg': bgColor }}>
         <Slider {...settings}>
-          {images.map((imageProps) => (
+          {images.map(({ className: imageClassName, ...imageProps }) => (
             <NextImage
               key={imageProps.alt}
               className={classNames(
-                'relative aspect-[3/2] overflow-hidden rounded-xl',
+                imageClassName,
+                'aspect-[3/2] rounded-xl object-cover',
               )}
               {...imageProps}
             />

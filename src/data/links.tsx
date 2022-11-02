@@ -57,8 +57,6 @@ export const BYU_PAGE_META: PageMeta = {
       src={byuLogoImage}
       alt='BYU logo'
       placeholder='blur'
-      layout='fill'
-      objectFit='cover'
     />
   ),
 };
@@ -80,8 +78,6 @@ export const BYUH_PAGE_META: PageMeta = {
       src={byuhLogoImage}
       alt='BYUH logo'
       placeholder='blur'
-      layout='fill'
-      objectFit='cover'
     />
   ),
 };
@@ -103,8 +99,6 @@ export const BYUI_PAGE_META: PageMeta = {
       src={byuiLogoImage}
       alt='BYUI logo'
       placeholder='blur'
-      layout='fill'
-      objectFit='cover'
     />
   ),
 };
