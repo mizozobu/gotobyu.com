@@ -12,8 +12,4 @@ interface Props extends Omit<ComponentPropsWithoutRef<'a'>, 'href'> {
 /**
  * Client-side link
  */
-export const Link = ({ href, children, ...props }: Props): JSX.Element => (
-  <NextLink href={href}>
-    <a {...props}>{children}</a>
-  </NextLink>
-);
+export const Link = (props: Props): JSX.Element => <NextLink {...props} />;
