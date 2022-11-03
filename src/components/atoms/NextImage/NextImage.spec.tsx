@@ -10,7 +10,7 @@ describe('<NextImage />', () => {
 
     render(<Example />);
 
-    expect(screen.getByAltText('BYU logo')).toBeVisible();
+    expect(screen.getByAltText('alt text')).toBeVisible();
   });
 
   it('should have props.className in class', () => {
@@ -19,7 +19,7 @@ describe('<NextImage />', () => {
     render(<Example />);
 
     expect(screen.getByTestId('NextImage')).toHaveClass(
-      'w-48 h-48 bg-indigo-500',
+      'w-64 aspect-[3/2] object-cover',
     );
   });
 
