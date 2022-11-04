@@ -43,7 +43,7 @@
     "rehype-parse": "7.x",
     "rehype-slug": "4.x",
     "remark-sectionize": "^1.1.1",
-    "sharp": "^0.31.1",
+    "sharp": "^0.31.2",
     "slick-carousel": "^1.8.1",
     "unified": "9.x",
     "unist-util-visit": "2.x"
