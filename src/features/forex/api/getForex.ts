@@ -14,27 +14,31 @@ export const getForex = async (from: string, to: string): Promise<Forex> => {
     'https://www.alphavantage.co/query',
     {
       params: {
-        function: 'FX_INTRADAY',
-        from_symbol: from,
-        to_symbol: to,
-        interval: '60min',
+        function: 'CURRENCY_EXCHANGE_RATE',
+        from_currency: from,
+        to_currency: to,
         apikey: ALPHA_VANTAGE_API_KEY,
       },
     },
   );
 
-  const [datetime, data] = Object.entries(
-    res.data['Time Series FX (60min)'],
-  )[0];
-  const exrate = parseFloat(data['1. open']);
+  const exrate = parseFloat(
+    res.data['Realtime Currency Exchange Rate']['5. Exchange Rate'],
+  );
   if (Number.isNaN(exrate)) {
-    throw new Error(`"${data['1. open']}" is not a valid number"`);
+    throw new Error(
+      `"${res.data['Realtime Currency Exchange Rate']['5. Exchange Rate']}" is not a valid number"`,
+    );
   }
 
-  const timestamp = new Date(datetime);
-  // @see https://stackoverflow.com/questions/1353684/detecting-an-invalid-date-date-instance-in-javascript
+  const timestamp = new Date(
+    res.data['Realtime Currency Exchange Rate']['6. Last Refreshed'],
+  );
+  // see https://stackoverflow.com/questions/1353684/detecting-an-invalid-date-date-instance-in-javascript
   if (!(timestamp instanceof Date) || Number.isNaN(timestamp)) {
-    throw new Error(`"${datetime}" is not a valid timestamp"`);
+    throw new Error(
+      `"${res.data['Realtime Currency Exchange Rate']['6. Last Refreshed']}" is not a valid timestamp"`,
+    );
   }
 
   return {
