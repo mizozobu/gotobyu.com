@@ -27,7 +27,9 @@ export const getForex = async (from: string, to: string): Promise<Forex> => {
   );
   if (Number.isNaN(exrate)) {
     throw new Error(
-      `"${res.data['Realtime Currency Exchange Rate']['5. Exchange Rate']}" is not a valid number"`,
+      `"res.data['Realtime Currency Exchange Rate']['5. Exchange Rate']" is not a valid number. Response: ${JSON.stringify(
+        res.data,
+      )}"`,
     );
   }
 
@@ -37,7 +39,9 @@ export const getForex = async (from: string, to: string): Promise<Forex> => {
   // see https://stackoverflow.com/questions/1353684/detecting-an-invalid-date-date-instance-in-javascript
   if (!(timestamp instanceof Date) || Number.isNaN(timestamp)) {
     throw new Error(
-      `"${res.data['Realtime Currency Exchange Rate']['6. Last Refreshed']}" is not a valid timestamp"`,
+      `"res.data['Realtime Currency Exchange Rate']['6. Last Refreshed']" is not a valid timestamp. Response: ${JSON.stringify(
+        res.data,
+      )}"`,
     );
   }
 
