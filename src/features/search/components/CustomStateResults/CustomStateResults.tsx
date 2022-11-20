@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
 import type { StateResultsProvided } from 'react-instantsearch-core';
-import { useSetRecoilState } from 'recoil';
-import { algoliaState } from '@/states/algolia';
 
 /**
  * Props for {@link CustomStateResults}
@@ -12,22 +10,17 @@ interface Props extends StateResultsProvided {
    * AlgoliaError does not have "status" (probably a bug in DefinitelyTyped).
    */
   error: StateResultsProvided['error'] & { status: number };
+  /** Error event handler */
+  onError: (err: Error) => void;
 }
 
 /**
  * Custom algolia StateResults
  */
-export const CustomStateResults = ({ error }: Props): null => {
-  const setAlgoliaState = useSetRecoilState(algoliaState);
-
+export const CustomStateResults = ({ error, onError }: Props): null => {
   useEffect(() => {
-    if (error?.status === 403) {
-      setAlgoliaState((prevState) => ({
-        ...prevState,
-        isAvailable: false,
-      }));
-    }
-  }, [error, setAlgoliaState]);
+    onError(error);
+  }, [error, onError]);
 
   return null;
 };

@@ -5,13 +5,11 @@ import type { ValuesType } from 'utility-types';
 import { anchorState, ANCHOR_STATE_KEY } from '@/features/anchor';
 import { forexState, FOREX_STATE_KEY } from '@/features/forex';
 import { statsState, STATS_STATE_KEY } from '@/features/stats';
-import { algoliaState, ALGOLIA_STATE_KEY } from '@/states/algolia';
 
 /**
  * Atom registry
  */
 const ATOM_REGISTRY = {
-  [ALGOLIA_STATE_KEY]: algoliaState,
   [FOREX_STATE_KEY]: forexState,
   [STATS_STATE_KEY]: statsState,
   [ANCHOR_STATE_KEY]: anchorState,
