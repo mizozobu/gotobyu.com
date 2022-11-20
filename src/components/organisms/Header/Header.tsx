@@ -10,7 +10,6 @@ import classNames from 'classnames';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
-import { useRecoilValue } from 'recoil';
 import { CirculatingCircles } from '@/components/atoms/CirculatingCircles';
 import { Link } from '@/components/atoms/Link';
 import { HeaderMenuLink } from '@/components/molecules/HeaderMenuLink';
@@ -28,7 +27,6 @@ import {
   useScrollDirection,
   SCROLL_DIRECTION,
 } from '@/hooks/useScrollDirection';
-import { algoliaState } from '@/states/algolia';
 import styles from './Header.module.css';
 
 /**
@@ -59,7 +57,6 @@ const SearchDialog = dynamic<SearchDialogProps>(
  */
 export const Header = (): JSX.Element => {
   const router = useRouter();
-  const { isAvailable } = useRecoilValue(algoliaState);
   const scrollDirectionY = useScrollDirection({ threshold: 50 });
   const [loading, setLoading] = useState(false);
   const [isMenuDialogDisplayed, setIsMenuDialogDisplayed] = useState(false);
@@ -250,7 +247,6 @@ export const Header = (): JSX.Element => {
 
       <SearchDialog
         isOpen={isSearchDialogDisplayed}
-        isAvailable={isAvailable}
         onClose={closeSearchDialog}
       />
     </>
