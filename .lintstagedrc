@@ -3,8 +3,5 @@
     "yarn eslint",
     "yarn prettier --check --loglevel warn ."
   ],
-  "**/*.css": [
-    "yarn stylelint",
-    "yarn prettier --check --loglevel warn ."
-  ]
+  "**/*.css": ["yarn stylelint", "yarn prettier --check --loglevel warn ."]
 }
