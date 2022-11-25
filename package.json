@@ -115,7 +115,7 @@
     "webpack": "^5.75.0"
   },
   "engines": {
-    "node": ">=14 <17",
+    "node": "<=18",
     "yarn": "^1.22.17"
   },
   "nextBundleAnalysis": {}
