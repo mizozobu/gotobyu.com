@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { ALPHA_VANTAGE_API_KEY } from '@/config';
+import { rest } from '@/lib/api-client';
 import type { AlphaVantageForexResponse, Forex } from '../types';
 
 /**
@@ -10,15 +10,13 @@ import type { AlphaVantageForexResponse, Forex } from '../types';
  * @throws Throws when Exchage rate or timestamp returned from API is not valid
  */
 export const getForex = async (from: string, to: string): Promise<Forex> => {
-  const res = await axios.get<AlphaVantageForexResponse>(
+  const res = await rest.get<AlphaVantageForexResponse>(
     'https://www.alphavantage.co/query',
     {
-      params: {
-        function: 'CURRENCY_EXCHANGE_RATE',
-        from_currency: from,
-        to_currency: to,
-        apikey: ALPHA_VANTAGE_API_KEY,
-      },
+      function: 'CURRENCY_EXCHANGE_RATE',
+      from_currency: from,
+      to_currency: to,
+      apikey: ALPHA_VANTAGE_API_KEY,
     },
   );
 
