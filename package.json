@@ -52,7 +52,7 @@
     "@commitlint/config-conventional": "^17.3.0",
     "@next/bundle-analyzer": "^13.0.5",
     "@next/env": "^13.0.5",
-    "@next/eslint-plugin-next": "^13.0.5",
+    "@next/eslint-plugin-next": "^13.0.6",
     "@playwright/test": "^1.28.1",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/builder-webpack5": "^6.5.13",
