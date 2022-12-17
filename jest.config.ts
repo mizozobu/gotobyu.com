@@ -1,9 +1,9 @@
 import nextJest from 'next/jest';
-import { pathsToModuleNameMapper, type InitialOptionsTsJest } from 'ts-jest';
+import { pathsToModuleNameMapper, type JestConfigWithTsJest } from 'ts-jest';
 import { loadConfig, type ConfigLoaderSuccessResult } from 'tsconfig-paths';
 import { getRoutes } from './.storybook/utils/get-routes';
 
-const jestConfig: InitialOptionsTsJest = {
+const jestConfig: JestConfigWithTsJest = {
   testEnvironment: 'jest-environment-jsdom',
   testMatch: ['<rootDir>/src/**/?(*.)+(spec|test).[jt]s?(x)'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
@@ -15,6 +15,8 @@ const jestConfig: InitialOptionsTsJest = {
       prefix: '<rootDir>/',
     },
   ),
+  transform: {},
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
   globals: {
     isSecureContext: true,
     __NEXT_ROUTES__: getRoutes(),

@@ -1,6 +1,8 @@
+import { jest } from '@jest/globals';
 import { composeStories } from '@storybook/testing-react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { SVGProps } from 'react';
 import * as stories from './HeaderMenuLink.stories';
 
 const { Example } = composeStories(stories);
@@ -32,11 +34,13 @@ describe('<HeaderMenuLink />', () => {
 
   it('should render props.icon', () => {
     expect.assertions(1);
-    const icon = jest.fn();
+    const icon = (props: SVGProps<SVGSVGElement>): JSX.Element => (
+      <svg {...props}>mock icon</svg>
+    );
 
     render(<Example icon={icon} />);
 
-    expect(icon).toHaveBeenCalledTimes(1);
+    expect(screen.getByText('mock icon')).toBeVisible();
   });
 
   it('should call props.onClick on click', async () => {

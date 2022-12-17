@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import algoliasearch from 'algoliasearch';
 import type { SpyInstance } from 'jest-mock';
 import { createCustomAlgoliaSearchClient } from './createCustomAlgoliaSearchClient';

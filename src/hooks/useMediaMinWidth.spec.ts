@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import { mediaGte, type ScreenSize } from './useMediaMinWidth';
 
 describe('mediaGte', () => {

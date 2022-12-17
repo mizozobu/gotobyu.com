@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals';
 import type { SpyInstance } from 'jest-mock';
 import type { Algoliast } from '@/features/search';
 import { AlgoliastBuilder } from './AlgoliastBuilder';
