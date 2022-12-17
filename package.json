@@ -28,7 +28,7 @@
     "@mdx-js/loader": "^2.1.5",
     "@next/mdx": "^13.0.5",
     "algoliasearch": "^4.14.2",
-    "chart.js": "^3.9.1",
+    "chart.js": "^4.1.0",
     "chartjs-plugin-datalabels": "^2.1.0",
     "classnames": "^2.3.2",
     "next": "^13.0.5",
