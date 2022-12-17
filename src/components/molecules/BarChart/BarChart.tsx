@@ -69,12 +69,12 @@ export const BarChart = ({
         },
       },
       scales: {
-        xAxes: {
+        x: {
           grid: {
             display: false,
           },
         },
-        yAxes: {
+        y: {
           ticks: {
             callback: yAxesTicksCallback,
           },
