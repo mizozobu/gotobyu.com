@@ -1,5 +1,6 @@
 import { composeStories } from '@storybook/testing-react';
 import { render, screen } from '@testing-library/react';
+import type { SVGProps } from 'react';
 import * as stories from './PageCard.stories';
 
 const { Example } = composeStories(stories);
@@ -7,16 +8,20 @@ const { Example } = composeStories(stories);
 describe('<PageCard />', () => {
   it('should render props.icon', () => {
     expect.assertions(1);
-    const icon = jest.fn();
+    const icon = (props: SVGProps<SVGSVGElement>): JSX.Element => (
+      <svg {...props}>mock icon</svg>
+    );
 
     render(<Example icon={icon} />);
 
-    expect(icon).toHaveBeenCalledTimes(1);
+    expect(screen.getByText('mock icon')).toBeVisible();
   });
 
   it('should render props.name', () => {
     expect.assertions(1);
-    const icon = jest.fn();
+    const icon = (props: SVGProps<SVGSVGElement>): JSX.Element => (
+      <svg {...props}>mock icon</svg>
+    );
 
     render(<Example icon={icon} />);
 
@@ -25,7 +30,9 @@ describe('<PageCard />', () => {
 
   it('should render props.description', () => {
     expect.assertions(1);
-    const icon = jest.fn();
+    const icon = (props: SVGProps<SVGSVGElement>): JSX.Element => (
+      <svg {...props} />
+    );
 
     render(<Example icon={icon} />);
 

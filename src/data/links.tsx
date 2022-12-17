@@ -6,11 +6,11 @@ import {
   ScaleIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
-import type { ComponentPropsWithoutRef } from 'react';
 import { NextImage } from '@/components/atoms/NextImage';
 import byuLogoImage from '@/features/byu/assets/byu-logo.png';
 import byuhLogoImage from '@/features/byuh/assets/byuh-logo.png';
 import byuiLogoImage from '@/features/byui/assets/byui-logo.png';
+import type { IconComponentType } from '@/types/icon';
 
 /**
  * Type for page meta data
@@ -27,7 +27,7 @@ export interface PageMeta {
   /** Page link */
   href: string;
   /** Page icon. Used in header and card. */
-  icon: (props: ComponentPropsWithoutRef<'svg'>) => JSX.Element;
+  icon: IconComponentType;
 }
 
 /**

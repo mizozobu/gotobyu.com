@@ -1,5 +1,5 @@
-import type { ComponentType } from 'react';
 import { Link } from '@/components/atoms/Link';
+import type { IconComponentType } from '@/types/icon';
 
 /**
  * Props for {@link HeaderMenuLink}
@@ -12,7 +12,7 @@ interface Props {
   /** href to pass */
   href: string;
   /** Icon */
-  icon: ComponentType<{ className?: string }>;
+  icon: IconComponentType;
   /** Click event handler */
   onClick: () => void;
 }
