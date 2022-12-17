@@ -1,5 +1,5 @@
 import { ALPHA_VANTAGE_API_KEY } from '@/config';
-import { rest } from '@/lib/api-client';
+import { rest } from '@/lib/rest';
 import type { AlphaVantageForexResponse, Forex } from '../types';
 
 /**
