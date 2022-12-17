@@ -34,8 +34,10 @@ export const Modal = ({ isOpen, onClose, children }: Props): JSX.Element =>
         open={isOpen}
         onClose={onClose}
       >
-        <Dialog.Overlay
+        <div
           className='fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm'
+          onClick={onClose}
+          aria-hidden='true'
           data-testid='modal-overlay'
         />
         {children}
