@@ -58,8 +58,11 @@ export const Index = (): JSX.Element => (
       <h2 className='mt-8 mb-4 px-6 text-2xl font-bold md:mt-16 md:mb-8 md:text-4xl'>
         各大学について
       </h2>
-      <div className='flex space-x-12 overflow-scroll py-10 lg:grid lg:grid-flow-row-dense lg:grid-cols-3 lg:justify-items-center lg:gap-y-10 lg:space-x-0 lg:overflow-visible'>
-        <Link href='/schools/byu' className='mx-8 mt-4 rounded-xl'>
+      <div className='grid snap-x snap-mandatory grid-flow-col grid-rows-1 justify-items-center gap-x-12 overflow-auto px-6 py-10'>
+        <Link
+          href='/schools/byu'
+          className='snap-center snap-always rounded-xl'
+        >
           <BgRotateCard
             style={{
               '--bg': 'linear-gradient(to bottom right, #002e5d, #001225)',
@@ -73,7 +76,10 @@ export const Index = (): JSX.Element => (
             />
           </BgRotateCard>
         </Link>
-        <Link href='/schools/byuh' className='mx-8 mt-4 rounded-xl'>
+        <Link
+          href='/schools/byuh'
+          className='snap-center snap-always rounded-xl'
+        >
           <BgRotateCard
             style={{
               '--bg': 'linear-gradient(to bottom right, #9e1b34, #3f0a14)',
@@ -87,7 +93,10 @@ export const Index = (): JSX.Element => (
             />
           </BgRotateCard>
         </Link>
-        <Link href='/schools/byui' className='mx-8 mt-4 rounded-xl'>
+        <Link
+          href='/schools/byui'
+          className='snap-center snap-always rounded-xl'
+        >
           <BgRotateCard
             style={{
               '--bg': 'linear-gradient(to bottom right, #0076B6, #002f48)',
@@ -107,14 +116,18 @@ export const Index = (): JSX.Element => (
       <h2 className='mt-8 mb-4 px-6 text-2xl font-bold md:mt-16 md:mb-8 md:text-4xl'>
         知っておきたい情報
       </h2>
-      <div className='flex space-x-12 overflow-scroll px-6 py-10 lg:grid lg:grid-flow-row-dense lg:grid-cols-4 lg:justify-items-center lg:gap-y-10 lg:space-x-0 lg:overflow-visible lg:px-0'>
+      <div className='grid snap-x snap-mandatory grid-flow-col grid-rows-1 justify-items-center gap-x-12 overflow-auto px-6 py-10 lg:grid-flow-row lg:grid-cols-3 lg:gap-y-12 xl:grid-cols-4'>
         {[
           ...ADDITIONAL_SCHOOL_LINKS,
           ...APPLY_LINKS,
           ...CAREER_LINKS,
           OTHER_LINKS[0],
         ].map(({ name, href, detail, icon: Icon }) => (
-          <Link key={name} href={href} className='rounded-xl'>
+          <Link
+            key={name}
+            href={href}
+            className='snap-center snap-always rounded-xl'
+          >
             <PageCard icon={Icon} name={name} detail={detail} />
           </Link>
         ))}
