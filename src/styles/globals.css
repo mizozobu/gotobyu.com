@@ -40,7 +40,8 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    /* HACK: somehow scroll to the top before scroll to the target in smaller screen sizes */
+    @apply lg:scroll-smooth;
   }
 
   main {
