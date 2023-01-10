@@ -99,7 +99,7 @@ describe('AlgoliastBuilder', () => {
   });
 
   describe('setHeading', () => {
-    let __resetHeadings: SpyInstance<typeof builder['resetHeadings']>;
+    let __resetHeadings: SpyInstance<(typeof builder)['resetHeadings']>;
 
     beforeEach(() => {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
