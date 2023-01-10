@@ -39,7 +39,7 @@ type AtomKey = keyof typeof ATOM_REGISTRY;
  * Type used to receive serialized recoil state from server in client
  */
 export type RecoilProps = {
-  [K in AtomKey]: UnpackedRecoilState<typeof ATOM_REGISTRY[K]>;
+  [K in AtomKey]: UnpackedRecoilState<(typeof ATOM_REGISTRY)[K]>;
 };
 
 /**
