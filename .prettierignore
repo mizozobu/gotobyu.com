@@ -2,6 +2,8 @@
 /.storybook-static
 /node_modules
 /out
+/test-results
 
+*.md
 *.md
 *.mdx
