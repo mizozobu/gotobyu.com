@@ -31,8 +31,13 @@ runs:
     - name: Get comment body
       if: ${{ steps.download-base-stats.outcome == 'success' }}
       id: get-comment-body
-      run: echo "body=$(cat .next/analyze/__bundle_analysis_comment.txt)" >> $GITHUB_OUTPUT
-      shell: bash
+      uses: actions/github-script@v6
+      with:
+        result-encoding: string
+        script: |
+          const fs = require('fs')
+          const comment = fs.readFileSync('.next/analyze/__bundle_analysis_comment.txt', 'utf8')
+          core.setOutput('body', comment)
     - name: Post bundle size comment to commit
       if: ${{ steps.download-base-stats.outcome == 'success' }}
       uses: peter-evans/commit-comment@v2
