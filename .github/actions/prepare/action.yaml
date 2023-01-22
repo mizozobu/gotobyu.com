@@ -5,7 +5,7 @@ runs:
   steps:
     - name: Get node.js version
       id: get-node-version
-      run: echo ::set-output name=nodeVersion::$(node -p "require('./package.json').engines.node")
+      run: echo "nodeVersion=$(node -p 'require("./package.json").engines.node')" >> $GITHUB_OUTPUT
       shell: bash
     - name: Use node.js ${{ steps.get-node-version.outputs.nodeVersion }}
       uses: actions/setup-node@v3
@@ -22,7 +22,7 @@ runs:
     - name: Get yarn cache directory path
       if: steps.cache-node-modules.outputs.cache-hit != 'true'
       id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
+      run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
       shell: bash
     - name: Cache yarn cache
       uses: actions/cache@v3

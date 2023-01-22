@@ -5,7 +5,7 @@ runs:
   steps:
     - name: Get @playwright/test version
       id: get-playwright-version
-      run: echo ::set-output name=playwrightVersion::$(yarn --silent ver @playwright/test)
+      run: echo "playwrightVersion=$(yarn --silent ver @playwright/test)" >> $GITHUB_OUTPUT
       shell: bash
     - name: Cache browsers
       id: cache-browsers

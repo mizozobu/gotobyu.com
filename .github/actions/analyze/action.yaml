@@ -31,12 +31,7 @@ runs:
     - name: Get comment body
       if: ${{ steps.download-base-stats.outcome == 'success' }}
       id: get-comment-body
-      run: |
-        body=$(cat .next/analyze/__bundle_analysis_comment.txt)
-        body="${body//'%'/'%25'}"
-        body="${body//$'\n'/'%0A'}"
-        body="${body//$'\r'/'%0D'}"
-        echo ::set-output name=body::$body
+      run: echo "body=$(cat .next/analyze/__bundle_analysis_comment.txt)" >> $GITHUB_OUTPUT
       shell: bash
     - name: Post bundle size comment to commit
       if: ${{ steps.download-base-stats.outcome == 'success' }}

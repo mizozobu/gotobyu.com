@@ -51,7 +51,7 @@ jobs:
           args: e2e/tests/visual-regression.spec.ts --update-snapshots ${{ steps.get-e2e-args.outputs.args }}
       - name: Get PR target branch
         id: get-target-branch
-        run: echo "::set-output name=branch::$(git rev-parse --abbrev-ref HEAD)"
+        run: echo "branch=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_OUTPUT
       - name: Commit and push snapshots
         run: |
           git config user.email ${{ secrets.BOT_EMAIL }}
