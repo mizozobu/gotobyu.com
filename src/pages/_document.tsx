@@ -42,7 +42,7 @@ class MyDocument extends Document {
           <link
             rel='preconnect'
             href={`https://${ALGOLIA_APP_ID}-dsn.algolia.net`}
-            crossOrigin='true'
+            crossOrigin='anonymous'
           />
           {/* End algolia */}
         </Head>
