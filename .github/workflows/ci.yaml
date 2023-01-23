@@ -41,6 +41,16 @@ jobs:
 
   e2e:
     uses: ./.github/workflows/e2e.yaml
+    with:
+      args: e2e/tests/full-text-search.spec.ts
+    needs:
+      - setup
+      - setup-e2e
+
+  vrt:
+    uses: ./.github/workflows/e2e.yaml
+    with:
+      args: e2e/tests/visual-regression.spec.ts
     needs:
       - setup
       - setup-e2e
