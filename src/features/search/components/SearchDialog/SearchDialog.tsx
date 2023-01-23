@@ -40,7 +40,7 @@ export const SearchDialog = ({ isOpen, onClose }: Props): JSX.Element => {
   return (
     <AlgoliaProvider>
       <CustomStateResults onError={setError} />
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} aria-label='search'>
         <div className='relative mx-auto flex max-h-full min-h-[50%] max-w-3xl flex-col divide-y rounded bg-white lg:max-h-[76vh]'>
           <div className='flex items-center justify-end px-4 md:px-6'>
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
@@ -74,7 +74,9 @@ export const SearchDialog = ({ isOpen, onClose }: Props): JSX.Element => {
                 <CustomStats />
                 <CustomInfiniteHits>
                   {(hit) => (
-                    <HitItem key={hit.objectID} hit={hit} onClick={onClose} />
+                    <li key={hit.objectID}>
+                      <HitItem hit={hit} onClick={onClose} />
+                    </li>
                   )}
                 </CustomInfiniteHits>
               </>

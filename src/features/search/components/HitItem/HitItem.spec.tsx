@@ -12,7 +12,7 @@ describe('<HitItem />', () => {
 
     render(<Example />);
 
-    expect(screen.getByRole('button')).toBeVisible();
+    expect(screen.getByRole('link')).toBeVisible();
   });
 
   // eslint-disable-next-line jest/no-disabled-tests
@@ -33,7 +33,7 @@ describe('<HitItem />', () => {
     const handleClick = jest.fn();
 
     render(<Example onClick={handleClick} />);
-    await user.click(screen.getByRole('button'));
+    await user.click(screen.getByRole('link'));
 
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
@@ -45,9 +45,9 @@ describe('<HitItem />', () => {
     render(<Example />);
 
     await user.tab();
-    expect(screen.getByRole('button')).toHaveFocus();
+    expect(screen.getByRole('link')).toHaveFocus();
 
     await user.tab();
-    expect(screen.getByRole('button')).not.toHaveFocus();
+    expect(screen.getByRole('link')).not.toHaveFocus();
   });
 });

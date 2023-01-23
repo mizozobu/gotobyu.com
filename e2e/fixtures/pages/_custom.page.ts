@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import type {
   ConsoleMessage,
+  Locator,
   Page,
   PageScreenshotOptions,
 } from '@playwright/test';
@@ -21,6 +22,14 @@ export abstract class _CustomPage {
   public readonly path: string = 'about:blank';
   /** Playright page object */
   protected readonly page: Page;
+  /** Header */
+  public header: Locator;
+  /** Footer */
+  public footer: Locator;
+  /** Button to show search modal */
+  public searchButton: Locator;
+  /** Search modal */
+  public searchModal: Locator;
 
   /**
    * @constructor
@@ -28,6 +37,12 @@ export abstract class _CustomPage {
    */
   constructor(page: Page) {
     this.page = page;
+    this.header = this.page.locator('header');
+    this.footer = this.page.locator('footer');
+    this.searchButton = this.header.locator('button:visible', {
+      hasText: '検索',
+    });
+    this.searchModal = this.page.getByRole('dialog', { name: 'search' });
   }
 
   /**

@@ -37,7 +37,7 @@ export const CustomInfiniteHits = ({
       )}
       <ul className='flex flex-col space-y-5'>
         {classifyHits(hits).map(({ h1, hits: hitsInH1 }) => (
-          <div key={h1} className='space-y-3'>
+          <li key={h1} className='space-y-3'>
             {hitsInH1[0] ? (
               <Highlight
                 attribute='h1'
@@ -50,7 +50,7 @@ export const CustomInfiniteHits = ({
             <ul className='flex flex-col space-y-2 md:mx-6'>
               {hitsInH1.map((hit) => children(hit))}
             </ul>
-          </div>
+          </li>
         ))}
       </ul>
       {hasMore && (
