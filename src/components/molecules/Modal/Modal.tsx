@@ -1,10 +1,11 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment, type ReactNode } from 'react';
+import { Fragment } from 'react';
+import type { ComponentPropsWithRef, ReactNode } from 'react';
 
 /**
  * Props for {@link Modal}
  */
-interface Props {
+interface Props extends ComponentPropsWithRef<typeof Dialog> {
   /** Whether dialog is open */
   isOpen: boolean;
   /** Dialog content */
@@ -16,7 +17,12 @@ interface Props {
 /**
  * Modal
  */
-export const Modal = ({ isOpen, onClose, children }: Props): JSX.Element => (
+export const Modal = ({
+  isOpen,
+  onClose,
+  children,
+  ...props
+}: Props): JSX.Element => (
   <Transition
     show={isOpen}
     as={Fragment}
@@ -31,6 +37,7 @@ export const Modal = ({ isOpen, onClose, children }: Props): JSX.Element => (
       className='fixed inset-0 z-20 p-4 md:p-16 lg:p-[12vh]'
       open={isOpen}
       onClose={onClose}
+      {...props}
     >
       <div
         className='fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm'

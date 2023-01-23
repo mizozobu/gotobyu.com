@@ -109,7 +109,7 @@ export const Header = (): JSX.Element => {
 
   return (
     <>
-      <div
+      <header
         className={classNames(
           'sticky z-10 mb-1 bg-white',
           styles.header,
@@ -123,7 +123,7 @@ export const Header = (): JSX.Element => {
           <div className='relative flex h-16 items-center justify-between'>
             <div className='flex justify-start lg:w-0 lg:flex-1'>
               <Link href='/'>
-                <span className='sr-only'>Home</span>
+                <span className='sr-only'>トップ</span>
                 <CirculatingCircles className='h-8 w-8' />
               </Link>
             </div>
@@ -133,7 +133,7 @@ export const Header = (): JSX.Element => {
                 className='inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500'
                 onClick={openSearchDialog}
               >
-                <span className='sr-only'>Open search</span>
+                <span className='sr-only'>検索</span>
                 <MagnifyingGlassIcon className='h-6 w-6' aria-hidden='true' />
               </button>
               <button
@@ -141,7 +141,7 @@ export const Header = (): JSX.Element => {
                 className='inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500'
                 onClick={openMenuDialog}
               >
-                <span className='sr-only'>Open menu</span>
+                <span className='sr-only'>メニュー</span>
                 <Bars3Icon className='h-6 w-6' aria-hidden='true' />
               </button>
             </div>
@@ -238,7 +238,7 @@ export const Header = (): JSX.Element => {
             </Popover.Group>
           </div>
         </div>
-      </div>
+      </header>
 
       <HeaderMobileMenuDialog
         isOpen={isMenuDialogDisplayed}
