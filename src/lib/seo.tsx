@@ -1,5 +1,5 @@
-import { NextSeo, type NextSeoProps } from 'next-seo';
 import { useRouter } from 'next/router';
+import { NextSeo, type NextSeoProps } from 'next-seo';
 import { BASE_URL } from '@/config';
 
 /**
