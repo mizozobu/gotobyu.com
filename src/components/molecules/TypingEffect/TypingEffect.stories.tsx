@@ -15,4 +15,7 @@ const Template: ComponentStory<typeof TypingEffect> = (args) => (
 export const Example = Template.bind({});
 Example.args = {
   children: ['first string', 'second string', 'third string'],
+  typeSpeed: 50,
+  waitBeforeType: 2000,
+  waitAfterType: 2000,
 };

@@ -1,18 +1,19 @@
 import { jest } from '@jest/globals';
 import { composeStories } from '@storybook/testing-react';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import * as stories from './Type.stories';
 
 const { Example } = composeStories(stories);
 
-// eslint-disable-next-line jest/no-disabled-tests
-describe.skip('<Type />', () => {
+describe('<Type />', () => {
   beforeEach(() => {
     jest.useFakeTimers();
   });
 
-  afterAll(() => {
-    jest.runOnlyPendingTimers();
+  afterEach(() => {
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
     jest.useRealTimers();
   });
 
@@ -21,95 +22,227 @@ describe.skip('<Type />', () => {
 
     render(<Example />);
 
-    expect(screen.getByRole('button')).toHaveStyle({
+    expect(screen.getByTestId('Type')).toHaveStyle({
       '--caret-width': '3px',
     });
   });
 
-  it('should type a character every x ms', () => {
-    expect.assertions(3);
+  it('should type a character every x ms', async () => {
+    expect.hasAssertions();
 
     render(<Example />);
 
     expect(screen.getByTestId('Type')).toHaveTextContent(/^$/);
 
-    jest.advanceTimersByTime(50 * 5); // type "12345"
-    expect(screen.getByTestId('Type')).toHaveTextContent(/^12345$/);
+    act(() => {
+      jest.advanceTimersByTime(50 * 26); // type "abcdefghijklmnopqrstuvwxyz"
+    });
+    await waitFor(
+      () =>
+        expect(screen.getByTestId('Type')).toHaveTextContent(
+          /^abcdefghijklmnopqrstuvwxyz$/,
+        ),
+      { timeout: 50 * 26 },
+    );
 
-    jest.advanceTimersByTime(50 * 4); // type "6789"
-    expect(screen.getByTestId('Type')).toHaveTextContent(/^123456789$/);
+    act(() => {
+      jest.advanceTimersByTime(50 * (62 - 26)); // type "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    });
+    await waitFor(
+      () =>
+        expect(screen.getByTestId('Type')).toHaveTextContent(
+          /^abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890$/,
+        ),
+      { timeout: 50 * (62 - 26) },
+    );
   });
 
-  it('should wait for props.waitAfterType ms after completing typing the text', () => {
-    expect.assertions(2);
+  it('should wait for props.waitAfterType ms after completing typing the text', async () => {
+    expect.hasAssertions();
 
     render(<Example />);
 
-    jest.advanceTimersByTime(50 * 9); // type "123456789"
-    expect(screen.getByTestId('Type')).toHaveTextContent(/^123456789$/);
+    act(() => {
+      jest.advanceTimersByTime(50 * 62); // type "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    });
+    await waitFor(
+      () =>
+        expect(screen.getByTestId('Type')).toHaveTextContent(
+          /^abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890$/,
+        ),
+      { timeout: 50 * 62 },
+    );
 
-    jest.advanceTimersByTime(2000); // wait
-    expect(screen.getByTestId('Type')).toHaveTextContent(/^123456789$/);
+    act(() => {
+      jest.advanceTimersByTime(2000); // wait
+    });
+    await waitFor(
+      () =>
+        expect(screen.getByTestId('Type')).toHaveTextContent(
+          /^abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890$/,
+        ),
+      { timeout: 50 * 0 },
+    );
   });
 
-  it('should delete a character every x ms', () => {
-    expect.assertions(3);
+  it('should delete a character every x ms', async () => {
+    expect.hasAssertions();
 
     render(<Example />);
 
-    jest.advanceTimersByTime(50 * 9); // type "123456789"
-    jest.advanceTimersByTime(2000); // wait
-    expect(screen.getByTestId('Type')).toHaveTextContent(/^123456789$/);
+    act(() => {
+      jest.advanceTimersByTime(50 * 62); // type "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    });
+    await waitFor(
+      () =>
+        expect(screen.getByTestId('Type')).toHaveTextContent(
+          /^abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890$/,
+        ),
+      { timeout: 50 * 62 },
+    );
 
-    jest.advanceTimersByTime(50 * 5); // delete "56789"
-    expect(screen.getByTestId('Type')).toHaveTextContent(/^1234$/);
+    act(() => {
+      jest.advanceTimersByTime(2000); // wait
+      jest.advanceTimersByTime(50 * 10); // delete "1234567890"
+    });
+    await waitFor(
+      () =>
+        expect(screen.getByTestId('Type')).toHaveTextContent(
+          /^abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$/,
+        ),
+      { timeout: 2000 + 50 * 10 },
+    );
 
-    jest.advanceTimersByTime(50 * 4); // delete "1234"
-    expect(screen.getByTestId('Type')).toHaveTextContent(/^$/);
+    act(() => {
+      jest.advanceTimersByTime(50 * (62 - 10)); // delete "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    });
+    await waitFor(
+      () => expect(screen.getByTestId('Type')).toHaveTextContent(/^$/),
+      { timeout: 50 * (62 - 10) },
+    );
   });
 
-  it('should wait for props.waitBeforeType ms after completing deleting the text', () => {
-    expect.assertions(2);
+  it('should wait for props.waitBeforeType ms after completing deleting the text', async () => {
+    expect.hasAssertions();
 
     render(<Example />);
 
-    jest.advanceTimersByTime(50 * 9); // type "123456789"
-    jest.advanceTimersByTime(2000); // wait
-    jest.advanceTimersByTime(50 * 9); // delete "123456789"
-    expect(screen.getByTestId('Type')).toHaveTextContent(/^$/);
+    act(() => {
+      jest.advanceTimersByTime(50 * 62); // type "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    });
+    await waitFor(
+      () =>
+        expect(screen.getByTestId('Type')).toHaveTextContent(
+          /^abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890$/,
+        ),
+      { timeout: 50 * 62 },
+    );
 
-    jest.advanceTimersByTime(2000); // wait
-    expect(screen.getByTestId('Type')).toHaveTextContent(/^$/);
+    act(() => {
+      jest.advanceTimersByTime(2000); // wait
+      jest.advanceTimersByTime(50 * 62); // delete "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    });
+    await waitFor(
+      () => expect(screen.getByTestId('Type')).toHaveTextContent(/^$/),
+      { timeout: 2000 + 50 * 62 },
+    );
+
+    act(() => {
+      jest.advanceTimersByTime(2000); // wait
+    });
+    await waitFor(
+      () => expect(screen.getByTestId('Type')).toHaveTextContent(/^$/),
+      { timeout: 2000 },
+    );
   });
 
-  it('should call props.onBack after completing deleting the text', () => {
-    expect.assertions(1);
+  it('should call props.onBack after completing deleting the text', async () => {
+    expect.hasAssertions();
     const handleBack = jest.fn();
 
     render(<Example onBack={handleBack} />);
 
-    jest.advanceTimersByTime(50 * 9); // type "123456789"
-    jest.advanceTimersByTime(2000); // wait
-    jest.advanceTimersByTime(50 * 9); // delete "123456789"
-    jest.advanceTimersByTime(2000); // wait
-    expect(handleBack).toHaveBeenCalledTimes(1);
+    act(() => {
+      jest.advanceTimersByTime(50 * 62); // type "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    });
+    await waitFor(
+      () =>
+        expect(screen.getByTestId('Type')).toHaveTextContent(
+          /^abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890$/,
+        ),
+      { timeout: 50 * 62 },
+    );
+
+    act(() => {
+      jest.advanceTimersByTime(2000); // wait
+      jest.advanceTimersByTime(50 * 62); // delete "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    });
+    await waitFor(
+      () => expect(screen.getByTestId('Type')).toHaveTextContent(/^$/),
+      { timeout: 2000 + 50 * 62 },
+    );
+
+    act(() => {
+      jest.advanceTimersByTime(2000); // wait
+    });
+    await waitFor(() => expect(handleBack).toHaveBeenCalledTimes(1), {
+      timeout: 2000,
+    });
   });
 
-  it('should re-type the same text', () => {
-    expect.assertions(3);
+  it('should re-type the same text', async () => {
+    expect.hasAssertions();
 
     render(<Example />);
 
-    jest.advanceTimersByTime(50 * 9); // type "123456789"
-    jest.advanceTimersByTime(2000); // wait
-    jest.advanceTimersByTime(50 * 9); // delete "123456789"
-    jest.advanceTimersByTime(2000); // wait
-    expect(screen.getByTestId('Type')).toHaveTextContent(/^$/);
+    act(() => {
+      jest.advanceTimersByTime(50 * 62); // type "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    });
+    await waitFor(
+      () =>
+        expect(screen.getByTestId('Type')).toHaveTextContent(
+          /^abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890$/,
+        ),
+      { timeout: 50 * 62 },
+    );
 
-    jest.advanceTimersByTime(50 * 5); // type "12345"
-    expect(screen.getByTestId('Type')).toHaveTextContent(/^12345$/);
+    act(() => {
+      jest.advanceTimersByTime(2000); // wait
+      jest.advanceTimersByTime(50 * 62); // delete "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    });
+    await waitFor(
+      () => expect(screen.getByTestId('Type')).toHaveTextContent(/^$/),
+      { timeout: 2000 + 50 * 62 },
+    );
 
-    jest.advanceTimersByTime(50 * 4); // type "6789"
-    expect(screen.getByTestId('Type')).toHaveTextContent(/^123456789$/);
+    act(() => {
+      jest.advanceTimersByTime(2000); // wait
+    });
+    await waitFor(
+      () => expect(screen.getByTestId('Type')).toHaveTextContent(/^$/),
+      { timeout: 2000 },
+    );
+
+    act(() => {
+      jest.advanceTimersByTime(50 * 26); // type "abcdefghijklmnopqrstuvwxyz"
+    });
+    await waitFor(
+      () =>
+        expect(screen.getByTestId('Type')).toHaveTextContent(
+          /^abcdefghijklmnopqrstuvwxyz$/,
+        ),
+      { timeout: 50 * 26 },
+    );
+
+    act(() => {
+      jest.advanceTimersByTime(50 * (62 - 26)); // type "fghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    });
+    await waitFor(
+      () =>
+        expect(screen.getByTestId('Type')).toHaveTextContent(
+          /^abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890$/,
+        ),
+      { timeout: 50 * (62 - 26) },
+    );
   });
 });

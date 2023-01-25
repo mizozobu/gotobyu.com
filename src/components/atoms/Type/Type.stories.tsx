@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof Type> = (args) => <Type {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
-  children: '123456789',
+  children: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
   style: {
     '--caret-width': '3px',
   },

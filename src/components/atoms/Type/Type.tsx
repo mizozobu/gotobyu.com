@@ -56,59 +56,40 @@ export const Type = ({
   ...props
 }: Props): JSX.Element => {
   const [typed, setTyped] = useState('');
-  const [status, setStatus] = useState(STATUS.waiting);
+  const [status, setStatus] = useState(STATUS.forward);
 
-  /**
-   * start typing on load
-   */
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setTyped(text[0]);
-      setStatus(STATUS.forward);
-    }, typeSpeed);
-    return () => clearTimeout(timeout);
-  }, [text, typeSpeed]);
+    let interval: NodeJS.Timer;
 
-  /**
-   * change interval function when status changes
-   */
-  useEffect(() => {
     if (status === STATUS.forward) {
-      const interval = setInterval(() => {
-        setTyped((prevTyped) => text.substring(0, prevTyped.length + 1));
+      interval = setInterval(() => {
+        const next = text.substring(0, typed.length + 1);
+        if (typed === next) {
+          setStatus(STATUS.waiting);
+          setTimeout(() => {
+            setStatus(STATUS.backward);
+          }, waitAfterType - typeSpeed);
+        }
+        setTyped(next);
       }, typeSpeed);
-      return () => clearInterval(interval);
-    }
-    if (status === STATUS.backward) {
-      const interval = setInterval(() => {
-        setTyped((prevTyped) => text.substring(0, prevTyped.length - 1));
+    } else if (status === STATUS.backward) {
+      interval = setInterval(() => {
+        const prev = text.substring(0, typed.length - 1);
+        if (typed === prev) {
+          setStatus(STATUS.waiting);
+          setTimeout(() => {
+            onBack?.();
+            setStatus(STATUS.forward);
+          }, waitBeforeType - typeSpeed);
+        }
+        setTyped(prev);
       }, typeSpeed);
-      return () => clearInterval(interval);
     }
-    return undefined;
-  }, [status, text, typeSpeed]);
 
-  /**
-   * change status when typed changes
-   */
-  useEffect(() => {
-    if (typed === text) {
-      setStatus(STATUS.waiting);
-      const timeout = setTimeout(() => {
-        setStatus(STATUS.backward);
-      }, waitAfterType);
-      return () => clearTimeout(timeout);
-    }
-    if (typed === '') {
-      setStatus(STATUS.waiting);
-      const timeout = setTimeout(() => {
-        setStatus(STATUS.forward);
-        onBack?.();
-      }, waitBeforeType);
-      return () => clearTimeout(timeout);
-    }
-    return undefined;
-  }, [typed, text, onBack, waitAfterType, waitBeforeType]);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [text, typed, status, typeSpeed, waitAfterType, waitBeforeType, onBack]);
 
   return (
     <>
