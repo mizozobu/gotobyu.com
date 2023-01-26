@@ -18,7 +18,9 @@ export class IndexPage extends _CustomPage {
    * Tick the clock ahead to type "にはどうやって入学するの?"
    */
   public async tickUntilSentenseCompletes(): Promise<void> {
-    await this.page.evaluate(async () => window.__clock.tickAsync(75 * 13));
+    await this.page.evaluate(
+      async () => window.__clock.tickAsync(75 * 13 + 1000), // give room for flakiness
+    );
   }
 
   /**
