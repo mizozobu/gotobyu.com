@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.10",
-    "@heroicons/react": "^2.0.14",
+    "@heroicons/react": "^2.0.15",
     "@mdx-js/loader": "^2.2.1",
     "@next/mdx": "^13.1.6",
     "algoliasearch": "^4.14.3",
