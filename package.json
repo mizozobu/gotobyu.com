@@ -94,7 +94,7 @@
     "jest-environment-jsdom": "^29.4.2",
     "lighthouse": "^9.6.8",
     "lint-staged": "^13.1.1",
-    "next-sitemap": "^3.1.50",
+    "next-sitemap": "^3.1.52",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
     "prettier": "^2.8.4",
