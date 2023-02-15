@@ -4,7 +4,7 @@ import { mediaGte, type ScreenSize } from './useMediaMinWidth';
 describe('mediaGte', () => {
   const windowSize = 1024;
 
-  beforeAll(() => {
+  beforeEach(() => {
     /**
      * @see {@link https://jestjs.io/docs/manual-mocks#mocking-methods-which-are-not-implemented-in-jsdom}
      */
