@@ -1,4 +1,5 @@
-import lighthouse from 'lighthouse';
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import lighthouse from 'lighthouse/core/index.cjs';
 import { test, expect } from '@e2e/fixtures';
 
 test.use({
@@ -22,18 +23,19 @@ test.describe('lighthouse', () => {
       },
     );
 
+    expect(runnerResult).not.toBeUndefined();
     expect(
-      (runnerResult.lhr.categories.performance.score as number) * 100,
+      (runnerResult!.lhr.categories.performance.score as number) * 100,
     ).toBeGreaterThanOrEqual(80);
     expect(
-      (runnerResult.lhr.categories.accessibility.score as number) * 100,
+      (runnerResult!.lhr.categories.accessibility.score as number) * 100,
     ).toBe(100);
     expect(
-      (runnerResult.lhr.categories['best-practices'].score as number) * 100,
+      (runnerResult!.lhr.categories['best-practices'].score as number) * 100,
     ).toBe(100);
-    expect((runnerResult.lhr.categories.seo.score as number) * 100).toBe(100);
+    expect((runnerResult!.lhr.categories.seo.score as number) * 100).toBe(100);
     expect(
-      (runnerResult.lhr.categories.pwa.score as number) * 100,
+      (runnerResult!.lhr.categories.pwa.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
   });
 
@@ -45,18 +47,19 @@ test.describe('lighthouse', () => {
       },
     );
 
+    expect(runnerResult).not.toBeUndefined();
     expect(
-      (runnerResult.lhr.categories.performance.score as number) * 100,
+      (runnerResult!.lhr.categories.performance.score as number) * 100,
     ).toBeGreaterThanOrEqual(80);
     expect(
-      (runnerResult.lhr.categories.accessibility.score as number) * 100,
+      (runnerResult!.lhr.categories.accessibility.score as number) * 100,
     ).toBe(100);
     expect(
-      (runnerResult.lhr.categories['best-practices'].score as number) * 100,
+      (runnerResult!.lhr.categories['best-practices'].score as number) * 100,
     ).toBe(100);
-    expect((runnerResult.lhr.categories.seo.score as number) * 100).toBe(100);
+    expect((runnerResult!.lhr.categories.seo.score as number) * 100).toBe(100);
     expect(
-      (runnerResult.lhr.categories.pwa.score as number) * 100,
+      (runnerResult!.lhr.categories.pwa.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
   });
 
@@ -65,18 +68,19 @@ test.describe('lighthouse', () => {
       logLevel: 'error',
     });
 
+    expect(runnerResult).not.toBeUndefined();
     expect(
-      (runnerResult.lhr.categories.performance.score as number) * 100,
+      (runnerResult!.lhr.categories.performance.score as number) * 100,
     ).toBeGreaterThanOrEqual(50);
     expect(
-      (runnerResult.lhr.categories.accessibility.score as number) * 100,
+      (runnerResult!.lhr.categories.accessibility.score as number) * 100,
     ).toBe(100);
     expect(
-      (runnerResult.lhr.categories['best-practices'].score as number) * 100,
+      (runnerResult!.lhr.categories['best-practices'].score as number) * 100,
     ).toBe(100);
-    expect((runnerResult.lhr.categories.seo.score as number) * 100).toBe(100);
+    expect((runnerResult!.lhr.categories.seo.score as number) * 100).toBe(100);
     expect(
-      (runnerResult.lhr.categories.pwa.score as number) * 100,
+      (runnerResult!.lhr.categories.pwa.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
   });
 
@@ -88,18 +92,19 @@ test.describe('lighthouse', () => {
       },
     );
 
+    expect(runnerResult).not.toBeUndefined();
     expect(
-      (runnerResult.lhr.categories.performance.score as number) * 100,
+      (runnerResult!.lhr.categories.performance.score as number) * 100,
     ).toBeGreaterThanOrEqual(50);
     expect(
-      (runnerResult.lhr.categories.accessibility.score as number) * 100,
+      (runnerResult!.lhr.categories.accessibility.score as number) * 100,
     ).toBe(100);
     expect(
-      (runnerResult.lhr.categories['best-practices'].score as number) * 100,
+      (runnerResult!.lhr.categories['best-practices'].score as number) * 100,
     ).toBe(100);
-    expect((runnerResult.lhr.categories.seo.score as number) * 100).toBe(100);
+    expect((runnerResult!.lhr.categories.seo.score as number) * 100).toBe(100);
     expect(
-      (runnerResult.lhr.categories.pwa.score as number) * 100,
+      (runnerResult!.lhr.categories.pwa.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
   });
 
@@ -111,18 +116,19 @@ test.describe('lighthouse', () => {
       },
     );
 
+    expect(runnerResult).not.toBeUndefined();
     expect(
-      (runnerResult.lhr.categories.performance.score as number) * 100,
+      (runnerResult!.lhr.categories.performance.score as number) * 100,
     ).toBeGreaterThanOrEqual(50);
     expect(
-      (runnerResult.lhr.categories.accessibility.score as number) * 100,
+      (runnerResult!.lhr.categories.accessibility.score as number) * 100,
     ).toBe(100);
     expect(
-      (runnerResult.lhr.categories['best-practices'].score as number) * 100,
+      (runnerResult!.lhr.categories['best-practices'].score as number) * 100,
     ).toBe(100);
-    expect((runnerResult.lhr.categories.seo.score as number) * 100).toBe(100);
+    expect((runnerResult!.lhr.categories.seo.score as number) * 100).toBe(100);
     expect(
-      (runnerResult.lhr.categories.pwa.score as number) * 100,
+      (runnerResult!.lhr.categories.pwa.score as number) * 100,
     ).toBeGreaterThanOrEqual(60); // somehow 60
   });
 
@@ -134,18 +140,19 @@ test.describe('lighthouse', () => {
       },
     );
 
+    expect(runnerResult).not.toBeUndefined();
     expect(
-      (runnerResult.lhr.categories.performance.score as number) * 100,
+      (runnerResult!.lhr.categories.performance.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
     expect(
-      (runnerResult.lhr.categories.accessibility.score as number) * 100,
+      (runnerResult!.lhr.categories.accessibility.score as number) * 100,
     ).toBe(100);
     expect(
-      (runnerResult.lhr.categories['best-practices'].score as number) * 100,
+      (runnerResult!.lhr.categories['best-practices'].score as number) * 100,
     ).toBe(100);
-    expect((runnerResult.lhr.categories.seo.score as number) * 100).toBe(100);
+    expect((runnerResult!.lhr.categories.seo.score as number) * 100).toBe(100);
     expect(
-      (runnerResult.lhr.categories.pwa.score as number) * 100,
+      (runnerResult!.lhr.categories.pwa.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
   });
 
@@ -157,18 +164,19 @@ test.describe('lighthouse', () => {
       },
     );
 
+    expect(runnerResult).not.toBeUndefined();
     expect(
-      (runnerResult.lhr.categories.performance.score as number) * 100,
+      (runnerResult!.lhr.categories.performance.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
     expect(
-      (runnerResult.lhr.categories.accessibility.score as number) * 100,
+      (runnerResult!.lhr.categories.accessibility.score as number) * 100,
     ).toBe(100);
     expect(
-      (runnerResult.lhr.categories['best-practices'].score as number) * 100,
+      (runnerResult!.lhr.categories['best-practices'].score as number) * 100,
     ).toBe(100);
-    expect((runnerResult.lhr.categories.seo.score as number) * 100).toBe(100);
+    expect((runnerResult!.lhr.categories.seo.score as number) * 100).toBe(100);
     expect(
-      (runnerResult.lhr.categories.pwa.score as number) * 100,
+      (runnerResult!.lhr.categories.pwa.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
   });
 
@@ -180,18 +188,19 @@ test.describe('lighthouse', () => {
       },
     );
 
+    expect(runnerResult).not.toBeUndefined();
     expect(
-      (runnerResult.lhr.categories.performance.score as number) * 100,
+      (runnerResult!.lhr.categories.performance.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
     expect(
-      (runnerResult.lhr.categories.accessibility.score as number) * 100,
+      (runnerResult!.lhr.categories.accessibility.score as number) * 100,
     ).toBe(100);
     expect(
-      (runnerResult.lhr.categories['best-practices'].score as number) * 100,
+      (runnerResult!.lhr.categories['best-practices'].score as number) * 100,
     ).toBe(100);
-    expect((runnerResult.lhr.categories.seo.score as number) * 100).toBe(100);
+    expect((runnerResult!.lhr.categories.seo.score as number) * 100).toBe(100);
     expect(
-      (runnerResult.lhr.categories.pwa.score as number) * 100,
+      (runnerResult!.lhr.categories.pwa.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
   });
 
@@ -203,18 +212,19 @@ test.describe('lighthouse', () => {
       },
     );
 
+    expect(runnerResult).not.toBeUndefined();
     expect(
-      (runnerResult.lhr.categories.performance.score as number) * 100,
+      (runnerResult!.lhr.categories.performance.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
     expect(
-      (runnerResult.lhr.categories.accessibility.score as number) * 100,
+      (runnerResult!.lhr.categories.accessibility.score as number) * 100,
     ).toBe(100);
     expect(
-      (runnerResult.lhr.categories['best-practices'].score as number) * 100,
+      (runnerResult!.lhr.categories['best-practices'].score as number) * 100,
     ).toBe(100);
-    expect((runnerResult.lhr.categories.seo.score as number) * 100).toBe(100);
+    expect((runnerResult!.lhr.categories.seo.score as number) * 100).toBe(100);
     expect(
-      (runnerResult.lhr.categories.pwa.score as number) * 100,
+      (runnerResult!.lhr.categories.pwa.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
   });
 
@@ -226,18 +236,19 @@ test.describe('lighthouse', () => {
       },
     );
 
+    expect(runnerResult).not.toBeUndefined();
     expect(
-      (runnerResult.lhr.categories.performance.score as number) * 100,
+      (runnerResult!.lhr.categories.performance.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
     expect(
-      (runnerResult.lhr.categories.accessibility.score as number) * 100,
+      (runnerResult!.lhr.categories.accessibility.score as number) * 100,
     ).toBe(100);
     expect(
-      (runnerResult.lhr.categories['best-practices'].score as number) * 100,
+      (runnerResult!.lhr.categories['best-practices'].score as number) * 100,
     ).toBe(100);
-    expect((runnerResult.lhr.categories.seo.score as number) * 100).toBe(100);
+    expect((runnerResult!.lhr.categories.seo.score as number) * 100).toBe(100);
     expect(
-      (runnerResult.lhr.categories.pwa.score as number) * 100,
+      (runnerResult!.lhr.categories.pwa.score as number) * 100,
     ).toBeGreaterThanOrEqual(70);
   });
 });
