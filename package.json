@@ -54,7 +54,7 @@
     "@next/bundle-analyzer": "^13.1.6",
     "@next/env": "^13.1.6",
     "@next/eslint-plugin-next": "^13.1.6",
-    "@playwright/test": "^1.31.0",
+    "@playwright/test": "^1.31.1",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/builder-webpack5": "^6.5.16",
     "@storybook/manager-webpack5": "^6.5.16",
