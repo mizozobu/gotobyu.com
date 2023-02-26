@@ -1,7 +1,5 @@
 {
-  "**/*.{js,jsx,ts,tsx}": [
-    "yarn eslint",
-    "yarn prettier --check --loglevel warn ."
-  ],
-  "**/*.css": ["yarn stylelint", "yarn prettier --check --loglevel warn ."]
+  "**/*.{js,jsx,ts,tsx}": ["yarn eslint"],
+  "**/*.css": ["yarn stylelint"],
+  "**/*": ["yarn prettier --check --loglevel warn ."]
 }
