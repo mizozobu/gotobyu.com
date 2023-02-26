@@ -5,14 +5,14 @@ import type { ComponentPropsWithRef, ReactNode } from 'react';
 /**
  * Props for {@link Modal}
  */
-interface Props extends ComponentPropsWithRef<typeof Dialog> {
+type Props = ComponentPropsWithRef<typeof Dialog> & {
   /** Whether dialog is open */
   isOpen: boolean;
   /** Dialog content */
   children: ReactNode;
   /** Close dialog */
   onClose: () => void;
-}
+};
 
 /**
  * Modal
