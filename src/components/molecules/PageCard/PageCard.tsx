@@ -35,7 +35,7 @@ export const PageCard = ({
       <div className='flex h-1/3 items-center justify-center bg-indigo-50 text-indigo-900'>
         <Icon className='h-16 w-16' />
       </div>
-      <div className='flex h-2/3 flex-col space-y-2 py-4 px-6'>
+      <div className='flex h-2/3 flex-col space-y-2 px-6 py-4'>
         <div className='text-bold flex h-1/6 items-center truncate text-lg text-indigo-900 md:text-2xl'>
           {name}
         </div>
