@@ -23,7 +23,7 @@ const TabRoot = ({ className, children }: TabRootProps): JSX.Element => (
         styles.tab,
         className,
         'flex basis-full items-center rounded-t-xl border p-2',
-        selected ? '-mt-2 -mb-px border-b-0' : 'border-b-1 bg-gray-50',
+        selected ? '-mb-px -mt-2 border-b-0' : 'border-b-1 bg-gray-50',
       )
     }
   >
@@ -43,7 +43,7 @@ interface Props {
  * Styled {@link Tab.Panel}
  */
 const Panel = ({ children }: Props): JSX.Element => (
-  <TwTab.Panel className='space-y-8 rounded-b-xl border-r border-b border-l px-4 py-8 md:px-8'>
+  <TwTab.Panel className='space-y-8 rounded-b-xl border-b border-l border-r px-4 py-8 md:px-8'>
     {children}
   </TwTab.Panel>
 );

@@ -27,9 +27,9 @@ export const Index = (): JSX.Element => (
     >
       <div className='col-span-3'>
         <h1 className='text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl'>
-          <span className='block text-byu'>BYU</span>
-          <span className='block text-byuh'>BYUH</span>
-          <span className='block text-byui'>BYUI</span>
+          <span className='text-byu block'>BYU</span>
+          <span className='text-byuh block'>BYUH</span>
+          <span className='text-byui block'>BYUI</span>
           <div className='h-32 overflow-hidden md:h-48'>
             <TypingEffect
               style={{ '--caret-width': '5px' }}
@@ -55,7 +55,7 @@ export const Index = (): JSX.Element => (
       </div>
     </div>
     <div className='mx-auto max-w-screen-lg xl:max-w-screen-xl'>
-      <h2 className='mt-8 mb-4 px-6 text-2xl font-bold md:mt-16 md:mb-8 md:text-4xl'>
+      <h2 className='mb-4 mt-8 px-6 text-2xl font-bold md:mb-8 md:mt-16 md:text-4xl'>
         各大学について
       </h2>
       <div className='grid snap-x snap-mandatory grid-flow-col grid-rows-1 justify-items-center gap-x-12 overflow-auto px-6 py-10'>
@@ -113,7 +113,7 @@ export const Index = (): JSX.Element => (
       </div>
     </div>
     <div className='mx-auto max-w-screen-lg xl:max-w-screen-xl'>
-      <h2 className='mt-8 mb-4 px-6 text-2xl font-bold md:mt-16 md:mb-8 md:text-4xl'>
+      <h2 className='mb-4 mt-8 px-6 text-2xl font-bold md:mb-8 md:mt-16 md:text-4xl'>
         知っておきたい情報
       </h2>
       <div className='grid snap-x snap-mandatory grid-flow-col grid-rows-1 justify-items-center gap-x-12 overflow-auto px-6 py-10 lg:grid-flow-row lg:grid-cols-3 lg:gap-y-12 xl:grid-cols-4'>
