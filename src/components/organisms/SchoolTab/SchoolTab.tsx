@@ -59,7 +59,7 @@ const SchoolTabRoot = ({ children }: Props): JSX.Element => {
               alt='BYU Logo'
               placeholder='blur'
             />
-            <span className='text-byu font-bold'>BYU</span>
+            <span className='font-bold text-byu'>BYU</span>
           </div>
         </Tab>
         <Tab>
@@ -70,7 +70,7 @@ const SchoolTabRoot = ({ children }: Props): JSX.Element => {
               alt='BYUH Logo'
               placeholder='blur'
             />
-            <span className='text-byuh font-bold'>BYUH</span>
+            <span className='font-bold text-byuh'>BYUH</span>
           </div>
         </Tab>
         <Tab>
@@ -81,7 +81,7 @@ const SchoolTabRoot = ({ children }: Props): JSX.Element => {
               alt='BYUI Logo'
               placeholder='blur'
             />
-            <span className='text-byui font-bold'>BYUI</span>
+            <span className='font-bold text-byui'>BYUI</span>
           </div>
         </Tab>
       </Tab.List>

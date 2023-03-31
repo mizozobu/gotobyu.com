@@ -27,9 +27,9 @@ export const Index = (): JSX.Element => (
     >
       <div className='col-span-3'>
         <h1 className='text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl'>
-          <span className='text-byu block'>BYU</span>
-          <span className='text-byuh block'>BYUH</span>
-          <span className='text-byui block'>BYUI</span>
+          <span className='block text-byu'>BYU</span>
+          <span className='block text-byuh'>BYUH</span>
+          <span className='block text-byui'>BYUI</span>
           <div className='h-32 overflow-hidden md:h-48'>
             <TypingEffect
               style={{ '--caret-width': '5px' }}
