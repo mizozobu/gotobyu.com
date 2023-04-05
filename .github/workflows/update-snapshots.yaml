@@ -63,7 +63,7 @@ jobs:
           git push -u origin HEAD
       - name: Post a success comment to PR
         if: ${{ success() }}
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v3
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
@@ -72,7 +72,7 @@ jobs:
             See the diff at https://github.com/mizozobu/gotobyu.com/compare/${{ steps.get-target-branch.outputs.branch }}...bot/${{ steps.get-target-branch.outputs.branch }} and manually merge changes.
       - name: Post a failure comment to PR
         if: ${{ failure() }}
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v3
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
