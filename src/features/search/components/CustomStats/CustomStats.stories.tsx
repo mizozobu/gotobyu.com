@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { CustomStats } from './CustomStats';
 
@@ -6,9 +6,9 @@ export default {
   title: 'features/search/CustomStats',
   component: CustomStats,
   argTypes: {},
-} as ComponentMeta<typeof CustomStats>;
+} as Meta<typeof CustomStats>;
 
-const Template: ComponentStory<typeof CustomStats> = (args) => (
+const Template: StoryFn<typeof CustomStats> = (args) => (
   <CustomStats {...args} />
 );
 

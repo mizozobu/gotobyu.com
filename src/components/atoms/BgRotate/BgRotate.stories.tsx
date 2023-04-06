@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { BgRotate } from './BgRotate';
 
@@ -6,11 +6,9 @@ export default {
   title: 'components/atoms/BgRotate',
   component: BgRotate,
   argTypes: {},
-} as ComponentMeta<typeof BgRotate>;
+} as Meta<typeof BgRotate>;
 
-const Template: ComponentStory<typeof BgRotate> = (args) => (
-  <BgRotate {...args} />
-);
+const Template: StoryFn<typeof BgRotate> = (args) => <BgRotate {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {

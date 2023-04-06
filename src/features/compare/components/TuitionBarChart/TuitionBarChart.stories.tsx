@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { RecoilRoot } from 'recoil';
 import { TuitionBarChart } from './TuitionBarChart';
@@ -14,9 +14,9 @@ export default {
       </RecoilRoot>
     ),
   ],
-} as ComponentMeta<typeof TuitionBarChart>;
+} as Meta<typeof TuitionBarChart>;
 
-const Template: ComponentStory<typeof TuitionBarChart> = (args) => (
+const Template: StoryFn<typeof TuitionBarChart> = (args) => (
   <TuitionBarChart {...args} />
 );
 

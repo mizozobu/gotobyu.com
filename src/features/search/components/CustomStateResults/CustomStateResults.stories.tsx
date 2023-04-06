@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { MockInstantSearch } from '@/test/instantsearch';
 import { CustomStateResults } from './CustomStateResults';
@@ -7,9 +7,9 @@ export default {
   title: 'features/search/CustomStateResults',
   component: CustomStateResults,
   argTypes: {},
-} as ComponentMeta<typeof CustomStateResults>;
+} as Meta<typeof CustomStateResults>;
 
-const Template: ComponentStory<typeof CustomStateResults> = (args) => (
+const Template: StoryFn<typeof CustomStateResults> = (args) => (
   <MockInstantSearch>
     <CustomStateResults {...args} />
   </MockInstantSearch>

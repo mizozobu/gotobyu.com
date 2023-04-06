@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { SchoolTh } from './SchoolTh';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/molecules/SchoolTh',
   component: SchoolTh.BYU,
   argTypes: {},
-} as ComponentMeta<() => JSX.Element>;
+} as Meta<() => JSX.Element>;
 
-const Template: ComponentStory<() => JSX.Element> = () => (
+const Template: StoryFn<() => JSX.Element> = () => (
   <table>
     <thead>
       <tr>

@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { MockInstantSearch } from '@/test/instantsearch';
 import { HitItem } from './HitItem';
@@ -7,10 +7,10 @@ export default {
   title: 'features/search/HitItem',
   component: HitItem,
   argTypes: {},
-} as ComponentMeta<typeof HitItem>;
+} as Meta<typeof HitItem>;
 
 // eslint-disable-next-line react/prop-types
-const Template: ComponentStory<typeof HitItem> = ({ hit, ...args }) => (
+const Template: StoryFn<typeof HitItem> = ({ hit, ...args }) => (
   <MockInstantSearch>
     <HitItem {...args} hit={{ ...hit, permalink: window.location.href }} />
   </MockInstantSearch>

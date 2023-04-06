@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { RippleButton } from './RippleButton';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/atoms/RippleButton',
   component: RippleButton,
   argTypes: {},
-} as ComponentMeta<typeof RippleButton>;
+} as Meta<typeof RippleButton>;
 
-const Template: ComponentStory<typeof RippleButton> = (args) => (
+const Template: StoryFn<typeof RippleButton> = (args) => (
   <RippleButton {...args} />
 );
 

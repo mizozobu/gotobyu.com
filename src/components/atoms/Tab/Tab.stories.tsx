@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { Tab } from './Tab';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/atoms/Tab',
   component: Tab,
   argTypes: {},
-} as ComponentMeta<typeof Tab>;
+} as Meta<typeof Tab>;
 
-const Template: ComponentStory<typeof Tab> = () => (
+const Template: StoryFn<typeof Tab> = () => (
   <Tab.Group>
     <Tab.List className='flex'>
       <Tab>Tab</Tab>

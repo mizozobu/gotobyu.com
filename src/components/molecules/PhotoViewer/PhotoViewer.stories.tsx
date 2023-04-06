@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import skiResortImage from '@/features/byu/assets/ski-resort.jpg';
 import { PhotoViewer } from './PhotoViewer';
@@ -7,9 +7,9 @@ export default {
   title: 'components/molecules/PhotoViewer',
   component: PhotoViewer,
   argTypes: {},
-} as ComponentMeta<typeof PhotoViewer>;
+} as Meta<typeof PhotoViewer>;
 
-const Template: ComponentStory<typeof PhotoViewer> = (args) => (
+const Template: StoryFn<typeof PhotoViewer> = (args) => (
   <div className='w-64'>
     <PhotoViewer {...args} />
   </div>

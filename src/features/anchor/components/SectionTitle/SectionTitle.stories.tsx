@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React, { type ComponentPropsWithoutRef } from 'react';
 import { RecoilRoot } from 'recoil';
 import { SectionTitle } from './SectionTitle';
@@ -14,9 +14,9 @@ export default {
       </RecoilRoot>
     ),
   ],
-} as ComponentMeta<typeof SectionTitle>;
+} as Meta<typeof SectionTitle>;
 
-const Template: ComponentStory<typeof SectionTitle> = (args) => (
+const Template: StoryFn<typeof SectionTitle> = (args) => (
   <SectionTitle {...args} />
 );
 

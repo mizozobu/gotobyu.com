@@ -1,10 +1,10 @@
 /* eslint-disable max-classes-per-file, jest/require-hook */
 import { jest } from '@jest/globals';
-import { setGlobalConfig } from '@storybook/testing-react';
+import { setProjectAnnotations } from '@storybook/testing-react';
 import * as globalStorybookConfig from './.storybook/preview';
 import '@testing-library/jest-dom';
 
-setGlobalConfig(globalStorybookConfig);
+setProjectAnnotations(globalStorybookConfig);
 
 global.IntersectionObserver = class MockIntersectionObserver
   implements IntersectionObserver

@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { BgRotateCard } from './BgRotateCard';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/molecules/BgRotateCard',
   component: BgRotateCard,
   argTypes: {},
-} as ComponentMeta<typeof BgRotateCard>;
+} as Meta<typeof BgRotateCard>;
 
-const Template: ComponentStory<typeof BgRotateCard> = (args) => (
+const Template: StoryFn<typeof BgRotateCard> = (args) => (
   <div className='p-16'>
     <BgRotateCard {...args} />
   </div>

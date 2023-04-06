@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { Pane } from './Pane';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/atoms/Pane',
   component: Pane,
   argTypes: {},
-} as ComponentMeta<typeof Pane>;
+} as Meta<typeof Pane>;
 
-const Template: ComponentStory<typeof Pane> = (args) => <Pane {...args} />;
+const Template: StoryFn<typeof Pane> = (args) => <Pane {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {

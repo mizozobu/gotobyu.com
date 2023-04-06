@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { Strong } from './Strong';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/atoms/Strong',
   component: Strong,
   argTypes: {},
-} as ComponentMeta<typeof Strong>;
+} as Meta<typeof Strong>;
 
-const Template: ComponentStory<typeof Strong> = (args) => <Strong {...args} />;
+const Template: StoryFn<typeof Strong> = (args) => <Strong {...args} />;
 
 export const SingleLine = Template.bind({});
 SingleLine.args = {

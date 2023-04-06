@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { CustomSearchBox } from './CustomSearchBox';
 
@@ -6,9 +6,9 @@ export default {
   title: 'features/search/CustomSearchBox',
   component: CustomSearchBox,
   argTypes: { refine: { action: 'refine' } },
-} as ComponentMeta<typeof CustomSearchBox>;
+} as Meta<typeof CustomSearchBox>;
 
-const Template: ComponentStory<typeof CustomSearchBox> = (args) => (
+const Template: StoryFn<typeof CustomSearchBox> = (args) => (
   <CustomSearchBox {...args} />
 );
 

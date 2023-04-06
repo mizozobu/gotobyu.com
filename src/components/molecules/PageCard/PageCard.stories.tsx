@@ -1,5 +1,5 @@
 import { ScaleIcon } from '@heroicons/react/24/outline';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { PageCard } from './PageCard';
 
@@ -7,11 +7,9 @@ export default {
   title: 'components/molecules/PageCard',
   component: PageCard,
   argTypes: {},
-} as ComponentMeta<typeof PageCard>;
+} as Meta<typeof PageCard>;
 
-const Template: ComponentStory<typeof PageCard> = (args) => (
-  <PageCard {...args} />
-);
+const Template: StoryFn<typeof PageCard> = (args) => <PageCard {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {

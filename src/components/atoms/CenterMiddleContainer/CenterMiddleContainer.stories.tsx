@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { CenterMiddleContainer } from './CenterMiddleContainer';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/atoms/CenterMiddleContainer',
   component: CenterMiddleContainer,
   argTypes: {},
-} as ComponentMeta<typeof CenterMiddleContainer>;
+} as Meta<typeof CenterMiddleContainer>;
 
-const Template: ComponentStory<typeof CenterMiddleContainer> = (args) => (
+const Template: StoryFn<typeof CenterMiddleContainer> = (args) => (
   <CenterMiddleContainer {...args} />
 );
 

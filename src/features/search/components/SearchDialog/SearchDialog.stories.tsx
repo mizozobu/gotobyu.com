@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { SearchDialog } from './SearchDialog';
 
@@ -6,9 +6,9 @@ export default {
   title: 'features/search/SearchDialog',
   component: SearchDialog,
   argTypes: {},
-} as ComponentMeta<typeof SearchDialog>;
+} as Meta<typeof SearchDialog>;
 
-const Template: ComponentStory<typeof SearchDialog> = (args) => (
+const Template: StoryFn<typeof SearchDialog> = (args) => (
   <SearchDialog {...args} />
 );
 
