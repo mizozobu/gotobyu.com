@@ -1,17 +1,19 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Pane } from './Pane';
 
-export default {
+const meta = {
   title: 'components/atoms/Pane',
   component: Pane,
   argTypes: {},
-} as Meta<typeof Pane>;
+} satisfies Meta<typeof Pane>;
 
-const Template: StoryFn<typeof Pane> = (args) => <Pane {...args} />;
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  className: 'flex items-center bg-indigo-200',
-  children: 'Content',
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    className: 'flex items-center bg-indigo-200',
+    children: 'Content',
+  },
 };

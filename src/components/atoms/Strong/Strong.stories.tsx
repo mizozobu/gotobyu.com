@@ -1,24 +1,27 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Strong } from './Strong';
 
-export default {
+const meta = {
   title: 'components/atoms/Strong',
   component: Strong,
   argTypes: {},
-} as Meta<typeof Strong>;
+} satisfies Meta<typeof Strong>;
 
-const Template: StoryFn<typeof Strong> = (args) => <Strong {...args} />;
+export default meta;
 
-export const SingleLine = Template.bind({});
-SingleLine.args = {
-  children: 'Strong',
+type Story = StoryObj<typeof meta>;
+
+export const SingleLine: Story = {
+  args: {
+    children: 'Strong',
+  },
 };
 
-export const MultiLine = Template.bind({});
-MultiLine.args = {
-  children:
-    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe consequatur in, velit, quisquam est sequi obcaecati quaerat, quis sapiente earum quo accusamus? Non placeat dolores dolorem est ex nesciunt laborum.'.repeat(
-      3,
-    ),
+export const MultiLine: Story = {
+  args: {
+    children:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe consequatur in, velit, quisquam est sequi obcaecati quaerat, quis sapiente earum quo accusamus? Non placeat dolores dolorem est ex nesciunt laborum.'.repeat(
+        3,
+      ),
+  },
 };

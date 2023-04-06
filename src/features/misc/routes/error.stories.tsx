@@ -1,14 +1,16 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Error } from './error';
 
-export default {
+const meta = {
   title: 'features/misc/Error',
   component: Error,
   argTypes: {},
-} as Meta<typeof Error>;
+} satisfies Meta<typeof Error>;
 
-const Template: StoryFn<typeof Error> = (args) => <Error {...args} />;
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {};
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {},
+};

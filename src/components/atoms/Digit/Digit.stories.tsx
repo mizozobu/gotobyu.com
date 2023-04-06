@@ -1,37 +1,43 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Digit } from './Digit';
 
-export default {
+const meta = {
   title: 'components/atoms/Digit',
   component: Digit,
   argTypes: {},
-} as Meta<typeof Digit>;
+} satisfies Meta<typeof Digit>;
 
-const Template: StoryFn<typeof Digit> = (args) => <Digit {...args} />;
+export default meta;
 
-export const NoComma = Template.bind({});
-NoComma.args = {
-  children: 123,
+type Story = StoryObj<typeof meta>;
+
+export const NoComma: Story = {
+  args: {
+    children: 123,
+  },
 };
 
-export const Comma = Template.bind({});
-Comma.args = {
-  children: 1234,
+export const Comma: Story = {
+  args: {
+    children: 1234,
+  },
 };
 
-export const RoundUp = Template.bind({});
-RoundUp.args = {
-  children: 999.5,
+export const RoundUp: Story = {
+  args: {
+    children: 999.5,
+  },
 };
 
-export const RoundDown = Template.bind({});
-RoundDown.args = {
-  children: 1000.4,
+export const RoundDown: Story = {
+  args: {
+    children: 1000.4,
+  },
 };
 
-export const RoundTo2DecimalPlaces = Template.bind({});
-RoundTo2DecimalPlaces.args = {
-  children: 1000.1234,
-  decimals: 2,
+export const RoundTo2DecimalPlaces: Story = {
+  args: {
+    children: 1000.1234,
+    decimals: 2,
+  },
 };

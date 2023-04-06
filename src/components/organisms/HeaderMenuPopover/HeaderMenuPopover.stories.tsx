@@ -1,16 +1,19 @@
 import { CommandLineIcon } from '@heroicons/react/24/outline';
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { HeaderMenuPopover } from './HeaderMenuPopover';
 
-export default {
+const meta = {
   title: 'components/organisms/HeaderMenuPopover',
   component: HeaderMenuPopover,
   argTypes: {},
   parameters: {
     layout: 'centered',
   },
-} as Meta<typeof HeaderMenuPopover>;
+} satisfies Meta<typeof HeaderMenuPopover>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof HeaderMenuPopover> = (args) => (
   <div className='w-24'>
@@ -18,23 +21,27 @@ const Template: StoryFn<typeof HeaderMenuPopover> = (args) => (
   </div>
 );
 
-export const WithIcon = Template.bind({});
-WithIcon.args = {
-  label: 'Button',
-  icon: CommandLineIcon,
-  children: ({ close }) => (
-    <button type='button' onClick={close}>
-      Link
-    </button>
-  ),
+export const WithIcon: Story = {
+  render: Template,
+  args: {
+    label: 'Button',
+    icon: CommandLineIcon,
+    children: ({ close }) => (
+      <button type='button' onClick={close}>
+        Link
+      </button>
+    ),
+  },
 };
 
-export const WithoutIcon = Template.bind({});
-WithoutIcon.args = {
-  label: 'Button',
-  children: ({ close }) => (
-    <button type='button' onClick={close}>
-      Link
-    </button>
-  ),
+export const WithoutIcon: Story = {
+  render: Template,
+  args: {
+    label: 'Button',
+    children: ({ close }) => (
+      <button type='button' onClick={close}>
+        Link
+      </button>
+    ),
+  },
 };

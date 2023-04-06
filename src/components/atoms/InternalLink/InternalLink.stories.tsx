@@ -1,19 +1,19 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { InternalLink } from './InternalLink';
 
-export default {
+const meta = {
   title: 'components/atoms/InternalLink',
   component: InternalLink,
   argTypes: {},
-} as Meta<typeof InternalLink>;
+} satisfies Meta<typeof InternalLink>;
 
-const Template: StoryFn<typeof InternalLink> = (args) => (
-  <InternalLink {...args} />
-);
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  href: '/',
-  children: 'Link',
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    href: '/',
+    children: 'Link',
+  },
 };

@@ -1,12 +1,15 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { CirculatingCircles } from './CirculatingCircles';
 
-export default {
+const meta = {
   title: 'components/atoms/CirculatingCircles',
   component: CirculatingCircles,
   argTypes: {},
-} as Meta<typeof CirculatingCircles>;
+} satisfies Meta<typeof CirculatingCircles>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof CirculatingCircles> = (args) => (
   <div className='w-48'>
@@ -14,10 +17,14 @@ const Template: StoryFn<typeof CirculatingCircles> = (args) => (
   </div>
 );
 
-export const Static = Template.bind({});
-Static.args = {};
+export const Static: Story = {
+  render: Template,
+  args: {},
+};
 
-export const Animated = Template.bind({});
-Animated.args = {
-  animated: true,
+export const Animated: Story = {
+  render: Template,
+  args: {
+    animated: true,
+  },
 };

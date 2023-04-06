@@ -1,26 +1,31 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { SchoolTab } from './SchoolTab';
 
-export default {
+const meta = {
   title: 'components/organisms/SchoolTab',
   component: SchoolTab,
   argTypes: {},
-} as Meta<typeof SchoolTab>;
+} satisfies Meta<typeof SchoolTab>;
 
-const Template: StoryFn<typeof SchoolTab> = () => (
-  <SchoolTab>
-    <SchoolTab.Panel key='byu' paneFor='byu'>
-      BYU
-    </SchoolTab.Panel>
-    <SchoolTab.Panel key='byuh' paneFor='byuh'>
-      BYUH
-    </SchoolTab.Panel>
-    <SchoolTab.Panel key='byui' paneFor='byui'>
-      BYUI
-    </SchoolTab.Panel>
-  </SchoolTab>
-);
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {};
+type Story = StoryObj<typeof meta>;
+
+const Template: StoryFn<typeof SchoolTab> = (args) => <SchoolTab {...args} />;
+
+export const Example: Story = {
+  render: Template,
+  args: {
+    children: [
+      <SchoolTab.Panel key='byu' paneFor='byu'>
+        BYU
+      </SchoolTab.Panel>,
+      <SchoolTab.Panel key='byuh' paneFor='byuh'>
+        BYUH
+      </SchoolTab.Panel>,
+      <SchoolTab.Panel key='byui' paneFor='byui'>
+        BYUI
+      </SchoolTab.Panel>,
+    ],
+  },
+};

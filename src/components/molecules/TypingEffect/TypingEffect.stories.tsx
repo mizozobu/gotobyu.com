@@ -1,21 +1,21 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { TypingEffect } from './TypingEffect';
 
-export default {
+const meta = {
   title: 'components/molecules/TypingEffect',
   component: TypingEffect,
   argTypes: {},
-} as Meta<typeof TypingEffect>;
+} satisfies Meta<typeof TypingEffect>;
 
-const Template: StoryFn<typeof TypingEffect> = (args) => (
-  <TypingEffect {...args} />
-);
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  children: ['first string', 'second string', 'third string'],
-  typeSpeed: 50,
-  waitBeforeType: 2000,
-  waitAfterType: 2000,
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    children: ['first string', 'second string', 'third string'],
+    typeSpeed: 50,
+    waitBeforeType: 2000,
+    waitAfterType: 2000,
+  },
 };

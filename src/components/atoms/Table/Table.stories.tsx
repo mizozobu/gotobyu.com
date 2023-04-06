@@ -1,47 +1,49 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { TableCaption } from '@/components/atoms/TableCaption';
 import { Table } from './Table';
 
-export default {
+const meta = {
   title: 'components/atoms/Table',
   component: Table,
   argTypes: {},
-} as Meta<typeof Table>;
+} satisfies Meta<typeof Table>;
 
-const Template: StoryFn<typeof Table> = (args) => <Table {...args} />;
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  className: 'shadow-md p-4',
-  style: {
-    '--thick-border-color': 'indigo',
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    className: 'shadow-md p-4',
+    style: {
+      '--thick-border-color': 'indigo',
+    },
+    children: (
+      <>
+        <TableCaption>Table Example</TableCaption>
+        <thead>
+          <tr>
+            <th scope='col'>Month</th>
+            <th scope='col'>Savings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope='row'>January</th>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <th scope='row'>February</th>
+            <td>$80</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope='row'>Sum</th>
+            <td>$180</td>
+          </tr>
+        </tfoot>
+      </>
+    ),
   },
-  children: (
-    <>
-      <TableCaption>Table Example</TableCaption>
-      <thead>
-        <tr>
-          <th scope='col'>Month</th>
-          <th scope='col'>Savings</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope='row'>January</th>
-          <td>$100</td>
-        </tr>
-        <tr>
-          <th scope='row'>February</th>
-          <td>$80</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <th scope='row'>Sum</th>
-          <td>$180</td>
-        </tr>
-      </tfoot>
-    </>
-  ),
 };

@@ -1,12 +1,15 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { TableCaption } from './TableCaption';
 
-export default {
+const meta = {
   title: 'components/atoms/TableCaption',
   component: TableCaption,
   argTypes: {},
-} as Meta<typeof TableCaption>;
+} satisfies Meta<typeof TableCaption>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof TableCaption> = (args) => (
   <table>
@@ -14,13 +17,17 @@ const Template: StoryFn<typeof TableCaption> = (args) => (
   </table>
 );
 
-export const WithoutDescription = Template.bind({});
-WithoutDescription.args = {
-  children: 'table',
+export const WithoutDescription: Story = {
+  render: Template,
+  args: {
+    children: 'table',
+  },
 };
 
-export const WithDescription = Template.bind({});
-WithDescription.args = {
-  description: 'table description',
-  children: 'table',
+export const WithDescription: Story = {
+  render: Template,
+  args: {
+    description: 'table description',
+    children: 'table',
+  },
 };

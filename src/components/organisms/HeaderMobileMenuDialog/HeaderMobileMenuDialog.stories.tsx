@@ -1,18 +1,18 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { HeaderMobileMenuDialog } from './HeaderMobileMenuDialog';
 
-export default {
+const meta = {
   title: 'components/organisms/HeaderMobileMenuDialog',
   component: HeaderMobileMenuDialog,
   argTypes: {},
-} as Meta<typeof HeaderMobileMenuDialog>;
+} satisfies Meta<typeof HeaderMobileMenuDialog>;
 
-const Template: StoryFn<typeof HeaderMobileMenuDialog> = (args) => (
-  <HeaderMobileMenuDialog {...args} />
-);
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  isOpen: true,
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    isOpen: true,
+  },
 };

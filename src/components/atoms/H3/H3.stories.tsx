@@ -1,16 +1,18 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { H3 } from './H3';
 
-export default {
+const meta = {
   title: 'components/atoms/H3',
   component: H3,
   argTypes: {},
-} as Meta<typeof H3>;
+} satisfies Meta<typeof H3>;
 
-const Template: StoryFn<typeof H3> = (args) => <H3 {...args} />;
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  children: 'Heading',
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    children: 'Heading',
+  },
 };

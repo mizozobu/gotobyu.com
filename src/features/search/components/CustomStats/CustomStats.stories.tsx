@@ -1,18 +1,21 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { CustomStats } from './CustomStats';
 
-export default {
+const meta = {
   title: 'features/search/CustomStats',
   component: CustomStats,
   argTypes: {},
-} as Meta<typeof CustomStats>;
+} satisfies Meta<typeof CustomStats>;
 
-const Template: StoryFn<typeof CustomStats> = (args) => (
-  <CustomStats {...args} />
-);
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  nbHits: 0,
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    nbHits: 0,
+    nbSortedHits: 0,
+    processingTimeMS: 0,
+    areHitsSorted: true,
+  },
 };

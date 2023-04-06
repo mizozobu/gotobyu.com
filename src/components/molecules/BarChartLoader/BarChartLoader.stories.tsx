@@ -1,12 +1,15 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { BarChartLoader } from './BarChartLoader';
 
-export default {
+const meta = {
   title: 'components/molecules/BarChartLoader',
   component: BarChartLoader,
   argTypes: {},
-} as Meta<typeof BarChartLoader>;
+} satisfies Meta<typeof BarChartLoader>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof BarChartLoader> = (args) => (
   <div className='h-64 w-96'>
@@ -14,7 +17,9 @@ const Template: StoryFn<typeof BarChartLoader> = (args) => (
   </div>
 );
 
-export const Example = Template.bind({});
-Example.args = {
-  barCount: 9,
+export const Example: Story = {
+  render: Template,
+  args: {
+    barCount: 9,
+  },
 };

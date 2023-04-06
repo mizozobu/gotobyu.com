@@ -1,15 +1,20 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { MDX } from '@/features/mdx';
 import About from './about.mdx';
 
-export default {
+const meta = {
   title: 'features/misc/About',
   component: About,
   argTypes: {},
-} as Meta<typeof About>;
+} satisfies Meta<typeof About>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof About> = () => <About components={MDX} />;
 
-export const Example = Template.bind({});
-Example.args = {};
+export const Example: Story = {
+  render: Template,
+  args: {},
+};
