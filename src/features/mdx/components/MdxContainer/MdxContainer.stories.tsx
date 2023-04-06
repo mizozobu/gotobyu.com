@@ -1,18 +1,18 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { MdxContainer } from './MdxContainer';
 
-export default {
+const meta = {
   title: 'features/mdx/MdxContainer',
   component: MdxContainer,
   argTypes: {},
-} as Meta<typeof MdxContainer>;
+} satisfies Meta<typeof MdxContainer>;
 
-const Template: StoryFn<typeof MdxContainer> = (args) => (
-  <MdxContainer {...args} />
-);
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  children: 'Content',
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    children: 'Content',
+  },
 };

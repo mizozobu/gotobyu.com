@@ -1,12 +1,15 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { ImageLoader } from './ImageLoader';
 
-export default {
+const meta = {
   title: 'components/molecules/ImageLoader',
   component: ImageLoader,
   argTypes: {},
-} as Meta<typeof ImageLoader>;
+} satisfies Meta<typeof ImageLoader>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof ImageLoader> = (args) => (
   <div className='h-40 w-64'>
@@ -14,5 +17,7 @@ const Template: StoryFn<typeof ImageLoader> = (args) => (
   </div>
 );
 
-export const Example = Template.bind({});
-Example.args = {};
+export const Example: Story = {
+  render: Template,
+  args: {},
+};

@@ -1,17 +1,19 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Link } from './Link';
 
-export default {
+const meta = {
   title: 'components/atoms/Link',
   component: Link,
   argTypes: {},
-} as Meta<typeof Link>;
+} satisfies Meta<typeof Link>;
 
-const Template: StoryFn<typeof Link> = (args) => <Link {...args} />;
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  href: '/',
-  children: 'Link',
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    href: '/',
+    children: 'Link',
+  },
 };

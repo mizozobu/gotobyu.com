@@ -1,12 +1,15 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { PieChartLoader } from './PieChartLoader';
 
-export default {
+const meta = {
   title: 'components/molecules/PieChartLoader',
   component: PieChartLoader,
   argTypes: {},
-} as Meta<typeof PieChartLoader>;
+} satisfies Meta<typeof PieChartLoader>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof PieChartLoader> = (args) => (
   <div className='h-64 w-96'>
@@ -14,5 +17,7 @@ const Template: StoryFn<typeof PieChartLoader> = (args) => (
   </div>
 );
 
-export const Example = Template.bind({});
-Example.args = {};
+export const Example: Story = {
+  render: Template,
+  args: {},
+};

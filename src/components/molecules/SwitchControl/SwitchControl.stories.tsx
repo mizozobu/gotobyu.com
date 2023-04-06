@@ -1,29 +1,30 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { SwitchControl } from './SwitchControl';
 
-export default {
+const meta = {
   title: 'components/molecules/SwitchControl',
   component: SwitchControl,
   argTypes: {},
-} as Meta<typeof SwitchControl>;
+} satisfies Meta<typeof SwitchControl>;
 
-const Template: StoryFn<typeof SwitchControl> = (args) => (
-  <SwitchControl {...args} />
-);
+export default meta;
 
-export const Checked = Template.bind({});
-Checked.args = {
-  className: 'shadow-md',
-  label: 'Label',
-  sr: 'Switch',
-  checked: true,
+type Story = StoryObj<typeof meta>;
+
+export const Checked: Story = {
+  args: {
+    className: 'shadow-md',
+    label: 'Label',
+    sr: 'Switch',
+    checked: true,
+  },
 };
 
-export const Unchecked = Template.bind({});
-Unchecked.args = {
-  className: 'shadow-md',
-  label: 'Label',
-  sr: 'Switch',
-  checked: false,
+export const Unchecked: Story = {
+  args: {
+    className: 'shadow-md',
+    label: 'Label',
+    sr: 'Switch',
+    checked: false,
+  },
 };

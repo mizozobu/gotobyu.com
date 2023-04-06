@@ -1,22 +1,22 @@
 import { CommandLineIcon } from '@heroicons/react/24/outline';
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { HeaderMenuLink } from './HeaderMenuLink';
 
-export default {
+const meta = {
   title: 'components/molecules/HeaderMenuLink',
   component: HeaderMenuLink,
   argTypes: {},
-} as Meta<typeof HeaderMenuLink>;
+} satisfies Meta<typeof HeaderMenuLink>;
 
-const Template: StoryFn<typeof HeaderMenuLink> = (args) => (
-  <HeaderMenuLink {...args} />
-);
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  name: 'link',
-  detail: 'detail for link',
-  href: '/link',
-  icon: CommandLineIcon,
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    name: 'link',
+    detail: 'detail for link',
+    href: '/link',
+    icon: CommandLineIcon,
+  },
 };

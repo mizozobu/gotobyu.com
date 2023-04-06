@@ -1,18 +1,18 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { CenterMiddleContainer } from './CenterMiddleContainer';
 
-export default {
+const meta = {
   title: 'components/atoms/CenterMiddleContainer',
   component: CenterMiddleContainer,
   argTypes: {},
-} as Meta<typeof CenterMiddleContainer>;
+} satisfies Meta<typeof CenterMiddleContainer>;
 
-const Template: StoryFn<typeof CenterMiddleContainer> = (args) => (
-  <CenterMiddleContainer {...args} />
-);
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  children: 'Content',
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    children: 'Content',
+  },
 };

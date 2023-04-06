@@ -1,19 +1,19 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ExternalLink } from './ExternalLink';
 
-export default {
+const meta = {
   title: 'components/atoms/ExternalLink',
   component: ExternalLink,
   argTypes: {},
-} as Meta<typeof ExternalLink>;
+} satisfies Meta<typeof ExternalLink>;
 
-const Template: StoryFn<typeof ExternalLink> = (args) => (
-  <ExternalLink {...args} />
-);
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  href: 'https://example.com',
-  children: 'Link',
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    href: 'https://example.com',
+    children: 'Link',
+  },
 };

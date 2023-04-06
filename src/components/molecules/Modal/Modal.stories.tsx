@@ -1,37 +1,40 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Modal } from './Modal';
 
-export default {
+const meta = {
   title: 'components/molecules/Modal',
   component: Modal,
   argTypes: {},
-} as Meta<typeof Modal>;
+} satisfies Meta<typeof Modal>;
 
-const Template: StoryFn<typeof Modal> = (args) => <Modal {...args} />;
+export default meta;
 
-export const Open = Template.bind({});
-Open.args = {
-  isOpen: true,
-  children: (
-    <button
-      type='button'
-      className='relative mx-auto flex h-64 w-80 items-center justify-center rounded bg-white'
-    >
-      button
-    </button>
-  ),
+type Story = StoryObj<typeof meta>;
+
+export const Open: Story = {
+  args: {
+    isOpen: true,
+    children: (
+      <button
+        type='button'
+        className='relative mx-auto flex h-64 w-80 items-center justify-center rounded bg-white'
+      >
+        button
+      </button>
+    ),
+  },
 };
 
-export const Closed = Template.bind({});
-Closed.args = {
-  isOpen: false,
-  children: (
-    <button
-      type='button'
-      className='relative mx-auto flex h-64 w-80 items-center justify-center rounded bg-white'
-    >
-      button
-    </button>
-  ),
+export const Closed: Story = {
+  args: {
+    isOpen: false,
+    children: (
+      <button
+        type='button'
+        className='relative mx-auto flex h-64 w-80 items-center justify-center rounded bg-white'
+      >
+        button
+      </button>
+    ),
+  },
 };

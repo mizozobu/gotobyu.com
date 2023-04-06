@@ -1,14 +1,19 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { IncomeBarChart } from './IncomeBarChart';
 
-export default {
+const meta = {
   title: 'features/career/IncomeBarChart',
   component: IncomeBarChart,
   argTypes: {},
-} as Meta<typeof IncomeBarChart>;
+} satisfies Meta<typeof IncomeBarChart>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof IncomeBarChart> = () => <IncomeBarChart />;
 
-export const Example = Template.bind({});
-Example.args = {};
+export const Example: Story = {
+  render: Template,
+  args: {},
+};

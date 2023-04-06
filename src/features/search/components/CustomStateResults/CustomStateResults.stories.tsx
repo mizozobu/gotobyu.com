@@ -1,13 +1,16 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { MockInstantSearch } from '@/test/instantsearch';
 import { CustomStateResults } from './CustomStateResults';
 
-export default {
+const meta = {
   title: 'features/search/CustomStateResults',
   component: CustomStateResults,
   argTypes: {},
-} as Meta<typeof CustomStateResults>;
+} satisfies Meta<typeof CustomStateResults>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof CustomStateResults> = (args) => (
   <MockInstantSearch>
@@ -15,20 +18,21 @@ const Template: StoryFn<typeof CustomStateResults> = (args) => (
   </MockInstantSearch>
 );
 
-export const Example = Template.bind({});
-Example.args = {
-  searchState: undefined,
-  searchResults: undefined,
-  allSearchResults: undefined,
-  error: {
-    stack: '',
-    name: '',
-    message: '',
-    debugData: [],
-    statusCode: 403,
-    status: 403,
+export const Example: Story = {
+  render: Template,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  args: {
+    error: {
+      stack: '',
+      name: '',
+      message: '',
+      debugData: [],
+      statusCode: 403,
+      status: 403,
+    },
+    searching: false,
+    searchingForFacetValues: false,
+    isSearchStalled: false,
   },
-  searching: false,
-  searchingForFacetValues: false,
-  isSearchStalled: false,
 };

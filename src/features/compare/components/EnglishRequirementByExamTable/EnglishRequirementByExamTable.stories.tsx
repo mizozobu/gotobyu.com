@@ -1,20 +1,20 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ENGLISH_REQUIREMENT_BY_EXAM } from '@/data/english-requirement';
 import { EnglishRequirementByExamTable } from './EnglishRequirementByExamTable';
 
-export default {
+const meta = {
   title: 'features/compare/EnglishRequirementByExamTable',
   component: EnglishRequirementByExamTable,
   argTypes: {},
-} as Meta<typeof EnglishRequirementByExamTable>;
+} satisfies Meta<typeof EnglishRequirementByExamTable>;
 
-const Template: StoryFn<typeof EnglishRequirementByExamTable> = (args) => (
-  <EnglishRequirementByExamTable {...args} />
-);
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  exam: 'TOEFL',
-  data: ENGLISH_REQUIREMENT_BY_EXAM.TOEFL,
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    exam: 'TOEFL',
+    data: ENGLISH_REQUIREMENT_BY_EXAM.TOEFL,
+  },
 };

@@ -1,12 +1,15 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { PartialCircle } from './PartialCircle';
 
-export default {
+const meta = {
   title: 'components/atoms/PartialCircle',
   component: PartialCircle,
   argTypes: {},
-} as Meta<typeof PartialCircle>;
+} satisfies Meta<typeof PartialCircle>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof PartialCircle> = (args) => {
   const { r } = args;
@@ -19,8 +22,10 @@ const Template: StoryFn<typeof PartialCircle> = (args) => {
   );
 };
 
-export const Example = Template.bind({});
-Example.args = {
-  r: 50,
-  angle: 240,
+export const Example: Story = {
+  render: Template,
+  args: {
+    r: 50,
+    angle: 240,
+  },
 };

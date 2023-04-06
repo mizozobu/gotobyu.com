@@ -1,9 +1,8 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { RecoilRoot } from 'recoil';
 import { TuitionBarChart } from './TuitionBarChart';
 
-export default {
+const meta = {
   title: 'features/compare/TuitionBarChart',
   component: TuitionBarChart,
   argTypes: {},
@@ -14,11 +13,12 @@ export default {
       </RecoilRoot>
     ),
   ],
-} as Meta<typeof TuitionBarChart>;
+} satisfies Meta<typeof TuitionBarChart>;
 
-const Template: StoryFn<typeof TuitionBarChart> = (args) => (
-  <TuitionBarChart {...args} />
-);
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {};
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {},
+};

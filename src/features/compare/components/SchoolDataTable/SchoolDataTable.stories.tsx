@@ -1,14 +1,19 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { SchoolDataTable } from './SchoolDataTable';
 
-export default {
+const meta = {
   title: 'features/compare/SchoolDataTable',
   component: SchoolDataTable,
   argTypes: {},
-} as Meta<typeof SchoolDataTable>;
+} satisfies Meta<typeof SchoolDataTable>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof SchoolDataTable> = () => <SchoolDataTable />;
 
-export const Example = Template.bind({});
-Example.args = {};
+export const Example: Story = {
+  render: Template,
+  args: {},
+};

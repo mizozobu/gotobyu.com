@@ -1,12 +1,15 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { SchoolTh } from './SchoolTh';
 
-export default {
+const meta = {
   title: 'components/molecules/SchoolTh',
   component: SchoolTh.BYU,
   argTypes: {},
-} as Meta<() => JSX.Element>;
+} satisfies Meta<() => JSX.Element>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<() => JSX.Element> = () => (
   <table>
@@ -41,5 +44,7 @@ const Template: StoryFn<() => JSX.Element> = () => (
   </table>
 );
 
-export const Example = Template.bind({});
-Example.args = {};
+export const Example: Story = {
+  render: Template,
+  args: {},
+};

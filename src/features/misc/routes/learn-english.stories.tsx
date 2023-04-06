@@ -1,17 +1,22 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { MDX } from '@/features/mdx';
 import LeranEnglish from './learn-english.mdx';
 
-export default {
+const meta = {
   title: 'features/misc/LeranEnglish',
   component: LeranEnglish,
   argTypes: {},
-} as Meta<typeof LeranEnglish>;
+} satisfies Meta<typeof LeranEnglish>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof LeranEnglish> = () => (
   <LeranEnglish components={MDX} />
 );
 
-export const Example = Template.bind({});
-Example.args = {};
+export const Example: Story = {
+  render: Template,
+  args: {},
+};

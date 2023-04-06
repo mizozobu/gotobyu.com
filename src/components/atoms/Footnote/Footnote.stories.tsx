@@ -1,16 +1,18 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Footnote } from './Footnote';
 
-export default {
+const meta = {
   title: 'components/atoms/Footnote',
   component: Footnote,
   argTypes: {},
-} as Meta<typeof Footnote>;
+} satisfies Meta<typeof Footnote>;
 
-const Template: StoryFn<typeof Footnote> = (args) => <Footnote {...args} />;
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {
-  children: 'item',
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {
+    children: 'item',
+  },
 };

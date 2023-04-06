@@ -1,9 +1,8 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { RecoilRoot } from 'recoil';
 import { Header } from './Header';
 
-export default {
+const meta = {
   title: 'components/organisms/Header',
   component: Header,
   argTypes: {},
@@ -14,9 +13,15 @@ export default {
       </RecoilRoot>
     ),
   ],
-} as Meta<typeof Header>;
+} satisfies Meta<typeof Header>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof Header> = () => <Header />;
 
-export const Example = Template.bind({});
-Example.args = {};
+export const Example: Story = {
+  render: Template,
+  args: {},
+};

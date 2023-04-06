@@ -1,16 +1,16 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { FacebookIcon } from './FacebookIcon';
 
-export default {
+const meta = {
   title: 'components/atoms/FacebookIcon',
   component: FacebookIcon,
   argTypes: {},
-} as Meta<typeof FacebookIcon>;
+} satisfies Meta<typeof FacebookIcon>;
 
-const Template: StoryFn<typeof FacebookIcon> = (args) => (
-  <FacebookIcon {...args} />
-);
+export default meta;
 
-export const Example = Template.bind({});
-Example.args = {};
+type Story = StoryObj<typeof meta>;
+
+export const Example: Story = {
+  args: {},
+};

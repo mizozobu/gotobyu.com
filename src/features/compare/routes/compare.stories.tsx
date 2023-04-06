@@ -1,15 +1,20 @@
-import type { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { MDX } from '@/features/mdx';
 import Compare from './compare.mdx';
 
-export default {
+const meta = {
   title: 'features/compare/Compare',
   component: Compare,
   argTypes: {},
-} as Meta<typeof Compare>;
+} satisfies Meta<typeof Compare>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 const Template: StoryFn<typeof Compare> = () => <Compare components={MDX} />;
 
-export const Example = Template.bind({});
-Example.args = {};
+export const Example: Story = {
+  render: Template,
+  args: {},
+};
