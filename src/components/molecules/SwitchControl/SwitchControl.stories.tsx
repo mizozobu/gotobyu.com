@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { SwitchControl } from './SwitchControl';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/molecules/SwitchControl',
   component: SwitchControl,
   argTypes: {},
-} as ComponentMeta<typeof SwitchControl>;
+} as Meta<typeof SwitchControl>;
 
-const Template: ComponentStory<typeof SwitchControl> = (args) => (
+const Template: StoryFn<typeof SwitchControl> = (args) => (
   <SwitchControl {...args} />
 );
 

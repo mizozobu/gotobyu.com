@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { P } from './P';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/atoms/P',
   component: P,
   argTypes: {},
-} as ComponentMeta<typeof P>;
+} as Meta<typeof P>;
 
-const Template: ComponentStory<typeof P> = (args) => <P {...args} />;
+const Template: StoryFn<typeof P> = (args) => <P {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {

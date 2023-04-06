@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { BarChart } from './BarChart';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/molecules/BarChart',
   component: BarChart,
   argTypes: {},
-} as ComponentMeta<typeof BarChart>;
+} as Meta<typeof BarChart>;
 
-const Template: ComponentStory<typeof BarChart> = (args) => (
+const Template: StoryFn<typeof BarChart> = (args) => (
   <div className='h-64 w-96'>
     <BarChart {...args} />
   </div>

@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { SchoolTab } from './SchoolTab';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/organisms/SchoolTab',
   component: SchoolTab,
   argTypes: {},
-} as ComponentMeta<typeof SchoolTab>;
+} as Meta<typeof SchoolTab>;
 
-const Template: ComponentStory<typeof SchoolTab> = () => (
+const Template: StoryFn<typeof SchoolTab> = () => (
   <SchoolTab>
     <SchoolTab.Panel key='byu' paneFor='byu'>
       BYU

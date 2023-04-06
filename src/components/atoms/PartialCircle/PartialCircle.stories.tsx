@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { PartialCircle } from './PartialCircle';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/atoms/PartialCircle',
   component: PartialCircle,
   argTypes: {},
-} as ComponentMeta<typeof PartialCircle>;
+} as Meta<typeof PartialCircle>;
 
-const Template: ComponentStory<typeof PartialCircle> = (args) => {
+const Template: StoryFn<typeof PartialCircle> = (args) => {
   const { r } = args;
   return (
     <svg height='100' width='100' viewBox='0 0 100 100'>

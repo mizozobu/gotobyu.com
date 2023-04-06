@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { HeaderMobileMenuDialog } from './HeaderMobileMenuDialog';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/organisms/HeaderMobileMenuDialog',
   component: HeaderMobileMenuDialog,
   argTypes: {},
-} as ComponentMeta<typeof HeaderMobileMenuDialog>;
+} as Meta<typeof HeaderMobileMenuDialog>;
 
-const Template: ComponentStory<typeof HeaderMobileMenuDialog> = (args) => (
+const Template: StoryFn<typeof HeaderMobileMenuDialog> = (args) => (
   <HeaderMobileMenuDialog {...args} />
 );
 

@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { RecoilRoot } from 'recoil';
 import { anchorState } from '@/features/anchor';
@@ -19,9 +19,9 @@ export default {
       </RecoilRoot>
     ),
   ],
-} as ComponentMeta<typeof CopiedDialog>;
+} as Meta<typeof CopiedDialog>;
 
-const Template: ComponentStory<typeof CopiedDialog> = () => <CopiedDialog />;
+const Template: StoryFn<typeof CopiedDialog> = () => <CopiedDialog />;
 
 export const Example = Template.bind({});
 Example.args = {};

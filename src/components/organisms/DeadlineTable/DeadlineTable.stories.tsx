@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { DeadlineTable } from './DeadlineTable';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/organisms/DeadlineTable',
   component: DeadlineTable,
   argTypes: {},
-} as ComponentMeta<typeof DeadlineTable>;
+} as Meta<typeof DeadlineTable>;
 
-const Template: ComponentStory<typeof DeadlineTable> = (args) => (
+const Template: StoryFn<typeof DeadlineTable> = (args) => (
   <DeadlineTable {...args} />
 );
 

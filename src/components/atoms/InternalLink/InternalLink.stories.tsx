@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { InternalLink } from './InternalLink';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/atoms/InternalLink',
   component: InternalLink,
   argTypes: {},
-} as ComponentMeta<typeof InternalLink>;
+} as Meta<typeof InternalLink>;
 
-const Template: ComponentStory<typeof InternalLink> = (args) => (
+const Template: StoryFn<typeof InternalLink> = (args) => (
   <InternalLink {...args} />
 );
 

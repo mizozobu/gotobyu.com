@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { FacebookIcon } from './FacebookIcon';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/atoms/FacebookIcon',
   component: FacebookIcon,
   argTypes: {},
-} as ComponentMeta<typeof FacebookIcon>;
+} as Meta<typeof FacebookIcon>;
 
-const Template: ComponentStory<typeof FacebookIcon> = (args) => (
+const Template: StoryFn<typeof FacebookIcon> = (args) => (
   <FacebookIcon {...args} />
 );
 

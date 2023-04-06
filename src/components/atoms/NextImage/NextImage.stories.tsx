@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import skiResortImage from '@/features/byu/assets/ski-resort.jpg';
 import { NextImage } from './NextImage';
@@ -7,9 +7,9 @@ export default {
   title: 'components/atoms/NextImage',
   component: NextImage,
   argTypes: {},
-} as ComponentMeta<typeof NextImage>;
+} as Meta<typeof NextImage>;
 
-const Template: ComponentStory<typeof NextImage> = (args) => (
+const Template: StoryFn<typeof NextImage> = (args) => (
   <div className='w-64'>
     <NextImage {...args} />
   </div>

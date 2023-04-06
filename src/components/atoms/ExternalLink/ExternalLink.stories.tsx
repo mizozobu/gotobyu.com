@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { ExternalLink } from './ExternalLink';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/atoms/ExternalLink',
   component: ExternalLink,
   argTypes: {},
-} as ComponentMeta<typeof ExternalLink>;
+} as Meta<typeof ExternalLink>;
 
-const Template: ComponentStory<typeof ExternalLink> = (args) => (
+const Template: StoryFn<typeof ExternalLink> = (args) => (
   <ExternalLink {...args} />
 );
 

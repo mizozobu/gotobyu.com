@@ -1,5 +1,5 @@
 import { CommandLineIcon } from '@heroicons/react/24/outline';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { HeaderMenuPopover } from './HeaderMenuPopover';
 
@@ -10,9 +10,9 @@ export default {
   parameters: {
     layout: 'centered',
   },
-} as ComponentMeta<typeof HeaderMenuPopover>;
+} as Meta<typeof HeaderMenuPopover>;
 
-const Template: ComponentStory<typeof HeaderMenuPopover> = (args) => (
+const Template: StoryFn<typeof HeaderMenuPopover> = (args) => (
   <div className='w-24'>
     <HeaderMenuPopover {...args} />
   </div>

@@ -1,7 +1,6 @@
 import nextJest from 'next/jest';
 import { pathsToModuleNameMapper, type JestConfigWithTsJest } from 'ts-jest';
 import { loadConfig, type ConfigLoaderSuccessResult } from 'tsconfig-paths';
-import { getRoutes } from './.storybook/utils/get-routes';
 
 const jestConfig: JestConfigWithTsJest = {
   testEnvironment: 'jest-environment-jsdom',
@@ -19,7 +18,6 @@ const jestConfig: JestConfigWithTsJest = {
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   globals: {
     isSecureContext: true,
-    __NEXT_ROUTES__: getRoutes(),
     'ts-jest': {},
   },
 };

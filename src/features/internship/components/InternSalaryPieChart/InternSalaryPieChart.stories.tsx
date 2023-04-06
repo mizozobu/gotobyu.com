@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { InternSalaryPieChart } from './InternSalaryPieChart';
 
@@ -6,9 +6,9 @@ export default {
   title: 'features/internship/InternSalaryPieChart',
   component: InternSalaryPieChart,
   argTypes: {},
-} as ComponentMeta<typeof InternSalaryPieChart>;
+} as Meta<typeof InternSalaryPieChart>;
 
-const Template: ComponentStory<typeof InternSalaryPieChart> = (args) => (
+const Template: StoryFn<typeof InternSalaryPieChart> = (args) => (
   <InternSalaryPieChart {...args} />
 );
 

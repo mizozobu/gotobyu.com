@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { TypingEffect } from './TypingEffect';
 
@@ -6,9 +6,9 @@ export default {
   title: 'components/molecules/TypingEffect',
   component: TypingEffect,
   argTypes: {},
-} as ComponentMeta<typeof TypingEffect>;
+} as Meta<typeof TypingEffect>;
 
-const Template: ComponentStory<typeof TypingEffect> = (args) => (
+const Template: StoryFn<typeof TypingEffect> = (args) => (
   <TypingEffect {...args} />
 );
 

@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'; // eslint-disable-line import/no-extraneous-dependencies
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { MockInstantSearch } from '@/test/instantsearch';
 import { HitItem } from '../HitItem';
@@ -12,9 +12,9 @@ export default {
     refinePrevious: { action: 'refinePrevious' },
     refineNext: { action: 'refineNext' },
   },
-} as ComponentMeta<typeof CustomInfiniteHits>;
+} as Meta<typeof CustomInfiniteHits>;
 
-const Template: ComponentStory<typeof CustomInfiniteHits> = (args) => (
+const Template: StoryFn<typeof CustomInfiniteHits> = (args) => (
   <MockInstantSearch>
     <CustomInfiniteHits {...args}>
       {(hit) => (

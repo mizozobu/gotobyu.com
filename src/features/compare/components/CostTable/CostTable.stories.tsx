@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { CostTable } from './CostTable';
 
@@ -6,9 +6,9 @@ export default {
   title: 'features/compare/CostTable',
   component: CostTable,
   argTypes: {},
-} as ComponentMeta<typeof CostTable>;
+} as Meta<typeof CostTable>;
 
-const Template: ComponentStory<typeof CostTable> = () => <CostTable />;
+const Template: StoryFn<typeof CostTable> = () => <CostTable />;
 
 export const Example = Template.bind({});
 Example.args = {

@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 import { RecoilRoot } from 'recoil';
 import { Header } from './Header';
@@ -14,9 +14,9 @@ export default {
       </RecoilRoot>
     ),
   ],
-} as ComponentMeta<typeof Header>;
+} as Meta<typeof Header>;
 
-const Template: ComponentStory<typeof Header> = () => <Header />;
+const Template: StoryFn<typeof Header> = () => <Header />;
 
 export const Example = Template.bind({});
 Example.args = {};
