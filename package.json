@@ -48,8 +48,8 @@
     "unist-util-visit": "2.x"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.0",
-    "@commitlint/config-conventional": "^17.6.0",
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
     "@jest/globals": "^29.5.0",
     "@next/bundle-analyzer": "^13.2.3",
     "@next/env": "^13.2.3",
