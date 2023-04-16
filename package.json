@@ -111,7 +111,7 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.4",
     "utility-types": "^3.10.0",
-    "webpack": "^5.78.0"
+    "webpack": "^5.79.0"
   },
   "engines": {
     "node": "<=18",
