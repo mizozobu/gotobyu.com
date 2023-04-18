@@ -41,7 +41,7 @@
     "recoil": "^0.7.7",
     "rehype-parse": "7.x",
     "rehype-slug": "4.x",
-    "remark-sectionize": "^1.1.1",
+    "remark-sectionize": "^2.0.0",
     "sharp": "^0.32.0",
     "slick-carousel": "^1.8.1",
     "unified": "9.x",
