@@ -1,5 +1,6 @@
-import type { MouseEventHandler, ComponentType } from 'react';
+import type { MouseEventHandler } from 'react';
 import { Link } from '@/components/atoms/Link';
+import type { IconComponentType } from '@/types/icon';
 
 /**
  * Props for {@link HeaderMobileMenuLink}
@@ -10,7 +11,7 @@ interface Props {
   /** href to pass */
   href: string;
   /** Icon */
-  icon: ComponentType<{ className?: string }>;
+  icon: IconComponentType;
   /** Click event handler */
   onClick: MouseEventHandler<HTMLButtonElement>;
 }
