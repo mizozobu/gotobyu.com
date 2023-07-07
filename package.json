@@ -45,7 +45,7 @@
     "sharp": "^0.32.1",
     "slick-carousel": "^1.8.1",
     "unified": "9.x",
-    "unist-util-visit": "2.x"
+    "unist-util-visit": "5.x"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
