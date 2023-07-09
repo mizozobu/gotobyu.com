@@ -17,6 +17,7 @@
       {
         "ignoreFunctions": ["theme", "screen"]
       }
-    ]
+    ],
+    "media-query-no-invalid": null
   }
 }
