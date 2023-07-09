@@ -4,7 +4,6 @@
   "rangeStrategy": "bump",
   "rebaseWhen": "behind-base-branch",
   "timezone": "Asia/Tokyo",
-  "node": {},
   "packageRules": [
     {
       "packageNames": ["node"],
