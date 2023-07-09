@@ -1,6 +1,7 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
 import { URL } from 'url';
+import type { SearchResponse } from '@algolia/client-search';
 import algoliasearch from 'algoliasearch';
 import type { Element } from 'hast';
 import {
@@ -46,7 +47,7 @@ export const indexDocument = async (path: string): Promise<void> => {
       },
     },
   ]);
-  const existingAlgoliasts = results[0].hits; // FIXME
+  const existingAlgoliasts = (results as SearchResponse<Algoliast>[])[0].hits;
   const {
     addObjectOperations,
     updateObjectOperations,
