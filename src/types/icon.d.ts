@@ -1,6 +1,6 @@
+import type { ReactNode } from 'react';
+
 /**
  * Icon
  */
-export type IconComponentType = (props: {
-  className?: string;
-}) => JSX.Element | null;
+export type IconComponentType = (props: { className?: string }) => ReactNode;
