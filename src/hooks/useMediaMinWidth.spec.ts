@@ -10,16 +10,19 @@ describe('mediaGte', () => {
      */
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
-      value: jest.fn().mockImplementation((query) => ({
-        matches: ((query as string).match(/\d+/) ?? 0) <= windowSize,
-        media: query as string,
-        onchange: null,
-        addListener: jest.fn(),
-        removeListener: jest.fn(),
-        addEventListener: jest.fn(),
-        removeEventListener: jest.fn(),
-        dispatchEvent: jest.fn(),
-      })),
+      value: jest.fn().mockImplementation((query) => {
+        const px = +(query as string).replace(/\D/g, '');
+        return {
+          matches: +px <= windowSize,
+          media: query as string,
+          onchange: null,
+          addListener: jest.fn(),
+          removeListener: jest.fn(),
+          addEventListener: jest.fn(),
+          removeEventListener: jest.fn(),
+          dispatchEvent: jest.fn(),
+        };
+      }),
     });
   });
 

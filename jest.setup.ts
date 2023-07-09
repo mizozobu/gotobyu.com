@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file, jest/require-hook */
 import { jest } from '@jest/globals';
 import { setProjectAnnotations } from '@storybook/testing-react';
-import * as globalStorybookConfig from './.storybook/preview';
+import globalStorybookConfig from './.storybook/preview';
 import '@testing-library/jest-dom';
 
 setProjectAnnotations(globalStorybookConfig);
