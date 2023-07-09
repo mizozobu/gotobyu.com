@@ -2,7 +2,9 @@
 button.ripple {
   background: var(--bg-color)
     radial-gradient(circle, transparent 1%, var(--bg-color) 1%) center/100%;
-  transition: background-color 0s, background-size 0s;
+  transition:
+    background-color 0s,
+    background-size 0s;
 }
 
 button.ripple:hover {
@@ -10,6 +12,9 @@ button.ripple:hover {
   background-color: var(--ripple-color);
   background-size: 15000%;
   border-color: var(--ripple-color);
-  transition: color 0.8s, background-color 0.8s, background-size 0.8s,
+  transition:
+    color 0.8s,
+    background-color 0.8s,
+    background-size 0.8s,
     border-color 0.8s;
 }
