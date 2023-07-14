@@ -94,7 +94,7 @@
     "lighthouse": "^9.6.8",
     "lint-staged": "^13.2.3",
     "next-sitemap": "^4.0.9",
-    "postcss": "^8.4.25",
+    "postcss": "^8.4.26",
     "postcss-loader": "^7.3.3",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.0",
