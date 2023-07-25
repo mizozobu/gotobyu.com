@@ -54,7 +54,7 @@
     "@next/bundle-analyzer": "^13.4.2",
     "@next/env": "^13.4.2",
     "@next/eslint-plugin-next": "^13.4.12",
-    "@playwright/test": "^1.36.1",
+    "@playwright/test": "^1.36.2",
     "@storybook/addon-essentials": "^7.1.1",
     "@storybook/nextjs": "^7.1.1",
     "@storybook/react": "^7.1.1",
