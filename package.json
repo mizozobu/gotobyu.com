@@ -96,7 +96,7 @@
     "next-sitemap": "^4.0.9",
     "postcss": "^8.4.27",
     "postcss-loader": "^7.3.3",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "sinon": "^15.2.0",
     "storybook": "^7.1.1",
