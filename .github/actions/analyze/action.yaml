@@ -40,6 +40,6 @@ runs:
           core.setOutput('body', comment)
     - name: Post bundle size comment to commit
       if: ${{ steps.download-base-stats.outcome == 'success' }}
-      uses: peter-evans/commit-comment@v2
+      uses: peter-evans/commit-comment@v3
       with:
         body: ${{ steps.get-comment-body.outputs.body }}
