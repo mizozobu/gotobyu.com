@@ -65,7 +65,7 @@
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
-    "@types/react-instantsearch-dom": "^6.12.3",
+    "@types/react-instantsearch-dom": "^6.12.4",
     "@types/react-slick": "^0.23.10",
     "@types/sinon": "^10.0.17",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
