@@ -59,25 +59,25 @@ export const Type = ({
   const [status, setStatus] = useState(STATUS.forward);
 
   useEffect(() => {
-    let interval: NodeJS.Timer;
+    let interval: number;
 
     if (status === STATUS.forward) {
-      interval = setInterval(() => {
+      interval = window.setInterval(() => {
         const next = text.substring(0, typed.length + 1);
         if (typed === next) {
           setStatus(STATUS.waiting);
-          setTimeout(() => {
+          window.setTimeout(() => {
             setStatus(STATUS.backward);
           }, waitAfterType - typeSpeed);
         }
         setTyped(next);
       }, typeSpeed);
     } else if (status === STATUS.backward) {
-      interval = setInterval(() => {
+      interval = window.setInterval(() => {
         const prev = text.substring(0, typed.length - 1);
         if (typed === prev) {
           setStatus(STATUS.waiting);
-          setTimeout(() => {
+          window.setTimeout(() => {
             onBack?.();
             setStatus(STATUS.forward);
           }, waitBeforeType - typeSpeed);
@@ -87,7 +87,7 @@ export const Type = ({
     }
 
     return () => {
-      clearInterval(interval);
+      window.clearInterval(interval);
     };
   }, [text, typed, status, typeSpeed, waitAfterType, waitBeforeType, onBack]);
 

@@ -65,7 +65,7 @@ export const Header = (): JSX.Element => {
   useEffect(() => {
     const startLoading = (): void => setLoading(true);
     const endLoading = (): void => {
-      setTimeout(() => {
+      window.setTimeout(() => {
         setLoading(false);
       }, 500);
     };

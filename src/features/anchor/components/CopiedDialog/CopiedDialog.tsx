@@ -20,7 +20,7 @@ export const CopiedDialog = (): JSX.Element => {
   }, [setIsOpen]);
 
   useEffect(() => {
-    const timeout = setTimeout(() => closeDialog(), 1200);
+    const timeout = window.setTimeout(() => closeDialog(), 1200);
     return () => clearTimeout(timeout);
   }, [showCopiedModal, closeDialog]);
 
