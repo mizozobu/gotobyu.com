@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "husky install",
+    "postinstall": "$(yarn bin yarn-deduplicate) --fail && husky install || yarn install",
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
@@ -111,7 +111,8 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2",
     "utility-types": "^3.10.0",
-    "webpack": "^5.89.0"
+    "webpack": "^5.89.0",
+    "yarn-deduplicate": "^6.0.2"
   },
   "engines": {
     "node": "<=18",
