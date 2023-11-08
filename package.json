@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "$(yarn bin yarn-deduplicate) --fail && husky install || yarn install",
+    "postinstall": "yarn yarn-deduplicate --fail && husky install || yarn install",
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",

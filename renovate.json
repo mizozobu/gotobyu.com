@@ -4,6 +4,7 @@
   "rangeStrategy": "bump",
   "rebaseWhen": "behind-base-branch",
   "timezone": "Asia/Tokyo",
+  "postUpdateOptions": ["yarnDedupeHighest"],
   "packageRules": [
     {
       "packageNames": ["node"],
