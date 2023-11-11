@@ -1,6 +1,3 @@
-import { readFile } from 'fs/promises';
-import { join } from 'path';
-import { URL } from 'url';
 import type { SearchResponse } from '@algolia/client-search';
 import algoliasearch from 'algoliasearch';
 import type { Element } from 'hast';
@@ -22,11 +19,8 @@ import { toAlgoliasts } from './toAlgoliasts';
  */
 export const indexDocument = async (path: string): Promise<void> => {
   /** HTML document to be indexed */
-  const html = await readFile(
-    new URL(
-      join('..', '..', '..', '..', 'out', `${path}.html`),
-      import.meta.url,
-    ).pathname,
+  const html = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${path}`).then(
+    (res) => res.text(),
   );
 
   /** new algoliasts to be indexed */
