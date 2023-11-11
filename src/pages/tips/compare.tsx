@@ -8,7 +8,7 @@ import { AtomStore } from '@/lib/recoil';
 import { Seo } from '@/lib/seo';
 
 /**
- * getStaticProps for BYUI Page
+ * getStaticProps for Compare Page
  */
 export const getStaticProps: GetStaticProps = async () => {
   const atomStore = new AtomStore();
