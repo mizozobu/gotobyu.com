@@ -40,7 +40,7 @@ export const SearchDialog = ({ isOpen, onClose }: Props): JSX.Element => {
   return (
     <AlgoliaProvider>
       <CustomStateResults onError={setError} />
-      <Modal isOpen={isOpen} onClose={onClose} aria-label='search'>
+      <Modal isOpen={isOpen} onClose={onClose} aria-label='検索ポップアップ'>
         <div className='relative mx-auto flex max-h-full min-h-[50%] max-w-3xl flex-col divide-y rounded bg-white lg:max-h-[76vh]'>
           <div className='flex items-center justify-end px-4 md:px-6'>
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
@@ -59,7 +59,10 @@ export const SearchDialog = ({ isOpen, onClose }: Props): JSX.Element => {
               className='rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500'
               onClick={onClose}
             >
-              <XMarkIcon className='h-6 w-6 text-gray-400' />
+              <XMarkIcon
+                className='h-6 w-6 text-gray-400'
+                aria-label='検索ポップアップを閉じる'
+              />
             </button>
           </div>
           <div className='flex grow flex-col space-y-2 overflow-y-auto px-4 py-4 md:px-6'>
