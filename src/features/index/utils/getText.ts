@@ -1,6 +1,6 @@
 import type { Text } from 'hast';
 import type { Node } from 'unist';
-import visit from 'unist-util-visit';
+import { visit } from 'unist-util-visit';
 
 /**
  * Recursively extract text value from tree and remove new line characters

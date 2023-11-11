@@ -1,13 +1,14 @@
-const mdxFactory = require('@next/mdx');
-/* eslint-disable import/no-extraneous-dependencies */
+// eslint-disable-next-line import/no-extraneous-dependencies
+import nextBundleAnalyzer from '@next/bundle-analyzer';
+import mdxFactory from '@next/mdx';
+import rehypeSlug from 'rehype-slug';
+import remarkSectionize from 'remark-sectionize';
+import { visit } from 'unist-util-visit';
+
 const withBundleAnalyzer =
   process.env.ANALYZE === 'true'
-    ? require('@next/bundle-analyzer')({ enabled: true })
+    ? nextBundleAnalyzer({ enabled: true })
     : (config) => config;
-/* eslint-enable import/no-extraneous-dependencies */
-const rehypeSlug = require('rehype-slug');
-const remarkSectionize = require('remark-sectionize');
-const visit = require('unist-util-visit');
 
 /**
  * Remark plugin to remove a space converted from a new line in markdown
@@ -60,4 +61,4 @@ const nextConfig = {
   }),
 };
 
-module.exports = withBundleAnalyzer(withMDX(nextConfig));
+export default withBundleAnalyzer(withMDX(nextConfig));

@@ -261,7 +261,7 @@ module.exports = {
      * - add custom rules at last to make sure they aren't overridden
      */
     {
-      files: ['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx'],
+      files: ['**/*'],
       extends: ['prettier'],
       rules: {
         // allow _ in variable
