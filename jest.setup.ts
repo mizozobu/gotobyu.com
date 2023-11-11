@@ -1,10 +1,16 @@
 /* eslint-disable max-classes-per-file, jest/require-hook */
 import { jest } from '@jest/globals';
 import { setProjectAnnotations } from '@storybook/testing-react';
+import Image from 'next/image';
 import globalStorybookConfig from './.storybook/preview';
 import '@testing-library/jest-dom';
 
 setProjectAnnotations(globalStorybookConfig);
+
+// HACK:
+// since next 13.5 `(<Image />).type` is `{ unstable_getImgProps: [Getter], default: [Getter] }`
+// where `Image` is expected
+jest.unstable_mockModule('next/image', () => Image);
 
 global.IntersectionObserver = class MockIntersectionObserver
   implements IntersectionObserver
