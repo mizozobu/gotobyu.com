@@ -39,6 +39,9 @@ const nextConfig = {
   images: {
     unoptimized: process.env.UNOPTIMIZE_IMAGE === 'true',
   },
+  experimental: {
+    typedRoutes: true,
+  },
   // workaround for tree shaking re-exported files in typescript
   // @see https://github.com/vercel/next.js/issues/12557#issuecomment-994278512
   webpack: (config) => ({
