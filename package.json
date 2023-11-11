@@ -24,7 +24,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
-    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/loader": "^3.0.0",
     "@next/mdx": "^14.0.2",
     "algoliasearch": "^4.20.0",
     "chart.js": "^4.4.0",
