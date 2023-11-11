@@ -16,7 +16,6 @@
     "analyze": "cross-env ANALYZE=true yarn build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o .storybook-static",
-    "algolia": "node --loader ./src/bin/loader.mjs --experimental-specifier-resolution=node ./src/bin/algolia.ts",
     "ut": "node --experimental-vm-modules --experimental-json-modules --experimental-specifier-resolution=node $(yarn bin jest)",
     "ut:debug": "node --experimental-vm-modules --experimental-json-modules --experimental-specifier-resolution=node --inspect $(yarn bin jest) --runInBand",
     "e2e": "cross-env NODE_ENV=test playwright test",

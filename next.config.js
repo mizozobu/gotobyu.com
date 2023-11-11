@@ -40,6 +40,7 @@ const nextConfig = {
     unoptimized: process.env.UNOPTIMIZE_IMAGE === 'true',
   },
   experimental: {
+    instrumentationHook: true,
     typedRoutes: true,
   },
   // workaround for tree shaking re-exported files in typescript
