@@ -1,9 +1,9 @@
 import type { Element } from 'hast';
 import { type Processor } from 'unified';
 import type { Node } from 'unist';
-import visit from 'unist-util-visit';
+import { visit } from 'unist-util-visit';
 import { type Algoliast, type HeadingTag } from '@/features/search';
-import { type Settings } from '../types';
+import { type RehypeAlgoliaSettings } from '../types';
 import { AlgoliastBuilder } from './AlgoliastBuilder';
 import { getText } from './getText';
 import { isInSameBlock } from './isInSameBlock';
@@ -25,7 +25,7 @@ export function rehypeAlgolia(): void {
       baseUrl,
       endingChar = '',
       exclude = (): boolean => false,
-    } = that.data('settings') as Settings;
+    } = that.data('settings') as RehypeAlgoliaSettings;
     const builder = new AlgoliastBuilder(baseUrl);
 
     visit(tree, 'element', (node: Element) => {
@@ -37,8 +37,8 @@ export function rehypeAlgolia(): void {
 
       /** whether its children including text node. whitespace only text nodes are excluded. */
       const includesTextNode = node.children.some(
-        ({ type, value }: Node) =>
-          type === 'text' && /\S/.test(value as string),
+        (elementContent) =>
+          elementContent.type === 'text' && /\S/.test(elementContent.value),
       );
 
       if ((HEADING_TAGS as readonly string[]).includes(node.tagName)) {

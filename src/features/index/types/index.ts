@@ -16,11 +16,15 @@ export interface Compare<T> {
 /**
  * Type for unified settings
  */
-export interface Settings {
+export interface RehypeAlgoliaSettings {
   /** Base URL for {@link Algoliast.permalink} */
   baseUrl: string;
   /** Ending charater of a sentense such as "." and "。" */
   endingChar?: string;
   /** Filter function to exclude node */
   exclude?: (node: Element) => boolean;
+}
+
+declare module 'unified' {
+  interface Settings extends RehypeAlgoliaSettings {}
 }

@@ -1,4 +1,5 @@
 /* eslint-disable max-classes-per-file, jest/require-hook */
+import { TextEncoder, TextDecoder } from 'node:util';
 import { jest } from '@jest/globals';
 import { setProjectAnnotations } from '@storybook/testing-react';
 import Image from 'next/image';
@@ -40,3 +41,9 @@ global.matchMedia = (query: string) => ({
   removeEventListener: jest.fn<MediaQueryList['removeEventListener']>(),
   dispatchEvent: jest.fn<MediaQueryList['dispatchEvent']>(),
 });
+
+// see https://github.com/jsdom/jsdom/issues/2524#issuecomment-736672511
+global.TextEncoder = TextEncoder;
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+global.TextDecoder = TextDecoder;
