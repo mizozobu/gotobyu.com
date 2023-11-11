@@ -34,7 +34,10 @@ export const HeaderMobileMenuDialog = ({
           className='rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500'
           onClick={onClose}
         >
-          <XMarkIcon className='h-6 w-6 text-gray-400' />
+          <XMarkIcon
+            className='h-6 w-6 text-gray-400'
+            aria-label='メニューを閉じる'
+          />
         </button>
       </div>
       <nav className='grid gap-y-2 px-2 py-4'>

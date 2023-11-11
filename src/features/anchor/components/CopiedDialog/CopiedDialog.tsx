@@ -1,8 +1,5 @@
 import { Transition, Dialog } from '@headlessui/react';
-import {
-  ClipboardDocumentCheckIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline';
+import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline';
 import { Fragment, useEffect, useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 import { anchorState } from '@/features/anchor';
@@ -65,13 +62,6 @@ export const CopiedDialog = (): JSX.Element => {
                 <ClipboardDocumentCheckIcon className='mb-8 h-24 md:mb-0 md:mr-2 md:h-12' />
                 この場所へのURLをコピーしました
               </Dialog.Title>
-              <button
-                type='button'
-                className='sr-only p-2 text-white'
-                onClick={closeDialog}
-              >
-                <XMarkIcon className='inline h-8' />
-              </button>
             </div>
           </Transition.Child>
         </div>

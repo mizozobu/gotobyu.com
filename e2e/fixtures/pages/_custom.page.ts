@@ -42,7 +42,9 @@ export abstract class _CustomPage {
     this.searchButton = this.header.locator('button:visible', {
       hasText: '検索',
     });
-    this.searchModal = this.page.getByRole('dialog', { name: 'search' });
+    this.searchModal = this.page.getByRole('dialog', {
+      name: '検索ポップアップ',
+    });
   }
 
   /**
