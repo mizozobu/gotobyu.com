@@ -21,7 +21,7 @@ jobs:
             -d '{"content":"rocket"}'
       - name: Get args for E2E test
         id: get-e2e-args
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         env:
           COMMENT: ${{ github.event.comment.body }}
         with:
