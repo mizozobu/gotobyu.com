@@ -31,7 +31,7 @@ runs:
     - name: Get comment body
       if: ${{ steps.download-base-stats.outcome == 'success' }}
       id: get-comment-body
-      uses: actions/github-script@v6
+      uses: actions/github-script@v7
       with:
         result-encoding: string
         script: |
