@@ -38,7 +38,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Checkout PR head
         run: |
-          hub pr checkout ${{ github.event.issue.number }}
+          gh pr checkout ${{ github.event.issue.number }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build
