@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 
 /**
@@ -25,10 +27,10 @@ export const useScrollDirection = ({
   const [scrollDir, setScrollDir] = useState(SCROLL_DIRECTION.up);
 
   useEffect(() => {
-    let lastScrollY = window.pageYOffset;
+    let lastScrollY = window.scrollY;
 
     const handleScroll = (): void => {
-      const scrollY = window.pageYOffset;
+      const { scrollY } = window;
 
       // debounce
       if (Math.abs(scrollY - lastScrollY) < threshold) return;

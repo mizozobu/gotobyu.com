@@ -1,3 +1,5 @@
+'use client';
+
 import type { ComponentPropsWithoutRef } from 'react';
 import { H1 as _H1 } from '@/components/atoms/H1';
 import { H2 as _H2 } from '@/components/atoms/H2';

@@ -2,16 +2,42 @@ import { Digit } from '@/components/atoms/Digit';
 import { NextImage } from '@/components/atoms/NextImage';
 import { Pane } from '@/components/atoms/Pane';
 import { SplitPane } from '@/components/atoms/SplitPane';
-import { DynamicPhotoViewer } from '@/components/organisms/DynamicPhotoViewer';
+import { PhotoViewer } from '@/components/molecules/PhotoViewer';
+import { BYU_PAGE_META } from '@/data/links';
 import { SCHOOL_INFO } from '@/data/school';
-import archesNationalParkImage from '../assets/arches-national-park.jpg';
-import byuFootballImage from '../assets/byu-football.jpg';
-import byuLargeClass from '../assets/byu-large-class.jpg';
-import byuLogoImage from '../assets/byu-logo.png';
-import canyonLandsNationalParkImage from '../assets/canyonlands-national-park.jpg';
-import saltFlatsImage from '../assets/salt-flats.jpg';
-import skiResortImage from '../assets/ski-resort.jpg';
-import utahStateCapitalBuilding from '../assets/utah-state-capital.jpg';
+import archesNationalParkImage from '@/features/byu/assets/arches-national-park.jpg';
+import byuFootballImage from '@/features/byu/assets/byu-football.jpg';
+import byuLargeClass from '@/features/byu/assets/byu-large-class.jpg';
+import byuLogoImage from '@/features/byu/assets/byu-logo.png';
+import canyonLandsNationalParkImage from '@/features/byu/assets/canyonlands-national-park.jpg';
+import saltFlatsImage from '@/features/byu/assets/salt-flats.jpg';
+import skiResortImage from '@/features/byu/assets/ski-resort.jpg';
+import utahStateCapitalBuilding from '@/features/byu/assets/utah-state-capital.jpg';
+
+export const metadata = {
+  title: BYU_PAGE_META.title,
+  description: BYU_PAGE_META.description,
+  openGraph: {
+    title: BYU_PAGE_META.title,
+    description: BYU_PAGE_META.description,
+    type: 'article',
+    siteName: 'gotobyu.com',
+    locale: 'ja_JP',
+    images: [
+      {
+        url: '/open-graph.png',
+        width: 600,
+        height: 600,
+        alt: 'gotobyu.com',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: BYU_PAGE_META.title,
+    description: BYU_PAGE_META.description,
+  },
+}
 
 
 # Brigham Young University
@@ -52,7 +78,7 @@ BYUは[アメリカの大学ランキング](https://www.byu.edu/facts-figures)�
 ## 専攻と授業
 
 <div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
-  <DynamicPhotoViewer
+  <PhotoViewer
     style={{
       '--bg': 'linear-gradient(to bottom right, #002e5d, #001225)',
     }}
@@ -104,7 +130,7 @@ BYU生徒は[電車やバスが無料で使える](https://www.rideuta.com/Fares
 ## レクリエーション
 
 <div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
-  <DynamicPhotoViewer
+  <PhotoViewer
     style={{
       '--bg': 'linear-gradient(to bottom right, #002e5d, #001225)',
     }}

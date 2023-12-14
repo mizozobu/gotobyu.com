@@ -1,9 +1,11 @@
+'use client';
+
 import classNames from 'classnames';
 import { type ImageProps } from 'next/image';
 import { useState, type ComponentPropsWithoutRef } from 'react';
-import Slider, { type Settings } from 'react-slick';
 import { BgRotate } from '@/components/atoms/BgRotate';
 import { NextImage } from '@/components/atoms/NextImage';
+import Slider, { type Settings } from '@/lib/react-slick';
 import styles from './PhotoViewer.module.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';

@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import {
   memo,
@@ -44,7 +46,7 @@ export const SectionTitle = memo(
         className={classNames(className, styles['section-title'])}
         aria-current={active}
       >
-        <Link href={`#${id}`} tabIndex={-1}>
+        <Link href={`#${id}`} scroll={false} tabIndex={-1}>
           <button type='button' className='text-left' onClick={handleClick}>
             <span className={styles['section-title-text']}>{children}</span>
           </button>

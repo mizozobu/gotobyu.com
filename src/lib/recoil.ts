@@ -69,7 +69,7 @@ export class AtomStore {
   }
 
   /**
-   * Wrap props with recoil state in getStaticProps/getServerSideProps
+   * Wrap props with recoil state on server side
    * @param getStaticPropsResult
    * @returns GetStaticPropsResult
    */
