@@ -1,3 +1,5 @@
+'use client';
+
 import { Transition, Dialog } from '@headlessui/react';
 import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline';
 import { Fragment, useEffect, useCallback } from 'react';

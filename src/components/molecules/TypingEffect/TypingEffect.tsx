@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useCallback, type ComponentPropsWithoutRef } from 'react';
 import { Type } from '@/components/atoms/Type';
 

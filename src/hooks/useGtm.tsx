@@ -1,3 +1,5 @@
+// TODO: delete this file after migrating to app router
+
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { GOOGLE_TAG_MANAGER_ID } from '@/config';

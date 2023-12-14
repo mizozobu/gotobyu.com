@@ -1,3 +1,5 @@
+'use client';
+
 import { Popover } from '@headlessui/react';
 import {
   AcademicCapIcon,
@@ -8,8 +10,11 @@ import {
 } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import dynamic from 'next/dynamic';
-import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+// import { useRouter } from 'next/navigation';
+import {
+  useState,
+  // useEffect,
+} from 'react';
 import { CirculatingCircles } from '@/components/atoms/CirculatingCircles';
 import { Link } from '@/components/atoms/Link';
 import { HeaderMenuLink } from '@/components/molecules/HeaderMenuLink';
@@ -56,28 +61,31 @@ const SearchDialog = dynamic<SearchDialogProps>(
  * @see {@link https://tailwindui.com/components/marketing/elements/headers}
  */
 export const Header = (): JSX.Element => {
-  const router = useRouter();
+  // const router = useRouter();
   const scrollDirectionY = useScrollDirection({ threshold: 50 });
-  const [loading, setLoading] = useState(false);
+  const [
+    loading,
+    // setLoading,
+  ] = useState(false);
   const [isMenuDialogDisplayed, setIsMenuDialogDisplayed] = useState(false);
   const [isSearchDialogDisplayed, setIsSearchDialogDisplayed] = useState(false);
 
-  useEffect(() => {
-    const startLoading = (): void => setLoading(true);
-    const endLoading = (): void => {
-      window.setTimeout(() => {
-        setLoading(false);
-      }, 500);
-    };
+  // useEffect(() => {
+  //   const startLoading = (): void => setLoading(true);
+  //   const endLoading = (): void => {
+  //     window.setTimeout(() => {
+  //       setLoading(false);
+  //     }, 500);
+  //   };
 
-    router.events.on('routeChangeStart', startLoading);
-    router.events.on('routeChangeComplete', endLoading);
+  //   router.events.on('routeChangeStart', startLoading);
+  //   router.events.on('routeChangeComplete', endLoading);
 
-    return () => {
-      router.events.off('routeChangeStart', startLoading);
-      router.events.off('routeChangeComplete', endLoading);
-    };
-  }, [router.events]);
+  //   return () => {
+  //     router.events.off('routeChangeStart', startLoading);
+  //     router.events.off('routeChangeComplete', endLoading);
+  //   };
+  // }, [router.events]);
 
   /**
    * Open menu dialog
