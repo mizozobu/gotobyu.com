@@ -51,13 +51,6 @@ yarn lint:fix
 yarn ut:debug --watch
 ```
 
-### Index
-
-```sh
-# index pages in algolia
-yarn algolia
-```
-
 ## CI/CD
 
 - [Github Actions](https://github.com/features/actions) runs CI
