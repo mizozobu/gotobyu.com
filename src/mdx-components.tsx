@@ -1,4 +1,5 @@
 import type { MDXComponents } from 'mdx/types';
+import type { Route } from 'next';
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { ExternalLink } from '@/components/atoms/ExternalLink';
 import { InternalLink } from '@/components/atoms/InternalLink';
@@ -20,7 +21,7 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
     const Component = /^[a-zA-Z][a-zA-Z\d+\-.]*?:/.test(href)
       ? ExternalLink
       : InternalLink;
-    return <Component href={href} {...props} />;
+    return <Component href={href as Route} {...props} />;
   },
   strong: Strong,
   ul: Ul,

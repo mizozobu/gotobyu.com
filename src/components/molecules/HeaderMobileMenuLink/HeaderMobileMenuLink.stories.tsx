@@ -15,7 +15,7 @@ type Story = StoryObj<typeof meta>;
 export const Example: Story = {
   args: {
     name: 'link',
-    href: '/link',
+    href: '/',
     icon: CommandLineIcon,
   },
 };

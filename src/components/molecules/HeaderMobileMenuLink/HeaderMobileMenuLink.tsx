@@ -1,3 +1,4 @@
+import type { Route } from 'next';
 import type { MouseEventHandler } from 'react';
 import { Link } from '@/components/atoms/Link';
 import type { IconComponentType } from '@/types/icon';
@@ -9,7 +10,7 @@ interface Props {
   /** Title for the link */
   name: string;
   /** href to pass */
-  href: string;
+  href: Route;
   /** Icon */
   icon: IconComponentType;
   /** Click event handler */

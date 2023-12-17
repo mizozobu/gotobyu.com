@@ -1,3 +1,4 @@
+import type { Route } from 'next';
 import { Link } from '@/components/atoms/Link';
 import type { IconComponentType } from '@/types/icon';
 
@@ -10,7 +11,7 @@ interface Props {
   /** Details for the link */
   detail: string;
   /** href to pass */
-  href: string;
+  href: Route;
   /** Icon */
   icon: IconComponentType;
   /** Click event handler */

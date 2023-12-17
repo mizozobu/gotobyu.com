@@ -1,3 +1,4 @@
+import type { Route } from 'next';
 import type { Hit } from 'react-instantsearch-core';
 
 /**
@@ -5,7 +6,7 @@ import type { Hit } from 'react-instantsearch-core';
  */
 export interface Algoliast {
   /** Link to the content */
-  permalink: string;
+  permalink: Route;
   /** h1 heading */
   h1: string;
   /** h2 heading */
