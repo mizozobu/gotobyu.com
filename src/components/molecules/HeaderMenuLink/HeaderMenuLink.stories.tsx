@@ -16,7 +16,7 @@ export const Example: Story = {
   args: {
     name: 'link',
     detail: 'detail for link',
-    href: '/link',
+    href: '/',
     icon: CommandLineIcon,
   },
 };

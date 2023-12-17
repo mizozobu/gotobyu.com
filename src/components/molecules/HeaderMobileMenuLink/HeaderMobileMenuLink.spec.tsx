@@ -20,7 +20,7 @@ describe('<HeaderMobileMenuLink />', () => {
 
     render(<Example />);
 
-    expect(screen.getByRole('link')).toHaveAttribute('href', '/link');
+    expect(screen.getByRole('link')).toHaveAttribute('href', '/');
   });
 
   it('should call props.onClick on click', async () => {

@@ -6,6 +6,7 @@ import {
   ScaleIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline';
+import type { Route } from 'next';
 import { NextImage } from '@/components/atoms/NextImage';
 import byuLogoImage from '@/features/byu/assets/byu-logo.png';
 import byuhLogoImage from '@/features/byuh/assets/byuh-logo.png';
@@ -25,7 +26,7 @@ export interface PageMeta {
   /** Page description. Used in `<meta name="description">`. */
   description: string;
   /** Page link */
-  href: string;
+  href: Route;
   /** Page icon. Used in header and card. */
   icon: IconComponentType;
 }

@@ -29,7 +29,7 @@ describe('<HeaderMenuLink />', () => {
 
     render(<Example />);
 
-    expect(screen.getByRole('link')).toHaveAttribute('href', '/link');
+    expect(screen.getByRole('link')).toHaveAttribute('href', '/');
   });
 
   it('should render props.icon', () => {

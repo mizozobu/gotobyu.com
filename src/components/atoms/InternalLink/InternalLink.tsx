@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import type { Route } from 'next';
 import type { ComponentPropsWithoutRef } from 'react';
 import { Link } from '@/components/atoms/Link';
 import styles from './InternalLink.module.css';
@@ -8,7 +9,7 @@ import styles from './InternalLink.module.css';
  */
 interface Props extends ComponentPropsWithoutRef<'a'> {
   /** href to pass */
-  href: string;
+  href: Route;
 }
 
 /**
