@@ -1,3 +1,5 @@
+'use client';
+
 import { memo, useCallback, type ComponentPropsWithoutRef } from 'react';
 import { DynamicBarChart } from '@/components/organisms/DynamicBarChart';
 import { FIRST_YEAR_INCOME } from '@/data/income';

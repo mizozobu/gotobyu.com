@@ -1,3 +1,5 @@
+'use client';
+
 import { memo, useCallback, type ComponentPropsWithoutRef } from 'react';
 import { useRecoilValue } from 'recoil';
 import { DynamicBarChart } from '@/components/organisms/DynamicBarChart';

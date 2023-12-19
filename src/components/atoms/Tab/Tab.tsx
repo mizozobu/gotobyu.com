@@ -1,3 +1,5 @@
+'use client';
+
 import { Tab as TwTab } from '@headlessui/react';
 import classNames from 'classnames';
 import type { ReactNode } from 'react';
@@ -16,7 +18,7 @@ interface TabRootProps {
 /**
  * Styled {@link Tab}
  */
-const TabRoot = ({ className, children }: TabRootProps): JSX.Element => (
+export const Tab = ({ className, children }: TabRootProps): JSX.Element => (
   <TwTab
     className={({ selected }) =>
       classNames(
@@ -42,18 +44,12 @@ interface Props {
 /**
  * Styled {@link Tab.Panel}
  */
-const Panel = ({ children }: Props): JSX.Element => (
+export const TabPanel = ({ children }: Props): JSX.Element => (
   <TwTab.Panel className='space-y-8 rounded-b-xl border-b border-l border-r px-4 py-8 md:px-8'>
     {children}
   </TwTab.Panel>
 );
 
-/**
- * Styled HeadlessUI {@link Tab}
- */
-export const Tab = Object.assign(TabRoot, {
-  Group: TwTab.Group,
-  List: TwTab.List,
-  Panels: TwTab.Panels,
-  Panel,
-});
+export const TabGroup = TwTab.Group;
+export const TabList = TwTab.List;
+export const TabPanels = TwTab.Panels;

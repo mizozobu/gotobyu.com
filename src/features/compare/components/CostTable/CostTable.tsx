@@ -1,3 +1,5 @@
+'use client';
+
 import { useRecoilValue } from 'recoil';
 import { Digit } from '@/components/atoms/Digit';
 import { Table } from '@/components/atoms/Table';

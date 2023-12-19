@@ -1,3 +1,5 @@
+'use client';
+
 import type { ComponentPropsWithoutRef } from 'react';
 import { useRecoilState } from 'recoil';
 import { SwitchControl } from '@/components/molecules/SwitchControl';

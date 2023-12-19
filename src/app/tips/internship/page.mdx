@@ -1,8 +1,34 @@
 import { Footnote } from '@/components/atoms/Footnote';
 import { UlCol } from '@/components/atoms/UlCol';
 import { PieChartLoader } from '@/components/molecules/PieChartLoader';
+import { INTERNSHIP_PAGE_META } from '@/data/links';
 import { MDX } from '@/features/mdx';
-import { InternSalaryPieChart } from '../components/InternSalaryPieChart';
+import { InternSalaryPieChart } from '@/features/internship/components/InternSalaryPieChart';
+
+export const metadata = {
+  title: INTERNSHIP_PAGE_META.title,
+  description: INTERNSHIP_PAGE_META.description,
+  openGraph: {
+    title: INTERNSHIP_PAGE_META.title,
+    description: INTERNSHIP_PAGE_META.description,
+    type: 'article',
+    siteName: 'gotobyu.com',
+    locale: 'ja_JP',
+    images: [
+      {
+        url: '/open-graph.png',
+        width: 600,
+        height: 600,
+        alt: 'gotobyu.com',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: INTERNSHIP_PAGE_META.title,
+    description: INTERNSHIP_PAGE_META.description,
+  },
+}
 
 
 # インターンシップ

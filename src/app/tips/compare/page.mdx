@@ -1,16 +1,13 @@
-import classNames from 'classnames';
 import { Footnote } from '@/components/atoms/Footnote';
-import { Tab } from '@/components/atoms/Tab';
-import { UlCol } from '@/components/atoms/UlCol';
-import { DeadlineTable } from '@/components/organisms/DeadlineTable';
+import { Tab, TabGroup, TabList, TabPanels, TabPanel } from '@/components/atoms/Tab';
 import { ENGLISH_REQUIREMENT_BY_EXAM } from '@/data/english-requirement';
 import { ExrateAnnotation } from '@/features/forex';
 import { MDX } from '@/features/mdx';
 import { CurrencySwitchControl, LDSSwitchControl } from '@/features/stats';
-import { CostTable } from '../components/CostTable';
-import { EnglishRequirementByExamTable } from '../components/EnglishRequirementByExamTable';
-import { SchoolDataTable } from '../components/SchoolDataTable';
-import { TuitionBarChart } from '../components/TuitionBarChart';
+import { CostTable } from '@/features/compare/components/CostTable';
+import { EnglishRequirementByExamTable } from '@/features/compare/components/EnglishRequirementByExamTable';
+import { SchoolDataTable } from '@/features/compare/components/SchoolDataTable';
+import { TuitionBarChart } from '@/features/compare/components/TuitionBarChart';
 
 
 # BYU、BYUH、BYUIの比較
@@ -29,8 +26,8 @@ import { TuitionBarChart } from '../components/TuitionBarChart';
 [BYUIの入学に必要な英語力](https://www.byui.edu/admissions/apply/international-students/english-requirements)
 )に掲載されている情報を試験ごとに比較しやすいようにまとめました。
 
-<Tab.Group>
-  <Tab.List className='flex'>
+<TabGroup>
+  <TabList className='flex'>
     <Tab>
       <span className='font-bold'>TOEFL(iBT)</span>
     </Tab>
@@ -46,33 +43,33 @@ import { TuitionBarChart } from '../components/TuitionBarChart';
     <Tab>
       <span className='font-bold'>英検</span>
     </Tab>
-  </Tab.List>
-  <Tab.Panels>
-    <Tab.Panel>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
       <EnglishRequirementByExamTable exam='TOEFL' data={ENGLISH_REQUIREMENT_BY_EXAM.TOEFL} />
       [Test of English as a Foreign Language(TOEFL)](https://www.toefl-ibt.jp)はEducational Testing Service(ETS)が主催するテストです。
-    </Tab.Panel>
-    <Tab.Panel>
+    </TabPanel>
+    <TabPanel>
       <EnglishRequirementByExamTable exam='IELTS' data={ENGLISH_REQUIREMENT_BY_EXAM.IELTS} />
       [International English Language Testing System(IELTS)](https://www.eiken.or.jp/ielts/)はBritish Council、IDP、Cambridge Assessment Englishが共同で主催するテストです。
-    </Tab.Panel>
-    <Tab.Panel>
+    </TabPanel>
+    <TabPanel>
       <EnglishRequirementByExamTable exam='PTE' data={ENGLISH_REQUIREMENT_BY_EXAM.PTE} />
       [Pearson Test of English(PTE)](https://pearsonpte.com/japanese)はPearsonが主催するテストです。
       BYUIでは[普通のPTE](https://www.pearsonpte.com/pte-academic)ではなく、[PTE Academic Online](https://www.pearsonpte.com/pte-academic-online)を受験する必要があります。
-    </Tab.Panel>
-    <Tab.Panel>
+    </TabPanel>
+    <TabPanel>
       <EnglishRequirementByExamTable exam='Cambridge English' data={ENGLISH_REQUIREMENT_BY_EXAM.cambridge} withUseOfEnglish />
       [Cambridge English](https://www.cambridgeenglish.org/exams-and-tests/qualifications/general/)はCambridge University Press &amp; Assessmentが主催するテストです。
       Cambridge Englishは**BYUとBYUIでのみ**認められています。
-    </Tab.Panel>
-    <Tab.Panel>
+    </TabPanel>
+    <TabPanel>
       <EnglishRequirementByExamTable exam='英検' data={ENGLISH_REQUIREMENT_BY_EXAM.eiken} />
       [実用英語技能検定(英検)](https://www.eiken.or.jp/eiken/)は公益財団法人日本英語検定協会が主催するテストです。
       英検は**BYUHでのみ**認められています。
-    </Tab.Panel>
-  </Tab.Panels>
-</Tab.Group>
+    </TabPanel>
+  </TabPanels>
+</TabGroup>
 
 
 ## 学費

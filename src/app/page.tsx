@@ -6,6 +6,7 @@ import { BgRotateCard } from '@/components/molecules/BgRotateCard';
 import { PageCard } from '@/components/molecules/PageCard';
 import { TypingEffect } from '@/components/molecules/TypingEffect';
 import {
+  INDEX_PAGE_META,
   ADDITIONAL_SCHOOL_LINKS,
   APPLY_LINKS,
   CAREER_LINKS,
@@ -15,10 +16,35 @@ import byuLogoImage from '@/features/byu/assets/byu-logo.png';
 import byuhLogoImage from '@/features/byuh/assets/byuh-logo.png';
 import byuiLogoImage from '@/features/byui/assets/byui-logo.png';
 
+export const metadata = {
+  title: INDEX_PAGE_META.title,
+  description: INDEX_PAGE_META.description,
+  openGraph: {
+    title: INDEX_PAGE_META.title,
+    description: INDEX_PAGE_META.description,
+    type: 'website',
+    siteName: 'gotobyu.com',
+    locale: 'ja_JP',
+    images: [
+      {
+        url: '/open-graph.png',
+        width: 600,
+        height: 600,
+        alt: 'gotobyu.com',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: INDEX_PAGE_META.title,
+    description: INDEX_PAGE_META.description,
+  },
+};
+
 /**
  * Index page
  */
-export const Index = (): JSX.Element => (
+const Index = (): JSX.Element => (
   <div className='space-y-12 py-12 lg:space-y-16 lg:py-16'>
     <div
       className={classNames(
@@ -135,3 +161,5 @@ export const Index = (): JSX.Element => (
     </div>
   </div>
 );
+
+export default Index;

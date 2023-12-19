@@ -1,3 +1,5 @@
+'use client';
+
 import type { Context } from 'chartjs-plugin-datalabels';
 import { memo, useCallback, type ComponentPropsWithoutRef } from 'react';
 import { DynamicPieChart } from '@/components/organisms/DynamicPieChart';

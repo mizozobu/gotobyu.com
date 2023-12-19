@@ -1,6 +1,12 @@
 import { useMemo, type ReactNode, type ReactElement } from 'react';
 import { NextImage } from '@/components/atoms/NextImage';
-import { Tab } from '@/components/atoms/Tab';
+import {
+  Tab,
+  TabGroup,
+  TabPanels,
+  TabPanel,
+  TabList,
+} from '@/components/atoms/Tab';
 import byuLogoImage from '@/features/byu/assets/byu-logo.png';
 import byuhLogoImage from '@/features/byuh/assets/byuh-logo.png';
 import byuiLogoImage from '@/features/byui/assets/byui-logo.png';
@@ -22,7 +28,7 @@ const SchoolTabPanel = ({
   paneFor,
   children,
 }: TabPanelForSchoolProps): JSX.Element => (
-  <Tab.Panel data-panel-for={paneFor}>{children}</Tab.Panel>
+  <TabPanel data-panel-for={paneFor}>{children}</TabPanel>
 );
 
 /**
@@ -49,8 +55,8 @@ const SchoolTabRoot = ({ children }: Props): JSX.Element => {
   );
 
   return (
-    <Tab.Group>
-      <Tab.List className='flex'>
+    <TabGroup>
+      <TabList className='flex'>
         <Tab>
           <div className='flex items-center'>
             <NextImage
@@ -84,13 +90,13 @@ const SchoolTabRoot = ({ children }: Props): JSX.Element => {
             <span className='font-bold text-byui'>BYUI</span>
           </div>
         </Tab>
-      </Tab.List>
-      <Tab.Panels>
+      </TabList>
+      <TabPanels>
         {childrenMap.byu}
         {childrenMap.byuh}
         {childrenMap.byui}
-      </Tab.Panels>
-    </Tab.Group>
+      </TabPanels>
+    </TabGroup>
   );
 };
 
