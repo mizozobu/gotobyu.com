@@ -2,12 +2,38 @@ import { Digit } from '@/components/atoms/Digit';
 import { NextImage } from '@/components/atoms/NextImage';
 import { Pane } from '@/components/atoms/Pane';
 import { SplitPane } from '@/components/atoms/SplitPane';
-import { DynamicPhotoViewer } from '@/components/organisms/DynamicPhotoViewer';
+import { PhotoViewer } from '@/components/molecules/PhotoViewer';
+import { BYUI_PAGE_META } from '@/data/links';
 import { SCHOOL_INFO } from '@/data/school';
-import byuiClassImage from '../assets/byui-class.png';
-import byuiFitnessImage from '../assets/byui-fitness.png';
-import byuiHousingImage from '../assets/byui-housing.png';
-import byuiLogoImage from '../assets/byui-logo.png';
+import byuiClassImage from '@/features/byui/assets/byui-class.png';
+import byuiFitnessImage from '@/features/byui/assets/byui-fitness.png';
+import byuiHousingImage from '@/features/byui/assets/byui-housing.png';
+import byuiLogoImage from '@/features/byui/assets/byui-logo.png';
+
+export const metadata = {
+  title: BYUI_PAGE_META.title,
+  description: BYUI_PAGE_META.description,
+  openGraph: {
+    title: BYUI_PAGE_META.title,
+    description: BYUI_PAGE_META.description,
+    type: 'article',
+    siteName: 'gotobyu.com',
+    locale: 'ja_JP',
+    images: [
+      {
+        url: '/open-graph.png',
+        width: 600,
+        height: 600,
+        alt: 'gotobyu.com',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: BYUI_PAGE_META.title,
+    description: BYUI_PAGE_META.description,
+  },
+}
 
 
 # Brigham Young University - Idaho
@@ -40,7 +66,7 @@ BYUから車で5時間ほどのところにあるレックスバーグという�
 ## 専攻と授業
 
 <div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
-  <DynamicPhotoViewer
+  <PhotoViewer
     style={{
       '--bg': 'linear-gradient(to bottom right, #0076B6, #002f48)',
     }}
@@ -76,7 +102,7 @@ BYUIの教授たちは研究と並行して教師を勤めるのではなく、�
 ## 衣住食
 
 <div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
-  <DynamicPhotoViewer
+  <PhotoViewer
     style={{
       '--bg': 'linear-gradient(to bottom right, #0076B6, #002f48)',
     }}
@@ -118,7 +144,7 @@ BYUIから車で10分ほどのところに[Walmart](https://www.google.com/maps/
 ## クラブ
 
 <div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
-  <DynamicPhotoViewer
+  <PhotoViewer
     style={{
       '--bg': 'linear-gradient(to bottom right, #0076B6, #002f48)',
     }}

@@ -1,5 +1,3 @@
-import { NextImage } from '@/components/atoms/NextImage';
-import { Tab } from '@/components/atoms/Tab';
 import { DeadlineTable } from '@/components/organisms/DeadlineTable';
 import { SchoolTab } from '@/components/organisms/SchoolTab';
 import {
@@ -8,7 +6,33 @@ import {
   BYUI_APPLICATION_DEADLINE,
 } from '@/data/application-deadline';
 import { ENGLISH_REQUIREMENT_BY_SCHOOL } from '@/data/english-requirement';
-import { EnglishRequirementBySchoolTable } from '../components/EnglishRequirementBySchoolTable';
+import { APPLY_PAGE_META } from '@/data/links';
+import { EnglishRequirementBySchoolTable } from '@/features/apply/components/EnglishRequirementBySchoolTable';
+
+export const metadata = {
+  title: APPLY_PAGE_META.title,
+  description: APPLY_PAGE_META.description,
+  openGraph: {
+    title: APPLY_PAGE_META.title,
+    description: APPLY_PAGE_META.description,
+    type: 'article',
+    siteName: 'gotobyu.com',
+    locale: 'ja_JP',
+    images: [
+      {
+        url: '/open-graph.png',
+        width: 600,
+        height: 600,
+        alt: 'gotobyu.com',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: APPLY_PAGE_META.title,
+    description: APPLY_PAGE_META.description,
+  },
+}
 
 
 # 入学手続き

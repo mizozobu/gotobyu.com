@@ -2,17 +2,43 @@ import { Digit } from '@/components/atoms/Digit';
 import { NextImage } from '@/components/atoms/NextImage';
 import { Pane } from '@/components/atoms/Pane';
 import { SplitPane } from '@/components/atoms/SplitPane';
-import { DynamicPhotoViewer } from '@/components/organisms/DynamicPhotoViewer';
+import { PhotoViewer } from '@/components/molecules/PhotoViewer';
+import { BYUH_PAGE_META } from '@/data/links';
 import { SCHOOL_INFO } from '@/data/school';
-import byuhClassImage from '../assets/byuh-class.jpg';
-import byuhCultureNightImage from '../assets/byuh-culturenight.jpg';
-import byuhDressAndGroomingImage from '../assets/byuh-dress-and-grooming.jpg';
-import byuhFoodFestaImage from '../assets/byuh-food-festa.jpg';
-import byuhHousing from '../assets/byuh-housing.jpg';
-import byuhBbqImage from '../assets/byuh-japan-student-chapter-bbq.jpg';
-import byuhResumeWorkshopImage from '../assets/byuh-japan-student-chapter-resume-workshop.jpg';
-import byuhLogoImage from '../assets/byuh-logo.png';
-import byuhLuauImage from '../assets/pcc-luau.jpg';
+import byuhClassImage from '@/features/byuh/assets/byuh-class.jpg';
+import byuhCultureNightImage from '@/features/byuh/assets/byuh-culturenight.jpg';
+import byuhDressAndGroomingImage from '@/features/byuh/assets/byuh-dress-and-grooming.jpg';
+import byuhFoodFestaImage from '@/features/byuh/assets/byuh-food-festa.jpg';
+import byuhHousing from '@/features/byuh/assets/byuh-housing.jpg';
+import byuhBbqImage from '@/features/byuh/assets/byuh-japan-student-chapter-bbq.jpg';
+import byuhResumeWorkshopImage from '@/features/byuh/assets/byuh-japan-student-chapter-resume-workshop.jpg';
+import byuhLogoImage from '@/features/byuh/assets/byuh-logo.png';
+import byuhLuauImage from '@/features/byuh/assets/pcc-luau.jpg';
+
+export const metadata = {
+  title: BYUH_PAGE_META.title,
+  description: BYUH_PAGE_META.description,
+  openGraph: {
+    title: BYUH_PAGE_META.title,
+    description: BYUH_PAGE_META.description,
+    type: 'article',
+    siteName: 'gotobyu.com',
+    locale: 'ja_JP',
+    images: [
+      {
+        url: '/open-graph.png',
+        width: 600,
+        height: 600,
+        alt: 'gotobyu.com',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: BYUH_PAGE_META.title,
+    description: BYUH_PAGE_META.description,
+  },
+}
 
 
 # Brigham Young University–Hawaii
@@ -46,7 +72,7 @@ import byuhLuauImage from '../assets/pcc-luau.jpg';
 ## 専攻と授業
 
 <div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
-  <DynamicPhotoViewer
+  <PhotoViewer
     style={{
       '--bg': 'linear-gradient(to bottom right, #9e1b34, #3f0a14)',
     }}
@@ -87,7 +113,7 @@ import byuhLuauImage from '../assets/pcc-luau.jpg';
 ## 衣住食
 
 <div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
-  <DynamicPhotoViewer
+  <PhotoViewer
     style={{
       '--bg': 'linear-gradient(to bottom right, #9e1b34, #3f0a14)',
     }}
@@ -142,7 +168,7 @@ Haleでもオフキャンパスでもすぐ近くに友達がいるので、楽�
 ## クラブ
 
 <div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
-  <DynamicPhotoViewer
+  <PhotoViewer
     style={{
       '--bg': 'linear-gradient(to bottom right, #9e1b34, #3f0a14)',
     }}
@@ -189,7 +215,7 @@ BYUHのクラブは[BYUHのウェブサイト](https://byuh.campuslabs.com/engag
 
 
 <div className='pt-8 pb-4 md:float-left w-full md:w-1/2 aspect-[3/2]'>
-  <DynamicPhotoViewer
+  <PhotoViewer
     style={{
       '--bg': 'linear-gradient(to bottom right, #9e1b34, #3f0a14)',
     }}

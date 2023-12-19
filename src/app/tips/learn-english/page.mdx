@@ -1,6 +1,29 @@
-import { Footnote } from '@/components/atoms/Footnote';
-import { UlCol } from '@/components/atoms/UlCol';
-import { MDX } from '@/features/mdx';
+import { LEARN_ENGLISH_PAGE_META } from '@/data/links';
+
+export const metadata = {
+  title: LEARN_ENGLISH_PAGE_META.title,
+  description: LEARN_ENGLISH_PAGE_META.description,
+  openGraph: {
+    title: LEARN_ENGLISH_PAGE_META.title,
+    description: LEARN_ENGLISH_PAGE_META.description,
+    type: 'article',
+    siteName: 'gotobyu.com',
+    locale: 'ja_JP',
+    images: [
+      {
+        url: '/open-graph.png',
+        width: 600,
+        height: 600,
+        alt: 'gotobyu.com',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: LEARN_ENGLISH_PAGE_META.title,
+    description: LEARN_ENGLISH_PAGE_META.description,
+  },
+}
 
 
 # 英語の勉強方法

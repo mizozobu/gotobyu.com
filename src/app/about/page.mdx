@@ -1,3 +1,31 @@
+import { ABOUT_PAGE_META } from '@/data/links';
+
+export const metadata = {
+  title: ABOUT_PAGE_META.title,
+  description: ABOUT_PAGE_META.description,
+  openGraph: {
+    title: ABOUT_PAGE_META.title,
+    description: ABOUT_PAGE_META.description,
+    type: 'article',
+    siteName: 'gotobyu.com',
+    locale: 'ja_JP',
+    images: [
+      {
+        url: '/open-graph.png',
+        width: 600,
+        height: 600,
+        alt: 'gotobyu.com',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: ABOUT_PAGE_META.title,
+    description: ABOUT_PAGE_META.description,
+  },
+}
+
+
 # 運営者について
 
 
