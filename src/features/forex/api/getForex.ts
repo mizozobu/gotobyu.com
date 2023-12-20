@@ -1,3 +1,6 @@
+'use server';
+
+import 'server-only';
 import { ALPHA_VANTAGE_API_KEY } from '@/config';
 import { rest } from '@/lib/rest';
 import type { AlphaVantageForexResponse, Forex } from '../types';
@@ -17,6 +20,9 @@ export const getForex = async (from: string, to: string): Promise<Forex> => {
       from_currency: from,
       to_currency: to,
       apikey: ALPHA_VANTAGE_API_KEY,
+    },
+    {
+      next: { revalidate: 60 * 60 * 12 },
     },
   );
 
@@ -48,3 +54,9 @@ export const getForex = async (from: string, to: string): Promise<Forex> => {
     timestamp: timestamp.toISOString(),
   };
 };
+
+/**
+ * Get exchange rate for USD/JPY
+ * @returns Exchage rate and timestamp for USD/JPY
+ */
+export const getUSDtoJPY = (): Promise<Forex> => getForex('USD', 'JPY');
