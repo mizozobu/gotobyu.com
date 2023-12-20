@@ -6,14 +6,17 @@ import { Table } from '@/components/atoms/Table';
 import { TableCaption } from '@/components/atoms/TableCaption';
 import { SchoolTh } from '@/components/molecules/SchoolTh';
 import { COST_OF_ATTENDACE } from '@/data/cost-of-attendance';
-import { forexState } from '@/features/forex';
 import { statsState, CURRENCY } from '@/features/stats';
+
+interface Props {
+  exrate: number;
+  // getServerProps: () => Promise<{ exrate: number; timestamp: string }>;
+}
 
 /**
  * Table to compare the cost of attendance for each school
  */
-export const CostTable = (): JSX.Element => {
-  const { exrate } = useRecoilValue(forexState);
+export const CostTable = ({ exrate }: Props): JSX.Element => {
   const { currency, isLDS } = useRecoilValue(statsState);
   const isJPY = currency === CURRENCY.JPY;
   const unit = isJPY ? '¥' : '$';
