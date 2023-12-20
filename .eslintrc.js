@@ -51,6 +51,15 @@ module.exports = {
         'no-use-before-define': 'off',
         '@typescript-eslint/no-use-before-define': ['error'],
 
+        // enforce .client.tsx naming for client components
+        'no-restricted-syntax': [
+          'error',
+          {
+            selector: 'Literal[value=/^use client$/]',
+            message: 'Rename the file to *.client.tsx to use "use client".',
+          },
+        ],
+
         // allow jsx in .tsx
         'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
 
@@ -85,6 +94,16 @@ module.exports = {
             aspects: ['invalidHref', 'preferButton'],
           },
         ],
+      },
+    },
+
+    /**
+     * client components
+     */
+    {
+      files: ['**/*.client.jsx', '**/*.client.tsx'],
+      rules: {
+        'no-restricted-syntax': 'off',
       },
     },
 

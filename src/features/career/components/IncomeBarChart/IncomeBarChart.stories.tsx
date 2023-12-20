@@ -1,5 +1,5 @@
 import type { Meta, StoryObj, StoryFn } from '@storybook/react';
-import { IncomeBarChart } from './IncomeBarChart';
+import { IncomeBarChart } from './IncomeBarChart.client';
 
 const meta = {
   title: 'features/career/IncomeBarChart',

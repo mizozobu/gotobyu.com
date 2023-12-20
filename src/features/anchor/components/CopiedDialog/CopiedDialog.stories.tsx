@@ -1,7 +1,7 @@
 import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { RecoilRoot } from 'recoil';
 import { anchorState } from '@/features/anchor';
-import { CopiedDialog } from './CopiedDialog';
+import { CopiedDialog } from './CopiedDialog.client';
 
 const meta = {
   title: 'features/anchor/CopiedDialog',

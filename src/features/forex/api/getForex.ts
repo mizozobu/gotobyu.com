@@ -1,9 +1,30 @@
-'use server';
-
-import 'server-only';
 import { ALPHA_VANTAGE_API_KEY } from '@/config';
 import { rest } from '@/lib/rest';
-import type { AlphaVantageForexResponse, Forex } from '../types';
+
+/**
+ * response from https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE
+ */
+export interface AlphaVantageForexResponse {
+  'Realtime Currency Exchange Rate': {
+    '1. From_Currency Code': string;
+    '2. From_Currency Name': string;
+    '3. To_Currency Code': string;
+    '4. To_Currency Name': string;
+    '5. Exchange Rate': string;
+    '6. Last Refreshed': string;
+    '7. Time Zone': string;
+    '8. Bid Price': string;
+    '9. Ask Price': string;
+  };
+}
+
+/**
+ * FX rate info
+ */
+export interface Forex {
+  exrate: number;
+  timestamp: string;
+}
 
 /**
  * Get exchange rate from external alphavantage API
@@ -54,9 +75,3 @@ export const getForex = async (from: string, to: string): Promise<Forex> => {
     timestamp: timestamp.toISOString(),
   };
 };
-
-/**
- * Get exchange rate for USD/JPY
- * @returns Exchage rate and timestamp for USD/JPY
- */
-export const getUSDtoJPY = (): Promise<Forex> => getForex('USD', 'JPY');

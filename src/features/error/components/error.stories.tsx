@@ -12,5 +12,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
-  args: {},
+  args: {
+    message: 'Error',
+  },
 };

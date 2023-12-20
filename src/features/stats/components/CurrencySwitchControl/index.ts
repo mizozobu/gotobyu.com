@@ -1,1 +1,1 @@
-export * from './CurrencySwitchControl';
+export * from './CurrencySwitchControl.client';

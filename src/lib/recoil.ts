@@ -3,14 +3,12 @@ import type { GetStaticPropsResult, Redirect } from 'next';
 import { useRecoilTransaction_UNSTABLE, type RecoilState } from 'recoil';
 import type { ValuesType } from 'utility-types';
 import { anchorState, ANCHOR_STATE_KEY } from '@/features/anchor';
-import { forexState, FOREX_STATE_KEY } from '@/features/forex';
 import { statsState, STATS_STATE_KEY } from '@/features/stats';
 
 /**
  * Atom registry
  */
 const ATOM_REGISTRY = {
-  [FOREX_STATE_KEY]: forexState,
   [STATS_STATE_KEY]: statsState,
   [ANCHOR_STATE_KEY]: anchorState,
 };

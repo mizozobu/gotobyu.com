@@ -1,1 +1,1 @@
-export * from './PhotoViewer';
+export * from './PhotoViewer.client';

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import { RecoilRoot } from 'recoil';
-import { Header } from './Header';
+import { Header } from './Header.client';
 
 const meta = {
   title: 'components/organisms/Header',

@@ -1,1 +1,1 @@
-export * from './TypingEffect';
+export * from './TypingEffect.client';
