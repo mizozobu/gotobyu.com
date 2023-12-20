@@ -5,8 +5,8 @@ import { InternalLink } from '@/components/atoms/InternalLink';
 import { Footer } from '@/components/organisms/Footer';
 import { Header } from '@/components/organisms/Header';
 import { GOOGLE_TAG_MANAGER_ID, ALGOLIA_APP_ID, BASE_URL } from '@/config';
-import { GtmProvider } from '@/providers/gtm';
-import { RecoilRoot } from '@/providers/recoil';
+import { GtmProvider } from '@/providers/gtm.client';
+import { RecoilRoot } from '@/providers/recoil.client';
 import '@/styles/globals.css';
 
 const title = {

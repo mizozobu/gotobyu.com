@@ -1,1 +1,1 @@
-export * from './InternSalaryPieChart';
+export * from './InternSalaryPieChart.client';

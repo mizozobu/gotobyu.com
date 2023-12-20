@@ -1,5 +1,5 @@
 import type { Meta, StoryObj, StoryFn } from '@storybook/react';
-import { CostTable } from './CostTable';
+import { CostTable } from './CostTable.client';
 
 const meta = {
   title: 'features/compare/CostTable',
@@ -11,13 +11,11 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const Template: StoryFn<typeof CostTable> = () => <CostTable />;
+const Template: StoryFn<typeof CostTable> = (args) => <CostTable {...args} />;
 
 export const Example: Story = {
   render: Template,
   args: {
-    exrate: 110,
-    isJPY: true,
-    isLDS: true,
+    exrate: 100,
   },
 };

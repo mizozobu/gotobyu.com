@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Type } from './Type';
+import { Type } from './Type.client';
 
 const meta = {
   title: 'components/atoms/Type',

@@ -7,15 +7,13 @@ import { InternalLink } from '@/components/atoms/InternalLink';
  */
 interface Props {
   /** Error message */
-  message?: string;
+  message: string;
 }
 
 /**
  * Error page
  */
-export const Error = ({
-  message = 'エラーが発生しました。',
-}: Props): JSX.Element => (
+export const Error = ({ message }: Props): JSX.Element => (
   <CenterMiddleContainer>
     <InternalLink href='/'>
       <CirculatingCircles animated className='w-48' />

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj, StoryFn } from '@storybook/react';
 import skiResortImage from '@/features/byu/assets/ski-resort.jpg';
-import { PhotoViewer } from './PhotoViewer';
+import { PhotoViewer } from './PhotoViewer.client';
 
 const meta = {
   title: 'components/molecules/PhotoViewer',

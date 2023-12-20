@@ -1,1 +1,1 @@
-export * from './LDSSwitchControl';
+export * from './LDSSwitchControl.client';

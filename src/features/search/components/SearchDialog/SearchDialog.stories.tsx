@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { SearchDialog } from './SearchDialog';
+import { SearchDialog } from './SearchDialog.client';
 
 const meta = {
   title: 'features/search/SearchDialog',

@@ -1,13 +1,10 @@
-'use client';
-
-import { useRecoilValue } from 'recoil';
-import { forexState } from '../../stores';
+import { getForex } from '@/features/forex';
 
 /**
  * FX rate annotation
  */
-export const ExrateAnnotation = (): string => {
-  const { exrate, timestamp } = useRecoilValue(forexState);
+export const ExrateAnnotation = async (): Promise<string> => {
+  const { exrate, timestamp } = await getForex('USD', 'JPY');
   const date = new Date(timestamp).toLocaleString('ja-JP', {
     year: 'numeric',
     month: 'numeric',

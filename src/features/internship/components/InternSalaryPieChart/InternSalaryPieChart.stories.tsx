@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InternSalaryPieChart } from './InternSalaryPieChart';
+import { InternSalaryPieChart } from './InternSalaryPieChart.client';
 
 const meta = {
   title: 'features/internship/InternSalaryPieChart',

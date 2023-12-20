@@ -1,1 +1,1 @@
-export * from './SectionTitle';
+export * from './SectionTitle.client';

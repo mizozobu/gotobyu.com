@@ -1,1 +1,1 @@
-export * from './SearchDialog';
+export * from './SearchDialog.client';

@@ -1,1 +1,1 @@
-export * from './CopiedDialog';
+export * from './CopiedDialog.client';

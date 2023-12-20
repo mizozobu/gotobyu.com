@@ -1,1 +1,1 @@
-export * from './IncomeBarChart';
+export * from './IncomeBarChart.client';

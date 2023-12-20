@@ -1,5 +1,5 @@
 import type { Meta, StoryObj, StoryFn } from '@storybook/react';
-import { Tab } from './Tab';
+import { Tab, TabGroup, TabList, TabPanels, TabPanel } from './Tab.client';
 
 const meta = {
   title: 'components/atoms/Tab',
@@ -11,14 +11,14 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const Template: StoryFn<typeof Tab> = (args) => <Tab.Group {...args} />;
+const Template: StoryFn<typeof Tab> = (args) => <TabGroup {...args} />;
 
 export const Example: Story = {
   render: Template,
   args: {
     children: (
       <>
-        <Tab.List className='flex'>
+        <TabList className='flex'>
           <Tab>Tab</Tab>
           <Tab>
             This is a really long text. This is a really long text. This is a
@@ -30,12 +30,12 @@ export const Example: Story = {
               text wrapped in a div.
             </div>
           </Tab>
-        </Tab.List>
-        <Tab.Panels>
-          <Tab.Panel>Tab Content 1</Tab.Panel>
-          <Tab.Panel>Tab Content 2</Tab.Panel>
-          <Tab.Panel>Tab Content 3</Tab.Panel>
-        </Tab.Panels>
+        </TabList>
+        <TabPanels>
+          <TabPanel>Tab Content 1</TabPanel>
+          <TabPanel>Tab Content 2</TabPanel>
+          <TabPanel>Tab Content 3</TabPanel>
+        </TabPanels>
       </>
     ),
   },

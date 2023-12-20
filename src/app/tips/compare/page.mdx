@@ -1,10 +1,10 @@
 import { Footnote } from '@/components/atoms/Footnote';
 import { Tab, TabGroup, TabList, TabPanels, TabPanel } from '@/components/atoms/Tab';
 import { ENGLISH_REQUIREMENT_BY_EXAM } from '@/data/english-requirement';
-import { getUSDtoJPY, ExrateAnnotation } from '@/features/forex';
+import { ExrateAnnotation } from '@/features/forex';
 import { MDX } from '@/features/mdx';
 import { CurrencySwitchControl, LDSSwitchControl } from '@/features/stats';
-import { CostTable } from '@/features/compare/components/CostTable/CostTable.server';
+import { CostTable } from '@/features/compare/components/CostTable';
 import { EnglishRequirementByExamTable } from '@/features/compare/components/EnglishRequirementByExamTable';
 import { SchoolDataTable } from '@/features/compare/components/SchoolDataTable';
 import { TuitionBarChart } from '@/features/compare/components/TuitionBarChart';
@@ -100,7 +100,7 @@ import { TuitionBarChart } from '@/features/compare/components/TuitionBarChart';
   <LDSSwitchControl />
 </div>
 
-<CostTable getServerProps={getUSDtoJPY}/>
+<CostTable />
 
 <MDX.ul className='mt-4 text-xs'>
   <Footnote>

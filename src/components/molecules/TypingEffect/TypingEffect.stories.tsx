@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TypingEffect } from './TypingEffect';
+import { TypingEffect } from './TypingEffect.client';
 
 const meta = {
   title: 'components/molecules/TypingEffect',
