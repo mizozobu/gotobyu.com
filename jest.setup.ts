@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file, jest/require-hook */
 import { TextEncoder, TextDecoder } from 'node:util';
 import { jest } from '@jest/globals';
-import { setProjectAnnotations } from '@storybook/testing-react';
+import { setProjectAnnotations } from '@storybook/react';
 import Image from 'next/image';
 import globalStorybookConfig from './.storybook/preview';
 import '@testing-library/jest-dom';
