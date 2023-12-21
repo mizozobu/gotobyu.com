@@ -3081,7 +3081,7 @@
   dependencies:
     lodash "^4.17.15"
 
-"@storybook/csf@^0.1.0", "@storybook/csf@^0.1.2":
+"@storybook/csf@^0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.1.2.tgz#8e7452f0097507f5841b5ade3f5da1525bc9afb2"
   integrity sha512-ePrvE/pS1vsKR9Xr+o+YwdqNgHUyXvg+1Xjx0h9LrVx7Zq4zNe06pd63F5EvzTbCbJsHj7GHr9tkiaqm7U8WRA==
@@ -3313,13 +3313,6 @@
     fetch-retry "^5.0.2"
     fs-extra "^11.1.0"
     read-pkg-up "^7.0.1"
-
-"@storybook/testing-react@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@storybook/testing-react/-/testing-react-2.0.0.tgz#f5d855726e25af5ac6da7c74e9a3b0f150752716"
-  integrity sha512-xpjULCHN368+3+vC56tZ232EwgmG8F+1hOa17zqLFlADWNbFr/19ko0raMIdXiik9Fn6JAErJNKH7OhO0ni8qA==
-  dependencies:
-    "@storybook/csf" "^0.1.0"
 
 "@storybook/theming@7.6.6":
   version "7.6.6"
