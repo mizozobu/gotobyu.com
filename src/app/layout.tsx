@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+// eslint-disable-next-line camelcase
+import { Noto_Sans_JP } from 'next/font/google';
 import Script from 'next/script';
 import type { ReactNode } from 'react';
 import { InternalLink } from '@/components/atoms/InternalLink';
@@ -41,6 +43,15 @@ export const metadata: Metadata = {
 };
 
 /**
+ * Root font stylesheet
+ */
+const font = Noto_Sans_JP({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '500', '700', '900'],
+  display: 'swap',
+});
+
+/**
  * Props for {@link RootLayout}
  */
 interface Props {
@@ -51,7 +62,7 @@ interface Props {
  * Layout for all pages
  */
 const RootLayout = ({ children }: Props): JSX.Element => (
-  <html lang='ja'>
+  <html lang='ja' className={font.className}>
     <head>
       {/* favicon https://realfavicongenerator.net */}
       <link
@@ -73,10 +84,6 @@ const RootLayout = ({ children }: Props): JSX.Element => (
       />
       <link rel='manifest' href='/site.webmanifest' />
       <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
-      <link
-        href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap'
-        rel='stylesheet'
-      />
       <meta name='msapplication-TileColor' content='#da532c' />
       <meta name='theme-color' content='#ffffff' />
       {/* End favicon */}
