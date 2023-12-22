@@ -2,13 +2,16 @@
 
 import classNames from 'classnames';
 import {
+  useState,
+  useEffect,
+  useCallback,
   memo,
   type ComponentPropsWithoutRef,
   type ComponentType,
   type HTMLAttributes,
 } from 'react';
 import { Link } from '@/components/atoms/Link';
-import { useAnchorLink } from '../../hooks/useAnchorLink';
+import { useCopiedDialog } from '../../hooks/useCopiedDialog';
 import styles from './SectionTitle.module.css';
 
 /**
@@ -36,8 +39,22 @@ export const SectionTitle = memo(
     children,
     ...props
   }: Props): JSX.Element => {
-    const { active, handleClick } = useAnchorLink(_id);
     const id = encodeURIComponent(_id);
+    const { openCopiedDialog } = useCopiedDialog();
+    const [active, setActive] = useState(false);
+
+    const handleClick = useCallback(() => {
+      if (navigator.clipboard && window.isSecureContext) {
+        const { origin, pathname } = window.location;
+        void navigator.clipboard.writeText(`${origin}${pathname}#${id}`);
+
+        openCopiedDialog();
+      }
+    }, [id, openCopiedDialog]);
+
+    useEffect(() => {
+      setActive(decodeURIComponent(window.location.hash).substring(1) === id);
+    }, [id, setActive]);
 
     return (
       <Component

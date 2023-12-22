@@ -1,10 +1,10 @@
 'use client';
 
 import { memo, useCallback, type ComponentPropsWithoutRef } from 'react';
-import { useRecoilValue } from 'recoil';
 import { DynamicBarChart } from '@/components/organisms/DynamicBarChart';
 import { TUITION } from '@/data/cost-of-attendance';
-import { statsState, CURRENCY } from '@/features/stats';
+import { useCurrency } from '@/features/stats/hooks/useCurrency';
+import { useLds } from '@/features/stats/hooks/useLds';
 import { useMediaMinWidth } from '@/hooks/useMediaMinWidth';
 import { round } from '@/utils/round';
 
@@ -30,11 +30,11 @@ interface Props
  */
 export const TuitionBarChart = memo(
   ({ exrate, ...props }: Props): JSX.Element => {
-    const { currency, isLDS } = useRecoilValue(statsState);
-    const isJPY = currency === CURRENCY.JPY;
+    const { isLds } = useLds();
+    const { isJPY } = useCurrency();
     const isGteMd = useMediaMinWidth('md');
     const multiplier = isJPY ? exrate : 1;
-    const ldsRate = isLDS ? 1 : 2;
+    const ldsRate = isLds ? 1 : 2;
 
     /**
      * Format label and y axes

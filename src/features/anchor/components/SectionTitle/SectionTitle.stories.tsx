@@ -1,19 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { type ComponentPropsWithoutRef } from 'react';
-import { RecoilRoot } from 'recoil';
 import { SectionTitle } from './SectionTitle.client';
 
 const meta = {
   title: 'features/anchor/SectionTitle',
   component: SectionTitle,
   argTypes: {},
-  decorators: [
-    (Story) => (
-      <RecoilRoot>
-        <Story />
-      </RecoilRoot>
-    ),
-  ],
 } satisfies Meta<typeof SectionTitle>;
 
 export default meta;

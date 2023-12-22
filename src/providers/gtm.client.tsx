@@ -1,21 +1,13 @@
 'use client';
 
 import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect, type ReactNode } from 'react';
+import { useEffect } from 'react';
 import { GOOGLE_TAG_MANAGER_ID } from '@/config';
 
 /**
- * Props for {@link GtmProvider}
+ * Google Tag Manager provider
  */
-interface Props<T extends ReactNode> {
-  /** Children to pass */
-  children: T;
-}
-
-/**
- * Google Tag Manager provider HOC
- */
-export const GtmProvider = <T extends ReactNode>({ children }: Props<T>): T => {
+export const GtmProvider = (): null => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -32,5 +24,5 @@ export const GtmProvider = <T extends ReactNode>({ children }: Props<T>): T => {
     }
   }, [pathname, searchParams]);
 
-  return children;
+  return null;
 };
