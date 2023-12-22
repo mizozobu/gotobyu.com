@@ -2,33 +2,26 @@
 
 import { Transition, Dialog } from '@headlessui/react';
 import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline';
-import { Fragment, useEffect, useCallback } from 'react';
-import { useRecoilState } from 'recoil';
-import { anchorState } from '@/features/anchor';
+import { Fragment } from 'react';
+import { useCopiedDialog } from '../../hooks/useCopiedDialog';
 
 /**
  * Modal to show when a text is copied to the clipboard
  */
 export const CopiedDialog = (): JSX.Element => {
-  const [{ showCopiedModal }, setIsOpen] = useRecoilState(anchorState);
-
-  const closeDialog = useCallback(() => {
-    setIsOpen({
-      showCopiedModal: false,
-    });
-  }, [setIsOpen]);
-
-  useEffect(() => {
-    const timeout = window.setTimeout(() => closeDialog(), 1200);
-    return () => clearTimeout(timeout);
-  }, [showCopiedModal, closeDialog]);
+  const { isCopiedDialogOpen, closeCopiedDialog } = useCopiedDialog();
 
   return (
-    <Transition appear show={showCopiedModal} as={Fragment} data-noindex='true'>
+    <Transition
+      appear
+      show={isCopiedDialogOpen}
+      as={Fragment}
+      data-noindex='true'
+    >
       <Dialog
         as='div'
         className='fixed inset-0 z-20 overflow-y-auto'
-        onClose={closeDialog}
+        onClose={closeCopiedDialog}
       >
         <div className='flex min-h-screen w-screen items-center justify-center'>
           <Transition.Child
