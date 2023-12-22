@@ -1,2 +1,2 @@
 export * from './components/Heading';
-export * from './utils/MDX';
+export * from './components/MdxContainer';

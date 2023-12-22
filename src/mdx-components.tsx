@@ -8,10 +8,9 @@ import { P } from '@/components/atoms/P';
 import { Strong } from '@/components/atoms/Strong';
 import { Ul } from '@/components/atoms/Ul';
 import { CopiedDialog } from '@/features/anchor';
-import { H1, H2, H3 } from '@/features/mdx/components/Heading';
-import { MdxContainer } from '@/features/mdx/components/MdxContainer';
+import { MdxContainer, H1, H2, H3 } from '@/features/mdx';
 
-export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
+export const MDX = {
   h1: H1,
   h2: H2,
   h3: H3,
@@ -32,5 +31,9 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
       <CopiedDialog />
     </>
   ),
+};
+
+export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
+  ...MDX,
   ...components,
 });
