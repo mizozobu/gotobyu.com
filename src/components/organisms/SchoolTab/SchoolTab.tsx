@@ -7,9 +7,9 @@ import {
   TabPanel,
   TabList,
 } from '@/components/atoms/Tab';
-import byuLogoImage from '@/features/byu/assets/byu-logo.png';
-import byuhLogoImage from '@/features/byuh/assets/byuh-logo.png';
-import byuiLogoImage from '@/features/byui/assets/byui-logo.png';
+import { byuLogoImage } from '@/features/byu';
+import { byuhLogoImage } from '@/features/byuh';
+import { byuiLogoImage } from '@/features/byui';
 
 /**
  * Props for {@link SchoolTabPanel}

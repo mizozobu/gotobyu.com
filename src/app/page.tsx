@@ -12,9 +12,9 @@ import {
   CAREER_LINKS,
   OTHER_LINKS,
 } from '@/data/links';
-import byuLogoImage from '@/features/byu/assets/byu-logo.png';
-import byuhLogoImage from '@/features/byuh/assets/byuh-logo.png';
-import byuiLogoImage from '@/features/byui/assets/byui-logo.png';
+import { byuLogoImage } from '@/features/byu';
+import { byuhLogoImage } from '@/features/byuh';
+import { byuiLogoImage } from '@/features/byui';
 
 export const metadata = {
   title: INDEX_PAGE_META.title,

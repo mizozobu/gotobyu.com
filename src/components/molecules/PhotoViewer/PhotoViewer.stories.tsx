@@ -1,5 +1,5 @@
 import type { Meta, StoryObj, StoryFn } from '@storybook/react';
-import skiResortImage from '@/features/byu/assets/ski-resort.jpg';
+import { skiResortImage } from '@/features/byu';
 import { PhotoViewer } from './PhotoViewer.client';
 
 const meta = {
