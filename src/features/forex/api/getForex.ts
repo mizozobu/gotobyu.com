@@ -34,6 +34,13 @@ export interface Forex {
  * @throws Throws when Exchage rate or timestamp returned from API is not valid
  */
 export const getForex = async (from: string, to: string): Promise<Forex> => {
+  if (!ALPHA_VANTAGE_API_KEY) {
+    return {
+      exrate: 100,
+      timestamp: new Date('08/19/2016').toISOString(),
+    };
+  }
+
   const res = await rest.get<AlphaVantageForexResponse>(
     'https://www.alphavantage.co/query',
     {
