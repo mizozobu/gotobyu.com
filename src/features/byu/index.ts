@@ -1,0 +1,9 @@
+export { default as archesNationalParkImage } from './assets/arches-national-park.jpg';
+export { default as byuFoodCourtImage } from './assets/byu-foodcourt.jpg';
+export { default as byuFootballImage } from './assets/byu-football.jpg';
+export { default as byuLargeClass } from './assets/byu-large-class.jpg';
+export { default as byuLogoImage } from './assets/byu-logo.png';
+export { default as canyonLandsNationalParkImage } from './assets/canyonlands-national-park.jpg';
+export { default as saltFlatsImage } from './assets/salt-flats.jpg';
+export { default as skiResortImage } from './assets/ski-resort.jpg';
+export { default as utahStateCapitalBuilding } from './assets/utah-state-capital.jpg';

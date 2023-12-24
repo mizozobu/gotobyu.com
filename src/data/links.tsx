@@ -8,9 +8,9 @@ import {
 } from '@heroicons/react/24/outline';
 import type { Route } from 'next';
 import { NextImage } from '@/components/atoms/NextImage';
-import byuLogoImage from '@/features/byu/assets/byu-logo.png';
-import byuhLogoImage from '@/features/byuh/assets/byuh-logo.png';
-import byuiLogoImage from '@/features/byui/assets/byui-logo.png';
+import { byuLogoImage } from '@/features/byu';
+import { byuhLogoImage } from '@/features/byuh';
+import { byuiLogoImage } from '@/features/byui';
 import type { IconComponentType } from '@/types/icon';
 
 /**
