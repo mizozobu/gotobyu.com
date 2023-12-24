@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 // eslint-disable-next-line camelcase
 import { Noto_Sans_JP } from 'next/font/google';
 import Script from 'next/script';
+import { Suspense } from 'react';
 import type { ReactNode } from 'react';
 import { InternalLink } from '@/components/atoms/InternalLink';
 import { Footer } from '@/components/organisms/Footer';
@@ -109,7 +110,9 @@ const RootLayout = ({ children }: Props): JSX.Element => (
         </noscript>
       )}
       {/* End Google Tag Manager (noscript) */}
-      <GtmProvider />
+      <Suspense>
+        <GtmProvider />
+      </Suspense>
       {/* Google Tag Manager */}
       {GOOGLE_TAG_MANAGER_ID && (
         <Script
