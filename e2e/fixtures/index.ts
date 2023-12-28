@@ -1,6 +1,5 @@
 import { test as base } from '@playwright/test';
 import { _404Page } from '@e2e/fixtures/pages/404.page';
-import { _500Page } from '@e2e/fixtures/pages/500.page';
 import { AboutPage } from '@e2e/fixtures/pages/about.page';
 import { ApplyPage } from '@e2e/fixtures/pages/apply.page';
 import { ByuPage } from '@e2e/fixtures/pages/byu.page';
@@ -18,8 +17,6 @@ import { LearnEnglishPage } from '@e2e/fixtures/pages/learn-english.page';
 interface Fixtures {
   /** 404 page object model */
   _404Page: _404Page;
-  /** 500 page object model */
-  _500Page: _500Page;
   /** About page object model */
   aboutPage: AboutPage;
   /** Apply page object model */
@@ -48,9 +45,6 @@ interface Fixtures {
 export const test = base.extend<Fixtures>({
   _404Page: async ({ page }, use) => {
     await use(new _404Page(page));
-  },
-  _500Page: async ({ page }, use) => {
-    await use(new _500Page(page));
   },
   aboutPage: async ({ page }, use) => {
     await use(new AboutPage(page));
