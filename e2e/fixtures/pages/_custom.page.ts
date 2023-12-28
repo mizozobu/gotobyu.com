@@ -61,6 +61,8 @@ export abstract class _CustomPage {
    */
   private handleConsoleError(this: void, message: ConsoleMessage): void {
     if (message.type() === 'error') {
+      // eslint-disable-next-line no-console
+      console.error(message.text());
       throw new Error(message.text());
     }
   }
