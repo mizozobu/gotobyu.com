@@ -1,9 +1,4 @@
 /**
- * Whether to unoptimize next/image. Server side only.
- */
-export const UNOPTIMIZE_IMAGE = process.env.UNOPTIMIZE_IMAGE === 'true';
-
-/**
  * Alpha Vantage API key. Server side only.
  */
 export const ALPHA_VANTAGE_API_KEY = process.env
