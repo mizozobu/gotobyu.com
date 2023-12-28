@@ -23,6 +23,8 @@ test.describe('full-text search', () => {
       .click();
 
     await expect(indexPage.searchModal).toBeHidden();
-    expect(new URL(page.url()).pathname).toBe(aboutPage.path);
+    await expect(
+      page.waitForURL((url) => new URL(url).pathname === aboutPage.path),
+    ).resolves.not.toThrow();
   });
 });
