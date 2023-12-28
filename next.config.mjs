@@ -37,9 +37,6 @@ const withMDX = mdxFactory({
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  images: {
-    unoptimized: process.env.UNOPTIMIZE_IMAGE === 'true',
-  },
   experimental: {
     instrumentationHook: true,
     // typedRoutes: true,
