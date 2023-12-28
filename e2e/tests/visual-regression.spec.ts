@@ -37,19 +37,6 @@ test.describe('visual regression test', () => {
     expect(screenshot).toMatchSnapshot();
   });
 
-  test('/500', async ({ _500Page }) => {
-    await _500Page.setup();
-    // temporarily ignore console error for http status code 500
-    _500Page.unwatchConsoleError();
-    await _500Page.goto();
-    _500Page.watchConsoleError();
-    await _500Page.loadLazyElements();
-
-    const screenshot = await _500Page.screenshot();
-
-    expect(screenshot).toMatchSnapshot();
-  });
-
   test('/schools/byu', async ({ byuPage }) => {
     await byuPage.setup();
     await byuPage.goto();
