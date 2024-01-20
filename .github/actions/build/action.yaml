@@ -8,7 +8,7 @@ runs:
     # cache built app
     - name: Cache next.js build
       id: cache-build
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ${{ github.workspace }}/.next
@@ -17,7 +17,7 @@ runs:
     # cache nextjs cache as a fallback
     - name: Cache next.js build cache
       if: steps.cache-build.outputs.cache-hit != 'true'
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ${{ github.workspace }}/.next/cache
