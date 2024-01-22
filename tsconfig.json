@@ -3,10 +3,10 @@
   "compilerOptions": {
     "plugins": [
       {
-        "name": "next"
-      }
+        "name": "next",
+      },
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
   },
   "include": [
     "next-env.d.ts",
@@ -14,16 +14,16 @@
     "src/**/*.tsx",
     "src/**/*.js",
     "src/**/*.jsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
   ],
   "exclude": ["node_modules"],
   "ts-node": {
     "transpileOnly": true,
     "moduleTypes": {
-      "src/**/*": "esm"
+      "src/**/*": "esm",
     },
     "compilerOptions": {
-      "jsx": "react-jsx"
-    }
-  }
+      "jsx": "react-jsx",
+    },
+  },
 }
