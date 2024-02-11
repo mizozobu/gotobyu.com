@@ -7073,10 +7073,10 @@ eslint-plugin-jsx-a11y@^6.8.0:
     object.entries "^1.1.7"
     object.fromentries "^2.0.7"
 
-eslint-plugin-playwright@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-playwright/-/eslint-plugin-playwright-1.0.0.tgz#2d2eee84ac4daff353fd4a660f57ca2dac089b48"
-  integrity sha512-DKHQ92eXNZl2WamZzPvTg1CERcJwz1f/iW0Ynf3UXJfKTAC3jvafWiUZtyjoQhB4BoQ+ZjEYeWviAJ4FvUQOcw==
+eslint-plugin-playwright@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-playwright/-/eslint-plugin-playwright-1.0.1.tgz#0c010ec380cc89a53228e728dc3e502b4afffed0"
+  integrity sha512-fq3oIZSE7/aHry2gaZRXGYwSkKDkoV+PKyQfyKmtMg4Gt4vQ41dZc4qBPd6VrdXLAflbL1i5KEl3bF9x1UFbVw==
   dependencies:
     globals "^13.23.0"
 
