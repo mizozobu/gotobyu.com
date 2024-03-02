@@ -66,7 +66,7 @@
     "@types/sinon": "^17.0.3",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
-    "autoprefixer": "^10.4.17",
+    "autoprefixer": "^10.4.18",
     "canvas": "^2.11.2",
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
