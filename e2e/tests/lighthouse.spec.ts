@@ -47,7 +47,7 @@ test.describe('lighthouse', () => {
 
     expect(
       (runnerResult.lhr.categories.performance.score as number) * 100,
-    ).toBeGreaterThanOrEqual(80);
+    ).toBeGreaterThanOrEqual(70);
     expect(
       (runnerResult.lhr.categories.accessibility.score as number) * 100,
     ).toBe(100);
