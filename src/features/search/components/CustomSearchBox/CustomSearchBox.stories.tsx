@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import { CustomSearchBox } from './CustomSearchBox';
 
 const meta = {
@@ -17,5 +18,6 @@ export const Example: Story = {
     currentRefinement: 'default value',
     delay: 500,
     isSearchStalled: true,
+    refine: fn(),
   },
 };

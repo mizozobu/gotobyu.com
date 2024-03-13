@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions'; // eslint-disable-line import/no-extraneous-dependencies
 import type { Meta, StoryObj, StoryFn } from '@storybook/react';
+import { fn } from '@storybook/test';
 import { MockInstantSearch } from '@/test/instantsearch';
 import { HitItem } from '../HitItem';
 import { CustomInfiniteHits } from './CustomInfiniteHits';
@@ -160,5 +161,7 @@ export const Example: Story = {
     ],
     hasPrevious: false,
     hasMore: false,
+    refineNext: fn(),
+    refinePrevious: fn(),
   },
 };
