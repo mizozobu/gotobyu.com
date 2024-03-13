@@ -7,10 +7,12 @@ describe('getText', () => {
     const text = getText({
       type: 'element',
       tagName: 'div',
+      properties: {},
       children: [
         {
           type: 'element',
           tagName: 'p',
+          properties: {},
           children: [
             {
               type: 'text',
@@ -25,10 +27,12 @@ describe('getText', () => {
         {
           type: 'element',
           tagName: 'div',
+          properties: {},
           children: [
             {
               type: 'element',
               tagName: 'p',
+              properties: {},
               children: [
                 {
                   type: 'text',
@@ -39,6 +43,7 @@ describe('getText', () => {
             {
               type: 'element',
               tagName: 'div',
+              properties: {},
               children: [
                 {
                   type: 'text',

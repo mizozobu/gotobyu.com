@@ -1,5 +1,4 @@
-import type { Text } from 'hast';
-import type { Node } from 'unist';
+import type { Element } from 'hast';
 import { visit } from 'unist-util-visit';
 
 /**
@@ -7,10 +6,10 @@ import { visit } from 'unist-util-visit';
  * @param tree Hast tree
  * @returns Merged texts
  */
-export const getText = (tree: Node): string => {
+export const getText = (tree: Element): string => {
   let value = '';
   visit(tree, 'text', (node) => {
-    value += (node as Text).value;
+    value += node.value;
   });
   return value.replace(/(\r\n|\r|\n)/g, '');
 };

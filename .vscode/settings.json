@@ -13,6 +13,11 @@
     "source.fixAll.stylelint": "explicit"
   },
 
+  "files.associations": {
+    "tsconfig.json": "jsonc",
+    "tsconfig.*.json": "jsonc"
+  },
+
   // hush warnings for tailwindcss
   "css.validate": false,
 

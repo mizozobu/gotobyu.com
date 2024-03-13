@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import { Modal } from './Modal';
 
 const meta = {
@@ -22,6 +23,7 @@ export const Open: Story = {
         button
       </button>
     ),
+    onClose: fn(),
   },
 };
 
@@ -36,5 +38,6 @@ export const Closed: Story = {
         button
       </button>
     ),
+    onClose: fn(),
   },
 };

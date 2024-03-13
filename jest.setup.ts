@@ -19,16 +19,16 @@ global.IntersectionObserver = class MockIntersectionObserver
   public readonly root = null;
   public readonly rootMargin = '0px';
   public readonly thresholds = [1];
-  public disconnect = jest.fn<MockIntersectionObserver['disconnect']>();
-  public observe = jest.fn<MockIntersectionObserver['observe']>();
-  public takeRecords = jest.fn<MockIntersectionObserver['takeRecords']>();
-  public unobserve = jest.fn<MockIntersectionObserver['unobserve']>();
+  public disconnect = jest.fn<IntersectionObserver['disconnect']>();
+  public observe = jest.fn<IntersectionObserver['observe']>();
+  public takeRecords = jest.fn<IntersectionObserver['takeRecords']>();
+  public unobserve = jest.fn<IntersectionObserver['unobserve']>();
 };
 
 global.ResizeObserver = class MockResizeObserver implements ResizeObserver {
-  public observe = jest.fn<MockResizeObserver['observe']>();
-  public disconnect = jest.fn<MockResizeObserver['disconnect']>();
-  public unobserve = jest.fn<MockResizeObserver['unobserve']>();
+  public observe = jest.fn<ResizeObserver['observe']>();
+  public disconnect = jest.fn<ResizeObserver['disconnect']>();
+  public unobserve = jest.fn<ResizeObserver['unobserve']>();
 };
 
 global.matchMedia = (query: string) => ({

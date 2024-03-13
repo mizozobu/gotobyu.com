@@ -1,4 +1,5 @@
 import type { Meta, StoryObj, StoryFn } from '@storybook/react';
+import { fn } from '@storybook/test';
 import { MockInstantSearch } from '@/test/instantsearch';
 import { HitItem } from './HitItem';
 
@@ -82,5 +83,6 @@ export const Example: Story = {
         },
       },
     },
+    onClick: fn(),
   },
 };

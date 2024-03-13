@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import { HeaderMobileMenuDialog } from './HeaderMobileMenuDialog';
 
 const meta = {
@@ -14,5 +15,6 @@ type Story = StoryObj<typeof meta>;
 export const Example: Story = {
   args: {
     isOpen: true,
+    onClose: fn(),
   },
 };

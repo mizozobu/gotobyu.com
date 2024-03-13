@@ -1,5 +1,6 @@
 import { CommandLineIcon } from '@heroicons/react/24/outline';
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import { HeaderMenuLink } from './HeaderMenuLink';
 
 const meta = {
@@ -18,5 +19,6 @@ export const Example: Story = {
     detail: 'detail for link',
     href: '/',
     icon: CommandLineIcon,
+    onClick: fn(),
   },
 };
