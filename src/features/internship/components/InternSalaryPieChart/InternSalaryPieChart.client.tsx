@@ -38,7 +38,7 @@ export const InternSalaryPieChart = memo((props: Props): JSX.Element => {
     <>
       <DynamicPieChart
         {...props}
-        title='インターンシップの給与(月)'
+        title='インターンシップの給与(月)(2021年時点)'
         data={{
           labels: [
             '0円',

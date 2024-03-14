@@ -35,7 +35,7 @@ export const EnglishRequirementBySchoolTable = ({
   return (
     <Table>
       <TableCaption
-        description={`${school}の入学に必要なスコア(TOEFL(iBT)、IELTS、PTE、Cambridge English、英検)`}
+        description={`${school}の入学に必要なスコア(TOEFL(iBT)、IELTS、PTE、Cambridge English)`}
       >
         {school}の入学に必要なスコア
       </TableCaption>
@@ -46,7 +46,6 @@ export const EnglishRequirementBySchoolTable = ({
           <th scope='col'>IELTS</th>
           <th scope='col'>PTE</th>
           <th scope='col'>Cambridge English</th>
-          <th scope='col'>英検</th>
         </tr>
       </thead>
       <tbody data-noindex='true'>
@@ -56,7 +55,6 @@ export const EnglishRequirementBySchoolTable = ({
           <td>{renderScore(data.IELTS.reading)}</td>
           <td>{renderScore(data.PTE.reading)}</td>
           <td>{renderScore(data.cambridge.reading)}</td>
-          <td>{renderScore(data.eiken.reading)}</td>
         </tr>
         <tr>
           <th scope='row'>Writing</th>
@@ -64,7 +62,6 @@ export const EnglishRequirementBySchoolTable = ({
           <td>{renderScore(data.IELTS.writing)}</td>
           <td>{renderScore(data.PTE.writing)}</td>
           <td>{renderScore(data.cambridge.writing)}</td>
-          <td>{renderScore(data.eiken.writing)}</td>
         </tr>
         <tr>
           <th scope='row' className='px-24'>
@@ -74,7 +71,6 @@ export const EnglishRequirementBySchoolTable = ({
           <td>{renderScore(data.IELTS.speaking)}</td>
           <td>{renderScore(data.PTE.speaking)}</td>
           <td>{renderScore(data.cambridge.speaking)}</td>
-          <td>{renderScore(data.eiken.speaking)}</td>
         </tr>
         <tr>
           <th scope='row' className='px-24'>
@@ -84,7 +80,6 @@ export const EnglishRequirementBySchoolTable = ({
           <td>{renderScore(data.IELTS.listening)}</td>
           <td>{renderScore(data.PTE.listening)}</td>
           <td>{renderScore(data.cambridge.listening)}</td>
-          <td>{renderScore(data.eiken.listening)}</td>
         </tr>
       </tbody>
       <tfoot data-noindex='true'>
@@ -96,7 +91,6 @@ export const EnglishRequirementBySchoolTable = ({
           <td>{renderScore(data.IELTS.total)}</td>
           <td>{renderScore(data.PTE.total)}</td>
           <td>{renderScore(data.cambridge.total)}</td>
-          <td>{renderScore(data.eiken.total)}</td>
         </tr>
       </tfoot>
     </Table>

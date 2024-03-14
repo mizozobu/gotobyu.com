@@ -33,36 +33,36 @@ export interface SchoolInfo {
  *
  * | | BYU | BYUH | BYUI |
  * | -- | -- | -- | -- |
- * | Number of students | https://www.byu.edu/facts-figures | https://about.byuh.edu/00000177-1ce4-d89c-af77-7df626210000/20-11-09-quickfactsupdate-pdf | https://www.byui.edu/executive-strategy-and-planning/institutional-data/official-enrollment-statistics |
- * | International student ratio | https://www.collegefactual.com/colleges/brigham-young-university-provo/student-life/international/ | https://about.byuh.edu/00000177-1ce4-d89c-af77-7df626210000/20-11-09-quickfactsupdate-pdf | https://www.collegefactual.com/colleges/brigham-young-university-idaho/student-life/international/ |
- * | Student to faculty ratio | https://www.usnews.com/best-colleges/byu-3670 | https://www.byuh.edu/academics | https://www.communitycollegereview.com/brigham-young-university-idaho-profile |
- * | Number of majors | https://www.byu.edu/facts-figures | https://www.byuh.edu/academics, https://holokai.byuh.edu/programs-of-study# | https://www.byui.edu/campus-career-and-academic-advising/career-and-major-exploration/major-to-career |
+ * | Number of students | https://www.byu.edu/facts-figures | https://admissions.byuh.edu/admission-criteria | https://www.byui.edu/executive-strategy-and-planning/institutional-data/official-enrollment-statistics |
+ * | International student ratio | https://www.collegefactual.com/colleges/brigham-young-university-provo/student-life/international/ | https://admissions.byuh.edu/admission-criteria | https://www.collegefactual.com/colleges/brigham-young-university-idaho/student-life/international/ |
+ * | Student to faculty ratio | https://www.usnews.com/best-colleges/byu-3670 | https://admissions.byuh.edu/admission-criteria | https://www.communitycollegereview.com/brigham-young-university-idaho-profile |
+ * | Number of majors | https://www.byu.edu/facts-figures | https://www.byuh.edu/academics | https://www.byui.edu/majors/ |
  * | Number of courses | https://catalog.byu.edu/courses | https://catalog.byuh.edu/courses | https://www.byui.edu/catalog#/courses |
  * | Acceptance rate | https://www.byu.edu/admissions | https://www.byuh.edu/admissions-aid | https://www.byui.edu/admissions/application-help/academic-requirements |
  */
 export const SCHOOL_INFO: SchoolDataCollection<SchoolInfo> = {
   byu: {
-    numberOfStudents: 31627,
-    internationStudentRatio: 3.8,
+    numberOfStudents: 34937,
+    internationStudentRatio: 3.5,
     studentToFaculty: '21:1',
-    numberOfMajors: 190,
-    numberOfCourses: 5715,
-    acceptanceRate: 0.59,
+    numberOfMajors: 198,
+    numberOfCourses: 5875,
+    acceptanceRate: 0.662,
   },
   byuh: {
-    numberOfStudents: 3096,
-    internationStudentRatio: 48,
+    numberOfStudents: 2739,
+    internationStudentRatio: 64,
     studentToFaculty: '16:1',
     numberOfMajors: 37,
-    numberOfCourses: 930,
+    numberOfCourses: 943,
     acceptanceRate: 0.42,
   },
   byui: {
-    numberOfStudents: 23703,
-    internationStudentRatio: 15.5,
-    studentToFaculty: '19:1',
-    numberOfMajors: 77,
-    numberOfCourses: 2109,
-    acceptanceRate: 0.96,
+    numberOfStudents: 22251,
+    internationStudentRatio: 17.5,
+    studentToFaculty: '21:1',
+    numberOfMajors: 144,
+    numberOfCourses: 2071,
+    acceptanceRate: 0.94,
   },
 };
