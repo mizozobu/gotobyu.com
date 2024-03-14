@@ -39,8 +39,6 @@ export interface EnglishExamCollection {
   PTE: EnglishRequirement;
   /** Cambridge English data */
   cambridge: EnglishRequirement;
-  /** Eiken data */
-  eiken: EnglishRequirement;
 }
 
 /**
@@ -59,12 +57,12 @@ const TOEFL_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
     total: 80,
   },
   byuh: {
-    reading: SCORE.NOT_SPECIFIED,
+    reading: 17,
     writing: 17,
-    speaking: 17,
-    listening: SCORE.NOT_SPECIFIED,
+    speaking: 16,
+    listening: 16,
     useOfEnglish: SCORE.NOT_APPLICABLE,
-    total: 61,
+    total: 66,
   },
   byui: {
     reading: 17,
@@ -92,12 +90,12 @@ const IELTS_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
     total: 6.5,
   },
   byuh: {
-    reading: 5,
-    writing: 5,
-    speaking: 5,
-    listening: 5,
+    reading: 5.5,
+    writing: 5.5,
+    speaking: 5.5,
+    listening: 5.5,
     useOfEnglish: SCORE.NOT_APPLICABLE,
-    total: 5.5,
+    total: 6,
   },
   byui: {
     reading: 6,
@@ -112,33 +110,32 @@ const IELTS_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
 /**
  * PTE requirement
  * - BYU: @see {@link https://enrollment.byu.edu/admissions/english-proficiency-requirement}
- * - BYUH: @see {@link https://hookele.byuh.edu/admissions/english-test-requirements}
  * - BYUI: @see {@link https://www.byui.edu/admissions/apply/international-students/english-requirements}
  */
 const PTE_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
   byu: {
-    reading: 49,
-    writing: 49,
-    speaking: 49,
-    listening: 49,
+    reading: 60,
+    writing: 60,
+    speaking: 60,
+    listening: 60,
     useOfEnglish: SCORE.NOT_APPLICABLE,
-    total: 53,
+    total: 60,
   },
   byuh: {
-    reading: SCORE.NOT_SPECIFIED,
-    writing: SCORE.NOT_SPECIFIED,
-    speaking: SCORE.NOT_SPECIFIED,
-    listening: SCORE.NOT_SPECIFIED,
+    reading: SCORE.NOT_APPLICABLE,
+    writing: SCORE.NOT_APPLICABLE,
+    speaking: SCORE.NOT_APPLICABLE,
+    listening: SCORE.NOT_APPLICABLE,
     useOfEnglish: SCORE.NOT_APPLICABLE,
-    total: 44,
+    total: SCORE.NOT_APPLICABLE,
   },
   byui: {
-    reading: 67,
-    writing: 55,
-    speaking: 59,
-    listening: 67,
+    reading: 52,
+    writing: 52,
+    speaking: 52,
+    listening: 52,
     useOfEnglish: SCORE.NOT_APPLICABLE,
-    total: 62,
+    total: 52,
   },
 };
 
@@ -175,37 +172,6 @@ const CAMBRIDGE_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
 };
 
 /**
- * Eiken requirement
- * - BYUH: @see {@link https://hookele.byuh.edu/admissions/english-test-requirements}
- */
-const EIKEN_REQUIREMENT: SchoolDataCollection<EnglishRequirement> = {
-  byu: {
-    reading: SCORE.NOT_APPLICABLE,
-    writing: SCORE.NOT_APPLICABLE,
-    speaking: SCORE.NOT_APPLICABLE,
-    listening: SCORE.NOT_APPLICABLE,
-    useOfEnglish: SCORE.NOT_APPLICABLE,
-    total: SCORE.NOT_APPLICABLE,
-  },
-  byuh: {
-    reading: 520,
-    writing: 520,
-    speaking: 520,
-    listening: 520,
-    useOfEnglish: SCORE.NOT_APPLICABLE,
-    total: 2150,
-  },
-  byui: {
-    reading: SCORE.NOT_APPLICABLE,
-    writing: SCORE.NOT_APPLICABLE,
-    speaking: SCORE.NOT_APPLICABLE,
-    listening: SCORE.NOT_APPLICABLE,
-    useOfEnglish: SCORE.NOT_APPLICABLE,
-    total: SCORE.NOT_APPLICABLE,
-  },
-};
-
-/**
  * English requirement for BYU
  */
 const BYU_REQUIREMENT: EnglishExamCollection = {
@@ -213,7 +179,6 @@ const BYU_REQUIREMENT: EnglishExamCollection = {
   IELTS: IELTS_REQUIREMENT.byu,
   PTE: PTE_REQUIREMENT.byu,
   cambridge: CAMBRIDGE_REQUIREMENT.byu,
-  eiken: EIKEN_REQUIREMENT.byu,
 };
 
 /**
@@ -224,7 +189,6 @@ const BYUH_REQUIREMENT: EnglishExamCollection = {
   IELTS: IELTS_REQUIREMENT.byuh,
   PTE: PTE_REQUIREMENT.byuh,
   cambridge: CAMBRIDGE_REQUIREMENT.byuh,
-  eiken: EIKEN_REQUIREMENT.byuh,
 };
 
 /**
@@ -235,7 +199,6 @@ const BYUI_REQUIREMENT: EnglishExamCollection = {
   IELTS: IELTS_REQUIREMENT.byui,
   PTE: PTE_REQUIREMENT.byui,
   cambridge: CAMBRIDGE_REQUIREMENT.byui,
-  eiken: EIKEN_REQUIREMENT.byui,
 };
 
 /**
@@ -250,8 +213,6 @@ export const ENGLISH_REQUIREMENT_BY_EXAM = {
   PTE: PTE_REQUIREMENT,
   /** Cambridge English requirement */
   cambridge: CAMBRIDGE_REQUIREMENT,
-  /** Eiken requirement */
-  eiken: EIKEN_REQUIREMENT,
 };
 
 /**

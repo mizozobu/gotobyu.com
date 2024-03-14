@@ -37,7 +37,7 @@ export const IncomeBarChart = memo((props: Props): JSX.Element => {
     <>
       <DynamicBarChart
         {...props}
-        title='大卒1年目の年収'
+        title='大卒1年目の年収(2021年時点)'
         data={{
           labels: ['大卒平均', 'BYUs卒平均'],
           datasets: [

@@ -22,36 +22,36 @@ export interface ApplicationDeadline {
  */
 export const BYU_APPLICATION_DEADLINE: ApplicationDeadline[] = [
   {
-    term: '2023年 秋学期',
-    period: '9月初旬 ~ 12月中旬',
-    openAt: '2022/8/24',
-    priorityClosedAt: '2022/11/4',
-    closedAt: '2022/12/15',
-    announcedAt: '2022/2/20',
-  },
-  {
-    term: '2024年 冬学期',
-    period: '1月初旬 ~ 4月中旬',
-    openAt: '2023/4/3',
-    priorityClosedAt: '-',
-    closedAt: '2023/8/1',
-    announcedAt: '2023/8/28',
-  },
-  {
-    term: '2024年 春学期',
+    term: '2025年 春学期',
     period: '4月下旬 ~ 6月中旬',
-    openAt: '2023/8/30',
-    priorityClosedAt: '2023/11/1',
-    closedAt: '2023/12/15',
-    announcedAt: '2023/2/19',
+    openAt: '2024/8/28',
+    priorityClosedAt: '2024/11/1',
+    closedAt: '2024/12/16',
+    announcedAt: '2025/2/17',
   },
   {
-    term: '2024年 夏学期',
+    term: '2025年 夏学期',
     period: '6月下旬 ~ 8月中旬',
-    openAt: '2023/8/30',
-    priorityClosedAt: '2023/11/1',
-    closedAt: '2023/12/15',
-    announcedAt: '2023/2/19',
+    openAt: '2024/8/28',
+    priorityClosedAt: '2024/11/1',
+    closedAt: '2024/12/16',
+    announcedAt: '2025/2/17',
+  },
+  {
+    term: '2025年 秋学期',
+    period: '9月初旬 ~ 12月中旬',
+    openAt: '2024/8/28',
+    priorityClosedAt: '2024/11/1',
+    closedAt: '2024/12/16',
+    announcedAt: '2025/2/17',
+  },
+  {
+    term: '2025年 冬学期',
+    period: '1月初旬 ~ 4月中旬',
+    openAt: '2025/4/4',
+    priorityClosedAt: '-',
+    closedAt: '2025/8/1',
+    announcedAt: '2025/8/25',
   },
 ];
 
@@ -88,7 +88,7 @@ export const BYUH_APPLICATION_DEADLINE: ApplicationDeadline[] = [
 
 /**
  * BYUI application deadline
- * @see {@link https://www.byui.edu/admissions/application-deadlines}
+ * @see {@link https://www.byui.edu/admissions/application-deadlines#international-application-deadlines}
  */
 export const BYUI_APPLICATION_DEADLINE: ApplicationDeadline[] = [
   {
