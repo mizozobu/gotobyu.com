@@ -45,7 +45,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.1.0",
+    "@commitlint/cli": "^19.2.0",
     "@commitlint/config-conventional": "^19.1.0",
     "@jest/globals": "^29.7.0",
     "@next/bundle-analyzer": "^14.1.3",
