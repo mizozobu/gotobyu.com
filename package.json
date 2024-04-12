@@ -50,7 +50,7 @@
     "@jest/globals": "^29.7.0",
     "@next/bundle-analyzer": "^14.2.0",
     "@next/env": "^14.2.0",
-    "@next/eslint-plugin-next": "^14.2.0",
+    "@next/eslint-plugin-next": "^14.2.1",
     "@playwright/test": "^1.43.1",
     "@storybook/addon-essentials": "^8.0.8",
     "@storybook/nextjs": "^8.0.8",
