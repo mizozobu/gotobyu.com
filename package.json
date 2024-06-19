@@ -41,7 +41,7 @@
     "remark-sectionize": "^2.0.0",
     "sharp": "^0.33.4",
     "slick-carousel": "^1.8.1",
-    "unified": "^11.0.4",
+    "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
