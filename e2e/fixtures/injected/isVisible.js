@@ -5,7 +5,6 @@
  * @type {(node: Text) => boolean}
  * @see {@link https://github.com/microsoft/playwright/blob/cdb68448e15f848ebb3f31834c2431e7bd8b681b/packages/playwright-core/src/server/injected/selectorEvaluator.ts#L701-L707}
  */
-// eslint-disable-next-line no-unused-vars
 const isVisibleTextNode = (node) => {
   // https://stackoverflow.com/questions/1461059/is-there-an-equivalent-to-getboundingclientrect-for-text-nodes
   const range = document.createRange();
