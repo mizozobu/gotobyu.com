@@ -5,7 +5,6 @@
  * @type {(node: Element) => boolean}
  * @see {@link https://stackoverflow.com/a/35940276/8636650}
  */
-// eslint-disable-next-line no-unused-vars
 const getScrollParent = (node) => {
   if (
     node.scrollHeight > node.clientHeight ||

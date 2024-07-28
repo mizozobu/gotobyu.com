@@ -5,7 +5,6 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { NODE_ENV } from '@/config';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 Chart.register(ArcElement, Title, Tooltip);
 Chart.register(ChartDataLabels);
 
