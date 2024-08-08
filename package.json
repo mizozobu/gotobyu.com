@@ -75,7 +75,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jest": "^28.6.0",
+    "eslint-plugin-jest": "^28.8.0",
     "eslint-plugin-jest-dom": "^5.4.0",
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-playwright": "^1.6.2",
@@ -106,7 +106,7 @@
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^7.17.0",
+    "typescript-eslint": "^7.18.0",
     "utility-types": "^3.11.0",
     "webpack": "^5.93.0",
     "yarn-deduplicate": "^6.0.2"
