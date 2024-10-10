@@ -25,7 +25,7 @@
     "@heroicons/react": "^2.1.5",
     "@mdx-js/loader": "^3.0.1",
     "@next/mdx": "^14.2.15",
-    "algoliasearch": "^4.24.0",
+    "algoliasearch": "^5.8.1",
     "chart.js": "^4.4.4",
     "chartjs-plugin-datalabels": "^2.2.0",
     "classnames": "^2.5.1",
