@@ -108,7 +108,7 @@
     "typescript": "^5.6.3",
     "typescript-eslint": "^7.17.0",
     "utility-types": "^3.11.0",
-    "webpack": "^5.95.0",
+    "webpack": "^5.96.0",
     "yarn-deduplicate": "^6.0.2"
   },
   "engines": {
