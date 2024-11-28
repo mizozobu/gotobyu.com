@@ -97,7 +97,7 @@
     "prettier-plugin-tailwindcss": "^0.6.9",
     "sinon": "^19.0.2",
     "storybook": "^8.4.5",
-    "stylelint": "^16.10.0",
+    "stylelint": "^16.11.0",
     "stylelint-config-css-modules": "^4.4.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^36.0.1",
